@@ -79,6 +79,12 @@ export const Hero = () => {
               points="834.22 -46.35 495.86 327.7 155.03 327.7 -.56 187.72 -40.57 232.19 132.08 387.52 522.36 387.52 878.53 -6.16 834.22 -46.35"
             />
           </svg>
+          <img
+            className="hero-watermark-logo"
+            src="/assets/awj-horizontal.svg"
+            alt=""
+            aria-hidden="true"
+          />
           <div className="hero-pillar-chips">
             <div className="chips-label">Pillars</div>
             <div className="chips-row">

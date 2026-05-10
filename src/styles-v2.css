@@ -532,12 +532,12 @@ button { font-family: inherit; }
 .awj-chev {
   /* Right-to-left wipe-in. The fixed side-fade is on the parent SVG. */
   --reveal: 100%;
-  -webkit-mask-image: linear-gradient(to right,
+  -webkit-mask-image: linear-gradient(to left,
     transparent 0%,
     transparent calc(var(--reveal) - 35%),
     black var(--reveal),
     black 100%);
-          mask-image: linear-gradient(to right,
+          mask-image: linear-gradient(to left,
     transparent 0%,
     transparent calc(var(--reveal) - 35%),
     black var(--reveal),
@@ -545,20 +545,79 @@ button { font-family: inherit; }
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   opacity: 0;
-  animation: awj-chev-wipe 1.6s cubic-bezier(0.22, 0.85, 0.25, 1) both;
+  animation: awj-chev-sequence 8.5s cubic-bezier(0.22, 0.85, 0.25, 1) forwards;
 }
 @property --reveal {
   syntax: "<percentage>";
   inherits: false;
   initial-value: 100%;
 }
-.awj-chev-1 { animation-delay: 0.45s; }
-.awj-chev-2 { animation-delay: 0.85s; }
-.awj-chev-3 { animation-delay: 1.25s; }
-@keyframes awj-chev-wipe {
+.awj-chev-1 { animation-delay: 0s; }
+.awj-chev-2 { animation-delay: 0.3s; }
+.awj-chev-3 { animation-delay: 0.6s; }
+/* One-shot sequence (8.5s):
+   wipe in (left -> right) -> hold -> fade out
+   -> [logo fades in then out]
+   -> wipe in again (final, holds until user scrolls).             */
+@keyframes awj-chev-sequence {
   0%   { opacity: 0; --reveal: 100%; }
-  12%  { opacity: 1; }
-  100% { opacity: 1; --reveal: 0%; }
+  3%   { opacity: 1; }
+  19%  { opacity: 1; --reveal: 0%; }   /* fully wiped in (~1.6s) */
+  29%  { opacity: 1; --reveal: 0%; }   /* hold (~2.5s) */
+  41%  { opacity: 0; --reveal: 0%; }   /* faded out (~3.5s) */
+  60%  { opacity: 0; --reveal: 100%; } /* invisible during logo phase */
+  73%  { opacity: 1; }                 /* second wipe-in starts */
+  90%  { opacity: 1; --reveal: 0%; }   /* fully wiped in again (~7.6s) */
+  100% { opacity: 1; --reveal: 0%; }   /* final hold */
+}
+
+/* AWJ horizontal logo, centered over the watermark.
+   Same left-to-right wipe + an opacity fade. brightness(0) invert(1)
+   forces it to pure white regardless of the SVG's currentColor
+   (currentColor doesn't apply when an SVG is loaded via <img>). */
+.hero-watermark-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56%; max-width: 360px; height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  --reveal: 100%;
+  -webkit-mask-image: linear-gradient(to left,
+    transparent 0%,
+    transparent calc(var(--reveal) - 35%),
+    black var(--reveal),
+    black 100%);
+          mask-image: linear-gradient(to left,
+    transparent 0%,
+    transparent calc(var(--reveal) - 35%),
+    black var(--reveal),
+    black 100%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  animation: awj-logo-sequence 8.5s cubic-bezier(0.22, 0.85, 0.25, 1) forwards;
+}
+/* Logo timeline (matches awj-chev-sequence):
+   0-41% invisible (chev phase 1)
+   41-53% wipe in
+   53-65% hold
+   65-76% fade out
+   76-100% invisible (final chev phase) */
+@keyframes awj-logo-sequence {
+  0%   { opacity: 0; --reveal: 100%; }
+  41%  { opacity: 0; --reveal: 100%; }
+  44%  { opacity: 1; }
+  53%  { opacity: 1; --reveal: 0%; }
+  65%  { opacity: 1; --reveal: 0%; }
+  76%  { opacity: 0; --reveal: 0%; }
+  100% { opacity: 0; --reveal: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .awj-chev,
+  .hero-watermark-logo { animation: none !important; opacity: 1; --reveal: 0%; }
+  .hero-watermark-logo { opacity: 0; }
 }
 
 .hero-pillar-chips {
