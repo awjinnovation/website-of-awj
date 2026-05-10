@@ -59,9 +59,19 @@ const useCounter = (end: number) => {
         : 0;
     const startDelay = Math.max(0, colIndex) * 220;
 
-    let started = false;
     let countRaf = 0;
     let startTimer: number | undefined;
+
+    const cancel = () => {
+      if (startTimer) {
+        clearTimeout(startTimer);
+        startTimer = undefined;
+      }
+      if (countRaf) {
+        cancelAnimationFrame(countRaf);
+        countRaf = 0;
+      }
+    };
 
     const startCount = () => {
       let t0: number | undefined;
@@ -75,13 +85,18 @@ const useCounter = (end: number) => {
       countRaf = requestAnimationFrame(step);
     };
 
+    // Restart the count-up every time the column re-enters view, so
+    // auto-scroll cycling back to the stats band animates them fresh.
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting && !started) {
-            started = true;
+          if (e.isIntersecting) {
+            cancel();
+            setV(0);
+            setDone(false);
             startTimer = window.setTimeout(startCount, startDelay);
-            io.unobserve(el);
+          } else {
+            cancel();
           }
         });
       },
@@ -91,8 +106,7 @@ const useCounter = (end: number) => {
 
     return () => {
       io.disconnect();
-      if (startTimer) clearTimeout(startTimer);
-      if (countRaf) cancelAnimationFrame(countRaf);
+      cancel();
     };
   }, [end]);
 

@@ -666,9 +666,13 @@ button { font-family: inherit; }
 .hero-stripe .stripe-seg:nth-child(4) { animation-delay: 1.86s; }
 @keyframes stripe-grow { to { transform: scaleX(1); } }
 
-/* reveal-up util used in hero (overrides global if present) */
+/* reveal-up util used in hero (overrides global if present)
+   Animation is gated by .in so useReveal can replay it each time
+   the section re-enters the viewport (e.g. via auto-scroll cycle). */
 .hero-v3 .reveal-up {
   opacity: 0; transform: translateY(28px);
+}
+.hero-v3 .reveal-up.in {
   animation: hero-reveal 0.9s var(--ease-luxe) forwards;
 }
 @keyframes hero-reveal {
