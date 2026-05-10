@@ -101,34 +101,10 @@ const useCounter = (end: number) => {
 
 const StatNum = ({ end, suffix }: { end: number; suffix: string }) => {
   const [v, ref, done] = useCounter(end);
-  const [drift, setDrift] = useState(0);
-
-  useEffect(() => {
-    if (!done) return;
-    let live = true;
-    let backTimer: number | undefined;
-    let nextTimer: number | undefined;
-
-    const tick = () => {
-      if (!live) return;
-      const next = Math.random() < 0.5 ? -1 : 1;
-      setDrift(next);
-      backTimer = window.setTimeout(() => live && setDrift(0), 900);
-      nextTimer = window.setTimeout(tick, 4000 + Math.random() * 3000);
-    };
-
-    const initial = window.setTimeout(tick, 1200);
-    return () => {
-      live = false;
-      window.clearTimeout(initial);
-      if (backTimer) window.clearTimeout(backTimer);
-      if (nextTimer) window.clearTimeout(nextTimer);
-    };
-  }, [done]);
 
   return (
     <div className={'num' + (done ? ' is-pulsing' : '')} ref={ref}>
-      {Math.max(0, v + (done ? drift : 0))}
+      {v}
       <span className="suffix">{suffix}</span>
     </div>
   );
