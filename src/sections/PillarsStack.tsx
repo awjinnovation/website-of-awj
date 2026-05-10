@@ -1,4 +1,4 @@
-import { useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 
 type PillarItem = {
   id: string;
@@ -68,6 +68,17 @@ const PILLAR_DATA: PillarItem[] = [
 export const PillarsStack = () => {
   const [idx, setIdx] = useState(0);
   const total = PILLAR_DATA.length;
+
+  // Auto-advance to the next card every 6s. Re-arms whenever idx
+  // changes, so user clicks (arrows / dots / drag) effectively
+  // reset the 6s window before the next auto-rotation.
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t = window.setTimeout(() => {
+      setIdx((i) => (i + 1) % total);
+    }, 6000);
+    return () => window.clearTimeout(t);
+  }, [idx, total]);
 
   const cardOffset = (i: number): CSSProperties => {
     const d = (i - idx + total) % total;
