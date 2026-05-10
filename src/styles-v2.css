@@ -1068,7 +1068,10 @@ button { font-family: inherit; }
 }
 .bento-card .body { font-size: 13px; line-height: 1.5; opacity: 0.85; max-width: 320px; font-weight: 300; }
 .bento-card .icon { position: absolute; right: -20px; bottom: -20px; width: 120px; opacity: 0.16; }
-.bento-ink .icon { filter: brightness(0) invert(1); opacity: 0.18; }
+/* Inline AWJ mark on the dark Strategic Advisory card uses currentColor;
+   nudge opacity slightly higher so it reads at the same weight as the
+   colored pillar icons on their tinted cards. */
+.bento-ink .icon { opacity: 0.22; }
 .bento-card .arrow {
   position: absolute; top: 28px; right: 28px; opacity: 0; transform: translate(8px,-8px);
   transition: all 0.4s var(--ease-out);

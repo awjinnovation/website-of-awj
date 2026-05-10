@@ -1,3 +1,5 @@
+import { AwjMark } from '../components/AwjMark';
+
 const Arrow = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
     <path
@@ -39,7 +41,7 @@ export const Services = () => (
             More services
             <Arrow />
           </a>
-          <img src="/assets/awj-mark.svg" className="icon" alt="" />
+          <AwjMark className="icon" />
         </div>
         <div className="bento-card b-2 bento-academy">
           <div className="title">Capability Building</div>
