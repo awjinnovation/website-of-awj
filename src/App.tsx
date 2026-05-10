@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Cursor } from './components/Cursor';
 import { useReveal } from './hooks/useReveal';
+import { useAutoScroll } from './hooks/useAutoScroll';
 import { NavPill } from './sections/NavPill';
 import { Hero } from './sections/Hero';
 import { Stats } from './sections/Stats';
@@ -15,6 +16,7 @@ import { Footer } from './sections/Footer';
 
 export const App = () => {
   useReveal();
+  useAutoScroll(60_000);
 
   // Drives --scroll-p (0..1) across the hero→stats handoff for the
   // chevron exit / stat column entry choreography defined in styles-v2.css.
