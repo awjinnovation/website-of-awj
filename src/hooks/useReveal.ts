@@ -10,7 +10,9 @@ import { useEffect } from 'react';
  */
 export const useReveal = () => {
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-up');
+    const els = document.querySelectorAll(
+      '.reveal, .reveal-stagger, .reveal-up, .hero-v3',
+    );
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {

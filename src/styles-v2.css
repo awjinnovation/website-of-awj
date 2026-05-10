@@ -545,6 +545,10 @@ button { font-family: inherit; }
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   opacity: 0;
+}
+/* Chev sequence is gated on .hero-v3.in so useReveal can replay it
+   each time the hero re-enters the viewport via the auto-scroll cycle. */
+.hero-v3.in .awj-chev {
   animation: awj-chev-sequence 8.5s cubic-bezier(0.22, 0.85, 0.25, 1) forwards;
 }
 @property --reveal {
@@ -552,9 +556,9 @@ button { font-family: inherit; }
   inherits: false;
   initial-value: 100%;
 }
-.awj-chev-1 { animation-delay: 0s; }
-.awj-chev-2 { animation-delay: 0.3s; }
-.awj-chev-3 { animation-delay: 0.6s; }
+.hero-v3.in .awj-chev-1 { animation-delay: 0s; }
+.hero-v3.in .awj-chev-2 { animation-delay: 0.3s; }
+.hero-v3.in .awj-chev-3 { animation-delay: 0.6s; }
 /* One-shot sequence (8.5s):
    wipe in (left -> right) -> hold -> fade out
    -> [logo fades in then out]
@@ -597,6 +601,10 @@ button { font-family: inherit; }
     black 100%);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
+}
+/* Logo sequence also gated on .hero-v3.in so it replays in sync
+   with the chevrons each time the hero re-enters the viewport. */
+.hero-v3.in .hero-watermark-logo {
   animation: awj-logo-sequence 8.5s cubic-bezier(0.22, 0.85, 0.25, 1) forwards;
 }
 /* Logo timeline (matches awj-chev-sequence):
