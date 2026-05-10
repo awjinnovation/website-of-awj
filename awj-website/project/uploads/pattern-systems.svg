@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <g opacity="0.6">
+    <path d="M500,200 L620,270 L620,410 L500,480 L380,410 L380,270 Z" stroke="white" stroke-width="8" fill="none"></path>
+    <path d="M500,240 L596,296 L596,386 L500,442 L404,386 L404,296 Z" stroke="white" stroke-width="6" fill="none"></path>
+    <path d="M500,280 L570,320 L570,360 L500,400 L430,360 L430,320 Z" stroke="white" stroke-width="5" fill="none"></path>
+    <path d="M500,310 L540,335 L540,365 L500,390 L460,365 L460,335 Z" stroke="white" stroke-width="4" fill="none"></path>
+  </g>
+  <g opacity="0.3">
+    <path d="M250,450 L430,555 L430,765 L250,870 L70,765 L70,555 Z" stroke="white" stroke-width="10" fill="none"></path>
+    <path d="M250,500 L400,590 L400,730 L250,820 L100,730 L100,590 Z" stroke="white" stroke-width="7" fill="none"></path>
+    <path d="M250,550 L370,620 L370,700 L250,770 L130,700 L130,620 Z" stroke="white" stroke-width="5" fill="none"></path>
+  </g>
+  <g opacity="0.15">
+    <path d="M700,0 L850,80 L850,250 L700,330 L550,250 L550,80 Z" stroke="white" stroke-width="12" fill="none"></path>
+    <path d="M700,50 L810,115 L810,215 L700,280 L590,215 L590,115 Z" stroke="white" stroke-width="8" fill="none"></path>
+  </g>
+</svg>

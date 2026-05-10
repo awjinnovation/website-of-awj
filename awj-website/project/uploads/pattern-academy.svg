@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <g opacity="0.6">
+    <path d="M480,150 L640,430 L320,430 Z" stroke="white" stroke-width="8" fill="none"></path>
+    <path d="M480,210 L600,400 L360,400 Z" stroke="white" stroke-width="6" fill="none"></path>
+    <path d="M480,270 L560,370 L400,370 Z" stroke="white" stroke-width="5" fill="none"></path>
+    <path d="M480,310 L530,350 L430,350 Z" stroke="white" stroke-width="4" fill="none"></path>
+  </g>
+  <g opacity="0.3">
+    <path d="M250,500 L90,800 L410,800 Z" stroke="white" stroke-width="10" fill="none"></path>
+    <path d="M250,560 L130,770 L370,770 Z" stroke="white" stroke-width="7" fill="none"></path>
+    <path d="M250,620 L170,740 L330,740 Z" stroke="white" stroke-width="5" fill="none"></path>
+  </g>
+  <g opacity="0.15">
+    <path d="M700,0 L850,280 L550,280 Z" stroke="white" stroke-width="12" fill="none"></path>
+    <path d="M700,60 L810,250 L590,250 Z" stroke="white" stroke-width="8" fill="none"></path>
+  </g>
+</svg>
