@@ -153,14 +153,7 @@ export const Contact = () => {
     <section className="contact" id="contact" data-screen-label="10 Contact">
       <div className="container contact-grid">
         <div className="reveal">
-          <div className="eyebrow" style={{ opacity: 0.85 }}>
-            Contact
-          </div>
-          <h2 style={{ marginTop: 24 }}>
-            Tell us
-            <br />
-            <em>what's next.</em>
-          </h2>
+          <h2 style={{ marginTop: 24 }}>Contact us</h2>
           <p className="lede">
             A short, structured intake helps us route your enquiry to the right pillar and
             partner. Most replies within two business days.
