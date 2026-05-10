@@ -39,6 +39,7 @@ export const Services = () => (
             More services
             <Arrow />
           </a>
+          <img src="/assets/awj-mark.svg" className="icon" alt="" />
         </div>
         <div className="bento-card b-2 bento-academy">
           <div className="title">Capability Building</div>
