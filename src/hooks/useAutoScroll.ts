@@ -7,7 +7,6 @@ const SECTION_SELECTORS = [
   '.services',
   '.projects',
   '.news',
-  '.success',
   '.partners',
   '.contact',
 ];
