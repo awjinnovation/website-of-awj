@@ -1672,10 +1672,10 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-color: var(--accent);
   transform: translateY(-1px);
 }
-.pillars-panel-chip .chip-logo { height: 20px; width: auto; display: block; }
-.pillars-panel-chip .chip-logo-dark { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .chip-logo-light { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .chip-logo-dark { display: block; }
+.pillars-panel-chip .pdl { height: 20px; width: auto; display: block; padding: 0; }
+.pillars-panel-chip .pdl-dark { display: none; }
+.nav-pill.on-dark .pillars-panel-chip .pdl-light { display: none; }
+.nav-pill.on-dark .pillars-panel-chip .pdl-dark { display: block; }
 
 /* Light variant when nav pill is over light sections */
 .nav-pill:not(.on-dark) .pillars-panel {

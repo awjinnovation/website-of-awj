@@ -110,8 +110,8 @@ export const NavPill = () => {
                   role="menuitem"
                   aria-label={`AWJ ${p.name}`}
                 >
-                  <img src={p.logo} alt="" className="chip-logo chip-logo-light" />
-                  <img src={onDarkLogo} alt="" aria-hidden="true" className="chip-logo chip-logo-dark" />
+                  <img src={p.logo} alt="" className="pdl pdl-light" />
+                  <img src={onDarkLogo} alt="" aria-hidden="true" className="pdl pdl-dark" />
                 </a>
               );
             })}
