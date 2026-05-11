@@ -121,7 +121,7 @@ export const NavPill = () => {
             <div className="pillars-panel" role="menu">
               {PILLARS.map((p) => {
                 const style: CSSProperties = { ['--accent' as string]: p.accent };
-                const onDarkLogo = p.logo.replace('.svg', '-onDark.svg');
+                const logoSrc = onDark ? p.logo.replace('.svg', '-onDark.svg') : p.logo;
                 return (
                   <a
                     key={p.id}
@@ -131,8 +131,7 @@ export const NavPill = () => {
                     role="menuitem"
                     aria-label={`AWJ ${p.name}`}
                   >
-                    <img src={p.logo}     alt="" className="chip-img-light" />
-                    <img src={onDarkLogo} alt="" aria-hidden="true" className="chip-img-dark" />
+                    <img src={logoSrc} alt={`AWJ ${p.name}`} />
                   </a>
                 );
               })}

@@ -1786,18 +1786,15 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 
 /* Reuses .chip + .chip-logo from the hero pillar chips (line ~767).
-   Hover restyling + light/dark image swap done here. */
-.pillars-panel-chip { transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out); }
+   Same single-<img> markup as the hero, just with hover restyling. */
+.pillars-panel-chip {
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out);
+}
 .pillars-panel-chip:hover {
   background: rgba(255, 255, 255, 0.18);
   border-color: var(--accent);
   transform: translateY(-1px);
 }
-.pillars-panel-chip .chip-img-light,
-.pillars-panel-chip .chip-img-dark { height: 18px; width: auto; display: block; padding: 0; }
-.pillars-panel-chip .chip-img-dark { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .chip-img-light { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .chip-img-dark  { display: block; }
 
 /* Light variant when nav pill is over light sections */
 .nav-pill:not(.on-dark) .pillars-panel {
