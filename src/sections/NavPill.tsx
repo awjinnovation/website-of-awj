@@ -110,12 +110,12 @@ export const NavPill = () => {
                     style={style}
                     role="menuitem"
                   >
-                    <img src={p.logo} alt="" className="pillars-panel-logo" aria-hidden="true" />
-                    <div className="pillars-panel-name">
-                      <span className="awj">AWJ</span>
-                      <span className="sub">{p.name}</span>
-                    </div>
-                    <p className="pillars-panel-desc">{p.blurb}</p>
+                    <img
+                      src={p.logo}
+                      alt={`AWJ ${p.name}`}
+                      className="pillars-panel-logo"
+                    />
+                    <p className="pillars-panel-tagline">{p.tagline}</p>
                     <span className="pillars-panel-cta">
                       Explore
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
