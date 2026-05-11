@@ -98,40 +98,20 @@ export const NavPill = () => {
           </button>
 
           <div className="pillars-panel" role="menu">
-            <div className="pillars-panel-eyebrow">Four pillars · one group</div>
-            <div className="pillars-panel-grid">
-              {PILLARS.map((p) => {
-                const style: CSSProperties = { ['--accent' as string]: p.accent };
-                return (
-                  <a
-                    key={p.id}
-                    href={`/pillars/${p.id}`}
-                    className="pillars-panel-card"
-                    style={style}
-                    role="menuitem"
-                  >
-                    <img
-                      src={p.logo}
-                      alt={`AWJ ${p.name}`}
-                      className="pillars-panel-logo"
-                    />
-                    <p className="pillars-panel-tagline">{p.tagline}</p>
-                    <span className="pillars-panel-cta">
-                      Explore
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                        <path
-                          d="M5 12h14M13 5l7 7-7 7"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
+            {PILLARS.map((p) => {
+              const style: CSSProperties = { ['--accent' as string]: p.accent };
+              return (
+                <a
+                  key={p.id}
+                  href={`/pillars/${p.id}`}
+                  className="pillars-panel-chip"
+                  style={style}
+                  role="menuitem"
+                >
+                  <img src={p.logo} alt={`AWJ ${p.name}`} />
+                </a>
+              );
+            })}
           </div>
         </div>
 
