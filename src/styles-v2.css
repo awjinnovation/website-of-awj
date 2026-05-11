@@ -1788,12 +1788,23 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Reuses .chip + .chip-logo from the hero pillar chips (line ~767).
    Same single-<img> markup as the hero, just with hover restyling. */
 .pillars-panel-chip {
+  flex-shrink: 0;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out);
 }
 .pillars-panel-chip:hover {
   background: rgba(255, 255, 255, 0.18);
   border-color: var(--accent);
   transform: translateY(-1px);
+}
+/* Override the global `img, svg { max-width: 100% }`: in an absolute
+   flex container with no explicit width, that cap can resolve to 0
+   and collapse the chip. Force the SVG to its intrinsic size at h:18. */
+.pillars-panel-chip img {
+  height: 18px;
+  width: auto;
+  max-width: none;
+  flex-shrink: 0;
+  display: block;
 }
 
 /* Light variant when nav pill is over light sections */
