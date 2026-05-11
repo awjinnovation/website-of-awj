@@ -1663,18 +1663,19 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   align-items: center;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out);
 }
 .pillars-panel-chip:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.18);
   border-color: var(--accent);
   transform: translateY(-1px);
 }
-.pillars-panel-chip img {
-  height: 18px; width: auto; display: block;
-}
+.pillars-panel-chip .chip-logo { height: 20px; width: auto; display: block; }
+.pillars-panel-chip .chip-logo-dark { display: none; }
+.nav-pill.on-dark .pillars-panel-chip .chip-logo-light { display: none; }
+.nav-pill.on-dark .pillars-panel-chip .chip-logo-dark { display: block; }
 
 /* Light variant when nav pill is over light sections */
 .nav-pill:not(.on-dark) .pillars-panel {
@@ -1683,11 +1684,11 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   box-shadow: 0 22px 60px -22px rgba(12, 14, 20, 0.22);
 }
 .nav-pill:not(.on-dark) .pillars-panel-chip {
-  background: rgba(12, 14, 20, 0.035);
-  border-color: rgba(12, 14, 20, 0.08);
+  background: rgba(12, 14, 20, 0.05);
+  border-color: rgba(12, 14, 20, 0.12);
 }
 .nav-pill:not(.on-dark) .pillars-panel-chip:hover {
-  background: rgba(12, 14, 20, 0.06);
+  background: rgba(12, 14, 20, 0.09);
 }
 
 /* ============================================================
