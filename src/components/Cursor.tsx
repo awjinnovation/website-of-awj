@@ -36,7 +36,7 @@ export const Cursor = () => {
       const dark =
         el &&
         el.closest(
-          '.hero, .hero-v3, .news-hero, .pillars-stack, .showcase, .success, .contact, .marquee, .nav-pill.on-dark',
+          '.hero, .hero-v3, .news-hero, .pillar-hero, .pillars-stack, .showcase, .success, .contact, .marquee, .nav-pill.on-dark',
         );
       document.body.classList.toggle('on-dark-cursor', !!dark);
 

@@ -1,5 +1,10 @@
+export const PILLAR_IDS = ['academy', 'sustain', 'innovation', 'systems'] as const;
+export type PillarId = (typeof PILLAR_IDS)[number];
+export const isPillarId = (v: string): v is PillarId =>
+  (PILLAR_IDS as readonly string[]).includes(v);
+
 export type Pillar = {
-  id: 'academy' | 'sustain' | 'innovation' | 'systems';
+  id: PillarId;
   name: string;
   accent: string;
   accent2: string;
