@@ -100,7 +100,6 @@ export const NavPill = () => {
           <div className="pillars-panel" role="menu">
             {PILLARS.map((p) => {
               const style: CSSProperties = { ['--accent' as string]: p.accent };
-              const onDarkLogo = p.logo.replace('.svg', '-onDark.svg');
               return (
                 <a
                   key={p.id}
@@ -108,10 +107,10 @@ export const NavPill = () => {
                   className="pillars-panel-chip"
                   style={style}
                   role="menuitem"
-                  aria-label={`AWJ ${p.name}`}
                 >
-                  <img src={p.logo} alt="" className="pdl pdl-light" />
-                  <img src={onDarkLogo} alt="" aria-hidden="true" className="pdl pdl-dark" />
+                  <span className="pdl-dot" aria-hidden="true" />
+                  <span className="pdl-awj">AWJ</span>
+                  <span className="pdl-name">{p.name}</span>
                 </a>
               );
             })}

@@ -1661,10 +1661,16 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillars-panel-chip {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   padding: 10px 16px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out);
 }
 .pillars-panel-chip:hover {
@@ -1672,10 +1678,15 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-color: var(--accent);
   transform: translateY(-1px);
 }
-.pillars-panel-chip .pdl { height: 20px; width: auto; display: block; padding: 0; }
-.pillars-panel-chip .pdl-dark { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .pdl-light { display: none; }
-.nav-pill.on-dark .pillars-panel-chip .pdl-dark { display: block; }
+.pillars-panel-chip .pdl-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.pillars-panel-chip .pdl-awj { font-weight: 800; }
+.pillars-panel-chip .pdl-name { font-weight: 300; opacity: 0.85; }
 
 /* Light variant when nav pill is over light sections */
 .nav-pill:not(.on-dark) .pillars-panel {
@@ -1686,6 +1697,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .nav-pill:not(.on-dark) .pillars-panel-chip {
   background: rgba(12, 14, 20, 0.05);
   border-color: rgba(12, 14, 20, 0.12);
+  color: var(--ink);
 }
 .nav-pill:not(.on-dark) .pillars-panel-chip:hover {
   background: rgba(12, 14, 20, 0.09);
