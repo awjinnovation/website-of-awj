@@ -246,7 +246,7 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
           </div>
           <div className="am-footer">
             <span className="am-attrib">
-              — {article.pillar}, {article.dateLabel}
+              {article.pillar}, {article.dateLabel}
             </span>
           </div>
         </div>

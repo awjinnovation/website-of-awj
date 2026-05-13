@@ -1,7 +1,28 @@
-/* AWJ Landing v2 — luxury, brand-color-saturated, Magnetik-styled */
+/* AWJ Corporate site. Local fonts: Magnetik (Latin) + Proxima Nova Arabic. */
+
+/* === Magnetik (Latin) === */
+@font-face { font-family: 'Magnetik'; font-weight: 100; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Thin.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 200; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-ExtraLight.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 300; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Light.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 400; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Regular.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 500; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Medium.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 600; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-SemiBold.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 700; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Bold.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 800; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-ExtraBold.otf') format('opentype'); }
+@font-face { font-family: 'Magnetik'; font-weight: 900; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Heavy.otf') format('opentype'); }
+
+/* === Proxima Nova Arabic === */
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 100; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Thin.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 300; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Light.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 400; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Regular.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 500; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Medium.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 600; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20SemiBold.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 700; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Bold.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 800; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20ExtraBold.otf') format('opentype'); }
+@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 900; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Black.otf') format('opentype'); }
 
 :root {
-  /* Pillar palette — primary, deep, light */
+  /* Pillar palette, primary, deep, light */
   --academy: #9674ce;
   --academy-deep: #5d3a9b;
   --academy-soft: #e6dcf4;
@@ -23,11 +44,11 @@
   --paper: #faf8f3;
   --line: rgba(12, 14, 20, 0.12);
 
-  /* Magnetik substitute: Manrope — geometric, generous counters,
-     "extra bold" for AWJ wordmark and "light" for sub-brands. */
-  --font-display: "Manrope", "Inter Tight", system-ui, sans-serif;
-  --font-body: "Manrope", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Brand fonts: Magnetik for Latin, Proxima Nova Arabic for Arabic.
+     Both families used for display and body; only the weight changes. */
+  --font-display: 'Magnetik', sans-serif;
+  --font-body: 'Magnetik', sans-serif;
+  --font-mono: 'Magnetik', sans-serif;
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-luxe: cubic-bezier(0.65, 0, 0.35, 1);
@@ -48,7 +69,7 @@ button { font-family: inherit; }
 .container { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 40px; }
 @media (max-width: 720px) { .container { padding: 0 22px; } }
 
-/* AWJ wordmark utility — Extra Bold AWJ + Light sub-brand per guidelines */
+/* AWJ wordmark utility, Extra Bold AWJ + Light sub-brand per guidelines */
 .wordmark {
   font-family: var(--font-display);
   letter-spacing: -0.04em;
@@ -147,7 +168,7 @@ button { font-family: inherit; }
   cursor: none;
 }
 
-/* Hamburger button — hidden on desktop, shown on small screens */
+/* Hamburger button, hidden on desktop, shown on small screens */
 .nav-burger {
   display: none;
   background: none; border: 0;
@@ -173,7 +194,7 @@ button { font-family: inherit; }
 .nav-pill.mobile-open .nav-burger span:nth-child(2) { opacity: 0; }
 .nav-pill.mobile-open .nav-burger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
-/* Intermediate breakpoint — tighten link padding so 7 items + CTA + brand fit
+/* Intermediate breakpoint, tighten link padding so 7 items + CTA + brand fit
    comfortably on laptop widths before the hamburger kicks in. */
 @media (max-width: 1080px) {
   .nav-pill { gap: 2px; padding: 6px; }
@@ -186,7 +207,7 @@ button { font-family: inherit; }
   .nav-pill .brand .lockup-dark { height: 20px; }
 }
 
-/* Small screens — hide inline links + CTA, show hamburger + mobile sheet */
+/* Small screens, hide inline links + CTA, show hamburger + mobile sheet */
 @media (max-width: 820px) {
   .nav-pill { top: 14px; padding: 5px 5px 5px 10px; }
   .nav-pill .links,
@@ -288,13 +309,13 @@ button { font-family: inherit; }
   content: ""; width: 24px; height: 1px; background: currentColor;
 }
 
-/* Section title — display weight Light per Magnetik guideline */
+/* Section title, display weight Light per Magnetik guideline */
 .section-title {
   font-family: var(--font-display); font-weight: 200;
   font-size: clamp(40px, 6vw, 88px); line-height: 0.96; letter-spacing: -0.04em;
 }
 .section-title .strong { font-weight: 800; letter-spacing: -0.05em; }
-.section-title em { font-style: italic; opacity: 0.6; font-weight: 300; }
+.section-title em { font-style: normal; opacity: 1; font-weight: 800; }
 
 /* Reveal animation */
 .reveal { opacity: 0; transform: translateY(28px); transition: all 0.9s var(--ease-luxe); }
@@ -307,11 +328,11 @@ button { font-family: inherit; }
 .reveal-stagger.in > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.37s; }
 .reveal-stagger.in > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
 
-/* === HERO → STATS — Chevron handoff =================================
+/* === HERO → STATS, Chevron handoff =================================
    Driven by CSS var `--scroll-p` (0..1) populated from JS rAF.
    Hero chevrons exit right (staggered); stat columns enter from
    right on the same cadence. Chevron edges stay softly faded via a
-   horizontal mask gradient — opacity is NOT animated, so the soft
+   horizontal mask gradient, opacity is NOT animated, so the soft
    edges read consistently throughout the slide. */
 
 .hero-stats-bridge { position: relative; }
@@ -334,8 +355,8 @@ button { font-family: inherit; }
 
 /* Soft-edge mask: each chevron is rendered through a horizontal
    gradient so its leading edge feathers in/out as it travels.
-   The mask follows the chevron — i.e. it is applied to the
-   chevron itself — so opacity stays at 100% and the visual is
+   The mask follows the chevron, i.e. it is applied to the
+   chevron itself, so opacity stays at 100% and the visual is
    always feather → solid → feather along its X axis. */
 .awj-chev {
   will-change: transform;
@@ -372,10 +393,10 @@ button { font-family: inherit; }
 .stat-col:nth-child(2) { --enter: clamp(0, calc((var(--scroll-p, 0) - 0.05) * 1.6), 1); }
 .stat-col:nth-child(3) { --enter: clamp(0, calc((var(--scroll-p, 0) - 0.10) * 1.6), 1); }
 .stat-col:nth-child(4) { --enter: clamp(0, calc((var(--scroll-p, 0) - 0.15) * 1.6), 1); }
-/* === Hero stats — A: count-up driven by entrance, E: idle pulse,
+/* === Hero stats, A: count-up driven by entrance, E: idle pulse,
    F: accent dot breathe ============================================= */
 
-/* F — accent dot soft breathe (opacity + scale pulse) */
+/* F, accent dot soft breathe (opacity + scale pulse) */
 @keyframes stat-dot-breathe {
   0%, 100% { transform: scale(1);    opacity: 0.85; box-shadow: 0 0 0 0    rgba(0,0,0,0); }
   50%      { transform: scale(1.18); opacity: 1;    box-shadow: 0 0 0 4px var(--accent-glow, rgba(0,0,0,0.06)); }
@@ -389,7 +410,7 @@ button { font-family: inherit; }
 .stat-col:nth-child(3) .stat-col-top::after { animation-delay: 0.90s; }
 .stat-col:nth-child(4) .stat-col-top::after { animation-delay: 1.35s; }
 
-/* E — idle micro-pulse on the big number after it has settled.
+/* E, idle micro-pulse on the big number after it has settled.
    Triggered by .is-pulsing class added by JS post-count-up. */
 @keyframes stat-num-pulse {
   0%, 100% { transform: translateY(0)     scale(1);    }
@@ -413,7 +434,7 @@ button { font-family: inherit; }
 
 .hero-v3 {
   position: relative;
-  min-height: 100svh;            /* full viewport — small-vh handles iOS toolbars */
+  min-height: 100svh;            /* full viewport, small-vh handles iOS toolbars */
   background: var(--ink); color: var(--paper);
   overflow: hidden; isolation: isolate;
   display: flex; flex-direction: column;
@@ -437,7 +458,7 @@ button { font-family: inherit; }
   will-change: transform, opacity;
 }
 
-/* ---------- Variant A — Layered depth ----------
+/* ---------- Variant A, Layered depth ----------
    Background mesh barely moves, watermark drifts slow,
    foreground text drifts faster + fades.
 */
@@ -468,7 +489,7 @@ button { font-family: inherit; }
 @keyframes parallax-fore  { to { transform: translateY(-32vh); opacity: 0; } }
 @keyframes parallax-stripe { to { transform: translateY(-12vh); opacity: 0.4; } }
 
-/* ---------- Variant B — Pinned reveal ----------
+/* ---------- Variant B, Pinned reveal ----------
    Hero acts as a 200vh tall spacer; inner content sticks while
    it scales/fades out, then unpins. Stats slides up over.
 */
@@ -507,7 +528,7 @@ button { font-family: inherit; }
 }
 [data-scroll="B"] .hero-stripe { display: none; }
 
-/* ---------- Variant C — Slow push ----------
+/* ---------- Variant C, Slow push ----------
    Whole hero translates up at ~60% of scroll rate, so stats
    visually overlaps the bottom of the hero as it enters.
 */
@@ -522,7 +543,7 @@ button { font-family: inherit; }
   to { transform: translateY(-40vh); }
 }
 
-/* Reduced motion — kill all parallax */
+/* Reduced motion, kill all parallax */
 @media (prefers-reduced-motion: reduce) {
   [data-scroll] .hero-v3,
   [data-scroll] .hero-v3-inner,
@@ -602,7 +623,7 @@ button { font-family: inherit; }
   margin: -0.12em -0.06em -0.18em -0.06em;
 }
 .hero-headline .ital {
-  font-style: italic; font-weight: 300;
+  font-style: normal; font-weight: 800;
   color: transparent;
   background: linear-gradient(135deg, #ffb777 0%, #b9a0de 50%, #87b0e4 100%);
   -webkit-background-clip: text; background-clip: text;
@@ -838,7 +859,7 @@ button { font-family: inherit; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === HERO — 4-quadrant split (LEGACY, retained) === */
+/* === HERO, 4-quadrant split (LEGACY, retained) === */
 .hero {
   position: relative; min-height: 100vh; display: grid;
   grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
@@ -962,7 +983,7 @@ button { font-family: inherit; }
 .marquee-track .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--paper); align-self: center; opacity: 0.4; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* === STATS — corporate band with boxed cards === */
+/* === STATS, corporate band with boxed cards === */
 .stats-band {
   background: var(--paper); color: var(--ink);
   padding: 72px 0 80px;
@@ -1016,7 +1037,7 @@ button { font-family: inherit; }
 }
 
 .stat-col .num {
-  font-family: "Anton", "Impact", "Helvetica Neue", sans-serif;
+  font-family: 'Magnetik', sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em; line-height: 1;
   font-size: clamp(64px, 7vw, 112px);
@@ -1071,7 +1092,7 @@ button { font-family: inherit; }
 .stat .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.6; }
 .stat .desc { font-size: 14px; line-height: 1.5; opacity: 0.68; max-width: 240px; }
 
-/* === PILLARS — 3D card stack === */
+/* === PILLARS, 3D card stack === */
 .pillars-stack {
   padding: 96px 0;
   background:
@@ -1207,7 +1228,7 @@ button { font-family: inherit; }
 .showcase-tab.active { background: rgba(255,255,255,0.1); }
 @media (max-width: 720px) { .showcase-tabs { grid-template-columns: repeat(2, 1fr); } }
 
-/* === SERVICES — Bento === */
+/* === SERVICES, Bento === */
 .services { padding: 88px 0; background: var(--paper); color: var(--ink); position: relative; }
 .services-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: end; margin-bottom: 48px; }
 @media (max-width: 980px) { .services-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; } }
@@ -1265,7 +1286,7 @@ button { font-family: inherit; }
 
 /* Bento sizes */
 .bento-card.b-1 {
-  grid-column: span 3; grid-row: span 2; /* big — Strategic Advisory */
+  grid-column: span 3; grid-row: span 2; /* big, Strategic Advisory */
   /* Soft radial lift under the bottom-right AWJ mark, so the icon
      reads against a brighter backdrop than the rest of the dark card. */
   background:
@@ -1297,7 +1318,7 @@ button { font-family: inherit; }
 .bento-card.b-6 .title { font-size: clamp(28px, 3vw, 44px); max-width: 60%; }
 .bento-card.b-6 .body { max-width: 35%; }
 
-/* === PROJECTS — bento === */
+/* === PROJECTS, bento === */
 .projects { padding: 56px 0 32px; background: var(--paper); color: var(--ink); }
 .projects-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: end; margin-bottom: 28px; }
 @media (max-width: 980px) { .projects-head { grid-template-columns: 1fr; gap: 30px; } }
@@ -1383,7 +1404,7 @@ button { font-family: inherit; }
 /* button reset for tile */
 button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointer; }
 
-/* Light variant — dark text on pale orange */
+/* Light variant, dark text on pale orange */
 .project-tile.p-light { color: var(--ink); }
 .project-tile.p-light .pt-icon { filter: brightness(0) saturate(100%) invert(40%) sepia(60%) saturate(2000%) hue-rotate(0deg); opacity: 0.18; }
 .project-tile.p-light .pt-arrow { border-color: rgba(20,20,28,0.25); color: var(--ink); }
@@ -1484,7 +1505,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* keep old preview rule from interfering */
 .project-preview { display: none !important; }
 
-/* === NEWS — featured cards + recent list === */
+/* === NEWS, featured cards + recent list === */
 .news { padding: 140px 0; background: var(--paper); color: var(--ink); border-top: 1px solid var(--line); }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
@@ -1499,11 +1520,39 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 @media (max-width: 900px) { .news-featured-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 .news-feature-card {
+  position: relative;
   display: flex; flex-direction: column; text-decoration: none; color: inherit;
-  border-radius: 24px; overflow: hidden; background: var(--paper);
-  border: 1px solid var(--line); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  border-radius: 24px; overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(250, 248, 243, 0.96) 60%, rgba(150,116,206,0.07) 100%),
+    var(--paper);
+  border: 1px solid var(--line);
+  transition: transform .45s var(--ease-out), box-shadow .45s ease, border-color .35s ease, background .45s ease;
+  isolation: isolate;
 }
-.news-feature-card:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -30px rgba(0,0,0,0.18); border-color: rgba(0,0,0,0.18); }
+.news-feature-card::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  border-radius: 24px;
+  background: conic-gradient(from 140deg at 80% 0%,
+    rgba(150,116,206,0.0),
+    rgba(150,116,206,0.16),
+    rgba(0,161,157,0.14),
+    rgba(255,107,0,0.12),
+    rgba(0,105,200,0.14),
+    rgba(150,116,206,0.0));
+  opacity: 0;
+  transition: opacity .45s ease;
+  filter: blur(28px);
+}
+.news-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 60px -22px rgba(150,116,206,0.30),
+    0 18px 40px -18px rgba(0,105,200,0.18);
+  border-color: rgba(0,0,0,0.18);
+}
+.news-feature-card:hover::before { opacity: 1; }
 .nfc-cover { position: relative; aspect-ratio: 16/10; overflow: hidden; }
 .nfc-cover .news-cover-svg { width: 100%; height: 100%; display: block; }
 .nfc-tag {
@@ -1553,7 +1602,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   .nri-arrow { grid-column: 2; grid-row: 1 / 4; }
 }
 
-/* === SUCCESS — case study cards w/ outcomes === */
+/* === SUCCESS, case study cards w/ outcomes === */
 .success { padding: 140px 0; background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
 .success::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.4;
@@ -1586,7 +1635,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-family: var(--font-display); font-weight: 300; font-size: 22px;
   line-height: 1.32; letter-spacing: -0.02em; flex: 1;
 }
-.case-card .case-quote em { font-style: italic; opacity: 0.85; }
+.case-card .case-quote em { font-style: normal; opacity: 0.85; }
 .case-card .case-attr { font-size: 13px; opacity: 0.7; line-height: 1.5; }
 .case-card .case-attr .who { font-weight: 600; opacity: 1; }
 .case-card .case-outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
@@ -1612,7 +1661,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .partners-row > div:hover { opacity: 1; }
 @media (max-width: 980px) { .partners-row > div:nth-child(3n) { border-right: none; } }
 
-/* === CONTACT — multi-step wizard === */
+/* === CONTACT, multi-step wizard === */
 .contact { padding: 140px 0; background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
 .contact::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
@@ -1625,7 +1674,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 @media (max-width: 980px) { .contact-grid { grid-template-columns: 1fr; gap: 50px; } }
 .contact h2 { font-family: var(--font-display); font-weight: 200; font-size: clamp(48px, 6vw, 96px); line-height: 0.95; letter-spacing: -0.05em; }
 .contact h2 .strong { font-weight: 800; }
-.contact h2 em { font-style: italic; opacity: 0.7; font-weight: 300; }
+.contact h2 em { font-style: normal; opacity: 0.7; font-weight: 300; }
 .contact .lede { font-size: 17px; line-height: 1.6; max-width: 380px; margin-top: 24px; opacity: 0.75; font-weight: 300; }
 
 .wizard {
@@ -1688,7 +1737,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .wizard-summary .row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; }
 .wizard-summary .row .v { font-family: var(--font-display); font-size: 14px; font-weight: 400; letter-spacing: -0.01em; text-transform: none; opacity: 1; }
 
-/* === FOOTER — animated marquee wordmark === */
+/* === FOOTER, animated marquee wordmark === */
 .footer { background: var(--paper); color: var(--ink); padding: 80px 0 30px; position: relative; overflow: hidden; border-top: 1px solid var(--line); }
 .footer-marquee {
   margin: 0 -40px 60px; padding: 30px 0; overflow: hidden;
@@ -1702,7 +1751,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-size: clamp(64px, 10vw, 160px); line-height: 1;
 }
 .footer-marquee-track .awj { font-weight: 800; }
-.footer-marquee-track .label { font-weight: 200; font-style: italic; opacity: 0.5; font-size: 0.9em; }
+.footer-marquee-track .label { font-weight: 200; font-style: normal; opacity: 0.5; font-size: 0.9em; }
 .footer-marquee-track .dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
 .footer-marquee-track .dot.academy { background: var(--academy); }
 .footer-marquee-track .dot.sustain { background: var(--sustain); }
@@ -1928,13 +1977,13 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
    ============================================================ */
 
 /* RTL pillar pages: switch display font for Arabic content + flip
-   text alignment. The Tajawal family from Google Fonts loads Arabic
-   glyphs cleanly at the weights used elsewhere on the site. */
+   text alignment. Proxima Nova Arabic is loaded locally from
+   public/Fonts at all weights used elsewhere on the site. */
 .pillar-page--rtl,
 .pillar-page--rtl .pillar-hero-lede,
 .pillar-page--rtl .pillar-section,
 .pillar-page--rtl .news-back {
-  font-family: 'Tajawal', var(--font-display);
+  font-family: 'Proxima Nova Arabic', sans-serif;
 }
 .pillar-page--rtl .pillar-hero-title .awj { letter-spacing: -0.02em; }
 .pillar-page--rtl .pillar-service-title,
@@ -2106,25 +2155,25 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 }
 
 /* ============================================================
-   RTL overrides — apply when <html dir="rtl"> is set by the
+   RTL overrides, apply when <html dir="rtl"> is set by the
    language toggle (Arabic).
    ============================================================ */
-[dir="rtl"] body { font-family: 'Tajawal', var(--font-body); }
+[dir="rtl"] body { font-family: 'Proxima Nova Arabic', sans-serif; }
 [dir="rtl"] .wordmark,
 [dir="rtl"] .hero-headline,
 [dir="rtl"] .section-title,
 [dir="rtl"] .pillar-hero-title,
-[dir="rtl"] .news-hero-title { font-family: 'Tajawal', var(--font-display); }
+[dir="rtl"] .news-hero-title { font-family: 'Proxima Nova Arabic', sans-serif; }
 /* Keep Latin AWJ wordmarks + lockups in the Latin display font */
 [dir="rtl"] .awj,
 [dir="rtl"] .brand,
 [dir="rtl"] .pillar-hero-title .awj { font-family: var(--font-display); }
 
-/* Italic accents read awkward in Arabic — drop the italic */
+/* Italic accents read awkward in Arabic, drop the italic */
 [dir="rtl"] em,
 [dir="rtl"] .ital,
 [dir="rtl"] .hero-headline .ital { font-style: normal; }
-[dir="rtl"] .pillar-hero-title .sub { font-family: 'Tajawal', sans-serif; font-style: normal; }
+[dir="rtl"] .pillar-hero-title .sub { font-family: 'Proxima Nova Arabic', sans-serif; font-style: normal; }
 
 /* Mirror right-pointing icons inside CTAs so they still point "forward"
    along the reading direction. */
@@ -2190,7 +2239,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 /* Brand wordmark stays LTR so AWJ stays readable */
 [dir="rtl"] .footer-brand .wordmark { direction: ltr; }
 
-/* Marker dots / dashes in inline meta — keep them visible regardless */
+/* Marker dots / dashes in inline meta, keep them visible regardless */
 [dir="rtl"] .nfc-meta .dot,
 [dir="rtl"] .npf-meta .dot,
 [dir="rtl"] .am-cover-meta .dot { opacity: 0.55; }

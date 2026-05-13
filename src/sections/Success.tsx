@@ -15,7 +15,7 @@ const CASES: Case[] = [
     color: '#0069c8',
     quote: (
       <>
-        "AWJ delivered a system <em>we couldn't have built alone</em> — and trained the
+        "AWJ delivered a system <em>we couldn't have built alone</em>, and trained the
         team that runs it now."
       </>
     ),
@@ -73,7 +73,7 @@ export const Success = () => (
           </h2>
         </div>
         <p>
-          Independent outcomes from named mandates across the group — measured, audited,
+          Independent outcomes from named mandates across the group, measured, audited,
           and on the record.
         </p>
       </div>

@@ -91,7 +91,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
         <section className="pillar-section pillar-about reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">— {t('pillarPage.about')}</div>
+              <div className="eyebrow">{t('pillarPage.about')}</div>
             </div>
             <div className="pillar-about-body">
               {content.about.map((p, i) => (
@@ -104,7 +104,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
         <section className="pillar-section pillar-services reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">— {t('pillarPage.whatWeDo')}</div>
+              <div className="eyebrow">{t('pillarPage.whatWeDo')}</div>
             </div>
             <div className="pillar-service-grid reveal-stagger">
               {content.services.map((s, i) => (
@@ -128,7 +128,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
         <section className="pillar-section pillar-contact reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">— {t('pillarPage.contact')}</div>
+              <div className="eyebrow">{t('pillarPage.contact')}</div>
             </div>
             <div className="pillar-contact-grid">
               <div className="pillar-contact-info">

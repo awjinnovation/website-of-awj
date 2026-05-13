@@ -140,9 +140,7 @@ export const NavPill = () => {
 
           <a href="#services">{t('nav.services')}</a>
           <a href="#projects">{t('nav.projects')}</a>
-          <a href="#events">{t('nav.events')}</a>
           <a href="#news">{t('nav.news')}</a>
-          <a href="#blog">{t('nav.blog')}</a>
         </div>
         <button
           type="button"
@@ -197,9 +195,7 @@ export const NavPill = () => {
 
               <a href="#services" onClick={closeMobile}>{t('nav.services')}</a>
               <a href="#projects" onClick={closeMobile}>{t('nav.projects')}</a>
-              <a href="#events" onClick={closeMobile}>{t('nav.events')}</a>
               <a href="#news" onClick={closeMobile}>{t('nav.news')}</a>
-              <a href="#blog" onClick={closeMobile}>{t('nav.blog')}</a>
 
               <button
                 type="button"

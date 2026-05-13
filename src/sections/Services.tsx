@@ -20,7 +20,8 @@ export const Services = () => {
       <div className="container">
         <div className="services-head reveal">
           <div>
-            <h2 className="section-title" style={{ marginTop: 0 }}>
+            <div className="eyebrow">{t('services.eyebrow')}</div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
               {t('services.title.first')} <em>{t('services.title.second')}</em>
             </h2>
           </div>

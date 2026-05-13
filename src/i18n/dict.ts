@@ -1,7 +1,7 @@
 export type Lang = 'en' | 'ar';
 
 /**
- * Every UI string used by the site. Keep both en + ar in sync — if you add a
+ * Every UI string used by the site. Keep both en + ar in sync, if you add a
  * key to one, add it to the other. The `t()` function falls back to the en
  * value if a key is missing in ar.
  */
@@ -27,7 +27,7 @@ const en = {
   'hero.title.line2': 'Empower,',
   'hero.title.line3': 'Accelerate.',
   'hero.lede':
-    "AWJ bridges the gaps in Oman's innovation ecosystem — accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth.",
+    "AWJ bridges the gaps in Oman's innovation ecosystem, accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth.",
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
@@ -50,15 +50,16 @@ const en = {
   'pillars.prev': 'Previous',
   'pillars.next': 'Next',
   'pillars.label': 'PILLAR',
+  'pillars.eyebrowPlaceholder': 'eyebrow placeholder',
   // Per-pillar descriptions used in the carousel
   'pillar.academy.desc':
-    'Designs accredited learning systems, executive programs, and workforce platforms — equipping people and institutions for the work that does not yet exist.',
+    'Designs accredited learning systems, executive programs, and workforce platforms, equipping people and institutions for the work that does not yet exist.',
   'pillar.sustain.desc':
-    'End-to-end ESG advisory — sustainability strategy, GRI/MSX-aligned reporting, ISO certification, climate services, and an AI-powered ESG index for MSX-listed companies.',
+    'End-to-end ESG advisory, sustainability strategy, GRI/MSX-aligned reporting, ISO certification, climate services, and an AI-powered ESG index for MSX-listed companies.',
   'pillar.innovation.desc':
-    'A consulting practice for talent enablement, capability building, advanced technology, strategy, innovation management, IP, and program design — aligned with Oman Vision 2040.',
+    'A consulting practice for talent enablement, capability building, advanced technology, strategy, innovation management, IP, and program design, aligned with Oman Vision 2040.',
   'pillar.systems.desc':
-    'Mission-critical engineering and integration — infrastructure, digital backbone, and operational technology for the institutions that keep regions running.',
+    'Mission-critical engineering and integration, infrastructure, digital backbone, and operational technology for the institutions that keep regions running.',
   'pillar.meta.established': 'Established',
   'pillar.meta.reach': 'Reach',
   'pillar.meta.alumni': 'Alumni',
@@ -79,6 +80,7 @@ const en = {
   'pillar.systems.focus': 'OT · Digital',
 
   // Services bento
+  'services.eyebrow': 'Key service from each pillar',
   'services.title.first': 'What we do',
   'services.title.second': 'together.',
   'services.more': 'More services',
@@ -107,7 +109,7 @@ const en = {
   'news.title.first': 'News &',
   'news.title.second': 'announcements.',
   'news.viewAll': 'View all news',
-  'news.latest': '— Latest',
+  'news.latest': 'Latest',
   'news.allStories': 'All stories',
   'news.readStory': 'Read story',
 
@@ -150,15 +152,15 @@ const en = {
   'contact.summary.name': 'Name',
   'contact.summary.email': 'Email',
   'contact.summary.org': 'Organisation',
-  'contact.summary.dash': '—',
+  'contact.summary.dash': '-',
   'contact.back': 'Back',
   'contact.continue': 'Continue',
   'contact.send': 'Send enquiry',
-  'contact.thanks': "Thanks — we'll be in touch.",
+  'contact.thanks': "Thanks, we'll be in touch.",
 
   // Footer
   'footer.brand.desc':
-    'An integrated holding group operating across Academy, Sustain, Innovation, and Systems — building durable progress for the regions and sectors we serve.',
+    'An integrated holding group operating across Academy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
   'footer.newsletter.placeholder': 'your@email.com',
   'footer.newsletter.subscribed': 'Subscribed.',
   'footer.col.pillars': 'Pillars',
@@ -172,7 +174,7 @@ const en = {
   'footer.col.connect.careers': 'Careers',
   'footer.col.connect.press': 'Press',
   'footer.col.connect.ir': 'Investor relations',
-  'footer.copyright': '© 2026 AWJ Group · All rights reserved',
+  'footer.copyright': '© 2026 AWJ Corporate · All rights reserved',
   'footer.cities': 'Riyadh · Dubai · London · Singapore',
 
   // Pillar pages (chrome)
@@ -194,10 +196,10 @@ const en = {
   'newsPage.title.first': 'News &',
   'newsPage.title.second': 'announcements',
   'newsPage.lede':
-    'Mandates, partnerships, and program milestones from across the AWJ group — Innovation, Academy, Sustain, and Systems.',
-  'newsPage.featured': '— Featured stories',
+    'Mandates, partnerships, and program milestones from across the AWJ group, Innovation, Academy, Sustain, and Systems.',
+  'newsPage.featured': 'Featured stories',
   'newsPage.featuredTitle': 'Top of the desk.',
-  'newsPage.allEyebrow': '— All stories',
+  'newsPage.allEyebrow': 'All stories',
   'newsPage.allTitle': 'The complete archive.',
   'newsPage.filterTopic': 'Topic',
   'newsPage.filterPillar': 'Pillar',
@@ -232,7 +234,7 @@ const ar: Record<TranslationKey, string> = {
   'hero.title.line2': 'نُمكِّن،',
   'hero.title.line3': 'نُسرِّع.',
   'hero.lede':
-    'تَسد أوج الفجوات في منظومة الابتكار العُمانية — مُسرِّعةً التقنيات المستدامة، ومُمكِّنةً المواهب العُمانية الشابة، وبانيةً المؤسسات التي تُحوِّل الفرص إلى ثروة وطنية.',
+    'تَسد أوج الفجوات في منظومة الابتكار العُمانية, مُسرِّعةً التقنيات المستدامة، ومُمكِّنةً المواهب العُمانية الشابة، وبانيةً المؤسسات التي تُحوِّل الفرص إلى ثروة وطنية.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'الركائز',
@@ -255,14 +257,15 @@ const ar: Record<TranslationKey, string> = {
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
   'pillars.label': 'ركيزة',
+  'pillars.eyebrowPlaceholder': 'نص بديل',
   'pillar.academy.desc':
-    'تُصمّم منظومات تعلّم معتمدة وبرامج تنفيذية ومنصات لتنمية القوى العاملة — تُجهّز الأفراد والمؤسسات لأعمال لم تُولد بعد.',
+    'تُصمّم منظومات تعلّم معتمدة وبرامج تنفيذية ومنصات لتنمية القوى العاملة, تُجهّز الأفراد والمؤسسات لأعمال لم تُولد بعد.',
   'pillar.sustain.desc':
-    'استشارات حوكمة بيئية واجتماعية ومؤسسية متكاملة — استراتيجية الاستدامة، تقارير مواءمة GRI/MSX، شهادات ISO، خدمات المناخ، ومؤشر ESG مدعوم بالذكاء الاصطناعي للشركات المدرجة.',
+    'استشارات حوكمة بيئية واجتماعية ومؤسسية متكاملة, استراتيجية الاستدامة، تقارير مواءمة GRI/MSX، شهادات ISO، خدمات المناخ، ومؤشر ESG مدعوم بالذكاء الاصطناعي للشركات المدرجة.',
   'pillar.innovation.desc':
-    'ممارسة استشارية لتمكين الكفاءات وبناء القدرات والتقنية المتقدمة والاستراتيجية وإدارة الابتكار والملكية الفكرية وتصميم البرامج — متوافقة مع رؤية عُمان 2040.',
+    'ممارسة استشارية لتمكين الكفاءات وبناء القدرات والتقنية المتقدمة والاستراتيجية وإدارة الابتكار والملكية الفكرية وتصميم البرامج, متوافقة مع رؤية عُمان 2040.',
   'pillar.systems.desc':
-    'هندسة وتكامل للأنظمة الحرجة — البنية التحتية والعمود الرقمي والتقنية التشغيلية للمؤسسات التي تُبقي المناطق تعمل.',
+    'هندسة وتكامل للأنظمة الحرجة, البنية التحتية والعمود الرقمي والتقنية التشغيلية للمؤسسات التي تُبقي المناطق تعمل.',
   'pillar.meta.established': 'التأسيس',
   'pillar.meta.reach': 'الانتشار',
   'pillar.meta.alumni': 'الخريجون',
@@ -283,6 +286,7 @@ const ar: Record<TranslationKey, string> = {
   'pillar.systems.focus': 'تقنية تشغيلية · رقمي',
 
   // Services bento
+  'services.eyebrow': 'خدمة رئيسية من كل ركيزة',
   'services.title.first': 'ماذا نفعل',
   'services.title.second': 'معاً.',
   'services.more': 'المزيد من الخدمات',
@@ -311,7 +315,7 @@ const ar: Record<TranslationKey, string> = {
   'news.title.first': 'الأخبار',
   'news.title.second': 'والإعلانات.',
   'news.viewAll': 'عرض كل الأخبار',
-  'news.latest': '— الأحدث',
+  'news.latest': 'الأحدث',
   'news.allStories': 'كل القصص',
   'news.readStory': 'اقرأ القصة',
 
@@ -354,15 +358,15 @@ const ar: Record<TranslationKey, string> = {
   'contact.summary.name': 'الاسم',
   'contact.summary.email': 'البريد',
   'contact.summary.org': 'المؤسسة',
-  'contact.summary.dash': '—',
+  'contact.summary.dash': '-',
   'contact.back': 'السابق',
   'contact.continue': 'متابعة',
   'contact.send': 'إرسال الاستفسار',
-  'contact.thanks': 'شكراً — سنتواصل قريباً.',
+  'contact.thanks': 'شكراً, سنتواصل قريباً.',
 
   // Footer
   'footer.brand.desc':
-    'مجموعة قابضة متكاملة تعمل عبر الأكاديمية والاستدامة والابتكار والأنظمة — لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
+    'مجموعة قابضة متكاملة تعمل عبر الأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
   'footer.newsletter.placeholder': 'بريدك@الإلكتروني',
   'footer.newsletter.subscribed': 'تم الاشتراك.',
   'footer.col.pillars': 'الركائز',
@@ -376,7 +380,7 @@ const ar: Record<TranslationKey, string> = {
   'footer.col.connect.careers': 'الوظائف',
   'footer.col.connect.press': 'الصحافة',
   'footer.col.connect.ir': 'علاقات المستثمرين',
-  'footer.copyright': '© 2026 مجموعة أوج · جميع الحقوق محفوظة',
+  'footer.copyright': '© 2026 أوج Corporate · جميع الحقوق محفوظة',
   'footer.cities': 'الرياض · دبي · لندن · سنغافورة',
 
   // Pillar pages
@@ -398,10 +402,10 @@ const ar: Record<TranslationKey, string> = {
   'newsPage.title.first': 'الأخبار',
   'newsPage.title.second': 'والإعلانات',
   'newsPage.lede':
-    'تكليفات وشراكات ومحطات بارزة من مختلف مجموعة أوج — للابتكار والأكاديمية والاستدامة والأنظمة.',
-  'newsPage.featured': '— قصص مميّزة',
+    'تكليفات وشراكات ومحطات بارزة من مختلف مجموعة أوج, للابتكار والأكاديمية والاستدامة والأنظمة.',
+  'newsPage.featured': 'قصص مميّزة',
   'newsPage.featuredTitle': 'صدارة المكتب.',
-  'newsPage.allEyebrow': '— كل القصص',
+  'newsPage.allEyebrow': 'كل القصص',
   'newsPage.allTitle': 'الأرشيف الكامل.',
   'newsPage.filterTopic': 'الموضوع',
   'newsPage.filterPillar': 'الركيزة',

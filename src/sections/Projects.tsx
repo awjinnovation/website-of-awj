@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/icon-innovation.svg',
     size: 'p-big',
     summary:
-      'AWJ Innovation partnered with German University of Technology in Oman (GUtech) to create the first 3D printed building in the Middle East — a milestone in construction technology and sustainable building practices.',
+      'AWJ Innovation partnered with German University of Technology in Oman (GUtech) to create the first 3D printed building in the Middle East, a milestone in construction technology and sustainable building practices.',
     impact:
       'The project demonstrated the potential for advanced manufacturing in construction, reducing material waste by 60% and construction time by 70%. It paved the way for sustainable construction practices across the region and positioned Oman as a leader in construction technology.',
     achievements: [
@@ -69,7 +69,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/icon-innovation.svg',
     size: 'p-med',
     summary:
-      ".NXT GIG is AWJ's platform designed to empower Oman's gig economy by connecting freelancers with projects and opportunities — aligned with Oman Vision 2040's goals for economic diversification.",
+      ".NXT GIG is AWJ's platform designed to empower Oman's gig economy by connecting freelancers with projects and opportunities, aligned with Oman Vision 2040's goals for economic diversification.",
     impact:
       "The platform has revolutionized freelancing in Oman, providing opportunities for thousands of freelancers and helping businesses access specialized talent. It has become a cornerstone of Oman's digital economy.",
     achievements: [
@@ -90,7 +90,7 @@ const PROJECTS: Project[] = [
     size: 'p-sm',
     light: true,
     summary:
-      'AWJ Innovation collaborated with Oman Airports to organize AEROHACK — the largest aviation hackathon in Oman — bringing together innovators, developers and aviation experts to revolutionize the industry through technology.',
+      'AWJ Innovation collaborated with Oman Airports to organize AEROHACK, the largest aviation hackathon in Oman, bringing together innovators, developers and aviation experts to revolutionize the industry through technology.',
     impact:
       'The hackathon generated innovative solutions for aviation challenges, with winning teams receiving mentorship and incubation support. Several solutions have been piloted at Oman airports, improving passenger experience and operational efficiency.',
     achievements: [
@@ -151,7 +151,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/icon-innovation.svg',
     size: 'p-med',
     summary:
-      'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon — bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
+      'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
     impact:
       "The hackathon generated innovative urban planning solutions focusing on sustainable city development, smart infrastructure, and community-centered design. Several concepts are being integrated into Oman's spatial strategy.",
     achievements: [
@@ -171,7 +171,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/icon-sustain.svg',
     size: 'p-med',
     summary:
-      'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance — transforming fragmented philanthropy into strategic corporate social responsibility.',
+      'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance, transforming fragmented philanthropy into strategic corporate social responsibility.',
     impact:
       'This framework is establishing Oman as a regional leader in CSR governance, providing clear guidelines for corporate giving, ensuring transparency, and maximizing social impact across the nation.',
     achievements: [
@@ -222,7 +222,6 @@ export const Projects = () => {
               style={{ background: p.bgGrad }}
               onClick={() => setOpen(i)}
             >
-              <div className="pt-num">/ 0{i + 1}</div>
               <img src={p.icon} className="pt-icon" alt="" />
               <div className="pt-stat-block">
                 <div className="pt-stat">{p.stat}</div>

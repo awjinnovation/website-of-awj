@@ -9,7 +9,6 @@ import { PillarsStack } from './sections/PillarsStack';
 import { Services } from './sections/Services';
 import { Projects } from './sections/Projects';
 import { News } from './sections/News';
-import { Partners } from './sections/Partners';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
@@ -48,7 +47,6 @@ export const App = () => {
       <Services />
       <Projects />
       <News />
-      <Partners />
       <Contact />
       <Footer />
     </>

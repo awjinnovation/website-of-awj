@@ -12,7 +12,7 @@ export const Footer = () => {
               <AwjMark style={{ width: 28, marginRight: 10 }} />
               <span className="awj">AWJ</span>
               <span className="sub" style={{ marginLeft: 6 }}>
-                Group
+                Corporate
               </span>
             </div>
             <p>{t('footer.brand.desc')}</p>
@@ -67,24 +67,9 @@ export const Footer = () => {
             <a href="/pillars/innovation">AWJ Innovation</a>
             <a href="/pillars/systems">AWJ Systems</a>
           </div>
-          <div className="footer-col">
-            <h4>{t('footer.col.group')}</h4>
-            <a href="#showcase">{t('footer.col.group.companies')}</a>
-            <a href="#services">{t('footer.col.group.capabilities')}</a>
-            <a href="#projects">{t('footer.col.group.work')}</a>
-            <a href="#news">{t('footer.col.group.news')}</a>
-          </div>
-          <div className="footer-col">
-            <h4>{t('footer.col.connect')}</h4>
-            <a href="#contact">{t('footer.col.connect.contact')}</a>
-            <a href="#">{t('footer.col.connect.careers')}</a>
-            <a href="#">{t('footer.col.connect.press')}</a>
-            <a href="#">{t('footer.col.connect.ir')}</a>
-          </div>
         </div>
         <div className="footer-bottom">
           <span>{t('footer.copyright')}</span>
-          <span>{t('footer.cities')}</span>
         </div>
       </div>
     </footer>

@@ -142,7 +142,7 @@ export const PillarsStack = () => {
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
                 <div className="top-row">
-                  <div className="num">{t('pillars.label')} / {p.num}</div>
+                  <div className="num">{t('pillars.eyebrowPlaceholder')}</div>
                   <img src={p.icon} alt="" className="icon" />
                 </div>
                 <div>

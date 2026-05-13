@@ -4,7 +4,7 @@ import { useEffect } from 'react';
  * Toggles `.in` on `.reveal`, `.reveal-stagger`, and `.reveal-up`
  * elements based on whether they're intersecting the viewport.
  *
- * Unlike a one-shot reveal, this keeps observing — so when the
+ * Unlike a one-shot reveal, this keeps observing, so when the
  * auto-scroll cycle comes back to a section, its entrance animations
  * replay as if the user were arriving for the first time.
  */
