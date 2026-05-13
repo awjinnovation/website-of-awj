@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLang } from '../i18n/LangContext';
+import type { TranslationKey } from '../i18n/dict';
 
 type Row = {
   color: string;
   glow: string;
   end: number;
   suffix: string;
-  label: string;
-  desc: string;
+  labelKey: TranslationKey;
+  descKey: TranslationKey;
 };
 
 const STAT_ROWS: Row[] = [
@@ -15,32 +17,32 @@ const STAT_ROWS: Row[] = [
     glow: 'rgba(255, 107, 53, 0.18)',
     end: 50,
     suffix: '+',
-    label: 'Projects Delivered',
-    desc: 'Across infrastructure, ventures, and learning mandates.',
+    labelKey: 'stats.projects.label',
+    descKey: 'stats.projects.desc',
   },
   {
     color: 'var(--sustain)',
     glow: 'rgba(0, 168, 150, 0.18)',
     end: 500,
     suffix: '+',
-    label: 'Professionals Trained',
-    desc: 'Operators, engineers, and educators upskilled in-house.',
+    labelKey: 'stats.professionals.label',
+    descKey: 'stats.professionals.desc',
   },
   {
     color: 'var(--innovation)',
     glow: 'rgba(255, 138, 0, 0.18)',
     end: 25,
     suffix: '+',
-    label: 'Strategic Partners',
-    desc: 'Long-term partners across the GCC, Asia, and Africa.',
+    labelKey: 'stats.partners.label',
+    descKey: 'stats.partners.desc',
   },
   {
     color: 'var(--systems)',
     glow: 'rgba(0, 105, 200, 0.18)',
     end: 10,
     suffix: '+',
-    label: 'Years Combined Experience',
-    desc: 'Founding team operating expertise pooled at AWJ.',
+    labelKey: 'stats.experience.label',
+    descKey: 'stats.experience.desc',
   },
 ];
 
@@ -124,26 +126,29 @@ const StatNum = ({ end, suffix }: { end: number; suffix: string }) => {
   );
 };
 
-export const Stats = () => (
-  <section className="stats-band" data-screen-label="02 Stats">
-    <div className="stats-band-row container reveal-stagger">
-      {STAT_ROWS.map((s, i) => (
-        <div
-          className="stat-col"
-          key={i}
-          style={
-            { '--accent': s.color, '--accent-glow': s.glow } as React.CSSProperties
-          }
-        >
-          <div className="stat-col-top">
-            <span className="stat-label">{s.label}</span>
+export const Stats = () => {
+  const { t } = useLang();
+  return (
+    <section className="stats-band" data-screen-label="02 Stats">
+      <div className="stats-band-row container reveal-stagger">
+        {STAT_ROWS.map((s, i) => (
+          <div
+            className="stat-col"
+            key={i}
+            style={
+              { '--accent': s.color, '--accent-glow': s.glow } as React.CSSProperties
+            }
+          >
+            <div className="stat-col-top">
+              <span className="stat-label">{t(s.labelKey)}</span>
+            </div>
+            <StatNum end={s.end} suffix={s.suffix} />
+            <div className="stat-foot">
+              <div className="stat-desc">{t(s.descKey)}</div>
+            </div>
           </div>
-          <StatNum end={s.end} suffix={s.suffix} />
-          <div className="stat-foot">
-            <div className="stat-desc">{s.desc}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+        ))}
+      </div>
+    </section>
+  );
+};

@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useLang } from '../i18n/LangContext';
+import type { TranslationKey } from '../i18n/dict';
+
+type MetaRow = { labelKey: TranslationKey; valueKey?: TranslationKey; literal?: string };
 
 type PillarItem = {
   id: string;
@@ -6,8 +10,8 @@ type PillarItem = {
   num: string;
   cls: string;
   icon: string;
-  desc: string;
-  meta: [string, string][];
+  descKey: TranslationKey;
+  meta: MetaRow[];
 };
 
 const PILLAR_DATA: PillarItem[] = [
@@ -17,11 +21,11 @@ const PILLAR_DATA: PillarItem[] = [
     num: '01 / 04',
     cls: 'stack-card-academy',
     icon: '/assets/icon-academy.svg?v=3',
-    desc: 'Designs accredited learning systems, executive programs, and workforce platforms — equipping people and institutions for the work that does not yet exist.',
+    descKey: 'pillar.academy.desc',
     meta: [
-      ['Established', '2009'],
-      ['Reach', '12 countries'],
-      ['Alumni', '38,000+'],
+      { labelKey: 'pillar.meta.established', literal: '2009' },
+      { labelKey: 'pillar.meta.reach', valueKey: 'pillar.academy.reach' },
+      { labelKey: 'pillar.meta.alumni', valueKey: 'pillar.academy.alumni' },
     ],
   },
   {
@@ -30,11 +34,11 @@ const PILLAR_DATA: PillarItem[] = [
     num: '02 / 04',
     cls: 'stack-card-sustain',
     icon: '/assets/icon-sustain.svg',
-    desc: 'End-to-end ESG advisory — sustainability strategy, GRI/MSX-aligned reporting, ISO certification, climate services, and an AI-powered ESG index for MSX-listed companies.',
+    descKey: 'pillar.sustain.desc',
     meta: [
-      ['Partner', 'CSR Company Intl.'],
-      ['Reach', '70+ countries'],
-      ['Focus', 'ESG · Reporting · AI'],
+      { labelKey: 'pillar.meta.partner', valueKey: 'pillar.sustain.partner' },
+      { labelKey: 'pillar.meta.reach', valueKey: 'pillar.sustain.reach' },
+      { labelKey: 'pillar.meta.focus', valueKey: 'pillar.sustain.focus' },
     ],
   },
   {
@@ -43,11 +47,11 @@ const PILLAR_DATA: PillarItem[] = [
     num: '03 / 04',
     cls: 'stack-card-innovation',
     icon: '/assets/icon-innovation.svg',
-    desc: 'A consulting practice for talent enablement, capability building, advanced technology, strategy, innovation management, IP, and program design — aligned with Oman Vision 2040.',
+    descKey: 'pillar.innovation.desc',
     meta: [
-      ['Based', 'Muscat, Oman'],
-      ['Sectors', 'Government · Private'],
-      ['Focus', 'Talent · Tech · Strategy'],
+      { labelKey: 'pillar.meta.based', valueKey: 'pillar.innovation.based' },
+      { labelKey: 'pillar.meta.sectors', valueKey: 'pillar.innovation.sectors' },
+      { labelKey: 'pillar.meta.focus', valueKey: 'pillar.innovation.focus' },
     ],
   },
   {
@@ -56,28 +60,26 @@ const PILLAR_DATA: PillarItem[] = [
     num: '04 / 04',
     cls: 'stack-card-systems',
     icon: '/assets/icon-systems.svg',
-    desc: 'Mission-critical engineering and integration — infrastructure, digital backbone, and operational technology for the institutions that keep regions running.',
+    descKey: 'pillar.systems.desc',
     meta: [
-      ['Established', '2003'],
-      ['Mandates', '240+'],
-      ['Focus', 'OT · Digital'],
+      { labelKey: 'pillar.meta.established', literal: '2003' },
+      { labelKey: 'pillar.meta.mandates', valueKey: 'pillar.systems.mandates' },
+      { labelKey: 'pillar.meta.focus', valueKey: 'pillar.systems.focus' },
     ],
   },
 ];
 
 export const PillarsStack = () => {
+  const { t } = useLang();
   const [idx, setIdx] = useState(0);
   const total = PILLAR_DATA.length;
 
-  // Auto-advance to the next card every 6s. Re-arms whenever idx
-  // changes, so user clicks (arrows / dots / drag) effectively
-  // reset the 6s window before the next auto-rotation.
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const t = window.setTimeout(() => {
+    const tmr = window.setTimeout(() => {
       setIdx((i) => (i + 1) % total);
     }, 6000);
-    return () => window.clearTimeout(t);
+    return () => window.clearTimeout(tmr);
   }, [idx, total]);
 
   const cardOffset = (i: number): CSSProperties => {
@@ -127,15 +129,9 @@ export const PillarsStack = () => {
       <div className="container pillars-stack-layout">
         <div className="pillars-stack-head reveal">
           <h2 className="section-title" style={{ marginTop: 0 }}>
-            AWJ <em>Pillars</em>
+            {t('pillars.title.first')} <em>{t('pillars.title.second')}</em>
           </h2>
-          <p>
-            AWJ Corporate operates through four pillars: <strong>AWJ Academy</strong>{' '}
-            develops people and institutions, <strong>AWJ Sustain</strong> drives
-            sustainability transformation, <strong>AWJ Innovation</strong> enables talent,
-            capability, and digital transformation, and <strong>AWJ Systems</strong>{' '}
-            integrates infrastructure, digital backbone, and operational technology.
-          </p>
+          <p>{t('pillars.intro')}</p>
         </div>
         <div className="pillars-stack-right">
           <div
@@ -146,7 +142,7 @@ export const PillarsStack = () => {
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
                 <div className="top-row">
-                  <div className="num">PILLAR / {p.num}</div>
+                  <div className="num">{t('pillars.label')} / {p.num}</div>
                   <img src={p.icon} alt="" className="icon" />
                 </div>
                 <div>
@@ -154,12 +150,12 @@ export const PillarsStack = () => {
                     <span className="awj">AWJ</span>
                     <span className="sub">{p.name}</span>
                   </div>
-                  <p className="desc">{p.desc}</p>
+                  <p className="desc">{t(p.descKey)}</p>
                   <div className="meta-row">
-                    {p.meta.map(([k, v]) => (
-                      <div key={k}>
-                        <div className="m-k">{k}</div>
-                        <div className="m-v">{v}</div>
+                    {p.meta.map((m, j) => (
+                      <div key={j}>
+                        <div className="m-k">{t(m.labelKey)}</div>
+                        <div className="m-v">{m.valueKey ? t(m.valueKey) : m.literal}</div>
                       </div>
                     ))}
                   </div>
@@ -171,7 +167,7 @@ export const PillarsStack = () => {
             <button
               className="stack-btn"
               onClick={() => setIdx((idx - 1 + total) % total)}
-              aria-label="Previous"
+              aria-label={t('pillars.prev')}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
@@ -196,7 +192,7 @@ export const PillarsStack = () => {
             <button
               className="stack-btn"
               onClick={() => setIdx((idx + 1) % total)}
-              aria-label="Next"
+              aria-label={t('pillars.next')}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path

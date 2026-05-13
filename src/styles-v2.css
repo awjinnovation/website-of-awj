@@ -123,6 +123,30 @@ button { font-family: inherit; }
 .nav-pill .cta:hover { transform: translateY(-1px); }
 .nav-pill.on-dark .cta { background: var(--paper); color: var(--ink); }
 
+/* Language toggle (small EN/AR pill) */
+.nav-lang {
+  background: none; border: 1px solid rgba(12, 14, 20, 0.18);
+  color: inherit;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 7px 11px; border-radius: 999px;
+  cursor: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  margin: 0 2px;
+}
+.nav-lang:hover { background: rgba(12, 14, 20, 0.06); }
+.nav-pill.on-dark .nav-lang { border-color: rgba(255, 255, 255, 0.22); }
+.nav-pill.on-dark .nav-lang:hover { background: rgba(255, 255, 255, 0.1); }
+.nav-mobile-lang {
+  background: none; border: 1px solid rgba(12, 14, 20, 0.18);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 12px 16px; border-radius: 999px;
+  margin: 12px 14px 0;
+  align-self: flex-start;
+  cursor: none;
+}
+
 /* Hamburger button — hidden on desktop, shown on small screens */
 .nav-burger {
   display: none;
@@ -2084,3 +2108,97 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   .pillar-cta-primary,
   .pillar-cta-secondary { padding: 12px 18px; font-size: 12px; }
 }
+
+/* ============================================================
+   RTL overrides — apply when <html dir="rtl"> is set by the
+   language toggle (Arabic).
+   ============================================================ */
+[dir="rtl"] body { font-family: 'Tajawal', var(--font-body); }
+[dir="rtl"] .wordmark,
+[dir="rtl"] .hero-headline,
+[dir="rtl"] .section-title,
+[dir="rtl"] .pillar-hero-title,
+[dir="rtl"] .news-hero-title { font-family: 'Tajawal', var(--font-display); }
+/* Keep Latin AWJ wordmarks + lockups in the Latin display font */
+[dir="rtl"] .awj,
+[dir="rtl"] .brand,
+[dir="rtl"] .pillar-hero-title .awj { font-family: var(--font-display); }
+
+/* Italic accents read awkward in Arabic — drop the italic */
+[dir="rtl"] em,
+[dir="rtl"] .ital,
+[dir="rtl"] .hero-headline .ital { font-style: normal; }
+[dir="rtl"] .pillar-hero-title .sub { font-family: 'Tajawal', sans-serif; font-style: normal; }
+
+/* Mirror right-pointing icons inside CTAs so they still point "forward"
+   along the reading direction. */
+[dir="rtl"] .hero-cta-primary svg,
+[dir="rtl"] .pillar-cta-primary svg,
+[dir="rtl"] .pillars-trigger .pillars-chev,
+[dir="rtl"] .wizard-next svg,
+[dir="rtl"] .news-viewall svg,
+[dir="rtl"] .news-recent-link svg,
+[dir="rtl"] .nfc-read svg,
+[dir="rtl"] .nri-arrow svg,
+[dir="rtl"] .bento-cta svg,
+[dir="rtl"] .footer-newsletter button svg,
+[dir="rtl"] .nav-mobile-cta svg {
+  transform: scaleX(-1);
+}
+/* Back-arrow stays semantically pointing toward the home, so it flips too. */
+[dir="rtl"] .news-back svg,
+[dir="rtl"] .wizard-back svg { transform: scaleX(-1); }
+
+/* Hero text: in RTL, anchor to the right side */
+[dir="rtl"] .hero-v3-left,
+[dir="rtl"] .pillar-hero .container,
+[dir="rtl"] .news-hero .container { text-align: right; }
+[dir="rtl"] .hero-eyebrow,
+[dir="rtl"] .hero-ctas,
+[dir="rtl"] .hero-headline { text-align: right; }
+[dir="rtl"] .hero-headline .line { text-align: right; }
+
+/* Section heads on the landing should also right-align */
+[dir="rtl"] .services-head,
+[dir="rtl"] .projects-head,
+[dir="rtl"] .news-head,
+[dir="rtl"] .partners-head,
+[dir="rtl"] .success-head,
+[dir="rtl"] .pillars-stack-head { text-align: right; }
+
+/* News recent list: numeric date / category should swap edges */
+[dir="rtl"] .news-recent-item a { direction: rtl; }
+
+/* Bento card icon anchored bottom-LEFT in RTL instead of bottom-right */
+[dir="rtl"] .bento-card .icon { right: auto; left: -20px; }
+[dir="rtl"] .bento-card.b-1 .icon { right: auto; left: 0; }
+[dir="rtl"] .bento-card.b-1 { background-position: 0 100%; }
+
+/* Service card accent rule sits on the leading edge (right in RTL) */
+[dir="rtl"] .pillar-service-card::before { left: auto; right: 28px; }
+
+/* Pillar dropdown / nav links don't need direction changes since
+   the pill itself is centered; chip logos contain English wordmarks
+   so they stay LTR. */
+[dir="rtl"] .pillars-panel { direction: ltr; }
+
+/* Contact wizard rows align right */
+[dir="rtl"] .wizard-summary .row { text-align: right; }
+[dir="rtl"] .wizard-summary .row .v { text-align: left; }
+
+/* Footer columns + bottom bar */
+[dir="rtl"] .footer-base,
+[dir="rtl"] .footer-bottom,
+[dir="rtl"] .footer-col,
+[dir="rtl"] .footer-brand { text-align: right; }
+/* Brand wordmark stays LTR so AWJ stays readable */
+[dir="rtl"] .footer-brand .wordmark { direction: ltr; }
+
+/* Marker dots / dashes in inline meta — keep them visible regardless */
+[dir="rtl"] .nfc-meta .dot,
+[dir="rtl"] .npf-meta .dot,
+[dir="rtl"] .am-cover-meta .dot { opacity: 0.55; }
+
+/* Hero pillar chips: in RTL, anchor to the left side */
+[dir="rtl"] .hero-pillar-chips { align-items: flex-start; }
+[dir="rtl"] .chips-row { justify-content: flex-start; }

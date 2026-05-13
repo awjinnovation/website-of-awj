@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLang } from '../i18n/LangContext';
 
 type Project = {
   name: string;
@@ -182,6 +183,7 @@ const PROJECTS: Project[] = [
 ];
 
 export const Projects = () => {
+  const { t } = useLang();
   const [open, setOpen] = useState<number | null>(null);
 
   useEffect(() => {
@@ -205,9 +207,9 @@ export const Projects = () => {
       <div className="container">
         <div className="projects-head reveal">
           <div>
-            <div className="eyebrow">Selected projects</div>
+            <div className="eyebrow">{t('projects.eyebrow')}</div>
             <h2 className="section-title" style={{ marginTop: 24 }}>
-              Success <em>stories.</em>
+              {t('projects.title.first')} <em>{t('projects.title.second')}</em>
             </h2>
           </div>
         </div>
@@ -264,7 +266,7 @@ export const Projects = () => {
                 type="button"
                 className="pm-close"
                 onClick={() => setOpen(null)}
-                aria-label="Close"
+                aria-label={t('projects.modal.close')}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path
@@ -281,7 +283,7 @@ export const Projects = () => {
               <p className="pm-summary">{PROJECTS[open].summary}</p>
               <p className="pm-impact">{PROJECTS[open].impact}</p>
               <div className="pm-achievements">
-                <div className="pm-ach-head">Key achievements</div>
+                <div className="pm-ach-head">{t('projects.modal.achievements')}</div>
                 <div className="pm-ach-grid">
                   {PROJECTS[open].achievements.map((a, j) => (
                     <div key={j} className="pm-ach">

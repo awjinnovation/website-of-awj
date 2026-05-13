@@ -1,0 +1,47 @@
+1. Who are we? 
+
+AWJ Systems is the specialist AI and software engineering arm of AWJ. Based in Muscat, we partner with government entities, large enterprises, and fast-moving businesses across Oman and the GCC to deliver technology that works flawlessly on day one—and scales securely for the future. 
+
+We carry AWJ’s core purpose into the digital realm: making innovation meaningful. For us, that means building the digital engines that propel our clients toward their most ambitious goals. We measure our success by how effectively our systems empower government and enterprise to deliver on their core missions. Because this work is foundational to our clients' success, it must be uncompromising: software that accelerates growth while holding up under rigorous audit, AI that solves actual operational bottlenecks, and national-scale infrastructure engineered locally by the people who rely on it. 
+
+Our operating philosophy is built on engineering excellence and velocity. We are a dedicated team of full-stack developers, ML engineers, and expert designers led by founders with international experience at some of the world’s best institutions. We leverage rigorous automation, highly refined reusable architectures, and purpose-built AI workflows as force multipliers. For our clients, this means rapid time-to-market without ever compromising on enterprise-grade stability. By engineering the manual toil out of the development lifecycle, our experts dedicate their full attention to solving your hardest domain problems. 
+
+We don't just build for our clients; we build for the future. Between engagements, our team conducts deep-tech R&D—from satellite IoT economics to generative diffusion models for sustainable chemistry. We bring this compounding technical edge to every project we ship, ensuring our clients always benefit from the absolute frontier of what's possible. 
+
+ 
+
+2. What do we do? 
+
+We architect, develop, and integrate enterprise-grade software and production AI for institutions that require strict security, absolute reliability, and localized data sovereignty. 
+
+The single largest expression of this mandate is the Oman AI Studio, which AWJ Systems proudly operates on behalf of the Ministry of Transport, Communications and Information Technology (MTCIT). We manage the platforms, model deployments, and engineering infrastructure that power some of Oman's national AI capability. Our portfolio also includes mission-critical deployments for the Ministry of Social Development, the National Centre for Statistics and Information, and leading enterprises like Nama Group. 
+
+Our services fall into three core pillars: 
+
+Advise (Digital Transformation): We guide ministries and enterprises through AI adoption, modernization roadmaps, and complex tender preparations. We help you scope the real problem, write the brief, and choose the right path forward even when that means advising where AI isn't the right solution. 
+
+Build (Custom Software & AI): We deliver greenfield solutions, from high-performance web platforms, cross-platform mobile applications to custom machine-learning models. Your models are trained on your data, deployed in your environment, and owned by you. 
+
+Augment (AI Integration): We modernize and inject AI and automation into your existing operational workflows. By integrating leading models directly into the systems your team already uses, we engineer out the manual toil without requiring expensive, disruptive rebuilds. 
+
+We design hybrid and localized cloud architectures that strictly adhere to data residency laws. Whether hosted in-country for Oman-based buyers or scaled internationally for pan-GCC enterprises, your data stays exactly where regulation dictates. 
+
+ 
+
+3. How can people reach us? 
+
+We operate from Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman, aligned with standard Muscat working hours (Sunday to Thursday). 
+
+The most efficient way to start a conversation is through the contact form on our website. This ensures your inquiry is instantly routed to the right engineering or strategy specialist and provides the written audit trail often required by formal procurement and tender processes. 
+
+Direct Contact: 
+
+Email: systems@awj.om 
+
+Phone: +968 7222 5178 
+
+We prefer to engage early. Whether you have a fully scoped RFP, a rough project brief, or are simply exploring how AI might solve a specific operational bottleneck, we want to hear from you. Attaching any available specifications or context to your initial message helps us make our very first conversation highly actionable. 
+
+(Note: In-person office visits are by appointment, though our team frequently travels to client premises for enterprise and government consultations.) 
+
+ 

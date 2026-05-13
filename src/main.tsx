@@ -4,6 +4,7 @@ import { App } from './App';
 import { NewsPage } from './pages/NewsPage';
 import { PillarPage } from './pages/PillarPage';
 import { isPillarId, type PillarId } from './data/pillars';
+import { LangProvider } from './i18n/LangContext';
 import './styles-v2.css';
 import './news-page.css';
 
@@ -35,6 +36,8 @@ if (!rootEl) throw new Error('Missing #root element');
 
 createRoot(rootEl).render(
   <StrictMode>
-    <Router />
+    <LangProvider>
+      <Router />
+    </LangProvider>
   </StrictMode>,
 );

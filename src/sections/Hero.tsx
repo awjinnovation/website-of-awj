@@ -1,4 +1,5 @@
 import { Magnetic } from '../components/Magnetic';
+import { useLang } from '../i18n/LangContext';
 
 const PILLAR_LOGOS = [
   { id: 'academy', name: 'Academy', logo: '/assets/logo-academy-onDark.svg' },
@@ -8,6 +9,8 @@ const PILLAR_LOGOS = [
 ] as const;
 
 export const Hero = () => {
+  const { t } = useLang();
+
   return (
     <section className="hero-v3" data-screen-label="01 Hero">
       <div className="hero-mesh"></div>
@@ -17,28 +20,26 @@ export const Hero = () => {
         <div className="hero-v3-left">
           <div className="hero-eyebrow reveal-up">
             <span className="dot"></span>
-            Sustainable technologies & innovation development Co.
+            {t('hero.eyebrow')}
           </div>
           <h1 className="hero-headline">
             <span className="line reveal-up" style={{ animationDelay: '0.1s' }}>
-              Bridge,
+              {t('hero.title.line1')}
             </span>
             <span className="line reveal-up" style={{ animationDelay: '0.2s' }}>
-              Empower,
+              {t('hero.title.line2')}
             </span>
             <span className="line reveal-up ital" style={{ animationDelay: '0.3s' }}>
-              Accelerate.
+              {t('hero.title.line3')}
             </span>
           </h1>
           <p className="hero-lede reveal-up" style={{ animationDelay: '0.45s' }}>
-            AWJ bridges the gaps in Oman's innovation ecosystem — accelerating sustainable
-            technologies, empowering young Omani talent, and building the institutions that
-            turn opportunity into national wealth.
+            {t('hero.lede')}
           </p>
           <div className="hero-ctas reveal-up" style={{ animationDelay: '0.55s' }}>
             <Magnetic strength={0.3}>
               <a href="#contact" className="hero-cta-primary">
-                Get in touch
+                {t('hero.cta.primary')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M5 12h14M13 6l6 6-6 6"
@@ -51,7 +52,7 @@ export const Hero = () => {
               </a>
             </Magnetic>
             <a href="#pillars" className="hero-cta-secondary">
-              Explore the group
+              {t('hero.cta.secondary')}
             </a>
           </div>
         </div>
@@ -86,7 +87,7 @@ export const Hero = () => {
             aria-hidden="true"
           />
           <div className="hero-pillar-chips">
-            <div className="chips-label">Pillars</div>
+            <div className="chips-label">{t('hero.chips.label')}</div>
             <div className="chips-row">
               {PILLAR_LOGOS.map((p, i) => (
                 <a

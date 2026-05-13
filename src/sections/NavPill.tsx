@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { PILLARS } from '../data/pillars';
+import { useLang } from '../i18n/LangContext';
 
 export const NavPill = () => {
+  const { t, lang, toggle: toggleLang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [onDark, setOnDark] = useState(true);
   const [pillarsOpen, setPillarsOpen] = useState(false);
@@ -28,7 +30,6 @@ export const NavPill = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close desktop dropdown on Escape, outside click.
   useEffect(() => {
     if (!pillarsOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -46,7 +47,6 @@ export const NavPill = () => {
     };
   }, [pillarsOpen]);
 
-  // Mobile menu: lock body scroll while open, close on Escape.
   useEffect(() => {
     if (!mobileOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -85,7 +85,7 @@ export const NavPill = () => {
           <img src="/assets/awj-horizontal.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
-          <a href="#about">About</a>
+          <a href="#about">{t('nav.about')}</a>
 
           <div
             className={`pillars-dropdown ${pillarsOpen ? 'is-open' : ''}`}
@@ -99,7 +99,7 @@ export const NavPill = () => {
               aria-expanded={pillarsOpen}
               aria-haspopup="menu"
             >
-              Pillars
+              {t('nav.pillars')}
               <svg
                 className="pillars-chev"
                 width="10"
@@ -138,21 +138,30 @@ export const NavPill = () => {
             </div>
           </div>
 
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#events">Events</a>
-          <a href="#news">News</a>
-          <a href="#blog">Blog</a>
+          <a href="#services">{t('nav.services')}</a>
+          <a href="#projects">{t('nav.projects')}</a>
+          <a href="#events">{t('nav.events')}</a>
+          <a href="#news">{t('nav.news')}</a>
+          <a href="#blog">{t('nav.blog')}</a>
         </div>
+        <button
+          type="button"
+          className="nav-lang"
+          onClick={toggleLang}
+          aria-label={t('nav.langToggle.label')}
+          title={t('nav.langToggle.label')}
+        >
+          {t('nav.langToggle')}
+        </button>
         <Magnetic strength={0.25}>
           <a href="#contact" className="cta">
-            Get in touch
+            {t('nav.cta')}
           </a>
         </Magnetic>
         <button
           type="button"
           className="nav-burger"
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((o) => !o)}
         >
@@ -164,10 +173,10 @@ export const NavPill = () => {
         <div className="nav-mobile-sheet" onClick={closeMobile}>
           <div className="nav-mobile-panel" onClick={(e) => e.stopPropagation()}>
             <div className="nav-mobile-list">
-              <a href="#about" onClick={closeMobile}>About</a>
+              <a href="#about" onClick={closeMobile}>{t('nav.about')}</a>
 
               <div className="nav-mobile-group">
-                <div className="nav-mobile-group-label">Pillars</div>
+                <div className="nav-mobile-group-label">{t('nav.pillars')}</div>
                 {PILLARS.map((p) => {
                   const style: CSSProperties = { ['--accent' as string]: p.accent };
                   return (
@@ -186,15 +195,26 @@ export const NavPill = () => {
                 })}
               </div>
 
-              <a href="#services" onClick={closeMobile}>Services</a>
-              <a href="#projects" onClick={closeMobile}>Projects</a>
-              <a href="#events" onClick={closeMobile}>Events</a>
-              <a href="#news" onClick={closeMobile}>News</a>
-              <a href="#blog" onClick={closeMobile}>Blog</a>
+              <a href="#services" onClick={closeMobile}>{t('nav.services')}</a>
+              <a href="#projects" onClick={closeMobile}>{t('nav.projects')}</a>
+              <a href="#events" onClick={closeMobile}>{t('nav.events')}</a>
+              <a href="#news" onClick={closeMobile}>{t('nav.news')}</a>
+              <a href="#blog" onClick={closeMobile}>{t('nav.blog')}</a>
+
+              <button
+                type="button"
+                className="nav-mobile-lang"
+                onClick={() => {
+                  toggleLang();
+                  closeMobile();
+                }}
+              >
+                {lang === 'en' ? 'العربية' : 'English'}
+              </button>
             </div>
 
             <a href="#contact" className="nav-mobile-cta" onClick={closeMobile}>
-              Get in touch
+              {t('nav.cta')}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M5 12h14M13 6l6 6-6 6"

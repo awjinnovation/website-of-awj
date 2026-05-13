@@ -1,6 +1,8 @@
 import { NEWS } from '../data/news';
+import { useLang } from '../i18n/LangContext';
 
 export const News = () => {
+  const { t } = useLang();
   const featured = NEWS.filter((n) => n.featured).slice(0, 2);
   const recent = NEWS.filter((n) => !n.featured).slice(0, 4);
 
@@ -10,11 +12,11 @@ export const News = () => {
         <div className="news-head reveal">
           <div>
             <h2 className="section-title" style={{ marginTop: 24 }}>
-              News &amp; <em>announcements.</em>
+              {t('news.title.first')} <em>{t('news.title.second')}</em>
             </h2>
           </div>
           <a className="news-viewall" href="/news">
-            View all news
+            {t('news.viewAll')}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path
                 d="M5 12h14M13 5l7 7-7 7"
@@ -43,7 +45,7 @@ export const News = () => {
                 <h3 className="nfc-title">{n.title}</h3>
                 <p className="nfc-dek">{n.dek}</p>
                 <span className="nfc-read">
-                  Read story
+                  {t('news.readStory')}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12h14M13 5l7 7-7 7"
@@ -61,9 +63,9 @@ export const News = () => {
 
         <div className="news-recent reveal">
           <div className="news-recent-head">
-            <span className="eyebrow">— Latest</span>
+            <span className="eyebrow">{t('news.latest')}</span>
             <a className="news-recent-link" href="/news">
-              All stories ({NEWS.length})
+              {t('news.allStories')} ({NEWS.length})
             </a>
           </div>
           <ul className="news-recent-list">

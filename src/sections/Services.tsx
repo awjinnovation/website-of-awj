@@ -1,3 +1,4 @@
+import { useLang } from '../i18n/LangContext';
 import { AwjMark } from '../components/AwjMark';
 
 const Arrow = () => (
@@ -12,95 +13,93 @@ const Arrow = () => (
   </svg>
 );
 
-export const Services = () => (
-  <section className="services mesh-bg" id="services" data-screen-label="05 Services">
-    <div className="container">
-      <div className="services-head reveal">
-        <div>
-          <h2 className="section-title" style={{ marginTop: 0 }}>
-            What we do <em>together.</em>
-          </h2>
-        </div>
-      </div>
-      <div className="bento reveal-stagger">
-        <div className="bento-card b-1 bento-ink">
+export const Services = () => {
+  const { t } = useLang();
+  return (
+    <section className="services mesh-bg" id="services" data-screen-label="05 Services">
+      <div className="container">
+        <div className="services-head reveal">
           <div>
-            <div className="title">
-              Strategic <span style={{ fontWeight: 800 }}>Advisory</span>
-            </div>
-            <p className="body" style={{ marginTop: 18 }}>
-              Operating-model design, capital strategy, and group-level transformation
-              programs delivered with cross-pillar discipline.
-            </p>
+            <h2 className="section-title" style={{ marginTop: 0 }}>
+              {t('services.title.first')} <em>{t('services.title.second')}</em>
+            </h2>
           </div>
-          <a
-            href="#services"
-            className="bento-cta"
-            onClick={(e) => e.preventDefault()}
-          >
-            More services
-            <Arrow />
-          </a>
-          <AwjMark className="icon" />
         </div>
-        <div className="bento-card b-2 bento-academy">
-          <div className="title">Capability Building</div>
-          <p className="body">
-            Accredited learning systems and workforce development at scale.
-          </p>
-          <a
-            href="#services"
-            className="bento-cta"
-            onClick={(e) => e.preventDefault()}
-          >
-            More services
-            <Arrow />
-          </a>
-          <img src="/assets/icon-academy.svg?v=3" className="icon" alt="" />
-        </div>
-        <div className="bento-card b-3 bento-sustain">
-          <div className="title">ISO Standards Implementation &amp; Certification</div>
-          <p className="body">
-            Practical implementation, auditing and certification support across ISO
-            26000, 20121, 19600, 20400 &amp; 37001.
-          </p>
-          <a
-            href="#services"
-            className="bento-cta"
-            onClick={(e) => e.preventDefault()}
-          >
-            More services
-            <Arrow />
-          </a>
-          <img src="/assets/icon-sustain.svg" className="icon" alt="" />
-        </div>
-        <div className="bento-card b-4 bento-innovation">
-          <div className="title">Innovation &amp; Capability</div>
-          <p className="body">Talent, advanced tech &amp; strategy.</p>
-          <a
-            href="#services"
-            className="bento-cta"
-            onClick={(e) => e.preventDefault()}
-          >
-            More services
-            <Arrow />
-          </a>
-          <img src="/assets/icon-innovation.svg" className="icon" alt="" />
-        </div>
-        <div className="bento-card b-5 bento-systems">
-          <div className="title">Systems Integration</div>
-          <p className="body">Mission-critical engineering &amp; OT.</p>
-          <a
-            href="#services"
-            className="bento-cta"
-            onClick={(e) => e.preventDefault()}
-          >
-            More services
-            <Arrow />
-          </a>
-          <img src="/assets/icon-systems.svg" className="icon" alt="" />
+        <div className="bento reveal-stagger">
+          <div className="bento-card b-1 bento-ink">
+            <div>
+              <div className="title">
+                {t('services.b1.title.line1')}{' '}
+                <span style={{ fontWeight: 800 }}>{t('services.b1.title.line2')}</span>
+              </div>
+              <p className="body" style={{ marginTop: 18 }}>
+                {t('services.b1.body')}
+              </p>
+            </div>
+            <a
+              href="#services"
+              className="bento-cta"
+              onClick={(e) => e.preventDefault()}
+            >
+              {t('services.more')}
+              <Arrow />
+            </a>
+            <AwjMark className="icon" />
+          </div>
+          <div className="bento-card b-2 bento-academy">
+            <div className="title">{t('services.b2.title')}</div>
+            <p className="body">{t('services.b2.body')}</p>
+            <a
+              href="#services"
+              className="bento-cta"
+              onClick={(e) => e.preventDefault()}
+            >
+              {t('services.more')}
+              <Arrow />
+            </a>
+            <img src="/assets/icon-academy.svg?v=3" className="icon" alt="" />
+          </div>
+          <div className="bento-card b-3 bento-sustain">
+            <div className="title">{t('services.b3.title')}</div>
+            <p className="body">{t('services.b3.body')}</p>
+            <a
+              href="#services"
+              className="bento-cta"
+              onClick={(e) => e.preventDefault()}
+            >
+              {t('services.more')}
+              <Arrow />
+            </a>
+            <img src="/assets/icon-sustain.svg" className="icon" alt="" />
+          </div>
+          <div className="bento-card b-4 bento-innovation">
+            <div className="title">{t('services.b4.title')}</div>
+            <p className="body">{t('services.b4.body')}</p>
+            <a
+              href="#services"
+              className="bento-cta"
+              onClick={(e) => e.preventDefault()}
+            >
+              {t('services.more')}
+              <Arrow />
+            </a>
+            <img src="/assets/icon-innovation.svg" className="icon" alt="" />
+          </div>
+          <div className="bento-card b-5 bento-systems">
+            <div className="title">{t('services.b5.title')}</div>
+            <p className="body">{t('services.b5.body')}</p>
+            <a
+              href="#services"
+              className="bento-cta"
+              onClick={(e) => e.preventDefault()}
+            >
+              {t('services.more')}
+              <Arrow />
+            </a>
+            <img src="/assets/icon-systems.svg" className="icon" alt="" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};

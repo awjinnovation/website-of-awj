@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Magnetic } from '../components/Magnetic';
+import { useLang } from '../i18n/LangContext';
 
 type FormData = {
   pillar: string;
@@ -10,26 +11,8 @@ type FormData = {
   message: string;
 };
 
-const PILLARS_OPT = [
-  { id: 'academy', label: 'AWJ Academy', sub: 'Capability building', color: '#9674ce' },
-  { id: 'sustain', label: 'AWJ Sustain', sub: 'Climate & ESG', color: '#00a19d' },
-  {
-    id: 'innovation',
-    label: 'AWJ Innovation',
-    sub: 'Ventures & R&D',
-    color: '#ff6b00',
-  },
-  { id: 'systems', label: 'AWJ Systems', sub: 'Engineering & infra', color: '#0069c8' },
-];
-
-const AREAS = [
-  { id: 'advisory', label: 'Strategic advisory', sub: 'Group-level mandates' },
-  { id: 'delivery', label: 'Project delivery', sub: 'Infrastructure / programs' },
-  { id: 'partnership', label: 'Partnership / JV', sub: 'Co-build with us' },
-  { id: 'press', label: 'Press / Media', sub: 'Editorial enquiry' },
-];
-
 export const Contact = () => {
+  const { t } = useLang();
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>({
     pillar: '',
@@ -42,12 +25,25 @@ export const Contact = () => {
   const update = <K extends keyof FormData>(k: K, v: FormData[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
+  const pillarOpts = [
+    { id: 'academy', label: t('contact.pillar.academy.label'), sub: t('contact.pillar.academy.sub'), color: '#9674ce' },
+    { id: 'sustain', label: t('contact.pillar.sustain.label'), sub: t('contact.pillar.sustain.sub'), color: '#00a19d' },
+    { id: 'innovation', label: t('contact.pillar.innovation.label'), sub: t('contact.pillar.innovation.sub'), color: '#ff6b00' },
+    { id: 'systems', label: t('contact.pillar.systems.label'), sub: t('contact.pillar.systems.sub'), color: '#0069c8' },
+  ];
+  const areaOpts = [
+    { id: 'advisory', label: t('contact.area.advisory'), sub: t('contact.area.advisory.sub') },
+    { id: 'delivery', label: t('contact.area.delivery'), sub: t('contact.area.delivery.sub') },
+    { id: 'partnership', label: t('contact.area.partnership'), sub: t('contact.area.partnership.sub') },
+    { id: 'press', label: t('contact.area.press'), sub: t('contact.area.press.sub') },
+  ];
+
   const steps: { title: string; body: ReactNode }[] = [
     {
-      title: 'Which pillar are you interested in?',
+      title: t('contact.step1'),
       body: (
         <div className="wizard-options">
-          {PILLARS_OPT.map((p) => (
+          {pillarOpts.map((p) => (
             <button
               key={p.id}
               className={`wizard-option ${data.pillar === p.id ? 'selected' : ''}`}
@@ -67,10 +63,10 @@ export const Contact = () => {
       ),
     },
     {
-      title: "What's the area of engagement?",
+      title: t('contact.step2'),
       body: (
         <div className="wizard-options">
-          {AREAS.map((a) => (
+          {areaOpts.map((a) => (
             <button
               key={a.id}
               className={`wizard-option ${data.area === a.id ? 'selected' : ''}`}
@@ -89,27 +85,27 @@ export const Contact = () => {
       ),
     },
     {
-      title: 'Tell us about you.',
+      title: t('contact.step3'),
       body: (
         <div style={{ display: 'grid', gap: 8 }}>
           <input
-            placeholder="Full name"
+            placeholder={t('contact.field.name')}
             value={data.name}
             onChange={(e) => update('name', e.target.value)}
           />
           <input
-            placeholder="Email"
+            placeholder={t('contact.field.email')}
             type="email"
             value={data.email}
             onChange={(e) => update('email', e.target.value)}
           />
           <input
-            placeholder="Organisation (optional)"
+            placeholder={t('contact.field.org')}
             value={data.org}
             onChange={(e) => update('org', e.target.value)}
           />
           <textarea
-            placeholder="Briefly, what would you like to discuss?"
+            placeholder={t('contact.field.message')}
             value={data.message}
             onChange={(e) => update('message', e.target.value)}
           />
@@ -117,32 +113,32 @@ export const Contact = () => {
       ),
     },
     {
-      title: 'Ready to send.',
+      title: t('contact.step4'),
       body: (
         <div className="wizard-summary">
           <div className="row">
-            <div>Pillar</div>
+            <div>{t('contact.summary.pillar')}</div>
             <div className="v">
-              {PILLARS_OPT.find((p) => p.id === data.pillar)?.label || '—'}
+              {pillarOpts.find((p) => p.id === data.pillar)?.label || t('contact.summary.dash')}
             </div>
           </div>
           <div className="row">
-            <div>Area</div>
+            <div>{t('contact.summary.area')}</div>
             <div className="v">
-              {AREAS.find((a) => a.id === data.area)?.label || '—'}
+              {areaOpts.find((a) => a.id === data.area)?.label || t('contact.summary.dash')}
             </div>
           </div>
           <div className="row">
-            <div>Name</div>
-            <div className="v">{data.name || '—'}</div>
+            <div>{t('contact.summary.name')}</div>
+            <div className="v">{data.name || t('contact.summary.dash')}</div>
           </div>
           <div className="row">
-            <div>Email</div>
-            <div className="v">{data.email || '—'}</div>
+            <div>{t('contact.summary.email')}</div>
+            <div className="v">{data.email || t('contact.summary.dash')}</div>
           </div>
           <div className="row">
-            <div>Organisation</div>
-            <div className="v">{data.org || '—'}</div>
+            <div>{t('contact.summary.org')}</div>
+            <div className="v">{data.org || t('contact.summary.dash')}</div>
           </div>
         </div>
       ),
@@ -153,11 +149,8 @@ export const Contact = () => {
     <section className="contact" id="contact" data-screen-label="10 Contact">
       <div className="container contact-grid">
         <div className="reveal">
-          <h2 style={{ marginTop: 24 }}>Contact us</h2>
-          <p className="lede">
-            A short, structured intake helps us route your enquiry to the right pillar and
-            partner. Most replies within two business days.
-          </p>
+          <h2 style={{ marginTop: 24 }}>{t('contact.title')}</h2>
+          <p className="lede">{t('contact.lede')}</p>
         </div>
         <div className="reveal">
           <div className="wizard">
@@ -192,7 +185,7 @@ export const Contact = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                Back
+                {t('contact.back')}
               </button>
               <Magnetic strength={0.2}>
                 <button
@@ -200,7 +193,7 @@ export const Contact = () => {
                   onClick={() => {
                     if (step < steps.length - 1) setStep((s) => s + 1);
                     else {
-                      alert("Thanks — we'll be in touch.");
+                      alert(t('contact.thanks'));
                       setStep(0);
                       setData({
                         pillar: '',
@@ -213,7 +206,7 @@ export const Contact = () => {
                     }
                   }}
                 >
-                  {step < steps.length - 1 ? 'Continue' : 'Send enquiry'}
+                  {step < steps.length - 1 ? t('contact.continue') : t('contact.send')}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12h14M13 5l7 7-7 7"
