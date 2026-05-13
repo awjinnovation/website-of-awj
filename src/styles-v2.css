@@ -1877,18 +1877,14 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   text-transform: uppercase; opacity: 0.6;
 }
 .pillar-hero-title {
-  font-family: var(--font-display);
-  letter-spacing: -0.04em;
   line-height: 1;
-  display: inline-flex; align-items: baseline; gap: 0.2em; flex-wrap: wrap;
-  font-size: clamp(64px, 9vw, 140px);
-  margin-bottom: 28px;
+  margin: 0 0 28px;
+  display: flex;
 }
-.pillar-hero-title .awj { font-weight: 800; }
-.pillar-hero-title .sub {
-  font-weight: 300;
-  font-family: "Fraunces", serif;
-  font-style: italic;
+.pillar-hero-logo {
+  height: clamp(72px, 11vw, 140px);
+  width: auto; max-width: 100%;
+  display: block;
 }
 .pillar-hero-lede {
   max-width: 720px; font-size: 18px; line-height: 1.6;
