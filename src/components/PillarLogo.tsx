@@ -4,15 +4,20 @@
  *   EN + light bg : the brand H-lockup SVG as authored, via <img>.
  *                   No filter, no inline-SVG class overrides, no path
  *                   recoloring. The SVG file is the artwork.
- *   EN + dark bg  : localized name rendered as styled text. The authored
- *                   black AWJ wouldn't be readable on dark, and the brand
- *                   rule forbids recoloring the SVG. Text fallback instead.
- *   AR (any bg)   : localized Arabic name rendered as styled text. The SVG
+ *   EN + dark bg  : composed fallback — the unmodified pillar icon SVG
+ *                   from the brand kit + "AWJ {Name}" rendered as styled
+ *                   text. The authored H-lockup has black AWJ which
+ *                   wouldn't be readable on dark, and the brand rule
+ *                   forbids recoloring the SVG. We don't ship a dark
+ *                   variant, so this is the substitute.
+ *   AR (any bg)   : composed fallback — same brand-kit pillar icon, but
+ *                   the wordmark is the localized Arabic name (the SVG
  *                   wordmark is Latin script and doesn't belong in an
- *                   Arabic context.
+ *                   Arabic context).
  *
- * Per brand guideline: the SVG files are FINAL and may not be modified,
- * redrawn, recolored, or filtered.
+ * Per brand guideline: the SVG files in /assets/brand/ are FINAL and
+ * may not be modified, redrawn, recolored, or filtered. This component
+ * uses the icon file as-is and pairs it with text we author ourselves.
  */
 
 import { useLang } from '../i18n/LangContext';
@@ -45,7 +50,17 @@ export const PillarLogo = ({
       `pillar-logo-text pillar-logo-${pillarId}` +
       (variant === 'onDark' ? ' on-dark' : '');
     return (
-      <span className={wrapperCls} role="img" aria-label={ariaLabel ?? label}>
+      <span
+        className={`${wrapperCls} pillar-logo-composed`}
+        role="img"
+        aria-label={ariaLabel ?? label}
+      >
+        <img
+          src={pillar.icon}
+          alt=""
+          aria-hidden="true"
+          className="pillar-logo-icon"
+        />
         <span className={textCls}>{label}</span>
       </span>
     );

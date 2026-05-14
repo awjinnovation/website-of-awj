@@ -1804,6 +1804,19 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillar-logo svg,
 .pillar-logo img { width: auto; height: 1em; display: block; }
 
+/* Composed fallback: brand icon (unmodified) + authored text wordmark.
+   Used for AR (any bg) and EN on dark surfaces. */
+.pillar-logo-composed {
+  display: inline-flex; align-items: center;
+  gap: 0.35em;
+  line-height: 1;
+}
+.pillar-logo-icon {
+  display: block;
+  width: auto; height: 1.15em;
+  flex-shrink: 0;
+}
+
 /* Text fallback rendering */
 .pillar-logo-text {
   font-family: var(--font-display);
