@@ -1147,9 +1147,8 @@ button { font-family: inherit; }
 .stack-card .name {
   font-family: var(--font-display);
   font-size: clamp(48px, 6vw, 80px); line-height: 0.92; letter-spacing: -0.04em;
+  font-weight: 800;
 }
-.stack-card .name .awj { font-weight: 800; }
-.stack-card .name .sub { font-weight: 200; display: block; }
 .stack-card .desc { font-size: 15px; line-height: 1.55; max-width: 420px; opacity: 0.85; font-weight: 300; margin-top: 18px; }
 .stack-card .meta-row { display: flex; gap: 28px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); }
 .stack-card .meta-row .m-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }

@@ -51,6 +51,11 @@ const en = {
   'pillars.next': 'Next',
   'pillars.label': 'PILLAR',
   'pillars.eyebrowPlaceholder': 'eyebrow placeholder',
+  // Pillar display names (used in CTAs + carousel cards)
+  'pillar.academy.fullName': 'AWJ Academy',
+  'pillar.sustain.fullName': 'AWJ Sustain',
+  'pillar.innovation.fullName': 'AWJ Innovation',
+  'pillar.systems.fullName': 'AWJ Systems',
   // Per-pillar descriptions used in the carousel
   'pillar.academy.desc':
     'Designs accredited learning systems, executive programs, and workforce platforms, equipping people and institutions for the work that does not yet exist.',
@@ -215,7 +220,7 @@ export type TranslationKey = keyof typeof en;
 const ar: Record<TranslationKey, string> = {
   // Nav
   'nav.about': 'من نحن',
-  'nav.pillars': 'الركائز',
+  'nav.pillars': 'قطاعات',
   'nav.services': 'الخدمات',
   'nav.projects': 'المشاريع',
   'nav.events': 'الفعاليات',
@@ -226,7 +231,7 @@ const ar: Record<TranslationKey, string> = {
   'nav.langToggle.label': 'Switch to English',
   'nav.openMenu': 'فتح القائمة',
   'nav.closeMenu': 'إغلاق القائمة',
-  'nav.pillarsEyebrow': 'أربع ركائز · مجموعة واحدة',
+  'nav.pillarsEyebrow': 'أربعة قطاعات · مجموعة واحدة',
 
   // Hero
   'hero.eyebrow': 'شركة التقنيات المستدامة وتطوير الابتكار',
@@ -237,7 +242,7 @@ const ar: Record<TranslationKey, string> = {
     'تَسد أوج الفجوات في منظومة الابتكار العُمانية, مُسرِّعةً التقنيات المستدامة، ومُمكِّنةً المواهب العُمانية الشابة، وبانيةً المؤسسات التي تُحوِّل الفرص إلى ثروة وطنية.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
-  'hero.chips.label': 'الركائز',
+  'hero.chips.label': 'قطاعات',
 
   // Stats
   'stats.projects.label': 'مشروع منجز',
@@ -250,14 +255,18 @@ const ar: Record<TranslationKey, string> = {
   'stats.experience.desc': 'خبرات تشغيلية تأسيسية مجتمعة في أوج.',
 
   // Pillars stack
-  'pillars.title.first': 'ركائز',
+  'pillars.title.first': 'قطاعات',
   'pillars.title.second': 'أوج',
   'pillars.intro':
-    'تعمل أوج عبر أربع ركائز: أكاديمية أوج تُطوّر الأفراد والمؤسسات، وأوج للاستدامة تقود التحوّل البيئي والاجتماعي، وأوج للابتكار تُمكّن الكفاءات والقدرات والتحوّل الرقمي، وأوج سيستمز تُكامل البنية التحتية والعمود الرقمي والتقنية التشغيلية.',
+    'تعمل أوج عبر أربعة قطاعات: أكاديمية أوج تُطوّر الأفراد والمؤسسات، وأوج الاستدامة تقود التحوّل البيئي والاجتماعي، وأوج الابتكار تُمكّن الكفاءات والقدرات والتحوّل الرقمي، وأوج الأنظمة تُكامل البنية التحتية والعمود الرقمي والتقنية التشغيلية.',
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
-  'pillars.label': 'ركيزة',
+  'pillars.label': 'قطاع',
   'pillars.eyebrowPlaceholder': 'نص بديل',
+  'pillar.academy.fullName': 'أكاديمية أوج',
+  'pillar.sustain.fullName': 'أوج الاستدامة',
+  'pillar.innovation.fullName': 'أوج الابتكار',
+  'pillar.systems.fullName': 'أوج الأنظمة',
   'pillar.academy.desc':
     'تُصمّم منظومات تعلّم معتمدة وبرامج تنفيذية ومنصات لتنمية القوى العاملة, تُجهّز الأفراد والمؤسسات لأعمال لم تُولد بعد.',
   'pillar.sustain.desc':
@@ -286,14 +295,14 @@ const ar: Record<TranslationKey, string> = {
   'pillar.systems.focus': 'تقنية تشغيلية · رقمي',
 
   // Services bento
-  'services.eyebrow': 'خدمة رئيسية من كل ركيزة',
+  'services.eyebrow': 'خدمة رئيسية من كل قطاع',
   'services.title.first': 'ماذا نفعل',
   'services.title.second': 'معاً.',
   'services.more': 'المزيد من الخدمات',
   'services.b1.title.line1': 'استشارات',
   'services.b1.title.line2': 'استراتيجية',
   'services.b1.body':
-    'تصميم نماذج التشغيل واستراتيجية رأس المال وبرامج التحوّل على مستوى المجموعة بانضباط متعدد الركائز.',
+    'تصميم نماذج التشغيل واستراتيجية رأس المال وبرامج التحوّل على مستوى المجموعة بانضباط متعدد القطاعات.',
   'services.b2.title': 'بناء القدرات',
   'services.b2.body': 'منظومات تعلّم معتمدة وتطوير القوى العاملة على نطاق واسع.',
   'services.b3.title': 'تطبيق معايير ISO والاعتماد',
@@ -328,8 +337,8 @@ const ar: Record<TranslationKey, string> = {
   // Contact
   'contact.title': 'تواصل معنا',
   'contact.lede':
-    'استمارة قصيرة ومنظّمة تساعدنا على توجيه استفسارك إلى الركيزة والشريك المناسبَين. عادةً ما نرد خلال يومَي عمل.',
-  'contact.step1': 'بأي ركيزة أنت مهتم؟',
+    'استمارة قصيرة ومنظّمة تساعدنا على توجيه استفسارك إلى القطاع والشريك المناسبَين. عادةً ما نرد خلال يومَي عمل.',
+  'contact.step1': 'بأي قطاع أنت مهتم؟',
   'contact.step2': 'ما مجال التعاون؟',
   'contact.step3': 'عرّفنا بنفسك.',
   'contact.step4': 'جاهز للإرسال.',
@@ -347,13 +356,13 @@ const ar: Record<TranslationKey, string> = {
   'contact.area.press.sub': 'استفسار تحريري',
   'contact.pillar.academy.label': 'أكاديمية أوج',
   'contact.pillar.academy.sub': 'بناء القدرات',
-  'contact.pillar.sustain.label': 'أوج للاستدامة',
+  'contact.pillar.sustain.label': 'أوج الاستدامة',
   'contact.pillar.sustain.sub': 'المناخ والحوكمة البيئية',
-  'contact.pillar.innovation.label': 'أوج للابتكار',
+  'contact.pillar.innovation.label': 'أوج الابتكار',
   'contact.pillar.innovation.sub': 'مشاريع وأبحاث',
-  'contact.pillar.systems.label': 'أوج سيستمز',
+  'contact.pillar.systems.label': 'أوج الأنظمة',
   'contact.pillar.systems.sub': 'هندسة وبنية تحتية',
-  'contact.summary.pillar': 'الركيزة',
+  'contact.summary.pillar': 'القطاع',
   'contact.summary.area': 'المجال',
   'contact.summary.name': 'الاسم',
   'contact.summary.email': 'البريد',
@@ -369,7 +378,7 @@ const ar: Record<TranslationKey, string> = {
     'مجموعة قابضة متكاملة تعمل عبر الأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
   'footer.newsletter.placeholder': 'بريدك@الإلكتروني',
   'footer.newsletter.subscribed': 'تم الاشتراك.',
-  'footer.col.pillars': 'الركائز',
+  'footer.col.pillars': 'قطاعات',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',
   'footer.col.group.capabilities': 'القدرات',
@@ -385,7 +394,7 @@ const ar: Record<TranslationKey, string> = {
 
   // Pillar pages
   'pillarPage.back': 'العودة إلى أوج',
-  'pillarPage.meta': 'الركيزة',
+  'pillarPage.meta': 'القطاع',
   'pillarPage.about': 'من نحن',
   'pillarPage.whatWeDo': 'ماذا نفعل',
   'pillarPage.contact': 'تواصل معنا',
@@ -408,7 +417,7 @@ const ar: Record<TranslationKey, string> = {
   'newsPage.allEyebrow': 'كل القصص',
   'newsPage.allTitle': 'الأرشيف الكامل.',
   'newsPage.filterTopic': 'الموضوع',
-  'newsPage.filterPillar': 'الركيزة',
+  'newsPage.filterPillar': 'القطاع',
   'newsPage.filterAll': 'الكل',
   'newsPage.empty': 'لا توجد قصص تطابق الفلاتر المختارة.',
   'newsPage.read': 'اقرأ',
