@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="footer-brand">
             <div className="wordmark footer-wordmark">
               <img
-                src={lang === 'ar' ? '/assets/brand/awj-logo-v-ar.svg' : '/assets/brand/awj-logo-v.svg'}
+                src="/assets/brand/awj-logo-v.svg"
                 alt="AWJ"
                 className="footer-awj-logo"
               />

@@ -13,7 +13,7 @@ const Arrow = () => (
 );
 
 export const Services = () => {
-  const { t, lang } = useLang();
+  const { t } = useLang();
   return (
     <section className="services mesh-bg" id="services" data-screen-label="05 Services">
       <div className="container">
@@ -44,7 +44,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src={lang === 'ar' ? '/assets/brand/awj-logo-v-ar.svg' : '/assets/brand/awj-logo-v.svg'} className="icon" alt="" />
+            <img src="/assets/brand/awj-logo-v.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-2 bento-academy">
             <div className="title">{t('services.b2.title')}</div>

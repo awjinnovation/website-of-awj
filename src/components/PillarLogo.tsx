@@ -62,9 +62,21 @@ export const PillarLogo = ({
 
   if (lang === 'ar') {
     const label = t(`pillar.${pillarId}.fullName` as TranslationKey);
+    const textCls = `pillar-logo-text pillar-logo-${pillarId}` +
+      (variant === 'onDark' ? ' on-dark' : '');
     return (
-      <span className={wrapperCls} role="img" aria-label={ariaLabel ?? label}>
-        <img src={`/assets/brand/awj-${pillarId}-logo-h-ar.svg`} alt={ariaLabel ?? label} />
+      <span
+        className={`${wrapperCls} pillar-logo-composed`}
+        role="img"
+        aria-label={ariaLabel ?? label}
+      >
+        <img
+          src={pillar.icon}
+          alt=""
+          aria-hidden="true"
+          className="pillar-logo-icon"
+        />
+        <span className={textCls}>{label}</span>
       </span>
     );
   }

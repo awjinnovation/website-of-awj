@@ -82,8 +82,8 @@ export const NavPill = () => {
         className={`nav-pill ${scrolled ? 'scrolled' : ''} ${onDark ? 'on-dark' : ''} ${mobileOpen ? 'mobile-open' : ''}`}
       >
         <a href="/" className="brand" aria-label="AWJ">
-          <img src={lang === 'ar' ? '/assets/brand/awj-logo-ar.svg' : '/assets/brand/awj-logo.svg'} alt="AWJ" className="lockup lockup-light" />
-          <img src={lang === 'ar' ? '/assets/brand/awj-logo-ar.svg' : '/assets/brand/awj-logo.svg'} alt="" aria-hidden="true" className="lockup lockup-dark" />
+          <img src="/assets/brand/awj-logo.svg" alt="AWJ" className="lockup lockup-light" />
+          <img src="/assets/brand/awj-logo.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
           <a href="#about">{t('nav.about')}</a>
