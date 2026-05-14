@@ -248,7 +248,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       contact: {
         email: 'systems@awj.om',
-        phone: '+968 7222 5178',
+        phone: '+968 9895 7933',
         location: 'Mazoon Square, 5th Floor, Al Khoudh, Muscat',
       },
     },
@@ -268,7 +268,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       contact: {
         email: 'systems@awj.om',
-        phone: '+968 7222 5178',
+        phone: '+968 9895 7933',
         location: 'ساحة المزون، الطابق الخامس، الخوض، مسقط',
       },
     },
