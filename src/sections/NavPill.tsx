@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Magnetic } from '../components/Magnetic';
+import { PillarLogo } from '../components/PillarLogo';
 import { PILLARS } from '../data/pillars';
 import { useLang } from '../i18n/LangContext';
 
@@ -125,12 +126,16 @@ export const NavPill = () => {
                   <a
                     key={p.id}
                     href={`/pillars/${p.id}`}
-                    className={`chip chip-logo pillars-panel-chip${onDark ? ' on-dark-logo' : ''}`}
+                    className="chip chip-logo pillars-panel-chip"
                     style={style}
                     role="menuitem"
                     aria-label={`AWJ ${p.name}`}
                   >
-                    <img src={p.logo} alt={`AWJ ${p.name}`} />
+                    <PillarLogo
+                      pillarId={p.id}
+                      variant={onDark ? 'onDark' : 'light'}
+                      ariaLabel={`AWJ ${p.name}`}
+                    />
                   </a>
                 );
               })}

@@ -1,4 +1,5 @@
 import { Magnetic } from '../components/Magnetic';
+import { PillarLogo } from '../components/PillarLogo';
 import { useLang } from '../i18n/LangContext';
 import { PILLARS } from '../data/pillars';
 
@@ -87,10 +88,14 @@ export const Hero = () => {
                 <a
                   key={p.id}
                   href={'#' + p.id}
-                  className="chip chip-logo on-dark-logo reveal-up"
+                  className="chip chip-logo reveal-up"
                   style={{ animationDelay: `${0.6 + i * 0.08}s` }}
                 >
-                  <img src={p.logo} alt={`AWJ ${p.name}`} />
+                  <PillarLogo
+                    pillarId={p.id}
+                    variant="onDark"
+                    ariaLabel={`AWJ ${p.name}`}
+                  />
                 </a>
               ))}
             </div>
