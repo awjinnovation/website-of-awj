@@ -123,10 +123,10 @@ button { font-family: inherit; }
 .nav-pill .brand .lockup {
   height: 22px; width: auto; max-width: none; display: block;
 }
-/* Dark-section variant: inline AwjLockup (authored JSX SVG with currentColor)
-   so it adopts the parent text color. Not a CSS recolor of an authored
-   brand SVG file. The two children swap via opacity. */
-.nav-pill .brand .lockup-dark { position: absolute; top: 50%; left: 4px; transform: translateY(-50%); height: 22px; opacity: 0; color: var(--paper); pointer-events: none; }
+/* Dark-section variant: same authored awj-logo.svg, flipped to white via
+   filter. Brand guide §"Use the AWJ corporate logo" — the corporate mark
+   renders white on dark backgrounds, which is the only rule. */
+.nav-pill .brand .lockup-dark { position: absolute; top: 50%; left: 4px; transform: translateY(-50%); height: 22px; opacity: 0; pointer-events: none; filter: brightness(0) invert(1); }
 .nav-pill.on-dark .brand .lockup-light { opacity: 0; }
 .nav-pill.on-dark .brand .lockup-dark { opacity: 1; }
 .nav-pill .links { display: flex; gap: 2px; padding: 0 6px; border-left: 1px solid rgba(12,14,20,0.1); border-right: 1px solid rgba(12,14,20,0.1); }
@@ -750,8 +750,8 @@ button { font-family: inherit; }
 }
 
 /* AWJ horizontal logo, centered over the watermark.
-   Rendered as the inline AwjLockup JSX SVG (authored with currentColor),
-   so we color it via `color:` instead of CSS filtering a brand SVG. */
+   Authored awj-logo.svg flipped to white via filter (corporate mark on
+   dark surface, brand guide rule). */
 .hero-watermark-logo {
   position: absolute;
   top: 50%; left: 50%;
@@ -759,7 +759,7 @@ button { font-family: inherit; }
   width: 56%; max-width: 360px; height: auto;
   z-index: 1;
   pointer-events: none;
-  color: var(--paper);
+  filter: brightness(0) invert(1);
   opacity: 0;
   --reveal: 100%;
   -webkit-mask-image: linear-gradient(to left,
@@ -980,7 +980,6 @@ button { font-family: inherit; }
 }
 .marquee-track { display: flex; gap: 64px; white-space: nowrap; animation: marquee 38s linear infinite; }
 .marquee-track span { font-family: var(--font-display); font-size: 28px; font-weight: 200; letter-spacing: -0.02em; opacity: 0.9; }
-.marquee-track span.awj-mark { font-weight: 800; opacity: 1; }
 .marquee-track .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--paper); align-self: center; opacity: 0.4; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -1252,10 +1251,10 @@ button { font-family: inherit; }
 }
 .bento-card .body { font-size: 13px; line-height: 1.5; opacity: 0.85; max-width: 320px; font-weight: 300; }
 .bento-card .icon { position: absolute; right: -20px; bottom: -20px; width: 120px; opacity: 0.16; }
-/* Inline AWJ mark on the dark Strategic Advisory card uses currentColor;
-   stronger opacity than the soft pillar icons, sitting on top of the
-   radial lift defined on .bento-card.b-1. */
-.bento-ink .icon { opacity: 0.55; width: 180px; right: 0; bottom: 0; }
+/* AWJ corporate vertical lockup on the dark Strategic Advisory card.
+   Authored awj-logo-v.svg is monochrome black, flipped to white via
+   filter per brand-guide corporate-mark rule on dark surfaces. */
+.bento-ink .icon { opacity: 0.55; width: 180px; right: 0; bottom: 0; filter: brightness(0) invert(1); }
 .bento-card .arrow {
   position: absolute; top: 28px; right: 28px; opacity: 0; transform: translate(8px,-8px);
   transition: all 0.4s var(--ease-out);
@@ -1760,6 +1759,9 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 
 .footer-base { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding: 0 0 50px; }
 @media (max-width: 980px) { .footer-base { grid-template-columns: 1fr 1fr; gap: 40px; } }
+.footer-wordmark { display: inline-flex; align-items: center; gap: 10px; }
+.footer-awj-logo { height: 28px; width: auto; display: block; }
+.footer-wordmark .sub { font-family: var(--font-display); font-size: 22px; font-weight: 200; letter-spacing: -0.04em; }
 .footer-brand p { font-size: 14px; line-height: 1.6; opacity: 0.7; max-width: 360px; margin-top: 16px; font-weight: 300; }
 .footer-newsletter { margin-top: 24px; display: flex; gap: 8px; max-width: 360px; }
 .footer-newsletter input {
