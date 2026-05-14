@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useLang } from '../i18n/LangContext';
+import { PillarLogo } from '../components/PillarLogo';
+import type { PillarId } from '../data/pillars';
 import type { TranslationKey } from '../i18n/dict';
 
 type MetaRow = { labelKey: TranslationKey; valueKey?: TranslationKey; literal?: string };
@@ -129,7 +131,7 @@ export const PillarsStack = () => {
       <div className="container pillars-stack-layout">
         <div className="pillars-stack-head reveal">
           <h2 className="section-title" style={{ marginTop: 0 }}>
-            {t('pillars.title.first')} <em>{t('pillars.title.second')}</em>
+            <strong>{t('pillars.title.first')}</strong> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
           </h2>
           <p>{t('pillars.intro')}</p>
         </div>
@@ -141,23 +143,11 @@ export const PillarsStack = () => {
           >
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
-                <div className="top-row">
-                  <div className="num">{t('pillars.eyebrowPlaceholder')}</div>
-                  <img src={p.icon} alt="" className="icon" />
+                <div className="card-logo">
+                  <PillarLogo pillarId={p.id as PillarId} variant="onDark" />
                 </div>
                 <div>
-                  <div className="name">
-                    {t(`pillar.${p.id}.fullName` as TranslationKey)}
-                  </div>
                   <p className="desc">{t(p.descKey)}</p>
-                  <div className="meta-row">
-                    {p.meta.map((m, j) => (
-                      <div key={j}>
-                        <div className="m-k">{t(m.labelKey)}</div>
-                        <div className="m-v">{m.valueKey ? t(m.valueKey) : m.literal}</div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}

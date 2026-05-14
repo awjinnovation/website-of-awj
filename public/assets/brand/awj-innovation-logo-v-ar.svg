@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 350">
+  <defs>
+    <style>
+      .awj-text { font-family: 'Proxima Nova Arabic', sans-serif; font-size: 36px; font-weight: 800; fill: #ffffff; text-anchor: middle; }
+      .pillar-name { font-family: 'Proxima Nova Arabic', sans-serif; font-size: 28px; font-weight: 600; fill: #ff6b00; text-anchor: middle; }
+      .c1 { fill: #ff9331; } .c2 { fill: #ffb777; } .c3 { fill: #ff6b00; }
+    </style>
+  </defs>
+  <g transform="translate(100, 60) scale(0.35)">
+    <path class="c1" d="M119.1,109.7l14-38.3c.1-.4.3-.6.6-.6h4.7c.2,0,.4.1.5.3l11.3,29.4c.1.4.4.4.5,0l9.5-29.4c.1-.4.2-.6.5-.6h9.2c.2,0,.4.1.5.3l9.1,29.1c.1.4.4.4.5,0l11.3-29.1c.1-.4.2-.6.5-.6h4.8c.3,0,.5.2.4.6l-14,38.3c-.1.4-.2.6-.5.6h-13.6c-.2,0-.4-.1-.5-.3l-5.1-14.7c-.1-.4-.4-.4-.5,0l-5.1,14.7c-.1.4-.2.6-.5.6h-13.6c-.3,0-.4-.2-.5-.6Z"/>
+    <path class="c2" d="M76.5,7.9h35.1L97.1,45.7 77.8,20.9 76.5,7.9 M 113.5,13l-19.4,28.6h35.8L113.5,13Z"/>
+    <path class="c3" d="M38.3,55.1l41.3-53.2 17.6,23.7 8,10.8 10.3,13.8c0,0,.1.1.1.2l13.2,17.7H155l-15.2-20.4L97.1,0 86.3,16.9 76.5,31.8 38.3,55.1Z"/>
+  </g>
+  <text class="awj-text" x="100" y="260">أوج</text>
+  <text class="pillar-name" x="100" y="310">الابتكار</text>
+</svg>
