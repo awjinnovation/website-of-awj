@@ -61,14 +61,15 @@ export const PillarLogo = ({
   const wrapperCls = `pillar-logo${className ? ' ' + className : ''}`;
 
   if (lang === 'ar') {
-    const label = t(`pillar.${pillarId}.fullName` as TranslationKey);
+    const fullLabel = t(`pillar.${pillarId}.fullName` as TranslationKey);
+    const pillarName = fullLabel.replace(/أوج\s*/g, '').trim();
     const textCls = `pillar-logo-text pillar-logo-${pillarId}` +
       (variant === 'onDark' ? ' on-dark' : '');
     return (
       <span
         className={`${wrapperCls} pillar-logo-composed`}
         role="img"
-        aria-label={ariaLabel ?? label}
+        aria-label={ariaLabel ?? fullLabel}
       >
         <img
           src={pillar.icon}
@@ -76,7 +77,7 @@ export const PillarLogo = ({
           aria-hidden="true"
           className="pillar-logo-icon"
         />
-        <span className={textCls}>{label}</span>
+        <span className={`${textCls} pillar-logo-ar`}>{pillarName}</span>
       </span>
     );
   }
