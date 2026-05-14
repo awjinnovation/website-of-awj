@@ -58,7 +58,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 pillarId={pillar.id}
                 variant="onDark"
                 className="pillar-hero-logo"
-                ariaLabel={`AWJ ${pillar.name}`}
+                ariaLabel={t(`pillar.${pillarId}.fullName` as const)}
               />
             </h1>
             <p className="pillar-hero-lede">{content.aboutTitle}</p>
@@ -70,7 +70,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t('pillarPage.cta')} AWJ {pillar.name}
+                {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as const)}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                   <path
                     d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
@@ -180,7 +180,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('pillarPage.cta')} AWJ {pillar.name}
+                  {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as const)}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path
                       d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
