@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="footer-brand">
             <div className="wordmark footer-wordmark">
               <img
-                src="/assets/brand/awj-logo.svg"
+                src="/assets/brand/awj-logo-v.svg"
                 alt="AWJ"
                 className="footer-awj-logo"
               />
