@@ -220,7 +220,7 @@ export type TranslationKey = keyof typeof en;
 const ar: Record<TranslationKey, string> = {
   // Nav
   'nav.about': 'من نحن',
-  'nav.pillars': 'قطاعات',
+  'nav.pillars': 'القطاعات',
   'nav.services': 'الخدمات',
   'nav.projects': 'المشاريع',
   'nav.events': 'الفعاليات',
