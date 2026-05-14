@@ -93,7 +93,7 @@ export const Hero = () => {
                 >
                   <PillarLogo
                     pillarId={p.id}
-                    variant="light"
+                    variant="onDark"
                     ariaLabel={`AWJ ${p.name}`}
                   />
                 </a>
