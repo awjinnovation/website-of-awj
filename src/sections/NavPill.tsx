@@ -81,8 +81,8 @@ export const NavPill = () => {
         className={`nav-pill ${scrolled ? 'scrolled' : ''} ${onDark ? 'on-dark' : ''} ${mobileOpen ? 'mobile-open' : ''}`}
       >
         <a href="/" className="brand" aria-label="AWJ">
-          <img src="/assets/awj-horizontal.svg" alt="AWJ" className="lockup lockup-light" />
-          <img src="/assets/awj-horizontal.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
+          <img src="/assets/brand/awj-logo.svg" alt="AWJ" className="lockup lockup-light" />
+          <img src="/assets/brand/awj-logo.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
           <a href="#about">{t('nav.about')}</a>
@@ -121,17 +121,16 @@ export const NavPill = () => {
             <div className="pillars-panel" role="menu">
               {PILLARS.map((p) => {
                 const style: CSSProperties = { ['--accent' as string]: p.accent };
-                const logoSrc = onDark ? p.logo.replace('.svg', '-onDark.svg') : p.logo;
                 return (
                   <a
                     key={p.id}
                     href={`/pillars/${p.id}`}
-                    className="chip chip-logo pillars-panel-chip"
+                    className={`chip chip-logo pillars-panel-chip${onDark ? ' on-dark-logo' : ''}`}
                     style={style}
                     role="menuitem"
                     aria-label={`AWJ ${p.name}`}
                   >
-                    <img src={logoSrc} alt={`AWJ ${p.name}`} />
+                    <img src={p.logo} alt={`AWJ ${p.name}`} />
                   </a>
                 );
               })}

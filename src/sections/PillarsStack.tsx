@@ -20,7 +20,7 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Academy',
     num: '01 / 04',
     cls: 'stack-card-academy',
-    icon: '/assets/icon-academy.svg?v=3',
+    icon: '/assets/brand/awj-academy-icon.svg',
     descKey: 'pillar.academy.desc',
     meta: [
       { labelKey: 'pillar.meta.established', literal: '2009' },
@@ -33,7 +33,7 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Sustain',
     num: '02 / 04',
     cls: 'stack-card-sustain',
-    icon: '/assets/icon-sustain.svg',
+    icon: '/assets/brand/awj-sustain-icon.svg',
     descKey: 'pillar.sustain.desc',
     meta: [
       { labelKey: 'pillar.meta.partner', valueKey: 'pillar.sustain.partner' },
@@ -46,7 +46,7 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Innovation',
     num: '03 / 04',
     cls: 'stack-card-innovation',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     descKey: 'pillar.innovation.desc',
     meta: [
       { labelKey: 'pillar.meta.based', valueKey: 'pillar.innovation.based' },
@@ -59,7 +59,7 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Systems',
     num: '04 / 04',
     cls: 'stack-card-systems',
-    icon: '/assets/icon-systems.svg',
+    icon: '/assets/brand/awj-systems-icon.svg',
     descKey: 'pillar.systems.desc',
     meta: [
       { labelKey: 'pillar.meta.established', literal: '2003' },

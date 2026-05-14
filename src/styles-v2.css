@@ -1794,6 +1794,18 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Magnetic button base */
 .magnetic { display: inline-block; will-change: transform; }
 
+/* Brand logos used on dark backgrounds.
+   Per the brand guide, when a pillar logo sits on a background that
+   contains its icon colors (Case A) the whole lockup is rendered in
+   white. We apply the same treatment to any pillar logo placed on the
+   site's dark surfaces (hero, pillar hero, dark nav glass). Filter
+   inverts the SVG to pure white. The colored icon is replaced with
+   white, which matches Case A. */
+.on-dark-logo,
+.on-dark-logo img {
+  filter: brightness(0) invert(1);
+}
+
 /* Real-photo covers (replaces SVG placeholder NewsCover) */
 .nfc-cover .news-cover-img,
 .npf-cover .news-cover-img,

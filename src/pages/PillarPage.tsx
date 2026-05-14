@@ -54,8 +54,8 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
 
             <h1 className="pillar-hero-title">
               <img
-                className="pillar-hero-logo"
-                src={pillar.logo.replace('.svg', '-onDark.svg')}
+                className="pillar-hero-logo on-dark-logo"
+                src={pillar.logo}
                 alt={`AWJ ${pillar.name}`}
               />
             </h1>

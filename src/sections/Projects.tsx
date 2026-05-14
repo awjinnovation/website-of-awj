@@ -26,7 +26,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-big',
     summary:
       'AWJ Innovation partnered with German University of Technology in Oman (GUtech) to create the first 3D printed building in the Middle East, a milestone in construction technology and sustainable building practices.',
@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
     pillar: 'Academy',
     color: 'var(--academy)',
     bgGrad: 'linear-gradient(135deg, #5d3a9b, #9674ce)',
-    icon: '/assets/icon-academy.svg?v=3',
+    icon: '/assets/brand/awj-academy-icon.svg',
     size: 'p-med',
     summary:
       ".NextJadeer is AWJ's flagship capacity-building program addressing skill gaps in the job market and fostering tech entrepreneurship through comprehensive training in emerging technologies.",
@@ -66,7 +66,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #ee6c11, #f5841e)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-med',
     summary:
       ".NXT GIG is AWJ's platform designed to empower Oman's gig economy by connecting freelancers with projects and opportunities, aligned with Oman Vision 2040's goals for economic diversification.",
@@ -86,7 +86,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #fde0ca, #fac99e)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-sm',
     light: true,
     summary:
@@ -107,7 +107,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #fac99e, #f8a661)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-sm',
     light: true,
     summary:
@@ -128,7 +128,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #a13418, #f5841e)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-sm',
     summary:
       'AWJ organized the Energy and AI Hackathon supporting 20 Gulf teams to develop innovative solutions combining artificial intelligence with sustainable energy technologies.',
@@ -148,7 +148,7 @@ const PROJECTS: Project[] = [
     pillar: 'Innovation',
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #f5841e, #ee6c11)',
-    icon: '/assets/icon-innovation.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-med',
     summary:
       'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
@@ -168,7 +168,7 @@ const PROJECTS: Project[] = [
     pillar: 'Sustain',
     color: 'var(--sustain)',
     bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
-    icon: '/assets/icon-sustain.svg',
+    icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-med',
     summary:
       'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance, transforming fragmented philanthropy into strategic corporate social responsibility.',
