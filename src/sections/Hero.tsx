@@ -4,7 +4,7 @@ import { useLang } from '../i18n/LangContext';
 import { PILLARS } from '../data/pillars';
 
 export const Hero = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   return (
     <section className="hero-v3" data-screen-label="01 Hero">
@@ -76,7 +76,7 @@ export const Hero = () => {
             />
           </svg>
           <img
-            src="/assets/brand/awj-logo.svg"
+            src={lang === 'ar' ? '/assets/brand/awj-logo-ar.svg' : '/assets/brand/awj-logo.svg'}
             alt=""
             aria-hidden="true"
             className="hero-watermark-logo"
