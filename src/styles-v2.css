@@ -122,9 +122,11 @@ button { font-family: inherit; }
 .nav-pill .brand:hover { opacity: 0.7; }
 .nav-pill .brand .lockup {
   height: 22px; width: auto; max-width: none; display: block;
-  transition: opacity 0.4s ease;
 }
-.nav-pill .brand .lockup-dark { position: absolute; top: 50%; left: 4px; transform: translateY(-50%); filter: invert(1); opacity: 0; height: 22px; max-width: none; }
+/* Dark-section variant: inline AwjLockup (authored JSX SVG with currentColor)
+   so it adopts the parent text color. Not a CSS recolor of an authored
+   brand SVG file. The two children swap via opacity. */
+.nav-pill .brand .lockup-dark { position: absolute; top: 50%; left: 4px; transform: translateY(-50%); height: 22px; opacity: 0; color: var(--paper); pointer-events: none; }
 .nav-pill.on-dark .brand .lockup-light { opacity: 0; }
 .nav-pill.on-dark .brand .lockup-dark { opacity: 1; }
 .nav-pill .links { display: flex; gap: 2px; padding: 0 6px; border-left: 1px solid rgba(12,14,20,0.1); border-right: 1px solid rgba(12,14,20,0.1); }
@@ -748,9 +750,8 @@ button { font-family: inherit; }
 }
 
 /* AWJ horizontal logo, centered over the watermark.
-   Same left-to-right wipe + an opacity fade. brightness(0) invert(1)
-   forces it to pure white regardless of the SVG's currentColor
-   (currentColor doesn't apply when an SVG is loaded via <img>). */
+   Rendered as the inline AwjLockup JSX SVG (authored with currentColor),
+   so we color it via `color:` instead of CSS filtering a brand SVG. */
 .hero-watermark-logo {
   position: absolute;
   top: 50%; left: 50%;
@@ -758,7 +759,7 @@ button { font-family: inherit; }
   width: 56%; max-width: 360px; height: auto;
   z-index: 1;
   pointer-events: none;
-  filter: brightness(0) invert(1);
+  color: var(--paper);
   opacity: 0;
   --reveal: 100%;
   -webkit-mask-image: linear-gradient(to left,
@@ -1800,7 +1801,8 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
      styled text (.pillar-logo-text). Per-pillar accent color from the
      mid-line of the brand palette so each pillar is visually recognizable. */
 .pillar-logo { display: inline-flex; align-items: center; line-height: 0; }
-.pillar-logo svg { width: auto; height: 1em; display: block; }
+.pillar-logo svg,
+.pillar-logo img { width: auto; height: 1em; display: block; }
 
 /* Text fallback rendering */
 .pillar-logo-text {
@@ -1822,12 +1824,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .chip-logo .pillar-logo { font-size: 18px; }      /* hero + dropdown chips */
 .pillar-hero .pillar-hero-logo { font-size: clamp(40px, 6.5vw, 96px); }
 
-/* Legacy class kept for the AWJ corporate img-tag swap in the nav pill,
-   where the lockup is monochromatic so a full filter flip is correct. */
-.on-dark-logo,
-.on-dark-logo > img {
-  filter: brightness(0) invert(1);
-}
+/* (removed .on-dark-logo CSS filter rule — brand SVGs are never recolored.) */
 
 /* Real-photo covers (replaces SVG placeholder NewsCover) */
 .nfc-cover .news-cover-img,

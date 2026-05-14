@@ -1,4 +1,5 @@
 import { Magnetic } from '../components/Magnetic';
+import { AwjLockup } from '../components/AwjLockup';
 import { PillarLogo } from '../components/PillarLogo';
 import { useLang } from '../i18n/LangContext';
 import { PILLARS } from '../data/pillars';
@@ -75,12 +76,7 @@ export const Hero = () => {
               points="834.22 -46.35 495.86 327.7 155.03 327.7 -.56 187.72 -40.57 232.19 132.08 387.52 522.36 387.52 878.53 -6.16 834.22 -46.35"
             />
           </svg>
-          <img
-            className="hero-watermark-logo"
-            src="/assets/brand/awj-logo.svg"
-            alt=""
-            aria-hidden="true"
-          />
+          <AwjLockup className="hero-watermark-logo" />
           <div className="hero-pillar-chips">
             <div className="chips-label">{t('hero.chips.label')}</div>
             <div className="chips-row">
