@@ -1,35 +1,48 @@
 /**
  * Renders the pillar lockup.
  *
- *   English (any bg) : the brand H-lockup SVG as authored, via <img>.
- *                      No filter, no inline-SVG class overrides, no path
- *                      recoloring, no composed fallback. The SVG file is
- *                      the artwork and is rendered as-is on every surface.
- *                      If the AWJ wordmark is hard to read on a dark
- *                      background, the brand team should ship a dark-bg
- *                      variant — that's not for the front-end to invent.
+ *   EN + light surface  : the brand H-lockup SVG as authored, via <img>.
+ *                         No filter, no class overrides, no recoloring.
  *
- *   Arabic (any bg)  : composed lockup — the unmodified pillar icon SVG
- *                      from the brand kit + the localized Arabic name as
- *                      styled text. The shipped lockup is Latin script and
- *                      doesn't belong in an Arabic context, and no Arabic
- *                      H-lockup is shipped. Per the brand-guide implementer
- *                      notes, a text-alongside fallback is the documented
- *                      path when an authored variant isn't available.
+ *   EN + dark  surface  : the same brand H-lockup, but INLINED so the one
+ *                         sanctioned Case-C recolor can apply: only the
+ *                         "AWJ" letter paths (the path elements without a
+ *                         class attribute in the authored artwork) flip to
+ *                         white. The icon and pillar wordmark keep their
+ *                         authored colors. See BRAND_GUIDE.txt → Case C.
  *
- * Per brand guideline: the SVG files in /assets/brand/ are FINAL and
- * may not be modified, redrawn, recolored, or filtered.
+ *   AR (any surface)    : composed lockup. The unmodified brand icon SVG
+ *                         + the localized Arabic pillar name as styled
+ *                         text in Proxima Nova Arabic. The shipped lockup
+ *                         is Latin script and isn't appropriate for an
+ *                         Arabic context; no Arabic H-lockup is shipped.
+ *
+ * The SVG files in /assets/brand are FINAL and may not be modified,
+ * redrawn, or filtered. The single CSS rule
+ *   .pillar-logo.on-dark path:not([class]) { fill: #fff }
+ * is the one exception, sanctioned by the brand guide.
  */
 
 import { useLang } from '../i18n/LangContext';
 import { PILLARS, type PillarId } from '../data/pillars';
 import type { TranslationKey } from '../i18n/dict';
 
+import academyH from '../../public/assets/brand/awj-academy-logo-h.svg?raw';
+import sustainH from '../../public/assets/brand/awj-sustain-logo-h.svg?raw';
+import innovationH from '../../public/assets/brand/awj-innovation-logo-h.svg?raw';
+import systemsH from '../../public/assets/brand/awj-systems-logo-h.svg?raw';
+
+const LOGO_RAW: Record<PillarId, string> = {
+  academy: academyH,
+  sustain: sustainH,
+  innovation: innovationH,
+  systems: systemsH,
+};
+
 type Props = {
   pillarId: PillarId;
-  /** Kept for backwards compatibility with the existing call sites. In
-   *  English mode the variant is ignored (we always render the authored
-   *  SVG as-is). In Arabic mode it only toggles the on-dark text color. */
+  /** "onDark" enables the Case-C selective AWJ-only whitening on the
+   *  inlined SVG. "light" renders the authored SVG as-is via <img>. */
   variant?: 'light' | 'onDark';
   className?: string;
   ariaLabel?: string;
@@ -49,8 +62,7 @@ export const PillarLogo = ({
 
   if (lang === 'ar') {
     const label = t(`pillar.${pillarId}.fullName` as TranslationKey);
-    const textCls =
-      `pillar-logo-text pillar-logo-${pillarId}` +
+    const textCls = `pillar-logo-text pillar-logo-${pillarId}` +
       (variant === 'onDark' ? ' on-dark' : '');
     return (
       <span
@@ -69,7 +81,18 @@ export const PillarLogo = ({
     );
   }
 
-  // English: render the brand H-lockup exactly as authored, on every surface.
+  if (variant === 'onDark') {
+    // Inline the authored SVG so the Case-C rule can target AWJ paths.
+    return (
+      <span
+        className={`${wrapperCls} on-dark`}
+        role="img"
+        aria-label={ariaLabel ?? `AWJ ${pillar.name}`}
+        dangerouslySetInnerHTML={{ __html: LOGO_RAW[pillarId] }}
+      />
+    );
+  }
+
   return (
     <span className={wrapperCls}>
       <img src={pillar.logo} alt={ariaLabel ?? `AWJ ${pillar.name}`} />
