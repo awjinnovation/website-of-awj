@@ -1801,9 +1801,13 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
    artwork carry no `class` attribute (they default to black). The rule
    below flips ONLY those paths to white. The pillar wordmark (cls-2) and
    the icon (cls-1/2/3/4) keep their authored colors. */
-.pillar-logo { display: inline-block; line-height: 0; }
-.pillar-logo svg { height: 100%; width: auto; display: block; }
+.pillar-logo { display: inline-flex; align-items: center; line-height: 0; }
+.pillar-logo svg { width: auto; height: 1em; display: block; }
 .pillar-logo.on-dark svg path:not([class]) { fill: #ffffff; }
+
+/* Context-specific sizing for the inline pillar logo. */
+.chip-logo .pillar-logo { font-size: 18px; }      /* hero + dropdown chips */
+.pillar-hero .pillar-hero-logo { font-size: clamp(72px, 11vw, 140px); }
 
 /* Legacy class kept for the AWJ corporate img-tag swap in the nav pill,
    where the lockup is monochromatic so a full filter flip is correct. */
