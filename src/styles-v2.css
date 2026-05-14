@@ -1842,20 +1842,11 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillar-logo-systems    { color: #0069c8; }
 .pillar-logo-text.on-dark { color: #ffffff; }
 
-/* Arabic rendering: RTL layout, split typography (أوج bold black, name light mid-color) */
+/* Arabic rendering: RTL alignment */
 [dir="rtl"] .pillar-logo-ar {
-  font-weight: 300;
-  color: inherit;
   direction: rtl;
   unicode-bidi: bidi-override;
 }
-[dir="rtl"] .pillar-logo-ar::before {
-  content: 'أوج';
-  font-weight: 800;
-  color: #0f1822;
-  margin-right: 0.3em;
-}
-[dir="rtl"] .pillar-logo-ar.on-dark::before { color: #ffffff; }
 
 /* Context-specific sizing for the inline pillar logo. */
 .chip-logo .pillar-logo { font-size: 18px; }      /* hero + dropdown chips */
