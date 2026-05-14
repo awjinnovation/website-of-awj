@@ -1,5 +1,4 @@
 import { useLang } from '../i18n/LangContext';
-import { AwjMark } from '../components/AwjMark';
 
 const Arrow = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -45,7 +44,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <AwjMark className="icon" />
+            <img src="/assets/brand/awj-logo-v.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-2 bento-academy">
             <div className="title">{t('services.b2.title')}</div>
