@@ -7,6 +7,7 @@ import { Footer } from '../sections/Footer';
 import { PILLARS, type PillarId } from '../data/pillars';
 import { PILLAR_CONTENT } from '../data/pillar-content';
 import { useLang } from '../i18n/LangContext';
+import type { TranslationKey } from '../i18n/dict';
 
 export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
   const { t, lang } = useLang();
@@ -58,7 +59,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 pillarId={pillar.id}
                 variant="onDark"
                 className="pillar-hero-logo"
-                ariaLabel={t(`pillar.${pillarId}.fullName` as const)}
+                ariaLabel={t(`pillar.${pillarId}.fullName` as TranslationKey)}
               />
             </h1>
             <p className="pillar-hero-lede">{content.aboutTitle}</p>
@@ -70,7 +71,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as const)}
+                {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as TranslationKey)}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                   <path
                     d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
@@ -180,7 +181,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as const)}
+                  {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as TranslationKey)}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path
                       d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
