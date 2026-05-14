@@ -1,7 +1,7 @@
 import { useLang } from '../i18n/LangContext';
 
 export const Footer = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <footer className="footer">
       <div className="container">
@@ -9,11 +9,11 @@ export const Footer = () => {
           <div className="footer-brand">
             <div className="wordmark footer-wordmark">
               <img
-                src="/assets/brand/awj-logo-v.svg"
+                src={lang === 'ar' ? '/assets/brand/awj-logo-v-ar.svg' : '/assets/brand/awj-logo-v.svg'}
                 alt="AWJ"
                 className="footer-awj-logo"
               />
-              <span className="sub">Corporate</span>
+              <span className="sub">{lang === 'ar' ? 'الشركة' : 'Corporate'}</span>
             </div>
             <p>{t('footer.brand.desc')}</p>
             <form
