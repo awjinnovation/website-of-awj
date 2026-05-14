@@ -144,7 +144,7 @@ export const PillarsStack = () => {
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
                 <div className="card-logo">
-                  <PillarLogo pillarId={p.id as PillarId} variant="onDark" />
+                  <PillarLogo pillarId={p.id as PillarId} variant="light" />
                 </div>
                 <div>
                   <p className="desc">{t(p.descKey)}</p>
