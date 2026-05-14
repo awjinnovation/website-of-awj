@@ -1,5 +1,6 @@
 import { useEffect, type CSSProperties } from 'react';
 import { Cursor } from '../components/Cursor';
+import { PillarLogo } from '../components/PillarLogo';
 import { useReveal } from '../hooks/useReveal';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
@@ -53,10 +54,11 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
             </div>
 
             <h1 className="pillar-hero-title">
-              <img
-                className="pillar-hero-logo on-dark-logo"
-                src={pillar.logo}
-                alt={`AWJ ${pillar.name}`}
+              <PillarLogo
+                pillarId={pillar.id}
+                variant="onDark"
+                className="pillar-hero-logo"
+                ariaLabel={`AWJ ${pillar.name}`}
               />
             </h1>
             <p className="pillar-hero-lede">{content.aboutTitle}</p>
