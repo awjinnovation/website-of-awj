@@ -147,7 +147,7 @@ export const PillarsStack = () => {
                 </div>
                 <div>
                   <div className="name">
-                    {t(`pillar.${p.id}.fullName` as const)}
+                    {t(`pillar.${p.id}.fullName` as TranslationKey)}
                   </div>
                   <p className="desc">{t(p.descKey)}</p>
                   <div className="meta-row">
