@@ -1794,15 +1794,22 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Magnetic button base */
 .magnetic { display: inline-block; will-change: transform; }
 
-/* PillarLogo component.
-   - EN + light bg: renders the brand SVG inline, AS AUTHORED, with no
-     CSS overrides on its fills (brand rule: never recolor the logos).
-   - AR (any bg) and EN on dark bg: renders the localized pillar name as
-     styled text (.pillar-logo-text). Per-pillar accent color from the
-     mid-line of the brand palette so each pillar is visually recognizable. */
+/* PillarLogo component (see src/components/PillarLogo.tsx and BRAND_GUIDE.txt).
+   - EN + light bg: renders the brand SVG as authored, via <img>. No
+     overrides on fills.
+   - EN + dark bg : the authored SVG is INLINED so the one sanctioned
+     Case-C override can apply — only the AWJ letter paths (those with
+     no `class` attribute) flip to white. Icon + pillar wordmark keep
+     authored colors.
+   - AR (any bg) : composed lockup — unmodified brand icon SVG + Arabic
+     pillar name as styled text. */
 .pillar-logo { display: inline-flex; align-items: center; line-height: 0; }
 .pillar-logo svg,
 .pillar-logo img { width: auto; height: 1em; display: block; }
+
+/* Case C: dark-surface AWJ-only whitening on the inlined brand SVG.
+   This is the ONE CSS-level override permitted by the brand guide. */
+.pillar-logo.on-dark svg path:not([class]) { fill: #ffffff; }
 
 /* Composed fallback: brand icon (unmodified) + authored text wordmark.
    Used for AR (any bg) and EN on dark surfaces. */
