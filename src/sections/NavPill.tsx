@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { AwjLockup } from '../components/AwjLockup';
 import { Magnetic } from '../components/Magnetic';
 import { PillarLogo } from '../components/PillarLogo';
 import { PILLARS } from '../data/pillars';
@@ -84,7 +83,7 @@ export const NavPill = () => {
       >
         <a href="/" className="brand" aria-label="AWJ">
           <img src="/assets/brand/awj-logo.svg" alt="AWJ" className="lockup lockup-light" />
-          <AwjLockup className="lockup lockup-dark" />
+          <img src="/assets/brand/awj-logo.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
           <a href="#about">{t('nav.about')}</a>

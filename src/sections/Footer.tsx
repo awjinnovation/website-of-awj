@@ -1,4 +1,3 @@
-import { AwjMark } from '../components/AwjMark';
 import { useLang } from '../i18n/LangContext';
 
 export const Footer = () => {
@@ -8,12 +7,13 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-base">
           <div className="footer-brand">
-            <div className="wordmark" style={{ fontSize: 22 }}>
-              <AwjMark style={{ width: 28, marginRight: 10 }} />
-              <span className="awj">AWJ</span>
-              <span className="sub" style={{ marginLeft: 6 }}>
-                Corporate
-              </span>
+            <div className="wordmark footer-wordmark">
+              <img
+                src="/assets/brand/awj-logo.svg"
+                alt="AWJ"
+                className="footer-awj-logo"
+              />
+              <span className="sub">Corporate</span>
             </div>
             <p>{t('footer.brand.desc')}</p>
             <form
