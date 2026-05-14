@@ -1,12 +1,6 @@
 import { Magnetic } from '../components/Magnetic';
 import { useLang } from '../i18n/LangContext';
-
-const PILLAR_LOGOS = [
-  { id: 'academy', name: 'Academy', logo: '/assets/logo-academy-onDark.svg' },
-  { id: 'sustain', name: 'Sustain', logo: '/assets/logo-sustain-onDark.svg' },
-  { id: 'innovation', name: 'Innovation', logo: '/assets/logo-innovation-onDark.svg' },
-  { id: 'systems', name: 'Systems', logo: '/assets/logo-systems-onDark.svg' },
-] as const;
+import { PILLARS } from '../data/pillars';
 
 export const Hero = () => {
   const { t } = useLang();
@@ -82,18 +76,18 @@ export const Hero = () => {
           </svg>
           <img
             className="hero-watermark-logo"
-            src="/assets/awj-horizontal.svg"
+            src="/assets/brand/awj-logo.svg"
             alt=""
             aria-hidden="true"
           />
           <div className="hero-pillar-chips">
             <div className="chips-label">{t('hero.chips.label')}</div>
             <div className="chips-row">
-              {PILLAR_LOGOS.map((p, i) => (
+              {PILLARS.map((p, i) => (
                 <a
                   key={p.id}
                   href={'#' + p.id}
-                  className="chip chip-logo reveal-up"
+                  className="chip chip-logo on-dark-logo reveal-up"
                   style={{ animationDelay: `${0.6 + i * 0.08}s` }}
                 >
                   <img src={p.logo} alt={`AWJ ${p.name}`} />

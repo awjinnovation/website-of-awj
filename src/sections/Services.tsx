@@ -58,7 +58,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/icon-academy.svg?v=3" className="icon" alt="" />
+            <img src="/assets/brand/awj-academy-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-3 bento-sustain">
             <div className="title">{t('services.b3.title')}</div>
@@ -71,7 +71,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/icon-sustain.svg" className="icon" alt="" />
+            <img src="/assets/brand/awj-sustain-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-4 bento-innovation">
             <div className="title">{t('services.b4.title')}</div>
@@ -84,7 +84,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/icon-innovation.svg" className="icon" alt="" />
+            <img src="/assets/brand/awj-innovation-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-5 bento-systems">
             <div className="title">{t('services.b5.title')}</div>
@@ -97,7 +97,7 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/icon-systems.svg" className="icon" alt="" />
+            <img src="/assets/brand/awj-systems-icon.svg" className="icon" alt="" />
           </div>
         </div>
       </div>
