@@ -242,7 +242,7 @@ const ar: Record<TranslationKey, string> = {
     'تَسد أوج الفجوات في منظومة الابتكار العُمانية, مُسرِّعةً التقنيات المستدامة، ومُمكِّنةً المواهب العُمانية الشابة، وبانيةً المؤسسات التي تُحوِّل الفرص إلى ثروة وطنية.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
-  'hero.chips.label': 'قطاعات',
+  'hero.chips.label': 'القطاعات',
 
   // Stats
   'stats.projects.label': 'مشروع منجز',
@@ -378,7 +378,7 @@ const ar: Record<TranslationKey, string> = {
     'مجموعة قابضة متكاملة تعمل عبر الأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
   'footer.newsletter.placeholder': 'بريدك@الإلكتروني',
   'footer.newsletter.subscribed': 'تم الاشتراك.',
-  'footer.col.pillars': 'قطاعات',
+  'footer.col.pillars': 'القطاعات',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',
   'footer.col.group.capabilities': 'القدرات',

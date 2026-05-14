@@ -1,42 +1,38 @@
 /**
- * Pillar lockup ("AWJ {Pillar}").
+ * Renders the pillar lockup.
  *
- * Brand rule: never recolor or modify the authored SVG lockup. So we
- * only show the SVG file when it renders correctly as-is:
- *   - EN + light background: render the SVG (brand colors as authored).
- * For any other case we render the localized name as styled text:
- *   - AR (any background): show the Arabic name (e.g. "أكاديمية أوج").
- *   - EN + dark background: show "AWJ {Pillar}" as text in white, since
- *     the SVG's black "AWJ" letters would be invisible on dark and we
- *     refuse to recolor the artwork.
+ * - In English: the original AWJ brand SVG (the H-lockup) is shown as
+ *   an <img>. The SVG file is used exactly as authored. No CSS filters,
+ *   no inline-style overrides, no class-level fill rewrites.
+ * - In Arabic: the lockup is rendered as translated text (the SVG is
+ *   the English wordmark, which doesn't belong in an Arabic context).
+ *   "أوج" is the brand portion; the pillar word uses the pillar's
+ *   mid color. AWJ-black on light surfaces, white on dark surfaces.
  *
- * The SVG is inlined via Vite's build-time ?raw import so we can include
- * it without a runtime fetch. Brand SVG files on disk are unchanged.
+ * Per brand guideline: the SVG files are FINAL and may not be modified,
+ * redrawn, or recolored via any means. This component never reaches
+ * inside the SVG markup.
  */
 
 import { useLang } from '../i18n/LangContext';
-import type { TranslationKey } from '../i18n/dict';
-import type { PillarId } from '../data/pillars';
+import { PILLARS, type PillarId } from '../data/pillars';
 
-import academyH from '../../public/assets/brand/awj-academy-logo-h.svg?raw';
-import sustainH from '../../public/assets/brand/awj-sustain-logo-h.svg?raw';
-import innovationH from '../../public/assets/brand/awj-innovation-logo-h.svg?raw';
-import systemsH from '../../public/assets/brand/awj-systems-logo-h.svg?raw';
-
-const LOGO_H: Record<PillarId, string> = {
-  academy: academyH,
-  sustain: sustainH,
-  innovation: innovationH,
-  systems: systemsH,
-};
+type Variant = 'light' | 'onDark';
 
 type Props = {
   pillarId: PillarId;
-  /** Background context. 'onDark' triggers text rendering since the SVG can't
-   * be displayed faithfully on dark backgrounds without recoloring. */
-  variant?: 'light' | 'onDark';
+  variant?: Variant;
   className?: string;
   ariaLabel?: string;
+};
+
+type ArParts = { awj: string; pillar: string; order: 'awj-first' | 'pillar-first' };
+
+const AR_PARTS: Record<PillarId, ArParts> = {
+  academy: { awj: 'أوج', pillar: 'أكاديمية', order: 'pillar-first' },
+  sustain: { awj: 'أوج', pillar: 'الاستدامة', order: 'awj-first' },
+  innovation: { awj: 'أوج', pillar: 'الابتكار', order: 'awj-first' },
+  systems: { awj: 'أوج', pillar: 'الأنظمة', order: 'awj-first' },
 };
 
 export const PillarLogo = ({
@@ -45,33 +41,31 @@ export const PillarLogo = ({
   className = '',
   ariaLabel,
 }: Props) => {
-  const { lang, t } = useLang();
-  const onDark = variant === 'onDark';
-  const useText = lang === 'ar' || onDark;
+  const { lang } = useLang();
+  const pillar = PILLARS.find((p) => p.id === pillarId);
+  if (!pillar) return null;
 
-  if (useText) {
-    const name = t(`pillar.${pillarId}.fullName` as TranslationKey);
-    const cls =
-      'pillar-logo pillar-logo-text' +
-      ` pillar-logo-${pillarId}` +
-      (onDark ? ' on-dark' : '') +
+  if (lang === 'ar') {
+    const { awj, pillar: pword, order } = AR_PARTS[pillarId];
+    const wrapperCls =
+      `pillar-wordmark-ar pw-${pillarId}` +
+      (variant === 'onDark' ? ' on-dark' : '') +
       (className ? ' ' + className : '');
+    const awjSpan = <span className="pw-awj" key="awj">{awj}</span>;
+    const pillarSpan = <span className="pw-pillar" key="pillar">{pword}</span>;
+    const children = order === 'pillar-first' ? [pillarSpan, awjSpan] : [awjSpan, pillarSpan];
     return (
-      <span className={cls} aria-label={ariaLabel ?? name}>
-        {name}
+      <span className={wrapperCls} role="img" aria-label={ariaLabel}>
+        {children}
       </span>
     );
   }
 
-  // EN + light: render the authored SVG as-is, no overrides.
-  const cls = 'pillar-logo' + (className ? ' ' + className : '');
   return (
-    <span
-      className={cls}
-      role={ariaLabel ? 'img' : undefined}
-      aria-label={ariaLabel}
-      aria-hidden={ariaLabel ? undefined : true}
-      dangerouslySetInnerHTML={{ __html: LOGO_H[pillarId] }}
+    <img
+      className={`pillar-logo-img${className ? ' ' + className : ''}`}
+      src={pillar.logo}
+      alt={ariaLabel ?? `AWJ ${pillar.name}`}
     />
   );
 };
