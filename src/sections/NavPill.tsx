@@ -133,7 +133,7 @@ export const NavPill = () => {
                   >
                     <PillarLogo
                       pillarId={p.id}
-                      variant="light"
+                      variant={onDark ? 'onDark' : 'light'}
                       ariaLabel={`AWJ ${p.name}`}
                     />
                   </a>
