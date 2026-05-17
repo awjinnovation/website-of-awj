@@ -1,6 +1,7 @@
 import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
+import { AboutPage } from './pages/AboutPage';
 import { NewsPage } from './pages/NewsPage';
 import { PillarPage } from './pages/PillarPage';
 import { isPillarId, type PillarId } from './data/pillars';
@@ -8,6 +9,7 @@ import { LangProvider } from './i18n/LangContext';
 import './styles-v2.css';
 import './news-page.css';
 
+const isAboutPath = (p: string) => p === '/about' || p === '/about/';
 const isNewsPath = (p: string) => p === '/news' || p === '/news/';
 
 const matchPillarPath = (p: string): PillarId | null => {
@@ -25,6 +27,7 @@ const Router = () => {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  if (isAboutPath(path)) return <AboutPage />;
   if (isNewsPath(path)) return <NewsPage />;
   const pillarId = matchPillarPath(path);
   if (pillarId) return <PillarPage pillarId={pillarId} />;

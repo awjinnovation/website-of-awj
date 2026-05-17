@@ -85,9 +85,7 @@ const en = {
   'pillar.systems.focus': 'OT · Digital',
 
   // Services bento
-  'services.eyebrow': 'Key service from each pillar',
-  'services.title.first': 'What we do',
-  'services.title.second': 'together.',
+  'services.title': 'Our Key Services',
   'services.more': 'More services',
   'services.b1.title.line1': 'Strategic',
   'services.b1.title.line2': 'Advisory',
@@ -295,9 +293,7 @@ const ar: Record<TranslationKey, string> = {
   'pillar.systems.focus': 'تقنية تشغيلية · رقمي',
 
   // Services bento
-  'services.eyebrow': 'خدمة رئيسية من كل قطاع',
-  'services.title.first': 'ماذا نفعل',
-  'services.title.second': 'معاً.',
+  'services.title': 'خدماتنا الرئيسية',
   'services.more': 'المزيد من الخدمات',
   'services.b1.title.line1': 'استشارات',
   'services.b1.title.line2': 'استراتيجية',
