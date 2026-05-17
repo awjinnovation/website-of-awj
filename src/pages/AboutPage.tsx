@@ -1,8 +1,6 @@
 import { Cursor } from '../components/Cursor';
-import { useLang } from '../i18n/LangContext';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
-import { PillarLogo } from '../components/PillarLogo';
 import { type PillarId } from '../data/pillars';
 import React from 'react';
 
@@ -39,8 +37,6 @@ const AWJ_TEAM: TeamMember[] = [
 ];
 
 export const AboutPage = () => {
-  const { t, lang } = useLang();
-
   return (
     <>
       <Cursor />

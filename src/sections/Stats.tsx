@@ -21,7 +21,7 @@ const STAT_ROWS: Row[] = [
   {
     color: '#0c0e14',
     glow: 'rgba(12, 14, 20, 0.18)',
-    end: 500,
+    end: 7600,
     suffix: '+',
     labelKey: 'stats.professionals.label',
   },
@@ -115,7 +115,7 @@ const StatNum = ({ end, suffix }: { end: number; suffix: string }) => {
 
   return (
     <div className={'num' + (done ? ' is-pulsing' : '')} ref={ref}>
-      {v}
+      {v.toLocaleString('en-US')}
       <span className="suffix">{suffix}</span>
     </div>
   );

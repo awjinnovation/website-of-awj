@@ -175,7 +175,7 @@ export const NavPill = () => {
         <div className="nav-mobile-sheet" onClick={closeMobile}>
           <div className="nav-mobile-panel" onClick={(e) => e.stopPropagation()}>
             <div className="nav-mobile-list">
-              <a href="#about" onClick={closeMobile}>{t('nav.about')}</a>
+              <a href="/about" onClick={closeMobile}>{t('nav.about')}</a>
 
               <div className="nav-mobile-group">
                 <div className="nav-mobile-group-label">{t('nav.pillars')}</div>

@@ -36,11 +36,7 @@ export const Services = () => {
                 {t('services.b1.body')}
               </p>
             </div>
-            <a
-              href="#services"
-              className="bento-cta"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="/about" className="bento-cta">
               {t('services.more')}
               <Arrow />
             </a>
@@ -49,11 +45,7 @@ export const Services = () => {
             <img src="/assets/brand/awj-academy-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b2.title')}</div>
             <p className="body">{t('services.b2.body')}</p>
-            <a
-              href="#services"
-              className="bento-cta"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="/pillars/academy" className="bento-cta">
               {t('services.more')}
               <Arrow />
             </a>
@@ -62,11 +54,7 @@ export const Services = () => {
             <img src="/assets/brand/awj-sustain-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b3.title')}</div>
             <p className="body">{t('services.b3.body')}</p>
-            <a
-              href="#services"
-              className="bento-cta"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="/pillars/sustain" className="bento-cta">
               {t('services.more')}
               <Arrow />
             </a>
@@ -75,11 +63,7 @@ export const Services = () => {
             <img src="/assets/brand/awj-innovation-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b4.title')}</div>
             <p className="body">{t('services.b4.body')}</p>
-            <a
-              href="#services"
-              className="bento-cta"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="/pillars/innovation" className="bento-cta">
               {t('services.more')}
               <Arrow />
             </a>
@@ -88,11 +72,7 @@ export const Services = () => {
             <img src="/assets/brand/awj-systems-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b5.title')}</div>
             <p className="body">{t('services.b5.body')}</p>
-            <a
-              href="#services"
-              className="bento-cta"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="/pillars/systems" className="bento-cta">
               {t('services.more')}
               <Arrow />
             </a>
