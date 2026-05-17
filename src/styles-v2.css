@@ -148,14 +148,7 @@ button { font-family: inherit; }
 
 /* Language toggle (small EN/AR pill) */
 .nav-lang {
-  background: none; border: 1px solid rgba(12, 14, 20, 0.18);
-  color: inherit;
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 7px 11px; border-radius: 999px;
-  cursor: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  margin: 0 2px;
+  display: none;
 }
 .nav-lang:hover { background: rgba(12, 14, 20, 0.06); }
 .nav-pill.on-dark .nav-lang { border-color: rgba(255, 255, 255, 0.22); }
