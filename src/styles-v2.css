@@ -1831,7 +1831,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillar-logo-sustain    { color: #00a19d; }
 .pillar-logo-innovation { color: #ff6b00; }
 .pillar-logo-systems    { color: #0069c8; }
-.pillar-logo-text.on-dark { color: #ffffff; }
+.pillar-logo-text.on-dark { color: #ffffff !important; }
 
 /* Arabic rendering: RTL alignment */
 [dir="rtl"] .pillar-logo-ar {
