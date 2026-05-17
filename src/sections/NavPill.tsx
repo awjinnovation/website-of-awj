@@ -86,7 +86,7 @@ export const NavPill = () => {
           <img src="/assets/brand/awj-logo.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
-          <a href="#about">{t('nav.about')}</a>
+          <a href="/about">{t('nav.about')}</a>
 
           <div
             className={`pillars-dropdown ${pillarsOpen ? 'is-open' : ''}`}

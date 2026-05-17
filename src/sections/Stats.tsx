@@ -8,41 +8,36 @@ type Row = {
   end: number;
   suffix: string;
   labelKey: TranslationKey;
-  descKey: TranslationKey;
 };
 
 const STAT_ROWS: Row[] = [
   {
-    color: 'var(--academy)',
-    glow: 'rgba(255, 107, 53, 0.18)',
+    color: '#0c0e14',
+    glow: 'rgba(12, 14, 20, 0.18)',
     end: 50,
     suffix: '+',
     labelKey: 'stats.projects.label',
-    descKey: 'stats.projects.desc',
   },
   {
-    color: 'var(--sustain)',
-    glow: 'rgba(0, 168, 150, 0.18)',
+    color: '#0c0e14',
+    glow: 'rgba(12, 14, 20, 0.18)',
     end: 500,
     suffix: '+',
     labelKey: 'stats.professionals.label',
-    descKey: 'stats.professionals.desc',
   },
   {
-    color: 'var(--innovation)',
-    glow: 'rgba(255, 138, 0, 0.18)',
+    color: '#0c0e14',
+    glow: 'rgba(12, 14, 20, 0.18)',
     end: 25,
     suffix: '+',
     labelKey: 'stats.partners.label',
-    descKey: 'stats.partners.desc',
   },
   {
-    color: 'var(--systems)',
+    color: '#0c0e14',
     glow: 'rgba(0, 105, 200, 0.18)',
     end: 10,
     suffix: '+',
     labelKey: 'stats.experience.label',
-    descKey: 'stats.experience.desc',
   },
 ];
 
@@ -143,9 +138,6 @@ export const Stats = () => {
               <span className="stat-label">{t(s.labelKey)}</span>
             </div>
             <StatNum end={s.end} suffix={s.suffix} />
-            <div className="stat-foot">
-              <div className="stat-desc">{t(s.descKey)}</div>
-            </div>
           </div>
         ))}
       </div>

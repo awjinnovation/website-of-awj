@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useLang } from '../i18n/LangContext';
-import { PillarLogo } from '../components/PillarLogo';
-import type { PillarId } from '../data/pillars';
 import type { TranslationKey } from '../i18n/dict';
 
 type MetaRow = { labelKey: TranslationKey; valueKey?: TranslationKey; literal?: string };
@@ -12,6 +10,7 @@ type PillarItem = {
   num: string;
   cls: string;
   icon: string;
+  asset: string;
   descKey: TranslationKey;
   meta: MetaRow[];
 };
@@ -22,7 +21,8 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Academy',
     num: '01 / 04',
     cls: 'stack-card-academy',
-    icon: '/assets/brand/awj-academy-icon.svg',
+    icon: '/assets/brand/awj-academy-logo-v.svg',
+    asset: '/assets/brand/awj-academy-asset-1.svg',
     descKey: 'pillar.academy.desc',
     meta: [
       { labelKey: 'pillar.meta.established', literal: '2009' },
@@ -35,7 +35,8 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Sustain',
     num: '02 / 04',
     cls: 'stack-card-sustain',
-    icon: '/assets/brand/awj-sustain-icon.svg',
+    icon: '/assets/brand/awj-sustain-logo-v.svg',
+    asset: '/assets/brand/awj-sustain-asset-1.svg',
     descKey: 'pillar.sustain.desc',
     meta: [
       { labelKey: 'pillar.meta.partner', valueKey: 'pillar.sustain.partner' },
@@ -48,7 +49,8 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Innovation',
     num: '03 / 04',
     cls: 'stack-card-innovation',
-    icon: '/assets/brand/awj-innovation-icon.svg',
+    icon: '/assets/brand/awj-innovation-logo-v.svg',
+    asset: '/assets/brand/awj-innovation-asset-1.svg',
     descKey: 'pillar.innovation.desc',
     meta: [
       { labelKey: 'pillar.meta.based', valueKey: 'pillar.innovation.based' },
@@ -61,7 +63,8 @@ const PILLAR_DATA: PillarItem[] = [
     name: 'Systems',
     num: '04 / 04',
     cls: 'stack-card-systems',
-    icon: '/assets/brand/awj-systems-icon.svg',
+    icon: '/assets/brand/awj-systems-logo-v.svg',
+    asset: '/assets/brand/awj-systems-asset-1.svg',
     descKey: 'pillar.systems.desc',
     meta: [
       { labelKey: 'pillar.meta.established', literal: '2003' },
@@ -131,7 +134,7 @@ export const PillarsStack = () => {
       <div className="container pillars-stack-layout">
         <div className="pillars-stack-head reveal">
           <h2 className="section-title" style={{ marginTop: 0 }}>
-            <strong>{t('pillars.title.first')}</strong> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
+            <img src="/assets/brand/awj-logo-v.svg" alt="AWJ" className="section-awj-logo" /> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
           </h2>
           <p>{t('pillars.intro')}</p>
         </div>
@@ -143,10 +146,11 @@ export const PillarsStack = () => {
           >
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
-                <div className="card-logo">
-                  <PillarLogo pillarId={p.id as PillarId} variant="light" />
+                <img src={p.asset} alt="" aria-hidden="true" className="card-asset" />
+                <div className="card-header">
+                  <img src={p.icon} alt={`AWJ ${p.name}`} className="card-logo-img" />
                 </div>
-                <div>
+                <div className="card-content">
                   <p className="desc">{t(p.descKey)}</p>
                 </div>
               </div>

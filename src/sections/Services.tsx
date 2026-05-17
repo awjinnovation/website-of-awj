@@ -19,14 +19,14 @@ export const Services = () => {
       <div className="container">
         <div className="services-head reveal">
           <div>
-            <div className="eyebrow">{t('services.eyebrow')}</div>
-            <h2 className="section-title" style={{ marginTop: 16 }}>
-              {t('services.title.first')} <em>{t('services.title.second')}</em>
+            <h2 className="section-title" style={{ marginTop: 0 }}>
+              {t('services.title')}
             </h2>
           </div>
         </div>
         <div className="bento reveal-stagger">
           <div className="bento-card b-1 bento-ink">
+            <img src="/assets/brand/awj-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div>
               <div className="title">
                 {t('services.b1.title.line1')}{' '}
@@ -44,9 +44,9 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/brand/awj-logo-v.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-2 bento-academy">
+            <img src="/assets/brand/awj-academy-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b2.title')}</div>
             <p className="body">{t('services.b2.body')}</p>
             <a
@@ -57,9 +57,9 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/brand/awj-academy-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-3 bento-sustain">
+            <img src="/assets/brand/awj-sustain-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b3.title')}</div>
             <p className="body">{t('services.b3.body')}</p>
             <a
@@ -70,9 +70,9 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/brand/awj-sustain-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-4 bento-innovation">
+            <img src="/assets/brand/awj-innovation-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b4.title')}</div>
             <p className="body">{t('services.b4.body')}</p>
             <a
@@ -83,9 +83,9 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/brand/awj-innovation-icon.svg" className="icon" alt="" />
           </div>
           <div className="bento-card b-5 bento-systems">
+            <img src="/assets/brand/awj-systems-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b5.title')}</div>
             <p className="body">{t('services.b5.body')}</p>
             <a
@@ -96,7 +96,6 @@ export const Services = () => {
               {t('services.more')}
               <Arrow />
             </a>
-            <img src="/assets/brand/awj-systems-icon.svg" className="icon" alt="" />
           </div>
         </div>
       </div>
