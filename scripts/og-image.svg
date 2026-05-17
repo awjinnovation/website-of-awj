@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0e14"/>
+      <stop offset="1" stop-color="#13202f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.8">
+      <stop offset="0" stop-color="#0069c8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0069c8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.05" cy="0.95" r="0.7">
+      <stop offset="0" stop-color="#00a19d" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00a19d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Chevron watermark, right side -->
+  <g transform="translate(640 70) scale(0.62)" opacity="1">
+    <polygon fill="rgba(255,255,255,0.05)"
+      points="-7.42 214.36 -7.42 274.18 160.4 274.18 525.95 500.86 716.89 500.86 858.21 334.94 990.48 471.02 1033.37 429.32 855.29 246.11 689.26 441.04 542.99 441.04 177.44 214.36 -7.42 214.36"/>
+    <polygon fill="rgba(255,255,255,0.08)"
+      points="691.05 262.56 623.08 214.36 381.78 214.36 156.48 441.04 -3.09 441.04 -3.09 500.86 181.37 500.86 406.66 274.18 604.02 274.18 700.17 342.36 959.45 50.48 914.73 10.75 691.05 262.56"/>
+    <polygon fill="rgba(255,255,255,0.12)"
+      points="834.22 -46.35 495.86 327.7 155.03 327.7 -.56 187.72 -40.57 232.19 132.08 387.52 522.36 387.52 878.53 -6.16 834.22 -46.35"/>
+  </g>
+
+  <!-- AWJ logo, top left, white -->
+  <g transform="translate(80 78) scale(0.32)" fill="#faf8f3">
+    <path d="M438.78,239.81l52.98-157.49c.22-.56.78-.89,1.34-.89h44.52c.56,0,1.11.33,1.34.89l52.98,157.49c.22.78-.11,1.22-.89,1.22h-37.84c-.56,0-1.11-.33-1.34-.89l-7.79-25.15c-.22-.56-.78-.89-1.34-.89h-54.65c-.56,0-1.11.33-1.34.89l-7.79,25.15c-.22.56-.78.89-1.34.89h-37.95c-.78,0-1.11-.45-.89-1.22ZM497.99,183.27h34.73c.78,0,1.11-.45.89-1.22l-17.59-56.32c-.33-1.11-1-1.11-1.34,0l-17.59,56.32c-.22.78.11,1.22.89,1.22Z"/>
+    <path d="M621.42,240.03l-30.27-157.38c-.11-.67.22-1.22,1-1.22h37.17c.67,0,1.11.33,1.22,1l19.14,109.63c.22,1,1,1,1.22,0l23.71-109.63c.11-.67.56-1,1.22-1h34.28c.67,0,1.11.33,1.22,1l23.48,108.96c.22,1,1,1,1.22,0l19.25-108.96c.11-.67.56-1,1.22-1h37.17c.78,0,1.11.56,1,1.22l-30.27,157.38c-.11.67-.56,1-1.22,1h-50.64c-.67,0-1.11-.33-1.22-1l-17.81-91.93c-.22-1-1.11-1-1.34,0l-17.7,91.93c-.11.67-.56,1-1.22,1h-50.64c-.67,0-1.11-.33-1.22-1Z"/>
+    <path d="M797.39,239.92v-31.05c0-.67.45-1.11,1.11-1.11h22.48c10.8,0,16.58-3.01,16.58-17.7v-107.52c0-.67.45-1.11,1.11-1.11h35.84c.67,0,1.11.45,1.11,1.11v114.97c0,31.28-16.25,43.52-43.74,43.52h-33.39c-.67,0-1.11-.45-1.11-1.11Z"/>
+    <polygon points="261.79 242.35 207.51 167.74 153.69 242.33 0 242.1 .03 221.1 142.95 221.31 203.77 137.02 211.11 137.02 287.79 242.35 261.79 242.35"/>
+    <polygon points="311.05 242.35 207.51 100.11 133.23 203.06 71.85 162.48 .01 162.48 .01 141.47 78.17 141.47 127.99 174.41 203.77 69.38 211.11 69.38 337.03 242.35 311.05 242.35"/>
+    <polygon points="361.49 242.35 207.57 30.92 86.05 202.05 .01 202.05 .01 181.04 75.21 181.04 203.76 0 211.04 0 387.47 242.35 361.49 242.35"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#faf8f3">
+    <text x="80" y="265" font-size="22" letter-spacing="3" opacity="0.7" font-weight="500">SUSTAINABLE TECHNOLOGIES &amp; INNOVATION</text>
+
+    <!-- Headline -->
+    <text x="80" y="345" font-size="78" font-weight="700" letter-spacing="-2">Bridge, Empower,</text>
+    <text x="80" y="425" font-size="78" font-weight="700" font-style="italic" letter-spacing="-2" fill="#faf8f3">Accelerate.</text>
+
+    <!-- Subhead -->
+    <text x="80" y="495" font-size="28" opacity="0.78" font-weight="400">One group. Four pillars. Building Oman&#39;s innovation ecosystem.</text>
+  </g>
+
+  <!-- Pillar dots + labels -->
+  <g font-family="Helvetica, Arial, sans-serif" fill="#faf8f3">
+    <circle cx="92" cy="560" r="10" fill="#9674ce"/>
+    <text x="112" y="566" font-size="20" font-weight="500">Academy</text>
+
+    <circle cx="262" cy="560" r="10" fill="#00a19d"/>
+    <text x="282" y="566" font-size="20" font-weight="500">Sustain</text>
+
+    <circle cx="408" cy="560" r="10" fill="#ff6b00"/>
+    <text x="428" y="566" font-size="20" font-weight="500">Innovation</text>
+
+    <circle cx="582" cy="560" r="10" fill="#0069c8"/>
+    <text x="602" y="566" font-size="20" font-weight="500">Systems</text>
+
+    <!-- Domain -->
+    <text x="1120" y="566" font-size="22" font-weight="600" text-anchor="end" opacity="0.9">awj.om</text>
+  </g>
+</svg>

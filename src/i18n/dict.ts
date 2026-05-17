@@ -22,7 +22,7 @@ const en = {
   'nav.pillarsEyebrow': 'Four pillars · one group',
 
   // Hero
-  'hero.eyebrow': 'Sustainable technologies & innovation development Co.',
+  'hero.eyebrow': 'Sustainable Technologies & Innovation Development LLC',
   'hero.title.line1': 'Bridge,',
   'hero.title.line2': 'Empower,',
   'hero.title.line3': 'Accelerate.',
