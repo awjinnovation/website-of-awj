@@ -26,7 +26,7 @@ export type PillarContentBundle = Record<Lang, PillarPageContent>;
 export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
   academy: {
     ar: {
-      websiteUrl: 'https://awj.om/academy',
+      websiteUrl: 'https://academy.awj.om/',
       aboutTitle: 'أكاديمية متكاملة للمعرفة والتدريب والحوار العلمي',
       about: [
         'أكاديمية أوج منصة متكاملة للمعرفة والتدريب والحوار العلمي، تنتمي إلى شركة أوج الابتكار. نقدم برامج تعليمية وتدريبية متقدمة وشاملة تستجيب لاحتياجات سوق العمل والمجتمع، ونعمل على تمكين الأفراد والمؤسسات بالمعارف والمهارات والقدرات في بيئة تجمع خبرة عالمية بسياق محلي.',
@@ -59,7 +59,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       },
     },
     en: {
-      websiteUrl: 'https://awj.om/academy',
+      websiteUrl: 'https://academy.awj.om/',
       aboutTitle: 'An integrated platform for knowledge, training, and scholarly dialogue.',
       about: [
         'AWJ Academy is an integrated platform for knowledge, training, and scholarly dialogue, part of AWJ Innovation. We offer advanced and comprehensive education and training programs that respond to the needs of the labour market and society, empowering individuals and institutions with the knowledge, skills, and capabilities they need, in an environment that combines global expertise with local context.',
@@ -221,7 +221,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
 
   systems: {
     en: {
-      websiteUrl: 'https://awj.om/systems',
+      websiteUrl: 'https://systems.awj.om/',
       aboutTitle: 'Engineering excellence for institutions that cannot fail.',
       about: [
         'AWJ Systems is the specialist AI and software engineering arm of AWJ. Based in Muscat, we partner with government entities, large enterprises, and fast-moving businesses across Oman and the GCC to deliver technology that works flawlessly on day one, and scales securely for the future.',
@@ -253,7 +253,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       },
     },
     ar: {
-      websiteUrl: 'https://awj.om/systems',
+      websiteUrl: 'https://systems.awj.om/',
       aboutTitle: 'تميّز هندسي للمؤسسات التي لا تحتمل الخطأ.',
       about: [
         'أوج الأنظمة هي الذراع المتخصصة في الذكاء الاصطناعي وهندسة البرمجيات لمجموعة أوج. ومقرها مسقط، نشارك الجهات الحكومية والمؤسسات الكبرى والشركات سريعة النمو في عُمان ودول الخليج في تقديم تقنية تعمل بكفاءة من اليوم الأول, وتتوسّع بأمان نحو المستقبل.',
