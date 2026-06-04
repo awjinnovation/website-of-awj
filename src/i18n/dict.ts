@@ -164,8 +164,6 @@ const en = {
   // Footer
   'footer.brand.desc':
     'An integrated holding group operating across Academy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
-  'footer.newsletter.placeholder': 'your@email.com',
-  'footer.newsletter.subscribed': 'Subscribed.',
   'footer.col.pillars': 'Pillars',
   'footer.col.group': 'Group',
   'footer.col.group.companies': 'Companies',
@@ -372,8 +370,6 @@ const ar: Record<TranslationKey, string> = {
   // Footer
   'footer.brand.desc':
     'مجموعة قابضة متكاملة تعمل عبر الأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
-  'footer.newsletter.placeholder': 'بريدك@الإلكتروني',
-  'footer.newsletter.subscribed': 'تم الاشتراك.',
   'footer.col.pillars': 'القطاعات',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',
