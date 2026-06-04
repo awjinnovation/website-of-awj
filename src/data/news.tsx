@@ -24,7 +24,7 @@ export type NewsItem = {
 export const NEWS: NewsItem[] = [
   {
     id: 'healthcare-studio',
-    image: '/news/healthcare-studio.jpg',
+    image: '/news-media/healthcare-studio.jpg',
     category: 'Healthcare',
     title:
       'AWJ Innovation and Sultan Qaboos Hospital Launch Healthcare Innovation Studio',
@@ -42,7 +42,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'embassy-hackathon-execution',
-    image: '/news/embassy-hackathon-execution.jpg',
+    image: '/news-media/embassy-hackathon-execution.jpg',
     category: 'Digital Transformation',
     title: 'Embassy Hackathon: Enabling Diplomatic Innovation Towards Smart Embassies',
     date: '2024-10-22',
@@ -59,7 +59,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'csr-governance-workshop',
-    image: '/news/csr-governance-workshop.jpg',
+    image: '/news-media/csr-governance-workshop.jpg',
     category: 'Social Responsibility',
     title: 'Social Responsibility Governance Workshop',
     date: '2025-01-13',
@@ -76,7 +76,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'embassy-hackathon-launch',
-    image: '/news/embassy-hackathon-launch.jpg',
+    image: '/news-media/embassy-hackathon-launch.jpg',
     category: 'Digital Transformation',
     title: 'Launch of Smart Embassies Hackathon Program',
     date: '2024-10-22',
@@ -93,7 +93,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'asyad-expand-challenge',
-    image: '/news/asyad-expand-challenge.jpg',
+    image: '/news-media/asyad-expand-challenge.jpg',
     category: 'Logistics',
     title: 'ASYAD Group Launches Expand Challenge',
     date: '2024-09-15',
@@ -109,7 +109,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'oman-airports-runway',
-    image: '/news/oman-airports-runway.jpg',
+    image: '/news-media/oman-airports-runway.jpg',
     category: 'Aviation',
     title: 'Oman Airports Runway Incubator Journey',
     date: '2024-08-30',
@@ -128,7 +128,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'royal-academy-community',
-    image: '/news/royal-academy-community.jpg',
+    image: '/news-media/royal-academy-community.jpg',
     category: 'Training',
     title: 'Royal Academy Executes Community Communication Program',
     date: '2024-05-15',
@@ -145,7 +145,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'aerohack',
-    image: '/news/aerohack.jpg',
+    image: '/news-media/aerohack.jpg',
     category: 'Aviation',
     title: "AeroHack: Oman's Largest Aviation Hackathon",
     date: '2024-03-20',
@@ -162,7 +162,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'nxt-gig-launch',
-    image: '/news/nxt-gig-launch.jpg',
+    image: '/news-media/nxt-gig-launch.jpg',
     category: 'Digital Economy',
     title: 'Launch of .nxt Gig Freelance Platform',
     date: '2024-01-15',
@@ -179,7 +179,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: 'gulf-urban-planning',
-    image: '/news/gulf-urban-planning.jpg',
+    image: '/news-media/gulf-urban-planning.jpg',
     category: 'Urban Development',
     title: 'First Gulf Urban Planning Hackathon',
     date: '2023-10-31',

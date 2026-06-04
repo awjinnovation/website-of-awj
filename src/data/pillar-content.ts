@@ -95,7 +95,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
 
   sustain: {
     en: {
-      websiteUrl: 'https://awj.om/sustain',
+      websiteUrl: 'https://awj.om/pillars/sustain',
       aboutTitle: 'From sustainability ambition to measurable outcomes.',
       about: [
         "AWJ Sustain is the dedicated sustainability division of AWJ, built to help public and private sector organizations across Oman and the GCC move from sustainability ambition to measurable, standards-aligned outcomes. Operating at the intersection of ESG strategy, reporting excellence, and organizational transformation, AWJ Sustain combines deep local market knowledge with access to globally certified methodologies through its exclusive partnership with CSR Company International, one of the world's leading sustainability consultancies, active in over 70 countries.",
@@ -133,7 +133,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       },
     },
     ar: {
-      websiteUrl: 'https://awj.om/sustain',
+      websiteUrl: 'https://awj.om/pillars/sustain',
       aboutTitle: 'من طموح الاستدامة إلى نتائج قابلة للقياس.',
       about: [
         'أوج الاستدامة هي الوحدة المتخصصة في الاستدامة ضمن مجموعة أوج، مُصمَّمة لمساعدة المؤسسات الحكومية والخاصة في عُمان ودول الخليج على الانتقال من طموح الاستدامة إلى نتائج قابلة للقياس ومتوافقة مع المعايير الدولية. نعمل عند تقاطع استراتيجية الحوكمة البيئية والاجتماعية والمؤسسية (ESG) مع تميز التقارير والتحول المؤسسي، ونجمع بين معرفة عميقة بالسوق المحلية والوصول إلى منهجيات معتمدة عالمياً عبر شراكتنا الحصرية مع CSR Company International, إحدى أبرز شركات الاستشارات في الاستدامة، الفاعلة في أكثر من 70 دولة.',
