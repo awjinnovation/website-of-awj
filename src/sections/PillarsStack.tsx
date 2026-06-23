@@ -173,9 +173,9 @@ export const PillarsStack = () => {
               </svg>
             </button>
             <div className="stack-dots">
-              {PILLAR_DATA.map((_, i) => (
+              {PILLAR_DATA.map((p, i) => (
                 <button
-                  key={i}
+                  key={p.id}
                   className={`stack-dot ${i === idx ? 'active' : ''}`}
                   onClick={() => setIdx(i)}
                   aria-label={`Pillar ${i + 1}`}

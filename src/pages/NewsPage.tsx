@@ -240,8 +240,8 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
           <p className="am-dek">{article.dek}</p>
           <div className="am-rule"></div>
           <div className="am-text">
-            {article.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            {article.body.map((p) => (
+              <p key={p}>{p}</p>
             ))}
           </div>
           <div className="am-footer">

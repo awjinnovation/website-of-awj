@@ -78,8 +78,8 @@ export const Success = () => (
         </p>
       </div>
       <div className="case-grid reveal-stagger">
-        {CASES.map((c, i) => (
-          <div className="case-card" key={i}>
+        {CASES.map((c) => (
+          <div className="case-card" key={c.pillar}>
             <div className="case-pillar">
               <span className="dot" style={{ background: c.color }}></span>AWJ {c.pillar}
             </div>
@@ -89,8 +89,8 @@ export const Success = () => (
               <div>{c.role}</div>
             </div>
             <div className="case-outcomes">
-              {c.outcomes.map(([n, l], j) => (
-                <div key={j}>
+              {c.outcomes.map(([n, l]) => (
+                <div key={`${n}-${l}`}>
                   <div className="o-num">{n}</div>
                   <div className="o-label">{l}</div>
                 </div>

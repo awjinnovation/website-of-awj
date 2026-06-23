@@ -126,10 +126,10 @@ export const Stats = () => {
   return (
     <section className="stats-band" data-screen-label="02 Stats">
       <div className="stats-band-row container reveal-stagger">
-        {STAT_ROWS.map((s, i) => (
+        {STAT_ROWS.map((s) => (
           <div
             className="stat-col"
-            key={i}
+            key={s.labelKey}
             style={
               { '--accent': s.color, '--accent-glow': s.glow } as React.CSSProperties
             }
