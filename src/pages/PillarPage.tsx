@@ -97,8 +97,8 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               <div className="eyebrow">{t('pillarPage.about')}</div>
             </div>
             <div className="pillar-about-body">
-              {content.about.map((p, i) => (
-                <p key={i}>{p}</p>
+              {content.about.map((p) => (
+                <p key={p}>{p}</p>
               ))}
             </div>
           </div>
@@ -111,14 +111,14 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
             </div>
             <div className="pillar-service-grid reveal-stagger">
               {content.services.map((s, i) => (
-                <div key={i} className="pillar-service-card">
+                <div key={s.title} className="pillar-service-card">
                   <div className="pillar-service-num">/ 0{i + 1}</div>
                   <h3 className="pillar-service-title">{s.title}</h3>
                   <p className="pillar-service-body">{s.body}</p>
                   {s.items && (
                     <ul className="pillar-service-items">
-                      {s.items.map((it, j) => (
-                        <li key={j}>{it}</li>
+                      {s.items.map((it) => (
+                        <li key={it}>{it}</li>
                       ))}
                     </ul>
                   )}
@@ -164,9 +164,9 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                   <div className="pillar-contact-row">
                     <div className="pillar-contact-key">{t('pillarPage.contact.social')}</div>
                     <div className="pillar-contact-val">
-                      {content.contact.social.map((s, i) => (
-                        <span key={i} className="pillar-social-item">
-                          {i > 0 && <span className="dot">·</span>}
+                      {content.contact.social.map((s, idx) => (
+                        <span key={s.handle} className="pillar-social-item">
+                          {idx > 0 && <span className="dot">·</span>}
                           {s.label}:{' '}
                           {s.url ? (
                             <a href={s.url} target="_blank" rel="noopener noreferrer">

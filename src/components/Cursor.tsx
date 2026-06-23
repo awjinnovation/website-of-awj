@@ -71,7 +71,7 @@ export const Cursor = () => {
       <div ref={ringRef} className="cursor-ring" />
       {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
         <div
-          key={i}
+          key={`trail-${i}`}
           ref={(el) => {
             trailRefs.current[i] = el;
           }}

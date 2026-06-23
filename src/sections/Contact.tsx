@@ -161,9 +161,9 @@ export const Contact = () => {
         <div className="reveal">
           <div className="wizard">
             <div className="wizard-progress">
-              {steps.map((_, i) => (
+              {steps.map((s, i) => (
                 <div
-                  key={i}
+                  key={s.title}
                   className={`step ${i < step ? 'done' : ''} ${i === step ? 'active' : ''}`}
                 >
                   <div className="fill"></div>

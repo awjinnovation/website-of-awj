@@ -216,13 +216,13 @@ export const Projects = () => {
         <div className="project-bento">
           {PROJECTS.map((p, i) => (
             <button
-              key={i}
+              key={p.name}
               type="button"
               className={`project-tile ${p.size}${p.light ? ' p-light' : ''}`}
               style={{ background: p.bgGrad }}
               onClick={() => setOpen(i)}
             >
-              <img src={p.icon} className="pt-icon" alt="" />
+              <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <div className="pt-stat-block">
                 <div className="pt-stat">{p.stat}</div>
                 <div className="pt-stat-label">{p.statLabel}</div>
@@ -255,7 +255,7 @@ export const Projects = () => {
           <div className="pm-backdrop"></div>
           <div className="pm-card" onClick={(e) => e.stopPropagation()}>
             <div className="pm-cover" style={{ background: PROJECTS[open].bgGrad }}>
-              <img src={PROJECTS[open].icon} className="pm-cover-icon" alt="" />
+              <img src={PROJECTS[open].icon} className="pm-cover-icon" alt="" aria-hidden="true" />
               <div className="pm-cover-num">PROJECT / 0{open + 1}</div>
               <div className="pm-cover-pillar">
                 <span className="swatch" style={{ background: 'var(--paper)' }}></span>
@@ -284,8 +284,8 @@ export const Projects = () => {
               <div className="pm-achievements">
                 <div className="pm-ach-head">{t('projects.modal.achievements')}</div>
                 <div className="pm-ach-grid">
-                  {PROJECTS[open].achievements.map((a, j) => (
-                    <div key={j} className="pm-ach">
+                  {PROJECTS[open].achievements.map((a) => (
+                    <div key={`${a.value}-${a.label}`} className="pm-ach">
                       <div className="pm-ach-value">{a.value}</div>
                       <div className="pm-ach-label">{a.label}</div>
                     </div>
