@@ -151,6 +151,12 @@ export const Contact = () => {
         <div className="reveal">
           <h2 style={{ marginTop: 24 }}>{t('contact.title')}</h2>
           <p className="lede">{t('contact.lede')}</p>
+          <div className="contact-direct">
+            <span className="contact-direct-label">{t('contact.callUs')}</span>
+            <a className="contact-direct-phone" href="tel:+96893909693" dir="ltr">
+              +968 9390 9693
+            </a>
+          </div>
         </div>
         <div className="reveal">
           <div className="wizard">

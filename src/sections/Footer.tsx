@@ -15,6 +15,9 @@ export const Footer = () => {
               />
             </div>
             <p>{t('footer.brand.desc')}</p>
+            <a className="footer-phone" href="tel:+96893909693" dir="ltr">
+              +968 9390 9693
+            </a>
             <div className="footer-social">
               <a
                 href="https://www.linkedin.com/company/awj-om/"

@@ -126,6 +126,7 @@ const en = {
   'contact.title': 'Contact us',
   'contact.lede':
     'A short, structured intake helps us route your enquiry to the right pillar and partner. Most replies within two business days.',
+  'contact.callUs': 'Or call us directly',
   'contact.step1': 'Which pillar are you interested in?',
   'contact.step2': "What's the area of engagement?",
   'contact.step3': 'Tell us about you.',
@@ -332,6 +333,7 @@ const ar: Record<TranslationKey, string> = {
   'contact.title': 'تواصل معنا',
   'contact.lede':
     'استمارة قصيرة ومنظّمة تساعدنا على توجيه استفسارك إلى القطاع والشريك المناسبَين. عادةً ما نرد خلال يومَي عمل.',
+  'contact.callUs': 'أو اتصل بنا مباشرة',
   'contact.step1': 'بأي قطاع أنت مهتم؟',
   'contact.step2': 'ما مجال التعاون؟',
   'contact.step3': 'عرّفنا بنفسك.',

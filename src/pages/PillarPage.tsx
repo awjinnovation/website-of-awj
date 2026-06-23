@@ -167,7 +167,14 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                       {content.contact.social.map((s, i) => (
                         <span key={i} className="pillar-social-item">
                           {i > 0 && <span className="dot">·</span>}
-                          {s.label}: <strong>{s.handle}</strong>
+                          {s.label}:{' '}
+                          {s.url ? (
+                            <a href={s.url} target="_blank" rel="noopener noreferrer">
+                              <strong>{s.handle}</strong>
+                            </a>
+                          ) : (
+                            <strong>{s.handle}</strong>
+                          )}
                         </span>
                       ))}
                     </div>
