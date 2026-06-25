@@ -10,7 +10,17 @@ export const NavPill = () => {
   const [onDark, setOnDark] = useState(true);
   const [pillarsOpen, setPillarsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [autoScrollEnabled, setAutoScrollEnabled] = useState(() =>
+    localStorage.getItem('autoScroll') !== 'disabled'
+  );
   const closeTimerRef = useRef<number | null>(null);
+
+  const toggleAutoScroll = () => {
+    const newState = !autoScrollEnabled;
+    setAutoScrollEnabled(newState);
+    localStorage.setItem('autoScroll', newState ? 'enabled' : 'disabled');
+    window.dispatchEvent(new Event('autoScrollToggle'));
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -146,6 +156,15 @@ export const NavPill = () => {
           <a href="#projects">{t('nav.projects')}</a>
           <a href="#news">{t('nav.news')}</a>
         </div>
+        <label className="nav-toggle-label">
+          <input
+            type="checkbox"
+            checked={autoScrollEnabled}
+            onChange={toggleAutoScroll}
+            aria-label="Toggle auto-scroll"
+          />
+          <span className="nav-toggle-text">Auto scroll</span>
+        </label>
         <button
           type="button"
           className="nav-lang"
