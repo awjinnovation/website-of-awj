@@ -22,12 +22,12 @@ const en = {
   'nav.pillarsEyebrow': 'Four pillars · one group',
 
   // Hero
-  'hero.eyebrow': 'Sustainable Technologies & Innovation Development LLC',
-  'hero.title.line1': 'Bridge,',
-  'hero.title.line2': 'Empower,',
-  'hero.title.line3': 'Accelerate.',
+  'hero.eyebrow': 'Sustainable Innovation and Technologies Development Company (AWJ)',
+  'hero.title.line1': 'Creating',
+  'hero.title.line2': 'a Sustainable',
+  'hero.title.line3': 'Future',
   'hero.lede':
-    "AWJ bridges the gaps in Oman's innovation ecosystem, accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth.",
+    "In a world of accelerating challenges, resources alone are no longer enough to shape the future; rather, it is the capacity to innovate and turn knowledge into impact. At AWJ, we believe that the intersection of humanity, knowledge, and technology is the starting point for any real transformation.",
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
@@ -46,7 +46,7 @@ const en = {
   'pillars.title.first': 'AWJ',
   'pillars.title.second': 'Pillars',
   'pillars.intro':
-    'AWJ Corporate operates through four pillars: AWJ Academy develops people and institutions, AWJ Sustain drives sustainability transformation, AWJ Innovation enables talent, capability, and digital transformation, and AWJ Systems integrates infrastructure, digital backbone, and operational technology.',
+    'AWJ Corporate operates through four pillars: AWJ Academy develops people and institutions, AWJ Sustain drives sustainability transformation, AWJ Innovation enables talent, capability, and digital transformation, and AWJ Systems integrates infrastructure, digital backbone, and operational technology.',
   'pillars.prev': 'Previous',
   'pillars.next': 'Next',
   'pillars.label': 'PILLAR',
@@ -58,13 +58,13 @@ const en = {
   'pillar.systems.fullName': 'AWJ Systems',
   // Per-pillar descriptions used in the carousel
   'pillar.academy.desc':
-    'Designs accredited learning systems, executive programs, and workforce platforms, equipping people and institutions for the work that does not yet exist.',
+    'The capability building and human capital development arm, specializing in designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation, enhance competitiveness, and prepare for future requirements.',
   'pillar.sustain.desc':
-    'End-to-end ESG advisory, sustainability strategy, GRI/MSX-aligned reporting, ISO certification, climate services, and an AI-powered ESG index for MSX-listed companies.',
+    'A strategic partner in sustainability and institutional excellence, specializing in governance, environmental and social strategies, and impact management, enabling institutions to achieve responsible growth and sustainable value for business and society.',
   'pillar.innovation.desc':
-    'A consulting practice for talent enablement, capability building, advanced technology, strategy, innovation management, IP, and program design, aligned with Oman Vision 2040.',
+    'A specialized arm in designing and managing innovation, R&D, and technology transfer ecosystems, transforming ideas and emerging opportunities into solutions, products, and services with sustainable impact and value.',
   'pillar.systems.desc':
-    'Mission-critical engineering and integration, infrastructure, digital backbone, and operational technology for the institutions that keep regions running.',
+    'A center of excellence in future technologies, specializing in data, artificial intelligence, quantum computing, and emerging technologies, developing smart solutions and systems that support innovation, institutional transformation, and decision-making.',
   'pillar.meta.established': 'Established',
   'pillar.meta.reach': 'Reach',
   'pillar.meta.alumni': 'Alumni',
@@ -92,25 +92,25 @@ const en = {
   'services.b1.body':
     'Operating-model design, capital strategy, and group-level transformation programs delivered with cross-pillar discipline.',
   'services.b2.title': 'Capability Building',
-  'services.b2.body': 'Accredited learning systems and workforce development at scale.',
-  'services.b3.title': 'ISO Standards Implementation & Certification',
+  'services.b2.body': 'Designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation and enhance competitiveness.',
+  'services.b3.title': 'Sustainability & Governance',
   'services.b3.body':
-    'Practical implementation, auditing and certification support across ISO 26000, 20121, 19600, 20400 & 37001.',
-  'services.b4.title': 'Innovation & Capability',
-  'services.b4.body': 'Talent, advanced tech & strategy.',
-  'services.b5.title': 'Systems Integration',
-  'services.b5.body': 'Mission-critical engineering & OT.',
+    'End-to-end sustainability strategy, ESG advisory, impact measurement, and governance frameworks enabling responsible growth and sustainable value.',
+  'services.b4.title': 'Innovation Ecosystems',
+  'services.b4.body': 'Designing and managing innovation, R&D, and technology transfer ecosystems that transform ideas into solutions with sustainable impact.',
+  'services.b5.title': 'Future Technologies & AI',
+  'services.b5.body': 'Specializing in data, artificial intelligence, quantum computing, and emerging technologies to develop smart solutions supporting institutional transformation.',
 
   // Projects (case-studies grid)
   'projects.eyebrow': 'Selected projects',
   'projects.title.first': 'Success',
-  'projects.title.second': 'stories.',
+  'projects.title.second': 'stories',
   'projects.modal.achievements': 'Key achievements',
   'projects.modal.close': 'Close',
 
   // News landing block
   'news.title.first': 'News &',
-  'news.title.second': 'announcements.',
+  'news.title.second': 'announcements',
   'news.viewAll': 'View all news',
   'news.latest': 'Latest',
   'news.allStories': 'All stories',
@@ -231,12 +231,12 @@ const ar: Record<TranslationKey, string> = {
   'nav.pillarsEyebrow': 'أربعة قطاعات · مجموعة واحدة',
 
   // Hero
-  'hero.eyebrow': 'شركة التقنيات المستدامة وتطوير الابتكار',
-  'hero.title.line1': 'نَجسر،',
-  'hero.title.line2': 'نُمكِّن،',
-  'hero.title.line3': 'نُسرِّع.',
+  'hero.eyebrow': 'شركة الابتكار والتقنيات المستدامة التطوير (أوج)',
+  'hero.title.line1': 'خلق',
+  'hero.title.line2': 'مستقبل مستدام',
+  'hero.title.line3': '',
   'hero.lede':
-    'تَسد أوج الفجوات في منظومة الابتكار العُمانية, مُسرِّعةً التقنيات المستدامة، ومُمكِّنةً المواهب العُمانية الشابة، وبانيةً المؤسسات التي تُحوِّل الفرص إلى ثروة وطنية.',
+    'في عالم يواجه تحديات متسارعة، لم تعد الموارد وحدها كافية لتشكيل المستقبل؛ بل هي القدرة على الابتكار وتحويل المعرفة إلى تأثير حقيقي. في AWJ، نؤمن بأن تقاطع الإنسانية والمعرفة والتكنولوجيا هو نقطة الانطلاق لأي تحول حقيقي.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'القطاعات',
@@ -311,13 +311,13 @@ const ar: Record<TranslationKey, string> = {
   // Projects
   'projects.eyebrow': 'مشاريع مختارة',
   'projects.title.first': 'قصص',
-  'projects.title.second': 'نجاح.',
+  'projects.title.second': 'نجاح',
   'projects.modal.achievements': 'أبرز الإنجازات',
   'projects.modal.close': 'إغلاق',
 
   // News landing block
   'news.title.first': 'الأخبار',
-  'news.title.second': 'والإعلانات.',
+  'news.title.second': 'والإعلانات',
   'news.viewAll': 'عرض كل الأخبار',
   'news.latest': 'الأحدث',
   'news.allStories': 'كل القصص',
