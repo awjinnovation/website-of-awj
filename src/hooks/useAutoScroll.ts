@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const SECTION_SELECTORS = [
   '.hero-v3',
@@ -11,8 +11,27 @@ const SECTION_SELECTORS = [
 ];
 
 export const useAutoScroll = (intervalMs = 60_000) => {
+  const [isEnabled, setIsEnabled] = useState(() =>
+    localStorage.getItem('autoScroll') !== 'disabled'
+  );
+
+  useEffect(() => {
+    const handleToggle = () => {
+      setIsEnabled(localStorage.getItem('autoScroll') !== 'disabled');
+    };
+
+    window.addEventListener('storage', handleToggle);
+    window.addEventListener('autoScrollToggle', handleToggle);
+
+    return () => {
+      window.removeEventListener('storage', handleToggle);
+      window.removeEventListener('autoScrollToggle', handleToggle);
+    };
+  }, []);
+
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!isEnabled) return;
 
     let timer = 0;
 
@@ -65,5 +84,5 @@ export const useAutoScroll = (intervalMs = 60_000) => {
       window.removeEventListener('touchmove', onTouch);
       window.removeEventListener('keydown', onKey);
     };
-  }, [intervalMs]);
+  }, [isEnabled, intervalMs]);
 };
