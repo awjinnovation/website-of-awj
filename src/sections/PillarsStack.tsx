@@ -77,6 +77,7 @@ const PILLAR_DATA: PillarItem[] = [
 export const PillarsStack = () => {
   const { t } = useLang();
   const [idx, setIdx] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
   const total = PILLAR_DATA.length;
 
   useEffect(() => {
@@ -87,33 +88,53 @@ export const PillarsStack = () => {
     return () => window.clearTimeout(tmr);
   }, [idx, total]);
 
+  useEffect(() => {
+    const handleWindowPointerUp = (e: PointerEvent) => {
+      if (!dragRef.current.dragging) return;
+      const dx = (e as any).clientX - dragRef.current.x;
+      setDragOffset(0);
+      if (dx < -40) setIdx((i) => (i + 1) % total);
+      else if (dx > 40) setIdx((i) => (i - 1 + total) % total);
+      dragRef.current.dragging = false;
+    };
+    window.addEventListener('pointerup', handleWindowPointerUp);
+    return () => window.removeEventListener('pointerup', handleWindowPointerUp);
+  }, [total]);
+
   const cardOffset = (i: number): CSSProperties => {
     const d = (i - idx + total) % total;
+    const offset = d === 0 ? dragOffset * 0.3 : 0;
+    const transition = dragOffset === 0 ? 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)' : 'none';
+
     if (d === 0)
       return {
-        transform: 'translateX(-50%) translateZ(0) rotateY(0deg) scale(1)',
+        transform: `translateX(calc(-50% + ${offset}px)) translateZ(0) rotateY(0deg) scale(1)`,
         opacity: 1,
         zIndex: 4,
+        transition,
       };
     if (d === 1)
       return {
         transform:
-          'translateX(-50%) translateX(60px) translateZ(-120px) rotateY(-12deg) scale(0.92)',
+          `translateX(-50%) translateX(60px) translateZ(-120px) rotateY(-12deg) scale(0.92)`,
         opacity: 0.7,
         zIndex: 3,
+        transition,
       };
     if (d === 2)
       return {
         transform:
-          'translateX(-50%) translateX(120px) translateZ(-220px) rotateY(-18deg) scale(0.84)',
+          `translateX(-50%) translateX(120px) translateZ(-220px) rotateY(-18deg) scale(0.84)`,
         opacity: 0.4,
         zIndex: 2,
+        transition,
       };
     return {
       transform:
-        'translateX(-50%) translateX(-80px) translateZ(-300px) rotateY(8deg) scale(0.8)',
+        `translateX(-50%) translateX(-80px) translateZ(-300px) rotateY(8deg) scale(0.8)`,
       opacity: 0.25,
       zIndex: 1,
+      transition,
     };
   };
 
@@ -121,12 +142,24 @@ export const PillarsStack = () => {
   const onPointerDown = (e: React.PointerEvent) => {
     dragRef.current = { x: e.clientX, dragging: true };
   };
-  const onPointerUp = (e: React.PointerEvent) => {
+  const onPointerMove = (e: React.PointerEvent) => {
     if (!dragRef.current.dragging) return;
     const dx = e.clientX - dragRef.current.x;
+    setDragOffset(dx);
+  };
+  const handlePointerEnd = (e: React.PointerEvent) => {
+    if (!dragRef.current.dragging) return;
+    const dx = e.clientX - dragRef.current.x;
+    setDragOffset(0);
     if (dx < -40) setIdx((idx + 1) % total);
     else if (dx > 40) setIdx((idx - 1 + total) % total);
     dragRef.current.dragging = false;
+  };
+  const onPointerUp = handlePointerEnd;
+  const onPointerLeave = (e: React.PointerEvent) => {
+    if (dragRef.current.dragging && e.buttons === 0) {
+      handlePointerEnd(e);
+    }
   };
 
   return (
@@ -142,7 +175,9 @@ export const PillarsStack = () => {
           <div
             className="stack-stage reveal"
             onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
+            onPointerLeave={onPointerLeave}
           >
             {PILLAR_DATA.map((p, i) => (
               <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
