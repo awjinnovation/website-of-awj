@@ -15,7 +15,7 @@ const STAT_ROWS: Row[] = [
     color: '#0c0e14',
     glow: 'rgba(12, 14, 20, 0.18)',
     end: 50,
-    suffix: '+',
+    suffix: '',
     labelKey: 'stats.projects.label',
   },
   {
@@ -29,14 +29,14 @@ const STAT_ROWS: Row[] = [
     color: '#0c0e14',
     glow: 'rgba(12, 14, 20, 0.18)',
     end: 25,
-    suffix: '+',
+    suffix: '',
     labelKey: 'stats.partners.label',
   },
   {
     color: '#0c0e14',
     glow: 'rgba(0, 105, 200, 0.18)',
     end: 10,
-    suffix: '+',
+    suffix: '',
     labelKey: 'stats.experience.label',
   },
 ];
@@ -134,10 +134,8 @@ export const Stats = () => {
               { '--accent': s.color, '--accent-glow': s.glow } as React.CSSProperties
             }
           >
-            <div className="stat-col-top">
-              <span className="stat-label">{t(s.labelKey)}</span>
-            </div>
             <StatNum end={s.end} suffix={s.suffix} />
+            <span className="stat-label">{t(s.labelKey)}</span>
           </div>
         ))}
       </div>

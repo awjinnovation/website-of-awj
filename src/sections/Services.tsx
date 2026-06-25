@@ -36,10 +36,6 @@ export const Services = () => {
                 {t('services.b1.body')}
               </p>
             </div>
-            <a href="/about" className="bento-cta">
-              {t('services.more')}
-              <Arrow />
-            </a>
           </div>
           <div className="bento-card b-2 bento-academy">
             <img src="/assets/brand/awj-academy-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
