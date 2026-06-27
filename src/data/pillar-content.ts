@@ -240,7 +240,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
   systems: {
     en: {
       websiteUrl: 'https://systems.awj.om/',
-      aboutTitle: 'Who are we?',
+      aboutTitle: 'Engineering excellence for institutions that cannot fail.',
       about: [
         'AWJ Systems is the specialist AI and software engineering arm of AWJ. Based in Muscat, we partner with government entities, large enterprises, and fast-moving businesses across Oman and the GCC to deliver technology that works flawlessly on day one—and scales securely for the future.',
         "We carry AWJ's core purpose into the digital realm: making innovation meaningful. For us, that means building the digital engines that propel our clients toward their most ambitious goals. We measure our success by how effectively our systems empower government and enterprise to deliver on their core missions. Because this work is foundational to our clients' success, it must be uncompromising: software that accelerates growth while holding up under rigorous audit, AI that solves actual operational bottlenecks, and national-scale infrastructure engineered locally by the people who rely on it.",
@@ -249,16 +249,23 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       services: [
         {
-          title: 'What do we do?',
-          body: 'We architect, develop, and integrate enterprise-grade software and production AI for institutions that require strict security, absolute reliability, and localized data sovereignty. The single largest expression of this mandate is the Oman AI Studio, which AWJ Systems proudly operates on behalf of the Ministry of Transport, Communications and Information Technology (MTCIT). We manage the platforms, model deployments, and engineering infrastructure that power some of Oman\'s national AI capability. Our portfolio also includes mission-critical deployments for the Ministry of Social Development, the National Centre for Statistics and Information, and leading enterprises like Nama Group.',
-          items: [
-            'Advise (Digital Transformation): We guide ministries and enterprises through AI adoption, modernization roadmaps, and complex tender preparations. We help you scope the real problem, write the brief, and choose the right path forward even when that means advising where AI isn\'t the right solution.',
-            'Build (Custom Software & AI): We deliver greenfield solutions, from high-performance web platforms, cross-platform mobile applications to custom machine-learning models. Your models are trained on your data, deployed in your environment, and owned by you.',
-            'Augment (AI Integration): We modernize and inject AI and automation into your existing operational workflows. By integrating leading models directly into the systems your team already uses, we engineer out the manual toil without requiring expensive, disruptive rebuilds.',
-          ],
+          title: 'Advise',
+          body: 'Digital Transformation: We guide ministries and enterprises through AI adoption, modernization roadmaps, and complex tender preparations. We help you scope the real problem, write the brief, and choose the right path forward even when that means advising where AI isn\'t the right solution.',
         },
         {
-          title: 'Cloud Architecture',
+          title: 'Build',
+          body: 'Custom Software & AI: We deliver greenfield solutions, from high-performance web platforms and cross-platform mobile applications to custom machine-learning models. Your models are trained on your data, deployed in your environment, and owned by you.',
+        },
+        {
+          title: 'Augment',
+          body: 'AI Integration: We modernize and inject AI and automation into your existing operational workflows. By integrating leading models directly into the systems your team already uses, we engineer out the manual toil without requiring expensive, disruptive rebuilds.',
+        },
+        {
+          title: 'Oman AI Studio',
+          body: 'The single largest expression of our mandate. We proudly operate the Oman AI Studio on behalf of the Ministry of Transport, Communications and Information Technology (MTCIT). We manage the platforms, model deployments, and engineering infrastructure that power Oman\'s national AI capability.',
+        },
+        {
+          title: 'Data Sovereignty',
           body: 'We design hybrid and localized cloud architectures that strictly adhere to data residency laws. Whether hosted in-country for Oman-based buyers or scaled internationally for pan-GCC enterprises, your data stays exactly where regulation dictates.',
         },
       ],
