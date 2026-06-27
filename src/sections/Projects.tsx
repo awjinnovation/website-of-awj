@@ -71,6 +71,7 @@ const PROJECTS: Project[] = [
     bgGrad: 'linear-gradient(135deg, #003c80, #0069c8)',
     icon: '/assets/brand/awj-systems-icon.svg',
     size: 'p-med',
+    image: '/assets/brand/ai-studio-project-card.jpeg',
     summary:
       'The National Artificial Intelligence Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology, is a center of excellence for AI-driven innovation and digital transformation.',
     impact:
