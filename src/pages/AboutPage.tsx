@@ -84,82 +84,81 @@ export const AboutPage = () => {
         </section>
 
         {/* Our Journey Timeline Section */}
-        <section className="about-section timeline-section">
+        <section className="about-section timeline-section timeline-dark">
           <div className="timeline-bg-asset">
             <img src="/assets/brand/bg-asset.png" alt="" className="bg-corner-asset" />
           </div>
           <div className="container timeline-container">
-            <h2 className="about-section-title">Our Journey</h2>
+            <h2 className="about-section-title timeline-title">Our Journey</h2>
 
-            <div className="journey-timeline">
+            <div className="journey-timeline-advanced">
               {/* Arrow visualization */}
-              <div className="timeline-arrow-wrapper">
-                <img src="/assets/brand/evolution-arrow.png" alt="Evolution Timeline" className="evolution-arrow" />
+              <div className="timeline-arrow-wrapper-advanced">
+                <img src="/assets/brand/evolution-arrow.png" alt="Evolution Timeline" className="evolution-arrow-advanced" />
               </div>
 
-              {/* Timeline items positioned horizontally */}
-              <div className="timeline-items-wrapper">
-                <div className="timeline-milestone timeline-milestone-2016">
-                  <div className="milestone-dot"></div>
-                  <div className="milestone-card">
-                    <div className="milestone-year">2016</div>
-                    <div className="milestone-content">
-                      <p>Ministry of Foreign Affairs, Science & Technology Council</p>
-                    </div>
+              {/* Timeline orbs positioned along arrow */}
+              <div className="timeline-orbs-wrapper">
+                {/* 2016 Orb */}
+                <div className="timeline-orb-container orb-2016">
+                  <div className="timeline-orb">
+                    <div className="orb-year">2016</div>
+                  </div>
+                  <div className="orb-info">
+                    <p>Ministry of Foreign Affairs, Science & Technology Council</p>
                   </div>
                 </div>
 
-                <div className="timeline-milestone timeline-milestone-2020">
-                  <div className="milestone-dot"></div>
-                  <div className="milestone-card">
-                    <div className="milestone-year">2020</div>
-                    <div className="milestone-content">
-                      <h3>AWJ Corporation Founded</h3>
-                      <p>Established with four specialized sectors:</p>
-                      <ul className="pillars-list">
-                        <li>AWJ Systems</li>
-                        <li>AWJ Innovation</li>
-                        <li>AWJ Sustain</li>
-                        <li>AWJ Academy</li>
-                      </ul>
-                      <div className="founders-section">
-                        <p className="founders-label"><strong>Founders:</strong></p>
-                        <div className="founders-list">
-                          <div className="founder-item">
-                            <div className="founder-image-small">
-                              <div className="placeholder-small">DR. YOUSUF</div>
-                            </div>
-                            <p className="founder-name-small">Dr. Yousuf Al Bulushi</p>
-                          </div>
-                          <div className="founder-item">
-                            <div className="founder-image-small">
-                              <div className="placeholder-small">HAMOUD</div>
-                            </div>
-                            <p className="founder-name-small">Hamoud Al Shikiri</p>
-                          </div>
-                        </div>
+                {/* 2020 Orb - Main milestone */}
+                <div className="timeline-orb-container orb-2020 orb-main">
+                  <div className="timeline-orb orb-large">
+                    <div className="orb-year">2020</div>
+                  </div>
+                  <div className="orb-info orb-info-detailed">
+                    <h3>AWJ Corporation Founded</h3>
+                    <p>Leadership in innovation by Quidity:</p>
+                    <div className="founders-inline">
+                      <div className="founder-inline">
+                        <p className="founder-inline-name">Dr. Yousuf Al Bulushi</p>
+                        <p className="founder-inline-title">(Founder)</p>
+                      </div>
+                      <div className="founder-inline">
+                        <p className="founder-inline-name">Hamoud Al Shikiri</p>
+                        <p className="founder-inline-title">(Co-founder)</p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="timeline-milestone timeline-milestone-2023">
-                  <div className="milestone-dot"></div>
-                  <div className="milestone-card">
-                    <div className="milestone-year">2023</div>
-                    <div className="milestone-content">
-                      <p>Administrative Transition to Private Company Structure</p>
+                    <div className="pillars-inline">
+                      <p className="pillars-title">Four specialized sectors:</p>
+                      <div className="pillars-icons">
+                        <span className="pillar-icon">AWJ Systems</span>
+                        <span className="pillar-icon">AWJ Innovation</span>
+                        <span className="pillar-icon">AWJ Sustain</span>
+                        <span className="pillar-icon">AWJ Academy</span>
+                      </div>
+                    </div>
+                    <div className="endowment-info">
+                      <p><strong>Endowment Fund:</strong> Specialized company for sustainable technology and innovation</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="timeline-milestone timeline-milestone-2026">
-                  <div className="milestone-dot"></div>
-                  <div className="milestone-card">
-                    <div className="milestone-year">2026</div>
-                    <div className="milestone-content">
-                      <p>Continued growth and innovation leadership</p>
-                    </div>
+                {/* 2023 Orb */}
+                <div className="timeline-orb-container orb-2023">
+                  <div className="timeline-orb">
+                    <div className="orb-year">2023</div>
+                  </div>
+                  <div className="orb-info">
+                    <p>Administrative Transition to Private Company Structure</p>
+                  </div>
+                </div>
+
+                {/* 2026 Orb */}
+                <div className="timeline-orb-container orb-2026">
+                  <div className="timeline-orb">
+                    <div className="orb-year">2026</div>
+                  </div>
+                  <div className="orb-info">
+                    <p>Continued growth and innovation leadership</p>
                   </div>
                 </div>
               </div>
