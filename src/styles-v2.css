@@ -1528,6 +1528,12 @@ button { font-family: inherit; }
   pointer-events: none;
 }
 .project-tile.p-big .pt-icon { width: 280px; right: -40px; bottom: -40px; }
+.project-tile .pt-bg-image {
+  position: absolute; right: 0; top: 0; height: 100%; width: 55%;
+  object-fit: cover; object-position: right;
+  opacity: 0.6; pointer-events: none; z-index: 1;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%);
+}
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
