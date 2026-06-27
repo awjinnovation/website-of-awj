@@ -207,8 +207,7 @@ export const Projects = () => {
       <div className="container">
         <div className="projects-head reveal">
           <div>
-            <div className="eyebrow">{t('projects.eyebrow')}</div>
-            <h2 className="section-title" style={{ marginTop: 24 }}>
+            <h2 className="section-title">
               {t('projects.title.first')} <em>{t('projects.title.second')}</em>
             </h2>
           </div>
