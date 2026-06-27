@@ -1532,7 +1532,7 @@ button { font-family: inherit; }
   position: absolute; right: 0; top: 0; height: 100%; width: 55%;
   object-fit: cover; object-position: right;
   opacity: 1; pointer-events: none; z-index: 1;
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
 
 .project-tile .pt-stat-block { z-index: 2; }
@@ -1647,7 +1647,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pm-body-image {
   position: absolute; right: 0; top: 0; height: 100%; width: 40%;
   object-fit: cover; object-position: right; opacity: 0.9; pointer-events: none;
-  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
 }
 .pm-title {
   font-family: var(--font-display); font-weight: 700;
