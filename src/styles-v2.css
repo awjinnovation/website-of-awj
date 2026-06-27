@@ -1642,7 +1642,12 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pm-close:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
 .pm-body {
-  padding: 36px 40px 40px; overflow-y: auto;
+  padding: 36px 40px 40px; overflow-y: auto; position: relative;
+}
+.pm-body-image {
+  position: absolute; right: 0; top: 0; height: 100%; width: 40%;
+  object-fit: cover; object-position: right; opacity: 0.3; pointer-events: none;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
 }
 .pm-title {
   font-family: var(--font-display); font-weight: 300;
