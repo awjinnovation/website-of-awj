@@ -59,12 +59,7 @@ export const AboutPage = () => {
                   <span className="font-bold">Creating a sustainable future.</span>
                 </p>
               </div>
-              <div className="content-block with-icon">
-                <div className="block-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-                  </svg>
-                </div>
+              <div className="content-block">
                 <p className="about-text">
                   The grand challenges of our world cannot be solved by resources alone, but by the capacity to innovate. When knowledge meets technology and humanity, ideas become reality, and opportunities transform into sustainable impact.
                 </p>
@@ -74,12 +69,7 @@ export const AboutPage = () => {
                   <span className="font-bold">This is why AWJ exists.</span>
                 </p>
               </div>
-              <div className="content-block with-icon">
-                <div className="block-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
+              <div className="content-block">
                 <p className="about-text">
                   We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
                 </p>
