@@ -42,54 +42,10 @@ export const AboutPage = () => {
       <Cursor />
       <NavPill />
       <main className="about-page">
-        {/* Hero Section */}
+        {/* Hero Section with Overview */}
         <section className="about-hero">
-          <div className="container">
-            <h1 className="about-title">About AWJ</h1>
-            <p className="about-subtitle">Leading Transformation Through Integrated Knowledge Ecosystems</p>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="about-stats">
-          <div className="container">
-            <div className="stats-grid">
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-briefcase"></i>
-                </div>
-                <div className="stat-number">98<span>+</span></div>
-                <div className="stat-label">Projects Delivered</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-people-group"></i>
-                </div>
-                <div className="stat-number">49<span>+</span></div>
-                <div className="stat-label">Partner Organizations</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-building"></i>
-                </div>
-                <div className="stat-number">3</div>
-                <div className="stat-label">Business Units</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-trophy"></i>
-                </div>
-                <div className="stat-number">3<span>+</span></div>
-                <div className="stat-label">Years of Excellence</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Overview Section */}
-        <section className="about-section about-overview">
-          <div className="overview-container">
-            <div className="overview-graphic">
+          <div className="hero-overview-container">
+            <div className="hero-graphic">
               <svg className="oman-map" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -115,8 +71,8 @@ export const AboutPage = () => {
                 <text x="200" y="350" textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="monospace" letterSpacing="2">OMAN</text>
               </svg>
             </div>
-            <div className="overview-content">
-              <h2 className="overview-title">About AWJ</h2>
+            <div className="hero-content">
+              <h1 className="about-title">About AWJ</h1>
               <div className="content-block">
                 <p className="about-text highlight">
                   <strong>Creating a sustainable future.</strong>
@@ -151,6 +107,42 @@ export const AboutPage = () => {
                 <p className="about-text">
                   We believe that the future is not to be awaited, but to be created.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="about-stats">
+          <div className="container">
+            <div className="stats-grid">
+              <div className="stat-item">
+                <div className="stat-icon">
+                  <i className="fas fa-briefcase"></i>
+                </div>
+                <div className="stat-number">98<span>+</span></div>
+                <div className="stat-label">Projects Delivered</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-icon">
+                  <i className="fas fa-people-group"></i>
+                </div>
+                <div className="stat-number">49<span>+</span></div>
+                <div className="stat-label">Partner Organizations</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-icon">
+                  <i className="fas fa-building"></i>
+                </div>
+                <div className="stat-number">3</div>
+                <div className="stat-label">Business Units</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-icon">
+                  <i className="fas fa-trophy"></i>
+                </div>
+                <div className="stat-number">3<span>+</span></div>
+                <div className="stat-label">Years of Excellence</div>
               </div>
             </div>
           </div>

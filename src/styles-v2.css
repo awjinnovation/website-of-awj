@@ -2402,7 +2402,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 
 .about-hero {
   position: relative;
-  padding: 120px 0 80px;
+  padding: 80px 0;
   background: var(--ink);
   color: var(--paper);
   overflow: hidden;
@@ -2433,18 +2433,34 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
     linear-gradient(180deg, rgba(12,14,20,0.35) 0%, transparent 30%, rgba(12,14,20,0.25) 100%);
   mix-blend-mode: multiply;
 }
-.about-hero .container {
+
+.hero-overview-container {
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
+
+.hero-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
 .about-title {
   font-family: var(--font-display);
   font-size: clamp(42px, 6vw, 72px);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 16px;
-
+  margin-bottom: 24px;
 }
+
 .about-subtitle {
   font-size: 20px;
   font-weight: 300;
@@ -2557,22 +2573,10 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   border-bottom: none;
 }
 
-/* Overview Section Layout */
-.overview-container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: start;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.overview-graphic {
+.hero-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 500px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .oman-map {
@@ -2586,20 +2590,6 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
-}
-
-.overview-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.overview-title {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 16px;
 }
 
 .content-block {
@@ -2623,8 +2613,8 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(0, 105, 200, 0.1);
-  color: var(--systems);
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
   margin-top: 4px;
 }
 
@@ -2635,12 +2625,19 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 .about-text.highlight {
   font-size: 20px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--paper);
   margin: 16px 0;
+  opacity: 0.95;
+}
+
+.hero-content .about-text {
+  color: var(--paper);
+  opacity: 0.85;
+  margin: 0;
 }
 
 /* RTL Support for Arabic */
-[dir="rtl"] .overview-container {
+[dir="rtl"] .hero-overview-container {
   grid-template-columns: 1.2fr 1fr;
 }
 
@@ -2654,13 +2651,13 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 }
 
 @media (max-width: 1024px) {
-  .overview-container {
+  .hero-overview-container {
     grid-template-columns: 1fr;
     gap: 60px;
     padding: 0 24px;
   }
 
-  .overview-graphic {
+  .hero-graphic {
     min-height: 400px;
   }
 
@@ -2670,12 +2667,12 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 }
 
 @media (max-width: 640px) {
-  .overview-container {
+  .hero-overview-container {
     gap: 40px;
     padding: 0 16px;
   }
 
-  .overview-graphic {
+  .hero-graphic {
     min-height: 300px;
   }
 
@@ -2683,8 +2680,8 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
     max-width: 250px;
   }
 
-  .overview-title {
-    font-size: clamp(24px, 5vw, 32px);
+  .about-title {
+    font-size: clamp(28px, 5vw, 42px);
   }
 }
 
