@@ -45,13 +45,6 @@ export const AboutPage = () => {
         {/* Hero Section with Overview */}
         <section className="about-hero">
           <div className="hero-overview-container">
-            <div className="hero-graphic">
-              <img
-                src="/assets/brand/oman-network-map.png"
-                alt="Oman Network Visualization"
-                className="oman-map"
-              />
-            </div>
             <div className="hero-content">
               <h1 className="about-title">About AWJ</h1>
               <div className="content-block">
@@ -79,6 +72,13 @@ export const AboutPage = () => {
                   We believe that the future is not to be awaited, but to be created.
                 </p>
               </div>
+            </div>
+            <div className="hero-graphic">
+              <img
+                src="/assets/brand/oman-network-map.png"
+                alt="Oman Network Visualization"
+                className="oman-map"
+              />
             </div>
           </div>
         </section>
