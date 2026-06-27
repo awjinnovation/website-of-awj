@@ -2831,12 +2831,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   text-align: center;
 }
 .value-letter {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 16px;
-
+  display: none;
 }
 .value-card h4 {
   font-family: var(--font-display);
