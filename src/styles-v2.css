@@ -1394,7 +1394,7 @@ button { font-family: inherit; }
 .bento-cta {
   position: relative;
   z-index: 2;
-  align-self: flex-start;
+  align-self: flex-end;
   display: inline-flex;
   align-items: center;
   gap: 8px;
