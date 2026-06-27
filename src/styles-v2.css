@@ -2598,29 +2598,6 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   gap: 16px;
 }
 
-.content-block.with-icon {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.block-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 4px;
-}
-
-.content-block.with-icon .about-text {
-  margin: 0;
-}
 
 .about-text.highlight {
   font-size: 20px;
@@ -2645,14 +2622,6 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   grid-template-columns: 1.2fr 1fr;
 }
 
-[dir="rtl"] .content-block.with-icon {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .block-icon {
-  margin-left: 0;
-  margin-right: 0;
-}
 
 @media (max-width: 1024px) {
   .hero-overview-container {
