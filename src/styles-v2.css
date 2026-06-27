@@ -1390,23 +1390,46 @@ button { font-family: inherit; }
 .bento-card .body { font-size: 20px; line-height: 1.5; opacity: 0.85; max-width: 320px; font-weight: 300; }
 
 .bento-cta {
-  position: relative; z-index: 2;
+  position: relative;
+  z-index: 2;
   align-self: flex-start;
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 20px; color: var(--ink);
-  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 10px 16px;
   border: none;
   border-radius: 999px;
   background: white;
   text-decoration: none;
-  opacity: 1;
-  transition: opacity 0.3s var(--ease-out), background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  opacity: 0.9;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.4s var(--ease-luxe);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
-.bento-cta svg { width: 11px; height: 11px; transition: transform 0.3s var(--ease-out); }
-.bento-card:hover .bento-cta { opacity: 1; }
-.bento-cta:hover { background: rgba(255, 255, 255, 0.9); }
-.bento-cta:hover svg { transform: translateX(3px); }
+.bento-cta svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s var(--ease-out);
+  color: var(--ink);
+}
+.bento-card:hover .bento-cta {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+.bento-cta:hover {
+  background: white;
+  color: var(--ink);
+}
+.bento-cta:hover svg {
+  transform: translateX(3px);
+}
 
 /* Bento sizes - fit content */
 .bento-card.b-1 {
