@@ -2,7 +2,7 @@ import { Cursor } from '../components/Cursor';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import { type PillarId } from '../data/pillars';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 type TeamMember = {
   name: string;
@@ -37,6 +37,31 @@ const AWJ_TEAM: TeamMember[] = [
 ];
 
 export const AboutPage = () => {
+  useEffect(() => {
+    // Intersection Observer for scroll-triggered animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    // Observe timeline orbs
+    const orbs = document.querySelectorAll('.timeline-orb-positioned');
+    orbs.forEach((orb) => observer.observe(orb));
+
+    // Observe case cards
+    const caseCards = document.querySelectorAll('.case-card');
+    caseCards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Cursor />
@@ -91,8 +116,8 @@ export const AboutPage = () => {
           <div className="container timeline-container">
             <h2 className="about-section-title timeline-title">Our Journey</h2>
 
-            <div className="journey-timeline-curve">
-              <svg className="timeline-arrow-svg" viewBox="0 0 1000 350" preserveAspectRatio="none">
+            <nav className="journey-timeline-curve" aria-label="AWJ Company Timeline">
+              <svg className="timeline-arrow-svg" viewBox="0 0 1000 350" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#c8d9a0" stopOpacity="1" />
@@ -120,28 +145,25 @@ export const AboutPage = () => {
                          opacity="0.9"/>
               </svg>
 
-              {/* Timeline orbs positioned on the arrow curve with floating text labels */}
               <div className="timeline-curve-wrapper">
-                {/* 2016 Orb */}
-                <div className="timeline-orb-positioned orb-pos-2016">
-                  <div className="timeline-orb">
+                <article className="timeline-orb-positioned orb-pos-2016" role="region" aria-label="2016: Foundation">
+                  <div className="timeline-orb" aria-label="Year 2016">
                     <div className="orb-year">2016</div>
                   </div>
                   <div className="orb-label label-2016">
                     <p>Ministry of Foreign Affairs, Science & Technology Council</p>
                   </div>
-                </div>
+                </article>
 
-                {/* 2020 Orb - Main milestone */}
-                <div className="timeline-orb-positioned orb-pos-2020">
-                  <div className="timeline-orb">
+                <article className="timeline-orb-positioned orb-pos-2020" role="region" aria-label="2020: Founding and Growth">
+                  <div className="timeline-orb" aria-label="Year 2020">
                     <div className="orb-year">2020</div>
                   </div>
                   <div className="orb-label label-2020">
-                    <h4>AWJ Corporation Founded</h4>
+                    <h3>AWJ Corporation Founded</h3>
                     <p>Dr. Yousuf Al Bulushi (Founder)</p>
                     <p>Hamoud Al Shikiri (Co-founder)</p>
-                    <div className="pillars-compact">
+                    <div className="pillars-compact" aria-label="Four Specialized Sectors">
                       <span>AWJ Systems</span>
                       <span>AWJ Innovation</span>
                       <span>AWJ Sustain</span>
@@ -149,29 +171,27 @@ export const AboutPage = () => {
                     </div>
                     <p className="endowment-compact"><strong>Endowment Fund:</strong> Sustainable technology & innovation</p>
                   </div>
-                </div>
+                </article>
 
-                {/* 2023 Orb */}
-                <div className="timeline-orb-positioned orb-pos-2023">
-                  <div className="timeline-orb">
+                <article className="timeline-orb-positioned orb-pos-2023" role="region" aria-label="2023: Transition">
+                  <div className="timeline-orb" aria-label="Year 2023">
                     <div className="orb-year">2023</div>
                   </div>
                   <div className="orb-label label-2023">
                     <p>Administrative Transition to Private Company Structure</p>
                   </div>
-                </div>
+                </article>
 
-                {/* 2026 Orb */}
-                <div className="timeline-orb-positioned orb-pos-2026">
-                  <div className="timeline-orb">
+                <article className="timeline-orb-positioned orb-pos-2026" role="region" aria-label="2026: Future Vision">
+                  <div className="timeline-orb" aria-label="Year 2026">
                     <div className="orb-year">2026</div>
                   </div>
                   <div className="orb-label label-2026">
                     <p>Continued growth and innovation leadership</p>
                   </div>
-                </div>
+                </article>
               </div>
-            </div>
+            </nav>
           </div>
         </section>
 
