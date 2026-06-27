@@ -2760,7 +2760,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   object-fit: cover;
 }
 
-/* Curved Timeline with Glowing Orbs */
+/* Curved Timeline with Glowing Orbs - Reference Design */
 .timeline-container {
   position: relative;
   z-index: 1;
@@ -2768,7 +2768,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 
 .journey-timeline-curve {
   position: relative;
-  height: 700px;
+  height: 500px;
   margin-top: 60px;
 }
 
@@ -2777,7 +2777,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   top: 0;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -2792,7 +2792,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   object-position: center;
 }
 
-/* Orbs positioned absolutely along the curved arrow */
+/* Orbs positioned absolutely on the arrow curve */
 .timeline-curve-wrapper {
   position: absolute;
   top: 0;
@@ -2805,43 +2805,31 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 
 .timeline-orb-positioned {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Positioning each orb along the diagonal curve */
+/* All orbs same size - positioned to sit on the arrow curve */
 .orb-pos-2016 {
-  left: 5%;
+  left: 8%;
   top: 55%;
   transform: translate(0, -50%);
 }
 
 .orb-pos-2020 {
-  left: 30%;
-  top: 45%;
+  left: 32%;
+  top: 42%;
   transform: translate(0, -50%);
 }
 
 .orb-pos-2023 {
-  left: 55%;
-  top: 30%;
+  left: 58%;
+  top: 28%;
   transform: translate(0, -50%);
 }
 
 .orb-pos-2026 {
-  right: 5%;
-  top: 15%;
+  right: 6%;
+  top: 14%;
   transform: translateY(-50%);
-}
-
-.orb-with-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  max-width: 180px;
-  text-align: center;
 }
 
 .timeline-orb {
@@ -2863,21 +2851,6 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   flex-shrink: 0;
 }
 
-.orb-standard {
-  width: 110px;
-  height: 110px;
-}
-
-.orb-large {
-  width: 140px;
-  height: 140px;
-  box-shadow:
-    0 0 40px rgba(100, 180, 255, 0.8),
-    0 0 80px rgba(0, 120, 200, 0.6),
-    inset -25px -25px 50px rgba(0, 0, 0, 0.4),
-    inset 25px 25px 50px rgba(200, 230, 255, 0.25);
-}
-
 @keyframes orb-glow {
   0%, 100% {
     box-shadow:
@@ -2897,154 +2870,146 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 
 .orb-year {
   font-family: var(--font-mono);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   color: rgba(100, 200, 255, 0.9);
   text-shadow: 0 0 20px rgba(100, 200, 255, 0.6);
   letter-spacing: 2px;
 }
 
-.orb-large .orb-year {
-  font-size: 40px;
-}
-
-.orb-text {
-  font-size: 12px;
+/* Floating text labels - positioned independently around orbs */
+.orb-label {
+  position: absolute;
+  font-size: 11px;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  z-index: 2;
 }
 
-.orb-text p {
-  margin: 0;
-  font-size: 12px;
-}
-
-.orb-text-detailed {
-  max-width: 240px;
-  text-align: left;
+.orb-label p {
+  margin: 2px 0;
   font-size: 11px;
 }
 
-.orb-text-detailed h3 {
+.orb-label h4 {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 6px;
-  text-align: center;
-}
-
-.orb-text-detailed p {
-  font-size: 11px;
-  margin: 4px 0;
-}
-
-.founders-inline {
-  margin: 8px 0;
-  padding: 8px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.founder-inline {
-  margin: 4px 0;
-  text-align: center;
-}
-
-.founder-inline-name {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-}
-
-.founder-inline-title {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 1px 0 0;
-}
-
-.pillars-inline {
-  margin: 8px 0;
-}
-
-.pillars-title {
-  font-size: 10px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0 0 4px;
 }
 
-.pillars-icons {
+/* Position text labels around each orb */
+.label-2016 {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  text-align: center;
+  max-width: 140px;
+  white-space: normal;
+}
+
+.label-2020 {
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  text-align: center;
+  white-space: normal;
+}
+
+.label-2023 {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  text-align: center;
+  max-width: 160px;
+  white-space: normal;
+}
+
+.label-2026 {
+  top: 50%;
+  right: 150%;
+  transform: translateY(-50%);
+  margin-right: 12px;
+  text-align: right;
+  max-width: 140px;
+  white-space: normal;
+}
+
+/* Compact styling for 2020 detailed info */
+.pillars-compact {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  margin: 6px 0;
 }
 
-.pillar-icon {
+.pillars-compact span {
   font-size: 10px;
   color: rgba(100, 200, 255, 0.8);
   padding: 2px 4px;
   background: rgba(100, 200, 255, 0.1);
   border-radius: 2px;
+  text-align: center;
 }
 
-.endowment-info {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 10px;
-  color: rgba(100, 200, 255, 0.8);
-}
-
-.endowment-info p {
-  margin: 0 !important;
+.endowment-compact {
   font-size: 10px !important;
+  margin: 6px 0 0 !important;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.endowment-info strong {
-  color: rgba(255, 255, 255, 0.85);
+.endowment-compact strong {
+  color: rgba(100, 200, 255, 0.8);
 }
 
 @media (max-width: 1200px) {
   .journey-timeline-curve {
-    height: 650px;
+    height: 480px;
   }
 
-  .timeline-arrow-container {
-    height: 280px;
+  .orb-pos-2016 {
+    left: 10%;
   }
 
-  .evolution-arrow-curve {
-    width: 90%;
+  .orb-pos-2020 {
+    left: 35%;
+  }
+
+  .orb-pos-2023 {
+    left: 60%;
+  }
+
+  .orb-pos-2026 {
+    right: 10%;
+  }
+
+  .label-2020 {
+    width: 160px;
+  }
+
+  .label-2026 {
+    max-width: 120px;
+    right: 140%;
   }
 }
 
 @media (max-width: 1024px) {
   .journey-timeline-curve {
-    height: 600px;
+    height: 450px;
   }
 
-  .orb-pos-2016 {
-    left: 8%;
-    top: 60%;
+  .timeline-arrow-container {
+    height: 250px;
   }
 
-  .orb-pos-2020 {
-    left: 32%;
-    top: 45%;
-  }
-
-  .orb-pos-2023 {
-    left: 56%;
-    top: 28%;
-  }
-
-  .orb-pos-2026 {
-    right: 8%;
-    top: 12%;
+  .evolution-arrow-curve {
+    width: 88%;
   }
 
   .timeline-orb {
@@ -3052,28 +3017,36 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
     height: 100px;
   }
 
-  .orb-standard {
-    width: 95px;
-    height: 95px;
-  }
-
-  .orb-large {
-    width: 120px;
-    height: 120px;
-  }
-
   .orb-year {
     font-size: 28px;
   }
 
-  .orb-large .orb-year {
-    font-size: 36px;
+  .orb-label {
+    font-size: 10px;
+  }
+
+  .orb-label p {
+    font-size: 10px;
+  }
+
+  .orb-label h4 {
+    font-size: 11px;
+  }
+
+  .label-2020 {
+    top: -110px;
+    width: 150px;
+  }
+
+  .label-2026 {
+    right: 130%;
+    max-width: 100px;
   }
 }
 
 @media (max-width: 768px) {
   .journey-timeline-curve {
-    height: 750px;
+    height: 650px;
   }
 
   .timeline-arrow-container {
@@ -3081,43 +3054,33 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 
   .evolution-arrow-curve {
-    width: 95%;
+    width: 92%;
     max-width: 600px;
   }
 
   .orb-pos-2016 {
     left: 50%;
-    top: 15%;
+    top: 12%;
     transform: translate(-50%, -50%);
   }
 
   .orb-pos-2020 {
     left: 50%;
-    top: 35%;
+    top: 32%;
     transform: translate(-50%, -50%);
   }
 
   .orb-pos-2023 {
     left: 50%;
-    top: 55%;
+    top: 52%;
     transform: translate(-50%, -50%);
   }
 
   .orb-pos-2026 {
     left: 50%;
-    top: 75%;
+    top: 72%;
     right: auto;
     transform: translate(-50%, -50%);
-  }
-
-  .orb-with-info {
-    max-width: 100%;
-    width: 90vw;
-  }
-
-  .orb-text-detailed {
-    max-width: 100%;
-    text-align: center;
   }
 
   .timeline-orb {
@@ -3125,22 +3088,46 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
     height: 90px;
   }
 
-  .orb-standard {
-    width: 85px;
-    height: 85px;
-  }
-
-  .orb-large {
-    width: 110px;
-    height: 110px;
-  }
-
   .orb-year {
     font-size: 24px;
   }
 
-  .orb-large .orb-year {
-    font-size: 32px;
+  .label-2016 {
+    top: 100%;
+    width: 100px;
+  }
+
+  .label-2020 {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .label-2023 {
+    width: 100px;
+  }
+
+  .label-2026 {
+    position: static;
+    transform: none;
+    right: auto;
+    margin-right: 0;
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .orb-label {
+    font-size: 9px;
+  }
+
+  .orb-label p {
+    font-size: 9px;
+  }
+
+  .pillars-compact span {
+    font-size: 9px;
   }
 }
 
