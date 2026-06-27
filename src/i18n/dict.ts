@@ -164,7 +164,7 @@ const en = {
 
   // Footer
   'footer.brand.desc':
-    'An integrated holding group operating\nacross Academy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
+    'An integrated holding group operating across\nAcademy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
   'footer.col.pillars': 'Pillars',
   'footer.col.group': 'Group',
   'footer.col.group.companies': 'Companies',
@@ -371,7 +371,7 @@ const ar: Record<TranslationKey, string> = {
 
   // Footer
   'footer.brand.desc':
-    'مجموعة قابضة متكاملة تعمل\nعبر الأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
+    'مجموعة قابضة متكاملة تعمل عبر\nالأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
   'footer.col.pillars': 'القطاعات',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',
