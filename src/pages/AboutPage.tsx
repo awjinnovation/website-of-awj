@@ -88,68 +88,78 @@ export const AboutPage = () => {
           <div className="timeline-bg-asset">
             <img src="/assets/brand/bg-asset.png" alt="" className="bg-corner-asset" />
           </div>
-          <div className="container">
+          <div className="container timeline-container">
             <h2 className="about-section-title">Our Journey</h2>
+
             <div className="journey-timeline">
-              <div className="timeline-track">
+              {/* Arrow visualization */}
+              <div className="timeline-arrow-wrapper">
                 <img src="/assets/brand/evolution-arrow.png" alt="Evolution Timeline" className="evolution-arrow" />
               </div>
 
-              <div className="timeline-items">
-                <div className="timeline-item timeline-2016">
-                  <div className="timeline-year">2016</div>
-                  <div className="timeline-content">
-                    <p>Ministry of Foreign Affairs, Science & Technology Council</p>
+              {/* Timeline items positioned horizontally */}
+              <div className="timeline-items-wrapper">
+                <div className="timeline-milestone timeline-milestone-2016">
+                  <div className="milestone-dot"></div>
+                  <div className="milestone-card">
+                    <div className="milestone-year">2016</div>
+                    <div className="milestone-content">
+                      <p>Ministry of Foreign Affairs, Science & Technology Council</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="timeline-item timeline-2020">
-                  <div className="timeline-year">2020</div>
-                  <div className="timeline-content">
-                    <h3>AWJ Corporation Founded</h3>
-                    <p>Established with four specialized sectors:</p>
-                    <ul className="pillars-list">
-                      <li>AWJ Systems</li>
-                      <li>AWJ Innovation</li>
-                      <li>AWJ Sustain</li>
-                      <li>AWJ Academy</li>
-                    </ul>
-                    <div className="founders-section">
-                      <h4>Founders:</h4>
-                      <div className="founders-grid">
-                        <div className="founder-card">
-                          <div className="founder-image">
-                            <div className="placeholder">DR. YOUSUF AL BULUSHI</div>
+                <div className="timeline-milestone timeline-milestone-2020">
+                  <div className="milestone-dot"></div>
+                  <div className="milestone-card">
+                    <div className="milestone-year">2020</div>
+                    <div className="milestone-content">
+                      <h3>AWJ Corporation Founded</h3>
+                      <p>Established with four specialized sectors:</p>
+                      <ul className="pillars-list">
+                        <li>AWJ Systems</li>
+                        <li>AWJ Innovation</li>
+                        <li>AWJ Sustain</li>
+                        <li>AWJ Academy</li>
+                      </ul>
+                      <div className="founders-section">
+                        <p className="founders-label"><strong>Founders:</strong></p>
+                        <div className="founders-list">
+                          <div className="founder-item">
+                            <div className="founder-image-small">
+                              <div className="placeholder-small">DR. YOUSUF</div>
+                            </div>
+                            <p className="founder-name-small">Dr. Yousuf Al Bulushi</p>
                           </div>
-                          <p className="founder-name">Dr. Yousuf Al Bulushi</p>
-                          <p className="founder-title">Founder</p>
-                        </div>
-                        <div className="founder-card">
-                          <div className="founder-image">
-                            <div className="placeholder">HAMOUD AL SHIKIRI</div>
+                          <div className="founder-item">
+                            <div className="founder-image-small">
+                              <div className="placeholder-small">HAMOUD</div>
+                            </div>
+                            <p className="founder-name-small">Hamoud Al Shikiri</p>
                           </div>
-                          <p className="founder-name">Hamoud Al Shikiri</p>
-                          <p className="founder-title">Co-founder</p>
                         </div>
                       </div>
                     </div>
-                    <div className="endowment-box">
-                      <p><strong>Endowment Fund Established:</strong> Specialized company for sustainable technology and innovation development</p>
+                  </div>
+                </div>
+
+                <div className="timeline-milestone timeline-milestone-2023">
+                  <div className="milestone-dot"></div>
+                  <div className="milestone-card">
+                    <div className="milestone-year">2023</div>
+                    <div className="milestone-content">
+                      <p>Administrative Transition to Private Company Structure</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="timeline-item timeline-2023">
-                  <div className="timeline-year">2023</div>
-                  <div className="timeline-content">
-                    <p>Administrative Transition to Private Company Structure</p>
-                  </div>
-                </div>
-
-                <div className="timeline-item timeline-2026">
-                  <div className="timeline-year">2026</div>
-                  <div className="timeline-content">
-                    <p>Continued growth and innovation leadership</p>
+                <div className="timeline-milestone timeline-milestone-2026">
+                  <div className="milestone-dot"></div>
+                  <div className="milestone-card">
+                    <div className="milestone-year">2026</div>
+                    <div className="milestone-content">
+                      <p>Continued growth and innovation leadership</p>
+                    </div>
                   </div>
                 </div>
               </div>
