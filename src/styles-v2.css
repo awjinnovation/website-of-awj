@@ -2662,6 +2662,34 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 }
 
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.advantage-item {
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.advantage-item:hover {
+  border-color: rgba(12, 14, 20, 0.25);
+  box-shadow: 0 8px 24px rgba(12, 14, 20, 0.08);
+  transform: translateY(-2px);
+}
+
+.advantage-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin: 0;
+}
+
 .about-people {
   background: var(--ink);
   color: var(--paper);
