@@ -1480,7 +1480,16 @@ button { font-family: inherit; }
 .bento-card.b-1 .title { font-size: clamp(38px, 4.5vw, 64px); }
 .bento-card.b-3 .title { font-size: 22px; line-height: 1.1; }
 .bento-card.b-3 .body { font-size: 20px; }
-.bento-card.b-6 { padding: 36px; flex-direction: row; justify-content: space-between; align-items: center; }
+.bento-card.b-6 {
+  grid-column: span 2;
+  min-height: 280px;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
 .bento-card.b-6 .title { font-size: clamp(28px, 3vw, 44px); max-width: 60%; }
 .bento-card.b-6 .body { max-width: 35%; }
 
