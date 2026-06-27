@@ -1621,8 +1621,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   pointer-events: none;
 }
 .pm-cover .pm-cover-num {
-  font-family: var(--font-mono); font-size: 20px;
-  ; opacity: 0.85;
+  display: none;
 }
 .pm-cover .pm-cover-pillar {
   font-family: var(--font-mono); font-size: 20px;
@@ -1651,15 +1650,15 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 .pm-title {
   font-family: var(--font-display); font-weight: 700;
-  line-height: 1.1; font-size: clamp(32px, 4vw, 48px); margin: 0 0 24px; color: #ffffff;
+  line-height: 1.1; font-size: clamp(28px, 3vw, 40px); margin: 0 0 24px; color: #ffffff;
 }
 .pm-summary {
   font-size: 22px; line-height: 1.65; opacity: 0.85; font-weight: 400;
-  margin: 0 0 16px; max-width: 720px;
+  margin: 0 0 16px;
 }
 .pm-impact {
-  font-size: 22px; line-height: 1.65; opacity: 0.7; font-weight: 300;
-  margin: 0 0 32px; max-width: 720px;
+  font-size: 22px; line-height: 1.65; opacity: 0.85; font-weight: 400;
+  margin: 0 0 32px;
 }
 .pm-achievements {
   border-top: 1px solid var(--line); padding-top: 24px;
