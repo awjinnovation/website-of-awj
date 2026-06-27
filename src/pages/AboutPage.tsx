@@ -83,22 +83,75 @@ export const AboutPage = () => {
           </div>
         </section>
 
-        {/* Our Story Section */}
-        <section className="about-section">
+        {/* Our Journey Timeline Section */}
+        <section className="about-section timeline-section">
+          <div className="timeline-bg-asset">
+            <img src="/assets/brand/bg-asset.png" alt="" className="bg-corner-asset" />
+          </div>
           <div className="container">
-            <h2 className="about-section-title">Our Story</h2>
-            <div className="story-timeline">
-              <div className="timeline-item">
-                <h3>The Beginning</h3>
-                <p>Founded in 2020 with a vision to transform Oman's innovation landscape through locally-driven solutions that bridge global technology and regional needs.</p>
+            <h2 className="about-section-title">Our Journey</h2>
+            <div className="journey-timeline">
+              <div className="timeline-track">
+                <img src="/assets/brand/evolution-arrow.png" alt="Evolution Timeline" className="evolution-arrow" />
               </div>
-              <div className="timeline-item">
-                <h3>Growth & Expansion</h3>
-                <p>Evolved into four specialized units - Innovation, Academy, Sustain, and Systems - each addressing specific development needs with excellence.</p>
-              </div>
-              <div className="timeline-item">
-                <h3>Today & Beyond</h3>
-                <p>From Knowledge Oasis Muscat, we lead transformation through innovative solutions and strategic partnerships for sustainable impact.</p>
+
+              <div className="timeline-items">
+                <div className="timeline-item timeline-2016">
+                  <div className="timeline-year">2016</div>
+                  <div className="timeline-content">
+                    <p>Ministry of Foreign Affairs, Science & Technology Council</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item timeline-2020">
+                  <div className="timeline-year">2020</div>
+                  <div className="timeline-content">
+                    <h3>AWJ Corporation Founded</h3>
+                    <p>Established with four specialized sectors:</p>
+                    <ul className="pillars-list">
+                      <li>AWJ Systems</li>
+                      <li>AWJ Innovation</li>
+                      <li>AWJ Sustain</li>
+                      <li>AWJ Academy</li>
+                    </ul>
+                    <div className="founders-section">
+                      <h4>Founders:</h4>
+                      <div className="founders-grid">
+                        <div className="founder-card">
+                          <div className="founder-image">
+                            <div className="placeholder">DR. YOUSUF AL BULUSHI</div>
+                          </div>
+                          <p className="founder-name">Dr. Yousuf Al Bulushi</p>
+                          <p className="founder-title">Founder</p>
+                        </div>
+                        <div className="founder-card">
+                          <div className="founder-image">
+                            <div className="placeholder">HAMOUD AL SHIKIRI</div>
+                          </div>
+                          <p className="founder-name">Hamoud Al Shikiri</p>
+                          <p className="founder-title">Co-founder</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="endowment-box">
+                      <p><strong>Endowment Fund Established:</strong> Specialized company for sustainable technology and innovation development</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="timeline-item timeline-2023">
+                  <div className="timeline-year">2023</div>
+                  <div className="timeline-content">
+                    <p>Administrative Transition to Private Company Structure</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item timeline-2026">
+                  <div className="timeline-year">2026</div>
+                  <div className="timeline-content">
+                    <p>Continued growth and innovation leadership</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
