@@ -34,7 +34,6 @@ export const NEWS: NewsItem[] = [
     dek: 'A groundbreaking partnership to establish a specialized innovation studio aimed at enhancing healthcare services in Oman through advanced medical solutions.',
     featured: true,
     body: [
-      'Muscat, Sultanate of Oman, November 3, 2024.',
       'In an innovative step to enhance healthcare in the Sultanate of Oman, AWJ Innovation signed a cooperation agreement with Sultan Qaboos Hospital to establish a specialized innovation studio.',
       "This partnership was announced during an official event attended by senior officials from both parties. The studio aims to enhance innovation in the healthcare sector and provide advanced medical solutions. This agreement reflects Sultan Qaboos Hospital's commitment to developing the healthcare sector and confirms AWJ Innovation's role in enabling innovation across various sectors.",
       "The studio will work on developing new medical technologies, improving healthcare service quality, and increasing operational efficiency. Through this initiative, new horizons for cooperation between various stakeholders will open, enhancing local value and reflecting Oman's future vision in providing advanced and innovative healthcare.",
