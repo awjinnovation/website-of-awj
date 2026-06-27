@@ -104,6 +104,33 @@ export const AboutPage = () => {
           </div>
         </section>
 
+        {/* Our Competitive Advantages Section */}
+        <section className="about-section">
+          <div className="container">
+            <h2 className="about-section-title">Our Competitive Advantages</h2>
+            <div className="advantages-list">
+              <div className="advantage-item">
+                <p>Deep understanding of local and regional market needs in innovation and tech entrepreneurship.</p>
+              </div>
+              <div className="advantage-item">
+                <p>International advisory team.</p>
+              </div>
+              <div className="advantage-item">
+                <p>Innovative solutions and services customized to the needs of each institution.</p>
+              </div>
+              <div className="advantage-item">
+                <p>Global expertise in deploying the latest technologies.</p>
+              </div>
+              <div className="advantage-item">
+                <p>Sustainable growth through world-class strategies and plans.</p>
+              </div>
+              <div className="advantage-item">
+                <p>Transforming ideas into tangible reality.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our People Section */}
         <section className="about-section about-people">
           <div className="container">
