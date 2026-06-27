@@ -2731,7 +2731,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 .timeline-section {
   position: relative;
   overflow: visible;
-  padding: 80px 0 120px;
+  padding: 100px 0 140px;
 }
 
 .timeline-dark {
@@ -2760,51 +2760,88 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   object-fit: cover;
 }
 
-/* Advanced Timeline with Glowing Orbs */
+/* Curved Timeline with Glowing Orbs */
 .timeline-container {
   position: relative;
   z-index: 1;
 }
 
-.journey-timeline-advanced {
+.journey-timeline-curve {
   position: relative;
+  height: 700px;
   margin-top: 60px;
 }
 
-.timeline-arrow-wrapper-advanced {
-  position: relative;
+.timeline-arrow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 220px;
-  margin-bottom: 100px;
-  overflow: visible;
+  align-items: flex-start;
+  z-index: 1;
 }
 
-.evolution-arrow-advanced {
-  width: 100%;
-  max-width: 1100px;
+.evolution-arrow-curve {
+  width: 85%;
+  max-width: 1000px;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
 
-.timeline-orbs-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Orbs positioned absolutely along the curved arrow */
+.timeline-curve-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.timeline-orb-container {
-  position: relative;
+.timeline-orb-positioned {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Positioning each orb along the diagonal curve */
+.orb-pos-2016 {
+  left: 5%;
+  top: 55%;
+  transform: translate(0, -50%);
+}
+
+.orb-pos-2020 {
+  left: 30%;
+  top: 45%;
+  transform: translate(0, -50%);
+}
+
+.orb-pos-2023 {
+  left: 55%;
+  top: 30%;
+  transform: translate(0, -50%);
+}
+
+.orb-pos-2026 {
+  right: 5%;
+  top: 15%;
+  transform: translateY(-50%);
+}
+
+.orb-with-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  max-width: 180px;
+  text-align: center;
 }
 
 .timeline-orb {
@@ -2823,6 +2860,22 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   position: relative;
   border: 2px solid rgba(150, 210, 255, 0.4);
   animation: orb-glow 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.orb-standard {
+  width: 110px;
+  height: 110px;
+}
+
+.orb-large {
+  width: 140px;
+  height: 140px;
+  box-shadow:
+    0 0 40px rgba(100, 180, 255, 0.8),
+    0 0 80px rgba(0, 120, 200, 0.6),
+    inset -25px -25px 50px rgba(0, 0, 0, 0.4),
+    inset 25px 25px 50px rgba(200, 230, 255, 0.25);
 }
 
 @keyframes orb-glow {
@@ -2842,16 +2895,6 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 }
 
-.orb-large {
-  width: 150px;
-  height: 150px;
-  box-shadow:
-    0 0 40px rgba(100, 180, 255, 0.8),
-    0 0 80px rgba(0, 120, 200, 0.6),
-    inset -25px -25px 50px rgba(0, 0, 0, 0.4),
-    inset 25px 25px 50px rgba(200, 230, 255, 0.25);
-}
-
 .orb-year {
   font-family: var(--font-mono);
   font-size: 32px;
@@ -2862,128 +2905,156 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 }
 
 .orb-large .orb-year {
-  font-size: 42px;
+  font-size: 40px;
 }
 
-.orb-info {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.orb-info p {
-  font-size: 13px;
-  line-height: 1.5;
+.orb-text {
+  font-size: 12px;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.orb-text p {
   margin: 0;
+  font-size: 12px;
 }
 
-.orb-info-detailed {
-  max-width: 280px;
+.orb-text-detailed {
+  max-width: 240px;
   text-align: left;
+  font-size: 11px;
 }
 
-.orb-info-detailed h3 {
+.orb-text-detailed h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   text-align: center;
 }
 
-.orb-info-detailed p {
-  font-size: 12px;
-  margin: 6px 0;
+.orb-text-detailed p {
+  font-size: 11px;
+  margin: 4px 0;
 }
 
 .founders-inline {
-  margin: 12px 0;
-  padding: 12px 0;
+  margin: 8px 0;
+  padding: 8px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .founder-inline {
+  margin: 4px 0;
   text-align: center;
-  margin: 6px 0;
 }
 
 .founder-inline-name {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
 .founder-inline-title {
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(255, 255, 255, 0.6);
-  margin: 2px 0 0;
+  margin: 1px 0 0;
 }
 
 .pillars-inline {
-  margin: 12px 0;
+  margin: 8px 0;
 }
 
 .pillars-title {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .pillars-icons {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .pillar-icon {
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(100, 200, 255, 0.8);
-  padding: 3px 6px;
+  padding: 2px 4px;
   background: rgba(100, 200, 255, 0.1);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .endowment-info {
-  margin-top: 8px;
-  padding-top: 8px;
+  margin-top: 6px;
+  padding-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(100, 200, 255, 0.8);
 }
 
 .endowment-info p {
   margin: 0 !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
 }
 
 .endowment-info strong {
   color: rgba(255, 255, 255, 0.85);
 }
 
+@media (max-width: 1200px) {
+  .journey-timeline-curve {
+    height: 650px;
+  }
+
+  .timeline-arrow-container {
+    height: 280px;
+  }
+
+  .evolution-arrow-curve {
+    width: 90%;
+  }
+}
+
 @media (max-width: 1024px) {
-  .timeline-orbs-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+  .journey-timeline-curve {
+    height: 600px;
   }
 
-  .timeline-arrow-wrapper-advanced {
-    height: 180px;
-    margin-bottom: 80px;
+  .orb-pos-2016 {
+    left: 8%;
+    top: 60%;
   }
 
-  .evolution-arrow-advanced {
-    max-width: 90%;
+  .orb-pos-2020 {
+    left: 32%;
+    top: 45%;
+  }
+
+  .orb-pos-2023 {
+    left: 56%;
+    top: 28%;
+  }
+
+  .orb-pos-2026 {
+    right: 8%;
+    top: 12%;
   }
 
   .timeline-orb {
     width: 100px;
     height: 100px;
+  }
+
+  .orb-standard {
+    width: 95px;
+    height: 95px;
   }
 
   .orb-large {
@@ -2992,32 +3063,71 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 
   .orb-year {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .orb-large .orb-year {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
 @media (max-width: 768px) {
-  .timeline-orbs-wrapper {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .journey-timeline-curve {
+    height: 750px;
   }
 
-  .timeline-arrow-wrapper-advanced {
-    height: 120px;
-    margin-bottom: 40px;
+  .timeline-arrow-container {
+    height: 200px;
   }
 
-  .evolution-arrow-advanced {
-    max-width: 70%;
+  .evolution-arrow-curve {
+    width: 95%;
+    max-width: 600px;
+  }
+
+  .orb-pos-2016 {
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orb-pos-2020 {
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orb-pos-2023 {
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orb-pos-2026 {
+    left: 50%;
+    top: 75%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  .orb-with-info {
+    max-width: 100%;
+    width: 90vw;
+  }
+
+  .orb-text-detailed {
+    max-width: 100%;
+    text-align: center;
   }
 
   .timeline-orb {
     width: 90px;
     height: 90px;
+  }
+
+  .orb-standard {
+    width: 85px;
+    height: 85px;
   }
 
   .orb-large {
@@ -3026,15 +3136,11 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 
   .orb-year {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .orb-large .orb-year {
-    font-size: 28px;
-  }
-
-  .orb-info-detailed {
-    max-width: 100%;
+    font-size: 32px;
   }
 }
 
