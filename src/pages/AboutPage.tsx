@@ -131,6 +131,31 @@ export const AboutPage = () => {
           </div>
         </section>
 
+        {/* Our Values Section */}
+        <section className="about-section">
+          <div className="container">
+            <h2 className="about-section-title">Our Values</h2>
+            <div className="values-list">
+              <div className="value-item">
+                <h3 className="value-name">Authenticity</h3>
+                <p className="value-description">We reflect Oman's vision by enhancing local talent capabilities according to international standards, a commitment deeply rooted in our heritage.</p>
+              </div>
+              <div className="value-item">
+                <h3 className="value-name">Collaboration & Communication</h3>
+                <p className="value-description">We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.</p>
+              </div>
+              <div className="value-item">
+                <h3 className="value-name">Innovation & Progress</h3>
+                <p className="value-description">We embrace emerging technologies to stay ahead and deliver cutting-edge solutions that set industry benchmarks.</p>
+              </div>
+              <div className="value-item">
+                <h3 className="value-name">Leadership</h3>
+                <p className="value-description">We open new horizons, set industry benchmarks, and take the initiative to shape the future.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our People Section */}
         <section className="about-section about-people">
           <div className="container">
