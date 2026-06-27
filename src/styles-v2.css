@@ -2557,6 +2557,137 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   border-bottom: none;
 }
 
+/* Overview Section Layout */
+.overview-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.overview-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.oman-map {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.overview-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-block.with-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.block-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 105, 200, 0.1);
+  color: var(--systems);
+  margin-top: 4px;
+}
+
+.content-block.with-icon .about-text {
+  margin: 0;
+}
+
+.about-text.highlight {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 16px 0;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .overview-container {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+[dir="rtl"] .content-block.with-icon {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .block-icon {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+  .overview-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 24px;
+  }
+
+  .overview-graphic {
+    min-height: 400px;
+  }
+
+  .oman-map {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .overview-container {
+    gap: 40px;
+    padding: 0 16px;
+  }
+
+  .overview-graphic {
+    min-height: 300px;
+  }
+
+  .oman-map {
+    max-width: 250px;
+  }
+
+  .overview-title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+}
+
 .about-people {
   background: var(--ink);
   color: var(--paper);

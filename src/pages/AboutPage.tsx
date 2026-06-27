@@ -88,26 +88,70 @@ export const AboutPage = () => {
 
         {/* Overview Section */}
         <section className="about-section about-overview">
-          <div className="container">
-            <h2 className="about-section-title">Company Overview</h2>
-            <div className="about-content">
-              <p className="about-text">
-                <strong>Creating a sustainable future.</strong>
-              </p>
-              <p className="about-text">
-                The grand challenges of our world cannot be solved by resources alone, but by the capacity to innovate. When knowledge meets technology and humanity, ideas become reality, and opportunities transform into sustainable impact.
-              </p>
-              <p className="about-text">
-                <strong>This is why AWJ exists.</strong>
-              </p>
-              <ul className="about-list">
-                <li>
+          <div className="overview-container">
+            <div className="overview-graphic">
+              <svg className="oman-map" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor: 'rgba(0, 105, 200, 0.3)', stopOpacity: 1}} />
+                    <stop offset="100%" style={{stopColor: 'rgba(0, 115, 111, 0.3)', stopOpacity: 1}} />
+                  </linearGradient>
+                </defs>
+                <g opacity="0.6">
+                  <path d="M 150 100 L 200 120 L 220 180 L 200 220 L 150 210 L 120 160 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
+                  <circle cx="150" cy="100" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <circle cx="200" cy="120" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <circle cx="220" cy="180" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <circle cx="200" cy="220" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <circle cx="150" cy="210" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <circle cx="120" cy="160" r="3" fill="rgba(255,255,255,0.8)"/>
+                  <line x1="150" y1="100" x2="200" y2="120" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                  <line x1="200" y1="120" x2="220" y2="180" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                  <line x1="220" y1="180" x2="200" y2="220" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                  <line x1="200" y1="220" x2="150" y2="210" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                  <line x1="150" y1="210" x2="120" y2="160" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                  <line x1="120" y1="160" x2="150" y2="100" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+                </g>
+                <text x="200" y="350" textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="monospace" letterSpacing="2">OMAN</text>
+              </svg>
+            </div>
+            <div className="overview-content">
+              <h2 className="overview-title">About AWJ</h2>
+              <div className="content-block">
+                <p className="about-text highlight">
+                  <strong>Creating a sustainable future.</strong>
+                </p>
+              </div>
+              <div className="content-block with-icon">
+                <div className="block-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                  </svg>
+                </div>
+                <p className="about-text">
+                  The grand challenges of our world cannot be solved by resources alone, but by the capacity to innovate. When knowledge meets technology and humanity, ideas become reality, and opportunities transform into sustainable impact.
+                </p>
+              </div>
+              <div className="content-block">
+                <p className="about-text highlight">
+                  <strong>This is why AWJ exists.</strong>
+                </p>
+              </div>
+              <div className="content-block with-icon">
+                <div className="block-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <p className="about-text">
                   We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
-                </li>
-              </ul>
-              <p className="about-text">
-                We believe that the future is not to be awaited, but to be created.
-              </p>
+                </p>
+              </div>
+              <div className="content-block">
+                <p className="about-text">
+                  We believe that the future is not to be awaited, but to be created.
+                </p>
+              </div>
             </div>
           </div>
         </section>
