@@ -223,6 +223,7 @@ export const Projects = () => {
               type="button"
               className={`project-tile ${p.size}${p.light ? ' p-light' : ''}`}
               style={{ background: p.bgGrad }}
+              data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
               {p.image && <img src={p.image} className="pt-bg-image" alt="" aria-hidden="true" />}
