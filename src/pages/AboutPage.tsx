@@ -56,7 +56,7 @@ export const AboutPage = () => {
               <h1 className="about-title">About AWJ</h1>
               <div className="content-block">
                 <p className="about-text highlight">
-                  <strong>Creating a sustainable future.</strong>
+                  <span className="font-bold">Creating a sustainable future.</span>
                 </p>
               </div>
               <div className="content-block with-icon">
@@ -71,7 +71,7 @@ export const AboutPage = () => {
               </div>
               <div className="content-block">
                 <p className="about-text highlight">
-                  <strong>This is why AWJ exists.</strong>
+                  <span className="font-bold">This is why AWJ exists.</span>
                 </p>
               </div>
               <div className="content-block with-icon">
