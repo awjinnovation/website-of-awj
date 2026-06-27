@@ -232,8 +232,8 @@
   font-size: 20px; line-height: 1.8; opacity: 0.85; margin: 0 0 24px;
 }
 .am-text p:first-child::first-letter {
-  font-family: var(--font-display); font-weight: 400; font-size: 4em; line-height: 0.85;
-  float: left; margin: 8px 12px 0 0; color: var(--ink);
+  font-family: inherit; font-weight: inherit; font-size: inherit; line-height: inherit;
+  float: none; margin: 0; color: inherit;
 }
 .am-footer {
   margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line);
