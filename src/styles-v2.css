@@ -2373,7 +2373,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 .pillar-service-card {
   position: relative;
-  padding: 24px 20px;
+  padding: 20px 14px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 18px;
