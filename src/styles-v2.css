@@ -2368,7 +2368,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Service grid */
 .pillar-service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   gap: 24px;
 }
 .pillar-service-card {
