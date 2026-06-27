@@ -2440,7 +2440,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
-  align-items: start;
+  align-items: stretch;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
@@ -2455,7 +2455,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
+  height: 100%;
 }
 
 .about-title {
@@ -2633,6 +2633,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 
   .hero-graphic {
+    height: auto;
     min-height: 400px;
   }
 
@@ -2648,6 +2649,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   }
 
   .hero-graphic {
+    height: auto;
     min-height: 300px;
   }
 
