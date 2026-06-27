@@ -156,6 +156,7 @@ const PROJECTS: Project[] = [
     bgGrad: 'linear-gradient(135deg, #f5841e, #ee6c11)',
     icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-med',
+    image: '/assets/brand/hackathon-project-card.jpg',
     summary:
       'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
     impact:
