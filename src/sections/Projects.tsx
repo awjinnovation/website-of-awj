@@ -50,6 +50,7 @@ const PROJECTS: Project[] = [
     bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
     icon: '/assets/brand/awj-innovation-icon.svg',
     size: 'p-med',
+    image: '/assets/brand/jadeer-project-card.png',
     summary:
       'Since 2020, .nxt Jadeer has empowered over 6,600 participants across Oman through comprehensive training in emerging technologies, entrepreneurship, and professional development, preparing them for future opportunities.',
     impact:
