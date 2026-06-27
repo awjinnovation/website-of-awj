@@ -1576,7 +1576,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 
 /* Light variant, dark text on pale orange */
 .project-tile.p-light { color: var(--ink); }
-.project-tile.p-light .pt-icon { filter: brightness(0) saturate(100%) invert(40%) sepia(60%) saturate(2000%) hue-rotate(0deg); opacity: 0.18; }
+.project-tile.p-light .pt-icon { opacity: 0.18; }
 .project-tile.p-light .pt-arrow { border-color: rgba(20,20,28,0.25); color: var(--ink); }
 .project-tile.p-light:hover .pt-arrow { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
