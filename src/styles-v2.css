@@ -1721,7 +1721,33 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   position: relative;
   z-index: 2;
 }
-@media (max-width: 980px) { .case-grid { grid-template-columns: 1fr; } }
+@media (min-width: 641px) and (max-width: 980px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .case-card {
+    padding: 28px;
+    min-height: 400px;
+  }
+
+  .case-card .case-quote {
+    font-size: clamp(17px, 2.2vw, 20px);
+  }
+
+  .success-head {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 980px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 .case-card {
   position: relative;
   padding: 36px;
@@ -2909,6 +2935,37 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   border: 2px solid rgba(150, 210, 255, 0.4);
   animation: orb-glow 3s ease-in-out infinite;
   flex-shrink: 0;
+}
+
+@keyframes orb-entrance {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-triggered entrance animations */
+.timeline-orb-positioned.in-view .timeline-orb {
+  animation: orb-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.case-card.in-view {
+  animation: card-entrance 0.6s ease-out forwards;
 }
 
 @keyframes orb-glow {
