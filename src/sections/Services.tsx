@@ -73,6 +73,9 @@ export const Services = () => {
               <Arrow />
             </a>
           </div>
+          <div className="bento-card b-6">
+            <img src="/assets/brand/services-card-6.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
         </div>
       </div>
     </section>
