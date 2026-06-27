@@ -2772,24 +2772,15 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   margin-top: 60px;
 }
 
-.timeline-arrow-container {
+.timeline-arrow-svg {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 1;
-}
-
-.evolution-arrow-curve {
-  width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   max-width: 1000px;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
+  height: 280px;
+  z-index: 1;
 }
 
 /* Orbs positioned absolutely on the arrow curve */

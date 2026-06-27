@@ -92,10 +92,33 @@ export const AboutPage = () => {
             <h2 className="about-section-title timeline-title">Our Journey</h2>
 
             <div className="journey-timeline-curve">
-              {/* Arrow visualization */}
-              <div className="timeline-arrow-container">
-                <img src="/assets/brand/evolution-arrow.png" alt="Evolution Timeline" className="evolution-arrow-curve" />
-              </div>
+              <svg className="timeline-arrow-svg" viewBox="0 0 1000 350" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#c8d9a0" stopOpacity="1" />
+                    <stop offset="50%" stopColor="#a0c8b8" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#6dd9e6" stopOpacity="1" />
+                  </linearGradient>
+                  <filter id="arrowGlow">
+                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <path d="M 50 280 Q 300 180, 550 120 T 950 80"
+                      stroke="url(#arrowGradient)"
+                      strokeWidth="28"
+                      fill="none"
+                      strokeLinecap="round"
+                      filter="url(#arrowGlow)"
+                      opacity="0.9"/>
+                <polygon points="980,70 950,50 960,90"
+                         fill="url(#arrowGradient)"
+                         filter="url(#arrowGlow)"
+                         opacity="0.9"/>
+              </svg>
 
               {/* Timeline orbs positioned on the arrow curve with floating text labels */}
               <div className="timeline-curve-wrapper">
