@@ -1388,7 +1388,6 @@ button { font-family: inherit; }
   font-family: var(--font-display); font-weight: 700; line-height: 1;
   font-size: 32px;
 }
-.bento-card .body { font-size: 20px; line-height: 1.5; opacity: 0.85; max-width: 320px; font-weight: 300; }
 
 .bento-cta {
   position: relative;
