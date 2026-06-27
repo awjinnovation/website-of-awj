@@ -100,10 +100,10 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    name: 'Digital Transformation Solutions',
-    stat: '18',
-    statLabel: 'Government entities',
-    partner: 'Ongoing deployments',
+    name: 'Planning & Strategy Platform',
+    stat: '12',
+    statLabel: 'Strategic initiatives',
+    partner: 'Institutional clients',
     pillar: 'Systems',
     color: 'var(--systems)',
     bgGrad: 'linear-gradient(135deg, #0055a4, #0069c8)',
@@ -111,13 +111,13 @@ const PROJECTS: Project[] = [
     size: 'p-sm',
     light: false,
     summary:
-      "AWJ Systems has deployed comprehensive digital transformation solutions across 18 government entities, enabling data-driven decision-making, operational excellence, and institutional modernization through advanced technology integration.",
+      "AWJ Systems' Planning & Strategy platform empowers institutions to develop and execute strategic roadmaps through data-driven planning, scenario analysis, and AI-assisted decision-making, enabling leaders to navigate complex challenges with confidence.",
     impact:
-      "These solutions have transformed institutional capabilities, improved service delivery, and accelerated government digital initiatives aligned with national development goals. Continuous enhancement ensures stakeholder satisfaction and measurable outcomes.",
+      "The platform has supported strategic transformations across government and private sector institutions, helping leaders make informed decisions, align organizational goals, and track strategic progress in real-time through intelligent analytics and visualization.",
     achievements: [
-      { value: '18', label: 'Government entities' },
-      { value: '6', label: 'Active projects' },
-      { value: '20+', label: 'Technology partners' },
+      { value: '12', label: 'Strategic initiatives' },
+      { value: 'AI-Assisted', label: 'Decision making' },
+      { value: 'Real-time', label: 'Performance tracking' },
     ],
   },
   {
