@@ -134,6 +134,7 @@ const PROJECTS: Project[] = [
     bgGrad: 'linear-gradient(135deg, #009688, #00bfa5)',
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-sm',
+    image: '/assets/brand/abraj-project-card.jpg',
     summary:
       "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
     impact:
