@@ -1335,6 +1335,8 @@ button { font-family: inherit; }
   transition: transform 0.6s var(--ease-luxe);
   isolation: isolate;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 .card-asset {
   position: absolute;
@@ -1411,6 +1413,7 @@ button { font-family: inherit; }
   letter-spacing: 0.1em;
   transition: all 0.4s var(--ease-luxe);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  margin-top: auto;
 }
 .bento-cta svg {
   width: 12px;
