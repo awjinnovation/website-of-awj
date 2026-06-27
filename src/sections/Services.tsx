@@ -1,5 +1,17 @@
 import { useLang } from '../i18n/LangContext';
 
+const Arrow = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M5 12h14M13 5l7 7-7 7"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export const Services = () => {
   const { t } = useLang();
   return (
@@ -29,21 +41,37 @@ export const Services = () => {
             <img src="/assets/brand/awj-academy-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b2.title')}</div>
             <p className="body">{t('services.b2.body')}</p>
+            <a href="/pillars/academy" className="bento-cta">
+              {t('services.more')}
+              <Arrow />
+            </a>
           </div>
           <div className="bento-card b-3 bento-sustain">
             <img src="/assets/brand/awj-sustain-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b3.title')}</div>
             <p className="body">{t('services.b3.body')}</p>
+            <a href="/pillars/sustain" className="bento-cta">
+              {t('services.more')}
+              <Arrow />
+            </a>
           </div>
           <div className="bento-card b-4 bento-innovation">
             <img src="/assets/brand/awj-innovation-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b4.title')}</div>
             <p className="body">{t('services.b4.body')}</p>
+            <a href="/pillars/innovation" className="bento-cta">
+              {t('services.more')}
+              <Arrow />
+            </a>
           </div>
           <div className="bento-card b-5 bento-systems">
             <img src="/assets/brand/awj-systems-asset-1.svg" className="card-asset" alt="" aria-hidden="true" />
             <div className="title">{t('services.b5.title')}</div>
             <p className="body">{t('services.b5.body')}</p>
+            <a href="/pillars/systems" className="bento-cta">
+              {t('services.more')}
+              <Arrow />
+            </a>
           </div>
         </div>
       </div>
