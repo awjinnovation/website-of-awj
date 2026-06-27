@@ -46,77 +46,11 @@ export const AboutPage = () => {
         <section className="about-hero">
           <div className="hero-overview-container">
             <div className="hero-graphic">
-              <svg className="oman-map" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <radialGradient id="nodeLarge" cx="35%" cy="35%">
-                    <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.8)', stopOpacity: 1}} />
-                    <stop offset="60%" style={{stopColor: 'rgba(255,255,255,0.4)', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.1)', stopOpacity: 1}} />
-                  </radialGradient>
-                  <radialGradient id="nodeMed" cx="35%" cy="35%">
-                    <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.7)', stopOpacity: 1}} />
-                    <stop offset="60%" style={{stopColor: 'rgba(255,255,255,0.3)', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.05)', stopOpacity: 1}} />
-                  </radialGradient>
-                  <radialGradient id="nodeSmall" cx="35%" cy="35%">
-                    <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.6)', stopOpacity: 1}} />
-                    <stop offset="70%" style={{stopColor: 'rgba(255,255,255,0.2)', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0)', stopOpacity: 1}} />
-                  </radialGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                {/* Connection lines */}
-                <line x1="60" y1="480" x2="120" y2="420" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-                <line x1="120" y1="420" x2="180" y2="340" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-                <line x1="180" y1="340" x2="240" y2="240" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-                <line x1="240" y1="240" x2="280" y2="160" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-                <line x1="280" y1="160" x2="320" y2="80" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-                <line x1="60" y1="480" x2="100" y2="380" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="100" y1="380" x2="160" y2="300" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="160" y1="300" x2="220" y2="220" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="220" y1="220" x2="260" y2="140" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="240" y1="240" x2="300" y2="180" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="300" y1="180" x2="340" y2="100" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="180" y1="340" x2="220" y2="280" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                <line x1="220" y1="280" x2="280" y2="200" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-
-                {/* Large nodes (main hubs) */}
-                <circle cx="60" cy="480" r="24" fill="url(#nodeLarge)" filter="url(#glow)"/>
-                <circle cx="180" cy="340" r="26" fill="url(#nodeLarge)" filter="url(#glow)"/>
-                <circle cx="240" cy="240" r="28" fill="url(#nodeLarge)" filter="url(#glow)"/>
-
-                {/* Medium nodes */}
-                <circle cx="120" cy="420" r="18" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="100" cy="380" r="16" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="160" cy="300" r="17" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="220" cy="280" r="18" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="280" cy="160" r="20" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="300" cy="180" r="17" fill="url(#nodeMed)" filter="url(#glow)"/>
-                <circle cx="260" cy="140" r="16" fill="url(#nodeMed)" filter="url(#glow)"/>
-
-                {/* Small nodes */}
-                <circle cx="40" cy="520" r="11" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="80" cy="460" r="10" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="140" cy="360" r="12" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="200" cy="320" r="11" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="260" cy="220" r="12" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="320" cy="80" r="13" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="340" cy="100" r="11" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="280" cy="200" r="10" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="220" cy="220" r="12" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="360" cy="120" r="9" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="150" cy="420" r="11" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="190" cy="380" r="10" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="240" cy="300" r="11" fill="url(#nodeSmall)" filter="url(#glow)"/>
-                <circle cx="310" cy="140" r="10" fill="url(#nodeSmall)" filter="url(#glow)"/>
-              </svg>
+              <img
+                src="/assets/brand/oman-network-map.png"
+                alt="Oman Network Visualization"
+                className="oman-map"
+              />
             </div>
             <div className="hero-content">
               <h1 className="about-title">About AWJ</h1>
