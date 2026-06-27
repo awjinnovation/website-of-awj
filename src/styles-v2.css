@@ -2368,12 +2368,12 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Service grid */
 .pillar-service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
 }
 .pillar-service-card {
   position: relative;
-  padding: 30px 28px 28px;
+  padding: 32px 28px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -2381,41 +2381,64 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
     border-color 0.3s ease,
     transform 0.4s var(--ease-out),
     box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .pillar-service-card::before {
   content: '';
-  position: absolute; top: 0; left: 28px;
-  width: 36px; height: 3px;
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 36px;
+  height: 3px;
   background: var(--pillar-accent);
 }
-.pillar-page--rtl .pillar-service-card::before { left: auto; right: 28px; }
+.pillar-page--rtl .pillar-service-card::before {
+  left: auto;
+  right: 28px;
+}
 .pillar-service-card:hover {
   border-color: var(--pillar-accent);
   transform: translateY(-3px);
   box-shadow: 0 22px 50px -22px color-mix(in srgb, var(--pillar-accent) 40%, transparent);
 }
 .pillar-service-num {
-  font-family: var(--font-mono); font-size: 20px;
-  ; color: rgba(12, 14, 20, 0.4);
-  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(12, 14, 20, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
 .pillar-service-title {
   font-family: var(--font-display);
-  font-size: clamp(20px, 1.6vw, 26px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 12px;
+  line-height: 1.3;
+  margin: 0;
+  max-width: 100%;
 }
 .pillar-service-body {
-  font-size: 20px; line-height: 1.6;
-  color: rgba(12, 14, 20, 0.7);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(12, 14, 20, 0.8);
+  margin: 0;
+  max-width: 100%;
 }
 .pillar-service-items {
-  margin-top: 12px; padding-left: 18px;
-  font-size: 20px; line-height: 1.6;
-  color: rgba(12, 14, 20, 0.7);
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(12, 14, 20, 0.8);
+  list-style: disc;
 }
-.pillar-page--rtl .pillar-service-items { padding-left: 0; padding-right: 18px; }
+.pillar-page--rtl .pillar-service-items {
+  padding-left: 0;
+  padding-right: 18px;
+}
 
 /* Contact section */
 .pillar-contact { background: var(--ink); color: var(--paper); }
