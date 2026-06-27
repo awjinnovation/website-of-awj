@@ -408,7 +408,7 @@ button { font-family: inherit; }
 }
 .section-title .strong { font-weight: 900; }
 .section-awj-logo { height: 1em; width: auto; display: block; filter: brightness(0) invert(1); }
-.section-title em { font-style: normal; opacity: 1; font-weight: 800; }
+.section-title em { font-style: normal; opacity: 1; font-weight: 700; }
 
 /* Reveal animation */
 .reveal { opacity: 0; transform: translateY(28px); transition: all 0.9s var(--ease-luxe); }
