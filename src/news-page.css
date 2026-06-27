@@ -226,7 +226,7 @@
   font-size: 20px; line-height: 1.55; opacity: 0.78; margin: 0 0 24px; font-weight: 400;
 }
 .am-rule {
-  height: 1px; background: var(--line); margin: 0 0 28px;
+  height: 1px; background: var(--line); margin: 0 0 16px;
 }
 .am-text p {
   font-size: 20px; line-height: 1.8; opacity: 0.85; margin: 0 0 24px;
