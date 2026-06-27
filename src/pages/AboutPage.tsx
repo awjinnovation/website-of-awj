@@ -90,9 +90,25 @@ export const AboutPage = () => {
         <section className="about-section about-overview">
           <div className="container">
             <h2 className="about-section-title">Company Overview</h2>
-            <p className="about-text">
-              AWJ Innovation is a brand name of the Sustainable Technologies & Innovation Development Company (STID), an endowment and philanthropic entity. We identify opportunities and fill gaps in innovation within the Sultanate of Oman, creating programs to strengthen young Omani talents, foster new businesses, and drive disruptive technologies for job and wealth creation.
-            </p>
+            <div className="about-content">
+              <p className="about-text">
+                <strong>Creating a sustainable future.</strong>
+              </p>
+              <p className="about-text">
+                The grand challenges of our world cannot be solved by resources alone, but by the capacity to innovate. When knowledge meets technology and humanity, ideas become reality, and opportunities transform into sustainable impact.
+              </p>
+              <p className="about-text">
+                <strong>This is why AWJ exists.</strong>
+              </p>
+              <ul className="about-list">
+                <li>
+                  We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
+                </li>
+              </ul>
+              <p className="about-text">
+                We believe that the future is not to be awaited, but to be created.
+              </p>
+            </div>
           </div>
         </section>
 
