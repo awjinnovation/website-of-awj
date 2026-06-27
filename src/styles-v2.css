@@ -1239,7 +1239,7 @@ button { font-family: inherit; }
 }
 .card-logo-img { height: 90%; width: auto; display: block; max-height: 140px; }
 .card-content {
-  position: relative; z-index: 1; padding: 40px 44px; display: flex; flex-direction: column; justify-content: flex-start; flex: 1;
+  position: relative; z-index: 1; padding: 36px 32px; display: flex; flex-direction: column; justify-content: flex-start; flex: 1;
 }
 .stack-card .desc { font-size: 20px; line-height: 1.55; opacity: 0.85; font-weight: 300; margin-top: 0; }
 .stack-card .meta-row .m-k { font-family: var(--font-mono); font-size: 20px; ; opacity: 0.9; }
