@@ -2690,6 +2690,43 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   margin: 0;
 }
 
+.values-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.value-item {
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(0, 105, 200, 0.05), rgba(0, 115, 111, 0.05));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  border-color: rgba(12, 14, 20, 0.25);
+  box-shadow: 0 12px 32px rgba(12, 14, 20, 0.1);
+  transform: translateY(-4px);
+}
+
+.value-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.value-description {
+  font-size: 15px;
+  line-height: 1.65;
+  opacity: 0.8;
+  margin: 0;
+}
+
 .about-people {
   background: var(--ink);
   color: var(--paper);
