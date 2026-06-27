@@ -83,42 +83,6 @@ export const AboutPage = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="about-stats">
-          <div className="container">
-            <div className="stats-grid">
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-briefcase"></i>
-                </div>
-                <div className="stat-number">98<span>+</span></div>
-                <div className="stat-label">Projects Delivered</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-people-group"></i>
-                </div>
-                <div className="stat-number">49<span>+</span></div>
-                <div className="stat-label">Partner Organizations</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-building"></i>
-                </div>
-                <div className="stat-number">3</div>
-                <div className="stat-label">Business Units</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">
-                  <i className="fas fa-trophy"></i>
-                </div>
-                <div className="stat-number">3<span>+</span></div>
-                <div className="stat-label">Years of Excellence</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Our Story Section */}
         <section className="about-section">
           <div className="container">
