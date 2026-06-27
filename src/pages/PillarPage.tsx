@@ -64,30 +64,13 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
             </h1>
             <p className="pillar-hero-lede">{content.aboutTitle}</p>
 
-            <div className="pillar-hero-cta-row">
-              <a
-                className="pillar-cta-primary"
-                href={content.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as TranslationKey)}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-              {content.contact.email && (
+            {content.contact.email && (
+              <div className="pillar-hero-cta-row">
                 <a className="pillar-cta-secondary" href={`mailto:${content.contact.email}`}>
                   {content.contact.email}
                 </a>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </section>
 
