@@ -1629,6 +1629,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   align-self: flex-start;
 }
 .pm-cover .pm-cover-pillar .swatch { width: 8px; height: 8px; border-radius: 50%; }
+.pm-pillar-icon { height: 40px; width: auto; display: block; filter: brightness(0) invert(1); }
 
 .pm-close {
   position: absolute; top: 24px; right: 24px;

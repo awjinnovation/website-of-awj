@@ -260,8 +260,7 @@ export const Projects = () => {
               <img src={PROJECTS[open].icon} className="pm-cover-icon" alt="" aria-hidden="true" />
               <div className="pm-cover-num">PROJECT / 0{open + 1}</div>
               <div className="pm-cover-pillar">
-                <span className="swatch" style={{ background: 'var(--paper)' }}></span>
-                AWJ {PROJECTS[open].pillar}
+                <img src={PROJECTS[open].icon} alt={`AWJ ${PROJECTS[open].pillar}`} className="pm-pillar-icon" />
               </div>
               <button
                 type="button"
