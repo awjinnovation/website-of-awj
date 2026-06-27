@@ -12,6 +12,7 @@ type Project = {
   icon: string;
   size: 'p-big' | 'p-med' | 'p-sm';
   light?: boolean;
+  image?: string;
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
@@ -28,6 +29,7 @@ const PROJECTS: Project[] = [
     bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-big',
+    image: '/assets/brand/3d-building-card.png',
     summary:
       'AWJ Sustain supported the development of the first and largest 3D-printed building in the Middle East, demonstrating sustainable construction practices and advanced manufacturing technologies that minimize environmental impact.',
     impact:
@@ -221,6 +223,7 @@ export const Projects = () => {
               style={{ background: p.bgGrad }}
               onClick={() => setOpen(i)}
             >
+              {p.image && <img src={p.image} className="pt-bg-image" alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <div className="pt-stat-block">
                 <div className="pt-stat">{p.stat}</div>
