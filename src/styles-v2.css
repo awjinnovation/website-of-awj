@@ -1481,7 +1481,7 @@ button { font-family: inherit; }
 .bento-card.b-3 .title { font-size: 22px; line-height: 1.1; }
 .bento-card.b-3 .body { font-size: 20px; }
 .bento-card.b-6 {
-  grid-column: span 2;
+  grid-column: span 1;
   grid-row: auto;
   min-height: 320px;
   padding: 32px;
