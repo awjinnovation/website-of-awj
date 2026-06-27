@@ -1399,13 +1399,13 @@ button { font-family: inherit; }
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 600;
-  color: var(--ink);
+  color: #000000;
   padding: 10px 16px;
   border: none;
   border-radius: 999px;
   background: white;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: 0.95;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1416,7 +1416,7 @@ button { font-family: inherit; }
   width: 12px;
   height: 12px;
   transition: transform 0.3s var(--ease-out);
-  color: var(--ink);
+  color: #000000;
 }
 .bento-card:hover .bento-cta {
   opacity: 1;
@@ -1425,7 +1425,7 @@ button { font-family: inherit; }
 }
 .bento-cta:hover {
   background: white;
-  color: var(--ink);
+  color: #000000;
 }
 .bento-cta:hover svg {
   transform: translateX(3px);
