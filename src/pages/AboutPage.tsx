@@ -104,66 +104,6 @@ export const AboutPage = () => {
           </div>
         </section>
 
-        {/* Mission & Vision Section */}
-        <section className="about-section">
-          <div className="container">
-            <h2 className="about-section-title">Our Foundation</h2>
-
-            <div className="mission-vision-grid">
-              <div className="mission-box">
-                <h3>Our Mission</h3>
-                <p>AWJ Innovation develops an integrated knowledge ecosystem through capacity development, enhanced knowledge production, and building an interactive scientific community to ignite scientific curiosity, enhance dialogue, and contribute to creating impact, based on global expertise within a local context.</p>
-                <div className="mission-pillars">
-                  <span>Building Ecosystems</span>
-                  <span>Knowledge Transfer</span>
-                  <span>National Capabilities</span>
-                </div>
-              </div>
-
-              <div className="vision-box">
-                <h3>Our Vision</h3>
-                <p>Leading transformation in capacity building, activating knowledge production, and empowering scientific communities</p>
-                <div className="vision-pillars">
-                  <span>Innovation Leadership</span>
-                  <span>Economic Diversification</span>
-                  <span>Regional Excellence</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="values-section">
-              <h3>Core Values</h3>
-              <div className="values-grid">
-                <div className="value-card">
-                  <div className="value-letter">A</div>
-                  <h4>Authentic</h4>
-                  <p>Reflecting Oman's vision by enhancing local talents' capabilities to global standards—a commitment rooted in our heritage</p>
-                </div>
-                <div className="value-card">
-                  <div className="value-letter">P</div>
-                  <h4>Pioneering</h4>
-                  <p>Breaking new ground, setting industry standards, fostering opportunities for growth, and taking the lead in shaping the future</p>
-                </div>
-                <div className="value-card">
-                  <div className="value-letter">C</div>
-                  <h4>Connecting</h4>
-                  <p>Leveraging collective expertise to create valuable opportunities and deliver impactful solutions in the consultancy landscape</p>
-                </div>
-                <div className="value-card">
-                  <div className="value-letter">E</div>
-                  <h4>Emergent</h4>
-                  <p>Leading by embracing emerging technologies to deliver cutting-edge solutions that set industry standards</p>
-                </div>
-              </div>
-              <div className="additional-principles">
-                <p>Working with clarity and high transparency</p>
-                <p>Kindness in dealing with everyone and respecting their wishes</p>
-                <p>Credibility, achieving agreed-upon goals, and delivering the best</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Our People Section */}
         <section className="about-section about-people">
           <div className="container">
