@@ -2624,10 +2624,14 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 
 .about-text.highlight {
   font-size: 20px;
-  font-weight: 600;
   color: var(--paper);
   margin: 16px 0;
   opacity: 0.95;
+}
+
+.font-bold {
+  font-weight: 700;
+  font-family: var(--font-display);
 }
 
 .hero-content .about-text {
