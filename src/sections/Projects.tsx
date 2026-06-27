@@ -280,6 +280,7 @@ export const Projects = () => {
               </button>
             </div>
             <div className="pm-body">
+              {PROJECTS[open].image && <img src={PROJECTS[open].image} className="pm-body-image" alt="" aria-hidden="true" />}
               <h3 className="pm-title">{PROJECTS[open].name}</h3>
               <p className="pm-summary">{PROJECTS[open].summary}</p>
               <p className="pm-impact">{PROJECTS[open].impact}</p>
