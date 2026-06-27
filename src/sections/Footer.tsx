@@ -60,6 +60,11 @@ export const Footer = () => {
             <a href="/pillars/innovation">AWJ Innovation</a>
             <a href="/pillars/systems">AWJ Systems</a>
           </div>
+          <div className="footer-col">
+            <h4>{t('footer.col.location')}</h4>
+            <p>{t('footer.col.address')}</p>
+            <p>{t('footer.col.hours')}</p>
+          </div>
         </div>
         <div className="footer-bottom">
           <span>{t('footer.copyright')}</span>

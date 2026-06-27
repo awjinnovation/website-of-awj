@@ -166,6 +166,9 @@ const en = {
   'footer.brand.desc':
     'An integrated holding group operating across\nAcademy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
   'footer.col.pillars': 'Pillars',
+  'footer.col.location': 'Location',
+  'footer.col.address': 'We operate from Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman, aligned with standard Muscat working hours (Sunday to Thursday).',
+  'footer.col.hours': '',
   'footer.col.group': 'Group',
   'footer.col.group.companies': 'Companies',
   'footer.col.group.capabilities': 'Capabilities',
@@ -373,6 +376,9 @@ const ar: Record<TranslationKey, string> = {
   'footer.brand.desc':
     'مجموعة قابضة متكاملة تعمل عبر\nالأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
   'footer.col.pillars': 'القطاعات',
+  'footer.col.location': 'الموقع',
+  'footer.col.address': 'نعمل من ساحة المزون، الطابق الخامس، الخوض، مسقط، سلطنة عمان، متوافقين مع ساعات العمل القياسية في مسقط (من الأحد إلى الخميس).',
+  'footer.col.hours': '',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',
   'footer.col.group.capabilities': 'القدرات',
