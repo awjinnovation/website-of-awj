@@ -1553,12 +1553,12 @@ button { font-family: inherit; }
 
 .project-tile .pt-foot { z-index: 2; }
 .project-tile .pt-name {
-  font-family: var(--font-display); font-weight: 300;
+  font-family: var(--font-display); font-weight: 700;
   line-height: 1.1; font-size: 20px; margin-bottom: 10px;
 }
-.project-tile.p-big .pt-name { font-size: clamp(26px, 2.4vw, 36px); font-weight: 400; }
-.project-tile.p-med .pt-name { font-size: 20px; line-height: 1.15; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.project-tile.p-sm .pt-name { font-size: 20px; line-height: 1.15; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.project-tile.p-big .pt-name { font-size: clamp(26px, 2.4vw, 36px); font-weight: 700; }
+.project-tile.p-med .pt-name { font-size: 20px; line-height: 1.15; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: 700; }
+.project-tile.p-sm .pt-name { font-size: 20px; line-height: 1.15; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: 700; }
 
 .project-tile .pt-meta {
   display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center;
