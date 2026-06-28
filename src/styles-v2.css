@@ -1751,27 +1751,32 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-top: 1px solid var(--line);
 }
 
-/* Dark text only INSIDE the cards */
+/* Featured card text - DARK */
+.npf-card {
+  color: var(--ink) !important;
+}
+
 .npf-card p,
-.npa-card p {
+.npf-title,
+.npf-dek,
+.npf-meta,
+.npf-read {
   color: var(--ink) !important;
   opacity: 1;
 }
 
-/* Card text must be dark - override parent white text */
-.npf-card,
-.npf-card *,
-.npf-title,
-.npf-dek,
-.npf-meta,
-.npf-read,
-.npa-card,
-.npa-card *,
+/* Article card text - DARK */
+.npa-card {
+  color: var(--ink) !important;
+}
+
+.npa-card p,
 .npa-title,
 .npa-dek,
 .npa-meta,
 .npa-read {
   color: var(--ink) !important;
+  opacity: 1;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
