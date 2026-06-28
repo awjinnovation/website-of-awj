@@ -111,10 +111,6 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
 
               {/* Title */}
               <div className="timeline-header">
-                <div className="timeline-header-badge">
-                  <span className="badge-line" />
-                  <span>WHO WE ARE</span>
-                </div>
                 <h2 className="timeline-main-title">Our Timeline</h2>
                 <p className="timeline-subtitle">
                   A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
@@ -222,10 +218,6 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
 
             {/* Title */}
             <div className="timeline-header timeline-header-mobile">
-              <div className="timeline-header-badge">
-                <span className="badge-line" />
-                <span>WHO WE ARE</span>
-              </div>
               <h2 className="timeline-main-title">Our Timeline</h2>
               <p className="timeline-subtitle">
                 A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
