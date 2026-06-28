@@ -1409,7 +1409,7 @@ button { font-family: inherit; }
   text-decoration: none;
   opacity: 1;
   cursor: pointer;
-  text-transform: uppercase;
+ 
   letter-spacing: 0.1em;
   transition: all 0.4s var(--ease-luxe);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
@@ -1928,7 +1928,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-size: clamp(13px, 1.8vw, 14px);
   background: rgba(255,255,255,0.12);
   color: #fafaf8;
-  text-transform: uppercase;
+ 
   letter-spacing: 0.2px;
 }
 .case-card .case-pillar .dot { width: 8px; height: 8px; border-radius: 50%; }
@@ -1967,7 +1967,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-size: clamp(13px, 1.8vw, 14px);
   opacity: 0.9;
   margin-top: 4px;
-  text-transform: uppercase;
+ 
   letter-spacing: 0.15px;
 }
 
@@ -2479,7 +2479,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-size: 14px;
   font-weight: 600;
   color: rgba(12, 14, 20, 0.5);
-  text-transform: uppercase;
+ 
   letter-spacing: 0.1em;
   margin-bottom: 8px;
 }
@@ -3608,7 +3608,7 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   font-weight: 700;
   opacity: 0.7;
   margin: 0 0 10px;
-  text-transform: uppercase;
+ 
   letter-spacing: 0.05em;
 }
 
@@ -4118,7 +4118,7 @@ main:has([data-pillar="systems"]) .pillar-service-body {
 
 /* Contact "call us directly" block + footer phone (kept from main) */
 .contact-direct { margin-top: 28px; display: flex; flex-direction: column; gap: 6px; }
-.contact-direct-label { font-family: var(--font-mono); font-size: 20px; text-transform: uppercase; opacity: 0.9; }
+.contact-direct-label { font-family: var(--font-mono); font-size: 20px; opacity: 0.9; }
 .contact-direct-phone { font-size: 22px; font-weight: 400; transition: opacity 0.2s ease; }
 .contact-direct-phone:hover { opacity: 0.7; }
 .footer-phone {
