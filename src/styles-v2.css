@@ -1761,30 +1761,32 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-color: #ffffff !important;
 }
 
-.news-viewall:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-/* Article list text - white on dark background */
-.npa-grid {
+/* Article list - white text on dark background */
+.news-recent {
   color: #ffffff;
 }
 
-.npa-grid .npa-card {
-  background: transparent;
-  border: none;
+.news-recent-head {
   color: #ffffff;
 }
 
-.npa-grid .npa-tag,
-.npa-grid .npa-title,
-.npa-grid .npa-meta,
-.npa-grid .npa-read {
+.news-recent-link {
   color: #ffffff;
 }
 
-.npa-grid .npa-card:hover {
-  background: rgba(255,255,255,0.05);
+.news-recent-list {
+  color: #ffffff;
+}
+
+.news-recent-item a {
+  color: #ffffff;
+}
+
+.nri-date,
+.nri-cat,
+.nri-title,
+.nri-arrow {
+  color: #ffffff;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
