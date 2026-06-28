@@ -1567,11 +1567,11 @@ button { font-family: inherit; }
 }
 .project-tile .pt-pillar { display: none; }
 .project-tile .pt-pillar-logo {
-  position: absolute; bottom: -40px; right: -40px;
-  width: 320px; height: 320px;
-  z-index: 0;
+  position: absolute; top: 20px; right: 20px;
+  width: 32px; height: 32px;
+  z-index: 3;
   filter: brightness(0) invert(1);
-  opacity: 0.12;
+  opacity: 0.85;
 }
 .project-tile .pt-partner {
   opacity: 0.95; text-transform: none;
