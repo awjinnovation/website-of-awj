@@ -1,6 +1,7 @@
 import { Cursor } from '../components/Cursor';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
+import { TimelineSection } from '../sections/TimelineSection';
 import { type PillarId } from '../data/pillars';
 import React, { useEffect } from 'react';
 
@@ -50,10 +51,6 @@ export const AboutPage = () => {
       },
       { threshold: 0.2 }
     );
-
-    // Observe timeline orbs
-    const orbs = document.querySelectorAll('.timeline-orb-positioned');
-    orbs.forEach((orb) => observer.observe(orb));
 
     // Observe case cards
     const caseCards = document.querySelectorAll('.case-card');
@@ -108,91 +105,8 @@ export const AboutPage = () => {
           </div>
         </section>
 
-        {/* Our Journey Timeline Section */}
-        <section className="about-section timeline-section timeline-dark">
-          <div className="timeline-bg-asset">
-          </div>
-          <div className="container timeline-container">
-            <h2 className="about-section-title timeline-title">AWJ Evolution</h2>
-
-            <nav className="journey-timeline-curve" aria-label="AWJ Company Timeline">
-              <svg className="timeline-arrow-svg" viewBox="0 0 1000 350" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#c8d9a0" stopOpacity="1" />
-                    <stop offset="50%" stopColor="#a0c8b8" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#6dd9e6" stopOpacity="1" />
-                  </linearGradient>
-                  <filter id="arrowGlow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                <path d="M 50 280 Q 300 180, 550 120 T 950 80"
-                      stroke="url(#arrowGradient)"
-                      strokeWidth="28"
-                      fill="none"
-                      strokeLinecap="round"
-                      filter="url(#arrowGlow)"
-                      opacity="0.9"/>
-                <polygon points="980,70 950,50 960,90"
-                         fill="url(#arrowGradient)"
-                         filter="url(#arrowGlow)"
-                         opacity="0.9"/>
-              </svg>
-
-              <div className="timeline-curve-wrapper">
-                <article className="timeline-orb-positioned orb-pos-2016" role="region" aria-label="2016: Foundation">
-                  <div className="timeline-orb" aria-label="Year 2016">
-                    <div className="orb-year">2016</div>
-                  </div>
-                  <div className="orb-label label-2016">
-                    <p>Ministry of Foreign Affairs, Science & Technology Council</p>
-                  </div>
-                </article>
-
-                <article className="timeline-orb-positioned orb-pos-2020" role="region" aria-label="2020: Founding and Growth">
-                  <div className="timeline-orb" aria-label="Year 2020">
-                    <div className="orb-year">2020</div>
-                  </div>
-                  <div className="orb-label label-2020">
-                    <h3>AWJ Corporation Founded</h3>
-                    <p>Dr. Yousuf Al Bulushi (Founder)</p>
-                    <p>Hamoud Al Shikiri (Co-founder)</p>
-                    <div className="pillars-compact" aria-label="Four Specialized Sectors">
-                      <span>AWJ Systems</span>
-                      <span>AWJ Innovation</span>
-                      <span>AWJ Sustain</span>
-                      <span>AWJ Academy</span>
-                    </div>
-                    <p className="endowment-compact"><strong>Endowment Fund:</strong> Sustainable technology & innovation</p>
-                  </div>
-                </article>
-
-                <article className="timeline-orb-positioned orb-pos-2023" role="region" aria-label="2023: Transition">
-                  <div className="timeline-orb" aria-label="Year 2023">
-                    <div className="orb-year">2023</div>
-                  </div>
-                  <div className="orb-label label-2023">
-                    <p>Administrative Transition to Private Company Structure</p>
-                  </div>
-                </article>
-
-                <article className="timeline-orb-positioned orb-pos-2026" role="region" aria-label="2026: Future Vision">
-                  <div className="timeline-orb" aria-label="Year 2026">
-                    <div className="orb-year">2026</div>
-                  </div>
-                  <div className="orb-label label-2026">
-                    <p>Continued growth and innovation leadership</p>
-                  </div>
-                </article>
-              </div>
-            </nav>
-          </div>
-        </section>
+        {/* AWJ Evolution Timeline Section */}
+        <TimelineSection accent="#7fe0d8" roadWidth={16} />
 
         {/* Our Competitive Advantages Section */}
         <section className="about-section">
