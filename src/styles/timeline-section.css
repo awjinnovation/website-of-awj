@@ -10,6 +10,7 @@
 .timeline-main {
   position: relative;
   width: 100%;
+  overflow-x: hidden;
   --accent: #7fe0d8;
   --road-width: 16px;
 }
@@ -19,7 +20,7 @@
 .timeline-desktop {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background: #05070b;
 }
 
@@ -39,6 +40,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  width: 100%;
 }
 
 .aurora-blob {
