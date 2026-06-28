@@ -1,0 +1,217 @@
+.advantages-values-section {
+  position: relative;
+  padding: clamp(60px, 8vw, 104px) clamp(20px, 5vw, 64px);
+  /* Colourful aurora backdrop, matching the News section. The vertical overlay
+     keeps a readable tint through the middle while fading the top and bottom
+     edges to the shared #05070b so this section blends seamlessly into its
+     neighbours instead of cutting at a hard line. */
+  background: linear-gradient(
+      180deg,
+      #05070b 0%,
+      rgba(5, 7, 11, 0.5) 12%,
+      rgba(5, 7, 11, 0.5) 88%,
+      #05070b 100%
+    ),
+    url('/assets/brand/news-bg.png') center / cover no-repeat;
+  font-family: var(--font-display);
+}
+
+.advantages-values-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.values-container {
+  margin-top: clamp(72px, 10vw, 128px);
+}
+
+/* Section header — matches the About page section titles (font-display, 700) */
+.section-header {
+  margin-bottom: clamp(30px, 3.6vw, 44px);
+}
+
+.section-title {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #f4f8fb;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 62%);
+}
+
+/* Advantages grid */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(316px, 1fr));
+  gap: clamp(16px, 1.8vw, 22px);
+}
+
+/* Advantage card — single, unified neutral treatment.
+   The pillar palette (--academy/--sustain/--innovation/--systems) is reserved
+   for the pillars themselves, so these generic cards stay monochrome instead of
+   borrowing pillar-like colours at random. */
+.advantage-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(12, 16, 22, 0.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 44px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 26px 60px rgba(0, 0, 0, 0.42);
+}
+
+.advantage-card-bg {
+  position: absolute;
+  top: -46px;
+  right: -46px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+.advantage-card-icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f4f8fb;
+  margin-bottom: 24px;
+}
+
+.advantage-card-text {
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(233, 240, 247, 0.82);
+}
+
+/* Values grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  gap: clamp(16px, 1.8vw, 24px);
+}
+
+/* Value card — same unified neutral treatment as the advantage cards */
+.value-card {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 36px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  background: rgba(12, 16, 22, 0.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 22px 54px rgba(0, 0, 0, 0.32);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 30px 66px rgba(0, 0, 0, 0.44);
+}
+
+.value-card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 78%);
+}
+
+.value-card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.value-card-icon {
+  width: 58px;
+  height: 58px;
+  flex: none;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f4f8fb;
+}
+
+.value-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f4f8fb;
+}
+
+.value-card-text {
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(231, 238, 245, 0.78);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advantage-card {
+    padding: 24px 20px;
+  }
+
+  .value-card {
+    padding: 28px 24px 26px;
+  }
+
+  .advantage-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .value-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

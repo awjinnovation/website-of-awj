@@ -2788,7 +2788,8 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   pointer-events: none;
   background:
     radial-gradient(circle at 50% 0%, rgba(12,14,20,0.0) 0%, rgba(12,14,20,0.55) 100%),
-    linear-gradient(180deg, rgba(12,14,20,0.35) 0%, transparent 30%, rgba(12,14,20,0.25) 100%);
+    /* Fade the bottom edge to #05070b so the hero blends into the timeline below. */
+    linear-gradient(180deg, rgba(12,14,20,0.35) 0%, transparent 30%, transparent 78%, #05070b 100%);
   mix-blend-mode: multiply;
 }
 

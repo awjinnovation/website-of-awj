@@ -3,14 +3,17 @@
 .timeline-section-wrapper {
   width: 100%;
   background: #05070b;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-display);
   overflow: hidden;
 }
 
 .timeline-main {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  /* Clip both axes. Using overflow-x:hidden alone leaves overflow-y at its
+     default "visible", which CSS auto-promotes to "auto" when the other axis
+     is hidden — turning this into an unwanted vertical scroll container. */
+  overflow: hidden;
   --accent: #7fe0d8;
   --road-width: 16px;
   background: #05070b;
@@ -117,8 +120,11 @@
 .timeline-desktop {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: visible;
+  /* Clip both axes (not overflow-x:hidden + overflow-y:visible, which the
+     browser promotes to overflow-y:auto). The stage keeps its full 1000px
+     layout height while being visually scaled down, so this height-limited
+     box would otherwise expose that gap as an internal scrollbar. */
+  overflow: hidden;
   background: transparent;
 }
 
@@ -212,12 +218,17 @@
 .aurora-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    150% 120% at 30% 20%,
-    transparent 30%,
-    rgba(3, 5, 9, 0.55) 78%,
-    rgba(3, 5, 9, 0.85) 100%
-  );
+  background:
+    /* Fade the top & bottom edges to #05070b so the section melts into the
+       hero above and the advantages section below instead of cutting at a
+       hard line. The aurora stays vivid through the middle. */
+    linear-gradient(180deg, #05070b 0%, transparent 12%, transparent 88%, #05070b 100%),
+    radial-gradient(
+      150% 120% at 30% 20%,
+      transparent 30%,
+      rgba(3, 5, 9, 0.55) 78%,
+      rgba(3, 5, 9, 0.85) 100%
+    );
 }
 
 @keyframes drift-a {
@@ -269,9 +280,9 @@
 
 .timeline-main-title {
   margin: 0;
-  font-size: clamp(36px, 8vw, 64px);
-  line-height: 1.02;
-  font-weight: 800;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.05;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: #f4f8fb;
   word-wrap: break-word;
@@ -281,7 +292,7 @@
   margin: clamp(12px, 2vw, 20px) 0 0;
   font-size: clamp(14px, 2.8vw, 18px);
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(233, 240, 247, 0.72);
   max-width: clamp(260px, 85vw, 460px);
   word-wrap: break-word;
@@ -316,7 +327,7 @@
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
   font-size: 27px;
-  font-weight: 800;
+  font-weight: 700;
   text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 70%, transparent);
   white-space: nowrap;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
@@ -342,7 +353,7 @@
 .timeline-card h3 {
   margin: 0 0 8px;
   font-size: 21px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.2;
   color: #f2f6fa;
   word-wrap: break-word;
@@ -352,7 +363,7 @@
   margin: 0;
   font-size: 15.5px;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(231, 238, 245, 0.74);
   word-wrap: break-word;
 }
@@ -378,7 +389,7 @@
 }
 
 .founder-role {
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(231, 238, 245, 0.6);
   font-size: clamp(12px, 2.2vw, 14px);
 }
@@ -423,7 +434,16 @@
 .aurora-overlay-mobile {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(3, 5, 9, 0.4), rgba(3, 5, 9, 0.1) 40%, rgba(3, 5, 9, 0.45));
+  /* Solid #05070b at the very top & bottom edges blends into the neighbouring
+     sections; lighter through the middle so the aurora reads. */
+  background: linear-gradient(
+    180deg,
+    #05070b 0%,
+    rgba(3, 5, 9, 0.4) 10%,
+    rgba(3, 5, 9, 0.1) 45%,
+    rgba(3, 5, 9, 0.45) 90%,
+    #05070b 100%
+  );
 }
 
 /* Mobile Title */
@@ -497,7 +517,7 @@
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   text-shadow: 0 0 16px color-mix(in srgb, var(--accent) 70%, transparent);
   white-space: nowrap;
 }

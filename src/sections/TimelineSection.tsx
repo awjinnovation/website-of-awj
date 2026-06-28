@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import '../styles/timeline-section.css';
+import styles from './TimelineSection.module.css';
+
+// Maps one or more local CSS-module class names to their scoped, hashed
+// identifiers. Every Timeline class is private to this module, so it can
+// neither be overridden by nor leak into the global stylesheet or other sections.
+const cx = (...names: string[]) => names.map((n) => styles[n] ?? '').filter(Boolean).join(' ');
 
 type TimelineMilestone = {
   year: number;
@@ -88,30 +93,30 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
   ];
 
   return (
-    <section className="timeline-section-wrapper" ref={wrapRef}>
+    <section className={cx('timeline-section-wrapper')} ref={wrapRef}>
       <div
-        className="timeline-main"
+        className={cx('timeline-main')}
         style={{
           '--accent': accent,
           '--road-width': `${roadWidth}px`,
         } as React.CSSProperties}
       >
         {/* Aurora Background */}
-        <div className="timeline-aurora">
-          <div className="aurora-blob aurora-blob-1" />
-          <div className="aurora-blob aurora-blob-2" />
-          <div className="aurora-blob aurora-blob-3" />
-          <div className="aurora-blob aurora-blob-4" />
-          <div className="aurora-overlay" />
+        <div className={cx('timeline-aurora')}>
+          <div className={cx('aurora-blob', 'aurora-blob-1')} />
+          <div className={cx('aurora-blob', 'aurora-blob-2')} />
+          <div className={cx('aurora-blob', 'aurora-blob-3')} />
+          <div className={cx('aurora-blob', 'aurora-blob-4')} />
+          <div className={cx('aurora-overlay')} />
         </div>
         {/* Desktop/Tablet View */}
         {!mobile && (
-          <div className="timeline-desktop" style={{ height: deskHeight }}>
-            <div className="timeline-stage" style={{ transform: `scale(${scale})` }}>
+          <div className={cx('timeline-desktop')} style={{ height: deskHeight }}>
+            <div className={cx('timeline-stage')} style={{ transform: `scale(${scale})` }}>
               {/* Title */}
-              <div className="timeline-header">
-                <h2 className="timeline-main-title">Our Timeline</h2>
-                <p className="timeline-subtitle">
+              <div className={cx('timeline-header')}>
+                <h2 className={cx('timeline-main-title')}>Our Timeline</h2>
+                <p className={cx('timeline-subtitle')}>
                   A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
                 </p>
               </div>
@@ -121,7 +126,7 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
                 width="1600"
                 height="1000"
                 viewBox="0 0 1600 1000"
-                className="timeline-svg"
+                className={cx('timeline-svg')}
                 aria-hidden="true"
               >
                 <path
@@ -130,7 +135,7 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
                   stroke="#ffffff"
                   strokeWidth={roadWidth}
                   strokeLinecap="round"
-                  className="timeline-path"
+                  className={cx('timeline-path')}
                 />
                 <g stroke="rgba(255,255,255,.5)" strokeWidth="2.5">
                   <line x1="250" y1="707" x2="250" y2="674" />
@@ -153,7 +158,7 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
               {MILESTONES.map((m, idx) => (
                 <div
                   key={m.year}
-                  className="timeline-year-pill"
+                  className={cx('timeline-year-pill')}
                   style={{
                     left: `${positions[idx].x}px`,
                     top: idx % 2 === 0 ? `${positions[idx].y - 64}px` : `${positions[idx].y + 64}px`,
@@ -167,7 +172,7 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
               {MILESTONES.map((m, idx) => (
                 <div
                   key={m.year}
-                  className="timeline-card"
+                  className={cx('timeline-card')}
                   style={{
                     left: `${cardPositions[idx].left}px`,
                     ...(cardPositions[idx].top !== undefined
@@ -179,19 +184,19 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
                   <h3>{m.title}</h3>
                   <p>{m.description}</p>
                   {m.founders && (
-                    <div className="timeline-founders">
+                    <div className={cx('timeline-founders')}>
                       {m.founders.map((f, idx) => (
-                        <div key={idx} className="founder-item">
-                          <span className="founder-name">{f.name}</span>
-                          <span className="founder-role">{f.role}</span>
+                        <div key={idx} className={cx('founder-item')}>
+                          <span className={cx('founder-name')}>{f.name}</span>
+                          <span className={cx('founder-role')}>{f.role}</span>
                         </div>
                       ))}
                     </div>
                   )}
                   {m.sectors && (
-                    <div className="timeline-sectors">
+                    <div className={cx('timeline-sectors')}>
                       {m.sectors.map((s, idx) => (
-                        <span key={idx} className="sector-badge">
+                        <span key={idx} className={cx('sector-badge')}>
                           {s}
                         </span>
                       ))}
@@ -205,48 +210,48 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
 
         {/* Mobile View */}
         {mobile && (
-          <div className="timeline-mobile">
+          <div className={cx('timeline-mobile')}>
             {/* Aurora Background Mobile */}
-            <div className="timeline-aurora-mobile">
-              <div className="aurora-blob aurora-blob-1" style={{ width: '130vw', height: '130vw', left: '-10vw', top: '-20vw', filter: 'blur(80px)' }} />
-              <div className="aurora-blob aurora-blob-2" style={{ width: '120vw', height: '120vw', left: '30vw', top: '24%', filter: 'blur(80px)' }} />
-              <div className="aurora-blob aurora-blob-3" style={{ width: '140vw', height: '140vw', left: '-30vw', top: '50%', filter: 'blur(90px)' }} />
-              <div className="aurora-blob aurora-blob-4" style={{ width: '130vw', height: '130vw', left: '0', bottom: '-20vw', filter: 'blur(90px)' }} />
-              <div className="aurora-overlay-mobile" />
+            <div className={cx('timeline-aurora-mobile')}>
+              <div className={cx('aurora-blob', 'aurora-blob-1')} style={{ width: '130vw', height: '130vw', left: '-10vw', top: '-20vw', filter: 'blur(80px)' }} />
+              <div className={cx('aurora-blob', 'aurora-blob-2')} style={{ width: '120vw', height: '120vw', left: '30vw', top: '24%', filter: 'blur(80px)' }} />
+              <div className={cx('aurora-blob', 'aurora-blob-3')} style={{ width: '140vw', height: '140vw', left: '-30vw', top: '50%', filter: 'blur(90px)' }} />
+              <div className={cx('aurora-blob', 'aurora-blob-4')} style={{ width: '130vw', height: '130vw', left: '0', bottom: '-20vw', filter: 'blur(90px)' }} />
+              <div className={cx('aurora-overlay-mobile')} />
             </div>
             {/* Title */}
-            <div className="timeline-header timeline-header-mobile">
-              <h2 className="timeline-main-title">Our Timeline</h2>
-              <p className="timeline-subtitle">
+            <div className={cx('timeline-header', 'timeline-header-mobile')}>
+              <h2 className={cx('timeline-main-title')}>Our Timeline</h2>
+              <p className={cx('timeline-subtitle')}>
                 A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
               </p>
             </div>
 
             {/* Vertical spine and milestones */}
-            <div className="timeline-spine-wrapper">
-              <div className="timeline-spine" />
+            <div className={cx('timeline-spine-wrapper')}>
+              <div className={cx('timeline-spine')} />
 
               {MILESTONES.map((m) => (
-                <div key={m.year} className="timeline-milestone">
-                  <div className="timeline-milestone-dot" />
-                  <div className="timeline-year-pill timeline-year-pill-mobile">{m.year}</div>
-                  <div className="timeline-card timeline-card-mobile">
+                <div key={m.year} className={cx('timeline-milestone')}>
+                  <div className={cx('timeline-milestone-dot')} />
+                  <div className={cx('timeline-year-pill', 'timeline-year-pill-mobile')}>{m.year}</div>
+                  <div className={cx('timeline-card', 'timeline-card-mobile')}>
                     <h3>{m.title}</h3>
                     <p>{m.description}</p>
                     {m.founders && (
-                      <div className="timeline-founders">
+                      <div className={cx('timeline-founders')}>
                         {m.founders.map((f) => (
-                          <div key={f.name} className="founder-item">
-                            <span className="founder-name">{f.name}</span>
-                            <span className="founder-role">{f.role}</span>
+                          <div key={f.name} className={cx('founder-item')}>
+                            <span className={cx('founder-name')}>{f.name}</span>
+                            <span className={cx('founder-role')}>{f.role}</span>
                           </div>
                         ))}
                       </div>
                     )}
                     {m.sectors && (
-                      <div className="timeline-sectors">
+                      <div className={cx('timeline-sectors')}>
                         {m.sectors.map((s) => (
-                          <span key={s} className="sector-badge">
+                          <span key={s} className={cx('sector-badge')}>
                             {s}
                           </span>
                         ))}
