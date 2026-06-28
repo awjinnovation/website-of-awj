@@ -100,15 +100,6 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
         {!mobile && (
           <div className="timeline-desktop" style={{ height: deskHeight }}>
             <div className="timeline-stage" style={{ transform: `scale(${scale})` }}>
-              {/* Aurora background */}
-              <div className="timeline-aurora">
-                <div className="aurora-blob aurora-blob-1" />
-                <div className="aurora-blob aurora-blob-2" />
-                <div className="aurora-blob aurora-blob-3" />
-                <div className="aurora-blob aurora-blob-4" />
-                <div className="aurora-overlay" />
-              </div>
-
               {/* Title */}
               <div className="timeline-header">
                 <h2 className="timeline-main-title">Our Timeline</h2>
@@ -207,20 +198,11 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
         {/* Mobile View */}
         {mobile && (
           <div className="timeline-mobile">
-            {/* Aurora background */}
-            <div className="timeline-aurora timeline-aurora-mobile">
-              <div className="aurora-blob aurora-blob-1" />
-              <div className="aurora-blob aurora-blob-2" />
-              <div className="aurora-blob aurora-blob-3" />
-              <div className="aurora-blob aurora-blob-4" />
-              <div className="aurora-overlay" />
-            </div>
-
             {/* Title */}
             <div className="timeline-header timeline-header-mobile">
               <h2 className="timeline-main-title">Our Timeline</h2>
               <p className="timeline-subtitle">
-                A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
+                A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
               </p>
             </div>
 
