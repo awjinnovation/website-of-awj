@@ -65,8 +65,16 @@
 .npf-card {
   display: flex; flex-direction: column; text-align: left; cursor: pointer;
   background: var(--paper); border: 1px solid var(--line); border-radius: 28px; overflow: hidden;
-  font: inherit; color: inherit;
+  font: inherit; color: var(--ink) !important;
   transition: transform .35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow .35s, border-color .35s;
+}
+
+.npf-card * {
+  color: var(--ink) !important;
+}
+
+.npf-title, .npf-dek, .npf-meta, .npf-read {
+  color: var(--ink) !important;
 }
 .npf-card:hover { transform: translateY(-6px); box-shadow: 0 36px 70px -34px rgba(0,0,0,0.22); border-color: rgba(0,0,0,0.16); }
 
@@ -141,8 +149,16 @@
 .npa-card {
   display: flex; flex-direction: column; text-align: left; cursor: pointer;
   background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
-  font: inherit; color: inherit;
+  font: inherit; color: var(--ink) !important;
   transition: transform .3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow .3s, border-color .3s;
+}
+
+.npa-card * {
+  color: var(--ink) !important;
+}
+
+.npa-title, .npa-dek, .npa-meta, .npa-read {
+  color: var(--ink) !important;
 }
 .npa-card:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -28px rgba(0,0,0,0.18); border-color: rgba(0,0,0,0.16); }
 .npa-cover { position: relative; aspect-ratio: 16/10; overflow: hidden; }
