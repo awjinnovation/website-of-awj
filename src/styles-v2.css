@@ -1771,6 +1771,11 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 
 .news-recent-link {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.news-recent-link:hover {
   color: #ffffff;
 }
 
