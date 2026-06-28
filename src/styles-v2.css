@@ -1751,28 +1751,38 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-top: 1px solid var(--line);
 }
 
-.news .news-card,
-.news .story-card,
-.news h3,
-.news .news-title,
-.news .story-title {
+/* White text for dark background areas only (exclude cards) */
+.news > :not(.npf-card):not(.npa-card) {
   color: #ffffff !important;
 }
 
-.news a {
+.news h3:not(.npf-title):not(.npa-title) {
   color: #ffffff !important;
 }
 
-.news .news-card h3,
-.news .story-card h3 {
+.news a:not(.npf-card a):not(.npa-card a) {
   color: #ffffff !important;
 }
 
-.news p,
-.news .story-text,
-.news .news-text {
+.news p:not(.npf-dek):not(.npa-dek) {
   color: #ffffff !important;
   opacity: 0.95;
+}
+
+/* Card text must be dark - override parent white text */
+.npf-card,
+.npf-card *,
+.npf-title,
+.npf-dek,
+.npf-meta,
+.npf-read,
+.npa-card,
+.npa-card *,
+.npa-title,
+.npa-dek,
+.npa-meta,
+.npa-read {
+  color: var(--ink) !important;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
