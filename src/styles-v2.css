@@ -2931,8 +2931,6 @@ main:has([data-pillar="systems"]) .pillar-service-body {
 .about-section {
   padding: 80px 0;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
-  background-attachment: fixed;
 }
 .about-section:last-of-type {
   border-bottom: none;
