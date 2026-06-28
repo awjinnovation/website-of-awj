@@ -1753,7 +1753,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 
 /* Featured card text - DARK */
 .npf-card {
-  color: var(--ink) !important;
+  color: #0F1822 !important;
 }
 
 .npf-card p,
@@ -1761,13 +1761,13 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .npf-dek,
 .npf-meta,
 .npf-read {
-  color: var(--ink) !important;
+  color: #0F1822 !important;
   opacity: 1;
 }
 
 /* Article card text - DARK */
 .npa-card {
-  color: var(--ink) !important;
+  color: #0F1822 !important;
 }
 
 .npa-card p,
@@ -1775,7 +1775,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .npa-dek,
 .npa-meta,
 .npa-read {
-  color: var(--ink) !important;
+  color: #0F1822 !important;
   opacity: 1;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
