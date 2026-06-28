@@ -1,16 +1,15 @@
 /* Timeline Section Styles */
 
 .timeline-section-wrapper {
-  width: 100%;
+  width: 100vw;
   background: #05070b;
   font-family: 'Proxima Nova Arabic', sans-serif;
+  margin-left: calc(-50vw + 50%);
 }
 
 .timeline-main {
   position: relative;
   width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
   --accent: #7fe0d8;
   --road-width: 16px;
 }
@@ -288,6 +287,7 @@
   position: relative;
   overflow: hidden;
   background: #05070b;
+  width: 100%;
   padding: 44px 20px 60px;
 }
 
