@@ -1555,6 +1555,7 @@ button { font-family: inherit; }
 .project-tile .pt-name {
   font-family: var(--font-display); font-weight: 700;
   line-height: 1.2; font-size: 48px; margin-bottom: 20px; z-index: 2; position: relative;
+  white-space: pre-line;
 }
 .project-tile.p-big .pt-name { font-size: clamp(32px, 3vw, 44px); font-weight: 700; }
 .project-tile.p-med .pt-name { font-size: 36px; line-height: 1.25; display: -webkit-box; line-clamp: 3; -webkit-line-clamp: 3; -webkit-box-orient: vertical; font-weight: 700; }

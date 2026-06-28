@@ -20,7 +20,7 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    name: 'First 3D Printed Building in the Middle East',
+    name: 'First 3D Printed Building\nin the Middle East',
     stat: '60%',
     statLabel: 'Material waste reduced',
     partner: 'with GUtech',
