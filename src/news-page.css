@@ -70,11 +70,9 @@
 }
 
 .npf-card * {
-  color: #0F1822 !important;
 }
 
 .npf-title, .npf-dek, .npf-meta, .npf-read {
-  color: #0F1822 !important;
 }
 .npf-card:hover { transform: translateY(-6px); box-shadow: 0 36px 70px -34px rgba(0,0,0,0.22); border-color: rgba(0,0,0,0.16); }
 
@@ -99,22 +97,17 @@
 .npf-meta, .npa-meta {
   display: flex; gap: 10px; align-items: center;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
-  opacity: 1 !important;
-  color: #0F1822 !important;
 }
 .npf-meta .dot, .npa-meta .dot { opacity: 0.4; }
 .npf-title {
   font-family: var(--font-display); font-weight: 300;
   font-size: clamp(24px, 1.9vw, 32px); line-height: 1.15; letter-spacing: -0.02em;
   text-wrap: balance; margin: 0;
-  color: #0F1822 !important;
 }
 .npf-dek { font-size: 20px; line-height: 1.6; opacity: 1 !important; margin: 0; color: var(--ink) !important; }
 .npf-read {
   margin-top: 4px; display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
-  color: #0F1822 !important;
-  opacity: 1 !important;
 }
 
 /* === ALL NEWS SECTION === */
@@ -158,11 +151,9 @@
 }
 
 .npa-card * {
-  color: #0F1822 !important;
 }
 
 .npa-title, .npa-dek, .npa-meta, .npa-read {
-  color: #0F1822 !important;
 }
 .npa-card:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -28px rgba(0,0,0,0.18); border-color: rgba(0,0,0,0.16); }
 .npa-cover { position: relative; aspect-ratio: 16/10; overflow: hidden; }
@@ -179,8 +170,6 @@
 .npa-read {
   margin-top: 4px; display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
-  opacity: 1 !important;
-  color: #0F1822 !important;
 }
 
 .npa-empty {
