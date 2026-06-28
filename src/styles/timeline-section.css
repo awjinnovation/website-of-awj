@@ -2,7 +2,7 @@
 
 .timeline-section-wrapper {
   width: 100%;
-  background: #05070b;
+  background: transparent;
   font-family: 'Proxima Nova Arabic', sans-serif;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@
   width: 100%;
   overflow-x: hidden;
   overflow-y: visible;
-  background: #05070b;
+  background: transparent;
 }
 
 .timeline-stage {
@@ -31,7 +31,7 @@
   height: 1000px;
   transform-origin: top left;
   overflow: visible;
-  background: #05070b;
+  background: transparent;
   /* Prevent elements from being cut off during scale transform */
   will-change: transform;
 }
@@ -309,7 +309,7 @@
 .timeline-mobile {
   position: relative;
   overflow: hidden;
-  background: #05070b;
+  background: transparent;
   width: 100%;
   padding: clamp(30px, 8vw, 44px) clamp(16px, 4vw, 20px) clamp(40px, 10vw, 60px);
 }
