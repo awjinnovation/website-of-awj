@@ -1744,7 +1744,12 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .project-preview { display: none !important; }
 
 /* === NEWS, featured cards + recent list === */
-.news { padding: 10px; background: var(--paper); color: var(--ink); border-top: 1px solid var(--line); }
+.news {
+  padding: 10px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
+  color: #ffffff;
+  border-top: 1px solid var(--line);
+}
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
   display: inline-flex; align-items: center; gap: 10px;
