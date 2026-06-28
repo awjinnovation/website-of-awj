@@ -126,7 +126,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    name: 'Abraj Energy Sustainability Report',
+    name: 'Abraj Energy\nSustainability Report',
     stat: 'Best Award',
     statLabel: '2025',
     partner: 'CSR Leadership',
