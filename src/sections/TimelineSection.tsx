@@ -26,8 +26,8 @@ const MILESTONES: TimelineMilestone[] = [
     title: 'Management Buyout & AWJ Innovation',
     description: 'Transition to a private company and the founding of AWJ Innovation, led by:',
     founders: [
-      { name: 'Dr. Yousef Al–Balushi', role: 'Partner / Founder' },
-      { name: 'Eng. Hamoud Al–Shukairi', role: 'Partner / Founder' },
+      { name: 'Dr. Yousef AlBalushi', role: 'Partner / Founder' },
+      { name: 'Eng. Hamoud AlShukairi', role: 'Partner / Founder' },
     ],
   },
   {
