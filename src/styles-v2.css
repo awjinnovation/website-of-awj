@@ -1572,7 +1572,7 @@ button { font-family: inherit; }
 }
 
 .project-bento .project-tile:nth-child(5) .pt-stat {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .project-tile .pt-meta {
