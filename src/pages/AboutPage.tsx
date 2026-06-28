@@ -114,7 +114,7 @@ export const AboutPage = () => {
             <img src="/assets/brand/bg-asset.png" alt="" className="bg-corner-asset" />
           </div>
           <div className="container timeline-container">
-            <h2 className="about-section-title timeline-title">Our Journey</h2>
+            <h2 className="about-section-title timeline-title">AWJ Evolution</h2>
 
             <nav className="journey-timeline-curve" aria-label="AWJ Company Timeline">
               <svg className="timeline-arrow-svg" viewBox="0 0 1000 350" preserveAspectRatio="none" aria-hidden="true">
