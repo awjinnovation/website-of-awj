@@ -113,7 +113,7 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
               <div className="timeline-header">
                 <h2 className="timeline-main-title">Our Timeline</h2>
                 <p className="timeline-subtitle">
-                  A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
+                  A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
                 </p>
               </div>
 
