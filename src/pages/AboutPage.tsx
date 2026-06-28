@@ -111,7 +111,6 @@ export const AboutPage = () => {
         {/* Our Journey Timeline Section */}
         <section className="about-section timeline-section timeline-dark">
           <div className="timeline-bg-asset">
-            <img src="/assets/brand/bg-asset.png" alt="" className="bg-corner-asset" />
           </div>
           <div className="container timeline-container">
             <h2 className="about-section-title timeline-title">AWJ Evolution</h2>
