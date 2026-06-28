@@ -1747,36 +1747,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .news {
   padding: 10px;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
-  color: #ffffff;
   border-top: 1px solid var(--line);
-}
-
-/* Featured card text - DARK */
-.npf-card {
-  color: #0F1822 !important;
-}
-
-.npf-card p,
-.npf-title,
-.npf-dek,
-.npf-meta,
-.npf-read {
-  color: #0F1822 !important;
-  opacity: 1;
-}
-
-/* Article card text - DARK */
-.npa-card {
-  color: #0F1822 !important;
-}
-
-.npa-card p,
-.npa-title,
-.npa-dek,
-.npa-meta,
-.npa-read {
-  color: #0F1822 !important;
-  opacity: 1;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
