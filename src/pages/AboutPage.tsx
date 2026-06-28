@@ -2,6 +2,7 @@ import { Cursor } from '../components/Cursor';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import { TimelineSection } from '../sections/TimelineSection';
+import { AdvantagesValuesSection } from '../sections/AdvantagesValuesSection';
 import { type PillarId } from '../data/pillars';
 import React, { useEffect } from 'react';
 
@@ -108,57 +109,8 @@ export const AboutPage = () => {
         {/* AWJ Evolution Timeline Section */}
         <TimelineSection accent="#7fe0d8" roadWidth={16} />
 
-        {/* Our Competitive Advantages Section */}
-        <section className="about-section">
-          <div className="container">
-            <h2 className="about-section-title">Our Competitive Advantages</h2>
-            <div className="advantages-list">
-              <div className="advantage-item">
-                <p>Deep understanding of local and regional market needs in innovation and tech entrepreneurship.</p>
-              </div>
-              <div className="advantage-item">
-                <p>International advisory team.</p>
-              </div>
-              <div className="advantage-item">
-                <p>Innovative solutions and services customized to the needs of each institution.</p>
-              </div>
-              <div className="advantage-item">
-                <p>Global expertise in deploying the latest technologies.</p>
-              </div>
-              <div className="advantage-item">
-                <p>Sustainable growth through world-class strategies and plans.</p>
-              </div>
-              <div className="advantage-item">
-                <p>Transforming ideas into tangible reality.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values Section */}
-        <section className="about-section">
-          <div className="container">
-            <h2 className="about-section-title">Our Values</h2>
-            <div className="values-list">
-              <div className="value-item">
-                <h3 className="value-name">Authenticity</h3>
-                <p className="value-description">We reflect Oman's vision by enhancing local talent capabilities according to international standards, a commitment deeply rooted in our heritage.</p>
-              </div>
-              <div className="value-item">
-                <h3 className="value-name">Collaboration & Communication</h3>
-                <p className="value-description">We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.</p>
-              </div>
-              <div className="value-item">
-                <h3 className="value-name">Innovation & Progress</h3>
-                <p className="value-description">We embrace emerging technologies to stay ahead and deliver cutting-edge solutions that set industry benchmarks.</p>
-              </div>
-              <div className="value-item">
-                <h3 className="value-name">Leadership</h3>
-                <p className="value-description">We open new horizons, set industry benchmarks, and take the initiative to shape the future.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Our Competitive Advantages & Values Section */}
+        <AdvantagesValuesSection />
 
         {/* Our People Section */}
         <section className="about-section about-people">
