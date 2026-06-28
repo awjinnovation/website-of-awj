@@ -1750,6 +1750,30 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   color: #ffffff;
   border-top: 1px solid var(--line);
 }
+
+.news .news-card,
+.news .story-card,
+.news h3,
+.news .news-title,
+.news .story-title {
+  color: #ffffff !important;
+}
+
+.news a {
+  color: #ffffff !important;
+}
+
+.news .news-card h3,
+.news .story-card h3 {
+  color: #ffffff !important;
+}
+
+.news p,
+.news .story-text,
+.news .news-text {
+  color: #ffffff !important;
+  opacity: 0.95;
+}
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
   display: inline-flex; align-items: center; gap: 10px;
