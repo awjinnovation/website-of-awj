@@ -21,6 +21,7 @@
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: visible;
   background: #05070b;
 }
 
@@ -29,8 +30,10 @@
   width: 100%;
   height: 1000px;
   transform-origin: top left;
-  overflow: hidden;
+  overflow: visible;
   background: #05070b;
+  /* Prevent elements from being cut off during scale transform */
+  will-change: transform;
 }
 
 /* Aurora Background */
@@ -38,9 +41,10 @@
 .timeline-aurora {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
   width: 100%;
+  height: 100%;
 }
 
 .aurora-blob {
@@ -48,13 +52,15 @@
   border-radius: 50%;
   filter: blur(120px);
   mix-blend-mode: screen;
+  /* Use percentages for better scaling */
+  will-change: transform;
 }
 
 .aurora-blob-1 {
-  width: 1180px;
-  height: 980px;
-  left: 330px;
-  top: -340px;
+  width: clamp(500px, 73.75vw, 1180px);
+  height: clamp(400px, 61.25vw, 980px);
+  left: clamp(50px, 20.625vw, 330px);
+  top: clamp(-200px, -21.25vw, -340px);
   background: radial-gradient(
     circle at 50% 50%,
     #ffb89c 0%,
@@ -65,10 +71,10 @@
 }
 
 .aurora-blob-2 {
-  width: 1080px;
-  height: 960px;
-  left: 720px;
-  top: 160px;
+  width: clamp(450px, 67.5vw, 1080px);
+  height: clamp(400px, 60vw, 960px);
+  left: clamp(100px, 45vw, 720px);
+  top: clamp(80px, 10vw, 160px);
   background: radial-gradient(
     circle at 50% 50%,
     #7fe6dc 0%,
@@ -79,10 +85,10 @@
 }
 
 .aurora-blob-3 {
-  width: 1260px;
-  height: 1080px;
-  left: 860px;
-  top: 360px;
+  width: clamp(550px, 78.75vw, 1260px);
+  height: clamp(450px, 67.5vw, 1080px);
+  left: clamp(100px, 53.75vw, 860px);
+  top: clamp(200px, 22.5vw, 360px);
   background: radial-gradient(
     circle at 50% 50%,
     #1f8ad9 0%,
@@ -93,10 +99,10 @@
 }
 
 .aurora-blob-4 {
-  width: 1180px;
-  height: 820px;
-  left: 430px;
-  top: 640px;
+  width: clamp(500px, 73.75vw, 1180px);
+  height: clamp(350px, 51.25vw, 820px);
+  left: clamp(50px, 26.875vw, 430px);
+  top: clamp(350px, 40vw, 640px);
   background: radial-gradient(
     circle at 50% 50%,
     #7c47db 0%,
@@ -157,28 +163,31 @@
 
 .timeline-header {
   position: absolute;
-  left: 80px;
-  top: 72px;
-  max-width: 560px;
+  left: clamp(20px, 5vw, 80px);
+  top: clamp(40px, 4.5vw, 72px);
+  max-width: clamp(280px, 90vw, 560px);
   z-index: 3;
+  padding-right: 20px;
 }
 
 .timeline-main-title {
   margin: 0;
-  font-size: 64px;
+  font-size: clamp(36px, 8vw, 64px);
   line-height: 1.02;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #f4f8fb;
+  word-wrap: break-word;
 }
 
 .timeline-subtitle {
-  margin: 20px 0 0;
-  font-size: 18px;
+  margin: clamp(12px, 2vw, 20px) 0 0;
+  font-size: clamp(14px, 2.8vw, 18px);
   line-height: 1.55;
   font-weight: 500;
   color: rgba(233, 240, 247, 0.72);
-  max-width: 460px;
+  max-width: clamp(260px, 85vw, 460px);
+  word-wrap: break-word;
 }
 
 /* SVG Path and Markers */
@@ -189,6 +198,7 @@
   z-index: 2;
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 .timeline-path {
@@ -201,17 +211,18 @@
   position: absolute;
   transform: translate(-50%, -50%);
   z-index: 3;
-  padding: 8px 24px;
+  padding: clamp(6px, 1.2vw, 8px) clamp(16px, 3vw, 24px);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
-  font-size: 27px;
+  font-size: clamp(18px, 5vw, 27px);
   font-weight: 800;
   text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 70%, transparent);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
 }
 
 /* Cards */
@@ -219,44 +230,50 @@
 .timeline-card {
   position: absolute;
   z-index: 3;
-  padding: 22px 24px;
+  padding: clamp(16px, 3.5vw, 22px) clamp(18px, 4vw, 24px);
   border: 1.5px solid rgba(255, 255, 255, 0.18);
-  border-radius: 22px;
+  border-radius: clamp(16px, 3vw, 22px);
   background: rgba(10, 14, 20, 0.34);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  max-width: 90vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .timeline-card h3 {
-  margin: 0 0 8px;
-  font-size: 21px;
+  margin: 0 0 clamp(6px, 1.2vw, 8px);
+  font-size: clamp(16px, 4vw, 21px);
   font-weight: 800;
   line-height: 1.2;
   color: #f2f6fa;
+  word-wrap: break-word;
 }
 
 .timeline-card p {
   margin: 0;
-  font-size: 15.5px;
+  font-size: clamp(13px, 2.5vw, 15.5px);
   line-height: 1.5;
   font-weight: 500;
   color: rgba(231, 238, 245, 0.74);
+  word-wrap: break-word;
 }
 
 .timeline-founders {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 12px;
+  gap: clamp(4px, 1vw, 6px);
+  margin-top: clamp(8px, 2vw, 12px);
 }
 
 .founder-item {
   display: flex;
   flex-direction: column;
-  font-size: 15px;
+  font-size: clamp(13px, 2.5vw, 15px);
   line-height: 1.4;
   color: #eef3f8;
+  word-wrap: break-word;
 }
 
 .founder-name {
@@ -266,23 +283,25 @@
 .founder-role {
   font-weight: 500;
   color: rgba(231, 238, 245, 0.6);
-  font-size: 14px;
+  font-size: clamp(12px, 2.2vw, 14px);
 }
 
 .timeline-sectors {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: clamp(6px, 1.5vw, 8px);
+  margin-top: clamp(10px, 2.5vw, 14px);
 }
 
 .sector-badge {
-  padding: 6px 12px;
+  padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 12px);
   border-radius: 999px;
   border: 1.5px solid rgba(255, 255, 255, 0.28);
-  font-size: 12.5px;
+  font-size: clamp(11px, 2vw, 12.5px);
   font-weight: 700;
   color: #eef3f8;
+  white-space: nowrap;
+  word-wrap: break-word;
 }
 
 /* ===================== MOBILE VIEW ===================== */
@@ -292,45 +311,47 @@
   overflow: hidden;
   background: #05070b;
   width: 100%;
-  padding: 44px 20px 60px;
+  padding: clamp(30px, 8vw, 44px) clamp(16px, 4vw, 20px) clamp(40px, 10vw, 60px);
 }
 
 .timeline-aurora-mobile {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
 
 .timeline-aurora-mobile .aurora-blob-1 {
-  width: 130vw;
-  height: 130vw;
-  left: -10vw;
-  top: -20vw;
+  width: clamp(200px, 130vw, 130vw);
+  height: clamp(200px, 130vw, 130vw);
+  left: clamp(-50px, -10vw, -10vw);
+  top: clamp(-100px, -20vw, -20vw);
   filter: blur(80px);
 }
 
 .timeline-aurora-mobile .aurora-blob-2 {
-  width: 120vw;
-  height: 120vw;
-  left: 30vw;
-  top: 24%;
+  width: clamp(180px, 120vw, 120vw);
+  height: clamp(180px, 120vw, 120vw);
+  left: clamp(10px, 30vw, 30vw);
+  top: clamp(100px, 24%, 24%);
   filter: blur(80px);
 }
 
 .timeline-aurora-mobile .aurora-blob-3 {
-  width: 140vw;
-  height: 140vw;
-  left: -30vw;
-  top: 50%;
+  width: clamp(220px, 140vw, 140vw);
+  height: clamp(220px, 140vw, 140vw);
+  left: clamp(-150px, -30vw, -30vw);
+  top: clamp(200px, 50%, 50%);
   filter: blur(90px);
 }
 
 .timeline-aurora-mobile .aurora-blob-4 {
-  width: 130vw;
-  height: 130vw;
+  width: clamp(200px, 130vw, 130vw);
+  height: clamp(200px, 130vw, 130vw);
   left: 0;
-  bottom: -20vw;
+  bottom: clamp(-100px, -20vw, -20vw);
   filter: blur(90px);
 }
 
@@ -348,7 +369,8 @@
 .timeline-header-mobile {
   position: relative;
   z-index: 3;
-  margin-bottom: 38px;
+  margin-bottom: clamp(28px, 8vw, 38px);
+  padding: 0 clamp(8px, 2vw, 16px);
 }
 
 .timeline-header-mobile .timeline-main-title {
@@ -357,7 +379,7 @@
 }
 
 .timeline-header-mobile .timeline-subtitle {
-  margin: 14px 0 0;
+  margin: clamp(10px, 2vw, 14px) 0 0;
   font-size: clamp(14px, 3.8vw, 16px);
 }
 
@@ -370,28 +392,28 @@
 
 .timeline-spine {
   position: absolute;
-  left: 21px;
-  top: 8px;
-  bottom: 30px;
-  width: 5px;
-  border-radius: 3px;
+  left: clamp(18px, 5vw, 21px);
+  top: clamp(6px, 1.5vw, 8px);
+  bottom: clamp(20px, 5vw, 30px);
+  width: clamp(3px, 0.8vw, 5px);
+  border-radius: clamp(2px, 0.5vw, 3px);
   background: #fff;
   box-shadow: 0 0 16px rgba(180, 220, 255, 0.5);
 }
 
 .timeline-milestone {
   position: relative;
-  padding-left: 62px;
-  margin-bottom: 26px;
+  padding-left: clamp(50px, 14vw, 62px);
+  margin-bottom: clamp(18px, 6vw, 26px);
 }
 
 .timeline-milestone-dot {
   position: absolute;
-  left: 23px;
-  top: 4px;
+  left: clamp(16px, 4.5vw, 23px);
+  top: clamp(2px, 1vw, 4px);
   transform: translate(-50%, 0);
-  width: 22px;
-  height: 22px;
+  width: clamp(16px, 5vw, 22px);
+  height: clamp(16px, 5vw, 22px);
   border-radius: 50%;
   background: radial-gradient(
     circle at 50% 50%,
@@ -404,72 +426,215 @@
 
 .timeline-year-pill-mobile {
   display: inline-block;
-  margin-bottom: 12px;
-  padding: 6px 18px;
+  margin-bottom: clamp(8px, 2vw, 12px);
+  padding: clamp(5px, 1.2vw, 6px) clamp(14px, 3vw, 18px);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-size: 20px;
+  font-size: clamp(18px, 5vw, 20px);
   font-weight: 800;
   text-shadow: 0 0 16px color-mix(in srgb, var(--accent) 70%, transparent);
+  white-space: nowrap;
 }
 
 .timeline-card-mobile {
-  padding: 18px 20px;
+  padding: clamp(14px, 3vw, 18px) clamp(16px, 4vw, 20px);
   border: 1.5px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
+  border-radius: clamp(14px, 3vw, 18px);
   background: rgba(10, 14, 20, 0.4);
   position: static;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .timeline-card-mobile h3 {
-  font-size: 18px;
-  margin-bottom: 7px;
+  font-size: clamp(16px, 4vw, 18px);
+  margin-bottom: clamp(5px, 1vw, 7px);
 }
 
 .timeline-card-mobile p {
-  font-size: 14.5px;
+  font-size: clamp(13px, 3vw, 14.5px);
   margin-bottom: 0;
+  word-wrap: break-word;
 }
 
 .timeline-card-mobile .timeline-founders {
-  margin-top: 10px;
+  margin-top: clamp(8px, 2vw, 10px);
 }
 
 .timeline-card-mobile .timeline-sectors {
-  gap: 7px;
-  margin-top: 12px;
+  gap: clamp(5px, 1.5vw, 7px);
+  margin-top: clamp(10px, 2vw, 12px);
 }
 
 .timeline-card-mobile .sector-badge {
-  padding: 5px 11px;
-  font-size: 12px;
+  padding: clamp(4px, 1vw, 5px) clamp(8px, 2vw, 11px);
+  font-size: clamp(11px, 2vw, 12px);
 }
 
-/* ===================== RESPONSIVE ===================== */
+/* ===================== RESPONSIVE BREAKPOINTS ===================== */
 
-@media (max-width: 1024px) {
-  .timeline-header {
-    left: 40px;
-    max-width: 400px;
-  }
-
-  .timeline-main-title {
-    font-size: 48px;
-  }
-
-  .timeline-subtitle {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
+/* Tablet: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
   .timeline-stage {
     height: auto;
+    transform: scale(1) !important;
   }
 
   .timeline-desktop {
     height: auto;
+  }
+
+  .timeline-svg {
+    display: none;
+  }
+
+  /* Switch to mobile-like layout on tablet */
+  .timeline-mobile {
+    display: block;
+  }
+
+  .timeline-desktop {
+    display: none;
+  }
+}
+
+/* Large Tablet/Small Desktop: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .timeline-header {
+    left: clamp(20px, 5vw, 40px);
+    max-width: clamp(280px, 90vw, 400px);
+  }
+
+  .timeline-main-title {
+    font-size: clamp(40px, 7.5vw, 48px);
+  }
+
+  .timeline-subtitle {
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+
+  .timeline-year-pill {
+    font-size: clamp(18px, 4.5vw, 24px);
+    padding: clamp(6px, 1vw, 8px) clamp(16px, 2.5vw, 24px);
+  }
+
+  .timeline-card {
+    padding: clamp(16px, 2.5vw, 22px) clamp(18px, 3vw, 24px);
+  }
+
+  .timeline-card h3 {
+    font-size: clamp(16px, 3.5vw, 20px);
+  }
+
+  .timeline-card p {
+    font-size: clamp(13px, 2.2vw, 15px);
+  }
+}
+
+/* Medium Desktop: 1025px - 1280px */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .timeline-stage {
+    transform: scale(0.85) !important;
+    transform-origin: top left;
+  }
+
+  .timeline-desktop {
+    height: calc(1000px * 0.85);
+  }
+
+  .timeline-header {
+    left: clamp(40px, 4vw, 60px);
+    max-width: clamp(350px, 85vw, 500px);
+  }
+
+  .timeline-main-title {
+    font-size: clamp(48px, 6vw, 56px);
+  }
+
+  .timeline-subtitle {
+    font-size: clamp(15px, 2vw, 17px);
+  }
+}
+
+/* Small screens: 320px - 480px */
+@media (max-width: 480px) {
+  .timeline-mobile {
+    padding: clamp(24px, 6vw, 30px) clamp(12px, 3vw, 16px) clamp(32px, 8vw, 40px);
+  }
+
+  .timeline-header-mobile {
+    margin-bottom: clamp(24px, 6vw, 28px);
+  }
+
+  .timeline-year-pill-mobile {
+    font-size: clamp(16px, 4.5vw, 18px);
+  }
+
+  .timeline-card-mobile {
+    padding: clamp(12px, 2.5vw, 14px) clamp(14px, 3.5vw, 16px);
+  }
+
+  .timeline-milestone {
+    padding-left: clamp(48px, 12vw, 50px);
+    margin-bottom: clamp(16px, 5vw, 20px);
+  }
+
+  .timeline-spine {
+    left: clamp(16px, 4vw, 18px);
+  }
+
+  .timeline-milestone-dot {
+    left: clamp(14px, 4vw, 16px);
+    width: clamp(14px, 4.5vw, 16px);
+    height: clamp(14px, 4.5vw, 16px);
+  }
+}
+
+/* Extra small screens: below 320px */
+@media (max-width: 319px) {
+  .timeline-mobile {
+    padding: 20px 12px 30px;
+  }
+
+  .timeline-header-mobile {
+    margin-bottom: 20px;
+  }
+
+  .timeline-main-title {
+    font-size: 28px;
+  }
+
+  .timeline-subtitle {
+    font-size: 12px;
+  }
+
+  .timeline-milestone {
+    padding-left: 45px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-card-mobile {
+    padding: 12px 14px;
+  }
+
+  .timeline-card-mobile h3 {
+    font-size: 15px;
+  }
+
+  .timeline-card-mobile p {
+    font-size: 12px;
+  }
+}
+
+/* Large Desktop: 1281px+ */
+@media (min-width: 1281px) {
+  .timeline-stage {
+    transform: scale(1) !important;
+  }
+
+  .timeline-desktop {
+    height: 1000px;
   }
 }
