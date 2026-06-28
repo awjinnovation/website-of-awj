@@ -3095,7 +3095,6 @@ main:has([data-pillar="systems"]) .pillar-service-body {
 }
 
 .timeline-dark {
-  background: linear-gradient(135deg, #0f1a2e 0%, #1a2f4a 50%, #0d1f35 100%);
   color: var(--paper);
 }
 
