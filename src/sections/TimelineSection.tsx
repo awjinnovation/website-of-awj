@@ -102,9 +102,13 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
             <div className="timeline-stage" style={{ transform: `scale(${scale})` }}>
               {/* Title */}
               <div className="timeline-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
+                  <div style={{ width: '6px', height: '42px', borderRadius: '3px', background: 'var(--accent, #7fe0d8)' }} />
+                  <div style={{ fontSize: '15px', fontWeight: '700', letterSpacing: '.28em', color: 'var(--accent, #7fe0d8)' }}>WHO WE ARE</div>
+                </div>
                 <h2 className="timeline-main-title">Our Timeline</h2>
                 <p className="timeline-subtitle">
-                  A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
+                  A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
                 </p>
               </div>
 
@@ -200,9 +204,13 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
           <div className="timeline-mobile">
             {/* Title */}
             <div className="timeline-header timeline-header-mobile">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+                <div style={{ width: '5px', height: '32px', borderRadius: '3px', background: 'var(--accent, #7fe0d8)' }} />
+                <div style={{ fontSize: '12px', fontWeight: '700', letterSpacing: '.26em', color: 'var(--accent, #7fe0d8)' }}>WHO WE ARE</div>
+              </div>
               <h2 className="timeline-main-title">Our Timeline</h2>
               <p className="timeline-subtitle">
-                A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
+                A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
               </p>
             </div>
 
