@@ -1749,6 +1749,21 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
   border-top: 1px solid var(--line);
 }
+
+/* Only style section headers and navigation text white */
+.news-head,
+.news-head * {
+  color: #ffffff;
+}
+
+.news-viewall {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.news-viewall:hover {
+  background: rgba(255,255,255,0.1);
+}
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
 .news-viewall {
   display: inline-flex; align-items: center; gap: 10px;
