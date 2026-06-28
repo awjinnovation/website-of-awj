@@ -1,4 +1,9 @@
-import '../styles/advantages-values-section.css';
+import styles from './AdvantagesValuesSection.module.css';
+
+// Maps one or more local CSS-module class names to their scoped, hashed
+// identifiers. Because every class lives in the module, nothing here can be
+// overridden by — or leak into — the global stylesheet or other sections.
+const cx = (...names: string[]) => names.map((n) => styles[n] ?? '').filter(Boolean).join(' ');
 
 interface AdvantageCardProps {
   icon: React.ReactNode;
@@ -12,21 +17,21 @@ interface ValueCardProps {
 }
 
 const AdvantageCard = ({ icon, description }: AdvantageCardProps) => (
-  <div className="advantage-card">
-    <div className="advantage-card-bg" />
-    <div className="advantage-card-icon">{icon}</div>
-    <p className="advantage-card-text">{description}</p>
+  <div className={cx('advantage-card')}>
+    <div className={cx('advantage-card-bg')} />
+    <div className={cx('advantage-card-icon')}>{icon}</div>
+    <p className={cx('advantage-card-text')}>{description}</p>
   </div>
 );
 
 const ValueCard = ({ icon, title, description }: ValueCardProps) => (
-  <div className="value-card">
-    <div className="value-card-top-accent" />
-    <div className="value-card-header">
-      <div className="value-card-icon">{icon}</div>
-      <h3 className="value-card-title">{title}</h3>
+  <div className={cx('value-card')}>
+    <div className={cx('value-card-top-accent')} />
+    <div className={cx('value-card-header')}>
+      <div className={cx('value-card-icon')}>{icon}</div>
+      <h3 className={cx('value-card-title')}>{title}</h3>
     </div>
-    <p className="value-card-text">{description}</p>
+    <p className={cx('value-card-text')}>{description}</p>
   </div>
 );
 
@@ -159,15 +164,15 @@ export const AdvantagesValuesSection = () => {
   ];
 
   return (
-    <section className="advantages-values-section">
+    <section className={cx('advantages-values-section')}>
       {/* Competitive Advantages */}
-      <div className="advantages-values-container">
-        <div className="section-header">
-          <h2 className="section-title">Our Competitive Advantages</h2>
-          <div className="section-divider" />
+      <div className={cx('advantages-values-container')}>
+        <div className={cx('section-header')}>
+          <h2 className={cx('section-title')}>Our Competitive Advantages</h2>
+          <div className={cx('section-divider')} />
         </div>
 
-        <div className="advantages-grid">
+        <div className={cx('advantages-grid')}>
           {advantages.map((advantage) => (
             <AdvantageCard key={advantage.title} {...advantage} />
           ))}
@@ -175,13 +180,13 @@ export const AdvantagesValuesSection = () => {
       </div>
 
       {/* Our Values */}
-      <div className="advantages-values-container values-container">
-        <div className="section-header">
-          <h2 className="section-title">Our Values</h2>
-          <div className="section-divider" />
+      <div className={cx('advantages-values-container', 'values-container')}>
+        <div className={cx('section-header')}>
+          <h2 className={cx('section-title')}>Our Values</h2>
+          <div className={cx('section-divider')} />
         </div>
 
-        <div className="values-grid">
+        <div className={cx('values-grid')}>
           {values.map((value) => (
             <ValueCard key={value.title} {...value} />
           ))}
