@@ -96,19 +96,23 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
           '--road-width': `${roadWidth}px`,
         } as React.CSSProperties}
       >
+        {/* Aurora Background */}
+        <div className="timeline-aurora">
+          <div className="aurora-blob aurora-blob-1" />
+          <div className="aurora-blob aurora-blob-2" />
+          <div className="aurora-blob aurora-blob-3" />
+          <div className="aurora-blob aurora-blob-4" />
+          <div className="aurora-overlay" />
+        </div>
         {/* Desktop/Tablet View */}
         {!mobile && (
           <div className="timeline-desktop" style={{ height: deskHeight }}>
             <div className="timeline-stage" style={{ transform: `scale(${scale})` }}>
               {/* Title */}
               <div className="timeline-header">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
-                  <div style={{ width: '6px', height: '42px', borderRadius: '3px', background: 'var(--accent, #7fe0d8)' }} />
-                  <div style={{ fontSize: '15px', fontWeight: '700', letterSpacing: '.28em', color: 'var(--accent, #7fe0d8)' }}>WHO WE ARE</div>
-                </div>
                 <h2 className="timeline-main-title">Our Timeline</h2>
                 <p className="timeline-subtitle">
-                  A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
+                  A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
                 </p>
               </div>
 
@@ -202,15 +206,19 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
         {/* Mobile View */}
         {mobile && (
           <div className="timeline-mobile">
+            {/* Aurora Background Mobile */}
+            <div className="timeline-aurora-mobile">
+              <div className="aurora-blob aurora-blob-1" style={{ width: '130vw', height: '130vw', left: '-10vw', top: '-20vw', filter: 'blur(80px)' }} />
+              <div className="aurora-blob aurora-blob-2" style={{ width: '120vw', height: '120vw', left: '30vw', top: '24%', filter: 'blur(80px)' }} />
+              <div className="aurora-blob aurora-blob-3" style={{ width: '140vw', height: '140vw', left: '-30vw', top: '50%', filter: 'blur(90px)' }} />
+              <div className="aurora-blob aurora-blob-4" style={{ width: '130vw', height: '130vw', left: '0', bottom: '-20vw', filter: 'blur(90px)' }} />
+              <div className="aurora-overlay-mobile" />
+            </div>
             {/* Title */}
             <div className="timeline-header timeline-header-mobile">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
-                <div style={{ width: '5px', height: '32px', borderRadius: '3px', background: 'var(--accent, #7fe0d8)' }} />
-                <div style={{ fontSize: '12px', fontWeight: '700', letterSpacing: '.26em', color: 'var(--accent, #7fe0d8)' }}>WHO WE ARE</div>
-              </div>
               <h2 className="timeline-main-title">Our Timeline</h2>
               <p className="timeline-subtitle">
-                A decade of building, from institutional roots to AWJ Corp, a technology group spanning four specialized sectors.
+                A decade of building, from institutional roots to AWJ Corp spanning four specialized sectors.
               </p>
             </div>
 
