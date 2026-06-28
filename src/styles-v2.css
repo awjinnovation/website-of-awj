@@ -1751,20 +1751,9 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   border-top: 1px solid var(--line);
 }
 
-/* Dark text for all news content */
-.news > :not(.npf-card):not(.npa-card) {
-  color: var(--ink) !important;
-}
-
-.news h3:not(.npf-title):not(.npa-title) {
-  color: var(--ink) !important;
-}
-
-.news a:not(.npf-card a):not(.npa-card a) {
-  color: var(--ink) !important;
-}
-
-.news p:not(.npf-dek):not(.npa-dek) {
+/* Dark text only INSIDE the cards */
+.npf-card p,
+.npa-card p {
   color: var(--ink) !important;
   opacity: 1;
 }
