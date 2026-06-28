@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent as ReactMouseEvent } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { PillarLogo } from '../components/PillarLogo';
 import { PILLARS } from '../data/pillars';
@@ -86,6 +86,21 @@ export const NavPill = () => {
 
   const closeMobile = () => setMobileOpen(false);
 
+  // Navbar section links point at home-page sections. If we're already on the
+  // home page, smooth-scroll to the section; otherwise redirect home with the
+  // section hash so the home page can scroll there on load.
+  const goToSection = (e: ReactMouseEvent, id: string) => {
+    e.preventDefault();
+    closeMobile();
+    if (window.location.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(null, '', `#${id}`);
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <>
       <nav
@@ -152,9 +167,9 @@ export const NavPill = () => {
             </div>
           </div>
 
-          <a href="#services">{t('nav.services')}</a>
-          <a href="#projects">{t('nav.projects')}</a>
-          <a href="#news">{t('nav.news')}</a>
+          <a href="/#services" onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
+          <a href="/#projects" onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
+          <a href="/#news" onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
         </div>
         <label className="nav-toggle-label">
           <input
@@ -175,7 +190,7 @@ export const NavPill = () => {
           {t('nav.langToggle')}
         </button>
         <Magnetic strength={0.25}>
-          <a href="#contact" className="cta">
+          <a href="/#contact" className="cta" onClick={(e) => goToSection(e, 'contact')}>
             {t('nav.cta')}
           </a>
         </Magnetic>
@@ -216,9 +231,9 @@ export const NavPill = () => {
                 })}
               </div>
 
-              <a href="#services" onClick={closeMobile}>{t('nav.services')}</a>
-              <a href="#projects" onClick={closeMobile}>{t('nav.projects')}</a>
-              <a href="#news" onClick={closeMobile}>{t('nav.news')}</a>
+              <a href="/#services" onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
+              <a href="/#projects" onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
+              <a href="/#news" onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
 
               <button
                 type="button"
@@ -232,7 +247,7 @@ export const NavPill = () => {
               </button>
             </div>
 
-            <a href="#contact" className="nav-mobile-cta" onClick={closeMobile}>
+            <a href="/#contact" className="nav-mobile-cta" onClick={(e) => goToSection(e, 'contact')}>
               {t('nav.cta')}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <path

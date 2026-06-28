@@ -16,6 +16,17 @@ export const App = () => {
   useReveal();
   useAutoScroll(30_000);
 
+  // When landing on the home page with a section hash (e.g. redirected from
+  // another page via the navbar), scroll to that section once mounted.
+  useEffect(() => {
+    const id = window.location.hash.replace('#', '');
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) {
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth' }));
+    }
+  }, []);
+
   // Drives --scroll-p (0..1) across the hero→stats handoff for the
   // chevron exit / stat column entry choreography defined in styles-v2.css.
   useEffect(() => {
