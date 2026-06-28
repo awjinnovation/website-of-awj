@@ -107,7 +107,7 @@
   font-size: clamp(24px, 1.9vw, 32px); line-height: 1.15; letter-spacing: -0.02em;
   text-wrap: balance; margin: 0;
 }
-.npf-dek { font-size: 20px; line-height: 1.6; opacity: 0.95; margin: 0; }
+.npf-dek { font-size: 20px; line-height: 1.6; opacity: 1 !important; margin: 0; color: var(--ink) !important; }
 .npf-read {
   margin-top: 4px; display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
@@ -171,7 +171,7 @@
   font-size: clamp(17px, 1.3vw, 21px); line-height: 1.25; letter-spacing: -0.015em;
   text-wrap: balance; margin: 0;
 }
-.npa-dek { font-size: 20px; line-height: 1.55; opacity: 0.7; margin: 0; flex: 1; }
+.npa-dek { font-size: 20px; line-height: 1.55; opacity: 1 !important; margin: 0; flex: 1; color: var(--ink) !important; }
 .npa-read {
   margin-top: 4px; display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
