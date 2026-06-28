@@ -1582,8 +1582,9 @@ button { font-family: inherit; }
 }
 .project-tile .pt-pillar { display: none; }
 .project-tile .pt-pillar-logo {
-  position: absolute; bottom: 28px; right: 20px;
-  height: 38px;
+  position: absolute; bottom: 32px; right: 20px;
+  height: 20px;
+  width: auto;
   z-index: 2;
   filter: brightness(0) invert(1);
   opacity: 1;
