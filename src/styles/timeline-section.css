@@ -1,10 +1,10 @@
 /* Timeline Section Styles */
 
 .timeline-section-wrapper {
-  width: 100vw;
+  width: 100%;
   background: #05070b;
   font-family: 'Proxima Nova Arabic', sans-serif;
-  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
 }
 
 .timeline-main {
