@@ -231,6 +231,7 @@ export const Projects = () => {
             >
               {p.image && <img src={p.image} className="pt-bg-image" alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
+              <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{p.name}</div>
               <div className="pt-stat-block">
                 <div className="pt-stat">{p.stat}</div>
