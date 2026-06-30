@@ -217,7 +217,10 @@ const en = {
 
 export type TranslationKey = keyof typeof en;
 
-const ar: Record<TranslationKey, string> = {
+// Arabic uses APPROVED copy only (see content/approved-content-ar.md). Any key
+// without approved Arabic is intentionally omitted so t() falls back to English
+// — never machine-translate. Partial<> allows those omissions.
+const ar: Partial<Record<TranslationKey, string>> = {
   // Nav
   'nav.about': 'من نحن',
   'nav.pillars': 'القطاعات',
@@ -234,31 +237,24 @@ const ar: Record<TranslationKey, string> = {
   'nav.pillarsEyebrow': 'أربعة قطاعات · مجموعة واحدة',
 
   // Hero
-  'hero.eyebrow': 'شركة الابتكار والتقنيات المستدامة التطوير (أوج)',
-  'hero.title.line1': 'خلق',
-  'hero.title.line2': 'مستقبل مستدام',
-  'hero.title.line3': '',
-  'hero.lede':
-    'في عالم يواجه تحديات متسارعة، لم تعد الموارد وحدها كافية لتشكيل المستقبل؛ بل هي القدرة على الابتكار وتحويل المعرفة إلى تأثير حقيقي. في AWJ، نؤمن بأن تقاطع الإنسانية والمعرفة والتكنولوجيا هو نقطة الانطلاق لأي تحول حقيقي.',
+  // Approved company name (content/approved-content-ar.md → شريحة الغلاف).
+  'hero.eyebrow': 'شركة تنمية الابتكار والتقنيات المستدامة (أوج الابتكار)',
+  // hero.title.line1/2/3 + hero.lede: no approved Arabic yet → fall back to English.
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'القطاعات',
 
-  // Stats
+  // Stats (labels kept; descriptions need approved Arabic → English fallback)
   'stats.projects.label': 'مشروع منجز',
-  'stats.projects.desc': 'في البنية التحتية والمشاريع الاستثمارية وبرامج التعلم.',
   'stats.professionals.label': 'مهني تم تدريبه',
-  'stats.professionals.desc': 'مشغّلون ومهندسون ومُربّون رفعوا قدراتهم داخلياً.',
   'stats.partners.label': 'شريك استراتيجي',
-  'stats.partners.desc': 'شراكات طويلة الأمد في الخليج وآسيا وأفريقيا.',
   'stats.experience.label': 'سنة خبرة مجتمعة',
-  'stats.experience.desc': 'خبرات تشغيلية تأسيسية مجتمعة في أوج.',
 
   // Pillars stack
   'pillars.title.first': 'قطاعات',
   'pillars.title.second': 'أوج',
   'pillars.intro':
-    'تعمل أوج عبر أربعة قطاعات: أكاديمية أوج تُطوّر الأفراد والمؤسسات، وأوج الاستدامة تقود التحوّل البيئي والاجتماعي، وأوج الابتكار تُمكّن الكفاءات والقدرات والتحوّل الرقمي، وأوج الأنظمة تُكامل البنية التحتية والعمود الرقمي والتقنية التشغيلية.',
+    'أربعة قطاعات متخصصة تعمل معاً لتقديم حلول متكاملة تحقق نمواً مستداماً.',
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
   'pillars.label': 'قطاع',
@@ -267,14 +263,15 @@ const ar: Record<TranslationKey, string> = {
   'pillar.sustain.fullName': 'أوج الاستدامة',
   'pillar.innovation.fullName': 'أوج الابتكار',
   'pillar.systems.fullName': 'أوج الأنظمة',
+  // Pillar definitions — approved «تعريف القطاع» (content/approved-content-ar.md).
   'pillar.academy.desc':
-    'تُصمّم منظومات تعلّم معتمدة وبرامج تنفيذية ومنصات لتنمية القوى العاملة, تُجهّز الأفراد والمؤسسات لأعمال لم تُولد بعد.',
+    'أكاديمية أوج منصة متكاملة للمعرفة والتدريب والحوار العلمي، تقدّم برامج تعليمية وتدريبية متقدمة وشاملة تلبّي الاحتياجات الفعلية لسوق العمل والمجتمع، مع التركيز على التمكين بالمعارف والمهارات في بيئة تفاعلية تجمع بين الخبرات العالمية والسياق المحلي.',
   'pillar.sustain.desc':
-    'استشارات حوكمة بيئية واجتماعية ومؤسسية متكاملة, استراتيجية الاستدامة، تقارير مواءمة GRI/MSX، شهادات ISO، خدمات المناخ، ومؤشر ESG مدعوم بالذكاء الاصطناعي للشركات المدرجة.',
+    'أوج للاستدامة هي الذراع المتخصص في الاستدامة والتميز المؤسسي ضمن مجموعة أوج، تقدّم حلولاً متكاملة في حوكمة (ESG) والمسؤولية الاجتماعية والتحول المؤسسي المستدام.',
   'pillar.innovation.desc':
-    'ممارسة استشارية لتمكين الكفاءات وبناء القدرات والتقنية المتقدمة والاستراتيجية وإدارة الابتكار والملكية الفكرية وتصميم البرامج, متوافقة مع رؤية عُمان 2040.',
+    'قطاع متخصص في تصميم وتطوير وتشغيل منظومات الابتكار وريادة الأعمال، وتحويل الأفكار والأبحاث إلى مشاريع وشركات ذات أثر اقتصادي وتنموي مستدام.',
   'pillar.systems.desc':
-    'هندسة وتكامل للأنظمة الحرجة, البنية التحتية والعمود الرقمي والتقنية التشغيلية للمؤسسات التي تُبقي المناطق تعمل.',
+    'نصمم ونطوّر ونُكامل الأنظمة البرمجية وحلول الذكاء الاصطناعي الجاهزة للإنتاج لصالح الجهات الحكومية والمؤسسات الكبرى في عُمان ودول الخليج، ونعمل عبر ثلاثة محاور: المشاريع، والمنتجات، والبحث والتطوير.',
   'pillar.meta.established': 'التأسيس',
   'pillar.meta.reach': 'الانتشار',
   'pillar.meta.alumni': 'الخريجون',
@@ -294,22 +291,9 @@ const ar: Record<TranslationKey, string> = {
   'pillar.systems.mandates': '+240',
   'pillar.systems.focus': 'تقنية تشغيلية · رقمي',
 
-  // Services bento
+  // Services bento (title/more kept; card copy needs approved Arabic → English fallback)
   'services.title': 'خدماتنا الرئيسية',
   'services.more': 'المزيد من الخدمات',
-  'services.b1.title.line1': 'استشارات',
-  'services.b1.title.line2': 'استراتيجية',
-  'services.b1.body':
-    'تصميم نماذج التشغيل واستراتيجية رأس المال وبرامج التحوّل على مستوى المجموعة بانضباط متعدد القطاعات.',
-  'services.b2.title': 'بناء القدرات',
-  'services.b2.body': 'منظومات تعلّم معتمدة وتطوير القوى العاملة على نطاق واسع.',
-  'services.b3.title': 'تطبيق معايير ISO والاعتماد',
-  'services.b3.body':
-    'دعم التطبيق والتدقيق والاعتماد لمعايير ISO 26000 و20121 و19600 و20400 و37001.',
-  'services.b4.title': 'الابتكار والقدرات',
-  'services.b4.body': 'الكفاءات والتقنية المتقدمة والاستراتيجية.',
-  'services.b5.title': 'تكامل الأنظمة',
-  'services.b5.body': 'هندسة حرجة وتقنية تشغيلية.',
 
   // Projects
   'projects.eyebrow': 'مشاريع مختارة',
@@ -334,8 +318,7 @@ const ar: Record<TranslationKey, string> = {
 
   // Contact
   'contact.title': 'تواصل معنا',
-  'contact.lede':
-    'استمارة قصيرة ومنظّمة تساعدنا على توجيه استفسارك إلى القطاع والشريك المناسبَين. عادةً ما نرد خلال يومَي عمل.',
+  // contact.lede: needs approved Arabic → English fallback.
   'contact.callUs': 'أو اتصل بنا مباشرة',
   'contact.step1': 'بأي قطاع أنت مهتم؟',
   'contact.step2': 'ما مجال التعاون؟',
@@ -372,9 +355,7 @@ const ar: Record<TranslationKey, string> = {
   'contact.send': 'إرسال الاستفسار',
   'contact.thanks': 'شكراً, سنتواصل قريباً.',
 
-  // Footer
-  'footer.brand.desc':
-    'مجموعة قابضة متكاملة تعمل عبر\nالأكاديمية والاستدامة والابتكار والأنظمة, لبناء تقدّم راسخ في المناطق والقطاعات التي نخدمها.',
+  // Footer (brand.desc needs approved Arabic → English fallback)
   'footer.col.pillars': 'القطاعات',
   'footer.col.location': 'الموقع',
   'footer.col.address': 'نعمل من ساحة المزون، الطابق الخامس، الخوض، مسقط، سلطنة عمان، متوافقين مع ساعات العمل القياسية في مسقط (من الأحد إلى الخميس).',
@@ -410,8 +391,7 @@ const ar: Record<TranslationKey, string> = {
   'newsPage.stories': 'قصة',
   'newsPage.title.first': 'الأخبار',
   'newsPage.title.second': 'والإعلانات',
-  'newsPage.lede':
-    'تكليفات وشراكات ومحطات بارزة من مختلف مجموعة أوج, للابتكار والأكاديمية والاستدامة والأنظمة.',
+  // newsPage.lede: needs approved Arabic → English fallback.
   'newsPage.featured': 'قصص مميّزة',
   'newsPage.featuredTitle': 'صدارة المكتب.',
   'newsPage.allEyebrow': 'كل القصص',
@@ -425,4 +405,4 @@ const ar: Record<TranslationKey, string> = {
   'newsPage.countOf': 'من',
 };
 
-export const DICT: Record<Lang, Record<TranslationKey, string>> = { en, ar };
+export const DICT: Record<Lang, Partial<Record<TranslationKey, string>>> = { en, ar };
