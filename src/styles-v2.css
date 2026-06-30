@@ -53,6 +53,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Global typography rule: line spacing is always the font size + 2px
+   (e.g. 12px text -> 14px line-height, 20px -> 22px). In line-height, 1em
+   resolves to the element's OWN font size, so calc(1em + 2px) tracks every
+   size automatically, including responsive clamp() values. !important enforces
+   it over the per-element line-heights defined throughout the stylesheets. */
+*, *::before, *::after { line-height: calc(1em + 2px) !important; }
 html, body {
   background: var(--paper); color: var(--ink); font-family: var(--font-body);
   font-weight: 400; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
