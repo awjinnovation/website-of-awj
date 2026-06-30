@@ -1449,7 +1449,6 @@ button { font-family: inherit; }
 .bento-card.b-3 { grid-column: span 1; grid-row: auto; }
 .bento-card.b-4 { grid-column: span 1; grid-row: auto; }
 .bento-card.b-5 { grid-column: span 1; grid-row: auto; }
-.bento-card.b-6 { grid-column: span 2; grid-row: auto; flex-direction: row; justify-content: space-between; align-items: center; }
 @media (max-width: 980px) {
   .bento-card.b-1 { grid-column: span 1; grid-row: auto; }
 }
@@ -1481,15 +1480,6 @@ button { font-family: inherit; }
 }
 
 .bento-card.b-3 .body { font-size: 20px; }
-.bento-card.b-6 {
-  grid-column: span 1;
-  grid-row: auto;
-  min-height: 320px;
-  padding: 32px;
-  background-size: cover;
-  background-position: center;
-}
-.bento-card.b-6 .body { max-width: 35%; }
 
 /* === PROJECTS, bento === */
 .projects { padding: 56px 0 32px; background: var(--paper); color: var(--ink); }

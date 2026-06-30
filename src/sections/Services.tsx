@@ -73,8 +73,6 @@ export const Services = () => {
               <Arrow />
             </a>
           </div>
-          <div className="bento-card b-6" style={{ backgroundImage: 'url(/assets/brand/services-card-6.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          </div>
         </div>
       </div>
     </section>
