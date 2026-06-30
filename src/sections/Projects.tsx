@@ -20,24 +20,24 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    name: 'First 3D Printed Building\nin the Middle East',
-    stat: '60%',
-    statLabel: 'Material waste reduced',
-    partner: 'with GUtech',
+    name: 'Abraj Energy\nSustainability Report',
+    stat: 'Best Award',
+    statLabel: '2025',
+    partner: 'CSR Leadership',
     pillar: 'Sustain',
     color: 'var(--sustain)',
-    bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
+    bgGrad: 'linear-gradient(135deg, #009688, #00bfa5)',
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-big',
-    image: '/assets/brand/3d-building-card.png',
+    image: '/assets/brand/abraj-project-card.jpg',
     summary:
-      'AWJ Sustain supported the development of the first and largest 3D-printed building in the Middle East, demonstrating sustainable construction practices and advanced manufacturing technologies that minimize environmental impact.',
+      "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
     impact:
-      'The project reduced construction waste by 60%, demonstrated the use of sustainable and recyclable materials, and positioned Oman as a leader in sustainable construction innovation. This landmark achievement proved that advanced manufacturing can deliver both economic and environmental benefits.',
+      "The report sets new standards for sustainability disclosure in Oman, reflecting commitment to global best practices in ESG reporting. It enhanced the company's reputation, investor confidence, and demonstrated concrete sustainability commitment.",
     achievements: [
-      { value: '60%', label: 'Waste reduction' },
-      { value: '100%', label: 'Recyclable materials' },
-      { value: 'First in ME', label: 'Regional milestone' },
+      { value: 'Best Award', label: '2025' },
+      { value: 'GRI Standard', label: 'Compliant' },
+      { value: 'Global', label: 'Best practices' },
     ],
   },
   {
@@ -126,24 +126,24 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    name: 'Abraj Energy\nSustainability Report',
-    stat: 'Best Award',
-    statLabel: '2025',
-    partner: 'CSR Leadership',
+    name: 'First 3D Printed Building\nin the Middle East',
+    stat: '60%',
+    statLabel: 'Material waste reduced',
+    partner: 'with GUtech',
     pillar: 'Sustain',
     color: 'var(--sustain)',
-    bgGrad: 'linear-gradient(135deg, #009688, #00bfa5)',
+    bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-sm',
-    image: '/assets/brand/abraj-project-card.jpg',
+    image: '/assets/brand/3d-building-card.png',
     summary:
-      "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
+      'AWJ Sustain supported the development of the first and largest 3D-printed building in the Middle East, demonstrating sustainable construction practices and advanced manufacturing technologies that minimize environmental impact.',
     impact:
-      "The report sets new standards for sustainability disclosure in Oman, reflecting commitment to global best practices in ESG reporting. It enhanced the company's reputation, investor confidence, and demonstrated concrete sustainability commitment.",
+      'The project reduced construction waste by 60%, demonstrated the use of sustainable and recyclable materials, and positioned Oman as a leader in sustainable construction innovation. This landmark achievement proved that advanced manufacturing can deliver both economic and environmental benefits.',
     achievements: [
-      { value: 'Best Award', label: '2025' },
-      { value: 'GRI Standard', label: 'Compliant' },
-      { value: 'Global', label: 'Best practices' },
+      { value: '60%', label: 'Waste reduction' },
+      { value: '100%', label: 'Recyclable materials' },
+      { value: 'First in ME', label: 'Regional milestone' },
     ],
   },
   {
