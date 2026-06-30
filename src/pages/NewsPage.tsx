@@ -48,7 +48,6 @@ const FeaturedSection = ({ onOpen }: { onOpen: OpenHandler }) => {
       <div className="container">
         <div className="npf-head">
           <div className="eyebrow">{t('newsPage.featured')}</div>
-          <h2 className="section-title">{t('newsPage.featuredTitle')}</h2>
         </div>
         <div className="npf-grid">
           {featured.map((n) => (
@@ -112,7 +111,6 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
         <div className="npa-head">
           <div>
             <div className="eyebrow">{t('newsPage.allEyebrow')}</div>
-            <h2 className="section-title">{t('newsPage.allTitle')}</h2>
           </div>
           <div className="npa-count">
             {filtered.length} {t('newsPage.countOf')} {NEWS.length}
