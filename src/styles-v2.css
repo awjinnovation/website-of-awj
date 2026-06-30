@@ -69,7 +69,7 @@ button, input, select, textarea { font-family: inherit; }
 
 /* AWJ wordmark utility - uses Magnetik logo font (designed by brand) */
 .wordmark {
-  font-family: 'Magnetik', sans-serif;
+  font-family: var(--font-display);
   letter-spacing: -0.04em;
   display: inline-flex; align-items: baseline; gap: 0.22em;
 }
