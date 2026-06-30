@@ -203,9 +203,7 @@ const en = {
   'newsPage.lede':
     'Mandates, partnerships, and program milestones from across the AWJ group, Innovation, Academy, Sustain, and Systems.',
   'newsPage.featured': 'Featured stories',
-  'newsPage.featuredTitle': 'Top of the desk.',
   'newsPage.allEyebrow': 'All stories',
-  'newsPage.allTitle': 'The complete archive.',
   'newsPage.filterTopic': 'Topic',
   'newsPage.filterPillar': 'Pillar',
   'newsPage.filterAll': 'All',
@@ -393,9 +391,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'newsPage.title.second': 'والإعلانات',
   // newsPage.lede: needs approved Arabic → English fallback.
   'newsPage.featured': 'قصص مميّزة',
-  'newsPage.featuredTitle': 'صدارة المكتب.',
   'newsPage.allEyebrow': 'كل القصص',
-  'newsPage.allTitle': 'الأرشيف الكامل.',
   'newsPage.filterTopic': 'الموضوع',
   'newsPage.filterPillar': 'القطاع',
   'newsPage.filterAll': 'الكل',
