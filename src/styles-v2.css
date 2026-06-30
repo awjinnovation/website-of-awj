@@ -2243,16 +2243,24 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   display: inline-flex;
   align-items: center;
 }
+/* Match .nav-pill .links a exactly so "Pillars" is consistent with the
+   other nav items (same size, weight, padded pill, hover background). */
 .pillars-trigger {
-  background: none; border: 0; padding: 0; margin: 0;
-  color: inherit; font: inherit;
+  position: relative;
+  background: none; border: 0; margin: 0;
+  color: inherit; font-family: inherit;
+  font-size: 20px; font-weight: 500;
   cursor: none;
   display: inline-flex; align-items: center; gap: 5px;
-  opacity: 0.95;
-  transition: opacity 0.2s ease;
+  padding: 7px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 .pillars-trigger:hover,
-.pillars-dropdown.is-open .pillars-trigger { opacity: 1; }
+.pillars-dropdown.is-open .pillars-trigger { background: rgba(12,14,20,0.06); }
+.nav-pill.on-dark .pillars-trigger:hover,
+.nav-pill.on-dark .pillars-dropdown.is-open .pillars-trigger { background: rgba(255,255,255,0.08); }
 .pillars-chev {
   transition: transform 0.25s var(--ease-out);
 }
