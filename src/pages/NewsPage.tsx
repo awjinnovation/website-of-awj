@@ -30,7 +30,7 @@ const NewsHero = () => {
           </div>
         </div>
         <h1 className="news-hero-title">
-          {t('newsPage.title.first')} <em>{t('newsPage.title.second')}</em>.
+          {t('newsPage.title.first')} <em>{t('newsPage.title.second')}</em>
         </h1>
         <p className="news-hero-lede">{t('newsPage.lede')}</p>
       </div>
