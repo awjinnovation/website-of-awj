@@ -120,7 +120,7 @@ const en = {
   'partners.eyebrow': 'Partners & clients',
   'partners.title.before': 'Working alongside',
   'partners.title.highlight': 'institutions',
-  'partners.title.after': ', governments, and industry leaders.',
+  'partners.title.after': ', governments, and industry leaders',
 
   // Contact
   'contact.title': 'Contact us',
@@ -129,8 +129,8 @@ const en = {
   'contact.callUs': 'Or call us directly',
   'contact.step1': 'Which pillar are you interested in?',
   'contact.step2': "What's the area of engagement?",
-  'contact.step3': 'Tell us about you.',
-  'contact.step4': 'Ready to send.',
+  'contact.step3': 'Tell us about you',
+  'contact.step4': 'Ready to send',
   'contact.field.name': 'Full name',
   'contact.field.email': 'Email',
   'contact.field.org': 'Organisation (optional)',
@@ -312,7 +312,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'partners.eyebrow': 'الشركاء والعملاء',
   'partners.title.before': 'نعمل إلى جانب',
   'partners.title.highlight': 'المؤسسات',
-  'partners.title.after': ' والحكومات وقادة الصناعة.',
+  'partners.title.after': ' والحكومات وقادة الصناعة',
 
   // Contact
   'contact.title': 'تواصل معنا',
@@ -320,8 +320,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'contact.callUs': 'أو اتصل بنا مباشرة',
   'contact.step1': 'بأي قطاع أنت مهتم؟',
   'contact.step2': 'ما مجال التعاون؟',
-  'contact.step3': 'عرّفنا بنفسك.',
-  'contact.step4': 'جاهز للإرسال.',
+  'contact.step3': 'عرّفنا بنفسك',
+  'contact.step4': 'جاهز للإرسال',
   'contact.field.name': 'الاسم الكامل',
   'contact.field.email': 'البريد الإلكتروني',
   'contact.field.org': 'المؤسسة (اختياري)',
