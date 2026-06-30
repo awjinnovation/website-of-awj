@@ -39,17 +39,20 @@
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
   opacity: 0.9;
 }
+/* Match the home hero headline (.hero-headline): display font, weight 700,
+   not the thin italic that made this page look like a different typeface. */
 .news-hero-title {
-  font-family: var(--font-display); font-weight: 200;
-  font-size: clamp(56px, 9vw, 140px);
-  letter-spacing: -0.04em; line-height: 0.95; margin: 0 0 28px;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(51px, 8.5vw, 122px);
+  letter-spacing: -0.02em; line-height: 0.92; margin: 0 0 28px;
 }
 .news-hero-title em {
-  font-style: italic; font-weight: 200; opacity: 0.85;
+  font-style: normal; font-weight: 800; opacity: 1;
 }
+/* Match the home hero lede (.hero-lede): weight 300, larger, line-height 1.6. */
 .news-hero-lede {
-  max-width: 640px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; opacity: 0.95;
-  margin: 0;
+  max-width: 640px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.6;
+  font-weight: 300; opacity: 0.95; margin: 0;
 }
 
 /* === FEATURED SECTION === */
@@ -162,7 +165,7 @@
 
 .npa-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
 .npa-title {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 300;
   font-size: clamp(17px, 1.3vw, 21px); line-height: 1.25; letter-spacing: -0.015em;
   text-wrap: balance; margin: 0;
 }
