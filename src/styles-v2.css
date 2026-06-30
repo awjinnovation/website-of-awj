@@ -1,15 +1,10 @@
-/* AWJ Corporate site. Local fonts: Magnetik (Latin) + Proxima Nova Arabic. */
-
-/* === Magnetik (Latin) === */
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 100; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Thin.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 200; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-ExtraLight.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 300; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Light.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 400; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Regular.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 500; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Medium.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 600; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-SemiBold.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 700; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Bold.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 800; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-ExtraBold.otf') format('opentype'); }
-@font-face { font-family: 'Proxima Nova Arabic'; font-weight: 900; font-style: normal; font-display: swap; src: url('/Fonts/Magnetik-Heavy.otf') format('opentype'); }
+/* AWJ Corporate site. Brand text font: Proxima Nova Arabic (all weights).
+   Magnetik is the LOGO font only (it lives inside the SVG logos) and is no
+   longer registered under this family. Previously the Magnetik @font-face
+   block was declared here too, and because no Proxima ExtraLight (200) file
+   exists, every `font-weight: 200` element silently fell back to Magnetik —
+   so page titles/numbers rendered in a different font than the rest of the
+   site. Keeping only Proxima makes all pages consistent. */
 
 /* === Proxima Nova Arabic === */
 @font-face { font-family: 'Proxima Nova Arabic'; font-weight: 100; font-style: normal; font-display: swap; src: url('/Fonts/Proxima%20Nova%20Arabic%20Thin.otf') format('opentype'); }
