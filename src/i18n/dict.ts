@@ -236,7 +236,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
 
   // Hero
   // Approved company name (content/approved-content-ar.md → شريحة الغلاف).
-  'hero.eyebrow': 'شركة تنمية الابتكار والتقنيات المستدامة (أوج الابتكار)',
+  'hero.eyebrow': 'شركة تنمية الابتكار والتقنيات المستدامة (أوج)',
   // Arabic hero title (user-provided): "نبتكر مستقبلاً مستداماً" — split across
   // the three headline lines so none fall back to English.
   'hero.title.line1': 'نبتكر',
