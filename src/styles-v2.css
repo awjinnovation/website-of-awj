@@ -1441,7 +1441,7 @@ button, input, select, textarea { font-family: inherit; }
 
 /* Bento sizes - fit content */
 .bento-card.b-1 {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: auto;
   background:
     radial-gradient(140% 90% at 100% 100%, rgba(255, 255, 255, 0.14), transparent 62%),
