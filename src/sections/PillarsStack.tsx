@@ -75,7 +75,7 @@ const PILLAR_DATA: PillarItem[] = [
 ];
 
 export const PillarsStack = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [idx, setIdx] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const total = PILLAR_DATA.length;
@@ -167,7 +167,14 @@ export const PillarsStack = () => {
       <div className="container pillars-stack-layout">
         <div className="pillars-stack-head reveal">
           <h2 className="section-title" style={{ marginTop: 0 }}>
-            <img src="/assets/brand/awj-logo-v.svg" alt="AWJ" className="section-awj-logo" /> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
+            {lang === 'ar' ? (
+              // Arabic: plain "قطاعات أوج" heading, no AWJ logo.
+              <>{t('pillars.title.first')} <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em></>
+            ) : (
+              <>
+                <img src="/assets/brand/awj-logo-v.svg" alt="AWJ" className="section-awj-logo" /> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
+              </>
+            )}
           </h2>
           <p>{t('pillars.intro')}</p>
         </div>
