@@ -258,7 +258,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'pillars.title.first': 'قطاعات',
   'pillars.title.second': 'أوج',
   'pillars.intro':
-    'أربعة قطاعات متخصصة تعمل معاً لتقديم حلول متكاملة تحقق نمواً مستداماً.',
+    'أربعة قطاعات متخصصة\nتعمل معاً لتقديم حلول متكاملة\nتحقق نمواً مستداماً.',
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
   'pillars.label': 'قطاع',
