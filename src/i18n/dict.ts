@@ -242,7 +242,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'hero.title.line1': 'نبتكر',
   'hero.title.line2': 'مستقبلاً',
   'hero.title.line3': 'مستداماً',
-  // hero.lede: no approved Arabic yet → falls back to English.
+  'hero.lede':
+    'نعمل مع المؤسسات الحكومية والأكاديمية والصناعية لبناء منظومات الابتكار، وتطوير القدرات، وتسريع التحول المؤسسي، وتمكين الاستدامة. ومن خلال ربط العلوم والتكنولوجيا والابتكار بالتطبيق العملي، نساعد شركاءنا على تحقيق نمو مستدام وخلق قيمة طويلة الأمد.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'القطاعات',
