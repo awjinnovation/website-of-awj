@@ -27,7 +27,7 @@ const en = {
   'hero.title.line2': 'a Sustainable',
   'hero.title.line3': 'Future',
   'hero.lede':
-    'The greatest challenges of our world are not solved by resources alone — they are solved by the capacity to innovate. When knowledge meets technology and people, ideas become reality and opportunities become lasting impact.',
+    'The greatest challenges of our world are not solved by resources alone. They are solved by the capacity to innovate. When knowledge meets technology and people, ideas become reality and opportunities become lasting impact.',
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
@@ -62,9 +62,9 @@ const en = {
   'pillar.sustain.desc':
     'Strategic partner in sustainability and institutional excellence specialising in environmental, social and governance (ESG) strategies and impact management to enable organizations to achieve responsible growth and lasting value for business and society.',
   'pillar.innovation.desc':
-    'A specialized arm for designing and managing innovation ecosystems, research & development, and technology transfer — converting ideas and emerging opportunities into solutions, products, and services with lasting impact and sustainable value.',
+    'A specialized arm for designing and managing innovation ecosystems, research & development, and technology transfer, converting ideas and emerging opportunities into solutions, products, and services with lasting impact and sustainable value.',
   'pillar.systems.desc':
-    'A center of excellence in future technologies — specializing in data, artificial intelligence, quantum computing, and emerging technologies — developing intelligent solutions and systems that support innovation, institutional transformation, and decision-making.',
+    'A center of excellence in future technologies, specializing in data, artificial intelligence, quantum computing, and emerging technologies, developing intelligent solutions and systems that support innovation, institutional transformation, and decision-making.',
   'pillar.meta.established': 'Established',
   'pillar.meta.reach': 'Reach',
   'pillar.meta.alumni': 'Alumni',
