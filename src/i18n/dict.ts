@@ -58,13 +58,13 @@ const en = {
   'pillar.systems.fullName': 'AWJ Systems',
   // Per-pillar descriptions used in the carousel
   'pillar.academy.desc':
-    'The capability building and human capital development arm, specializing in designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation, enhance competitiveness, and prepare for future requirements.',
+    'The human capital and professional development arm, specializing in designing and implementing learning and professional development programs that empower individuals and institutions to lead innovation, enhance competitiveness, and meet future demands.',
   'pillar.sustain.desc':
-    'A strategic partner in sustainability and institutional excellence, specializing in governance, environmental and social strategies, and impact management, enabling institutions to achieve responsible growth and sustainable value for business and society.',
+    'Strategic partner in sustainability and institutional excellence specialising in environmental, social and governance (ESG) strategies and impact management to enable organizations to achieve responsible growth and lasting value for business and society.',
   'pillar.innovation.desc':
-    'A specialized arm in designing and managing innovation, R&D, and technology transfer ecosystems, transforming ideas and emerging opportunities into solutions, products, and services with sustainable impact and value.',
+    'A specialized arm for designing and managing innovation ecosystems, research & development, and technology transfer — converting ideas and emerging opportunities into solutions, products, and services with lasting impact and sustainable value.',
   'pillar.systems.desc':
-    'A center of excellence in future technologies, specializing in data, artificial intelligence, quantum computing, and emerging technologies, developing smart solutions and systems that support innovation, institutional transformation, and decision-making.',
+    'A center of excellence in future technologies — specializing in data, artificial intelligence, quantum computing, and emerging technologies — developing intelligent solutions and systems that support innovation, institutional transformation, and decision-making.',
   'pillar.meta.established': 'Established',
   'pillar.meta.reach': 'Reach',
   'pillar.meta.alumni': 'Alumni',
