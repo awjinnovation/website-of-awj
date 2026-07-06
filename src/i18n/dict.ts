@@ -27,7 +27,7 @@ const en = {
   'hero.title.line2': 'a Sustainable',
   'hero.title.line3': 'Future',
   'hero.lede':
-    "In a world of accelerating challenges, resources alone are no longer enough to shape the future; rather, it is the capacity to innovate and turn knowledge into impact. At AWJ, we believe that the intersection of humanity, knowledge, and technology is the starting point for any real transformation.",
+    'The greatest challenges of our world are not solved by resources alone — they are solved by the capacity to innovate. When knowledge meets technology and people, ideas become reality and opportunities become lasting impact.',
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
