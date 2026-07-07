@@ -134,10 +134,10 @@ export const AdvantagesValuesSection = () => {
       description: 'We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.',
       icon: (
         <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-          <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-          <path d="M21 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-          <path d="M3 4h8" />
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       ),
     },
