@@ -2986,7 +2986,8 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   color: var(--paper);
   opacity: 0.85;
   margin: 0;
-  text-align: left;
+  text-align: justify;
+  text-align-last: left;
 }
 
 /* RTL Support for Arabic */
