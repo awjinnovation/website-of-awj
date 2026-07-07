@@ -2986,6 +2986,9 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   color: var(--paper);
   opacity: 0.85;
   margin: 0;
+  /* Justify the body text; the last line stays left-aligned (default). */
+  text-align: justify;
+  text-align-last: left;
 }
 
 /* RTL Support for Arabic */
