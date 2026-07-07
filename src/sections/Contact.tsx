@@ -4,7 +4,6 @@ import { useLang } from '../i18n/LangContext';
 
 type FormData = {
   pillar: string;
-  area: string;
   name: string;
   email: string;
   org: string;
@@ -16,7 +15,6 @@ export const Contact = () => {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>({
     pillar: '',
-    area: '',
     name: '',
     email: '',
     org: '',
@@ -31,13 +29,6 @@ export const Contact = () => {
     { id: 'innovation', label: t('contact.pillar.innovation.label'), sub: t('contact.pillar.innovation.sub'), color: '#ff6b00' },
     { id: 'systems', label: t('contact.pillar.systems.label'), sub: t('contact.pillar.systems.sub'), color: '#0069c8' },
   ];
-  const areaOpts = [
-    { id: 'advisory', label: t('contact.area.advisory'), sub: t('contact.area.advisory.sub') },
-    { id: 'delivery', label: t('contact.area.delivery'), sub: t('contact.area.delivery.sub') },
-    { id: 'partnership', label: t('contact.area.partnership'), sub: t('contact.area.partnership.sub') },
-    { id: 'press', label: t('contact.area.press'), sub: t('contact.area.press.sub') },
-  ];
-
   const steps: { title: string; body: ReactNode }[] = [
     {
       title: t('contact.step1'),
@@ -56,28 +47,6 @@ export const Contact = () => {
               <span>
                 <div className="label">{p.label}</div>
                 <div className="sub">{p.sub}</div>
-              </span>
-            </button>
-          ))}
-        </div>
-      ),
-    },
-    {
-      title: t('contact.step2'),
-      body: (
-        <div className="wizard-options">
-          {areaOpts.map((a) => (
-            <button
-              key={a.id}
-              className={`wizard-option ${data.area === a.id ? 'selected' : ''}`}
-              onClick={() => {
-                update('area', a.id);
-                setTimeout(() => setStep(2), 180);
-              }}
-            >
-              <span>
-                <div className="label">{a.label}</div>
-                <div className="sub">{a.sub}</div>
               </span>
             </button>
           ))}
@@ -120,12 +89,6 @@ export const Contact = () => {
             <div>{t('contact.summary.pillar')}</div>
             <div className="v">
               {pillarOpts.find((p) => p.id === data.pillar)?.label || t('contact.summary.dash')}
-            </div>
-          </div>
-          <div className="row">
-            <div>{t('contact.summary.area')}</div>
-            <div className="v">
-              {areaOpts.find((a) => a.id === data.area)?.label || t('contact.summary.dash')}
             </div>
           </div>
           <div className="row">
@@ -203,7 +166,6 @@ export const Contact = () => {
                       setStep(0);
                       setData({
                         pillar: '',
-                        area: '',
                         name: '',
                         email: '',
                         org: '',
