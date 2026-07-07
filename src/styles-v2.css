@@ -2989,13 +2989,14 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   text-align: justify;
   text-align-last: left;
 }
-/* Fill the section height under the headline: the single paragraph grows to
-   take the remaining space and its two sentences are spread top-to-bottom. */
+/* The single paragraph grows to take the remaining height under the headline;
+   its two sentences stay together and are centered vertically (balanced with
+   the Oman map) rather than pushed to the extremes. */
 .about-text-fill {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
 }
 
