@@ -71,21 +71,6 @@ export const AboutPage = () => {
             <div className="hero-content">
               <h1 className="about-title">About AWJ</h1>
               <div className="content-block">
-                <p className="about-text highlight">
-                  <span className="font-bold">Creating a sustainable future.</span>
-                </p>
-              </div>
-              <div className="content-block">
-                <p className="about-text">
-                  The grand challenges of our world cannot be solved by resources alone, but by the capacity to innovate. When knowledge meets technology and humanity, ideas become reality, and opportunities transform into sustainable impact.
-                </p>
-              </div>
-              <div className="content-block">
-                <p className="about-text highlight">
-                  <span className="font-bold">This is why AWJ exists.</span>
-                </p>
-              </div>
-              <div className="content-block">
                 <p className="about-text">
                   We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
                 </p>
