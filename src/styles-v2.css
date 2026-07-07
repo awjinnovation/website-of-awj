@@ -1068,7 +1068,7 @@ button, input, select, textarea { font-family: inherit; }
 
 /* === STATS, corporate band with boxed cards === */
 .stats-band {
-  background: linear-gradient(135deg, #ffb777 0%, #b9a0de 50%, #87b0e4 100%);
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
   color: var(--ink);
   padding: 72px 0 80px;
   position: relative;
