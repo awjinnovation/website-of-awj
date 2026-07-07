@@ -2989,14 +2989,12 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   text-align: justify;
   text-align-last: left;
 }
-/* The single paragraph grows to take the remaining height under the headline;
-   its two sentences stay together and are centered vertically (balanced with
-   the Oman map) rather than pushed to the extremes. */
+/* One paragraph, sitting directly under the headline. The two sentences stack
+   with a gap; the paragraph takes only its natural height (no flex-grow), so
+   there is no large empty space between it and the headline. */
 .about-text-fill {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 24px;
   /* ADJUSTABLE: this is the line length. Increase it -> fewer lines,
      decrease it -> more lines. (Effective up to ~700px given the column.) */
