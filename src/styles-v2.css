@@ -2802,7 +2802,7 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 80px;
   align-items: stretch;
   max-width: 1400px;
@@ -2998,6 +2998,9 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   flex-direction: column;
   justify-content: center;
   gap: 24px;
+  /* ADJUSTABLE: this is the line length. Increase it -> fewer lines,
+     decrease it -> more lines. (Effective up to ~700px given the column.) */
+  max-width: 620px;
 }
 
 /* RTL Support for Arabic */
