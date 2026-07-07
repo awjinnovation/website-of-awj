@@ -2952,7 +2952,7 @@ main:has([data-pillar="systems"]) .pillar-service-body {
 
 .oman-map {
   width: 100%;
-  max-width: 350px;
+  max-width: 440px;
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
   animation: float 4s ease-in-out infinite;
