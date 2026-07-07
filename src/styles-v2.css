@@ -2986,10 +2986,10 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   color: var(--paper);
   opacity: 0.85;
   margin: 0;
-  /* Left-aligned, but balance the line breaks so words fit evenly per line
-     instead of stretching spaces (no justification). */
+  /* Left-aligned; let the browser choose the best-fit line breaks (may change
+     the number of lines) rather than stretching spaces (no justification). */
   text-align: left;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 /* RTL Support for Arabic */
