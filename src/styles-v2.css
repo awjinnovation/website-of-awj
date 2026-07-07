@@ -2804,7 +2804,9 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 80px;
-  align-items: stretch;
+  /* Center the text against the map instead of stretching it to the map's
+     height (which left a large empty gap under the short paragraph). */
+  align-items: center;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
@@ -2996,9 +2998,6 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* ADJUSTABLE: this is the line length. Increase it -> fewer lines,
-     decrease it -> more lines. ~310px yields ~10 lines for the first sentence. */
-  max-width: 310px;
 }
 
 /* RTL Support for Arabic */
