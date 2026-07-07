@@ -1841,7 +1841,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .nfc-meta { display: flex; gap: 10px; align-items: center; font-family: var(--font-body); font-size: 20px; ; opacity: 0.9; }
 .nfc-meta .dot { opacity: 0.4; }
 .nfc-title {
-  font-family: var(--font-display); font-weight: 300;
+  font-family: var(--font-display); font-weight: 700;
   font-size: clamp(22px, 1.7vw, 30px); line-height: 1.15;
   text-wrap: balance; margin: 0;
 }
