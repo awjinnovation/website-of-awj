@@ -1117,6 +1117,9 @@ button, input, select, textarea { font-family: inherit; }
   order: 1;
   margin-bottom: 12px;
 }
+/* Win over the later bare `.stat-label` rule (dark ink) so labels stay light
+   and readable on the dark glass cards. */
+.stats-band .stat-label { color: rgba(231, 238, 245, 0.78); }
 
 .stat-col .num {
   font-family: 'Proxima Nova Arabic', sans-serif;
