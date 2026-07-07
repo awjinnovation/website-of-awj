@@ -2997,8 +2997,8 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   flex-direction: column;
   gap: 24px;
   /* ADJUSTABLE: this is the line length. Increase it -> fewer lines,
-     decrease it -> more lines. (Effective up to ~700px given the column.) */
-  max-width: 620px;
+     decrease it -> more lines. ~310px yields ~10 lines for the first sentence. */
+  max-width: 310px;
 }
 
 /* RTL Support for Arabic */
