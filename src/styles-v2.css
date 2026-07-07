@@ -2802,7 +2802,7 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: stretch;
   max-width: 1400px;
