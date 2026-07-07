@@ -1069,7 +1069,7 @@ button, input, select, textarea { font-family: inherit; }
 /* === STATS, corporate band with boxed cards === */
 .stats-band {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
-  color: var(--ink);
+  color: var(--paper);
   padding: 72px 0 80px;
   position: relative;
   border-top: 1px solid var(--line);
@@ -1132,7 +1132,7 @@ button, input, select, textarea { font-family: inherit; }
 .stat-col .num .suffix {
   font-size: 0.5em; font-weight: 400;
   margin-left: 2px;
-  color: var(--accent);
+  color: rgba(244, 248, 251, 0.7);
   font-style: normal;
   vertical-align: baseline;
   opacity: 1;
