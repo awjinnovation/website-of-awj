@@ -1,4 +1,24 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import {
+  Award,
+  Database,
+  Globe,
+  GraduationCap,
+  Handshake,
+  Lightbulb,
+  Network,
+  RefreshCw,
+  Rocket,
+  Server,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Trophy,
+  Users,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import { Cursor } from '../components/Cursor';
 import { PillarLogo } from '../components/PillarLogo';
 import { useReveal } from '../hooks/useReveal';
@@ -8,6 +28,31 @@ import { PILLARS, type PillarId } from '../data/pillars';
 import { PILLAR_CONTENT } from '../data/pillar-content';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
+
+/** Pick a fitting Lucide icon for a value-proposition line by keyword.
+ *  Order matters — the first matching rule wins; Sparkles is the fallback. */
+const VALUE_ICON_RULES: [RegExp, LucideIcon][] = [
+  [/ecosystem/i, Network],
+  [/partnership/i, Handshake],
+  [/infrastructure|residency/i, Server],
+  [/compliance|risk|withstand|scrutiny|stability/i, ShieldCheck],
+  [/accredit|program|jobs|labor|labour/i, GraduationCap],
+  [/competitive advantage/i, Trophy],
+  [/talent|expert|consultant|elite|interactive environment/i, Users],
+  [/readiness|future[- ]read/i, Rocket],
+  [/transform|transition/i, RefreshCw],
+  [/data[- ]driven|decision/i, Database],
+  [/reputation|investment|attractiv/i, Award],
+  [/r&d|research|engineered|technical|frontier/i, Lightbulb],
+  [/rapid|delivery|speed/i, Zap],
+  [/economic|developmental|impact|performance|operational|efficiency/i, TrendingUp],
+  [/result|measurable|tangible/i, Target],
+  [/\blocal\b|\bglobal\b/i, Globe],
+];
+const pickValueIcon = (text: string): LucideIcon => {
+  for (const [re, Icon] of VALUE_ICON_RULES) if (re.test(text)) return Icon;
+  return Sparkles;
+};
 
 /** Split a stat like "6,600+", "95%" or "1st" into a number + trailing text.
  *  Returns null for non-numeric values ("Best Award") so they render as-is. */
@@ -213,9 +258,17 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 <h2 className="pillar-section-title">{t('pillarPage.value')}</h2>
               </div>
               <ul className="pillar-value-list reveal-stagger">
-                {content.valueProposition.map((v) => (
-                  <li key={v}>{v}</li>
-                ))}
+                {content.valueProposition.map((v) => {
+                  const Icon = pickValueIcon(v);
+                  return (
+                    <li key={v}>
+                      <span className="pillar-value-icon">
+                        <Icon size={22} strokeWidth={1.8} aria-hidden />
+                      </span>
+                      <span>{v}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </section>

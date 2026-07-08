@@ -2722,8 +2722,10 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   max-width: 1040px;
 }
 .pillar-value-list li {
-  position: relative;
-  padding: 20px 22px 20px 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
   background: rgba(12, 16, 22, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
@@ -2733,17 +2735,22 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-size: 17px;
   color: rgba(233, 240, 247, 0.85);
 }
-.pillar-value-list li::before {
-  content: '';
-  position: absolute;
-  left: 22px; top: 26px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--pillar-accent);
+.pillar-value-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  color: var(--pillar-accent);
+  background: color-mix(in srgb, var(--pillar-accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pillar-accent) 30%, transparent);
 }
 .pillar-page--rtl .pillar-value-list li {
-  padding: 20px 50px 20px 22px; text-align: right;
+  flex-direction: row-reverse;
+  text-align: right;
 }
-.pillar-page--rtl .pillar-value-list li::before { left: auto; right: 22px; }
 
 /* Reference works */
 .pillar-works-list {
