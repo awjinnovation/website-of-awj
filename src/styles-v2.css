@@ -2429,13 +2429,14 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   overflow: hidden;
 }
 .pillar-hero-mesh {
-  position: absolute; inset: 0; pointer-events: none;
+  position: absolute; inset: -20%; pointer-events: none;
   background:
-    radial-gradient(60% 50% at 18% 22%,
-      color-mix(in srgb, var(--pillar-accent) 32%, transparent), transparent 60%),
-    radial-gradient(60% 55% at 82% 70%,
-      color-mix(in srgb, var(--pillar-deep) 32%, transparent), transparent 60%);
-  opacity: 0.85;
+    radial-gradient(80% 75% at 12% 12%,
+      color-mix(in srgb, var(--pillar-accent) 30%, transparent), transparent 82%),
+    radial-gradient(85% 80% at 88% 82%,
+      color-mix(in srgb, var(--pillar-deep) 30%, transparent), transparent 84%);
+  filter: blur(60px);
+  opacity: 0.8;
 }
 .pillar-hero .container { position: relative; z-index: 1; }
 .pillar-hero-top {
