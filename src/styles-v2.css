@@ -2670,7 +2670,6 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   padding: 30px 26px;
   background: rgba(12, 16, 22, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-top: 3px solid var(--pillar-accent);
   border-radius: 18px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -2746,22 +2745,28 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   max-width: 940px;
 }
 .pillar-works-list li {
-  padding: 18px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--pillar-accent);
-  border-radius: 0 12px 12px 0;
-  background: color-mix(in srgb, var(--pillar-accent) 12%, rgba(12, 16, 22, 0.4));
+  position: relative;
+  padding: 18px 22px 18px 50px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(12, 16, 22, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   font-size: 17px;
   color: rgba(233, 240, 247, 0.85);
 }
+.pillar-works-list li::before {
+  content: '';
+  position: absolute;
+  left: 22px; top: 25px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pillar-accent);
+}
 .pillar-page--rtl .pillar-works-list li {
-  border-left: none;
-  border-right: 3px solid var(--pillar-accent);
-  border-radius: 12px 0 0 12px;
+  padding: 18px 50px 18px 22px;
   text-align: right;
 }
+.pillar-page--rtl .pillar-works-list li::before { left: auto; right: 22px; }
 
 /* Clients & partners */
 .pillar-clients-grid {
