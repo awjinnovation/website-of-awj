@@ -728,9 +728,9 @@ button, input, select, textarea { font-family: inherit; }
 
 .hero-lede {
   font-size: 24px; line-height: 1.6;
-  max-width: 924px; opacity: 0.95; font-weight: 300;
+  max-width: 547px; opacity: 0.95; font-weight: 300;
   margin-bottom: 36px;
-  word-spacing: 0.05em;
+  /* word-spacing: 0.05em; */
 }
 
 .hero-ctas { display: flex; align-items: center; gap: 14px; }
