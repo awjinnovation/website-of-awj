@@ -2426,7 +2426,9 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   padding: 118px 0 56px;
   background: transparent;
   color: var(--paper);
-  overflow: hidden;
+  /* No clip: let the hero glow bleed into the next section so there is no
+     hard seam at the hero's bottom edge. */
+  overflow: visible;
 }
 .pillar-hero-mesh {
   position: absolute; inset: -20%; pointer-events: none;
@@ -2550,7 +2552,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 
 /* Sections */
 .pillar-section { padding: 100px 0; background: transparent; color: var(--paper); }
-.pillar-section + .pillar-section { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.pillar-section + .pillar-section { border-top: none; }
 .pillar-section-head { margin-bottom: 44px; }
 .pillar-section-title {
   font-family: var(--font-display);
