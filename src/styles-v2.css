@@ -3022,6 +3022,10 @@ main:has([data-pillar="systems"]) .pillar-service-body {
   text-align: justify;
   text-align-last: left;
 }
+/* Tighten the gap before the about-hero pull quote (home hero lede unaffected). */
+.hero-content .hero-lede {
+  margin-bottom: 0;
+}
 /* One paragraph, sitting directly under the headline. The two sentences stack
    with a gap; the paragraph takes only its natural height (no flex-grow), so
    there is no large empty space between it and the headline. */
@@ -3035,8 +3039,8 @@ main:has([data-pillar="systems"]) .pillar-service-body {
    lede by a short accent rule, fading up on load so it stands out. */
 .about-hero-quote {
   position: relative;
-  margin-top: 40px;
-  padding-top: 28px;
+  margin-top: 0;
+  padding-top: 24px;
   max-width: 547px;
   font-size: clamp(24px, 2.6vw, 34px);
   line-height: 1.3;
