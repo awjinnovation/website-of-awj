@@ -67,7 +67,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       impactNotes: [
         '3 out of 5 startups within the Runway incubator secured investment, and some joined accelerators; 1 out of 4 startups within the GUStartHub incubator secured investment.',
-        'Since 2020, the .nxt Jadeer program has empowered more than 6,600 participants across the governorates of Oman — completing over 300,000 learning hours and 6,500 training courses, and earning more than 100,000 certificates across 136 educational tracks. It has contributed to employing over 2,700 participants, supported the development of 2,000+ entrepreneurial ideas (135 reaching the entrepreneurial bootcamp), and established 20+ startups, alongside 40+ live courses and 100 follow-up sessions — making Jadeer a national platform for talent development, entrepreneurship, and youth readiness for the labor market.',
+        'Since 2020, the .nxt Jadeer program has empowered more than 6,600 participants across the governorates of Oman, completing over 300,000 learning hours and 6,500 training courses, and earning more than 100,000 certificates across 136 educational tracks. It has contributed to employing over 2,700 participants, supported the development of 2,000+ entrepreneurial ideas (135 reaching the entrepreneurial bootcamp), and established 20+ startups, alongside 40+ live courses and 100 follow-up sessions, making Jadeer a national platform for talent development, entrepreneurship, and youth readiness for the labor market.',
       ],
       clients: [
         'Riyada (SME Development Authority)',
@@ -253,7 +253,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       clients: [
         'Local network and key clients',
-        'CIDEEA — International Center for Strategic Studies in Aquaculture',
+        'CIDEEA, International Center for Strategic Studies in Aquaculture',
         'Temasek Polytechnic (Singapore)',
         'Lean Enterprise Institute (USA)',
         'Simplilearn',
@@ -329,8 +329,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'A cumulative technical advantage from R&D that puts clients at the frontier of what is possible',
       ],
       referenceWorks: [
-        'Oman AI Studio — the National AI Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology',
-        'NCSI API — National Center for Statistics and Information',
+        'Oman AI Studio, the National AI Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology',
+        'NCSI API, National Center for Statistics and Information',
         '.nxt Platforms: SPACES, GIG, and Jadeer',
         'Platforms for the Ministry of Social Development: Child Care, CSR, and AI analytical tools',
         'Products: Second Brain, Qimmah, Q-AI, Planning & Strategy',
