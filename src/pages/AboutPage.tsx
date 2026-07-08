@@ -70,6 +70,9 @@ export const AboutPage = () => {
           <div className="hero-overview-container">
             <div className="hero-content">
               <h1 className="about-title">About AWJ</h1>
+              <p className="hero-lede">
+                We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
+              </p>
             </div>
             <div className="hero-graphic">
               <img
