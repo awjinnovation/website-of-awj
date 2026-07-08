@@ -25,7 +25,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
     ['--pillar-accent' as string]: pillar.accent,
     ['--pillar-deep' as string]: pillar.deep,
   };
-  const isRtl = lang === 'ar';
 
   return (
     <>
@@ -159,25 +158,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                     </div>
                   </div>
                 )}
-              </div>
-              <div className="pillar-contact-cta-block">
-                <a
-                  className="pillar-cta-primary"
-                  href={content.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('pillarPage.cta')} {t(`pillar.${pillarId}.fullName` as TranslationKey)}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d={isRtl ? 'M17 17L7 7M7 7H16M7 7V16' : 'M7 17L17 7M17 7H8M17 7V16'}
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
