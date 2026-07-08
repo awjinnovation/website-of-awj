@@ -1068,12 +1068,20 @@ button, input, select, textarea { font-family: inherit; }
 
 /* === STATS, corporate band with boxed cards === */
 .stats-band {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
+  /* Aurora backdrop whose top/bottom edges fade to the neighbouring section
+     colours (hero ink above, pillars dark below) so there is no hard seam. */
+  background:
+    linear-gradient(
+      180deg,
+      #0c0e14 0%,
+      rgba(0, 0, 0, 0.5) 16%,
+      rgba(0, 0, 0, 0.5) 84%,
+      #0b131c 100%
+    ),
+    url('/assets/brand/news-bg.png') center / cover no-repeat;
   color: var(--paper);
   padding: 72px 0 80px;
   position: relative;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 .stats-band-row {
