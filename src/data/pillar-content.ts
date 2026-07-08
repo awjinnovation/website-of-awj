@@ -55,8 +55,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         phone: '+968 9390 9693',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
-          { label: 'X', handle: '@awj_academy' },
-          { label: 'LinkedIn', handle: 'awj-academy' },
         ],
       },
     },
@@ -90,8 +88,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         phone: '+968 9390 9693',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
-          { label: 'X', handle: '@awj_academy' },
-          { label: 'LinkedIn', handle: 'awj-academy' },
         ],
       },
     },
