@@ -2593,19 +2593,6 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   flex-direction: column;
   gap: 12px;
 }
-.pillar-service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 28px;
-  width: 36px;
-  height: 3px;
-  background: var(--pillar-accent);
-}
-.pillar-page--rtl .pillar-service-card::before {
-  left: auto;
-  right: 28px;
-}
 .pillar-service-card:hover {
   border-color: color-mix(in srgb, var(--pillar-accent) 60%, transparent);
   transform: translateY(-4px);
@@ -2966,9 +2953,6 @@ main:has([data-pillar="systems"]) .pillar-service-body {
 [dir="rtl"] .bento-card .icon { right: auto; left: -20px; }
 [dir="rtl"] .bento-card.b-1 .icon { right: auto; left: 0; }
 [dir="rtl"] .bento-card.b-1 { background-position: 0 100%; }
-
-/* Service card accent rule sits on the leading edge (right in RTL) */
-[dir="rtl"] .pillar-service-card::before { left: auto; right: 28px; }
 
 /* Pillar dropdown / nav links don't need direction changes since
    the pill itself is centered; chip logos contain English wordmarks
