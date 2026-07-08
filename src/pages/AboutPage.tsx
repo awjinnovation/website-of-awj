@@ -73,6 +73,9 @@ export const AboutPage = () => {
               <p className="hero-lede">
                 We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
               </p>
+              <p className="about-hero-quote">
+                We believe that the future is not to be awaited, but to be created.
+              </p>
             </div>
             <div className="hero-graphic">
               <img
