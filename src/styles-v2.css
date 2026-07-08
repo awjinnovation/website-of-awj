@@ -2402,6 +2402,14 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   mix-blend-mode: screen;
 }
 .pillar-page > * { position: relative; z-index: 1; }
+/* Innovation's orange is far more luminous than the other accents, so the
+   same aurora blows out bright — tone its intensity down. */
+.pillar-page[data-pillar="innovation"]::before { opacity: 0.38; filter: blur(88px); }
+.pillar-page[data-pillar="innovation"] {
+  background:
+    radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--pillar-deep) 18%, transparent), transparent 60%),
+    #0a0d12;
+}
 
 .pillar-hero {
   position: relative;
