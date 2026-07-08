@@ -73,7 +73,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
           <section className="pillar-section pillar-numbers reveal">
             <div className="container">
               <div className="pillar-section-head">
-                <div className="eyebrow">{t('pillarPage.numbers')}</div>
+                <h2 className="pillar-section-title">{t('pillarPage.numbers')}</h2>
               </div>
               {content.numbers && content.numbers.length > 0 && (
                 <div className="pillar-num-grid reveal-stagger">
@@ -100,7 +100,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
         <section className="pillar-section pillar-services reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">{t('pillarPage.coreServices')}</div>
+              <h2 className="pillar-section-title">{t('pillarPage.coreServices')}</h2>
             </div>
             {content.coreServices.map((group, gi) => (
               <div key={group.group ?? gi} className="pillar-service-group">
@@ -123,7 +123,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
           <section className="pillar-section pillar-value reveal">
             <div className="container">
               <div className="pillar-section-head">
-                <div className="eyebrow">{t('pillarPage.value')}</div>
+                <h2 className="pillar-section-title">{t('pillarPage.value')}</h2>
               </div>
               <ul className="pillar-value-list reveal-stagger">
                 {content.valueProposition.map((v) => (
@@ -139,7 +139,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
           <section className="pillar-section pillar-works reveal">
             <div className="container">
               <div className="pillar-section-head">
-                <div className="eyebrow">{t('pillarPage.projects')}</div>
+                <h2 className="pillar-section-title">{t('pillarPage.projects')}</h2>
               </div>
               <ul className="pillar-works-list reveal-stagger">
                 {content.referenceWorks.map((w) => (
@@ -155,7 +155,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
           <section className="pillar-section pillar-clients reveal">
             <div className="container">
               <div className="pillar-section-head">
-                <div className="eyebrow">{t('pillarPage.clients')}</div>
+                <h2 className="pillar-section-title">{t('pillarPage.clients')}</h2>
               </div>
               <div className="pillar-clients-grid reveal-stagger">
                 {content.clients.map((c) => (
@@ -172,7 +172,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
         <section className="pillar-section pillar-contact reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">{t('pillarPage.contact')}</div>
+              <h2 className="pillar-section-title">{t('pillarPage.contact')}</h2>
             </div>
             <div className="pillar-contact-grid">
               <div className="pillar-contact-info">
