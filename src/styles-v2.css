@@ -2719,7 +2719,6 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
-  max-width: 1040px;
 }
 .pillar-value-list li {
   display: flex;
@@ -2755,12 +2754,13 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Reference works */
 .pillar-works-list {
   list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 12px;
-  max-width: 940px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
 }
 .pillar-works-list li {
   position: relative;
-  padding: 18px 22px 18px 50px;
+  padding: 20px 22px 20px 52px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   background: rgba(12, 16, 22, 0.4);
@@ -2786,7 +2786,6 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Clients & partners */
 .pillar-clients-grid {
   display: flex; flex-wrap: wrap; gap: 12px;
-  max-width: 1040px;
 }
 .pillar-client-chip {
   padding: 11px 18px;
