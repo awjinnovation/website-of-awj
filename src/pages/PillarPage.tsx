@@ -14,7 +14,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
   useReveal();
   const pillar = PILLARS.find((p) => p.id === pillarId);
   const content = PILLAR_CONTENT[pillarId]?.[lang];
-  const num = pillar ? PILLARS.indexOf(pillar) + 1 : 0;
 
   useEffect(() => {
     if (pillar) document.title = `AWJ ${pillar.name}`;
@@ -49,9 +48,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 </svg>
                 {t('pillarPage.back')}
               </a>
-              <div className="pillar-hero-meta">
-                {t('pillarPage.meta')} · 0{num} / 04
-              </div>
             </div>
 
             <h1 className="pillar-hero-title">
