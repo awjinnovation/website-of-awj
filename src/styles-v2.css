@@ -525,6 +525,17 @@ button, input, select, textarea { font-family: inherit; }
   overflow: hidden; isolation: isolate;
   display: flex; flex-direction: column;
 }
+/* Fade the hero's bottom edge to the shared seam colour so it blends into the
+   stats band below (above the mesh/grain at z1, below the content at z2). */
+.hero-v3::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 160px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, #05070b);
+}
 @supports not (height: 100svh) {
   .hero-v3 { min-height: 100vh; }
 }
@@ -1073,10 +1084,10 @@ button, input, select, textarea { font-family: inherit; }
   background:
     linear-gradient(
       180deg,
-      #0c0e14 0%,
-      rgba(0, 0, 0, 0.5) 16%,
-      rgba(0, 0, 0, 0.5) 84%,
-      #0b131c 100%
+      #05070b 0%,
+      rgba(5, 7, 11, 0.5) 18%,
+      rgba(5, 7, 11, 0.5) 82%,
+      #05070b 100%
     ),
     url('/assets/brand/news-bg.png') center / cover no-repeat;
   color: var(--paper);
@@ -1190,6 +1201,9 @@ button, input, select, textarea { font-family: inherit; }
 .pillars-stack {
   padding: 96px 0;
   background:
+    /* Fade the top edge to the shared seam colour so it blends up into the
+       stats band above. */
+    linear-gradient(180deg, #05070b 0%, transparent 14%),
     radial-gradient(120% 140% at 100% 100%, #82898c 0%, #4e555c 18%, #2a323a 38%, #131c25 62%, #0b131c 100%);
   color: var(--paper);
   overflow: hidden; position: relative;
