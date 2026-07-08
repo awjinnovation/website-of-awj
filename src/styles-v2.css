@@ -2402,13 +2402,23 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   mix-blend-mode: screen;
 }
 .pillar-page > * { position: relative; z-index: 1; }
-/* Innovation's orange is far more luminous than the other accents, so the
-   same aurora blows out bright — tone its intensity down. */
-.pillar-page[data-pillar="innovation"]::before { opacity: 0.38; filter: blur(88px); }
+/* Innovation's raw orange blew out bright, so its aurora uses the softer
+   warm palette extracted from the reference gradient — muted orange, peach,
+   cream and amber — for a gentler warmth. */
 .pillar-page[data-pillar="innovation"] {
   background:
-    radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--pillar-deep) 18%, transparent), transparent 60%),
-    #0a0d12;
+    radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, #e8823a 20%, transparent), transparent 60%),
+    #0b0d11;
+}
+.pillar-page[data-pillar="innovation"]::before {
+  background:
+    radial-gradient(58% 46% at 14% 0%, #f5a25a, transparent 62%),
+    radial-gradient(56% 50% at 90% 18%, #e8823a, transparent 64%),
+    radial-gradient(60% 52% at 78% 58%, #f9c08c, transparent 64%),
+    radial-gradient(66% 56% at 26% 92%, #e8823a, transparent 64%),
+    radial-gradient(52% 44% at 52% 44%, #fce0c6, transparent 68%);
+  filter: blur(84px);
+  opacity: 0.42;
 }
 
 .pillar-hero {
