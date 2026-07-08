@@ -85,7 +85,13 @@ const PillarStat = ({ value, index }: { value: string; index: number }) => {
   return (
     <div className={'pillar-num-value' + (done ? ' is-pulsing' : '')} ref={ref}>
       {parsed ? (parsed.grouped ? v.toLocaleString('en-US') : String(v)) : value}
-      {parsed && parsed.suffix && <span className="pillar-num-suffix">{parsed.suffix}</span>}
+      {parsed &&
+        parsed.suffix &&
+        (/^(st|nd|rd|th)$/i.test(parsed.suffix.trim()) ? (
+          <sup className="pillar-num-ord">{parsed.suffix}</sup>
+        ) : (
+          <span className="pillar-num-suffix">{parsed.suffix}</span>
+        ))}
     </div>
   );
 };

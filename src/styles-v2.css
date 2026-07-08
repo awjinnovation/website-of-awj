@@ -2679,6 +2679,13 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-variant-numeric: tabular-nums;
 }
 .pillar-num-suffix { color: inherit; }
+.pillar-num-ord {
+  font-size: 0.42em;
+  font-weight: 700;
+  vertical-align: super;
+  margin-left: 2px;
+  line-height: 0;
+}
 /* Idle micro-pulse once the count-up settles — same feel as the home stats. */
 .pillar-num-value.is-pulsing {
   animation: stat-num-pulse 5.2s ease-in-out infinite;
