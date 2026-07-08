@@ -2377,7 +2377,9 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* Dark aurora canvas tinted with the pillar's colour (matches home/about). */
 .pillar-page {
   position: relative;
-  background: #05070b;
+  background:
+    radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--pillar-deep) 26%, transparent), transparent 60%),
+    #0a1017;
   color: var(--paper);
   overflow: hidden;
 }
@@ -2387,15 +2389,16 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   inset: -10%;
   z-index: 0;
   pointer-events: none;
-  /* Smooth aurora gradient in the pillar's own colour (accent + deep),
-     glowing over the dark base via screen blend — the home/about look,
-     recoloured per pillar. */
+  /* Vivid aurora in the pillar's own colours (accent + deep), glowing over the
+     dark base via screen blend — the home/about look, recoloured per pillar. */
   background:
-    radial-gradient(70% 55% at 16% 0%, var(--pillar-accent), transparent 66%),
-    radial-gradient(66% 60% at 92% 32%, var(--pillar-deep), transparent 68%),
-    radial-gradient(82% 62% at 46% 100%, var(--pillar-accent), transparent 70%);
-  filter: blur(90px);
-  opacity: 0.32;
+    radial-gradient(58% 46% at 14% 0%, var(--pillar-accent), transparent 62%),
+    radial-gradient(56% 50% at 90% 18%, var(--pillar-deep), transparent 64%),
+    radial-gradient(60% 52% at 78% 58%, var(--pillar-accent), transparent 64%),
+    radial-gradient(66% 56% at 26% 92%, var(--pillar-deep), transparent 64%),
+    radial-gradient(52% 44% at 52% 44%, color-mix(in srgb, var(--pillar-accent) 70%, transparent), transparent 68%);
+  filter: blur(72px);
+  opacity: 0.6;
   mix-blend-mode: screen;
 }
 .pillar-page > * { position: relative; z-index: 1; }
