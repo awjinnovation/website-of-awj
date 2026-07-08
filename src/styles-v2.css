@@ -2676,6 +2676,21 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   font-weight: 700;
   color: var(--pillar-accent);
   letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.pillar-num-suffix { color: inherit; }
+/* Idle micro-pulse once the count-up settles — same feel as the home stats. */
+.pillar-num-value.is-pulsing {
+  animation: stat-num-pulse 5.2s ease-in-out infinite;
+  transform-origin: left bottom;
+  display: inline-block;
+}
+.pillar-page--rtl .pillar-num-value.is-pulsing { transform-origin: right bottom; }
+.pillar-num-card:nth-child(2) .pillar-num-value.is-pulsing { animation-delay: 0.8s; }
+.pillar-num-card:nth-child(3) .pillar-num-value.is-pulsing { animation-delay: 1.6s; }
+.pillar-num-card:nth-child(4) .pillar-num-value.is-pulsing { animation-delay: 2.4s; }
+@media (prefers-reduced-motion: reduce) {
+  .pillar-num-value.is-pulsing { animation: none !important; }
 }
 .pillar-num-label {
   margin-top: 10px;

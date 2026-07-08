@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Cursor } from '../components/Cursor';
 import { PillarLogo } from '../components/PillarLogo';
 import { useReveal } from '../hooks/useReveal';
@@ -8,6 +8,87 @@ import { PILLARS, type PillarId } from '../data/pillars';
 import { PILLAR_CONTENT } from '../data/pillar-content';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
+
+/** Split a stat like "6,600+", "95%" or "1st" into a number + trailing text.
+ *  Returns null for non-numeric values ("Best Award") so they render as-is. */
+const parseStat = (value: string) => {
+  const m = value.match(/^\s*([\d.,]+)(.*)$/s);
+  if (m) {
+    const numeric = Number(m[1].replace(/,/g, ''));
+    if (Number.isFinite(numeric)) {
+      return { numeric, suffix: m[2], grouped: m[1].includes(',') };
+    }
+  }
+  return null;
+};
+
+/** Count-up + idle pulse number, mirroring the home Stats band behaviour. */
+const PillarStat = ({ value, index }: { value: string; index: number }) => {
+  const parsed = useMemo(() => parseStat(value), [value]);
+  const [v, setV] = useState(0);
+  const [done, setDone] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!parsed) {
+      setDone(true);
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+    const startDelay = Math.max(0, index) * 220;
+
+    let raf = 0;
+    let timer: number | undefined;
+    const cancel = () => {
+      if (timer) clearTimeout(timer);
+      if (raf) cancelAnimationFrame(raf);
+      timer = undefined;
+      raf = 0;
+    };
+    const startCount = () => {
+      let t0: number | undefined;
+      const step = (t: number) => {
+        if (t0 === undefined) t0 = t;
+        const k = Math.min(1, (t - t0) / 1500);
+        setV(Math.round(parsed.numeric * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) raf = requestAnimationFrame(step);
+        else setDone(true);
+      };
+      raf = requestAnimationFrame(step);
+    };
+
+    // Restart the count-up each time the grid re-enters view.
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            cancel();
+            setV(0);
+            setDone(false);
+            timer = window.setTimeout(startCount, startDelay);
+          } else {
+            cancel();
+          }
+        });
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+
+    return () => {
+      io.disconnect();
+      cancel();
+    };
+  }, [parsed, index]);
+
+  return (
+    <div className={'pillar-num-value' + (done ? ' is-pulsing' : '')} ref={ref}>
+      {parsed ? (parsed.grouped ? v.toLocaleString('en-US') : String(v)) : value}
+      {parsed && parsed.suffix && <span className="pillar-num-suffix">{parsed.suffix}</span>}
+    </div>
+  );
+};
 
 export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
   const { t, lang } = useLang();
@@ -77,9 +158,9 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               </div>
               {content.numbers && content.numbers.length > 0 && (
                 <div className="pillar-num-grid reveal-stagger">
-                  {content.numbers.map((n) => (
+                  {content.numbers.map((n, i) => (
                     <div key={n.label} className="pillar-num-card">
-                      <div className="pillar-num-value">{n.value}</div>
+                      <PillarStat value={n.value} index={i} />
                       <div className="pillar-num-label">{n.label}</div>
                     </div>
                   ))}
