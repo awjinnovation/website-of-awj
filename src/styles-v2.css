@@ -1765,7 +1765,8 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* === NEWS, featured cards + recent list === */
 .news {
   padding: 10px;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/brand/news-bg.png') center/cover no-repeat;
+  /* Fade the bottom edge to #05070b so it blends into the contact section below. */
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.5) calc(100% - 60px), #05070b 100%), url('/assets/brand/news-bg.png') center/cover no-repeat;
   border-top: 1px solid var(--line);
 }
 
@@ -2058,7 +2059,15 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 @media (max-width: 980px) { .partners-row > div:nth-child(3n) { border-right: none; } }
 
 /* === CONTACT, multi-step wizard === */
-.contact { padding: 140px 0; background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+.contact {
+  padding: 140px 0;
+  /* Fade the top edge to #05070b (blends into the news section) and the bottom
+     edge to --paper (blends into the light footer); ink through the middle. */
+  background: linear-gradient(180deg, #05070b 0, var(--ink) 90px, var(--ink) calc(100% - 90px), var(--paper) 100%);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
 .contact::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
   background:
@@ -2133,7 +2142,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .wizard-summary .row .v { font-family: var(--font-display); font-size: 20px; font-weight: 400; text-transform: none; opacity: 1; }
 
 /* === FOOTER, animated marquee wordmark === */
-.footer { background: var(--paper); color: var(--ink); padding: 80px 0 30px; position: relative; overflow: hidden; border-top: 1px solid var(--line); }
+.footer { background: var(--paper); color: var(--ink); padding: 80px 0 30px; position: relative; overflow: hidden; }
 .footer-marquee {
   margin: 0 -40px 60px; padding: 30px 0; overflow: hidden;
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
