@@ -88,9 +88,8 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               <div className="eyebrow">{t('pillarPage.whatWeDo')}</div>
             </div>
             <div className="pillar-service-grid reveal-stagger">
-              {content.services.map((s, i) => (
+              {content.services.map((s) => (
                 <div key={s.title} className="pillar-service-card">
-                  <div className="pillar-service-num">/ 0{i + 1}</div>
                   <h3 className="pillar-service-title">{s.title}</h3>
                   <p className="pillar-service-body">{s.body}</p>
                   {s.items && (
