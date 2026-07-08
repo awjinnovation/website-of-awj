@@ -2405,7 +2405,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 
 .pillar-hero {
   position: relative;
-  padding: 160px 0 120px;
+  padding: 118px 0 56px;
   background: transparent;
   color: var(--paper);
   overflow: hidden;
@@ -2422,7 +2422,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillar-hero .container { position: relative; z-index: 1; }
 .pillar-hero-top {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 70px;
+  margin-bottom: 44px;
 }
 .pillar-hero-meta {
   font-family: var(--font-body); font-size: 20px;
@@ -2440,7 +2440,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 .pillar-hero-lede {
   max-width: 720px; font-size: 20px; line-height: 1.6;
-  opacity: 0.82; margin-bottom: 90px;
+  opacity: 0.82; margin-bottom: 0;
 }
 .pillar-soon {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
