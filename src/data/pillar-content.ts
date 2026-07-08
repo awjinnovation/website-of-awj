@@ -1,18 +1,26 @@
 import type { PillarId } from './pillars';
 import type { Lang } from '../i18n/dict';
 
-export type Service = {
-  title: string;
-  body: string;
-  items?: string[];
-};
+export type ServiceItem = { name: string; desc?: string };
+export type ServiceGroup = { group?: string; items: ServiceItem[] };
 
 export type PillarPageContent = {
-  /** The external CTA destination, visible regardless of language. */
-  websiteUrl: string;
-  aboutTitle: string;
-  about: string[];
-  services: Service[];
+  /** The external website destination, if any (visible regardless of language). */
+  websiteUrl?: string;
+  /** Short definition shown as the hero lede. */
+  definition: string;
+  /** Core services, optionally grouped. */
+  coreServices: ServiceGroup[];
+  /** Value-proposition bullets (the pillar's "values"). */
+  valueProposition?: string[];
+  /** Reference works / projects. */
+  referenceWorks?: string[];
+  /** Headline numbers. */
+  numbers?: { value: string; label: string }[];
+  /** Narrative impact notes. */
+  impactNotes?: string[];
+  /** Clients & partners served. */
+  clients?: string[];
   contact: {
     email?: string;
     phone?: string;
@@ -24,68 +32,88 @@ export type PillarPageContent = {
 export type PillarContentBundle = Record<Lang, PillarPageContent>;
 
 export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
-  academy: {
-    ar: {
-      websiteUrl: 'https://academy.awj.om/',
-      aboutTitle: 'أكاديمية متكاملة للمعرفة والتدريب والحوار العلمي',
-      about: [
-        'أكاديمية أوج منصة متكاملة للمعرفة والتدريب والحوار العلمي، تنتمي إلى شركة أوج الابتكار. نقدم برامج تعليمية وتدريبية متقدمة وشاملة تستجيب لاحتياجات سوق العمل والمجتمع، ونعمل على تمكين الأفراد والمؤسسات بالمعارف والمهارات والقدرات في بيئة تجمع خبرة عالمية بسياق محلي.',
-        'ترتكز هويتنا على ثلاثة أركان: إطار معرفي يبني الأفكار، إطار تدريبي يحوّل المعرفة إلى مهارة تطبيقية، وإطار حواري يبني وعياً نقدياً تفاعلياً. نعمل ضمن منظومة وطنية تستلهم رؤية عُمان 2040 وتتقاطع مع مستهدفات وزارة العمل.',
+  innovation: {
+    en: {
+      websiteUrl: 'https://dotnxt.om',
+      definition:
+        'A specialized arm in designing and managing innovation, R&D, and technology transfer ecosystems, transforming ideas and emerging opportunities into solutions, products, and services with sustainable impact and value.',
+      coreServices: [
+        {
+          items: [
+            { name: 'Designing and managing innovative programs' },
+            { name: 'Transferring and localizing science, knowledge, and technology' },
+            { name: 'Operating incubators and accelerators' },
+            { name: 'Developing technology transfer offices' },
+            { name: 'Organizing hackathons and challenges' },
+            { name: 'Building national capacities' },
+            { name: 'Strategic consulting' },
+            { name: 'Intellectual property management' },
+            { name: 'Developing corporate innovation ecosystems' },
+          ],
+        },
       ],
-      services: [
-        {
-          title: 'البرامج التدريبية',
-          body: 'مسارات معتمدة في الابتكار وريادة الأعمال، التقنية والذكاء الاصطناعي، الاستدامة والطاقة، التواصل وصناعة المحتوى.',
-        },
-        {
-          title: 'خدمات المعرفة',
-          body: 'منشورات علمية محكَّمة، أدلة مهنية، تقارير دورية، ومراصد قطاعية في الصناعة والتقنية والاستدامة والاقتصاد.',
-        },
-        {
-          title: 'الفعاليات العلمية',
-          body: 'مؤتمرات وملتقيات وحلقات عمل وهاكاثونات وجلسات نقاش، حضورياً وافتراضياً.',
-        },
-        {
-          title: 'خدمات الاستشارات',
-          body: 'نرافق المؤسسات في رحلات التطوير والتحول، من تقييم الواقع إلى تنفيذ الحلول وقياس الأثر.',
-        },
+      valueProposition: [
+        'Enabling entities to build sustainable innovation ecosystems',
+        'Accelerating the transformation of ideas into actionable projects',
+        'Enhancing future readiness',
+        "Upgrading national talents' efficiency",
+        'Achieving tangible economic and developmental impact',
+      ],
+      numbers: [
+        { value: '6,600+', label: 'Participants empowered' },
+        { value: '300,000+', label: 'Learning hours' },
+        { value: '2,700+', label: 'Participants employed' },
+        { value: '20+', label: 'Startups established' },
+      ],
+      impactNotes: [
+        '3 out of 5 startups within the Runway incubator secured investment, and some joined accelerators; 1 out of 4 startups within the GUStartHub incubator secured investment.',
+        'Since 2020, the .nxt Jadeer program has empowered more than 6,600 participants across the governorates of Oman — completing over 300,000 learning hours and 6,500 training courses, and earning more than 100,000 certificates across 136 educational tracks. It has contributed to employing over 2,700 participants, supported the development of 2,000+ entrepreneurial ideas (135 reaching the entrepreneurial bootcamp), and established 20+ startups, alongside 40+ live courses and 100 follow-up sessions — making Jadeer a national platform for talent development, entrepreneurship, and youth readiness for the labor market.',
+      ],
+      clients: [
+        'Riyada (SME Development Authority)',
+        'Ministry of Labour',
+        'Ministry of Foreign Affairs',
+        'German University of Technology (GUtech)',
+        'Occidental Oman',
+        'Oman Airports',
+        'Ministry of Housing and Urban Planning',
+        'Asyad',
+        'Office of the Governor of North Al Batinah',
+        'Ministry of Education',
+        'Ministry of Transport, Communications and Information Technology',
       ],
       contact: {
-        email: 'academy@awj.om',
-        phone: '+968 9390 9693',
+        email: 'info@dotnxt.om',
+        phone: '+968 7259 4693',
+        location: 'Muscat · Sultanate of Oman',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
       },
     },
-    en: {
-      websiteUrl: 'https://academy.awj.om/',
-      aboutTitle: 'An integrated platform for knowledge, training, and scholarly dialogue.',
-      about: [
-        'AWJ Academy is an integrated platform for knowledge, training, and scholarly dialogue, part of AWJ Innovation. We offer advanced and comprehensive education and training programs that respond to the needs of the labour market and society, empowering individuals and institutions with the knowledge, skills, and capabilities they need, in an environment that combines global expertise with local context.',
-        "Our identity rests on three pillars: a knowledge framework that builds ideas, a training framework that translates knowledge into applicable skill, and a dialogue framework that builds critical, interactive awareness. We operate within a national system inspired by Oman Vision 2040 and aligned with the Ministry of Labour's objectives.",
-      ],
-      services: [
+    ar: {
+      websiteUrl: 'https://dotnxt.om',
+      definition:
+        'قطاع متخصص في تصميم وتطوير وتشغيل منظومات الابتكار وريادة الأعمال، وتحويل الأفكار والأبحاث إلى مشاريع وشركات ذات أثر اقتصادي وتنموي مستدام.',
+      coreServices: [
         {
-          title: 'Training Programs',
-          body: 'Accredited tracks across innovation and entrepreneurship, technology and AI, sustainability and energy, and communications and content.',
-        },
-        {
-          title: 'Knowledge Services',
-          body: 'Peer-reviewed publications, professional guides, periodic reports, and sector observatories across industry, technology, sustainability, and economy.',
-        },
-        {
-          title: 'Scholarly Events',
-          body: 'Conferences, forums, workshops, hackathons, and dialogue sessions, both in-person and virtual.',
-        },
-        {
-          title: 'Consultation Services',
-          body: 'We accompany institutions through development and transformation journeys, from assessing the current state to implementing solutions and measuring impact.',
+          items: [
+            { name: 'تصميم وإدارة البرامج الابتكارية' },
+            { name: 'نقل وتوطين العلوم والمعرفة والتكنولوجيا' },
+            { name: 'تشغيل الحاضنات والمسرعات' },
+            { name: 'تطوير مكاتب نقل التكنولوجيا' },
+            { name: 'تنظيم الهاكاثونات والتحديات' },
+            { name: 'بناء القدرات الوطنية' },
+            { name: 'الاستشارات الاستراتيجية' },
+            { name: 'إدارة الملكية الفكرية' },
+            { name: 'تطوير منظومات الابتكار المؤسسي' },
+          ],
         },
       ],
       contact: {
-        email: 'academy@awj.om',
-        phone: '+968 9390 9693',
+        email: 'info@dotnxt.om',
+        phone: '+968 7259 4693',
+        location: 'مسقط · سلطنة عُمان',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -96,36 +124,63 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
   sustain: {
     en: {
       websiteUrl: 'https://awj.om/pillars/sustain',
-      aboutTitle: 'From sustainability ambition to measurable outcomes.',
-      about: [
-        "AWJ Sustain is the dedicated sustainability division of AWJ, built to help public and private sector organizations across Oman and the GCC move from sustainability ambition to measurable, standards-aligned outcomes. Operating at the intersection of ESG strategy, reporting excellence, and organizational transformation, AWJ Sustain combines deep local market knowledge with access to globally certified methodologies through its exclusive partnership with CSR Company International, one of the world's leading sustainability consultancies, active in over 70 countries.",
-        "AWJ Sustain's portfolio spans national-scale initiatives, including co-developing Oman's National CSR Governance Framework in collaboration with the Ministry of Social Development, and delivering MSX-aligned sustainability reports for listed companies in the energy sector. The practice works across energy, infrastructure, finance, technology, and government, translating complex international frameworks into practical, context-specific solutions aligned with Oman Vision 2040.",
+      definition:
+        'A strategic partner in sustainability and institutional excellence, specializing in governance, environmental and social strategies, and impact management, to enable institutions to achieve responsible growth and sustainable value for business and society.',
+      coreServices: [
+        {
+          group: 'Sustainability',
+          items: [
+            { name: 'Sustainability Strategy & Consulting', desc: 'A customized roadmap to achieve sustainability goals and enhance ESG performance, in line with Oman Vision 2040 and international frameworks.' },
+            { name: 'CSR Impact Measurement & Evaluation', desc: 'Designing social and environmental impact indicators and evaluating CSR program effectiveness against accredited international standards.' },
+            { name: 'AI & Sustainability Data Tools', desc: 'Automated analysis and AI to process ESG data, ensuring accuracy and auditability.' },
+            { name: 'Sustainability Reporting & Disclosure', desc: 'Drafting reports per GRI, SASB, IFRS S1/S2, and Muscat Stock Exchange requirements for transparency and credibility.' },
+            { name: 'Renewable Energy & Climate Strategies', desc: 'Adopting clean-energy solutions, measuring carbon footprints, and developing net-zero plans aligned with Oman’s 2050 target.' },
+            { name: 'ISO Standards & International Certification', desc: 'Implementing ISO 26000 and related governance and sustainability standards, leading up to certification.' },
+            { name: 'Sustainability Training & Capability Building', desc: 'Specialized programs empowering teams to manage the sustainability portfolio professionally.' },
+          ],
+        },
+        {
+          group: 'Institutional Excellence',
+          items: [
+            { name: 'Change Management & Professional Accreditation', desc: 'Leading institutional transformation and supporting CMI accreditation in change management.' },
+            { name: 'Strategic Performance & Continuous Improvement', desc: 'Building a KPI system linked to sustainability objectives and improvement plans.' },
+            { name: 'Leadership Development & Executive Training', desc: 'Leadership development paths and executive programs that foster a sustainability culture.' },
+            { name: 'Risk Management & Governance Frameworks', desc: 'Corporate risk policies and strengthened internal governance structures.' },
+            { name: 'Lean Six Sigma & Kaizen', desc: 'Continuous-improvement methodologies to eliminate waste and enhance operational efficiency.' },
+            { name: 'Corporate Culture Assessment', desc: 'Measuring cultural alignment with sustainability values and designing initiatives to anchor a culture of excellence.' },
+          ],
+        },
       ],
-      services: [
-        {
-          title: 'ESG Reporting & Sustainability Disclosure',
-          body: 'Development and validation of sustainability reports aligned with GRI Standards, MSX ESG disclosure requirements, OIA ESG metrics, SASB, IFRS S1 & S2, and CSRD. Includes materiality assessment, ESG data collection and validation, bilingual (EN/AR) report drafting, GRI content index mapping, and publication-ready design.',
-        },
-        {
-          title: 'Sustainability Strategy & CSR Consulting',
-          body: 'End-to-end sustainability strategy development, CSR programme formulation and implementation, CSR impact measurement and evaluation, stakeholder engagement frameworks, CSR governance and communication strategies, and measuring Social Return on Investment.',
-        },
-        {
-          title: 'ESG Intelligence & AI Tools',
-          body: "Launching 2026. The ESG Sustainability Index, an AI-powered platform ranking all MSX-listed companies across Environmental, Social, and Governance dimensions, providing Oman's first structured, comparable ESG benchmark. ESG Reporting Automation, starting with Phase 1 data validation.",
-        },
-        {
-          title: 'Environmental & Climate Services',
-          body: 'Carbon footprint assessment and GHG inventory (Scopes 1, 2 and 3) in line with the GHG Protocol, renewable energy consultancy, and green supply chain management.',
-        },
-        {
-          title: 'ISO Standards Implementation & Certification',
-          body: 'Practical implementation, auditing and certification support across ISO 26000 (Social Responsibility), ISO 20121 (Sustainable Events Management), ISO 19600 (Compliance), ISO 20400 (Sustainable Procurement), and ISO 37001 (Anti-Bribery).',
-        },
-        {
-          title: 'Sustainability Training & Capacity Building',
-          body: 'A structured learning pathway from foundational to executive level: Sustainability Foundations, Applying Sustainability in Practice, Strategic Sustainability Leadership & Integration, ISO 26000 & Social Audit, Certified CSR Practitioner, and an Executive Masterclass in CSR Strategy & Leadership. Certificates issued in partnership with CSR Company International and Austrian Standards International.',
-        },
+      valueProposition: [
+        'Transforming sustainability into a competitive advantage',
+        'Enhancing compliance and risk management',
+        'Improving institutional and operational performance',
+        'Supporting data-driven decision making',
+        'Boosting reputation and investment attractiveness',
+      ],
+      referenceWorks: [
+        'Developing the National Framework for Corporate Social Responsibility Programs Governance in the Sultanate of Oman',
+        'Preparing the Sustainability Report for Abraj Energy Services 2025',
+        'Supporting the first and largest 3D-printed building in the Middle East',
+        'Executing sustainability, infrastructure, and energy projects with national impact',
+      ],
+      numbers: [
+        { value: 'Best Award', label: 'Sustainability Report 2025' },
+        { value: '66', label: 'Workshop participants' },
+        { value: '1st', label: 'Largest 3D-printed building in ME' },
+      ],
+      impactNotes: [
+        'Contributed to the first and largest 3D-printed building in the Middle East, helping reduce construction waste and promote sustainable, recyclable materials.',
+        '66 participants from government, private sector, and civil society took part in consultative workshops to develop the CSR governance framework.',
+        'The Sustainability Report for Abraj Energy Services 2025 won the Best Sustainability Report Award for 2025, reflecting the quality of disclosure and commitment to global best practices.',
+      ],
+      clients: [
+        'Government entities',
+        'Oil, gas, and energy companies',
+        'Financial and banking institutions',
+        'Real estate development and construction companies',
+        'Industrial and logistics sector',
+        'Institutions developing their ESG performance',
       ],
       contact: {
         email: 'sustain@awj.om',
@@ -138,35 +193,18 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
     },
     ar: {
       websiteUrl: 'https://awj.om/pillars/sustain',
-      aboutTitle: 'من طموح الاستدامة إلى نتائج قابلة للقياس.',
-      about: [
-        'أوج الاستدامة هي الوحدة المتخصصة في الاستدامة ضمن مجموعة أوج، مُصمَّمة لمساعدة المؤسسات الحكومية والخاصة في عُمان ودول الخليج على الانتقال من طموح الاستدامة إلى نتائج قابلة للقياس ومتوافقة مع المعايير الدولية. نعمل عند تقاطع استراتيجية الحوكمة البيئية والاجتماعية والمؤسسية (ESG) مع تميز التقارير والتحول المؤسسي، ونجمع بين معرفة عميقة بالسوق المحلية والوصول إلى منهجيات معتمدة عالمياً عبر شراكتنا الحصرية مع CSR Company International, إحدى أبرز شركات الاستشارات في الاستدامة، الفاعلة في أكثر من 70 دولة.',
-        'تمتد محفظة أوج الاستدامة لتشمل مبادرات على المستوى الوطني، من بينها المشاركة في تطوير الإطار الوطني العُماني لحوكمة المسؤولية المجتمعية بالتعاون مع وزارة التنمية الاجتماعية، وإنتاج تقارير استدامة متوافقة مع متطلبات بورصة مسقط للشركات المدرجة في قطاع الطاقة. نعمل عبر قطاعات الطاقة والبنية التحتية والمالية والتقنية والحكومية, مُحوِّلين الأطر الدولية المعقدة إلى حلول عملية ملائمة للسياق ومتوافقة مع رؤية عُمان 2040.',
-      ],
-      services: [
+      definition:
+        'أوج للاستدامة هي الذراع المتخصص في الاستدامة والتميز المؤسسي ضمن مجموعة أوج، تقدّم حلولاً متكاملة في حوكمة (ESG) والمسؤولية الاجتماعية والتحول المؤسسي المستدام.',
+      coreServices: [
         {
-          title: 'تقارير ESG والإفصاح عن الاستدامة',
-          body: 'إعداد وتدقيق تقارير الاستدامة المتوافقة مع معايير GRI ومتطلبات الإفصاح في بورصة مسقط ومؤشرات OIA ومعايير SASB و IFRS S1 و S2 و CSRD. يشمل تقييم الأهمية النسبية وجمع بيانات ESG والتحقق منها وكتابة التقارير ثنائية اللغة وتصميمها للنشر.',
-        },
-        {
-          title: 'استراتيجية الاستدامة واستشارات المسؤولية المجتمعية',
-          body: 'تطوير استراتيجية الاستدامة من البداية إلى النهاية، وصياغة برامج المسؤولية المجتمعية وتنفيذها، وقياس الأثر، وأطر إشراك أصحاب المصلحة، وحوكمة المسؤولية المجتمعية والاتصال، وقياس العائد الاجتماعي على الاستثمار.',
-        },
-        {
-          title: 'ذكاء ESG وأدوات الذكاء الاصطناعي',
-          body: 'انطلاق في 2026. مؤشر ESG للاستدامة, منصّة مدعومة بالذكاء الاصطناعي تُصنّف جميع الشركات المدرجة في بورصة مسقط عبر الأبعاد البيئية والاجتماعية والمؤسسية، وتُقدّم أول معيار مرجعي ESG منظّم وقابل للمقارنة في عُمان. أتمتة تقارير ESG بدءاً من المرحلة الأولى للتحقق من البيانات.',
-        },
-        {
-          title: 'الخدمات البيئية والمناخية',
-          body: 'تقييم البصمة الكربونية وجرد الانبعاثات (النطاق 1 و2 و3) وفقاً لبروتوكول الانبعاثات، واستشارات الطاقة المتجددة، وإدارة سلاسل التوريد الخضراء.',
-        },
-        {
-          title: 'تطبيق معايير ISO والاعتماد',
-          body: 'دعم التطبيق والتدقيق والاعتماد لمعايير ISO 26000 (المسؤولية الاجتماعية)، و20121 (إدارة الفعاليات المستدامة)، و19600 (إدارة الامتثال)، و20400 (المشتريات المستدامة)، و37001 (مكافحة الرشوة).',
-        },
-        {
-          title: 'التدريب على الاستدامة وبناء القدرات',
-          body: 'مسار تعلّمي منظّم من المستوى التأسيسي إلى التنفيذي: أساسيات الاستدامة، تطبيق الاستدامة عملياً، القيادة الاستراتيجية للاستدامة، ISO 26000 والتدقيق الاجتماعي, ممارس معتمد في المسؤولية المجتمعية، ودورة تنفيذية متقدمة في استراتيجية وقيادة المسؤولية المجتمعية. الشهادات بالشراكة مع CSR Company International و Austrian Standards International.',
+          items: [
+            { name: 'تقارير ESG والإفصاح عن الاستدامة', desc: 'إعداد وتدقيق تقارير الاستدامة المتوافقة مع معايير GRI ومتطلبات بورصة مسقط و SASB و IFRS S1/S2.' },
+            { name: 'استراتيجية الاستدامة واستشارات المسؤولية المجتمعية', desc: 'تطوير الاستراتيجية وصياغة البرامج وقياس الأثر وأطر إشراك أصحاب المصلحة.' },
+            { name: 'ذكاء ESG وأدوات الذكاء الاصطناعي', desc: 'أدوات تحليل آلي ومعالجة بيانات ESG لضمان الدقة وقابلية التدقيق.' },
+            { name: 'الخدمات البيئية والمناخية', desc: 'تقييم البصمة الكربونية واستشارات الطاقة المتجددة وخطط الحياد الصفري.' },
+            { name: 'تطبيق معايير ISO والاعتماد', desc: 'دعم التطبيق والتدقيق والاعتماد لمعايير ISO ذات الصلة بالحوكمة والاستدامة.' },
+            { name: 'التدريب على الاستدامة وبناء القدرات', desc: 'برامج متخصصة لتمكين الفرق من إدارة ملف الاستدامة باحترافية.' },
+          ],
         },
       ],
       contact: {
@@ -180,52 +218,74 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
     },
   },
 
-  innovation: {
-    ar: {
-      websiteUrl: 'https://dotnxt.om',
-      aboutTitle: 'شركة استشارية رائدة لتمكين الأفراد ومنظومات الابتكار',
-      about: [
-        'نحن شركة استشارية رائدة مقرها سلطنة عُمان، متخصصة في تمكين الأفراد، وتطوير الأعمال، وبناء منظومات الابتكار، من خلال دمج الخبرات العالمية في الاستشارات والتقنية والابتكار لتحقيق نمو مستدام.',
-        'نعمل مع الجهات الحكومية ومؤسسات القطاع الخاص لتمكينها من الانتقال نحو نماذج عمل أكثر ابتكاراً وكفاءة، عبر حلول متكاملة تُحدث أثراً حقيقياً وقابلاً للقياس.',
+  academy: {
+    en: {
+      websiteUrl: 'https://academy.awj.om/',
+      definition:
+        'The capability building and human capital development arm, specializing in designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation, enhance competitiveness, and prepare for future requirements.',
+      coreServices: [
+        {
+          items: [
+            { name: 'Training Programs', desc: 'Innovation and entrepreneurship (idea to exit, design thinking, corporate innovation), programming and development, AI and machine learning, sustainability and ESG, circular economy, and communication, content creation, and crisis management.' },
+            { name: 'Knowledge Services', desc: 'Peer-reviewed publications, professional guides, and analytical reports, plus specialized observatories across industry, technology, sustainability, and economics.' },
+            { name: 'Scientific Events', desc: 'In-person conferences, forums, workshops, and exhibitions, and virtual conferences, seminars, workshops, and 3D exhibitions.' },
+            { name: 'Consulting Services', desc: 'Content, curricula, and e-learning development; specialized consulting (training needs, impact measurement, digital transformation); and studies and research.' },
+          ],
+        },
       ],
-      services: [
-        { title: 'تمكين الكفاءات', body: 'نُطوّر المواهب وفق معايير عالمية تتماشى مع مستهدفات رؤية عُمان 2040، لضمان جاهزية الكوادر الوطنية لمتطلبات المستقبل.' },
-        { title: 'بناء القدرات الابتكارية', body: 'نُصمّم برامج نوعية تدعم ريادة الأعمال وتعزز التنافسية في مختلف القطاعات، من خلال منهجيات حديثة وتجارب عملية.' },
-        { title: 'حلول تقنية متقدمة', body: 'نُوظّف أحدث التقنيات لتقديم حلول مبتكرة تدعم التحول الرقمي وتحقق أثراً مستداماً.' },
-        { title: 'استشارات استراتيجية', body: 'نقدّم توجيهاً مخصصاً يساعد المؤسسات على النمو، واتخاذ قرارات فعّالة، ومواجهة التحديات بثقة.' },
-        { title: 'إدارة الابتكار', body: 'نُمكّن المؤسسات من تبنّي التقنيات الناشئة وتعزيز جاهزيتها للمستقبل، عبر بناء أنظمة ابتكار متكاملة.' },
-        { title: 'الملكية الفكرية', body: 'نُساعد على حماية وتطوير الأصول الفكرية وتحويلها إلى منتجات وخدمات ذات قيمة اقتصادية.' },
-        { title: 'تصميم وإدارة البرامج', body: 'نُطوّر ونُدير البرامج والمشاريع الابتكارية بكفاءة عالية، بدءاً من الفكرة وحتى التنفيذ وتحقيق الأثر.' },
+      valueProposition: [
+        'A blend of local expertise and global practices',
+        'An elite group of widely experienced experts and consultants',
+        'A commitment to tangible, measurable results',
+        'Accredited programs aligned with future jobs and labor-market needs',
+        'An interactive environment combining international expertise and local context',
+        'Sustainable strategic partnerships',
+      ],
+      referenceWorks: [
+        'Community Communication Program',
+        'Leadership in Cultural and Creative Industries Program',
+      ],
+      numbers: [
+        { value: '500', label: 'Trainees' },
+        { value: '20', label: 'Training Programs' },
+        { value: '10', label: 'Strategic Partners' },
+        { value: '95%', label: 'Satisfaction Rate' },
+      ],
+      clients: [
+        'Local network and key clients',
+        'CIDEEA — International Center for Strategic Studies in Aquaculture',
+        'Temasek Polytechnic (Singapore)',
+        'Lean Enterprise Institute (USA)',
+        'Simplilearn',
+        'World Science Council',
+        'Oxford Oracle',
+        'International Network for Government Science Advice (INGSA)',
       ],
       contact: {
-        email: 'info@dotnxt.om',
-        phone: '+968 7259 4693',
-        location: 'سلطنة عُمان · مسقط',
+        email: 'academy@awj.om',
+        phone: '+968 9390 9693',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
       },
     },
-    en: {
-      websiteUrl: 'https://dotnxt.om',
-      aboutTitle: 'A leading consultancy for talent enablement and innovation ecosystems.',
-      about: [
-        'We are a leading consultancy based in the Sultanate of Oman, specialized in empowering individuals, developing businesses, and building innovation ecosystems. We combine global expertise in consulting, technology, and innovation to achieve sustainable growth.',
-        'We work with government entities and private sector organizations to enable their transition toward more innovative and efficient business models, through integrated solutions that create real, measurable impact.',
-      ],
-      services: [
-        { title: 'Talent Enablement', body: "We develop talent against global standards aligned with Oman Vision 2040, ensuring national cadres are ready for the work of the future." },
-        { title: 'Innovation Capacity Building', body: 'We design quality programs that support entrepreneurship and competitiveness across sectors, using modern methodologies and hands-on experiences.' },
-        { title: 'Advanced Technology Solutions', body: 'We deploy the latest technologies to deliver innovative solutions that drive digital transformation and create sustainable impact.' },
-        { title: 'Strategic Consulting', body: 'Tailored guidance that helps institutions grow, make effective decisions, and face challenges with confidence.' },
-        { title: 'Innovation Management', body: 'Enabling institutions to adopt emerging technologies and strengthen their future readiness through integrated innovation systems.' },
-        { title: 'Intellectual Property', body: 'Helping protect and develop intellectual assets, turning them into products and services of economic value.' },
-        { title: 'Program Design & Management', body: 'We develop and run innovation programs and projects efficiently, from idea through execution to impact.' },
+    ar: {
+      websiteUrl: 'https://academy.awj.om/',
+      definition:
+        'أكاديمية أوج منصة متكاملة للمعرفة والتدريب والحوار العلمي، تقدّم برامج تعليمية وتدريبية متقدمة وشاملة تلبّي الاحتياجات الفعلية لسوق العمل والمجتمع، مع التركيز على التمكين بالمعارف والمهارات في بيئة تفاعلية تجمع بين الخبرات العالمية والسياق المحلي.',
+      coreServices: [
+        {
+          items: [
+            { name: 'البرامج التدريبية', desc: 'الابتكار وريادة الأعمال، البرمجة والتطوير، الذكاء الاصطناعي، الاستدامة والطاقة، التواصل وصناعة المحتوى.' },
+            { name: 'خدمات المعرفة', desc: 'منشورات علمية محكَّمة وأدلة مهنية وتقارير ومراصد قطاعية متخصصة.' },
+            { name: 'الفعاليات العلمية', desc: 'مؤتمرات وملتقيات وحلقات عمل ومعارض، حضورياً وافتراضياً.' },
+            { name: 'خدمات الاستشارات', desc: 'تطوير المحتوى والمناهج ومنصات التعلم، والاستشارات المتخصصة، والدراسات والبحوث.' },
+          ],
+        },
       ],
       contact: {
-        email: 'info@dotnxt.om',
-        phone: '+968 7259 4693',
-        location: 'Muscat · Sultanate of Oman',
+        email: 'academy@awj.om',
+        phone: '+968 9390 9693',
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -236,54 +296,80 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
   systems: {
     en: {
       websiteUrl: 'https://systems.awj.om/',
-      aboutTitle: 'Engineering excellence for institutions that cannot fail.',
-      about: [
-        'AWJ Systems is the specialist AI and software engineering arm of AWJ. Based in Muscat, we partner with government entities, large enterprises, and fast-moving businesses across Oman and the GCC to deliver technology that works flawlessly on day one—and scales securely for the future.',
-        "We carry AWJ's core purpose into the digital realm: making innovation meaningful. For us, that means building the digital engines that propel our clients toward their most ambitious goals. We measure our success by how effectively our systems empower government and enterprise to deliver on their core missions. Because this work is foundational to our clients' success, it must be uncompromising: software that accelerates growth while holding up under rigorous audit, AI that solves actual operational bottlenecks, and national-scale infrastructure engineered locally by the people who rely on it.",
-        'Our operating philosophy is built on engineering excellence and velocity. We are a dedicated team of full-stack developers, ML engineers, and expert designers led by founders with international experience at some of the world\'s best institutions. We leverage rigorous automation, highly refined reusable architectures, and purpose-built AI workflows as force multipliers. For our clients, this means rapid time-to-market without ever compromising on enterprise-grade stability. By engineering the manual toil out of the development lifecycle, our experts dedicate their full attention to solving your hardest domain problems.',
-        'We don\'t just build for our clients; we build for the future. Between engagements, our team conducts deep-tech R&D—from satellite IoT economics to generative diffusion models for sustainable chemistry. We bring this compounding technical edge to every project we ship, ensuring our clients always benefit from the absolute frontier of what\'s possible.',
+      definition:
+        'A center of excellence in future technologies, specializing in data, artificial intelligence, quantum computing, and emerging technologies, to develop smart solutions and systems that support innovation, institutional transformation, and decision-making.',
+      coreServices: [
+        {
+          group: 'Projects',
+          items: [
+            { name: 'Advise', desc: 'Strategic consulting, digital transformation roadmaps, and tender preparation.' },
+            { name: 'Build', desc: 'Developing customized systems, platforms, and AI models owned by the client.' },
+            { name: 'Augment', desc: 'Integrating AI and automation into existing systems, with Annual Maintenance Contracts (AMC).' },
+          ],
+        },
+        {
+          group: 'Products',
+          items: [
+            { name: 'Venture Builder', desc: 'Building digital companies and products internally as a project-building platform.' },
+            { name: 'Product Portfolio', desc: 'Developing and managing a portfolio of scalable products.' },
+          ],
+        },
+        {
+          group: 'Research & Development',
+          items: [
+            { name: 'Advanced Research', desc: 'Researching long-term advanced technologies and issues.' },
+            { name: 'Commercialization', desc: 'Transforming research results into customized products and monitoring market demand.' },
+          ],
+        },
       ],
-      services: [
-        {
-          title: 'Advise',
-          body: 'Digital Transformation: We guide ministries and enterprises through AI adoption, modernization roadmaps, and complex tender preparations. We help you scope the real problem, write the brief, and choose the right path forward even when that means advising where AI isn\'t the right solution.',
-        },
-        {
-          title: 'Build',
-          body: 'Custom Software & AI: We deliver greenfield solutions, from high-performance web platforms and cross-platform mobile applications to custom machine-learning models. Your models are trained on your data, deployed in your environment, and owned by you.',
-        },
-        {
-          title: 'Augment',
-          body: 'AI Integration: We modernize and inject AI and automation into your existing operational workflows. By integrating leading models directly into the systems your team already uses, we engineer out the manual toil without requiring expensive, disruptive rebuilds.',
-        },
-        {
-          title: 'Oman AI Studio',
-          body: 'The single largest expression of our mandate. We proudly operate the Oman AI Studio on behalf of the Ministry of Transport, Communications and Information Technology (MTCIT). We manage the platforms, model deployments, and engineering infrastructure that power Oman\'s national AI capability.',
-        },
-        {
-          title: 'Data Sovereignty',
-          body: 'We design hybrid and localized cloud architectures that strictly adhere to data residency laws. Whether hosted in-country for Oman-based buyers or scaled internationally for pan-GCC enterprises, your data stays exactly where regulation dictates.',
-        },
+      valueProposition: [
+        'Systems that withstand rigorous scrutiny',
+        'Rapid delivery without compromising institutional stability',
+        'Locally engineered national infrastructure that respects digital data residency laws',
+        'A cumulative technical advantage from R&D that puts clients at the frontier of what is possible',
+      ],
+      referenceWorks: [
+        'Oman AI Studio — the National AI Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology',
+        'NCSI API — National Center for Statistics and Information',
+        '.nxt Platforms: SPACES, GIG, and Jadeer',
+        'Platforms for the Ministry of Social Development: Child Care, CSR, and AI analytical tools',
+        'Products: Second Brain, Qimmah, Q-AI, Planning & Strategy',
+        'R&D: Noor AI and Data Platform; AI-assisted quantum algorithms; Arabic LLM tokenization; AI for chemistry',
+      ],
+      numbers: [
+        { value: '18', label: 'Government entities served' },
+        { value: '33', label: 'AI solutions' },
+        { value: '7', label: 'Startups in the ecosystem' },
+        { value: '20+', label: 'Partners' },
+      ],
+      clients: [
+        'North Al Batinah Governorate',
+        'Ministry of Transport, Communications and Information Technology',
+        'Ministry of Social Development',
+        'National Center for Statistics and Information',
+        'Dar Al Tathmeen Real Estate Valuation Company',
+        'Al Anqa (Phoenix) Innovation Company',
+        'Nashed Company',
       ],
       contact: {
         email: 'systems@awj.om',
         phone: '+968 7222 5178',
-        location: 'Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman, aligned with standard Muscat working hours (Sunday to Thursday).',
+        location: 'Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman',
       },
     },
     ar: {
       websiteUrl: 'https://systems.awj.om/',
-      aboutTitle: 'تميّز هندسي للمؤسسات التي لا تحتمل الخطأ.',
-      about: [
-        'أوج الأنظمة هي الذراع المتخصصة في الذكاء الاصطناعي وهندسة البرمجيات لمجموعة أوج. ومقرها مسقط، نشارك الجهات الحكومية والمؤسسات الكبرى والشركات سريعة النمو في عُمان ودول الخليج في تقديم تقنية تعمل بكفاءة من اليوم الأول, وتتوسّع بأمان نحو المستقبل.',
-        'نحمل غاية أوج الأساسية إلى العالم الرقمي: جعل الابتكار ذا معنى. نبني المحركات الرقمية التي تدفع عملاءنا نحو أهدافهم الأكثر طموحاً, برمجيات تُسرّع النمو وتصمد أمام التدقيق الصارم، وذكاء اصطناعي يحلّ اختناقات تشغيلية فعلية، وبنية تحتية بحجم وطني هندستها محلياً بأيدي الذين يعتمدون عليها.',
-        'أكبر تجسيد لهذا التكليف هو استوديو عُمان للذكاء الاصطناعي، الذي تُشغّله أوج الأنظمة نيابةً عن وزارة النقل والاتصالات وتقنية المعلومات. تشمل محفظتنا تطبيقات حرجة لوزارة التنمية الاجتماعية والمركز الوطني للإحصاء والمعلومات ومؤسسات رائدة مثل مجموعة نماء.',
-      ],
-      services: [
-        { title: 'الاستشارة', body: 'توجيه التحول الرقمي للوزارات والمؤسسات. تبنّي الذكاء الاصطناعي، خرائط التحديث، وإعداد العطاءات المعقّدة. نساعدك على تحديد المشكلة الحقيقية وكتابة الموجز واختيار المسار الصحيح, حتى لو كان ذلك يعني الإشارة إلى أن الذكاء الاصطناعي ليس هو الحل.' },
-        { title: 'البناء', body: 'برمجيات مُخصّصة وذكاء اصطناعي إنتاجي. حلول من الصفر تمتد من منصّات الويب عالية الأداء إلى تطبيقات الموبايل متعددة المنصات إلى نماذج تعلّم آلي مُخصّصة. نماذجك مُدرَّبة على بياناتك، منشورة في بيئتك، ومملوكة لك.' },
-        { title: 'التعزيز', body: 'دمج الذكاء الاصطناعي في سير العمل التشغيلي القائم. نُدمج النماذج الرائدة مباشرةً في الأنظمة التي يستخدمها فريقك بالفعل، فنُلغي العمل اليدوي دون الحاجة إلى إعادة بناء مكلفة ومُربكة.' },
-        { title: 'سحابة هجينة ومحلية', body: 'نُصمّم بنى سحابية هجينة ومحلية تلتزم بصرامة بقوانين إقامة البيانات. سواء كانت مستضافة داخلياً للعملاء العُمانيين أو موسّعة دولياً لمؤسسات الخليج، تبقى بياناتك حيث ينصّ التنظيم.' },
+      definition:
+        'نصمم ونطوّر ونُكامل الأنظمة البرمجية وحلول الذكاء الاصطناعي الجاهزة للإنتاج لصالح الجهات الحكومية والمؤسسات الكبرى في عُمان ودول الخليج، ونعمل عبر ثلاثة محاور: المشاريع، والمنتجات، والبحث والتطوير.',
+      coreServices: [
+        {
+          items: [
+            { name: 'الاستشارة', desc: 'توجيه التحول الرقمي وخرائط التحديث وإعداد العطاءات المعقّدة.' },
+            { name: 'البناء', desc: 'حلول من الصفر: منصّات ويب عالية الأداء وتطبيقات ونماذج ذكاء اصطناعي مملوكة للعميل.' },
+            { name: 'التعزيز', desc: 'دمج الذكاء الاصطناعي والأتمتة في الأنظمة القائمة وعقود الصيانة السنوية.' },
+            { name: 'المنتجات والبحث والتطوير', desc: 'بناء منتجات رقمية قابلة للتوسّع والبحث في التقنيات المتقدمة طويلة المدى.' },
+          ],
+        },
       ],
       contact: {
         email: 'systems@awj.om',

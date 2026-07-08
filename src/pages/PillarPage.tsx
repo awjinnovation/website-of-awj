@@ -21,16 +21,23 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
 
   if (!pillar || !content) return null;
 
-  const heroStyle: CSSProperties = {
+  const pillarStyle: CSSProperties = {
     ['--pillar-accent' as string]: pillar.accent,
     ['--pillar-deep' as string]: pillar.deep,
   };
+
+  const fullName = t(`pillar.${pillarId}.fullName` as TranslationKey);
 
   return (
     <>
       <Cursor />
       <NavPill />
-      <main className="pillar-page" style={heroStyle}>
+      <main
+        className={`pillar-page${lang === 'ar' ? ' pillar-page--rtl' : ''}`}
+        style={pillarStyle}
+        data-pillar={pillar.id}
+      >
+        {/* ===== Hero: definition ===== */}
         <section className="pillar-hero" data-pillar={pillar.id}>
           <div className="pillar-hero-mesh" />
           <div className="container">
@@ -54,57 +61,114 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 pillarId={pillar.id}
                 variant="onDark"
                 className="pillar-hero-logo"
-                ariaLabel={t(`pillar.${pillarId}.fullName` as TranslationKey)}
+                ariaLabel={fullName}
               />
             </h1>
-            <p className="pillar-hero-lede">{content.aboutTitle}</p>
+            <p className="pillar-hero-lede">{content.definition}</p>
+          </div>
+        </section>
 
-            {content.contact.email && (
-              <div className="pillar-hero-cta-row">
-                <a className="pillar-cta-secondary" href={`mailto:${content.contact.email}`}>
-                  {content.contact.email}
-                </a>
+        {/* ===== Numbers & Impact ===== */}
+        {(content.numbers?.length || content.impactNotes?.length) && (
+          <section className="pillar-section pillar-numbers reveal">
+            <div className="container">
+              <div className="pillar-section-head">
+                <div className="eyebrow">{t('pillarPage.numbers')}</div>
               </div>
-            )}
-          </div>
-        </section>
-
-        <section className="pillar-section pillar-about reveal">
-          <div className="container">
-            <div className="pillar-section-head">
-              <div className="eyebrow">{t('pillarPage.about')}</div>
+              {content.numbers && content.numbers.length > 0 && (
+                <div className="pillar-num-grid reveal-stagger">
+                  {content.numbers.map((n) => (
+                    <div key={n.label} className="pillar-num-card">
+                      <div className="pillar-num-value">{n.value}</div>
+                      <div className="pillar-num-label">{n.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {content.impactNotes && content.impactNotes.length > 0 && (
+                <div className="pillar-impact-notes">
+                  {content.impactNotes.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="pillar-about-body">
-              {content.about.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
+        {/* ===== Core Services ===== */}
         <section className="pillar-section pillar-services reveal">
           <div className="container">
             <div className="pillar-section-head">
-              <div className="eyebrow">{t('pillarPage.whatWeDo')}</div>
+              <div className="eyebrow">{t('pillarPage.coreServices')}</div>
             </div>
-            <div className="pillar-service-grid reveal-stagger">
-              {content.services.map((s) => (
-                <div key={s.title} className="pillar-service-card">
-                  <h3 className="pillar-service-title">{s.title}</h3>
-                  <p className="pillar-service-body">{s.body}</p>
-                  {s.items && (
-                    <ul className="pillar-service-items">
-                      {s.items.map((it) => (
-                        <li key={it}>{it}</li>
-                      ))}
-                    </ul>
-                  )}
+            {content.coreServices.map((group, gi) => (
+              <div key={group.group ?? gi} className="pillar-service-group">
+                {group.group && <h3 className="pillar-group-title">{group.group}</h3>}
+                <div className="pillar-service-grid reveal-stagger">
+                  {group.items.map((it) => (
+                    <div key={it.name} className="pillar-service-card">
+                      <h4 className="pillar-service-title">{it.name}</h4>
+                      {it.desc && <p className="pillar-service-body">{it.desc}</p>}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </section>
 
+        {/* ===== Value Proposition ===== */}
+        {content.valueProposition && content.valueProposition.length > 0 && (
+          <section className="pillar-section pillar-value reveal">
+            <div className="container">
+              <div className="pillar-section-head">
+                <div className="eyebrow">{t('pillarPage.value')}</div>
+              </div>
+              <ul className="pillar-value-list reveal-stagger">
+                {content.valueProposition.map((v) => (
+                  <li key={v}>{v}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {/* ===== Reference Works / Projects ===== */}
+        {content.referenceWorks && content.referenceWorks.length > 0 && (
+          <section className="pillar-section pillar-works reveal">
+            <div className="container">
+              <div className="pillar-section-head">
+                <div className="eyebrow">{t('pillarPage.projects')}</div>
+              </div>
+              <ul className="pillar-works-list reveal-stagger">
+                {content.referenceWorks.map((w) => (
+                  <li key={w}>{w}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {/* ===== Clients & Partners ===== */}
+        {content.clients && content.clients.length > 0 && (
+          <section className="pillar-section pillar-clients reveal">
+            <div className="container">
+              <div className="pillar-section-head">
+                <div className="eyebrow">{t('pillarPage.clients')}</div>
+              </div>
+              <div className="pillar-clients-grid reveal-stagger">
+                {content.clients.map((c) => (
+                  <span key={c} className="pillar-client-chip">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ===== Contact ===== */}
         <section className="pillar-section pillar-contact reveal">
           <div className="container">
             <div className="pillar-section-head">
