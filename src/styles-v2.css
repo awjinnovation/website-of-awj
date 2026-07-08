@@ -2061,9 +2061,9 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 /* === CONTACT, multi-step wizard === */
 .contact {
   padding: 140px 0;
-  /* Fade the top edge to #05070b (blends into the news section) and the bottom
-     edge to --paper (blends into the light footer); ink through the middle. */
-  background: linear-gradient(180deg, #05070b 0, var(--ink) 90px, var(--ink) calc(100% - 90px), var(--paper) 100%);
+  /* Fade only the top edge to #05070b so it blends into the news section; the
+     rest stays ink, giving a clean edge against the light footer below. */
+  background: linear-gradient(180deg, #05070b 0, var(--ink) 90px);
   color: var(--paper);
   position: relative;
   overflow: hidden;
@@ -2142,7 +2142,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .wizard-summary .row .v { font-family: var(--font-display); font-size: 20px; font-weight: 400; text-transform: none; opacity: 1; }
 
 /* === FOOTER, animated marquee wordmark === */
-.footer { background: var(--paper); color: var(--ink); padding: 80px 0 30px; position: relative; overflow: hidden; }
+.footer { background: var(--paper); color: var(--ink); padding: 80px 0 30px; position: relative; overflow: hidden; border-top: 1px solid var(--line); }
 .footer-marquee {
   margin: 0 -40px 60px; padding: 30px 0; overflow: hidden;
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
