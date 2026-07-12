@@ -2463,6 +2463,64 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   max-width: 720px; font-size: 20px; line-height: 1.6;
   opacity: 0.82; margin-bottom: 0;
 }
+
+/* Hero is single-column by default; two columns when a visual is present. */
+.pillar-hero-grid { display: grid; grid-template-columns: 1fr; }
+.pillar-hero-grid.has-visual {
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+.pillar-hero-grid.has-visual .pillar-hero-lede { max-width: 560px; }
+.pillar-hero-content { min-width: 0; }
+.pillar-hero-visual {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pillar-hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 50%,
+    color-mix(in srgb, var(--pillar-accent) 40%, transparent), transparent 66%);
+  filter: blur(46px);
+  animation: pillar-hero-glow 7s ease-in-out infinite;
+}
+.pillar-hero-mark-wrap {
+  position: relative;
+  z-index: 1;
+  width: clamp(200px, 24vw, 320px);
+  animation: pillar-hero-float 6.5s ease-in-out 4s infinite;
+}
+/* AWJ mark draw-in (from the provided animation) */
+@keyframes awjOutline { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes awjFill { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+@keyframes pillar-hero-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.85; transform: scale(1.08); }
+}
+@keyframes pillar-hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@media (max-width: 900px) {
+  .pillar-hero-grid.has-visual { grid-template-columns: 1fr; gap: 8px; }
+  .pillar-hero-visual { display: none; }
+  .pillar-hero-grid.has-visual .pillar-hero-lede { max-width: 640px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pillar-hero-mark-wrap,
+  .pillar-hero-visual::before { animation: none !important; }
+  .awj-mark-anim path {
+    animation: none !important;
+    fill-opacity: 1 !important;
+    stroke: none !important;
+  }
+}
 .pillar-soon {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 40px;

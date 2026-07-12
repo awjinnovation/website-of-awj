@@ -19,6 +19,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react';
+import { AwjMarkAnimation } from '../components/AwjMarkAnimation';
 import { Cursor } from '../components/Cursor';
 import { PillarLogo } from '../components/PillarLogo';
 import { useReveal } from '../hooks/useReveal';
@@ -159,6 +160,8 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
   };
 
   const fullName = t(`pillar.${pillarId}.fullName` as TranslationKey);
+  // The animated AWJ mark visual is currently scoped to the academy hero.
+  const showMark = pillar.id === 'academy';
 
   return (
     <>
@@ -188,15 +191,27 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               </a>
             </div>
 
-            <h1 className="pillar-hero-title">
-              <PillarLogo
-                pillarId={pillar.id}
-                variant="onDark"
-                className="pillar-hero-logo"
-                ariaLabel={fullName}
-              />
-            </h1>
-            <p className="pillar-hero-lede">{content.definition}</p>
+            <div className={`pillar-hero-grid${showMark ? ' has-visual' : ''}`}>
+              <div className="pillar-hero-content">
+                <h1 className="pillar-hero-title">
+                  <PillarLogo
+                    pillarId={pillar.id}
+                    variant="onDark"
+                    className="pillar-hero-logo"
+                    ariaLabel={fullName}
+                  />
+                </h1>
+                <p className="pillar-hero-lede">{content.definition}</p>
+              </div>
+
+              {showMark && (
+                <div className="pillar-hero-visual" aria-hidden="true">
+                  <div className="pillar-hero-mark-wrap">
+                    <AwjMarkAnimation />
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
