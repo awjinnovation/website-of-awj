@@ -161,6 +161,9 @@ const en = {
   'contact.continue': 'Continue',
   'contact.send': 'Send enquiry',
   'contact.thanks': "Thanks, we'll be in touch.",
+  'contact.sending': 'Sending...',
+  'contact.error': 'Something went wrong. Please try again, or email info@awj.om directly.',
+  'contact.sent.body': "Your enquiry has been sent. We'll be in touch shortly.",
 
   // Footer
   'footer.brand.desc':

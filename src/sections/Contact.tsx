@@ -13,6 +13,10 @@ type FormData = {
 export const Contact = () => {
   const { t } = useLang();
   const [step, setStep] = useState(0);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  // Honeypot: real users never see or fill this; bots do.
+  const [botField, setBotField] = useState('');
   const [data, setData] = useState<FormData>({
     pillar: '',
     name: '',
@@ -22,6 +26,33 @@ export const Contact = () => {
   });
   const update = <K extends keyof FormData>(k: K, v: FormData[K]) =>
     setData((d) => ({ ...d, [k]: v }));
+
+  const reset = () =>
+    setData({ pillar: '', name: '', email: '', org: '', message: '' });
+
+  const submit = async () => {
+    setStatus('sending');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/send.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, company_website: botField }),
+      });
+      const json = await res.json().catch(() => ({ ok: res.ok }));
+      if (res.ok && json.ok) {
+        setStatus('sent');
+        reset();
+        setStep(0);
+      } else {
+        setStatus('error');
+        setErrorMsg(json.error || t('contact.error'));
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg(t('contact.error'));
+    }
+  };
 
   const pillarOpts = [
     { id: 'academy', label: t('contact.pillar.academy.label'), color: '#9674ce' },
@@ -122,70 +153,109 @@ export const Contact = () => {
         </div>
         <div className="reveal">
           <div className="wizard">
-            <div className="wizard-progress">
-              {steps.map((s, i) => (
-                <div
-                  key={s.title}
-                  className={`step ${i < step ? 'done' : ''} ${i === step ? 'active' : ''}`}
-                >
-                  <div className="fill"></div>
-                </div>
-              ))}
-              <div className="wizard-step-label">
-                {String(step + 1).padStart(2, '0')} /{' '}
-                {String(steps.length).padStart(2, '0')}
-              </div>
-            </div>
-            <h3>{steps[step].title}</h3>
-            {steps[step].body}
-            <div className="wizard-controls">
-              <button
-                className="wizard-back"
-                onClick={() => setStep((s) => Math.max(0, s - 1))}
-                disabled={step === 0}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M19 12H5M12 19l-7-7 7-7"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                {t('contact.back')}
-              </button>
-              <Magnetic strength={0.2}>
-                <button
-                  className="wizard-next"
-                  onClick={() => {
-                    if (step < steps.length - 1) setStep((s) => s + 1);
-                    else {
-                      alert(t('contact.thanks'));
-                      setStep(0);
-                      setData({
-                        pillar: '',
-                        name: '',
-                        email: '',
-                        org: '',
-                        message: '',
-                      });
-                    }
-                  }}
-                >
-                  {step < steps.length - 1 ? t('contact.continue') : t('contact.send')}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            {status === 'sent' ? (
+              <div className="wizard-sent">
+                <div className="wizard-sent-check" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
                     <path
-                      d="M5 12h14M13 5l7 7-7 7"
+                      d="M5 13l4 4L19 7"
                       stroke="currentColor"
-                      strokeWidth="1.8"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
+                </div>
+                <h3>{t('contact.thanks')}</h3>
+                <p>{t('contact.sent.body')}</p>
+                <button className="wizard-next" onClick={() => setStatus('idle')}>
+                  {t('contact.title')}
                 </button>
-              </Magnetic>
-            </div>
+              </div>
+            ) : (
+              <>
+                <div className="wizard-progress">
+                  {steps.map((s, i) => (
+                    <div
+                      key={s.title}
+                      className={`step ${i < step ? 'done' : ''} ${i === step ? 'active' : ''}`}
+                    >
+                      <div className="fill"></div>
+                    </div>
+                  ))}
+                  <div className="wizard-step-label">
+                    {String(step + 1).padStart(2, '0')} /{' '}
+                    {String(steps.length).padStart(2, '0')}
+                  </div>
+                </div>
+                <h3>{steps[step].title}</h3>
+                {steps[step].body}
+
+                {/* Honeypot — hidden from real users. */}
+                <input
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={botField}
+                  onChange={(e) => setBotField(e.target.value)}
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    width: 1,
+                    height: 1,
+                    opacity: 0,
+                  }}
+                />
+
+                {status === 'error' && <p className="wizard-error">{errorMsg}</p>}
+
+                <div className="wizard-controls">
+                  <button
+                    className="wizard-back"
+                    onClick={() => setStep((s) => Math.max(0, s - 1))}
+                    disabled={step === 0 || status === 'sending'}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M19 12H5M12 19l-7-7 7-7"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    {t('contact.back')}
+                  </button>
+                  <Magnetic strength={0.2}>
+                    <button
+                      className="wizard-next"
+                      disabled={status === 'sending'}
+                      onClick={() => {
+                        if (step < steps.length - 1) setStep((s) => s + 1);
+                        else submit();
+                      }}
+                    >
+                      {status === 'sending'
+                        ? t('contact.sending')
+                        : step < steps.length - 1
+                          ? t('contact.continue')
+                          : t('contact.send')}
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M5 12h14M13 5l7 7-7 7"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </Magnetic>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
