@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { useLang } from '../i18n/LangContext';
 
 type Project = {
@@ -225,7 +225,6 @@ export const Projects = () => {
               key={p.name}
               type="button"
               className={`project-tile ${p.size}${p.light ? ' p-light' : ''}`}
-              style={{ background: p.bgGrad }}
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
@@ -263,7 +262,7 @@ export const Projects = () => {
         <div className="project-modal" onClick={() => setOpen(null)}>
           <div className="pm-backdrop"></div>
           <div className="pm-card" onClick={(e) => e.stopPropagation()}>
-            <div className="pm-cover" style={{ background: PROJECTS[open].bgGrad }}>
+            <div className="pm-cover" style={{ ['--pm-grad']: PROJECTS[open].bgGrad } as CSSProperties}>
               <img src={PROJECTS[open].icon} className="pm-cover-icon" alt="" aria-hidden="true" />
               <div className="pm-cover-num">PROJECT / 0{open + 1}</div>
               <div className="pm-cover-pillar">
