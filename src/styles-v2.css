@@ -951,6 +951,17 @@ button, input, select, textarea { font-family: inherit; }
 .hero-v3 .reveal-up.in {
   animation: hero-reveal 0.9s var(--ease-luxe) forwards;
 }
+/* Hero reveal stagger (moved off inline animation-delay). Placed after the
+   .reveal-up.in shorthand, which resets animation-delay to 0, so these win. */
+.hero-v3 .hero-headline .line:nth-child(1) { animation-delay: 0.10s; }
+.hero-v3 .hero-headline .line:nth-child(2) { animation-delay: 0.20s; }
+.hero-v3 .hero-headline .line:nth-child(3) { animation-delay: 0.30s; }
+.hero-v3 .hero-lede.reveal-up { animation-delay: 0.45s; }
+.hero-v3 .hero-ctas.reveal-up { animation-delay: 0.55s; }
+.hero-v3 .chips-row .chip-logo:nth-child(1) { animation-delay: 0.60s; }
+.hero-v3 .chips-row .chip-logo:nth-child(2) { animation-delay: 0.68s; }
+.hero-v3 .chips-row .chip-logo:nth-child(3) { animation-delay: 0.76s; }
+.hero-v3 .chips-row .chip-logo:nth-child(4) { animation-delay: 0.84s; }
 @keyframes hero-reveal {
   to { opacity: 1; transform: translateY(0); }
 }

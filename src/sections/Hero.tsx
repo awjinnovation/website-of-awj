@@ -18,20 +18,12 @@ export const Hero = () => {
             {t('hero.eyebrow')}
           </div>
           <h1 className="hero-headline">
-            <span className="line reveal-up" style={{ animationDelay: '0.1s' }}>
-              {t('hero.title.line1')}
-            </span>
-            <span className="line reveal-up" style={{ animationDelay: '0.2s' }}>
-              {t('hero.title.line2')}
-            </span>
-            <span className="line reveal-up ital" style={{ animationDelay: '0.3s' }}>
-              {t('hero.title.line3')}
-            </span>
+            <span className="line reveal-up">{t('hero.title.line1')}</span>
+            <span className="line reveal-up">{t('hero.title.line2')}</span>
+            <span className="line reveal-up ital">{t('hero.title.line3')}</span>
           </h1>
-          <p className="hero-lede reveal-up" style={{ animationDelay: '0.45s' }}>
-            {t('hero.lede')}
-          </p>
-          <div className="hero-ctas reveal-up" style={{ animationDelay: '0.55s' }}>
+          <p className="hero-lede reveal-up">{t('hero.lede')}</p>
+          <div className="hero-ctas reveal-up">
             <Magnetic strength={0.3}>
               <a href="#contact" className="hero-cta-primary">
                 {t('hero.cta.primary')}
@@ -84,12 +76,11 @@ export const Hero = () => {
           <div className="hero-pillar-chips">
             <div className="chips-label">{t('hero.chips.label')}</div>
             <div className="chips-row">
-              {PILLARS.map((p, i) => (
+              {PILLARS.map((p) => (
                 <a
                   key={p.id}
                   href={'#' + p.id}
                   className="chip chip-logo reveal-up"
-                  style={{ animationDelay: `${0.6 + i * 0.08}s` }}
                 >
                   <PillarLogo
                     pillarId={p.id}
