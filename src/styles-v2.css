@@ -2559,7 +2559,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   position: absolute;
   top: -118px;
   bottom: -56px;
-  right: 0;
+  right: -64px;
   width: auto;
   margin: 0;
   animation: none; /* no up/down float */
