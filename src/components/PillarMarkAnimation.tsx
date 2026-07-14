@@ -1,4 +1,4 @@
-import { useMemo, type CSSProperties } from 'react';
+import { useMemo } from 'react';
 import type { PillarId } from '../data/pillars';
 
 import academyIcon from '../../public/assets/brand/awj-academy-icon.svg?raw';
@@ -18,11 +18,6 @@ const ICON_RAW: Record<PillarId, string> = {
   innovation: innovationIcon,
   systems: systemsIcon,
 };
-
-const SPEED = 1;
-const DRAW = 2.2 / SPEED; // outline draw time per piece
-const FILL = 0.9 / SPEED; // fill fade time
-const STEP = 0.55 / SPEED; // stagger between pieces
 
 type Parsed = { viewBox: string; strokeWidth: number; paths: { d: string; fill: string }[] };
 
@@ -67,7 +62,6 @@ export const PillarMarkAnimation = ({
     <svg
       className={`awj-mark-anim${className ? ' ' + className : ''}`}
       viewBox={viewBox}
-      style={{ width: '100%', height: 'auto', overflow: 'visible', display: 'block' }}
       aria-hidden="true"
     >
       {paths.map((p, i) => (
@@ -75,19 +69,9 @@ export const PillarMarkAnimation = ({
           key={i}
           d={p.d}
           fill={p.fill}
-          fillOpacity={0}
           pathLength={1}
           stroke={p.fill}
           strokeWidth={strokeWidth}
-          style={
-            {
-              strokeDasharray: 1,
-              strokeDashoffset: 1,
-              animation:
-                `awjOutline ${DRAW}s cubic-bezier(.45,.1,.35,.95) ${i * STEP}s forwards, ` +
-                `awjFill ${FILL}s ease ${i * STEP + DRAW * 0.85}s forwards`,
-            } as CSSProperties
-          }
         />
       ))}
     </svg>

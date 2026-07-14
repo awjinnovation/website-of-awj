@@ -35,7 +35,7 @@ const STRANDS: Strand[] = [
 
 export const AwjMarkAnimation = ({ className }: { className?: string }) => (
   <svg
-    className={`awj-mark-anim${className ? ' ' + className : ''}`}
+    className={`academy-mark${className ? ' ' + className : ''}`}
     viewBox="78 0 258.45 431.9"
     aria-hidden="true"
   >
