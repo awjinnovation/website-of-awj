@@ -19,7 +19,7 @@ export const Services = () => {
       <div className="container">
         <div className="services-head reveal">
           <div>
-            <h2 className="section-title" style={{ marginTop: 0 }}>
+            <h2 className="section-title">
               {t('services.title')}
             </h2>
           </div>
@@ -30,9 +30,9 @@ export const Services = () => {
             <div>
               <div className="title">
                 {t('services.b1.title.line1')}{' '}
-                <span style={{ fontWeight: 800 }}>{t('services.b1.title.line2')}</span>
+                <span className="bento-title-strong">{t('services.b1.title.line2')}</span>
               </div>
-              <p className="body" style={{ marginTop: 18 }}>
+              <p className="body">
                 {t('services.b1.body')}
               </p>
             </div>
