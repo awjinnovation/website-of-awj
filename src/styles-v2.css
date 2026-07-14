@@ -379,6 +379,15 @@ button, input, select, textarea { font-family: inherit; }
 }
 .nav-mobile-pillar .pdl-awj { font-weight: 800; }
 .nav-mobile-pillar .pdl-name { font-weight: 300; opacity: 0.85; }
+/* Per-pillar accent for the nav pillar links (replaces inline --accent). */
+.pillars-panel-chip[data-pillar="academy"],
+.nav-mobile-pillar[data-pillar="academy"] { --accent: var(--academy); }
+.pillars-panel-chip[data-pillar="sustain"],
+.nav-mobile-pillar[data-pillar="sustain"] { --accent: var(--sustain); }
+.pillars-panel-chip[data-pillar="innovation"],
+.nav-mobile-pillar[data-pillar="innovation"] { --accent: var(--innovation); }
+.pillars-panel-chip[data-pillar="systems"],
+.nav-mobile-pillar[data-pillar="systems"] { --accent: var(--systems); }
 
 .nav-mobile-cta {
   margin-top: 14px;

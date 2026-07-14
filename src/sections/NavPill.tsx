@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent as ReactMouseEvent } from 'react';
+import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { PillarLogo } from '../components/PillarLogo';
 import { PILLARS } from '../data/pillars';
@@ -146,13 +146,12 @@ export const NavPill = () => {
 
             <div className="pillars-panel" role="menu">
               {PILLARS.map((p) => {
-                const style: CSSProperties = { ['--accent' as string]: p.accent };
                 return (
                   <a
                     key={p.id}
                     href={`/pillars/${p.id}`}
                     className="chip chip-logo pillars-panel-chip"
-                    style={style}
+                    data-pillar={p.id}
                     role="menuitem"
                     aria-label={`AWJ ${p.name}`}
                   >
@@ -214,13 +213,12 @@ export const NavPill = () => {
               <div className="nav-mobile-group">
                 <div className="nav-mobile-group-label">{t('nav.pillars')}</div>
                 {PILLARS.map((p) => {
-                  const style: CSSProperties = { ['--accent' as string]: p.accent };
                   return (
                     <a
                       key={p.id}
                       href={`/pillars/${p.id}`}
                       className="nav-mobile-pillar"
-                      style={style}
+                      data-pillar={p.id}
                       onClick={closeMobile}
                     >
                       <span className="pdl-dot" aria-hidden="true" />
