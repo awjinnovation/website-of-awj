@@ -4,7 +4,7 @@ import { Footer } from '../sections/Footer';
 import { TimelineSection } from '../sections/TimelineSection';
 import { AdvantagesValuesSection } from '../sections/AdvantagesValuesSection';
 import { type PillarId } from '../data/pillars';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 type TeamMember = {
   name: string;
@@ -125,7 +125,7 @@ export const AboutPage = () => {
                 <h3 className="team-group-title">Pillars Leaders</h3>
                 <div className="team-grid team-grid-leaders">
                   {BUSINESS_UNIT_LEADERS.map((member) => (
-                    <div key={member.name} className={`team-card team-card-accent team-card-${member.pillarId}`} style={{ '--accent': member.accentColor } as React.CSSProperties}>
+                    <div key={member.name} className={`team-card team-card-accent team-card-${member.pillarId}`}>
                       <div className="team-image">
                         <img src={member.image} alt={member.name} />
                       </div>

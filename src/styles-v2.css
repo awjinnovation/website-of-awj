@@ -4370,6 +4370,11 @@ main:has([data-pillar="systems"]) .pillar-service-body {
     radial-gradient(ellipse 50% 50% at 20% 80%, #0069c859 0%, transparent 70%),
     #fff;
 }
+/* Team-card accent per pillar (replaces the inline --accent). */
+.team-card-academy    { --accent: var(--academy); }
+.team-card-sustain    { --accent: var(--sustain); }
+.team-card-innovation { --accent: var(--innovation); }
+.team-card-systems    { --accent: var(--systems); }
 
 .pillar-logo-wrapper {
   position: absolute;
