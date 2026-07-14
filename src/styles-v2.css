@@ -2542,11 +2542,27 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
    made it 500px+ tall) and nudged into the bottom-right corner so it reads as a
    decorative angle bleeding off the hero. */
 .awj-mark-anim {
-  /* height: clamp(345px, 35vw, 597px); */
+  height: 100%;
   width: auto;
   overflow: visible;
   display: block;
-  transform: translate(89%, 13%);
+}
+/* Academy: enlarge the mark to span the full hero height, anchored to the
+   right. It breaks out of the centred grid cell and stretches from the
+   section's top edge to its bottom edge. The negative top/bottom cancel the
+   hero's 118px/56px padding; the visual only shows above 900px, where that
+   padding applies. `position: static` on the visual makes the container (not
+   the visual cell) the mark's positioning context. */
+.pillar-hero[data-pillar="academy"] .pillar-hero-visual { position: static; }
+.pillar-hero[data-pillar="academy"] .pillar-hero-visual::before { display: none; }
+.pillar-hero[data-pillar="academy"] .pillar-hero-mark-wrap {
+  position: absolute;
+  top: -118px;
+  bottom: -56px;
+  right: 0;
+  width: auto;
+  margin: 0;
+  animation: none; /* no up/down float */
 }
 /* Strands 1–3 (outer ribbon, inner ribbon, triangle) loop a "trace outline →
    fill → hold → erase" cycle forever. All three share one keyframe on a fixed
