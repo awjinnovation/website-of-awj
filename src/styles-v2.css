@@ -2132,6 +2132,10 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .wizard-option:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 .wizard-option.selected { background: rgba(255,255,255,0.18); border-color: var(--paper); }
 .wizard-option .swatch { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.wizard-option .swatch[data-pillar="academy"]    { background: var(--academy); }
+.wizard-option .swatch[data-pillar="sustain"]    { background: var(--sustain); }
+.wizard-option .swatch[data-pillar="innovation"] { background: var(--innovation); }
+.wizard-option .swatch[data-pillar="systems"]    { background: var(--systems); }
 .wizard-option .label { font-family: var(--font-display); font-weight: 500; font-size: 20px; }
 .wizard-option .sub { font-size: 20px; opacity: 0.7; margin-top: 2px; font-weight: 300; }
 

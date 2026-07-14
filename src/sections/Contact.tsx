@@ -55,10 +55,10 @@ export const Contact = () => {
   };
 
   const pillarOpts = [
-    { id: 'academy', label: t('contact.pillar.academy.label'), color: '#9674ce' },
-    { id: 'sustain', label: t('contact.pillar.sustain.label'), color: '#00a19d' },
-    { id: 'innovation', label: t('contact.pillar.innovation.label'), color: '#ff6b00' },
-    { id: 'systems', label: t('contact.pillar.systems.label'), color: '#0069c8' },
+    { id: 'academy', label: t('contact.pillar.academy.label') },
+    { id: 'sustain', label: t('contact.pillar.sustain.label') },
+    { id: 'innovation', label: t('contact.pillar.innovation.label') },
+    { id: 'systems', label: t('contact.pillar.systems.label') },
   ];
   const steps: { title: string; body: ReactNode }[] = [
     {
@@ -74,7 +74,7 @@ export const Contact = () => {
                 setTimeout(() => setStep(1), 180);
               }}
             >
-              <span className="swatch" style={{ background: p.color }}></span>
+              <span className="swatch" data-pillar={p.id}></span>
               <span>
                 <div className="label">{p.label}</div>
               </span>
