@@ -2510,10 +2510,10 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 .pillar-hero-mesh {
   position: absolute; inset: -20%; pointer-events: none;
   background:
-    radial-gradient(80% 75% at 12% 12%,
-      color-mix(in srgb, var(--pillar-accent) 30%, transparent), transparent 82%),
-    radial-gradient(85% 80% at 88% 82%,
-      color-mix(in srgb, var(--pillar-deep) 30%, transparent), transparent 84%);
+    radial-gradient(128% 75% at 12% 12%,
+      color-mix(in srgb, var(--pillar-accent) 51%, transparent), transparent 86%),
+    radial-gradient(104% 93% at 152% 111%,
+      color-mix(in srgb, var(--pillar-deep) 69%, transparent), transparent 84%);
   filter: blur(60px);
   opacity: 0.8;
 }
