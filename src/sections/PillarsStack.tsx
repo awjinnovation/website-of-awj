@@ -166,13 +166,13 @@ export const PillarsStack = () => {
     <section className="pillars-stack" id="pillars" data-screen-label="03 Pillars">
       <div className="container pillars-stack-layout">
         <div className="pillars-stack-head reveal">
-          <h2 className="section-title" style={{ marginTop: 0 }}>
+          <h2 className="section-title">
             {lang === 'ar' ? (
               // Arabic: plain "قطاعات أوج" heading, no AWJ logo.
-              <>{t('pillars.title.first')} <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em></>
+              <>{t('pillars.title.first')} <em>{t('pillars.title.second')}</em></>
             ) : (
               <>
-                <img src="/assets/brand/awj-logo-v.svg" alt="AWJ" className="section-awj-logo" /> <em style={{ fontWeight: 300 }}>{t('pillars.title.second')}</em>
+                <img src="/assets/brand/awj-logo-v.svg" alt="AWJ" className="section-awj-logo" /> <em>{t('pillars.title.second')}</em>
               </>
             )}
           </h2>

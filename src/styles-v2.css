@@ -1229,7 +1229,7 @@ button, input, select, textarea { font-family: inherit; }
   display: flex; flex-direction: column; gap: 28px;
 }
 .pillars-stack-head p { font-size: 24px; line-height: 1.6; max-width: 600px; opacity: 0.95; font-weight: 300; word-spacing: 0.05em; white-space: pre-line; }
-.pillars-stack-head .section-title { color: var(--paper); font-weight: 700; font-family: var(--font-display); }
+.pillars-stack-head .section-title { margin-top: 0; color: var(--paper); font-weight: 700; font-family: var(--font-display); }
 .pillars-stack-head .section-title em { font-weight: 700 !important; }
 
 .pillars-stack-right {
