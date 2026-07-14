@@ -72,6 +72,20 @@ button, input, select, textarea { font-family: inherit; }
 ::selection { background: var(--ink); color: var(--paper); }
 
 .container { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 40px; }
+/* Error-boundary fallback and 404 page. */
+.app-error {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; text-align: center; padding: 40px 24px;
+  background: var(--ink); color: var(--paper); font-family: var(--font-body);
+}
+.app-error h1 { font-size: clamp(28px, 5vw, 44px); margin: 0; }
+.app-error p { font-size: 18px; opacity: 0.8; margin: 0; max-width: 460px; }
+.app-error a, .app-error button {
+  margin-top: 8px; padding: 12px 26px; border-radius: 999px;
+  background: var(--paper); color: var(--ink); border: 0; cursor: pointer;
+  font: inherit; font-weight: 600; text-decoration: none;
+}
 @media (max-width: 720px) { .container { padding: 0 22px; } }
 
 /* AWJ wordmark utility - uses Magnetik logo font (designed by brand) */

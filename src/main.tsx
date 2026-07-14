@@ -4,6 +4,8 @@ import { App } from './App';
 import { AboutPage } from './pages/AboutPage';
 import { NewsPage } from './pages/NewsPage';
 import { PillarPage } from './pages/PillarPage';
+import { NotFound } from './pages/NotFound';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { isPillarId, type PillarId } from './data/pillars';
 import { LangProvider } from './i18n/LangContext';
 import './styles-v2.css';
@@ -31,16 +33,19 @@ const Router = () => {
   if (isNewsPath(path)) return <NewsPage />;
   const pillarId = matchPillarPath(path);
   if (pillarId) return <PillarPage pillarId={pillarId} />;
-  return <App />;
+  if (path === '/' || path === '/index.html') return <App />;
+  return <NotFound />;
 };
 
 const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('Missing #root element');
 
 createRoot(rootEl).render(
-  <StrictMode> 
-    <LangProvider>
-      <Router />
-    </LangProvider>
+  <StrictMode>
+    <ErrorBoundary>
+      <LangProvider>
+        <Router />
+      </LangProvider>
+    </ErrorBoundary>
   </StrictMode>,
 );
