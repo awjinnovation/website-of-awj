@@ -86,7 +86,7 @@ export const Contact = () => {
     {
       title: t('contact.step3'),
       body: (
-        <div style={{ display: 'grid', gap: 8 }}>
+        <div className="wizard-fields">
           <input
             placeholder={t('contact.field.name')}
             value={data.name}
@@ -142,7 +142,7 @@ export const Contact = () => {
     <section className="contact" id="contact" data-screen-label="10 Contact">
       <div className="container contact-grid">
         <div className="reveal">
-          <h2 style={{ marginTop: 24 }}>{t('contact.title')}</h2>
+          <h2 className="contact-title">{t('contact.title')}</h2>
           <p className="lede">{t('contact.lede')}</p>
           <div className="contact-direct">
             <span className="contact-direct-label">{t('contact.callUs')}</span>
@@ -191,22 +191,16 @@ export const Contact = () => {
                 <h3>{steps[step].title}</h3>
                 {steps[step].body}
 
-                {/* Honeypot — hidden from real users. */}
+                {/* Honeypot - hidden from real users. */}
                 <input
                   type="text"
                   name="company_website"
+                  className="honeypot"
                   tabIndex={-1}
                   autoComplete="off"
                   value={botField}
                   onChange={(e) => setBotField(e.target.value)}
                   aria-hidden="true"
-                  style={{
-                    position: 'absolute',
-                    left: '-9999px',
-                    width: 1,
-                    height: 1,
-                    opacity: 0,
-                  }}
                 />
 
                 {status === 'error' && <p className="wizard-error">{errorMsg}</p>}
