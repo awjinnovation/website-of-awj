@@ -2429,6 +2429,11 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   color: var(--paper);
   overflow: hidden;
 }
+/* Per-pillar accent tokens (replaces the inline pillarStyle on <main>). */
+.pillar-page[data-pillar="academy"]    { --pillar-accent: var(--academy);    --pillar-deep: var(--academy-deep); }
+.pillar-page[data-pillar="sustain"]    { --pillar-accent: var(--sustain);    --pillar-deep: var(--sustain-deep); }
+.pillar-page[data-pillar="innovation"] { --pillar-accent: var(--innovation); --pillar-deep: var(--innovation-deep); }
+.pillar-page[data-pillar="systems"]    { --pillar-accent: var(--systems);    --pillar-deep: var(--systems-deep); }
 .pillar-page::before {
   content: '';
   position: absolute;

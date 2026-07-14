@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Award,
   Database,
@@ -155,11 +155,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
 
   if (!pillar || !content) return null;
 
-  const pillarStyle: CSSProperties = {
-    ['--pillar-accent' as string]: pillar.accent,
-    ['--pillar-deep' as string]: pillar.deep,
-  };
-
   const fullName = t(`pillar.${pillarId}.fullName` as TranslationKey);
 
   return (
@@ -168,7 +163,6 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
       <NavPill />
       <main
         className={`pillar-page${lang === 'ar' ? ' pillar-page--rtl' : ''}`}
-        style={pillarStyle}
         data-pillar={pillar.id}
       >
         {/* ===== Hero: definition ===== */}
