@@ -1266,11 +1266,18 @@ button, input, select, textarea { font-family: inherit; }
   border-radius: 28px;
   display: flex; flex-direction: column;
   color: var(--paper); cursor: grab; user-select: none;
-  transition: transform 0.7s var(--ease-luxe), opacity 0.6s ease, box-shadow 0.6s ease;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   will-change: transform;
   box-shadow: 0 50px 100px -30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.18);
   overflow: hidden;
 }
+/* Card position states (moved off the inline cardOffset). The active card's
+   drag nudge is the only runtime value, passed in as --drag-x. */
+.stack-card[data-dragging="true"] { transition: none; }
+.stack-card[data-pos="0"] { transform: translateX(calc(-50% + var(--drag-x, 0px))) translateZ(0) rotateY(0deg) scale(1); opacity: 1; z-index: 4; }
+.stack-card[data-pos="1"] { transform: translateX(-50%) translateX(60px) translateZ(-120px) rotateY(-12deg) scale(0.92); opacity: 0.7; z-index: 3; }
+.stack-card[data-pos="2"] { transform: translateX(-50%) translateX(120px) translateZ(-220px) rotateY(-18deg) scale(0.84); opacity: 0.4; z-index: 2; }
+.stack-card[data-pos="3"] { transform: translateX(-50%) translateX(-80px) translateZ(-300px) rotateY(8deg) scale(0.8); opacity: 0.25; z-index: 1; }
 .card-asset {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
 }

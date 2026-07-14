@@ -101,42 +101,10 @@ export const PillarsStack = () => {
     return () => window.removeEventListener('pointerup', handleWindowPointerUp);
   }, [total]);
 
-  const cardOffset = (i: number): CSSProperties => {
-    const d = (i - idx + total) % total;
-    const offset = d === 0 ? dragOffset * 0.3 : 0;
-    const transition = dragOffset === 0 ? 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)' : 'none';
-
-    if (d === 0)
-      return {
-        transform: `translateX(calc(-50% + ${offset}px)) translateZ(0) rotateY(0deg) scale(1)`,
-        opacity: 1,
-        zIndex: 4,
-        transition,
-      };
-    if (d === 1)
-      return {
-        transform:
-          `translateX(-50%) translateX(60px) translateZ(-120px) rotateY(-12deg) scale(0.92)`,
-        opacity: 0.7,
-        zIndex: 3,
-        transition,
-      };
-    if (d === 2)
-      return {
-        transform:
-          `translateX(-50%) translateX(120px) translateZ(-220px) rotateY(-18deg) scale(0.84)`,
-        opacity: 0.4,
-        zIndex: 2,
-        transition,
-      };
-    return {
-      transform:
-        `translateX(-50%) translateX(-80px) translateZ(-300px) rotateY(8deg) scale(0.8)`,
-      opacity: 0.25,
-      zIndex: 1,
-      transition,
-    };
-  };
+  // Each card's position state (0 = active, 1/2 = fanned back, 3 = behind).
+  // The transforms live in CSS keyed on data-pos; only the active card's drag
+  // nudge is dynamic, passed as the --drag-x custom property.
+  const cardPos = (i: number) => (i - idx + total) % total;
 
   const dragRef = useRef({ x: 0, dragging: false });
   const onPointerDown = (e: React.PointerEvent) => {
@@ -187,7 +155,17 @@ export const PillarsStack = () => {
             onPointerLeave={onPointerLeave}
           >
             {PILLAR_DATA.map((p, i) => (
-              <div key={p.id} className={`stack-card ${p.cls}`} style={cardOffset(i)}>
+              <div
+                key={p.id}
+                className={`stack-card ${p.cls}`}
+                data-pos={cardPos(i)}
+                data-dragging={dragOffset !== 0}
+                style={
+                  cardPos(i) === 0
+                    ? ({ ['--drag-x']: `${dragOffset * 0.3}px` } as CSSProperties)
+                    : undefined
+                }
+              >
                 <img src={p.asset} alt="" aria-hidden="true" className="card-asset" />
                 <div className="card-header">
                   <img src={p.icon} alt={`AWJ ${p.name}`} className="card-logo-img" />
