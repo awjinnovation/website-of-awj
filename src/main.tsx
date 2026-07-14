@@ -38,7 +38,7 @@ const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('Missing #root element');
 
 createRoot(rootEl).render(
-  <StrictMode>
+  <StrictMode> 
     <LangProvider>
       <Router />
     </LangProvider>
