@@ -6,7 +6,6 @@ import { NewsPage } from './pages/NewsPage';
 import { PillarPage } from './pages/PillarPage';
 import { isPillarId, type PillarId } from './data/pillars';
 import { LangProvider } from './i18n/LangContext';
-import './tailwind.css';
 import './styles-v2.css';
 import './news-page.css';
 
