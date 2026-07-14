@@ -3,42 +3,16 @@ import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
 
 type Row = {
-  color: string;
-  glow: string;
   end: number;
   suffix: string;
   labelKey: TranslationKey;
 };
 
 const STAT_ROWS: Row[] = [
-  {
-    color: '#0c0e14',
-    glow: 'rgba(12, 14, 20, 0.18)',
-    end: 50,
-    suffix: '',
-    labelKey: 'stats.projects.label',
-  },
-  {
-    color: '#0c0e14',
-    glow: 'rgba(12, 14, 20, 0.18)',
-    end: 7600,
-    suffix: '+',
-    labelKey: 'stats.professionals.label',
-  },
-  {
-    color: '#0c0e14',
-    glow: 'rgba(12, 14, 20, 0.18)',
-    end: 25,
-    suffix: '',
-    labelKey: 'stats.partners.label',
-  },
-  {
-    color: '#0c0e14',
-    glow: 'rgba(0, 105, 200, 0.18)',
-    end: 10,
-    suffix: '',
-    labelKey: 'stats.experience.label',
-  },
+  { end: 50, suffix: '', labelKey: 'stats.projects.label' },
+  { end: 7600, suffix: '+', labelKey: 'stats.professionals.label' },
+  { end: 25, suffix: '', labelKey: 'stats.partners.label' },
+  { end: 10, suffix: '', labelKey: 'stats.experience.label' },
 ];
 
 const useCounter = (end: number) => {
@@ -127,13 +101,7 @@ export const Stats = () => {
     <section className="stats-band" data-screen-label="02 Stats">
       <div className="stats-band-row container reveal-stagger">
         {STAT_ROWS.map((s) => (
-          <div
-            className="stat-col"
-            key={s.labelKey}
-            style={
-              { '--accent': s.color, '--accent-glow': s.glow } as React.CSSProperties
-            }
-          >
+          <div className="stat-col" key={s.labelKey}>
             <StatNum end={s.end} suffix={s.suffix} />
             <span className="stat-label">{t(s.labelKey)}</span>
           </div>

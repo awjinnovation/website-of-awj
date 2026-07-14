@@ -1124,6 +1124,10 @@ button, input, select, textarea { font-family: inherit; }
 }
 
 .stat-col {
+  /* Accent + glow (moved off inline styles; every row shares the ink accent,
+     only the last row's glow differs, see below). */
+  --accent: var(--ink);
+  --accent-glow: rgba(12, 14, 20, 0.18);
   position: relative;
   padding: 28px 28px 26px;
   display: flex; flex-direction: column-reverse; gap: 18px;
@@ -1137,6 +1141,7 @@ button, input, select, textarea { font-family: inherit; }
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.4s var(--ease-out), box-shadow 0.4s ease;
 }
+.stat-col:last-child { --accent-glow: rgba(0, 105, 200, 0.18); }
 .stat-col:hover {
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
