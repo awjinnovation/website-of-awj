@@ -2517,10 +2517,14 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   filter: blur(60px);
   opacity: 0.8;
 }
-/* Academy hero: the meeting-room photo as a faded, transparent backdrop.
-   Rendered as ::before so the accent mesh glow still layers over it, and it
-   melts into the page base (#0a1017) at the bottom so there is no hard seam. */
-.pillar-hero[data-pillar="academy"]::before {
+/* Pillar hero: a faded photo backdrop per pillar. Rendered as ::before so the
+   accent mesh glow still layers over it, and it melts into the page base
+   (#0a1017) at the bottom so there is no hard seam. The photo is set per pillar
+   via --hero-photo below. */
+.pillar-hero[data-pillar="academy"]::before,
+.pillar-hero[data-pillar="sustain"]::before,
+.pillar-hero[data-pillar="innovation"]::before,
+.pillar-hero[data-pillar="systems"]::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -2531,8 +2535,12 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
       rgba(10, 16, 23, 0.74) 0%,
       rgba(10, 16, 23, 0.82) 55%,
       #0a1017 100%),
-    url('/news-media/academy-hero.jpg') center / cover no-repeat;
+    var(--hero-photo) center / cover no-repeat;
 }
+.pillar-hero[data-pillar="academy"]    { --hero-photo: url('/news-media/academy-hero.jpg'); }
+.pillar-hero[data-pillar="sustain"]    { --hero-photo: url('/news-media/sustain-hero.jpg'); }
+.pillar-hero[data-pillar="innovation"] { --hero-photo: url('/news-media/innovation-hero.jpg'); }
+.pillar-hero[data-pillar="systems"]    { --hero-photo: url('/news-media/systems-hero.jpg'); }
 .pillar-hero .container { position: relative; z-index: 1; }
 .pillar-hero-top {
   display: flex; justify-content: space-between; align-items: center;
