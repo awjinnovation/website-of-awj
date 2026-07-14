@@ -213,10 +213,10 @@ export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
           <div className={cx('timeline-mobile')}>
             {/* Aurora Background Mobile */}
             <div className={cx('timeline-aurora-mobile')}>
-              <div className={cx('aurora-blob', 'aurora-blob-1')} style={{ width: '130vw', height: '130vw', left: '-10vw', top: '-20vw', filter: 'blur(80px)' }} />
-              <div className={cx('aurora-blob', 'aurora-blob-2')} style={{ width: '120vw', height: '120vw', left: '30vw', top: '24%', filter: 'blur(80px)' }} />
-              <div className={cx('aurora-blob', 'aurora-blob-3')} style={{ width: '140vw', height: '140vw', left: '-30vw', top: '50%', filter: 'blur(90px)' }} />
-              <div className={cx('aurora-blob', 'aurora-blob-4')} style={{ width: '130vw', height: '130vw', left: '0', bottom: '-20vw', filter: 'blur(90px)' }} />
+              <div className={cx('aurora-blob', 'aurora-blob-1')} />
+              <div className={cx('aurora-blob', 'aurora-blob-2')} />
+              <div className={cx('aurora-blob', 'aurora-blob-3')} />
+              <div className={cx('aurora-blob', 'aurora-blob-4')} />
               <div className={cx('aurora-overlay-mobile')} />
             </div>
             {/* Title */}

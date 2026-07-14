@@ -215,6 +215,13 @@
   animation: drift-b 34s ease-in-out infinite reverse;
 }
 
+/* Mobile aurora-blob geometry (moved off inline styles; scoped to the mobile
+   container so the desktop blobs above are unaffected). */
+.timeline-aurora-mobile .aurora-blob-1 { width: 130vw; height: 130vw; left: -10vw; top: -20vw; filter: blur(80px); }
+.timeline-aurora-mobile .aurora-blob-2 { width: 120vw; height: 120vw; left: 30vw; top: 24%; filter: blur(80px); }
+.timeline-aurora-mobile .aurora-blob-3 { width: 140vw; height: 140vw; left: -30vw; top: 50%; filter: blur(90px); }
+.timeline-aurora-mobile .aurora-blob-4 { width: 130vw; height: 130vw; left: 0; bottom: -20vw; filter: blur(90px); }
+
 .aurora-overlay {
   position: absolute;
   inset: 0;
