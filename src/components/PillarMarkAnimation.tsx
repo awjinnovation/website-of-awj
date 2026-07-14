@@ -1,49 +1,58 @@
 import { useMemo } from 'react';
 import type { PillarId } from '../data/pillars';
 
-import academyIcon from '../../public/assets/brand/awj-academy-icon.svg?raw';
-import sustainIcon from '../../public/assets/brand/awj-sustain-icon.svg?raw';
-import innovationIcon from '../../public/assets/brand/awj-innovation-icon.svg?raw';
-import systemsIcon from '../../public/assets/brand/awj-systems-icon.svg?raw';
+import sustainAngle from '../../public/assets/brand/Sustain-angle-asset.svg?raw';
+import innovationAngle from '../../public/assets/brand/Innovation-angle-asset.svg?raw';
+import systemsAngle from '../../public/assets/brand/Systems-angle-asset.svg?raw';
 
 /**
- * Animates a pillar's own brand icon with the same outline-draw + fill effect
- * as the academy hero mark. The icon SVG is parsed at runtime: fills come from
- * its `.cls-*` <style> rules, then each path traces its outline and fills in,
- * staggered. One-shot on mount.
+ * Renders a pillar's angle asset spanning the hero, with the same looping
+ * outline-draw + fill animation as the academy mark. The asset SVG is parsed at
+ * runtime: each path is given a matching stroke and pathLength so the CSS draw
+ * loop (.angle-mark path) can run, and the original markup (clip paths, groups
+ * and colours) is injected as-is. Academy uses its own hardcoded component.
  */
-const ICON_RAW: Record<PillarId, string> = {
-  academy: academyIcon,
-  sustain: sustainIcon,
-  innovation: innovationIcon,
-  systems: systemsIcon,
+const ANGLE_RAW: Partial<Record<PillarId, string>> = {
+  sustain: sustainAngle,
+  innovation: innovationAngle,
+  systems: systemsAngle,
 };
 
-type Parsed = { viewBox: string; strokeWidth: number; paths: { d: string; fill: string }[] };
+/** Per-pillar viewBox override to frame the visible content (some assets carry
+ *  large empty margins in their native viewBox). Falls back to the asset's own
+ *  viewBox when absent. */
+const VIEWBOX: Partial<Record<PillarId, string>> = {
+  innovation: '15 333 609 549',
+};
 
-const parseIcon = (raw: string): Parsed => {
+type Parsed = { viewBox: string; inner: string };
+
+const parseAngle = (raw: string): Parsed => {
   const doc = new DOMParser().parseFromString(raw, 'image/svg+xml');
   const svg = doc.querySelector('svg');
   const viewBox = svg?.getAttribute('viewBox') ?? '0 0 100 100';
-  const width = parseFloat(viewBox.split(/\s+/)[2]) || 190;
+  const vbWidth = parseFloat(viewBox.split(/\s+/)[2]) || 250;
+  const strokeW = vbWidth / 250;
 
-  // Resolve the .cls-N { fill: #xxx } rules from the icon's <style> block.
+  // Resolve .cls-N { fill: #xxx } rules from the asset's <style> block, so the
+  // stroke can match each path's fill regardless of how the colour is set.
   const classFill: Record<string, string> = {};
   const styleText = doc.querySelector('style')?.textContent ?? '';
   const re = /\.([\w-]+)\s*\{[^}]*fill:\s*([^;}\s]+)/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(styleText))) classFill[m[1]] = m[2];
 
-  const paths = Array.from(svg?.querySelectorAll('path') ?? [])
-    .map((p) => {
-      const cls = p.getAttribute('class');
-      const inline = p.getAttribute('fill');
-      const fill = inline || (cls ? classFill[cls] : '') || '#ffffff';
-      return { d: p.getAttribute('d') ?? '', fill };
-    })
-    .filter((p) => p.d && p.fill !== 'none');
+  svg?.querySelectorAll('path').forEach((p) => {
+    const cls = p.getAttribute('class');
+    const styleFill = /fill:\s*(#[0-9a-fA-F]+)/.exec(p.getAttribute('style') ?? '')?.[1];
+    const fill = styleFill || p.getAttribute('fill') || (cls ? classFill[cls] : '') || '#ffffff';
+    if (fill === 'none') return;
+    p.setAttribute('stroke', fill);
+    p.setAttribute('stroke-width', String(strokeW));
+    p.setAttribute('pathLength', '1');
+  });
 
-  return { viewBox, strokeWidth: width / 190, paths };
+  return { viewBox, inner: svg?.innerHTML ?? '' };
 };
 
 export const PillarMarkAnimation = ({
@@ -53,27 +62,15 @@ export const PillarMarkAnimation = ({
   pillarId: PillarId;
   className?: string;
 }) => {
-  const { viewBox, strokeWidth, paths } = useMemo(
-    () => parseIcon(ICON_RAW[pillarId]),
-    [pillarId],
-  );
-
+  const raw = ANGLE_RAW[pillarId];
+  const parsed = useMemo(() => (raw ? parseAngle(raw) : null), [raw]);
+  if (!parsed) return null;
   return (
     <svg
-      className={`awj-mark-anim${className ? ' ' + className : ''}`}
-      viewBox={viewBox}
+      className={`angle-mark${className ? ' ' + className : ''}`}
+      viewBox={VIEWBOX[pillarId] ?? parsed.viewBox}
       aria-hidden="true"
-    >
-      {paths.map((p, i) => (
-        <path
-          key={i}
-          d={p.d}
-          fill={p.fill}
-          pathLength={1}
-          stroke={p.fill}
-          strokeWidth={strokeWidth}
-        />
-      ))}
-    </svg>
+      dangerouslySetInnerHTML={{ __html: parsed.inner }}
+    />
   );
 };

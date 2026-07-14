@@ -4,7 +4,7 @@
  * verbatim from public/assets/brand/Academy-angle-asset.svg.
  *
  * All styling (sizing, positioning, and the looping per-strand draw-in timing)
- * lives in styles-v2.css under `.awj-mark-anim`; only data-driven SVG
+ * lives in styles-v2.css under `.angle-mark`; only data-driven SVG
  * attributes (path geometry and strand colours) live here. The strand order
  * below is the artwork's paint order (triangle behind, ribbons in front) and
  * must stay in sync with the `nth-of-type` delay rules in the stylesheet.
@@ -35,7 +35,7 @@ const STRANDS: Strand[] = [
 
 export const AwjMarkAnimation = ({ className }: { className?: string }) => (
   <svg
-    className={`academy-mark${className ? ' ' + className : ''}`}
+    className={`angle-mark${className ? ' ' + className : ''}`}
     viewBox="78 0 258.45 431.9"
     aria-hidden="true"
   >
@@ -52,7 +52,7 @@ export const AwjMarkAnimation = ({ className }: { className?: string }) => (
     </defs>
     <g clipPath="url(#academy-angle-clip)">
       {STRANDS.map((s, i) => (
-        <path key={i} d={s.d} fill={s.fill} stroke={s.fill} pathLength={1} />
+        <path key={i} d={s.d} fill={s.fill} stroke={s.fill} strokeWidth={1.2} pathLength={1} />
       ))}
     </g>
   </svg>
