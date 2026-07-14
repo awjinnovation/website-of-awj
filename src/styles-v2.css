@@ -2564,10 +2564,10 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   margin: 0;
   animation: none; /* no up/down float */
 }
-/* Strands 1–3 (outer ribbon, inner ribbon, triangle) loop a "trace outline →
-   fill → hold → erase" cycle forever. All three share one keyframe on a fixed
-   4.5s period, so their staggered start delays hold the same phase offset on
-   every loop (strand 1 uses the 0s fallback). */
+/* The three strands (triangle, outer ribbon, inner ribbon — in paint order)
+   loop a "trace outline → fill → hold → erase" cycle forever. All three share
+   one keyframe on a fixed 4.5s period, so their staggered start delays hold the
+   same phase offset on every loop (strand 1 uses the 0s fallback). */
 .awj-mark-anim path {
   fill-opacity: 0;
   stroke-width: 1.2;
@@ -2577,8 +2577,6 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
 }
 .awj-mark-anim path:nth-of-type(2) { --awj-draw-delay: 0.55s; }
 .awj-mark-anim path:nth-of-type(3) { --awj-draw-delay: 1.1s; }
-/* Accent notch: no draw-in — it just sits filled while the ribbons loop. */
-.awj-mark-anim path:nth-of-type(4) { animation: none; fill-opacity: 1; }
 
 /* One combined cycle: trace the outline (dashoffset 1→0), fade the fill in,
    hold, then erase + fade back to empty so the next loop redraws cleanly. */
