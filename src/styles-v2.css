@@ -1829,6 +1829,7 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   color: #ffffff;
 }
 .news-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px; gap: 40px; flex-wrap: wrap; }
+.news-head .section-title { margin-top: 24px; }
 .news-viewall {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-body); font-size: 20px;   color: var(--ink); padding: 14px 22px; border: 1px solid var(--ink); border-radius: 999px;

@@ -11,7 +11,7 @@ export const News = () => {
       <div className="container">
         <div className="news-head reveal">
           <div>
-            <h2 className="section-title" style={{ marginTop: 24 }}>
+            <h2 className="section-title">
               {t('news.title.first')} <em>{t('news.title.second')}</em>
             </h2>
           </div>
