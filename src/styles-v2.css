@@ -2394,6 +2394,11 @@ button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointe
   position: absolute;
   top: calc(100% + 12px);
   left: 50%;
+  /* Size to the full chip row. Without this, shrink-to-fit under the narrow
+     trigger (the positioned ancestor) collapses the panel to one chip's width,
+     so its dark background only covered the first chip (Academy) while the rest
+     overflowed onto the hero. */
+  width: max-content;
   transform: translateX(-50%) translateY(-4px) scale(0.985);
   opacity: 0;
   pointer-events: none;
