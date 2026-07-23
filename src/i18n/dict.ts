@@ -110,7 +110,7 @@ const en = {
 
   // News landing block
   'news.title.first': 'News &',
-  'news.title.second': 'announcements',
+  'news.title.second': 'articles',
   'news.viewAll': 'View all news',
   'news.latest': 'Latest',
   'news.allStories': 'All stories',
@@ -207,7 +207,7 @@ const en = {
   'newsPage.meta': 'The Dispatch',
   'newsPage.stories': 'stories',
   'newsPage.title.first': 'News &',
-  'newsPage.title.second': 'announcements',
+  'newsPage.title.second': 'articles',
   'newsPage.lede':
     'Mandates, partnerships, and program milestones from across the AWJ group, Innovation, Academy, Sustain, and Systems.',
   'newsPage.featured': 'Featured stories',

@@ -1,13 +1,43 @@
+import { useEffect, useState } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { PillarLogo } from '../components/PillarLogo';
 import { useLang } from '../i18n/LangContext';
 import { PILLARS } from '../data/pillars';
 
+/* Only mount the backdrop video where it earns its download: motion is
+   welcome and the viewport is wide enough. Phones and reduced-motion users
+   keep the mesh gradient on its own. */
+const VIDEO_QUERY = '(min-width: 721px) and (prefers-reduced-motion: no-preference)';
+
 export const Hero = () => {
   const { t } = useLang();
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(VIDEO_QUERY);
+    const sync = () => setShowVideo(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
 
   return (
     <section className="hero-v3" data-screen-label="01 Hero">
+      {showVideo && (
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/assets/video/hero-poster.jpg"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src="/assets/video/hero.mp4" type="video/mp4" />
+        </video>
+      )}
       <div className="hero-mesh"></div>
       <div className="hero-grain"></div>
 
