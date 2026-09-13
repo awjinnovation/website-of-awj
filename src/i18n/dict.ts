@@ -329,7 +329,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
 
   // News landing block
   'news.title.first': 'الأخبار',
-  'news.title.second': 'والإعلانات',
+  'news.title.second': '',
   'news.viewAll': 'عرض كل الأخبار',
   'news.latest': 'الأحدث',
   'news.allStories': 'كل القصص',
@@ -427,7 +427,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'newsPage.meta': 'النشرة',
   'newsPage.stories': 'قصة',
   'newsPage.title.first': 'الأخبار',
-  'newsPage.title.second': 'والإعلانات',
+  'newsPage.title.second': '',
   // newsPage.lede: needs approved Arabic → English fallback.
   'newsPage.featured': 'قصص مميّزة',
   'newsPage.allEyebrow': 'كل القصص',
