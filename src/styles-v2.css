@@ -1638,11 +1638,19 @@ button, input, select, textarea { font-family: inherit; }
 }
 .project-tile.p-big .pt-icon { width: 280px; left: -40px; top: -40px; }
 .project-tile .pt-bg-image {
-  position: absolute; right: 0; top: 0; height: 100%; width: 55%;
+  position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 55%;
   object-fit: cover; object-position: right;
   opacity: 1; pointer-events: none; z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
+/* The photo occupies the half of the card the copy does not, so `inset-inline-end`
+   swaps it to the left under RTL. Mirroring the pixels rather than re-anchoring
+   the crop keeps each photo's composition: `object-position: left` would crop to
+   the opposite edge of the source and, on the Abraj card, showed the company
+   logo instead of the subject. The transform carries the mask with it, so the
+   fade still runs from the card edge toward the copy. */
+[dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
@@ -1717,8 +1725,10 @@ button, input, select, textarea { font-family: inherit; }
   text-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
 
+/* Follows the photo to the opposite side under RTL, so it does not land on top
+   of the now right-aligned card title when it fades in on hover. */
 .project-tile .pt-arrow {
-  position: absolute; top: 28px; right: 28px;
+  position: absolute; top: 28px; inset-inline-end: 28px;
   width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.3);
   display: flex; align-items: center; justify-content: center;
@@ -1728,7 +1738,10 @@ button, input, select, textarea { font-family: inherit; }
 .project-tile:hover .pt-arrow { opacity: 1; transform: translate(0,0); background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
 /* button reset for tile */
-button.project-tile { border: 0; font: inherit; text-align: left; cursor: pointer; }
+/* `start`, not `left`: the tile is a button, whose UA default is centred, so
+   this has to be set explicitly. Physical `left` pinned every card's copy to
+   the left edge under RTL. */
+button.project-tile { border: 0; font: inherit; text-align: start; cursor: pointer; }
 
 /* Light variant, dark text on pale orange */
 .project-tile.p-light { color: #ffffff; }
