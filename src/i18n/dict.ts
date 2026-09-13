@@ -319,7 +319,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   // Projects
   'projects.eyebrow': 'مشاريع مختارة',
   'projects.title.first': 'قصص',
-  'projects.title.second': 'نجاح',
+  'projects.title.second': 'النجاح',
   'projects.modal.achievements': 'أبرز الإنجازات',
   'projects.modal.close': 'إغلاق',
 
