@@ -11,6 +11,7 @@ import { getPillarContent } from '../data/pillar-content';
 import { PILLAR_ORGS, type OrgLogo } from '../data/pillar-partners';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
+import { withBase } from '../base-path';
 
 /**
  * Core-services groups that render as a panel with a photographic backdrop,
@@ -447,7 +448,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
           <div className="pillar-hero-mesh" />
           <div className="container">
             <div className="pillar-hero-top">
-              <a href="/" className="news-back">
+              <a href={withBase('/')} className="news-back">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M19 12H5M11 18l-6-6 6-6"

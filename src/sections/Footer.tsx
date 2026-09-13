@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react';
 import { useLang } from '../i18n/LangContext';
+import { withBase } from '../base-path';
 
 export const Footer = () => {
   const { t } = useLang();
@@ -78,10 +79,10 @@ export const Footer = () => {
           </div>
           <div className="footer-col">
             <h4>{t('footer.col.pillars')}</h4>
-            <a href="/pillars/innovation">{t('pillar.innovation.fullName')}</a>
-            <a href="/pillars/sustain">{t('pillar.sustain.fullName')}</a>
-            <a href="/pillars/systems">{t('pillar.systems.fullName')}</a>
-            <a href="/pillars/academy">{t('pillar.academy.fullName')}</a>
+            <a href={withBase('/pillars/innovation')}>{t('pillar.innovation.fullName')}</a>
+            <a href={withBase('/pillars/sustain')}>{t('pillar.sustain.fullName')}</a>
+            <a href={withBase('/pillars/systems')}>{t('pillar.systems.fullName')}</a>
+            <a href={withBase('/pillars/academy')}>{t('pillar.academy.fullName')}</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-header">

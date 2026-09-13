@@ -3,6 +3,7 @@ import { Magnetic } from '../components/Magnetic';
 import { PillarLogo } from '../components/PillarLogo';
 import { PILLARS } from '../data/pillars';
 import { useLang } from '../i18n/LangContext';
+import { withBase } from '../base-path';
 
 export const NavPill = () => {
   const { t, lang, toggle: toggleLang } = useLang();
@@ -97,7 +98,7 @@ export const NavPill = () => {
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       history.replaceState(null, '', `#${id}`);
     } else {
-      window.location.href = `/#${id}`;
+      window.location.href = withBase(`/#${id}`);
     }
   };
 
@@ -106,12 +107,12 @@ export const NavPill = () => {
       <nav
         className={`nav-pill ${scrolled ? 'scrolled' : ''} ${onDark ? 'on-dark' : ''} ${mobileOpen ? 'mobile-open' : ''}`}
       >
-        <a href="/" className="brand" aria-label="AWJ">
+        <a href={withBase('/')} className="brand" aria-label="AWJ">
           <img src="/assets/brand/awj-logo.svg" alt={t('brand.logoAlt')} className="lockup lockup-light" />
           <img src="/assets/brand/awj-logo.svg" alt="" aria-hidden="true" className="lockup lockup-dark" />
         </a>
         <div className="links">
-          <a href="/about">{t('nav.about')}</a>
+          <a href={withBase('/about')}>{t('nav.about')}</a>
 
           <div
             className={`pillars-dropdown ${pillarsOpen ? 'is-open' : ''}`}
@@ -149,7 +150,7 @@ export const NavPill = () => {
                 return (
                   <a
                     key={p.id}
-                    href={`/pillars/${p.id}`}
+                    href={withBase(`/pillars/${p.id}`)}
                     className="chip chip-logo pillars-panel-chip"
                     data-pillar={p.id}
                     role="menuitem"
@@ -166,9 +167,9 @@ export const NavPill = () => {
             </div>
           </div>
 
-          <a href="/#services" onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
-          <a href="/#projects" onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
-          <a href="/#news" onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
+          <a href={withBase('/#services')} onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
+          <a href={withBase('/#projects')} onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
+          <a href={withBase('/#news')} onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
         </div>
         <label className="nav-toggle-label">
           <input
@@ -189,7 +190,7 @@ export const NavPill = () => {
           {t('nav.langToggle')}
         </button>
         <Magnetic strength={0.25}>
-          <a href="/#contact" className="cta" onClick={(e) => goToSection(e, 'contact')}>
+          <a href={withBase('/#contact')} className="cta" onClick={(e) => goToSection(e, 'contact')}>
             {t('nav.cta')}
           </a>
         </Magnetic>
@@ -208,7 +209,7 @@ export const NavPill = () => {
         <div className="nav-mobile-sheet" onClick={closeMobile}>
           <div className="nav-mobile-panel" onClick={(e) => e.stopPropagation()}>
             <div className="nav-mobile-list">
-              <a href="/about" onClick={closeMobile}>{t('nav.about')}</a>
+              <a href={withBase('/about')} onClick={closeMobile}>{t('nav.about')}</a>
 
               <div className="nav-mobile-group">
                 <div className="nav-mobile-group-label">{t('nav.pillars')}</div>
@@ -216,7 +217,7 @@ export const NavPill = () => {
                   return (
                     <a
                       key={p.id}
-                      href={`/pillars/${p.id}`}
+                      href={withBase(`/pillars/${p.id}`)}
                       className="nav-mobile-pillar"
                       data-pillar={p.id}
                       onClick={closeMobile}
@@ -229,9 +230,9 @@ export const NavPill = () => {
                 })}
               </div>
 
-              <a href="/#services" onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
-              <a href="/#projects" onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
-              <a href="/#news" onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
+              <a href={withBase('/#services')} onClick={(e) => goToSection(e, 'services')}>{t('nav.services')}</a>
+              <a href={withBase('/#projects')} onClick={(e) => goToSection(e, 'projects')}>{t('nav.projects')}</a>
+              <a href={withBase('/#news')} onClick={(e) => goToSection(e, 'news')}>{t('nav.news')}</a>
 
               <button
                 type="button"
@@ -245,7 +246,7 @@ export const NavPill = () => {
               </button>
             </div>
 
-            <a href="/#contact" className="nav-mobile-cta" onClick={(e) => goToSection(e, 'contact')}>
+            <a href={withBase('/#contact')} className="nav-mobile-cta" onClick={(e) => goToSection(e, 'contact')}>
               {t('nav.cta')}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <path

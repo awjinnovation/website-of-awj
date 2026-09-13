@@ -12,6 +12,7 @@ import {
   type NewsItem,
 } from '../data/news';
 import { useLang } from '../i18n/LangContext';
+import { withBase } from '../base-path';
 
 const NewsHero = () => {
   const { t } = useLang();
@@ -20,7 +21,7 @@ const NewsHero = () => {
       <div className="news-hero-grain"></div>
       <div className="container">
         <div className="news-hero-top">
-          <a href="/" className="news-back">
+          <a href={withBase('/')} className="news-back">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path
                 d="M19 12H5M11 18l-6-6 6-6"

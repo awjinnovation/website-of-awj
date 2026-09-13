@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { withBase } from '../base-path';
 
 /**
  * Shown for any route that does not match home, about, news or a valid pillar.
@@ -23,7 +24,7 @@ export const NotFound = () => {
     <main className="app-error">
       <h1>Page not found</h1>
       <p>The page you are looking for does not exist or has moved.</p>
-      <a href="/">Back to home</a>
+      <a href={withBase('/')}>Back to home</a>
     </main>
   );
 };

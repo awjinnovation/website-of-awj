@@ -1,5 +1,6 @@
 import { NEWS, newsCategory, newsDate, newsPillar, newsTitle } from '../data/news';
 import { useLang } from '../i18n/LangContext';
+import { withBase } from '../base-path';
 
 export const News = () => {
   const { t, lang } = useLang();
@@ -15,7 +16,7 @@ export const News = () => {
               {t('news.title.first')} <em>{t('news.title.second')}</em>
             </h2>
           </div>
-          <a className="news-viewall" href="/news">
+          <a className="news-viewall" href={withBase('/news')}>
             {t('news.viewAll')}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path
@@ -31,7 +32,7 @@ export const News = () => {
 
         <div className="news-featured-grid reveal">
           {featured.map((n) => (
-            <a key={n.id} className="news-feature-card" href={`/news#${n.id}`}>
+            <a key={n.id} className="news-feature-card" href={withBase(`/news#${n.id}`)}>
               <div className="nfc-cover">
                 <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
                 <div className="nfc-tag">{newsCategory(n.category, lang)}</div>
@@ -64,14 +65,14 @@ export const News = () => {
         <div className="news-recent reveal">
           <div className="news-recent-head">
             <span className="eyebrow">{t('news.latest')}</span>
-            <a className="news-recent-link" href="/news">
+            <a className="news-recent-link" href={withBase('/news')}>
               {t('news.allStories')} ({NEWS.length})
             </a>
           </div>
           <ul className="news-recent-list">
             {recent.map((n) => (
               <li key={n.id} className="news-recent-item">
-                <a href={`/news#${n.id}`}>
+                <a href={withBase(`/news#${n.id}`)}>
                   <span className="nri-date">{newsDate(n, lang)}</span>
                   <span className="nri-cat" data-cat={n.category}>
                     {newsCategory(n.category, lang)}

@@ -8,6 +8,7 @@ import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { isPillarId, type PillarId } from './data/pillars';
 import { LangProvider } from './i18n/LangContext';
+import { stripBase } from './base-path';
 import './styles-v2.css';
 import './news-page.css';
 
@@ -21,10 +22,10 @@ const matchPillarPath = (p: string): PillarId | null => {
 };
 
 const Router = () => {
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(() => stripBase(window.location.pathname));
 
   useEffect(() => {
-    const onPop = () => setPath(window.location.pathname);
+    const onPop = () => setPath(stripBase(window.location.pathname));
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
