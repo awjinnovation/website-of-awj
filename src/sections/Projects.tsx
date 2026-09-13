@@ -67,7 +67,11 @@ const PROJECTS: Project[] = [
       { value: '2,700+', label: 'Employed' },
       { value: '20+', label: 'Startups established' },
     ],
-    ar: { name: 'برنامج «دوت نكست جدير» الوطني', statLabel: 'مشاركًا مُكَّنوا' },
+    ar: {
+      name: 'برنامج «دوت نكست جدير» الوطني',
+      statLabel: 'مشاركًا مُكَّنوا',
+      partner: 'توظيف +2,700 منتسب',
+    },
   },
   {
     name: 'Oman AI Studio',
@@ -89,7 +93,11 @@ const PROJECTS: Project[] = [
       { value: '33', label: 'AI solutions' },
       { value: '7', label: 'Active startups' },
     ],
-    ar: { name: 'استوديو عُمان للذكاء الاصطناعي', statLabel: 'جهة حكومية مخدومة' },
+    ar: {
+      name: 'استوديو عُمان للذكاء الاصطناعي',
+      statLabel: 'جهة حكومية مخدومة',
+      partner: '+33 حلًّا للذكاء الاصطناعي',
+    },
   },
   {
     name: 'Leadership in Cultural & Creative Industries',
@@ -112,7 +120,11 @@ const PROJECTS: Project[] = [
       { value: '20+', label: 'Programs offered' },
       { value: '10', label: 'Strategic partners' },
     ],
-    ar: { statLabel: 'نسبة الرضا' },
+    ar: {
+      name: 'برنامج القيادة في الصناعات الثقافية والإبداعية',
+      statLabel: 'نسبة الرضا',
+      partner: 'برنامج معتمد',
+    },
   },
   {
     name: 'Planning & Strategy Platform',
@@ -134,6 +146,11 @@ const PROJECTS: Project[] = [
       { value: 'AI-Assisted', label: 'Decision making' },
       { value: 'Real-time', label: 'Performance tracking' },
     ],
+    ar: {
+      name: 'منصة Planning & Strategy',
+      statLabel: 'مبادرة استراتيجية',
+      partner: 'عميل مؤسسي',
+    },
   },
   {
     name: 'First 3D Printed Building\nin the Middle East',
@@ -156,7 +173,11 @@ const PROJECTS: Project[] = [
       { value: 'First in ME', label: 'Regional milestone' },
     ],
     // Item 26 also asks for the completion year and the body that certified the "first".
-    ar: { name: 'أوّل مبنًى مطبوعٍ ثلاثيّ الأبعاد في الشرق الأوسط', partner: 'مع الجامعة الألمانية للتكنولوجيا (GUtech)' },
+    ar: {
+      name: 'أوّل مبنًى مطبوعٍ ثلاثيّ الأبعاد في الشرق الأوسط',
+      statLabel: 'تقليل الهدر الإنشائي',
+      partner: 'مع الجامعة الألمانية للتكنولوجيا (GUtech)',
+    },
   },
   {
     name: 'Gulf Urban Planning Hackathon',
@@ -178,7 +199,11 @@ const PROJECTS: Project[] = [
       { value: '20', label: 'Solutions developed' },
       { value: 'Vision 2040', label: 'Strategic alignment' },
     ],
-    ar: { partner: 'متوافق مع رؤية عُمان 2040' },
+    ar: {
+      name: 'هاكاثون التخطيط العمراني الخليجي',
+      statLabel: 'مشاركًا',
+      partner: 'متوافق مع رؤية عُمان 2040',
+    },
   },
   {
     name: 'Oman National Framework for CSR Governance',
@@ -199,7 +224,11 @@ const PROJECTS: Project[] = [
       { value: 'Implementation', label: 'Framework status' },
       { value: 'National', label: 'Impact level' },
     ],
-    ar: { partner: 'مع وزارة التنمية الاجتماعية' },
+    ar: {
+      name: 'الإطار الوطني لحوكمة برامج المسؤولية الاجتماعية',
+      statLabel: 'جهة مشاركة',
+      partner: 'مع وزارة التنمية الاجتماعية',
+    },
   },
 ];
 
