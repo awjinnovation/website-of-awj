@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     ar: {
       name: 'أبراج للطاقة',
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
-      stat: 'جائزة أفضل تقرير استدامة',
+      stat: 'جائزة أفضل\nتقرير استدامة',
       partner: 'الريادة في المسؤولية الاجتماعية للشركات',
     },
   },
