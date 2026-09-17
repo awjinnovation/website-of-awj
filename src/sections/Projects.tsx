@@ -17,7 +17,7 @@ type Project = {
   impact: string;
   achievements: { value: string; label: string }[];
   /** Approved Arabic for the card face (content notes 23-29); missing fields fall back to English. */
-  ar?: { name?: string; stat?: string; statLabel?: string; partner?: string };
+  ar?: { name?: string; stat?: string; statLabel?: string; partner?: string; partnerCompact?: boolean };
 };
 
 const PROJECTS: Project[] = [
@@ -42,9 +42,10 @@ const PROJECTS: Project[] = [
       { value: 'Global', label: 'Best practices' },
     ],
     ar: {
-      name: 'أبراج للطاقة\nتقرير الاستدامة',
+      name: 'أبراج للطاقة',
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
       stat: 'جائزة أفضل تقرير استدامة',
+      partner: 'الريادة في المسؤولية الاجتماعية للشركات',
     },
   },
   {
@@ -69,7 +70,7 @@ const PROJECTS: Project[] = [
     ],
     ar: {
       name: 'برنامج «دوت نكست جدير» الوطني',
-      statLabel: 'مشاركًا مُكَّنوا',
+      statLabel: 'مشاركًا تم تمكينهم',
       partner: 'توظيف +2,700 منتسب',
     },
   },
@@ -95,7 +96,7 @@ const PROJECTS: Project[] = [
     ],
     ar: {
       name: 'استوديو عُمان للذكاء الاصطناعي',
-      statLabel: 'جهة حكومية مخدومة',
+      statLabel: 'جهة حكومية تم خدمتها',
       partner: '+33 حلًّا للذكاء الاصطناعي',
     },
   },
@@ -177,6 +178,7 @@ const PROJECTS: Project[] = [
       name: 'أوّل مبنًى مطبوعٍ ثلاثيّ الأبعاد في الشرق الأوسط',
       statLabel: 'تقليل الهدر الإنشائي',
       partner: 'مع الجامعة الألمانية للتكنولوجيا (GUtech)',
+      partnerCompact: true,
     },
   },
   {
@@ -285,7 +287,7 @@ export const Projects = () => {
               <div className="pt-foot">
                 <div className="pt-meta">
                   <span className="pt-pillar">AWJ {p.pillar}</span>
-                  <span className="pt-partner">{pick(p, 'partner', lang)}</span>
+                  <span className={`pt-partner${lang === 'ar' && p.ar?.partnerCompact ? ' is-compact' : ''}`}>{pick(p, 'partner', lang)}</span>
                 </div>
               </div>
               <div className="pt-arrow">

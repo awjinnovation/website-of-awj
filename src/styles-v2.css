@@ -1724,6 +1724,7 @@ button, input, select, textarea { font-family: inherit; }
   min-width: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
+.project-tile .pt-partner.is-compact { font-size: 15px; }
 
 /* Follows the photo to the opposite side under RTL, so it does not land on top
    of the now right-aligned card title when it fades in on hover. */
