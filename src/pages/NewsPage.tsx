@@ -8,6 +8,8 @@ import {
   newsCategory,
   newsDate,
   newsPillar,
+  newsBody,
+  newsDek,
   newsTitle,
   type NewsItem,
 } from '../data/news';
@@ -77,9 +79,9 @@ const FeaturedSection = ({ onOpen }: { onOpen: OpenHandler }) => {
                   <span>{newsPillar(n.pillar, lang)}</span>
                 </div>
                 <h3 className="npf-title">{newsTitle(n, lang)}</h3>
-                <p className="npf-dek">{n.dek}</p>
+                <p className="npf-dek">{newsDek(n, lang)}</p>
                 <span className="npf-read">
-                  {t('news.readStory')}
+                  {t(n.bodyAr ? 'news.readStory' : 'news.readStoryEnOnly')}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12h14M13 5l7 7-7 7"
@@ -177,7 +179,7 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
                   <span>{newsPillar(n.pillar, lang)}</span>
                 </div>
                 <h3 className="npa-title">{newsTitle(n, lang)}</h3>
-                <p className="npa-dek">{n.dek}</p>
+                <p className="npa-dek">{newsDek(n, lang)}</p>
                 <span className="npa-read">
                   {t('newsPage.read')}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -244,10 +246,10 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
         </div>
         <div className="am-body">
           <h1 className="am-title">{newsTitle(article, lang)}</h1>
-          <p className="am-dek">{article.dek}</p>
+          <p className="am-dek">{newsDek(article, lang)}</p>
           <div className="am-rule"></div>
           <div className="am-text">
-            {article.body.map((p) => (
+            {newsBody(article, lang).map((p) => (
               <p key={p}>{p}</p>
             ))}
           </div>

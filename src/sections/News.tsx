@@ -1,4 +1,4 @@
-import { NEWS, newsCategory, newsDate, newsPillar, newsTitle } from '../data/news';
+import { NEWS, newsCategory, newsDate, newsDek, newsPillar, newsTitle } from '../data/news';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
@@ -44,9 +44,9 @@ export const News = () => {
                   <span>{newsPillar(n.pillar, lang)}</span>
                 </div>
                 <h3 className="nfc-title">{newsTitle(n, lang)}</h3>
-                <p className="nfc-dek">{n.dek}</p>
+                <p className="nfc-dek">{newsDek(n, lang)}</p>
                 <span className="nfc-read">
-                  {t('news.readStory')}
+                  {t(n.bodyAr ? 'news.readStory' : 'news.readStoryEnOnly')}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12h14M13 5l7 7-7 7"

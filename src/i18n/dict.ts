@@ -111,6 +111,7 @@ const en = {
   'news.latest': 'Latest',
   'news.allStories': 'All stories',
   'news.readStory': 'Read story',
+  'news.readStoryEnOnly': 'Read story',
 
   // Partners
   'partners.eyebrow': 'Partners & clients',
@@ -333,7 +334,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'news.viewAll': 'عرض كل الأخبار',
   'news.latest': 'الأحدث',
   'news.allStories': 'كل القصص',
-  'news.readStory': 'اقرأ القصة (بالإنجليزية)',
+  'news.readStory': 'اقرأ القصة',
+  'news.readStoryEnOnly': 'اقرأ القصة (بالإنجليزية)',
 
   // Partners
   'partners.eyebrow': 'الشركاء والعملاء',
@@ -429,6 +431,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'newsPage.title.first': 'الأخبار',
   'newsPage.title.second': '',
   // newsPage.lede: needs approved Arabic → English fallback.
+  'newsPage.lede':
+    'تكليفات وشراكات ومحطات برامج من مختلف قطاعات مجموعة أوج: الابتكار والأكاديمية والاستدامة والأنظمة.',
   'newsPage.featured': 'قصص مميّزة',
   'newsPage.allEyebrow': 'كل القصص',
   'newsPage.filterTopic': 'الموضوع',
