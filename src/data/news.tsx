@@ -87,7 +87,7 @@ export const NEWS: NewsItem[] = [
     category: 'Social Responsibility',
     title: 'Social Responsibility Governance Workshop',
     titleAr:
-      'ورشة حوكمة المسؤولية الاجتماعية',
+      'حوكمة المسؤولية الاجتماعية... ورشة تطويرية بمشاركة ٦١ عاملًا في القطاع',
     date: '2025-01-13',
     dateLabel: 'Jan 13, 2025',
     pillar: 'AWJ Innovation',
@@ -99,6 +99,12 @@ export const NEWS: NewsItem[] = [
       'These 4-day workshops at the National Autism Center aim to enhance social responsibility governance through developing national policies, incentives, and capacities to support projects with sustainable impact.',
       'The developmental workshops focus on 4 pillars: Sustainability and Impact (economic, social, and environmental impact sustainability); Governance (roles, responsibilities, governance structure, standards, and institutional policies); Skills and Capabilities (for organizers, donors, beneficiaries, and implementers); Incentives (financial incentives, recognition programs, and regulatory facilities).',
       "The workshops address 'Enablers' including legislation, institutional and community awareness, alongside the National Social Responsibility Platform.",
+    ],
+    bodyAr: [
+      'نظّمت وزارة التنمية الاجتماعية، بالتعاون مع أوج للابتكار، ورشة عمل تطويرية بعنوان "حوكمة برامج المسؤولية الاجتماعية والتنمية المجتمعية"، انطلقت فعالياتها الاثنين الموافق ١٣ يناير ٢٠٢٥ في المركز الوطني للتوحد، بمشاركة ٦١ عاملًا في مجال المسؤولية الاجتماعية من جهات حكومية وخاصة ومؤسسات المجتمع المدني.',
+      'واستمرت الورشة على مدى أربعة أيام، وسعت إلى الارتقاء بحوكمة المسؤولية الاجتماعية عبر بناء سياسات وطنية وحوافز وقدرات تدعم استمرارية المشاريع وأثرها على المدى الطويل.',
+      'وقامت فعاليات الورشة على أربعة محاور: الاستدامة والأثر، بأبعاده الاقتصادية والاجتماعية والبيئية؛ الحوكمة، من حيث الأدوار والمسؤوليات والهيكل التنظيمي والمعايير والسياسات المؤسسية؛ المهارات والقدرات، الموجَّهة للمنظِّمين والداعمين والمستفيدين والمنفِّذين؛ والحوافز، بشقّيها المالي والتقديري إلى جانب التسهيلات التنظيمية.',
+      'وتناولت الورشة أيضًا محور "الممكِّنات"، المتمثل في التشريعات والوعي المؤسسي والمجتمعي، إضافة إلى المنصة الوطنية للمسؤولية الاجتماعية.',
     ],
   },
   {
@@ -239,7 +245,7 @@ export const NEWS: NewsItem[] = [
     category: 'Digital Economy',
     title: 'Launch of .nxt Gig Freelance Platform',
     titleAr:
-      'إطلاق منصة دوت نكست جيج للعمل الحر',
+      'إطلاق منصة "دوت نكست جيج" للعمل الحر',
     date: '2024-01-15',
     dateLabel: 'Jan 15, 2024',
     pillar: 'AWJ Innovation',
@@ -251,6 +257,12 @@ export const NEWS: NewsItem[] = [
       "The Gig freelance platform is an advanced digital platform that brings together Omani freelancers, companies, and project owners under one roof in a facilitated, secure, and organized environment, acting as an intermediary to ensure everyone's rights.",
       "His Excellency Engineer Salem bin Nasser Al Aufi praised the platform, noting that it is open to many local and international companies. He stated that all graduates from the .nxt program achieved 100% employment, demonstrating the program's ambition and high capabilities in producing competitive talents for the job market.",
       "Dr. Yousuf bin Abdullah Al Balushi, CEO of AWJ Innovation, noted that the gig economy is experiencing remarkable development worldwide, especially in countries with advanced digital infrastructure. The launch of the '.nxt Gig platform' and its associated services aligns with the global trend toward the gig economy.",
+    ],
+    bodyAr: [
+      'أطلقت أوج للابتكار منصة "دوت نكست جيج" الرقمية للعمل الحر، برعاية معالي المهندس سالم بن ناصر العوفي وزير الطاقة والمعادن، في إطار تعاون جمع أوج للابتكار والبرنامج الوطني للتشغيل، وبرعاية رئيسة من شركة أوكسيدنتال عُمان.',
+      'وتجمع منصة "جيج" المستقلّين العُمانيين والشركات وأصحاب المشاريع تحت مظلّة واحدة، في بيئة ميسَّرة وآمنة ومنظَّمة، تتوسّط بين الأطراف وتضمن حقوق الجميع.',
+      'وأشاد معالي المهندس سالم بن ناصر العوفي بالمنصة، لافتًا إلى انفتاحها على عدد من الشركات المحلية والعالمية، وأوضح أن خريجي برنامج دوت نكست حقّقوا جميعًا نسبة توظيف بلغت ١٠٠٪، وهو ما يعكس طموح البرنامج وقدرته على تخريج كفاءات منافسة في سوق العمل.',
+      'من جانبه، أوضح الدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لأوج للابتكار، أن اقتصاد "الجيج" (العمل الحر) يشهد تطورًا لافتًا على مستوى العالم، خاصة في الدول ذات البنية التحتية الرقمية المتقدّمة، وأن إطلاق منصة "دوت نكست جيج" وخدماتها المرتبطة بها يأتي منسجمًا مع هذا التوجّه العالمي.',
     ],
   },
   {
