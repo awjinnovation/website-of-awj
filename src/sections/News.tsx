@@ -1,11 +1,13 @@
-import { NEWS, newsCategory, newsDate, newsDek, newsPillar, newsTitle } from '../data/news';
+import { newsCategory, newsDate, newsDek, newsPillar, newsTitle } from '../data/news';
+import { useNews } from '../data/news-api';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
 export const News = () => {
   const { t, lang } = useLang();
-  const featured = NEWS.filter((n) => n.featured).slice(0, 2);
-  const recent = NEWS.filter((n) => !n.featured).slice(0, 4);
+  const { news } = useNews();
+  const featured = news.filter((n) => n.featured).slice(0, 2);
+  const recent = news.filter((n) => !n.featured).slice(0, 4);
 
   return (
     <section className="news" id="news" data-screen-label="07 News">
@@ -66,7 +68,7 @@ export const News = () => {
           <div className="news-recent-head">
             <span className="eyebrow">{t('news.latest')}</span>
             <a className="news-recent-link" href={withBase('/news')}>
-              {t('news.allStories')} ({NEWS.length})
+              {t('news.allStories')} ({news.length})
             </a>
           </div>
           <ul className="news-recent-list">

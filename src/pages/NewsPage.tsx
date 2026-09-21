@@ -4,7 +4,6 @@ import { useReveal } from '../hooks/useReveal';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import {
-  NEWS,
   newsCategory,
   newsDate,
   newsPillar,
@@ -13,11 +12,13 @@ import {
   newsTitle,
   type NewsItem,
 } from '../data/news';
+import { fetchPreview, useNews } from '../data/news-api';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
 const NewsHero = () => {
   const { t } = useLang();
+  const { news, status } = useNews();
   return (
     <section className="news-hero" data-screen-label="01 News Hero">
       <div className="news-hero-grain"></div>
@@ -36,7 +37,8 @@ const NewsHero = () => {
             {t('newsPage.back')}
           </a>
           <div className="news-hero-meta">
-            {t('newsPage.meta')} · {NEWS.length} {t('newsPage.stories')}
+            {t('newsPage.meta')}
+            {status === 'ready' && ` · ${news.length} ${t('newsPage.stories')}`}
           </div>
         </div>
         <h1 className="news-hero-title">
@@ -52,7 +54,9 @@ type OpenHandler = (id: string) => void;
 
 const FeaturedSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const { t, lang } = useLang();
-  const featured = NEWS.filter((n) => n.featured);
+  const { news } = useNews();
+  const featured = news.filter((n) => n.featured);
+  if (featured.length === 0) return null;
   return (
     <section className="news-page-featured">
       <div className="container">
@@ -103,13 +107,14 @@ const FeaturedSection = ({ onOpen }: { onOpen: OpenHandler }) => {
 
 const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const { t, lang } = useLang();
+  const { news, status } = useNews();
   const all = useMemo(() => 'All', []);
-  const cats = useMemo(() => [all, ...new Set(NEWS.map((n) => n.category))], [all]);
-  const pillars = useMemo(() => [all, ...new Set(NEWS.map((n) => n.pillar))], [all]);
+  const cats = useMemo(() => [all, ...new Set(news.map((n) => n.category))], [all, news]);
+  const pillars = useMemo(() => [all, ...new Set(news.map((n) => n.pillar))], [all, news]);
   const [filter, setFilter] = useState<string>(all);
   const [pillarFilter, setPillarFilter] = useState<string>(all);
 
-  const filtered = NEWS.filter((n) => {
+  const filtered = news.filter((n) => {
     if (filter !== all && n.category !== filter) return false;
     if (pillarFilter !== all && n.pillar !== pillarFilter) return false;
     return true;
@@ -123,7 +128,7 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
             <div className="eyebrow">{t('newsPage.allEyebrow')}</div>
           </div>
           <div className="npa-count">
-            {filtered.length} {t('newsPage.countOf')} {NEWS.length}
+            {status === 'ready' && `${filtered.length} ${t('newsPage.countOf')} ${news.length}`}
           </div>
         </div>
 
@@ -197,7 +202,7 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
           ))}
         </div>
 
-        {filtered.length === 0 && (
+        {status !== 'loading' && filtered.length === 0 && (
           <div className="npa-empty">{t('newsPage.empty')}</div>
         )}
       </div>
@@ -266,21 +271,37 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
 
 export const NewsPage = () => {
   useReveal();
+  const { news } = useNews();
   const [openId, setOpenId] = useState<string | null>(null);
+  /** A draft or scheduled story opened from the CMS "Preview on site" link. */
+  const [preview, setPreview] = useState<NewsItem | null>(null);
 
   useEffect(() => {
     const fromHash = () => {
       const h = window.location.hash.replace('#', '');
-      if (h && NEWS.find((n) => n.id === h)) setOpenId(h);
+      if (h && news.find((n) => n.id === h)) setOpenId(h);
     };
     fromHash();
     window.addEventListener('hashchange', fromHash);
     return () => window.removeEventListener('hashchange', fromHash);
+  }, [news]);
+
+  useEffect(() => {
+    const url = new URLSearchParams(window.location.search).get('preview');
+    if (!url) return;
+    let active = true;
+    fetchPreview(url)
+      .then((item) => active && setPreview(item))
+      .catch(() => active && setPreview(null));
+    return () => {
+      active = false;
+    };
   }, []);
 
   const handleClose = () => {
     setOpenId(null);
-    if (window.location.hash) {
+    setPreview(null);
+    if (window.location.hash || window.location.search) {
       history.replaceState(null, '', window.location.pathname);
     }
   };
@@ -290,7 +311,7 @@ export const NewsPage = () => {
     history.replaceState(null, '', '#' + id);
   };
 
-  const article = openId ? NEWS.find((n) => n.id === openId) : null;
+  const article = preview ?? (openId ? news.find((n) => n.id === openId) : null);
 
   return (
     <>
