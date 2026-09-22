@@ -1651,6 +1651,10 @@ button, input, select, textarea { font-family: inherit; }
    logo instead of the subject. The transform carries the mask with it, so the
    fade still runs from the card edge toward the copy. */
 [dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
+/* The Abraj photo is 16:9, so in a 220px tile `cover` shows nearly all of it,
+   logo included. Taller than the tile, anchored to the top, it crops the
+   logo edge away and keeps the helmet in frame. */
+.project-tile .pt-bg-image.is-zoomed { height: 140%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
@@ -1663,6 +1667,7 @@ button, input, select, textarea { font-family: inherit; }
 }
 .project-tile.p-big .pt-stat { font-size: clamp(64px, 8vw, 60px); }
 .project-tile.p-sm .pt-stat  { font-size: 42px; }
+.project-tile .pt-stat.is-compact { font-size: 30px; line-height: 1.1; }
 .project-tile .pt-stat-label {
   font-family: var(--font-body); font-size: 14px;
   opacity: 0.95; margin-top: 6px;
@@ -1679,7 +1684,9 @@ button, input, select, textarea { font-family: inherit; }
   white-space: pre-line;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-.project-tile.p-big .pt-name { font-size: clamp(37px, 2.5vw, 42px); font-weight: 700; }
+.project-tile.p-big .pt-name { font-size: clamp(44px, 4vw, 58px); line-height: 1.15; font-weight: 700; }
+/* The Arabic name breaks after the quoted programme name, so it must fit one line. */
+[dir="rtl"] .project-tile.p-big .pt-name { font-size: clamp(40px, 3.5vw, 50px); }
 .project-tile.p-med .pt-name { font-size: 26px; line-height: 1.3; display: block; font-weight: 700; }
 .project-tile.p-sm .pt-name { font-size: 24px; line-height: 1.3; display: block; font-weight: 700; }
 
@@ -3870,6 +3877,9 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 a.pillar-contact-val { transition: color 0.25s ease; }
 a.pillar-contact-val:hover { color: var(--pillar-accent); }
+/* dir="ltr" keeps +968 first; as a grid item the anchor fills its track, so
+   align the text to the right under RTL instead of flipping direction. */
+.pillar-page--rtl .pillar-contact-phone { text-align: right; }
 .pillar-social-item { margin-right: 12px; }
 .pillar-social-item .dot { margin-right: 8px; opacity: 0.5; }
 .pillar-page--rtl .pillar-social-item { margin-right: 0; margin-left: 12px; }
@@ -5464,6 +5474,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 .contact-direct-label { font-family: var(--font-body); font-size: 20px; opacity: 0.9; }
 .contact-direct-phone { font-size: 22px; font-weight: 400; transition: opacity 0.2s ease; }
 .contact-direct-phone:hover { opacity: 0.7; }
+.contact-direct-address { font-style: normal; font-size: 20px; line-height: 1.5; }
 /* The anchor carries dir="ltr" so the number reads +968 first, but as a flex
    item it stretches the full column width, which parked the digits on the left
    while the label above them sat right. Align the text, not the direction. */
