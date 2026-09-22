@@ -1,5 +1,6 @@
 import type { PillarId } from './pillars';
 import type { Lang } from '../i18n/dict';
+import { COMPANY_ADDRESS } from './company';
 
 export type ServiceItem = { name: string; desc?: string };
 export type ServiceGroup = { group?: string; items: ServiceItem[] };
@@ -85,7 +86,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'info@dotnxt.om',
         phone: '+968 7259 4693',
-        location: 'Muscat · Sultanate of Oman',
+        location: COMPANY_ADDRESS.en,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -124,7 +125,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'info@dotnxt.om',
         phone: '+968 7259 4693',
-        location: 'مسقط · سلطنة عُمان',
+        location: COMPANY_ADDRESS.ar,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -196,7 +197,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'sustain@awj.om',
         phone: '+968 9390 9693',
-        location: 'Muscat, Sultanate of Oman',
+        location: COMPANY_ADDRESS.en,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -252,7 +253,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'sustain@awj.om',
         phone: '+968 9390 9693',
-        location: 'مسقط، سلطنة عُمان',
+        location: COMPANY_ADDRESS.ar,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -306,6 +307,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'academy@awj.om',
         phone: '+968 9390 9693',
+        location: COMPANY_ADDRESS.en,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -346,6 +348,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'academy@awj.om',
         phone: '+968 9390 9693',
+        location: COMPANY_ADDRESS.ar,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
@@ -414,7 +417,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'systems@awj.om',
         phone: '+968 7222 5178',
-        location: 'Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman',
+        location: COMPANY_ADDRESS.en,
       },
     },
     ar: {
@@ -468,7 +471,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       contact: {
         email: 'systems@awj.om',
         phone: '+968 9895 7933',
-        location: 'مزون سكوير، الطابق الخامس، الخوض، مسقط، سلطنة عُمان',
+        location: COMPANY_ADDRESS.ar,
         social: [
           { label: 'Instagram', handle: '@awj.corp', url: 'https://www.instagram.com/awj.corp' },
         ],
