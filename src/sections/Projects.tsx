@@ -11,8 +11,12 @@ type Project = {
   bgGrad: string;
   icon: string;
   size: 'p-big' | 'p-med' | 'p-sm';
+  /** The stat is a phrase rather than a figure, so it takes a smaller display size. */
+  statCompact?: boolean;
   light?: boolean;
   image?: string;
+  /** Enlarge the photo so a logo baked into its far edge falls outside the tile. */
+  imageZoom?: boolean;
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
@@ -22,16 +26,44 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    name: 'Abraj Energy\nSustainability Report',
+    name: '.nxt Jadeer\nNational Program',
+    stat: '6,600+',
+    statLabel: 'Participants empowered',
+    partner: '2,700+ employed',
+    pillar: 'Innovation',
+    color: 'var(--innovation)',
+    bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
+    icon: '/assets/brand/awj-innovation-icon.svg',
+    size: 'p-big',
+    image: '/assets/brand/jadeer-project-card.png',
+    summary:
+      'Since 2020, .nxt Jadeer has empowered over 6,600 participants across Oman through comprehensive training in emerging technologies, entrepreneurship, and professional development, preparing them for future opportunities.',
+    impact:
+      'Participants completed over 300,000 learning hours across 136 educational tracks, earning 100,000+ certificates. The program has contributed to employing 2,700+ participants and supporting the development of 2,000+ entrepreneurial ideas.',
+    achievements: [
+      { value: '6,600+', label: 'Participants' },
+      { value: '2,700+', label: 'Employed' },
+      { value: '20+', label: 'Startups established' },
+    ],
+    ar: {
+      name: 'برنامج «دوت نكست جدير»\nالوطني',
+      statLabel: 'مشاركًا تم تمكينهم',
+      partner: 'توظيف +2,700 منتسب',
+    },
+  },
+  {
+    name: 'Abraj Energy Sustainability Report',
     stat: 'Best Award',
+    statCompact: true,
     statLabel: '2025',
     partner: 'CSR Leadership',
     pillar: 'Sustain',
     color: 'var(--sustain)',
     bgGrad: 'linear-gradient(135deg, #009688, #00bfa5)',
     icon: '/assets/brand/awj-sustain-icon.svg',
-    size: 'p-big',
+    size: 'p-med',
     image: '/assets/brand/abraj-project-card.jpg',
+    imageZoom: true,
     summary:
       "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
     impact:
@@ -46,32 +78,6 @@ const PROJECTS: Project[] = [
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
       stat: 'جائزة أفضل\nتقرير استدامة',
       partner: 'الريادة في المسؤولية الاجتماعية للشركات',
-    },
-  },
-  {
-    name: '.nxt Jadeer National Program',
-    stat: '6,600+',
-    statLabel: 'Participants empowered',
-    partner: '2,700+ employed',
-    pillar: 'Innovation',
-    color: 'var(--innovation)',
-    bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
-    icon: '/assets/brand/awj-innovation-icon.svg',
-    size: 'p-med',
-    image: '/assets/brand/jadeer-project-card.png',
-    summary:
-      'Since 2020, .nxt Jadeer has empowered over 6,600 participants across Oman through comprehensive training in emerging technologies, entrepreneurship, and professional development, preparing them for future opportunities.',
-    impact:
-      'Participants completed over 300,000 learning hours across 136 educational tracks, earning 100,000+ certificates. The program has contributed to employing 2,700+ participants and supporting the development of 2,000+ entrepreneurial ideas.',
-    achievements: [
-      { value: '6,600+', label: 'Participants' },
-      { value: '2,700+', label: 'Employed' },
-      { value: '20+', label: 'Startups established' },
-    ],
-    ar: {
-      name: 'برنامج «دوت نكست جدير» الوطني',
-      statLabel: 'مشاركًا تم تمكينهم',
-      partner: 'توظيف +2,700 منتسب',
     },
   },
   {
@@ -276,12 +282,12 @@ export const Projects = () => {
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
-              {p.image && <img src={p.image} className="pt-bg-image" alt="" aria-hidden="true" />}
+              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ' is-zoomed' : ''}`} alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{pick(p, 'name', lang)}</div>
               <div className="pt-stat-block">
-                <div className="pt-stat">{pick(p, 'stat', lang)}</div>
+                <div className={`pt-stat${p.statCompact ? ' is-compact' : ''}`}>{pick(p, 'stat', lang)}</div>
                 <div className="pt-stat-label">{pick(p, 'statLabel', lang)}</div>
               </div>
               <div className="pt-foot">
