@@ -1653,19 +1653,6 @@ button, input, select, textarea { font-family: inherit; }
    logo instead of the subject. The transform carries the mask with it, so the
    fade still runs from the card edge toward the copy. */
 [dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
-/* The big tile's title runs the full width, so the photo keeps the same
-   size as every other tile but fades out under the title band. */
-.project-tile.p-big .pt-bg-image {
-  object-position: right bottom;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%),
-    linear-gradient(to bottom, transparent 18%, rgba(0,0,0,1) 42%);
-  mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%),
-    linear-gradient(to bottom, transparent 18%, rgba(0,0,0,1) 42%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
 /* The Abraj photo is 16:9, so in a 220px tile `cover` shows nearly all of it,
    logo included. Taller than the tile, anchored to the top, it crops the
    logo edge away and keeps the helmet in frame. */
@@ -1699,9 +1686,10 @@ button, input, select, textarea { font-family: inherit; }
   white-space: pre-line;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-.project-tile.p-big .pt-name { font-size: clamp(44px, 4vw, 58px); line-height: 1.15; font-weight: 700; }
-/* The Arabic name is one phrase and reads best unbroken, so it is sized to sit on one line. */
-[dir="rtl"] .project-tile.p-big .pt-name { font-size: clamp(34px, 3.1vw, 46px); }
+/* Two lines on the copy side, so the name never runs over the photo. */
+.project-tile.p-big .pt-name { font-size: clamp(36px, 3.4vw, 50px); line-height: 1.15; font-weight: 700; }
+/* The Arabic name breaks after "الوطني"; both lines fit the copy side at this size. */
+[dir="rtl"] .project-tile.p-big .pt-name { font-size: clamp(34px, 3.2vw, 46px); }
 .project-tile.p-med .pt-name { font-size: 26px; line-height: 1.3; display: block; font-weight: 700; }
 .project-tile.p-sm .pt-name { font-size: 24px; line-height: 1.3; display: block; font-weight: 700; }
 

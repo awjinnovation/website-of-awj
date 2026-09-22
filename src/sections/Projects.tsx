@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
       { value: '20+', label: 'Startups established' },
     ],
     ar: {
-      name: 'البرنامج الوطني دوت نكست جدير',
+      name: 'البرنامج الوطني\nدوت نكست جدير',
       statLabel: 'مشاركًا تم تمكينهم',
       partner: 'توظيف +2,700 منتسب',
     },
