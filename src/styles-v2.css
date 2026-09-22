@@ -1651,16 +1651,16 @@ button, input, select, textarea { font-family: inherit; }
    logo instead of the subject. The transform carries the mask with it, so the
    fade still runs from the card edge toward the copy. */
 [dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
-/* The big tile's title runs the full width, so the photo sits in the lower
-   two thirds and fades out upward, leaving the title band clear of it. */
+/* The big tile's title runs the full width, so the photo keeps the same
+   size as every other tile but fades out under the title band. */
 .project-tile.p-big .pt-bg-image {
-  top: auto; bottom: 0; height: 68%;
+  object-position: right bottom;
   -webkit-mask-image:
     linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%),
-    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 30%);
+    linear-gradient(to bottom, transparent 18%, rgba(0,0,0,1) 42%);
   mask-image:
     linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%),
-    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 30%);
+    linear-gradient(to bottom, transparent 18%, rgba(0,0,0,1) 42%);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
