@@ -293,6 +293,9 @@ export const NEWS: NewsItem[] = [
   },
 ];
 
+/** Newest first; ties keep file order. */
+export const NEWS_BY_DATE: NewsItem[] = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
+
 type CategoryStyle = { ink: string; a: string; b: string; accent: string };
 
 export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = {

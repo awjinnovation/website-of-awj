@@ -5,6 +5,7 @@ import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import {
   NEWS,
+  NEWS_BY_DATE,
   newsCategory,
   newsDate,
   newsPillar,
@@ -109,7 +110,7 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const [filter, setFilter] = useState<string>(all);
   const [pillarFilter, setPillarFilter] = useState<string>(all);
 
-  const filtered = NEWS.filter((n) => {
+  const filtered = NEWS_BY_DATE.filter((n) => {
     if (filter !== all && n.category !== filter) return false;
     if (pillarFilter !== all && n.pillar !== pillarFilter) return false;
     return true;
