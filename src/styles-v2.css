@@ -1821,10 +1821,17 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pm-body {
   padding: 36px 40px 40px; overflow-y: auto; position: relative;
 }
+/* `inset-inline-end`, not `right`: the photo sits on the side away from the
+   copy, so under RTL it moves to the left and its fade turns around. */
 .pm-body-image {
-  position: absolute; right: 0; top: 0; height: 100%; width: 40%;
+  position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 40%;
   object-fit: cover; object-position: right; opacity: 0.9; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
+}
+[dir="rtl"] .pm-body-image {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
 }
 .pm-title {
   font-family: var(--font-display); font-weight: 700;
@@ -1853,6 +1860,8 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   font-family: var(--font-display); font-weight: 200;
   line-height: 1; font-size: clamp(28px, 3vw, 40px);
 }
+/* A phrase rather than a figure: smaller, so it holds to one or two lines. */
+.pm-ach-value.is-long { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.25; font-weight: 400; }
 .pm-ach-label {
   font-family: var(--font-body); font-size: 20px;
   ; opacity: 0.65; margin-top: 8px;

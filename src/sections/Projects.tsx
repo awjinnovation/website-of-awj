@@ -20,8 +20,17 @@ type Project = {
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
-  /** Approved Arabic for the card face (content notes 23-29); missing fields fall back to English. */
-  ar?: { name?: string; stat?: string; statLabel?: string; partner?: string; partnerCompact?: boolean };
+  /** Approved Arabic for the card face (content notes 23-29) and the detail modal; missing fields fall back to English. */
+  ar?: {
+    name?: string;
+    stat?: string;
+    statLabel?: string;
+    partner?: string;
+    partnerCompact?: boolean;
+    summary?: string;
+    impact?: string;
+    achievements?: { value: string; label: string }[];
+  };
 };
 
 const PROJECTS: Project[] = [
@@ -49,6 +58,15 @@ const PROJECTS: Project[] = [
       name: 'البرنامج الوطني\nدوت نكست جدير',
       statLabel: 'مشاركًا تم تمكينهم',
       partner: 'توظيف +2,700 منتسب',
+      summary:
+        'منذ عام 2020 مكن برنامج دوت نكست جدير أكثر من 6,600 مشارك في أنحاء سلطنة عمان عبر تدريب شامل في التقنيات الناشئة وريادة الأعمال والتطوير المهني، تهيئة لهم لفرص المستقبل.',
+      impact:
+        'أتم المشاركون أكثر من 300,000 ساعة تعلم ضمن 136 مسارا تعليميا، وحصلوا على أكثر من 100,000 شهادة. وأسهم البرنامج في توظيف أكثر من 2,700 مشارك ودعم تطوير أكثر من 2,000 فكرة ريادية.',
+      achievements: [
+        { value: '6,600+', label: 'مشارك' },
+        { value: '2,700+', label: 'موظف' },
+        { value: '20+', label: 'شركة ناشئة تأسست' },
+      ],
     },
   },
   {
@@ -78,6 +96,15 @@ const PROJECTS: Project[] = [
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
       stat: 'جائزة أفضل\nتقرير استدامة',
       partner: 'الريادة في المسؤولية الاجتماعية للشركات',
+      summary:
+        'أعدت أوج الاستدامة تقرير الاستدامة الشامل لشركة أبراج لخدمات الطاقة، ونال التقرير جائزة أفضل تقرير استدامة لعام 2025، مجسدا ممارسات عالمية المستوى في الإفصاح البيئي والاجتماعي والحوكمة والشفافية.',
+      impact:
+        'يضع التقرير معايير جديدة للإفصاح عن الاستدامة في سلطنة عمان، ويعكس الالتزام بأفضل الممارسات العالمية في تقارير الممارسات البيئية والاجتماعية والحوكمة (ESG). وقد عزز سمعة الشركة وثقة المستثمرين، وأظهر التزاما عمليا بالاستدامة.',
+      achievements: [
+        { value: 'أفضل جائزة', label: '2025' },
+        { value: 'معايير المبادرة العالمية للتقارير (GRI)', label: 'متوافق' },
+        { value: 'عالمي', label: 'أفضل الممارسات' },
+      ],
     },
   },
   {
@@ -105,6 +132,15 @@ const PROJECTS: Project[] = [
       name: 'استوديو عُمان للذكاء الاصطناعي',
       statLabel: 'جهة حكومية تم خدمتها',
       partner: '+33 حلًّا للذكاء الاصطناعي',
+      summary:
+        'استوديو عمان الوطني للذكاء الاصطناعي، الذي تشغله أوج الأنظمة نيابة عن وزارة النقل والاتصالات وتقنية المعلومات، مركز تميز للابتكار القائم على الذكاء الاصطناعي والتحول الرقمي.',
+      impact:
+        'قدم الاستوديو أكثر من 33 حلا للذكاء الاصطناعي لـ18 جهة حكومية، ممكنا التحول المؤسسي واتخاذ القرار المبني على البيانات. وتضم منظومته 7 شركات ناشئة نشطة وأكثر من 20 شريكا تقنيا يدفعون تبني الذكاء الاصطناعي على مستوى الدولة.',
+      achievements: [
+        { value: '18', label: 'جهة حكومية' },
+        { value: '33', label: 'حلا للذكاء الاصطناعي' },
+        { value: '7', label: 'شركات ناشئة نشطة' },
+      ],
     },
   },
   {
@@ -132,6 +168,15 @@ const PROJECTS: Project[] = [
       name: 'برنامج القيادة في الصناعات الثقافية والإبداعية',
       statLabel: 'نسبة الرضا',
       partner: 'برنامج معتمد',
+      summary:
+        'طورت أكاديمية أوج برنامجا متخصصا لتطوير القيادات في الصناعات الثقافية والإبداعية، يؤهل قادة القطاع لقيادة الابتكار وتعزيز التنافسية في القطاع الإبداعي المتنامي في سلطنة عمان.',
+      impact:
+        'حقق البرنامج نسبة رضا بلغت 95%، ونجح خريجوه في تطبيق استراتيجيات إبداعية في المؤسسات الثقافية وشركات الإعلام والمنشآت الإبداعية، وأصبح كثير منهم من قادة القطاع ومرشديه.',
+      achievements: [
+        { value: '95%', label: 'الرضا' },
+        { value: '20+', label: 'برنامجا مقدما' },
+        { value: '10', label: 'شركاء استراتيجيين' },
+      ],
     },
   },
   {
@@ -155,9 +200,18 @@ const PROJECTS: Project[] = [
       { value: 'Real-time', label: 'Performance tracking' },
     ],
     ar: {
-      name: 'منصة Planning & Strategy',
+      name: 'منصة التخطيط والاستراتيجية',
       statLabel: 'مبادرة استراتيجية',
       partner: 'عميل مؤسسي',
+      summary:
+        'تمكن منصة التخطيط والاستراتيجية من أوج الأنظمة المؤسسات من إعداد خرائط طريق استراتيجية وتنفيذها عبر التخطيط المبني على البيانات وتحليل السيناريوهات واتخاذ القرار المدعوم بالذكاء الاصطناعي، بما يعين القادة على التعامل مع التحديات المعقدة بثقة.',
+      impact:
+        'دعمت المنصة التحولات الاستراتيجية في مؤسسات القطاعين الحكومي والخاص، وساعدت القادة على اتخاذ قرارات مستنيرة ومواءمة الأهداف المؤسسية ومتابعة التقدم الاستراتيجي لحظيا عبر التحليلات الذكية والتمثيل البصري للبيانات.',
+      achievements: [
+        { value: '12', label: 'مبادرة استراتيجية' },
+        { value: 'دعم اتخاذ القرار', label: 'بالذكاء الاصطناعي' },
+        { value: 'لحظي', label: 'متابعة الأداء' },
+      ],
     },
   },
   {
@@ -186,6 +240,15 @@ const PROJECTS: Project[] = [
       statLabel: 'تقليل الهدر الإنشائي',
       partner: 'مع الجامعة الألمانية للتكنولوجيا (GUtech)',
       partnerCompact: true,
+      summary:
+        'قادت أوج الاستدامة تطوير أول وأكبر مبنى مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط، في تطبيق عملي لممارسات البناء المستدام وتقنيات التصنيع المتقدمة التي تحد من الأثر البيئي.',
+      impact:
+        'خفض المشروع الهدر الإنشائي بنسبة 60%، وأثبت إمكانية استخدام مواد مستدامة وقابلة لإعادة التدوير، ووضع سلطنة عمان في موقع الريادة في ابتكار البناء المستدام. وبرهن هذا الإنجاز أن التصنيع المتقدم قادر على تحقيق منافع اقتصادية وبيئية معا.',
+      achievements: [
+        { value: '60%', label: 'خفض الهدر' },
+        { value: '100%', label: 'مواد قابلة لإعادة التدوير' },
+        { value: 'الأول في الشرق الأوسط', label: 'إنجاز إقليمي' },
+      ],
     },
   },
   {
@@ -212,6 +275,15 @@ const PROJECTS: Project[] = [
       name: 'هاكاثون التخطيط العمراني الخليجي',
       statLabel: 'مشاركًا',
       partner: 'متوافق مع رؤية عُمان 2040',
+      summary:
+        'نظمت أوج الابتكار لصالح وزارة الإسكان والتخطيط العمراني أول هاكاثون خليجي للتخطيط العمراني، بمشاركة 80 مشاركا لتطوير حلول مبتكرة لتحديات المدن بما يتوافق مع رؤية عمان 2040.',
+      impact:
+        'أثمر الهاكاثون عن حلول مبتكرة في التخطيط العمراني تركز على تنمية المدن المستدامة والبنية التحتية الذكية والتصميم المتمحور حول المجتمع، ويجري دمج عدد من هذه التصورات في الاستراتيجية العمرانية لسلطنة عمان.',
+      achievements: [
+        { value: '80', label: 'مشاركا' },
+        { value: '20', label: 'حلا مطورا' },
+        { value: 'رؤية 2040', label: 'مواءمة استراتيجية' },
+      ],
     },
   },
   {
@@ -237,11 +309,20 @@ const PROJECTS: Project[] = [
       name: 'الإطار الوطني لحوكمة برامج المسؤولية الاجتماعية',
       statLabel: 'جهة مشاركة',
       partner: 'مع وزارة التنمية الاجتماعية',
+      summary:
+        'تتعاون أوج الاستدامة مع وزارة التنمية الاجتماعية في تطوير الإطار الوطني لحوكمة المسؤولية الاجتماعية للشركات في سلطنة عمان وتطبيقه، لتحويل العمل الخيري المتفرق إلى مسؤولية اجتماعية استراتيجية.',
+      impact:
+        'يرسخ هذا الإطار مكانة سلطنة عمان في ريادة حوكمة المسؤولية الاجتماعية إقليميا، عبر إرشادات واضحة للعطاء المؤسسي، وضمان الشفافية، وتعظيم الأثر الاجتماعي على المستوى الوطني.',
+      achievements: [
+        { value: '50+', label: 'جهة مشاركة' },
+        { value: 'قيد التطبيق', label: 'حالة الإطار' },
+        { value: 'وطني', label: 'مستوى الأثر' },
+      ],
     },
   },
 ];
 
-const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner', lang: string) =>
+const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner' | 'summary' | 'impact', lang: string) =>
   (lang === 'ar' && p.ar?.[k]) || p[k];
 
 export const Projects = () => {
@@ -346,14 +427,14 @@ export const Projects = () => {
             </div>
             <div className="pm-body">
               {PROJECTS[open].image && <img src={PROJECTS[open].image} className="pm-body-image" alt="" aria-hidden="true" />}
-              <p className="pm-summary">{PROJECTS[open].summary}</p>
-              <p className="pm-impact">{PROJECTS[open].impact}</p>
+              <p className="pm-summary">{pick(PROJECTS[open], 'summary', lang)}</p>
+              <p className="pm-impact">{pick(PROJECTS[open], 'impact', lang)}</p>
               <div className="pm-achievements">
                 <div className="pm-ach-head">{t('projects.modal.achievements')}</div>
                 <div className="pm-ach-grid">
-                  {PROJECTS[open].achievements.map((a) => (
+                  {((lang === 'ar' && PROJECTS[open].ar?.achievements) || PROJECTS[open].achievements).map((a) => (
                     <div key={`${a.value}-${a.label}`} className="pm-ach">
-                      <div className="pm-ach-value">{a.value}</div>
+                      <div className={`pm-ach-value${a.value.length > 14 ? ' is-long' : ''}`}>{a.value}</div>
                       <div className="pm-ach-label">{a.label}</div>
                     </div>
                   ))}
