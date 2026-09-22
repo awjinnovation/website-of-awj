@@ -1,3 +1,5 @@
+import { COMPANY_ADDRESS } from '../data/company';
+
 export type Lang = 'en' | 'ar';
 
 /**
@@ -124,6 +126,7 @@ const en = {
   'contact.lede':
     'A short, structured intake helps us route your enquiry to the right pillar and partner. Most replies within two business days.',
   'contact.callUs': 'Or call us directly',
+  'contact.address': 'Address',
   'contact.step1': 'Which pillar are you interested in?',
   'contact.step2': "What's the area of engagement?",
   'contact.step3': 'Tell us about you',
@@ -169,8 +172,8 @@ const en = {
     'An integrated holding group operating across\nAcademy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
   'footer.col.pillars': 'Pillars',
   'footer.col.location': 'Location',
-  'footer.col.address': 'We operate from Mazoon Square, 5th Floor, Al Khoudh, Muscat, Sultanate of Oman, aligned with standard Muscat working hours (Sunday to Thursday).',
-  'footer.col.hours': '',
+  'footer.col.address': `Address: ${COMPANY_ADDRESS.en}`,
+  'footer.col.hours': 'Working hours: 09:00 to 16:00 (Sunday to Thursday).',
   'footer.col.group': 'Group',
   'footer.col.group.companies': 'Companies',
   'footer.col.group.capabilities': 'Capabilities',
@@ -347,6 +350,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'contact.title': 'تواصل معنا',
   'contact.lede': 'استمارةٌ قصيرة تُوجّه طلبك إلى القطاع والشريك المعنيَّين. نردّ في يومَي عملٍ في الغالب.',
   'contact.callUs': 'أو اتصل بنا مباشرة',
+  'contact.address': 'العنوان',
   'contact.step1': 'بأي قطاع أنت مهتم؟',
   'contact.step2': 'ما مجال التعاون؟',
   'contact.step3': 'عرّفنا بنفسك',
@@ -388,7 +392,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'footer.brand.desc': 'مجموعةٌ متكاملة تعمل عبر أوج الابتكار وأوج الاستدامة وأوج الأنظمة وأكاديمية أوج، تبني تقدّمًا راسخًا للقطاعات التي تخدمها.',
   'footer.col.pillars': 'القطاعات',
   'footer.col.location': 'الموقع',
-  'footer.col.address': 'العنوان: مزون سكوير، الطابق الخامس، الخوض، مسقط، سلطنة عُمان',
+  'footer.col.address': `العنوان: ${COMPANY_ADDRESS.ar}`,
   'footer.col.hours': 'أوقات العمل: 09:00 وحتى 16:00 (من الأحد إلى الخميس).',
   'footer.col.group': 'المجموعة',
   'footer.col.group.companies': 'الشركات',

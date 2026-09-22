@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type ReactNode } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { useLang } from '../i18n/LangContext';
+import { COMPANY_ADDRESS } from '../data/company';
 
 type FormData = {
   pillar: string;
@@ -81,7 +82,7 @@ const Field = ({
 };
 
 export const Contact = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -250,6 +251,10 @@ export const Contact = () => {
             <a className="contact-direct-phone" href="tel:+96893909693" dir="ltr">
               +968 9390 9693
             </a>
+          </div>
+          <div className="contact-direct">
+            <span className="contact-direct-label">{t('contact.address')}</span>
+            <address className="contact-direct-address">{COMPANY_ADDRESS[lang]}</address>
           </div>
         </div>
         <div className="reveal">

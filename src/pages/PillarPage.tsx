@@ -657,8 +657,9 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                   <div className="pillar-contact-row">
                     <div className="pillar-contact-key">{t('pillarPage.contact.phone')}</div>
                     <a
-                      className="pillar-contact-val"
+                      className="pillar-contact-val pillar-contact-phone"
                       href={`tel:${content.contact.phone.replace(/\s+/g, '')}`}
+                      dir="ltr"
                     >
                       {content.contact.phone}
                     </a>
