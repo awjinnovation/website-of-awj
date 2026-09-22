@@ -44,7 +44,7 @@ const MILESTONES: TimelineMilestone[] = [
 ];
 
 export const TimelineSection = ({ accent = '#7fe0d8', roadWidth = 16 }) => {
-  return null; // Placeholder for the actual implementation
+  return null; //to hide the section for now
   const wrapRef = useRef<HTMLDivElement>(null); 
   const [width, setWidth] = useState(1600);
 
