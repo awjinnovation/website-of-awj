@@ -15,8 +15,8 @@ type Project = {
   statCompact?: boolean;
   light?: boolean;
   image?: string;
-  /** Enlarge the photo so a logo baked into its far edge falls outside the tile. */
-  imageZoom?: boolean;
+  /** Crop the photo tighter: `trim` drops an artefact at its far edge, `portrait` centres on the subject's face. */
+  imageZoom?: 'trim' | 'portrait';
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
@@ -63,7 +63,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-med',
     image: '/assets/brand/abraj-project-card.jpg',
-    imageZoom: true,
+    imageZoom: 'portrait',
     summary:
       "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
     impact:
@@ -91,6 +91,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-systems-icon.svg',
     size: 'p-med',
     image: '/assets/brand/ai-studio-project-card.jpeg',
+    imageZoom: 'trim',
     summary:
       'The National Artificial Intelligence Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology, is a center of excellence for AI-driven innovation and digital transformation.',
     impact:
@@ -282,7 +283,7 @@ export const Projects = () => {
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
-              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ' is-zoomed' : ''}`} alt="" aria-hidden="true" />}
+              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}`} alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{pick(p, 'name', lang)}</div>

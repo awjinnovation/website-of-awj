@@ -1655,10 +1655,12 @@ button, input, select, textarea { font-family: inherit; }
   -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
   mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
-/* The Abraj photo is 16:9, so in a 220px tile `cover` shows nearly all of it,
-   logo included. Taller than the tile, anchored to the top, it crops the
-   logo edge away and keeps the helmet in frame. */
-.project-tile .pt-bg-image.is-zoomed { height: 140%; }
+/* Tighter crops for photos whose far edge carries an artefact. `trim` is just
+   enough to push a dark strip out of frame; `portrait` closes in on the
+   subject's face and lifts the frame so the helmet stays in view, which also
+   keeps the Abraj logo and most of its geometric backdrop outside the tile. */
+.project-tile .pt-bg-image.is-trim { height: 130%; }
+.project-tile .pt-bg-image.is-portrait { height: 200%; top: -12%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
