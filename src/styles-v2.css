@@ -1647,12 +1647,14 @@ button, input, select, textarea { font-family: inherit; }
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
 /* The photo occupies the half of the card the copy does not, so `inset-inline-end`
-   swaps it to the left under RTL. Mirroring the pixels rather than re-anchoring
-   the crop keeps each photo's composition: `object-position: left` would crop to
-   the opposite edge of the source and, on the Abraj card, showed the company
-   logo instead of the subject. The transform carries the mask with it, so the
-   fade still runs from the card edge toward the copy. */
-[dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
+   swaps it to the left under RTL. The pixels are never mirrored (people and
+   lettering must read correctly), and `object-position: right` stays so each
+   photo keeps the same crop as in LTR. Only the fade turns around, so it still
+   runs from the card edge toward the copy. */
+[dir="rtl"] .project-tile .pt-bg-image {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
+}
 /* The Abraj photo is 16:9, so in a 220px tile `cover` shows nearly all of it,
    logo included. Taller than the tile, anchored to the top, it crops the
    logo edge away and keeps the helmet in frame. */
