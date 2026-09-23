@@ -1660,7 +1660,7 @@ button, input, select, textarea { font-family: inherit; }
    subject's face and lifts the frame so the helmet stays in view, which also
    keeps the Abraj logo and most of its geometric backdrop outside the tile. */
 .project-tile .pt-bg-image.is-trim { height: 130%; }
-.project-tile .pt-bg-image.is-portrait { height: 200%; top: -12%; }
+.project-tile .pt-bg-image.is-portrait { height: 200%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
