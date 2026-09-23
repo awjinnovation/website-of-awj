@@ -1656,11 +1656,11 @@ button, input, select, textarea { font-family: inherit; }
   mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
 /* Tighter crops for photos whose far edge carries an artefact. `trim` is just
-   enough to push a dark strip out of frame; `portrait` closes in on the
-   subject's face and lifts the frame so the helmet stays in view, which also
-   keeps the Abraj logo and most of its geometric backdrop outside the tile. */
+   enough to push a dark strip out of frame; `portrait` frames the subject head
+   and shoulders. 140% is the widest crop that still keeps the Abraj logo, baked
+   into the photo's left edge, outside the tile; its geometric backdrop stays. */
 .project-tile .pt-bg-image.is-trim { height: 130%; }
-.project-tile .pt-bg-image.is-portrait { height: 200%; }
+.project-tile .pt-bg-image.is-portrait { height: 140%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
