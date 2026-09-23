@@ -213,7 +213,8 @@
 }
 .am-close:hover { background: var(--ink); color: var(--paper); transform: rotate(90deg); }
 
-.am-cover { position: relative; aspect-ratio: 16/8; overflow: hidden; }
+/* The news photos are 3:2, so the cover matches them and shows each one whole. */
+.am-cover { position: relative; aspect-ratio: 3/2; overflow: hidden; }
 .am-cover .news-cover-svg { width: 100%; height: 100%; display: block; }
 .am-cover-overlay {
   position: absolute; left: 0; right: 0; bottom: 0;

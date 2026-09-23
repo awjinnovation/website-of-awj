@@ -51,57 +51,6 @@ const NewsHero = () => {
 
 type OpenHandler = (id: string) => void;
 
-const FeaturedSection = ({ onOpen }: { onOpen: OpenHandler }) => {
-  const { t, lang } = useLang();
-  const featured = NEWS.filter((n) => n.featured);
-  return (
-    <section className="news-page-featured">
-      <div className="container">
-        <div className="npf-head">
-          <div className="eyebrow">{t('newsPage.featured')}</div>
-        </div>
-        <div className="npf-grid">
-          {featured.map((n) => (
-            <button
-              key={n.id}
-              type="button"
-              className="npf-card"
-              onClick={() => onOpen(n.id)}
-            >
-              <div className="npf-cover">
-                <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
-                <div className="npf-tag">{newsCategory(n.category, lang)}</div>
-                <div className="npf-featured-badge">{t('newsPage.featuredBadge')}</div>
-              </div>
-              <div className="npf-body">
-                <div className="npf-meta">
-                  <span>{newsDate(n, lang)}</span>
-                  <span className="dot">·</span>
-                  <span>{newsPillar(n.pillar, lang)}</span>
-                </div>
-                <h3 className="npf-title">{newsTitle(n, lang)}</h3>
-                <p className="npf-dek">{newsDek(n, lang)}</p>
-                <span className="npf-read">
-                  {t(n.bodyAr ? 'news.readStory' : 'news.readStoryEnOnly')}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M5 12h14M13 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const { t, lang } = useLang();
   const all = useMemo(() => 'All', []);
@@ -247,7 +196,11 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
         </div>
         <div className="am-body">
           <h1 className="am-title">{newsTitle(article, lang)}</h1>
-          <p className="am-dek">{newsDek(article, lang)}</p>
+          {/* Stories that carry no separate summary use their opening paragraph
+              as the card dek, so printing it here would repeat it. */}
+          {newsDek(article, lang) !== newsBody(article, lang)[0] && (
+            <p className="am-dek">{newsDek(article, lang)}</p>
+          )}
           <div className="am-rule"></div>
           <div className="am-text">
             {newsBody(article, lang).map((p) => (
@@ -298,7 +251,6 @@ export const NewsPage = () => {
       <Cursor />
       <NavPill />
       <NewsHero />
-      <FeaturedSection onOpen={handleOpen} />
       <AllNewsSection onOpen={handleOpen} />
       <Footer />
       {article && <ArticleModal article={article} onClose={handleClose} />}
