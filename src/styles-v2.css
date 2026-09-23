@@ -1661,6 +1661,10 @@ button, input, select, textarea { font-family: inherit; }
    into the photo's left edge, outside the tile; its geometric backdrop stays. */
 .project-tile .pt-bg-image.is-trim { height: 130%; }
 .project-tile .pt-bg-image.is-portrait { height: 140%; }
+/* On wide screens the crop reaches source x≈585, where the last pixels of the
+   ABRAJ wordmark still sit. That edge is opaque under RTL, so nudge the photo
+   until they clip; in LTR the same pixels fall under the fade and never show. */
+[dir="rtl"] .project-tile .pt-bg-image.is-portrait { inset-inline-end: -10px; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
