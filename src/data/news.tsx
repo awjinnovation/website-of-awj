@@ -8,7 +8,8 @@ export type NewsCategory =
   | 'Aviation'
   | 'Training'
   | 'Digital Economy'
-  | 'Urban Development';
+  | 'Urban Development'
+  | 'Sustainability';
 
 export type NewsItem = {
   id: string;
@@ -30,6 +31,87 @@ export type NewsItem = {
 };
 
 export const NEWS: NewsItem[] = [
+  {
+    id: 'awj-ceo-inclusive-employment-panel',
+    image: '/news-media/awj-ceo-inclusive-employment-panel.jpeg',
+    category: 'Social Responsibility',
+    title: 'AWJ CEO Participates in a Panel Discussion on Inclusive Employment for Persons with Disabilities',
+    titleAr:
+      'أوج الاستدامة تشارك في المبادرة العربية العيش باستقلالية للأشخاص ذوي الإعاقة خلال الفترة 16 – 17 سبتمبر 2026 بصلالة',
+    date: '2026-09-16',
+    dateLabel: 'Sep 16, 2026',
+    pillar: 'AWJ Sustain',
+    dek: 'Dr Yousuf bin Abdullah Al Balushi, Chief Executive Officer of AWJ, participated in the second panel discussion titled “Social Responsibility and Economic Empowerment: Inclusive Employment for Persons with Disabilities.”',
+    dekAr:
+      'شارك الدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لشركة أوج، في الجلسة الحوارية الثانية بعنوان «المسؤولية الاجتماعية والتمكين الاقتصادي: دمج وظيفي شامل للأشخاص ذوي الإعاقة».',
+    featured: false,
+    body: [
+      'Dr Yousuf bin Abdullah Al Balushi, Chief Executive Officer of AWJ, participated in the second panel discussion titled “Social Responsibility and Economic Empowerment: Inclusive Employment for Persons with Disabilities.”',
+      'The session was held as part of the fourth edition of the Independent Living Initiative for Persons with Disabilities, which took place on 16–17 September 2026 and brought together government representatives, experts, and specialists.',
+      'During the discussion, Dr Yousuf highlighted the importance of governing social responsibility practices and establishing clear standards that strengthen private-sector commitment to supporting persons with disabilities and creating more inclusive and empowering workplaces.',
+      'AWJ’s participation reflects its interest in advancing dialogue on social responsibility and supporting institutional practices that promote inclusive employment and equal opportunities for all members of society.',
+    ],
+    bodyAr: [
+      'شارك الدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لشركة أوج، في الجلسة الحوارية الثانية بعنوان «المسؤولية الاجتماعية والتمكين الاقتصادي: دمج وظيفي شامل للأشخاص ذوي الإعاقة».',
+      'أُقيمت الجلسة ضمن أعمال الدورة الرابعة لمبادرة «العيش باستقلالية للأشخاص ذوي الإعاقة»، التي انعقدت خلال يومي 16 و17 سبتمبر 2026، بمشاركة عدد من المسؤولين والخبراء والمتخصصين.',
+      'وخلال مشاركته، سلّط الدكتور يوسف البلوشي الضوء على أهمية حوكمة المسؤولية الاجتماعية ووضع أطر قياسية واضحة تعزّز التزام مؤسسات القطاع الخاص تجاه الأشخاص ذوي الإعاقة، وتدعم توفير بيئات عمل أكثر شمولًا وتمكينًا.',
+      'وتعكس مشاركة أوج اهتمامها بتعزيز الحوار حول المسؤولية الاجتماعية، ودعم الممارسات المؤسسية التي تسهم في تحقيق الدمج الوظيفي وتكافؤ الفرص لمختلف فئات المجتمع.',
+    ],
+  },
+  {
+    id: 'ai-studio-ai-agents-workshop',
+    image: '/news-media/ai-studio-ai-agents-workshop.jpeg',
+    category: 'Training',
+    title: 'AI Studio Organizes a Workshop on “AI Agents in the Workplace”',
+    titleAr:
+      'استوديو الذكاء الاصطناعي ينظّم ورشة «وكلاء الذكاء الاصطناعي في بيئة العمل»',
+    date: '2026-09-16',
+    dateLabel: 'Sep 16, 2026',
+    pillar: 'AWJ Systems',
+    dek: 'On 16 September 2026, AI Studio organized a workshop titled “AI Agents in the Workplace,” delivered by Mohammed Abdullah Ashqabo. The workshop aimed to enhance participants’ understanding of the practical and responsible use of AI agents in professional environments.',
+    dekAr:
+      'نظّم استوديو الذكاء الاصطناعي، يوم 16 سبتمبر 2026، ورشة عمل بعنوان «وكلاء الذكاء الاصطناعي في بيئة العمل»، قدّمها المهندس محمد عبدالله أشقابو، بهدف تعزيز المعرفة بالتطبيقات العملية والآمنة لوكلاء الذكاء الاصطناعي في بيئات العمل.',
+    featured: false,
+    body: [
+      'On 16 September 2026, AI Studio organized a workshop titled “AI Agents in the Workplace,” delivered by Mohammed Abdullah Ashqabo. The workshop aimed to enhance participants’ understanding of the practical and responsible use of AI agents in professional environments.',
+      'The workshop covered several key topics, including selecting suitable tasks to delegate to AI agents, protecting data, defining and managing access permissions, and reviewing and verifying AI-generated outputs before approval.',
+      'Participants engaged in interactive discussions and practical activities that highlighted best practices for helping individuals and organizations use AI agents effectively and responsibly.',
+      'The workshop forms part of AI Studio’s ongoing efforts to promote knowledge, build capabilities in artificial intelligence and emerging technologies, and support their practical and secure adoption across workplaces.',
+    ],
+    bodyAr: [
+      'نظّم استوديو الذكاء الاصطناعي، يوم 16 سبتمبر 2026، ورشة عمل بعنوان «وكلاء الذكاء الاصطناعي في بيئة العمل»، قدّمها المهندس محمد عبدالله أشقابو، بهدف تعزيز المعرفة بالتطبيقات العملية والآمنة لوكلاء الذكاء الاصطناعي في بيئات العمل.',
+      'تناولت الورشة عددًا من المحاور، من بينها اختيار المهام المناسبة للتفويض إلى وكلاء الذكاء الاصطناعي، وحماية البيانات، وتحديد الصلاحيات وضبطها، إلى جانب أهمية مراجعة المخرجات والتحقق منها قبل اعتمادها.',
+      'وشهدت الورشة مشاركة وتفاعلًا من الحضور من خلال المناقشات والتطبيقات العملية، بما أسهم في توضيح أفضل الممارسات التي تساعد المؤسسات والأفراد على الاستفادة من وكلاء الذكاء الاصطناعي بكفاءة ومسؤولية.',
+      'وتأتي هذه الورشة ضمن جهود استوديو الذكاء الاصطناعي لنشر المعرفة، وتنمية القدرات في مجالات الذكاء الاصطناعي والتقنيات الحديثة، ودعم تبنّيها بصورة عملية وآمنة في بيئات العمل.',
+    ],
+  },
+  {
+    id: 'awj-sustain-oman-climate-week',
+    image: '/news-media/awj-sustain-oman-climate-week.jpeg',
+    category: 'Sustainability',
+    title: 'AWJ Sustain Participates in Oman Climate Week and Signs a Strategic Partnership with Movesion',
+    titleAr:
+      'أوج للاستدامة تشارك في أسبوع عُمان للمناخ وتوقّع شراكة استراتيجية مع موفيشن الايطالية',
+    date: '2026-09-14',
+    dateLabel: 'Sep 14, 2026',
+    pillar: 'AWJ Sustain',
+    dek: 'AWJ Sustain participated in Oman Climate Week as part of the panel discussion, “Clean Air for a Prosperous Future: Tackling Air Pollution in a Changing Climate.” The session explored the environmental challenges associated with air pollution and the practical solutions needed to address them.',
+    dekAr:
+      'شاركت أوج الاستدامة في أسبوع عُمان للمناخ المقام خلال الفترة من 14 – 16 سبتمبر 2026 في مركز عمان للمؤتمرات والمعارض، ضمن الجلسة النقاشية «هواء نظيف لمستقبل مزدهر: مواجهة تلوث الهواء في عالم متغيّر»، التي ناقشت التحديات البيئية المرتبطة بتلوث الهواء والحلول العملية اللازمة لمواجهتها.',
+    featured: false,
+    body: [
+      'AWJ Sustain participated in Oman Climate Week as part of the panel discussion, “Clean Air for a Prosperous Future: Tackling Air Pollution in a Changing Climate.” The session explored the environmental challenges associated with air pollution and the practical solutions needed to address them.',
+      'The participation contributed to the wider conversation on reducing air pollution and highlighted the role of organisations in adopting more sustainable practices and solutions that support a better environmental future.',
+      'AWJ Sustain also signed a strategic partnership agreement with Movesion, an Italian sustainability company. The partnership brings together Omani expertise and international best practices to support organisations across the Sultanate of Oman in developing their practices and advancing their sustainability journeys.',
+      'These initiatives reflect AWJ Sustain’s commitment to strengthening collaboration, exchanging expertise, and delivering practical solutions that create lasting environmental and organisational impact.',
+    ],
+    bodyAr: [
+      'شاركت أوج الاستدامة في أسبوع عُمان للمناخ المقام خلال الفترة من 14 – 16 سبتمبر 2026 في مركز عمان للمؤتمرات والمعارض، ضمن الجلسة النقاشية «هواء نظيف لمستقبل مزدهر: مواجهة تلوث الهواء في عالم متغيّر»، التي ناقشت التحديات البيئية المرتبطة بتلوث الهواء والحلول العملية اللازمة لمواجهتها.',
+      'وأسهمت المشاركة في تعزيز الحوار حول سبل الحد من تلوث الهواء، ودور المؤسسات في تبنّي ممارسات وحلول أكثر استدامة تدعم مستقبلًا بيئيًا أفضل.',
+      'كما وقّعت أوج للاستدامة اتفاقية شراكة استراتيجية مع شركة موفيشن الإيطالية المتخصصة في الاستدامة. وتجمع هذه الشراكة بين الخبرة العُمانية والممارسات الدولية، بهدف دعم المؤسسات في سلطنة عُمان وتمكينها من تطوير ممارساتها وتعزيز مسيرتها نحو الاستدامة.',
+      'وتأتي هذه الخطوات ضمن التزام أوج للاستدامة بتعزيز التعاون وتبادل الخبرات، وتقديم حلول عملية تسهم في تحقيق أثر بيئي ومؤسسي مستدام.',
+    ],
+  },
   {
     id: 'healthcare-studio',
     image: '/news-media/healthcare-studio.jpg',
@@ -307,6 +389,7 @@ export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = {
   Training: { ink: '#3a2a18', a: '#3a2a18', b: '#7a5a3a', accent: '#fac99e' },
   'Digital Economy': { ink: '#1a1a1a', a: '#1a1a1a', b: '#3a3a3a', accent: '#ee6c11' },
   'Urban Development': { ink: '#2a3a4a', a: '#2a3a4a', b: '#5a7a9a', accent: '#fde0ca' },
+  Sustainability: { ink: '#0b3b38', a: '#0b3b38', b: '#00a19d', accent: '#c9ece6' },
 };
 
 type CoverProps = { category: NewsCategory };
@@ -618,11 +701,14 @@ const CATEGORY_AR: Partial<Record<NewsCategory, string>> = {
   'Training': 'التدريب',
   'Digital Economy': 'الاقتصاد الرقمي',
   'Urban Development': 'التنمية العمرانية',
+  'Sustainability': 'الاستدامة',
 };
 
 const PILLAR_KEY: Record<string, TranslationKey> = {
   'AWJ Innovation': 'pillar.innovation.fullName',
   'AWJ Academy': 'pillar.academy.fullName',
+  'AWJ Sustain': 'pillar.sustain.fullName',
+  'AWJ Systems': 'pillar.systems.fullName',
 };
 
 const AR_MONTHS = [
