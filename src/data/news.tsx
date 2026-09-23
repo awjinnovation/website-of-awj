@@ -37,7 +37,7 @@ export const NEWS: NewsItem[] = [
     category: 'Social Responsibility',
     title: 'AWJ CEO Participates in a Panel Discussion on Inclusive Employment for Persons with Disabilities',
     titleAr:
-      'أوج الاستدامة تشارك في المبادرة العربية العيش باستقلالية للأشخاص ذوي الإعاقة خلال الفترة 16 – 17 سبتمبر 2026 بصلالة',
+      'أوج الاستدامة تشارك في المبادرة العربية العيش باستقلالية للأشخاص ذوي الإعاقة بصلالة',
     date: '2026-09-16',
     dateLabel: 'Sep 16, 2026',
     pillar: 'AWJ Sustain',
