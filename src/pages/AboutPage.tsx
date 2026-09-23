@@ -4,6 +4,7 @@ import { Footer } from '../sections/Footer';
 import { TimelineSection } from '../sections/TimelineSection';
 import { AdvantagesValuesSection } from '../sections/AdvantagesValuesSection';
 import { type PillarId } from '../data/pillars';
+import { useLang } from '../i18n/LangContext';
 import { useEffect } from 'react';
 
 type TeamMember = {
@@ -39,6 +40,8 @@ const AWJ_TEAM: TeamMember[] = [
 ];
 
 export const AboutPage = () => {
+  const { t } = useLang();
+
   useEffect(() => {
     // Intersection Observer for scroll-triggered animations
     const observer = new IntersectionObserver(
@@ -69,13 +72,9 @@ export const AboutPage = () => {
         <section className="about-hero">
           <div className="hero-overview-container">
             <div className="hero-content">
-              <h1 className="about-title">About AWJ</h1>
-              <p className="hero-lede">
-                We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.
-              </p>
-              <p className="about-hero-quote">
-                We believe that the future is not to be awaited, but to be created.
-              </p>
+              <h1 className="about-title">{t('about.title')}</h1>
+              <p className="hero-lede">{t('about.lede')}</p>
+              <p className="about-hero-quote">{t('about.quote')}</p>
             </div>
             <div className="hero-graphic">
               <img

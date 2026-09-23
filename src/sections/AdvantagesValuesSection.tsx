@@ -1,3 +1,4 @@
+import { useLang } from '../i18n/LangContext';
 import styles from './AdvantagesValuesSection.module.css';
 
 // Maps one or more local CSS-module class names to their scoped, hashed
@@ -36,10 +37,12 @@ const ValueCard = ({ icon, title, description }: ValueCardProps) => (
 );
 
 export const AdvantagesValuesSection = () => {
+  const { t } = useLang();
+
   const advantages = [
     {
       title: 'Market Understanding',
-      description: 'Deep understanding of local and regional market needs in innovation and tech entrepreneurship.',
+      description: t('about.adv.market'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
@@ -49,7 +52,7 @@ export const AdvantagesValuesSection = () => {
     },
     {
       title: 'Advisory Team',
-      description: 'An international advisory team.',
+      description: t('about.adv.advisory'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
@@ -60,7 +63,7 @@ export const AdvantagesValuesSection = () => {
     },
     {
       title: 'Customized Solutions',
-      description: 'Innovative solutions and services, customized to the needs of each institution.',
+      description: t('about.adv.solutions'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="21" x2="14" y1="4" y2="4" />
@@ -77,7 +80,7 @@ export const AdvantagesValuesSection = () => {
     },
     {
       title: 'Technology Expertise',
-      description: 'Global expertise in deploying the latest technologies.',
+      description: t('about.adv.technology'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect width="16" height="16" x="4" y="4" rx="2" />
@@ -95,7 +98,7 @@ export const AdvantagesValuesSection = () => {
     },
     {
       title: 'Sustainable Growth',
-      description: 'Sustainable growth through world-class strategies and plans.',
+      description: t('about.adv.growth'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M7 20h10" />
@@ -107,7 +110,7 @@ export const AdvantagesValuesSection = () => {
     },
     {
       title: 'Ideas to Reality',
-      description: 'Transforming ideas into tangible reality.',
+      description: t('about.adv.ideas'),
       icon: (
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
@@ -120,8 +123,9 @@ export const AdvantagesValuesSection = () => {
 
   const values = [
     {
-      title: 'Authenticity',
-      description: "We reflect Oman's vision by enhancing local talent capabilities according to international standards, a commitment deeply rooted in our heritage.",
+      id: 'authenticity',
+      title: t('about.value.authenticity.title'),
+      description: t('about.value.authenticity.desc'),
       icon: (
         <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
@@ -130,8 +134,9 @@ export const AdvantagesValuesSection = () => {
       ),
     },
     {
-      title: 'Collaboration & Communication',
-      description: 'We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.',
+      id: 'collaboration',
+      title: t('about.value.collaboration.title'),
+      description: t('about.value.collaboration.desc'),
       icon: (
         <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -142,8 +147,9 @@ export const AdvantagesValuesSection = () => {
       ),
     },
     {
-      title: 'Innovation & Progress',
-      description: 'We embrace emerging technologies to stay ahead and deliver cutting-edge solutions that set industry benchmarks.',
+      id: 'innovation',
+      title: t('about.value.innovation.title'),
+      description: t('about.value.innovation.desc'),
       icon: (
         <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
@@ -152,8 +158,9 @@ export const AdvantagesValuesSection = () => {
       ),
     },
     {
-      title: 'Leadership',
-      description: 'We open new horizons, set industry benchmarks, and take the initiative to shape the future.',
+      id: 'leadership',
+      title: t('about.value.leadership.title'),
+      description: t('about.value.leadership.desc'),
       icon: (
         <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
@@ -168,7 +175,7 @@ export const AdvantagesValuesSection = () => {
       {/* Competitive Advantages */}
       <div className={cx('advantages-values-container')}>
         <div className={cx('section-header')}>
-          <h2 className={cx('section-title')}>Our Competitive Advantages</h2>
+          <h2 className={cx('section-title')}>{t('about.advantages.title')}</h2>
           <div className={cx('section-divider')} />
         </div>
 
@@ -182,13 +189,13 @@ export const AdvantagesValuesSection = () => {
       {/* Our Values */}
       <div className={cx('advantages-values-container', 'values-container')}>
         <div className={cx('section-header')}>
-          <h2 className={cx('section-title')}>Our Values</h2>
+          <h2 className={cx('section-title')}>{t('about.values.title')}</h2>
           <div className={cx('section-divider')} />
         </div>
 
         <div className={cx('values-grid')}>
           {values.map((value) => (
-            <ValueCard key={value.title} {...value} />
+            <ValueCard key={value.id} {...value} />
           ))}
         </div>
       </div>

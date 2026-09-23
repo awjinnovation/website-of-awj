@@ -46,6 +46,10 @@
   height: 1px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 62%);
 }
+/* The rule fades away from the heading, which starts on the right under RTL. */
+[dir='rtl'] .section-divider {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 62%);
+}
 
 /* Advantages grid */
 .advantages-grid {

@@ -226,6 +226,32 @@ const en = {
   'newsPage.featuredBadge': 'Featured',
   'newsPage.countOf': 'of',
 
+  // About page: hero, competitive advantages, values
+  'about.title': 'About AWJ',
+  'about.lede':
+    'We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.',
+  'about.quote': 'We believe that the future is not to be awaited, but to be created.',
+  'about.advantages.title': 'Our Competitive Advantages',
+  'about.adv.market': 'Deep understanding of local and regional market needs in innovation and tech entrepreneurship.',
+  'about.adv.advisory': 'An international advisory team.',
+  'about.adv.solutions': 'Innovative solutions and services, customized to the needs of each institution.',
+  'about.adv.technology': 'Global expertise in deploying the latest technologies.',
+  'about.adv.growth': 'Sustainable growth through world-class strategies and plans.',
+  'about.adv.ideas': 'Transforming ideas into tangible reality.',
+  'about.values.title': 'Our Values',
+  'about.value.authenticity.title': 'Authenticity',
+  'about.value.authenticity.desc':
+    "We reflect Oman's vision by enhancing local talent capabilities according to international standards, a commitment deeply rooted in our heritage.",
+  'about.value.collaboration.title': 'Collaboration & Communication',
+  'about.value.collaboration.desc':
+    'We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.',
+  'about.value.innovation.title': 'Innovation & Progress',
+  'about.value.innovation.desc':
+    'We embrace emerging technologies to stay ahead and deliver cutting-edge solutions that set industry benchmarks.',
+  'about.value.leadership.title': 'Leadership',
+  'about.value.leadership.desc':
+    'We open new horizons, set industry benchmarks, and take the initiative to shape the future.',
+
   // Document metadata, applied by LangProvider
   'meta.title': 'AWJ | Sustainable Innovation and Technologies Development Company',
   'meta.description': 'AWJ is an Omani group building innovation ecosystems, developing capability, and enabling sustainability across four pillars and 50 projects delivered.',
@@ -446,6 +472,32 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'newsPage.read': 'اقرأ',
   'newsPage.featuredBadge': 'مميّز',
   'newsPage.countOf': 'من',
+
+  // About page: hero, competitive advantages, values
+  'about.title': 'عن أوج',
+  'about.lede':
+    'نعمل مع المؤسسات الحكومية والأكاديمية والقطاع الخاص على بناء منظومات الابتكار، وتطوير القدرات، وتسريع التحول المؤسسي، وتمكين الاستدامة. ومن خلال ربط العلوم والتكنولوجيا والابتكار بالممارسة التطبيقية، نساعد شركاءنا على تحقيق نمو مستدام وصناعة قيمة طويلة الأمد.',
+  'about.quote': 'نؤمن أن المستقبل ثمرة ما نصنعه اليوم.',
+  'about.advantages.title': 'مزايانا التنافسية',
+  'about.adv.market': 'فهم عميق لاحتياجات السوق المحلي والإقليمي في مجالي الابتكار وريادة الأعمال التقنية.',
+  'about.adv.advisory': 'فريق استشاري دولي.',
+  'about.adv.solutions': 'حلول وخدمات مبتكرة مصممة وفق احتياجات كل مؤسسة.',
+  'about.adv.technology': 'خبرة عالمية في توظيف أحدث التقنيات.',
+  'about.adv.growth': 'نمو مستدام عبر استراتيجيات وخطط بمعايير عالمية.',
+  'about.adv.ideas': 'تحويل الأفكار إلى واقع ملموس.',
+  'about.values.title': 'قيمنا',
+  'about.value.authenticity.title': 'الأصالة',
+  'about.value.authenticity.desc':
+    'من إرثنا ينبع التزامنا بتمكين الكفاءات العمانية وفق المعايير الدولية، ترجمة لرؤية عمان.',
+  'about.value.collaboration.title': 'التعاون والتواصل',
+  'about.value.collaboration.desc':
+    'نوظف خبراتنا المشتركة لصناعة فرص ذات قيمة وتقديم حلول ذات أثر في مجال الاستشارات.',
+  'about.value.innovation.title': 'الابتكار والتقدم',
+  'about.value.innovation.desc':
+    'نواكب التقنيات الحديثة لنبقى في الصدارة، ونقدم حلولا مبتكرة تصبح مرجعا في مجالنا.',
+  'about.value.leadership.title': 'الريادة',
+  'about.value.leadership.desc':
+    'نفتح آفاقا جديدة، ونضع معايير يحتذى بها في القطاع، ونأخذ زمام المبادرة في رسم ملامح المستقبل.',
 
   // Document metadata
   'meta.title': 'أوج | شركة تنمية الابتكار والتقنيات المستدامة',

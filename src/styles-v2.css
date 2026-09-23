@@ -4300,11 +4300,13 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   text-wrap: balance;
   animation: aboutQuoteIn 0.7s var(--ease-out) 0.2s both;
 }
+/* `inset-inline-start`, not `left`: the rule sits above the quote's first
+   character, which is on the right under RTL. */
 .about-hero-quote::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 48px;
   height: 3px;
   border-radius: 2px;
