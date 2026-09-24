@@ -6,7 +6,6 @@ import { Footer } from '../sections/Footer';
 import {
   NEWS,
   NEWS_BY_DATE,
-  newsCategory,
   newsDate,
   newsPillar,
   newsBody,
@@ -54,16 +53,10 @@ type OpenHandler = (id: string) => void;
 const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const { t, lang } = useLang();
   const all = useMemo(() => 'All', []);
-  const cats = useMemo(() => [all, ...new Set(NEWS.map((n) => n.category))], [all]);
   const pillars = useMemo(() => [all, ...new Set(NEWS.map((n) => n.pillar))], [all]);
-  const [filter, setFilter] = useState<string>(all);
   const [pillarFilter, setPillarFilter] = useState<string>(all);
 
-  const filtered = NEWS_BY_DATE.filter((n) => {
-    if (filter !== all && n.category !== filter) return false;
-    if (pillarFilter !== all && n.pillar !== pillarFilter) return false;
-    return true;
-  });
+  const filtered = NEWS_BY_DATE.filter((n) => pillarFilter === all || n.pillar === pillarFilter);
 
   return (
     <section className="news-page-all">
@@ -78,21 +71,6 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
         </div>
 
         <div className="npa-filters">
-          <div className="npa-filter-row">
-            <span className="npa-filter-label">{t('newsPage.filterTopic')}</span>
-            <div className="npa-chips">
-              {cats.map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  className={`npa-chip ${filter === c ? 'is-active' : ''}`}
-                  onClick={() => setFilter(c)}
-                >
-                  {c === all ? t('newsPage.filterAll') : newsCategory(c as NewsItem['category'], lang)}
-                </button>
-              ))}
-            </div>
-          </div>
           <div className="npa-filter-row">
             <span className="npa-filter-label">{t('newsPage.filterPillar')}</span>
             <div className="npa-chips">
@@ -120,7 +98,6 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
             >
               <div className="npa-cover">
                 <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
-                <div className="npa-tag">{newsCategory(n.category, lang)}</div>
               </div>
               <div className="npa-body">
                 <div className="npa-meta">
@@ -186,7 +163,6 @@ const ArticleModal = ({ article, onClose }: { article: NewsItem; onClose: () => 
         <div className="am-cover">
           <img className="news-cover-img" src={article.image} alt={newsTitle(article, lang)} />
           <div className="am-cover-overlay">
-            <div className="am-cover-tag">{newsCategory(article.category, lang)}</div>
             <div className="am-cover-meta">
               <span>{newsDate(article, lang)}</span>
               <span className="dot">·</span>

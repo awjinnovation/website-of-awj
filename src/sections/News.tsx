@@ -1,4 +1,4 @@
-import { NEWS, NEWS_BY_DATE, newsCategory, newsDate, newsDek, newsPillar, newsTitle, type NewsItem } from '../data/news';
+import { NEWS, NEWS_BY_DATE, newsDate, newsDek, newsPillar, newsTitle, type NewsItem } from '../data/news';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
@@ -20,7 +20,6 @@ const FeatureCard = ({ n, variant }: { n: NewsItem; variant: 'lead' | 'small' })
     <a className={`news-feature-card news-${variant}`} href={withBase(`/news#${n.id}`)}>
       <div className="nfc-cover">
         <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
-        <div className="nfc-tag">{newsCategory(n.category, lang)}</div>
       </div>
       <div className="nfc-body">
         <div className="nfc-meta">
@@ -91,9 +90,6 @@ export const News = () => {
               <li key={n.id} className="news-recent-item">
                 <a href={withBase(`/news#${n.id}`)}>
                   <span className="nri-date">{newsDate(n, lang)}</span>
-                  <span className="nri-cat" data-cat={n.category}>
-                    {newsCategory(n.category, lang)}
-                  </span>
                   <span className="nri-title">{newsTitle(n, lang)}</span>
                   <span className="nri-arrow">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
