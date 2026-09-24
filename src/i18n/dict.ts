@@ -413,6 +413,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'contact.continue': 'متابعة',
   'contact.send': 'إرسال الاستفسار',
   'contact.thanks': 'شكراً, سنتواصل قريباً.',
+  'contact.sent.body': 'تم إرسال استفسارك، وسنتواصل معك قريبًا',
 
   // Footer
   'footer.brand.desc': 'مجموعةٌ متكاملة تعمل عبر أوج الابتكار وأوج الاستدامة وأوج الأنظمة وأكاديمية أوج، تبني تقدّمًا راسخًا للقطاعات التي تخدمها.',
