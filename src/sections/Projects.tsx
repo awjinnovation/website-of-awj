@@ -154,7 +154,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-academy-icon.svg',
     size: 'p-sm',
     light: true,
-    image: '/assets/brand/academy-project-card.png',
+    image: '/assets/brand/academy-leadership-card.jpg',
     summary:
       "AWJ Academy developed a specialized leadership development program for the cultural and creative industries, equipping professionals to lead innovation and enhance competitiveness in Oman's growing creative sector.",
     impact:
