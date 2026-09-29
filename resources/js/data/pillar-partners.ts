@@ -1,4 +1,5 @@
 import type { PillarId } from './pillars';
+import { fromPayload } from '../content';
 
 /**
  * Client and partner logo walls for the pillar pages.
@@ -25,7 +26,7 @@ export type PillarOrgs = {
   partners?: OrgLogo[];
 };
 
-export const PILLAR_ORGS: Record<PillarId, PillarOrgs> = {
+const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
   academy: {
     partners: [
       {
@@ -153,3 +154,5 @@ export const PILLAR_ORGS: Record<PillarId, PillarOrgs> = {
     ],
   },
 };
+
+export const PILLAR_ORGS = fromPayload('pillarOrgs', PILLAR_ORGS_FALLBACK);

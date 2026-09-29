@@ -1,4 +1,5 @@
 import { DICT, type Lang, type TranslationKey } from '../i18n/dict';
+import { fromPayload } from '../content';
 
 export type NewsCategory =
   | 'Healthcare'
@@ -30,7 +31,7 @@ export type NewsItem = {
   image: string;
 };
 
-export const NEWS: NewsItem[] = [
+const NEWS_FALLBACK: NewsItem[] = [
   {
     id: 'awj-ceo-inclusive-employment-panel',
     image: '/news-media/awj-ceo-inclusive-employment-panel.jpeg',
@@ -376,6 +377,8 @@ export const NEWS: NewsItem[] = [
 ];
 
 /** Newest first; ties keep file order. */
+export const NEWS: NewsItem[] = fromPayload('news', NEWS_FALLBACK);
+
 export const NEWS_BY_DATE: NewsItem[] = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
 
 type CategoryStyle = { ink: string; a: string; b: string; accent: string };

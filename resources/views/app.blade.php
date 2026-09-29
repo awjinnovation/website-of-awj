@@ -68,6 +68,10 @@
       gtag('config', 'G-M5DLS8475E');
     </script>
 
+    <script>
+      window.__AWJ__ = {!! json_encode($awjContent ?? new stdClass, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) !!};
+    </script>
+
     @viteReactRefresh
     @vite('resources/js/main.tsx')
   </head>

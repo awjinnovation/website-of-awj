@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+/* Only the admin Blade templates use Tailwind; the public site has its own CSS. */
+@source '../views/admin';
+@source '../views/auth';
+@source '../views/layouts';
+
+/* Admin uses its own font + a small design-token layer on top of Tailwind. */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-ink: #0c0e14;
+  --color-brand: #6d5efc;
+  --color-brand-2: #8b7bff;
+}
+
+/* Arabic fields read right-to-left. */
+[dir='rtl'],
+textarea[lang='ar'],
+input[lang='ar'] {
+  text-align: right;
+}

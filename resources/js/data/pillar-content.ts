@@ -1,6 +1,7 @@
 import type { PillarId } from './pillars';
 import type { Lang } from '../i18n/dict';
 import { COMPANY_ADDRESS } from './company';
+import { fromPayload } from '../content';
 
 export type ServiceItem = { name: string; desc?: string };
 export type ServiceGroup = { group?: string; items: ServiceItem[] };
@@ -32,7 +33,7 @@ export type PillarPageContent = {
 
 export type PillarContentBundle = Record<Lang, PillarPageContent>;
 
-export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
+const PILLAR_CONTENT_FALLBACK: Record<PillarId, PillarContentBundle> = {
   innovation: {
     en: {
       websiteUrl: 'https://dotnxt.om',
@@ -487,6 +488,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
  * function rather than an exported record so the fallback rules live in one
  * place if a field ever has to borrow from the other language again.
  */
+export const PILLAR_CONTENT = fromPayload('pillarContent', PILLAR_CONTENT_FALLBACK);
+
 export const getPillarContent = (
   pillarId: PillarId,
   lang: Lang,

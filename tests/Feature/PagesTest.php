@@ -2,11 +2,15 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class PagesTest extends TestCase
 {
+    // The app view runs the content composer, which queries the database.
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,5 +56,15 @@ class PagesTest extends TestCase
         $this->get($path)
             ->assertNotFound()
             ->assertSee('<div id="root"></div>', false);
+    }
+
+    public function test_the_home_page_injects_the_content_payload(): void
+    {
+        $this->seed(\Database\Seeders\ContentSeeder::class);
+
+        $html = $this->get('/')->assertOk()->getContent();
+
+        $this->assertStringContainsString('window.__AWJ__ =', $html);
+        $this->assertStringContainsString('AWJ CEO Participates in a Panel Discussion', $html);
     }
 }

@@ -24,3 +24,7 @@ vite.config.d.ts
 /public/storage
 /storage/*.key
 /storage/pail
+
+# Local SQLite database (content lives here; seed it from database/content/*.json)
+/database/*.sqlite
+/database/*.sqlite-*

@@ -1,4 +1,5 @@
 import { COMPANY_ADDRESS } from '../data/company';
+import { payloadDict } from '../content';
 
 export type Lang = 'en' | 'ar';
 
@@ -505,4 +506,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'meta.description': 'أوج مجموعةٌ عُمانية تبني منظومات الابتكار وتطوّر القدرات وتُمكّن الاستدامة، عبر أربعة قطاعات و50 مشروعًا منجزًا.',
 };
 
-export const DICT: Record<Lang, Partial<Record<TranslationKey, string>>> = { en, ar };
+const _dictOverride = payloadDict();
+export const DICT: Record<Lang, Partial<Record<TranslationKey, string>>> = {
+  en: { ...en, ..._dictOverride?.en },
+  ar: { ...ar, ..._dictOverride?.ar },
+};
