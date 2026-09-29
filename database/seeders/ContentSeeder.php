@@ -3,10 +3,15 @@
 namespace Database\Seeders;
 
 use App\Models\News;
+use App\Models\Pillar;
 use App\Models\PillarContent;
 use App\Models\PillarOrg;
+use App\Models\Project;
 use App\Models\Setting;
+use App\Models\Stat;
+use App\Models\TeamMember;
 use App\Models\Translation;
+use App\Services\ContentService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 
@@ -25,7 +30,14 @@ class ContentSeeder extends Seeder
         $this->seedTranslations();
         $this->seedPillarContent();
         $this->seedPillarOrgs();
+        $this->seedProjects();
+        $this->seedTeam();
+        $this->seedStats();
+        $this->seedPillars();
         $this->seedSettings();
+
+        // Rebuild the cached payload from the freshly seeded content.
+        app(ContentService::class)->forget();
     }
 
     private function read(string $name): array
@@ -94,8 +106,58 @@ class ContentSeeder extends Seeder
         }
     }
 
+    private function seedProjects(): void
+    {
+        foreach ($this->read('projects') as $i => $project) {
+            Project::updateOrCreate(['id' => $i + 1], ['sort' => $i, 'data' => $project]);
+        }
+    }
+
+    private function seedTeam(): void
+    {
+        foreach ($this->read('team') as $group => $members) {
+            foreach ($members as $i => $m) {
+                TeamMember::updateOrCreate(
+                    ['group' => $group, 'name' => $m['name']],
+                    [
+                        'sort' => $i,
+                        'title' => $m['title'] ?? '',
+                        'department' => $m['department'] ?? null,
+                        'description' => $m['description'] ?? null,
+                        'image' => $m['image'] ?? null,
+                        'accent_color' => $m['accentColor'] ?? null,
+                        'pillar_id' => $m['pillarId'] ?? null,
+                    ],
+                );
+            }
+        }
+    }
+
+    private function seedStats(): void
+    {
+        foreach ($this->read('stats') as $i => $row) {
+            Stat::updateOrCreate(
+                ['label_key' => $row['labelKey']],
+                ['sort' => $i, 'end' => $row['end'], 'suffix' => $row['suffix'] ?? ''],
+            );
+        }
+    }
+
+    private function seedPillars(): void
+    {
+        $order = ['academy' => 0, 'sustain' => 1, 'innovation' => 2, 'systems' => 3];
+        foreach ($this->read('pillars') as $i => $pillar) {
+            Pillar::updateOrCreate(
+                ['id' => $pillar['id']],
+                ['sort' => $order[$pillar['id']] ?? $i, 'data' => $pillar],
+            );
+        }
+    }
+
     private function seedSettings(): void
     {
         Setting::put('company_address', $this->read('company'));
+        Setting::put('brand', $this->read('brand'));
+        Setting::put('category_styles', $this->read('category-styles'));
     }
 }

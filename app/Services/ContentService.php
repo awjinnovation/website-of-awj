@@ -3,9 +3,13 @@
 namespace App\Services;
 
 use App\Models\News;
+use App\Models\Pillar;
 use App\Models\PillarContent;
 use App\Models\PillarOrg;
+use App\Models\Project;
 use App\Models\Setting;
+use App\Models\Stat;
+use App\Models\TeamMember;
 use App\Models\Translation;
 use Illuminate\Support\Facades\Cache;
 
@@ -40,7 +44,44 @@ class ContentService
             'pillarContent' => $this->pillarContent(),
             'pillarOrgs' => $this->pillarOrgs(),
             'companyAddress' => Setting::get('company_address'),
+            'projects' => Project::orderBy('sort')->orderBy('id')->pluck('data')->all(),
+            'team' => $this->team(),
+            'stats' => $this->stats(),
+            'pillars' => Pillar::orderBy('sort')->pluck('data')->all(),
+            'brand' => Setting::get('brand'),
+            'categoryStyles' => Setting::get('category_styles'),
         ];
+    }
+
+    private function team(): array
+    {
+        $grouped = TeamMember::orderBy('sort')->orderBy('id')->get()
+            ->groupBy('group')
+            ->map(fn ($members) => $members->map(fn (TeamMember $m) => array_filter([
+                'name' => $m->name,
+                'title' => $m->title,
+                'department' => $m->department,
+                'description' => $m->description,
+                'image' => $m->image,
+                'accentColor' => $m->accent_color,
+                'pillarId' => $m->pillar_id,
+            ], fn ($v) => $v !== null && $v !== ''))->values());
+
+        // Always return every group so the frontend shape is stable.
+        return [
+            'management' => $grouped->get('management', collect())->all(),
+            'leaders' => $grouped->get('leaders', collect())->all(),
+            'members' => $grouped->get('members', collect())->all(),
+        ];
+    }
+
+    private function stats(): array
+    {
+        return Stat::orderBy('sort')->orderBy('id')->get()->map(fn (Stat $s) => [
+            'end' => $s->end,
+            'suffix' => $s->suffix,
+            'labelKey' => $s->label_key,
+        ])->all();
     }
 
     private function news(): array
@@ -54,7 +95,7 @@ class ContentService
             'title' => $n->title,
             'titleAr' => $n->title_ar,
             'date' => $n->date->format('Y-m-d'),
-            'dateLabel' => $n->date->format('M j, Y'),
+            'dateLabel' => $n->date->format('M d, Y'),
             'pillar' => $n->pillar,
             'dek' => $n->dek,
             'dekAr' => $n->dek_ar,

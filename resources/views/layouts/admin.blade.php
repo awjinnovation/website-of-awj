@@ -29,8 +29,11 @@
                 $nav = [
                     ['admin.dashboard', 'Dashboard', 'M4 6h16M4 12h16M4 18h7'],
                     ['admin.news.index', 'News', 'M12 8h9M3 8h.01M12 12h9M3 12h.01M12 16h9M3 16h.01'],
+                    ['admin.projects.index', 'Projects', 'M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10'],
                     ['admin.pillars.index', 'Pillar pages', 'M4 21V10l8-6 8 6v11M9 21v-6h6v6'],
                     ['admin.partners.index', 'Partners', 'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4z'],
+                    ['admin.team.index', 'Team', 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM3 21v-2a6 6 0 0112 0v2'],
+                    ['admin.stats.edit', 'Stats', 'M4 20V10M10 20V4M16 20v-6M22 20H2'],
                     ['admin.translations.index', 'Site text', 'M4 5h7M9 3v2c0 4-2 7-5 9m1-4c0 3 3 5 5 6m4 3l4-9 4 9m-6.5-2h5'],
                     ['admin.settings.edit', 'Settings', 'M10.3 3.3a2 2 0 013.4 0l.6 1a2 2 0 002 .9l1.1-.1a2 2 0 011.9 3.1l-.6.9a2 2 0 000 2.2l.6.9a2 2 0 01-1.9 3.1l-1.1-.1a2 2 0 00-2 .9l-.6 1a2 2 0 01-3.4 0l-.6-1a2 2 0 00-2-.9l-1.1.1a2 2 0 01-1.9-3.1l.6-.9a2 2 0 000-2.2l-.6-.9a2 2 0 011.9-3.1l1.1.1a2 2 0 002-.9zM12 12h.01'],
                 ];

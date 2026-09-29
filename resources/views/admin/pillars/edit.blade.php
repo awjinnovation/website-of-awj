@@ -30,11 +30,41 @@
     @csrf @method('PUT')
     <input type="hidden" name="content" x-ref="payload" />
 
+    {{-- Identity & brand (language-neutral) --}}
+    <section x-data="{ open: false }" class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <button type="button" @click="open = !open" class="flex w-full items-center justify-between px-5 py-4 text-left">
+            <span class="font-semibold text-slate-900">Identity &amp; brand</span>
+            <span class="flex items-center gap-2 text-sm text-slate-400">
+                <span class="hidden sm:inline">name, colours, logos</span>
+                <svg class="h-4 w-4 transition" :class="open && 'rotate-180'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+        </button>
+        <div x-show="open" x-cloak class="space-y-4 border-t border-slate-100 p-5">
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div><label class="mb-1.5 block text-sm font-medium text-slate-700">Name</label><input name="identity[name]" value="{{ $identity['name'] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
+                <div><label class="mb-1.5 block text-sm font-medium text-slate-700">Tagline</label><input name="identity[tagline]" value="{{ $identity['tagline'] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
+            </div>
+            <div><label class="mb-1.5 block text-sm font-medium text-slate-700">Description</label><textarea name="identity[desc]" rows="2" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">{{ $identity['desc'] ?? '' }}</textarea></div>
+            <div><label class="mb-1.5 block text-sm font-medium text-slate-700">Blurb (nav card)</label><textarea name="identity[blurb]" rows="2" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">{{ $identity['blurb'] ?? '' }}</textarea></div>
+            <div class="grid gap-4 sm:grid-cols-3">
+                @foreach (['accent' => 'Accent', 'accent2' => 'Accent 2', 'deep' => 'Deep'] as $k => $lbl)
+                    <div><label class="mb-1.5 block text-sm font-medium text-slate-700">{{ $lbl }} colour</label><input name="identity[{{ $k }}]" value="{{ $identity[$k] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
+                @endforeach
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2">
+                @foreach (['icon' => 'Icon', 'logo' => 'Logo (horizontal)', 'logoV' => 'Logo (vertical)', 'asset1' => 'Asset 1', 'asset2' => 'Asset 2'] as $k => $lbl)
+                    <div><label class="mb-1.5 block text-xs font-medium text-slate-500">{{ $lbl }}</label><input name="identity[{{ $k }}]" value="{{ $identity[$k] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <div class="flex items-center justify-between">
         <div class="inline-flex rounded-lg border border-slate-200 bg-white p-1 text-sm shadow-sm">
             <button type="button" @click="tab='en'" :class="tab==='en' ? 'bg-ink text-white' : 'text-slate-500'" class="rounded-md px-4 py-1.5 font-medium transition">English</button>
             <button type="button" @click="tab='ar'" :class="tab==='ar' ? 'bg-ink text-white' : 'text-slate-500'" class="rounded-md px-4 py-1.5 font-medium transition">العربية</button>
         </div>
+        <span class="text-xs text-slate-400">Page body ↓</span>
     </div>
 
     <div :dir="tab==='ar' ? 'rtl' : 'ltr'" class="space-y-5">

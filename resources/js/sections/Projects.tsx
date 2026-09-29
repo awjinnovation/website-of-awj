@@ -1,7 +1,8 @@
 import { useEffect, useState, type CSSProperties } from 'react';
 import { useLang } from '../i18n/LangContext';
+import { fromPayload } from '../content';
 
-type Project = {
+export type Project = {
   name: string;
   stat: string;
   statLabel: string;
@@ -33,7 +34,7 @@ type Project = {
   };
 };
 
-const PROJECTS: Project[] = [
+const PROJECTS_FALLBACK: Project[] = [
   {
     name: '.nxt Jadeer\nNational Program',
     stat: '6,600+',
@@ -321,6 +322,8 @@ const PROJECTS: Project[] = [
     },
   },
 ];
+
+export const PROJECTS: Project[] = fromPayload('projects', PROJECTS_FALLBACK);
 
 const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner' | 'summary' | 'impact', lang: string) =>
   (lang === 'ar' && p.ar?.[k]) || p[k];

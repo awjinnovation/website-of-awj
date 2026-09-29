@@ -29,6 +29,13 @@ class PillarController extends Controller
         ]);
     }
 
+    /** The pillar identity fields (colours, logos, taglines) edited as flat inputs. */
+    private const IDENTITY_FIELDS = [
+        'name', 'tagline', 'desc', 'blurb',
+        'accent', 'accent2', 'deep',
+        'icon', 'logo', 'logoV', 'asset1', 'asset2',
+    ];
+
     public function edit(string $pillar): View
     {
         $model = PillarContent::findOrFail($pillar);
@@ -37,6 +44,7 @@ class PillarController extends Controller
             'pillar' => $pillar,
             'label' => self::LABELS[$pillar] ?? $pillar,
             'content' => $model->content,
+            'identity' => \App\Models\Pillar::find($pillar)?->data ?? [],
         ]);
     }
 
@@ -52,9 +60,32 @@ class PillarController extends Controller
         }
 
         $model->update(['content' => $decoded]);
+        $this->saveIdentity($request, $pillar);
         $this->content->forget();
 
         return redirect()->route('admin.pillars.index')
             ->with('status', (self::LABELS[$pillar] ?? $pillar).' page updated.');
+    }
+
+    /** Merge the submitted identity fields onto the pillar's stored identity. */
+    private function saveIdentity(Request $request, string $pillar): void
+    {
+        $identity = $request->input('identity');
+        if (! is_array($identity)) {
+            return;
+        }
+
+        $model = \App\Models\Pillar::firstOrNew(['id' => $pillar]);
+        $data = $model->data ?? ['id' => $pillar];
+
+        foreach (self::IDENTITY_FIELDS as $field) {
+            if (array_key_exists($field, $identity)) {
+                $data[$field] = (string) $identity[$field];
+            }
+        }
+
+        $data['id'] = $pillar;
+        $model->data = $data;
+        $model->save();
     }
 }

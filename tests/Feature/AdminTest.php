@@ -125,4 +125,65 @@ class AdminTest extends TestCase
             ->put(route('admin.pillars.update', 'innovation'), ['content' => 'not json'])
             ->assertSessionHasErrors('content');
     }
+
+    public function test_creating_a_project_shows_it_on_the_home_page(): void
+    {
+        $this->actingAs($this->admin())->post(route('admin.projects.store'), [
+            'data' => json_encode(['name' => 'Falaj Revival', 'pillar' => 'Sustain', 'summary' => 's', 'impact' => 'i']),
+        ])->assertRedirect(route('admin.projects.index'));
+
+        $this->get('/')->assertSee('Falaj Revival');
+    }
+
+    public function test_a_project_needs_a_name(): void
+    {
+        $this->actingAs($this->admin())
+            ->post(route('admin.projects.store'), ['data' => json_encode(['name' => '  '])])
+            ->assertSessionHasErrors('data');
+    }
+
+    public function test_adding_a_team_member_shows_them_on_the_about_page(): void
+    {
+        $this->actingAs($this->admin())->post(route('admin.team.store'), [
+            'group' => 'members',
+            'name' => 'Sara Al Rawahi',
+            'title' => 'Designer',
+        ])->assertRedirect(route('admin.team.index'));
+
+        $this->get('/about')->assertSee('Sara Al Rawahi');
+    }
+
+    public function test_saving_stats_replaces_them_and_updates_the_site(): void
+    {
+        $this->actingAs($this->admin())->put(route('admin.stats.update'), [
+            'rows' => [['end' => 123, 'suffix' => '+', 'label_key' => 'stats.projects.label']],
+        ])->assertRedirect();
+
+        $this->assertSame(1, \App\Models\Stat::count());
+        $this->get('/')->assertSee('"end":123', false);
+    }
+
+    public function test_editing_pillar_identity_updates_the_site(): void
+    {
+        $content = \App\Models\PillarContent::find('innovation')->content;
+
+        $this->actingAs($this->admin())->put(route('admin.pillars.update', 'innovation'), [
+            'content' => json_encode($content),
+            'identity' => ['name' => 'Innovate', 'accent' => 'var(--innovation)'],
+        ])->assertRedirect();
+
+        $this->get('/')->assertSee('"name":"Innovate"', false);
+    }
+
+    public function test_settings_save_brand_and_category_styles(): void
+    {
+        $this->actingAs($this->admin())->put(route('admin.settings.update'), [
+            'address_en' => 'Muscat',
+            'address_ar' => 'مسقط',
+            'brand' => ['logo' => '/assets/brand/awj-logo.svg'],
+            'category_styles' => ['Healthcare' => ['ink' => '#123456', 'a' => '#123456', 'b' => '#222', 'accent' => '#eee']],
+        ])->assertRedirect();
+
+        $this->get('/')->assertSee('#123456', false);
+    }
 }

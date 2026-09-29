@@ -3,41 +3,11 @@ import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import { TimelineSection } from '../sections/TimelineSection';
 import { AdvantagesValuesSection } from '../sections/AdvantagesValuesSection';
-import { type PillarId } from '../data/pillars';
+import { TEAM } from '../data/team';
 import { useLang } from '../i18n/LangContext';
 import { useEffect } from 'react';
 
-type TeamMember = {
-  name: string;
-  title: string;
-  department: string;
-  description?: string;
-  image: string;
-  accentColor?: string;
-  pillarId?: PillarId;
-};
 
-const MANAGEMENT_TEAM: TeamMember[] = [
-  { name: 'Dr. Yousuf Al-Bulushi', title: 'Chief Executive Officer', department: 'Management', description: "Leading AWJ's strategic vision and fostering innovation across all business units", image: '/team/dr-yousef-albulushi.jpg' },
-  { name: 'Dr. Nathan Pike', title: 'Senior Projects Director', department: 'Management', description: 'Technical leadership across all verticals and complex project solutions', image: '/team/nathan-pike.jpg' },
-  { name: 'Ahmed Al Busaidi', title: 'Senior Director for Corporate Affairs', department: 'Management', description: "Managing partnerships and strengthening AWJ's market presence", image: '/team/ahmed-albusaidi.jpg' },
-];
-
-const BUSINESS_UNIT_LEADERS: TeamMember[] = [
-  { name: 'Talib Al Abri', title: 'Head of AWJ Academy', department: 'Academy', description: 'Capacity Building & Training Programs', image: '/team/talib-alabri.jpg', accentColor: '#9674ce', pillarId: 'academy' },
-  { name: 'Eng. Rawan Al Salmi', title: 'Head of AWJ Sustain', department: 'Sustain', description: 'Sustainability & Business Excellence', image: '/team/rawan-alsalmi.jpg', accentColor: '#00a19d', pillarId: 'sustain' },
-  { name: 'Eng. Yousuf Al Ibrahim', title: 'Head of AWJ Innovation', department: 'Innovation', description: 'Strategic Innovation Consulting', image: '/team/yousef-alibrahim.jpg', accentColor: '#ff6b00', pillarId: 'innovation' },
-  { name: 'Eng. Yousuf Al Mawali', title: 'Head of AWJ Systems', department: 'Systems', description: 'Technology Solutions & Platforms', image: '/team/placeholder.svg', accentColor: '#0069c8', pillarId: 'systems' },
-];
-
-const AWJ_TEAM: TeamMember[] = [
-  { name: 'Mohammed Al Amri', title: 'Software Developer', department: 'Technical', image: '/team/mohammed-01.jpg' },
-  { name: 'Zainab Al Musawi', title: 'Software Engineer', department: 'Technical', image: '/team/zainab-almawaswi.jpg' },
-  { name: 'Mohammed Al Hashmi', title: 'Business Development Manager', department: 'Business Development', image: '/team/mohammed-alhashmi.jpg' },
-  { name: 'Shahad Al Raisi', title: 'Business Development Executive', department: 'Business Development', image: '/team/shahed.jpg' },
-  { name: 'Jawaher Al Kharusi', title: 'Business Development Coordinator', department: 'Business Development', image: '/team/jawaher-alkharusi.jpg' },
-  { name: 'Maitha Al Wahaibi', title: 'Operations Coordinator', department: 'Operations', image: '/team/maitha-02.jpg' },
-];
 
 export const AboutPage = () => {
   const { t } = useLang();
@@ -102,7 +72,7 @@ export const AboutPage = () => {
               <div className="team-group-container">
                 <h3 className="team-group-title">Management Team</h3>
                 <div className="team-grid">
-                  {MANAGEMENT_TEAM.map((member) => (
+                  {TEAM.management.map((member) => (
                     <div key={member.name} className="team-card">
                       <div className="team-image">
                         <img src={member.image} alt={member.name} />
@@ -123,7 +93,7 @@ export const AboutPage = () => {
               <div className="team-group-container team-group-leaders">
                 <h3 className="team-group-title">Pillars Leaders</h3>
                 <div className="team-grid team-grid-leaders">
-                  {BUSINESS_UNIT_LEADERS.map((member) => (
+                  {TEAM.leaders.map((member) => (
                     <div key={member.name} className={`team-card team-card-accent team-card-${member.pillarId}`}>
                       <div className="team-image">
                         <img src={member.image} alt={member.name} />
@@ -144,7 +114,7 @@ export const AboutPage = () => {
               <div className="team-group-container">
                 <h3 className="team-group-title">AWJ Team</h3>
                 <div className="team-grid">
-                  {AWJ_TEAM.map((member) => (
+                  {TEAM.members.map((member) => (
                     <div key={member.name} className="team-card">
                       <div className="team-image">
                         <img src={member.image} alt={member.name} />

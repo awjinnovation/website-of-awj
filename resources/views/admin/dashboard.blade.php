@@ -6,8 +6,8 @@
         @php
             $cards = [
                 ['News articles', $newsCount, 'admin.news.index', 'from-violet-500 to-indigo-500'],
-                ['Featured', $featuredCount, 'admin.news.index', 'from-amber-500 to-orange-500'],
-                ['Pillar pages', $pillarCount, 'admin.pillars.index', 'from-emerald-500 to-teal-500'],
+                ['Projects', $projectCount, 'admin.projects.index', 'from-amber-500 to-orange-500'],
+                ['Team members', $teamCount, 'admin.team.index', 'from-emerald-500 to-teal-500'],
                 ['Site-text entries', $translationCount, 'admin.translations.index', 'from-sky-500 to-blue-500'],
             ];
         @endphp

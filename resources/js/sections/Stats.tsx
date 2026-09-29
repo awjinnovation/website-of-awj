@@ -1,19 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
+import { fromPayload } from '../content';
 
-type Row = {
+export type StatRow = {
   end: number;
   suffix: string;
   labelKey: TranslationKey;
 };
 
-const STAT_ROWS: Row[] = [
+const STAT_ROWS_FALLBACK: StatRow[] = [
   { end: 50, suffix: '', labelKey: 'stats.projects.label' },
   { end: 7600, suffix: '+', labelKey: 'stats.professionals.label' },
   { end: 25, suffix: '', labelKey: 'stats.partners.label' },
   { end: 10, suffix: '', labelKey: 'stats.experience.label' },
 ];
+
+export const STAT_ROWS: StatRow[] = fromPayload('stats', STAT_ROWS_FALLBACK);
 
 const useCounter = (end: number) => {
   const [v, setV] = useState(0);

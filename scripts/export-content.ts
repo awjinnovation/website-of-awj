@@ -5,11 +5,15 @@
  */
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { NEWS } from '../resources/js/data/news';
+import { NEWS, CATEGORY_STYLES } from '../resources/js/data/news';
 import { PILLAR_CONTENT } from '../resources/js/data/pillar-content';
 import { PILLAR_ORGS } from '../resources/js/data/pillar-partners';
 import { COMPANY_ADDRESS } from '../resources/js/data/company';
+import { PILLARS, AWJ_BRAND } from '../resources/js/data/pillars';
+import { TEAM } from '../resources/js/data/team';
 import { DICT } from '../resources/js/i18n/dict';
+import { PROJECTS } from '../resources/js/sections/Projects';
+import { STAT_ROWS } from '../resources/js/sections/Stats';
 
 const out = (name: string, data: unknown) => {
   const p = join('database/content', name + '.json');
@@ -22,3 +26,9 @@ out('pillar-content', PILLAR_CONTENT);
 out('pillar-orgs', PILLAR_ORGS);
 out('company', COMPANY_ADDRESS);
 out('dict', DICT);
+out('projects', PROJECTS);
+out('team', TEAM);
+out('stats', STAT_ROWS);
+out('pillars', PILLARS);
+out('brand', AWJ_BRAND);
+out('category-styles', CATEGORY_STYLES);

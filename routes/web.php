@@ -4,7 +4,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PillarController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\StatController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TranslationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactController;
@@ -23,6 +26,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('news', NewsController::class)->except('show');
+    Route::resource('projects', ProjectController::class)->except('show');
+    Route::resource('team', TeamController::class)->except('show');
+
+    Route::get('stats', [StatController::class, 'edit'])->name('stats.edit');
+    Route::put('stats', [StatController::class, 'update'])->name('stats.update');
 
     Route::get('site-text', [TranslationController::class, 'index'])->name('translations.index');
     Route::put('site-text', [TranslationController::class, 'update'])->name('translations.update');

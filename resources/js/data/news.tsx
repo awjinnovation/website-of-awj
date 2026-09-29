@@ -381,9 +381,9 @@ export const NEWS: NewsItem[] = fromPayload('news', NEWS_FALLBACK);
 
 export const NEWS_BY_DATE: NewsItem[] = [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
 
-type CategoryStyle = { ink: string; a: string; b: string; accent: string };
+export type CategoryStyle = { ink: string; a: string; b: string; accent: string };
 
-export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = {
+const CATEGORY_STYLES_FALLBACK: Record<NewsCategory, CategoryStyle> = {
   Healthcare: { ink: '#0d3a4a', a: '#0d3a4a', b: '#127a7a', accent: '#f5e6c5' },
   'Digital Transformation': { ink: '#1a1f3a', a: '#1a1f3a', b: '#3a4a8e', accent: '#9aa8d8' },
   'Social Responsibility': { ink: '#2a3d2a', a: '#2a3d2a', b: '#557a4a', accent: '#dde9c0' },
@@ -394,6 +394,11 @@ export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = {
   'Urban Development': { ink: '#2a3a4a', a: '#2a3a4a', b: '#5a7a9a', accent: '#fde0ca' },
   Sustainability: { ink: '#0b3b38', a: '#0b3b38', b: '#00a19d', accent: '#c9ece6' },
 };
+
+export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = fromPayload(
+  'categoryStyles',
+  CATEGORY_STYLES_FALLBACK,
+);
 
 type CoverProps = { category: NewsCategory };
 

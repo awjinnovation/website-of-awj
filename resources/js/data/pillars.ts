@@ -1,3 +1,4 @@
+import { fromPayload } from '../content';
 export const PILLAR_IDS = ['academy', 'sustain', 'innovation', 'systems'] as const;
 export type PillarId = (typeof PILLAR_IDS)[number];
 export const isPillarId = (v: string): v is PillarId =>
@@ -25,7 +26,7 @@ export type Pillar = {
   asset2: string;
 };
 
-export const PILLARS: Pillar[] = [
+const PILLARS_FALLBACK: Pillar[] = [
   {
     id: 'academy',
     name: 'Academy',
@@ -88,11 +89,15 @@ export const PILLARS: Pillar[] = [
   },
 ];
 
+export const PILLARS: Pillar[] = fromPayload('pillars', PILLARS_FALLBACK);
+
 /** Corporate brand assets (not pillar-specific). */
-export const AWJ_BRAND = {
+const AWJ_BRAND_FALLBACK = {
   logo: '/assets/brand/awj-logo.svg',      // horizontal lockup
   logoV: '/assets/brand/awj-logo-v.svg',   // vertical lockup
   icon: '/assets/brand/awj-icon.svg',      // mark only
   asset1: '/assets/brand/awj-asset-1.svg',
   asset2: '/assets/brand/awj-asset-2.svg',
 } as const;
+
+export const AWJ_BRAND = fromPayload('brand', AWJ_BRAND_FALLBACK);

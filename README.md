@@ -15,7 +15,7 @@ Public (React):
 Admin (Blade):
 
 - `/login` — sign in
-- `/admin` — dashboard, then News, Pillar pages, Partners, Site text and Settings
+- `/admin` — dashboard, then News, Projects, Pillar pages, Partners, Team, Stats, Site text and Settings
 
 Any other URL gets the React app with a 404 status. The public page routes are declared in [routes/web.php](routes/web.php) and matched again client-side in [resources/js/main.tsx](resources/js/main.tsx), so a new public page needs both.
 
@@ -27,7 +27,7 @@ All editable content lives in the database and is managed from the admin panel. 
 - [resources/js/content.ts](resources/js/content.ts) — reads the payload on the React side.
 - `database/content/*.json` — the seed content, exported from the original hard-coded React modules by [scripts/export-content.ts](scripts/export-content.ts) (`npm run content:export`). The seeder loads it into the database.
 
-What is editable: news, site text (every UI string, English + Arabic), pillar-page bodies, partner logos, and the company address. What stays in code: pillar brand assets and colours, the SVG news-cover generator, and layout.
+Everything on the site is editable from the admin: news, the homepage project showcase, pillar-page bodies, partner logos, the About-page team, the homepage stat counters, pillar identity (names, taglines, colours, logos), site text (every UI string, English + Arabic), the company address, corporate brand assets, and the news category cover-art colours. What stays in code is layout and the SVG news-cover generator — everything with words, numbers, images, colours or people is in the database.
 
 ## Stack
 
