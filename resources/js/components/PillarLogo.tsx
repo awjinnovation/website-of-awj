@@ -27,15 +27,15 @@ import { useLang } from '../i18n/LangContext';
 import { PILLARS, type PillarId } from '../data/pillars';
 import type { TranslationKey } from '../i18n/dict';
 
-import academyH from '../../public/assets/brand/awj-academy-logo-h.svg?raw';
-import sustainH from '../../public/assets/brand/awj-sustain-logo-h.svg?raw';
-import innovationH from '../../public/assets/brand/awj-innovation-logo-h.svg?raw';
-import systemsH from '../../public/assets/brand/awj-systems-logo-h.svg?raw';
+import academyH from '../../../public/assets/brand/awj-academy-logo-h.svg?raw';
+import sustainH from '../../../public/assets/brand/awj-sustain-logo-h.svg?raw';
+import innovationH from '../../../public/assets/brand/awj-innovation-logo-h.svg?raw';
+import systemsH from '../../../public/assets/brand/awj-systems-logo-h.svg?raw';
 
-import academyIcon from '../../public/assets/brand/awj-academy-icon.svg?raw';
-import sustainIcon from '../../public/assets/brand/awj-sustain-icon.svg?raw';
-import innovationIcon from '../../public/assets/brand/awj-innovation-icon.svg?raw';
-import systemsIcon from '../../public/assets/brand/awj-systems-icon.svg?raw';
+import academyIcon from '../../../public/assets/brand/awj-academy-icon.svg?raw';
+import sustainIcon from '../../../public/assets/brand/awj-sustain-icon.svg?raw';
+import innovationIcon from '../../../public/assets/brand/awj-innovation-icon.svg?raw';
+import systemsIcon from '../../../public/assets/brand/awj-systems-icon.svg?raw';
 
 const LOGO_RAW: Record<PillarId, string> = {
   academy: academyH,

@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type ReactNode } from 'react';
 import { Magnetic } from '../components/Magnetic';
 import { useLang } from '../i18n/LangContext';
 import { COMPANY_ADDRESS } from '../data/company';
+import { withBase } from '../base-path';
 
 type FormData = {
   pillar: string;
@@ -11,9 +12,9 @@ type FormData = {
   message: string;
 };
 
-/** Good enough to catch a typo before the round trip; send.php still has the
- *  final say via filter_var, so this never rejects an address the server
- *  would have taken. */
+/** Good enough to catch a typo before the round trip; ContactController still
+ *  has the final say via filter_var, so this never rejects an address the
+ *  server would have taken. */
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 /**
@@ -122,9 +123,16 @@ export const Contact = () => {
     setStatus('sending');
     setErrorMsg('');
     try {
-      const res = await fetch('/send.php', {
+      const res = await fetch(withBase('/contact'), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          // Laravel accepts a same-origin request on its Sec-Fetch-Site header
+          // alone; the token is for browsers too old to send that.
+          'X-CSRF-TOKEN':
+            document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')?.content ?? '',
+        },
         body: JSON.stringify({ ...data, company_website: botField }),
       });
       const json = await res.json().catch(() => ({ ok: res.ok }));

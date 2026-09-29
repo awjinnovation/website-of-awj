@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0c0e14" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="base-path" content="{{ request()->getBaseUrl() }}" />
 
     <title>AWJ | Sustainable Innovation and Technologies Development Company</title>
     <meta
@@ -65,9 +67,11 @@
       gtag('js', new Date());
       gtag('config', 'G-M5DLS8475E');
     </script>
+
+    @viteReactRefresh
+    @vite('resources/js/main.tsx')
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

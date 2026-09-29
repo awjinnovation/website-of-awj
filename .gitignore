@@ -11,3 +11,16 @@ vite.config.d.ts
 
 # Claude Code local config (per-machine permissions, not project code)
 .claude/
+
+# Laravel
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+/.phpunit.cache
+/vendor
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail

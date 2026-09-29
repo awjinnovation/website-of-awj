@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import type { PillarId } from '../data/pillars';
 
-import sustainAngle from '../../public/assets/brand/Sustain-angle-asset.svg?raw';
-import innovationAngle from '../../public/assets/brand/Innovation-angle-asset.svg?raw';
-import systemsAngle from '../../public/assets/brand/Systems-angle-asset.svg?raw';
+import sustainAngle from '../../../public/assets/brand/Sustain-angle-asset.svg?raw';
+import innovationAngle from '../../../public/assets/brand/Innovation-angle-asset.svg?raw';
+import systemsAngle from '../../../public/assets/brand/Systems-angle-asset.svg?raw';
 
 /**
  * Renders a pillar's angle asset spanning the hero, with the same looping

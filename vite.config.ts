@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // Root by default, which is what the live site and `npm run dev` both want.
-  // A preview host that serves the site from a sub-path sets DEPLOY_BASE, e.g.
-  // DEPLOY_BASE=/website-of-awj/ npm run build
-  base: process.env.DEPLOY_BASE || '/',
-  plugins: [react()],
-  server: { port: 5173, host: true },
+  plugins: [
+    // Builds into public/build with a manifest that Blade's @vite reads, and
+    // in dev tells Laravel where the dev server is (public/hot).
+    laravel({
+      input: ['resources/js/main.tsx'],
+      refresh: true,
+    }),
+    react(),
+  ],
+  server: {
+    watch: {
+      ignored: ['**/storage/framework/views/**'],
+    },
+  },
 });
