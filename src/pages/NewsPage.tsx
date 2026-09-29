@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Cursor } from '../components/Cursor';
 import { useReveal } from '../hooks/useReveal';
 import { NavPill } from '../sections/NavPill';
@@ -52,11 +52,6 @@ type OpenHandler = (id: string) => void;
 
 const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
   const { t, lang } = useLang();
-  const all = useMemo(() => 'All', []);
-  const pillars = useMemo(() => [all, ...new Set(NEWS.map((n) => n.pillar))], [all]);
-  const [pillarFilter, setPillarFilter] = useState<string>(all);
-
-  const filtered = NEWS_BY_DATE.filter((n) => pillarFilter === all || n.pillar === pillarFilter);
 
   return (
     <section className="news-page-all">
@@ -65,31 +60,10 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
           <div>
             <div className="eyebrow">{t('newsPage.allEyebrow')}</div>
           </div>
-          <div className="npa-count">
-            {filtered.length} {t('newsPage.countOf')} {NEWS.length}
-          </div>
-        </div>
-
-        <div className="npa-filters">
-          <div className="npa-filter-row">
-            <span className="npa-filter-label">{t('newsPage.filterPillar')}</span>
-            <div className="npa-chips">
-              {pillars.map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  className={`npa-chip ${pillarFilter === c ? 'is-active' : ''}`}
-                  onClick={() => setPillarFilter(c)}
-                >
-                  {c === all ? t('newsPage.filterAll') : newsPillar(c, lang)}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="npa-grid">
-          {filtered.map((n) => (
+          {NEWS_BY_DATE.map((n) => (
             <button
               key={n.id}
               type="button"
@@ -123,10 +97,6 @@ const AllNewsSection = ({ onOpen }: { onOpen: OpenHandler }) => {
             </button>
           ))}
         </div>
-
-        {filtered.length === 0 && (
-          <div className="npa-empty">{t('newsPage.empty')}</div>
-        )}
       </div>
     </section>
   );
