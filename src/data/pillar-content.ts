@@ -4,6 +4,8 @@ import { COMPANY_ADDRESS } from './company';
 
 export type ServiceItem = { name: string; desc?: string };
 export type ServiceGroup = { group?: string; items: ServiceItem[] };
+/** A reference work: plain text, or text with an optional cover photo. */
+export type ReferenceWork = string | { text: string; image?: string };
 
 export type PillarPageContent = {
   /** The external website destination, if any (visible regardless of language). */
@@ -15,7 +17,7 @@ export type PillarPageContent = {
   /** Value-proposition bullets (the pillar's "values"). */
   valueProposition?: string[];
   /** Reference works / projects. */
-  referenceWorks?: string[];
+  referenceWorks?: ReferenceWork[];
   /** Headline numbers. */
   numbers?: { value: string; label: string }[];
   /** Narrative impact notes. */
@@ -59,6 +61,21 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'Enhancing future readiness',
         "Upgrading national talents' efficiency",
         'Achieving tangible economic and developmental impact',
+      ],
+      referenceWorks: [
+        'Developing a world-class Technology Transfer Office at the German University to turn research into market-ready solutions',
+        'Delivering Dotnxt Jadeer from 2020 to 2025 with support from Occidental Oman, with the Ministry of Labour joining the programme in 2025, to build future skills in AI and Industry 4.0 technologies.',
+        'Delivering the first 3D-printed concrete building in the Middle East with the German University in 2021 through an Omani team',
+        "Organizing AeroHack 2023, Oman's first aviation hackathon, for Oman Airports",
+        'Designing and operating The Runway aviation incubator for Oman Airports during 2024–2025.',
+        'Implementing the Geo-Economic Development Programme for North Al Batinah Governorate',
+        'Designing and launching Dotnxt GIG in 2020, a digital freelancing platform supported by Occidental.',
+        "Contributing to ASYAD Group's Expand Open Innovation Challenge in logistics and integrated services",
+        'Delivering Safaratak, the Smart Embassies Hackathon, for the Ministry of Foreign Affairs',
+        'Organizing the GCC Urban Planning Hackathon with the Ministry of Housing and Urban Planning, bringing together 80 young participants from across the Gulf',
+        'Contributing to the delivery of the Energy Hackathon in collaboration with the Ministry of Higher Education.',
+        'Delivering the Deeptech Programme in collaboration with the Ministry of Transport, Communications and Information Technology.',
+        'Delivering the Central Incubator in collaboration with the Authority for Small and Medium Enterprises Development (Riyada).',
       ],
       numbers: [
         { value: '6,600+', label: 'Participants empowered' },
@@ -118,6 +135,27 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'رفع كفاءة الكفاءات الوطنية',
         'تحقيق أثر اقتصادي وتنموي ملموس',
       ],
+      referenceWorks: [
+        'تطوير مكتب نقل التكنولوجيا بمعايير عالمية في الجامعة الألمانية لتحويل مخرجات البحث العلمي إلى حلول جاهزة للسوق',
+        'تنفيذ برنامج دوت نكست جدير خلال الفترة 2020–2025 بدعم من أوكسيدنتال عُمان، وانضمام وزارة العمل إلى البرنامج في عام 2025، لبناء مهارات المستقبل في الذكاء الاصطناعي وتقنيات الثورة الصناعية الرابعة.',
+        'تنفيذ أول مبنى خرساني مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط مع الجامعة الألمانية عام 2021 بفريق عُماني',
+        'تنظيم هاكاثون AeroHack 2023، أول هاكاثون في عُمان مخصص لقطاع الطيران، لصالح مطارات عُمان',
+        'تصميم وتشغيل حاضنة المدرج للطيران لصالح مطارات عُمان خلال الفترة 2024–2025.',
+        'تنفيذ برنامج التنمية الجيو-اقتصادية لمحافظة شمال الباطنة',
+        'تصميم وإطلاق منصة دوت نكست جيج الرقمية للعمل الحر عام 2020 بدعم من أوكسيدنتال.',
+        'المساهمة في تنفيذ تحدي Expand للابتكار المفتوح لمجموعة أسياد في قطاع اللوجستيات والخدمات المتكاملة',
+        'تنفيذ هاكاثون سفارتك للسفارات الذكية لصالح وزارة الخارجية',
+        'تنظيم هاكاثون التخطيط العمراني الخليجي بالشراكة مع وزارة الإسكان والتخطيط العمراني بمشاركة 80 شابًا وشابة من دول الخليج',
+        'المساهمة في تنفيذ هاكاثون الطاقة بالتعاون مع وزارة التعليم العالي.',
+        'تنفيذ برنامج التكنولوجيا العميقة بالتعاون مع وزارة النقل والاتصالات وتقنية المعلومات.',
+        'تنفيذ الحاضنة المركزية بالتعاون مع هيئة تنمية المؤسسات الصغيرة والمتوسطة «ريادة».',
+      ],
+      numbers: [
+        { value: '6,600+', label: 'مشاركًا تم تمكينهم' },
+        { value: '300,000+', label: 'ساعة تعلم' },
+        { value: '2,700+', label: 'موظف' },
+        { value: '20+', label: 'شركة ناشئة تأسست' },
+      ],
       impactNotes: [
         'نجاح شركات ناشئة في الحصول على استثمارات والانضمام إلى مسرعات أعمال، حيث حصلت 3 شركات ناشئة من أصل 5 ضمن حاضنة المدرج على استثمار وانضمت بعض الشركات إلى مسرعات أعمال، كما حصلت شركة ناشئة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
         'منذ عام 2020، نجح برنامج دوت نكست جدير في تمكين أكثر من 6,600 منتسب من مختلف محافظات سلطنة عُمان، حيث أكمل المنتسبون أكثر من 300 ألف ساعة تعلم و6,500 دورة تدريبية، وحصلوا على أكثر من 100 ألف شهادة ضمن 136 مسارًا تعليميًا. كما ساهم البرنامج في توظيف أكثر من 2,700 منتسب، ودعم تطوير أكثر من 2,000 فكرة ريادية، منها 135 فكرة وصلت إلى مرحلة المعسكر الريادي وأكثر من 20 شركة ناشئة تم تأسيسها، إلى جانب تقديم أكثر من 40 دورة مباشرة و100 جلسة متابعة، ليُصبح جدير منصة وطنية تُسهم في تطوير الكفاءات، وتعزيز ريادة الأعمال، ودعم جاهزية الشباب لسوق العمل.',
@@ -171,10 +209,18 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'Boosting reputation and investment attractiveness',
       ],
       referenceWorks: [
-        'Developing the National Framework for Corporate Social Responsibility Programs Governance in the Sultanate of Oman',
-        'Preparing the Sustainability Report for Abraj Energy Services 2025',
-        'Supporting the first and largest 3D-printed building in the Middle East',
-        'Executing sustainability, infrastructure, and energy projects with national impact',
+        {
+          text: 'Developing the National Framework for Corporate Social Responsibility Programs Governance in the Sultanate of Oman',
+          image: '/assets/brand/csr-framework-workshop.jpg',
+        },
+        {
+          text: 'Preparing the Sustainability Report for Abraj Energy Services 2025',
+          image: '/assets/brand/abraj-project-card.jpg',
+        },
+        {
+          text: 'Supporting the first and largest 3D-printed building in the Middle East',
+          image: '/assets/brand/3d-building-card.png',
+        },
       ],
       numbers: [
         { value: 'Best Award', label: 'Sustainability Report 2025' },
@@ -182,9 +228,9 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         { value: '1st', label: 'Largest 3D-printed building in ME' },
       ],
       impactNotes: [
-        'Contributed to the first and largest 3D-printed building in the Middle East, helping reduce construction waste and promote sustainable, recyclable materials.',
-        '66 participants from government, private sector, and civil society took part in consultative workshops to develop the CSR governance framework.',
         'The Sustainability Report for Abraj Energy Services 2025 won the Best Sustainability Report Award for 2025, reflecting the quality of disclosure and commitment to global best practices.',
+        '66 participants from government, private sector, and civil society took part in consultative workshops to develop the CSR governance framework.',
+        'Contributed to the first and largest 3D-printed building in the Middle East, helping reduce construction waste and promote sustainable, recyclable materials.',
       ],
       clients: [
         'Government entities',
@@ -240,15 +286,28 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'تعزيز السمعة والجاذبية الاستثمارية',
       ],
       referenceWorks: [
-        'تطوير الإطار الوطني لحوكمة برامج المسؤولية الاجتماعية في سلطنة عُمان',
-        'إعداد تقرير الاستدامة لشركة أبراج لخدمات الطاقة 2025',
-        'دعم مشروع أول وأكبر مبنى مطبوع بتقنية ثلاثية الأبعاد في الشرق الأوسط',
-        'تنفيذ مشاريع استدامة وبنية أساسية وطاقة ذات أثر وطني',
+        {
+          text: 'تطوير الإطار الوطني لحوكمة برامج المسؤولية الاجتماعية في سلطنة عُمان',
+          image: '/assets/brand/csr-framework-workshop.jpg',
+        },
+        {
+          text: 'إعداد تقرير الاستدامة لشركة أبراج لخدمات الطاقة 2025',
+          image: '/assets/brand/abraj-project-card.jpg',
+        },
+        {
+          text: 'دعم مشروع أول وأكبر مبنى مطبوع بتقنية ثلاثية الأبعاد في الشرق الأوسط',
+          image: '/assets/brand/3d-building-card.png',
+        },
+      ],
+      numbers: [
+        { value: 'جائزة أفضل تقرير استدامة', label: 'لعام 2025' },
+        { value: '66', label: 'مشاركًا' },
+        { value: 'أول وأكبر', label: 'مبنى مطبوع بتقنية ثلاثية الأبعاد في الشرق الأوسط' },
       ],
       impactNotes: [
-        'المساهمة في تنفيذ أول وأكبر مبنى مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط، بما ساهم في تقليل الهدر الإنشائي وتعزيز استخدام المواد المستدامة والقابلة لإعادة التدوير.',
-        '66 مشاركًا من القطاع الحكومي والخاص والمجتمع المدني في ورش العمل التشاورية لتطوير إطار حوكمة برامج المسؤولية الاجتماعية.',
         'إعداد تقرير الاستدامة لشركة أبراج لخدمات الطاقة 2025، والذي حصد جائزة أفضل تقرير استدامة لعام 2025، مما يعكس جودة الإفصاح والالتزام بأفضل الممارسات العالمية في الاستدامة.',
+        '66 مشاركًا من القطاع الحكومي والخاص والمجتمع المدني في ورش العمل التشاورية لتطوير إطار حوكمة برامج المسؤولية الاجتماعية.',
+        'المساهمة في تنفيذ أول وأكبر مبنى مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط، بما ساهم في تقليل الهدر الإنشائي وتعزيز استخدام المواد المستدامة والقابلة لإعادة التدوير.',
       ],
       contact: {
         email: 'sustain@awj.om',
@@ -283,10 +342,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'Accredited programs aligned with future jobs and labor-market needs',
         'An interactive environment combining international expertise and local context',
         'Sustainable strategic partnerships',
-      ],
-      referenceWorks: [
-        'Community Communication Program',
-        'Leadership in Cultural and Creative Industries Program',
       ],
       numbers: [
         { value: '500', label: 'Trainees' },
@@ -334,10 +389,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'برامج معتمدة متوائمة مع وظائف المستقبل واحتياجات سوق العمل',
         'بيئة تفاعلية تجمع بين الخبرة الدولية والسياق المحلي',
         'بناء شراكات استراتيجية مستدامة',
-      ],
-      referenceWorks: [
-        'برنامج التواصل المجتمعي',
-        'برنامج القيادة في الصناعات الثقافية والإبداعية',
       ],
       numbers: [
         { value: '500+', label: 'متدرب' },
