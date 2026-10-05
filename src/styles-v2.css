@@ -3765,9 +3765,10 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(6, 10, 16, 0.92) 0%,
-    rgba(6, 10, 16, 0.7) 32%,
-    rgba(6, 10, 16, 0) 68%
+    rgba(6, 10, 16, 0.9) 0%,
+    rgba(6, 10, 16, 0.62) 30%,
+    rgba(6, 10, 16, 0.28) 62%,
+    rgba(6, 10, 16, 0) 100%
   );
   pointer-events: none;
 }
