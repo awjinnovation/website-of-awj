@@ -119,8 +119,16 @@ export const PILLAR_ORGS: Record<PillarId, PillarOrgs> = {
       { name: 'Ministry of Social Development', src: '/assets/partners/sustain/mosd.png' },
     ],
     partners: [
-      { name: 'CSR Company International', src: '/assets/partners/sustain/csr-company.png' },
-      { name: 'Movesion', src: '/assets/partners/sustain/movesion.png' },
+      {
+        name: 'CSR Company International',
+        src: '/assets/partners/sustain/csr-company.png',
+        url: 'https://www.csr-company.com/',
+      },
+      {
+        name: 'Movesion',
+        src: '/assets/partners/sustain/movesion.png',
+        url: 'https://www.movesion.com/',
+      },
       {
         name: 'APMG International',
         src: '/assets/partners/sustain/apmg.png',
