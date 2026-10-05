@@ -92,7 +92,7 @@ const en = {
     'Operating-model design, capital strategy, and group-level transformation programs delivered with cross-pillar discipline.',
   'services.b2.title': 'Capability Building',
   'services.b2.body': 'Designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation and enhance competitiveness.',
-  'services.b3.title': 'Sustainability & Governance',
+  'services.b3.title': 'Sustainability & Growth',
   'services.b3.body':
     'End-to-end sustainability strategy, ESG advisory, impact measurement, and governance frameworks enabling responsible growth and sustainable value.',
   'services.b4.title': 'Innovation Ecosystems',
