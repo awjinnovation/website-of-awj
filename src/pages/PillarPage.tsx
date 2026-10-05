@@ -263,11 +263,24 @@ const OrgWall = ({ title, logos }: { title: string; logos: OrgLogo[] }) => (
   <div className="pillar-org-group">
     <h3 className="pillar-group-title">{title}</h3>
     <div className="pillar-org-grid reveal-stagger">
-      {logos.map((o) => (
-        <div key={o.src} className="pillar-org-card" title={o.name}>
-          <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
-        </div>
-      ))}
+      {logos.map((o) =>
+        o.url ? (
+          <a
+            key={o.src}
+            className="pillar-org-card"
+            title={o.name}
+            href={o.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
+          </a>
+        ) : (
+          <div key={o.src} className="pillar-org-card" title={o.name}>
+            <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
+          </div>
+        ),
+      )}
     </div>
   </div>
 );
@@ -612,9 +625,22 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 <h2 className="pillar-section-title">{t('pillarPage.projects')}</h2>
               </div>
               <ul className="pillar-works-list reveal-stagger">
-                {content.referenceWorks.map((w) => (
-                  <li key={w}>{w}</li>
-                ))}
+                {content.referenceWorks.map((w) => {
+                  if (typeof w === 'string') return <li key={w}>{w}</li>;
+                  if (!w.image) return <li key={w.text}>{w.text}</li>;
+                  return (
+                    <li key={w.text} className="has-image">
+                      <img
+                        className="pillar-work-image"
+                        src={w.image}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span className="pillar-work-text">{w.text}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </section>

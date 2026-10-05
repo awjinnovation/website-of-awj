@@ -3722,6 +3722,36 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   text-align: right;
 }
 .pillar-page--rtl .pillar-works-list li::before { left: auto; right: 22px; }
+/* Reference works with a cover photo: the photo spans the card top, the text
+   and its bullet sit below it. Photos are never mirrored in RTL. */
+.pillar-works-list li.has-image {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+.pillar-works-list li.has-image::before { content: none; }
+.pillar-work-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.pillar-work-text {
+  position: relative;
+  padding-block: 18px 20px;
+  padding-inline: 52px 22px;
+  text-align: start;
+}
+.pillar-work-text::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 22px;
+  top: 25px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pillar-accent);
+}
+.pillar-page--rtl .pillar-works-list li.has-image { padding: 0; }
 
 /* Clients & partners */
 
@@ -3874,6 +3904,29 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   }
   .pillar-org-grid:has(> :last-child:not(:only-child):nth-child(4n + 1)) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* Reference works: a count that strands one card at every column choice (13
+   items, for example) keeps three columns and centres the last card. */
+@media (min-width: 1100px) {
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(3n + 1)):has(
+      > :last-child:nth-child(4n + 1)
+    ) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(3n + 1)):has(
+      > :last-child:nth-child(4n + 1)
+    )
+    > :last-child {
+    grid-column: 2;
+  }
+}
+@media (min-width: 760px) and (max-width: 1099px) {
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(2n + 1)):has(
+      > :last-child:nth-child(3n + 1)
+    )
+    > :last-child {
+    grid-column: 2;
   }
 }
 
