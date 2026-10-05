@@ -1,0 +1,302 @@
+.section {
+  position: relative;
+  padding: clamp(64px, 8vw, 104px) 0;
+  background:
+    /* Fade the top edge to the shared seam colour so it blends up into the
+       stats band above. */
+    linear-gradient(180deg, #05070b 0%, transparent 14%),
+    radial-gradient(120% 140% at 100% 100%, #2a323a 0%, #131c25 55%, #0b131c 100%);
+  color: var(--paper);
+  font-family: var(--font-display);
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 5vw, 80px);
+}
+
+.head {
+  text-align: center;
+  max-width: 920px;
+  margin-inline: auto;
+  margin-block-end: clamp(36px, 4vw, 56px);
+}
+
+.title {
+  margin: 0 0 14px;
+  font-size: clamp(36px, 4.4vw, 60px);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.intro {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: rgba(250, 248, 243, 0.72);
+}
+
+/* ---------- Cards row ---------- */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.4vw, 22px);
+  min-height: 500px;
+}
+
+.card {
+  --pc: var(--innovation);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--pc);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition:
+    flex-grow 0.55s var(--ease),
+    transform 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
+}
+
+.innovation { --pc: var(--innovation); }
+.academy { --pc: var(--academy); }
+.systems { --pc: var(--systems); }
+.sustain { --pc: var(--sustain); }
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 168px;
+  padding: 20px 24px;
+  background: #fff;
+  transition: height 0.55s var(--ease);
+}
+
+.logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 64px;
+  transition: height 0.55s var(--ease);
+}
+
+.bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 248px;
+  padding: 28px clamp(20px, 1.8vw, 28px);
+  overflow: hidden;
+  transition: min-height 0.55s var(--ease);
+}
+
+.watermark {
+  position: absolute;
+  inset-block-end: -18px;
+  inset-inline-start: -12px;
+  width: 125%;
+  max-width: none;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cardTitle,
+.desc,
+.more {
+  position: relative;
+}
+
+.cardTitle {
+  display: block;
+  margin-block-end: 10px;
+  font-size: clamp(16px, 1.25vw, 19px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.more {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.55s var(--ease),
+    opacity 0.35s ease,
+    margin 0.55s var(--ease);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.arrow {
+  flex: none;
+}
+
+:global([dir='rtl']) .arrow {
+  transform: rotate(180deg);
+}
+
+/* ---------- Active card (hover or keyboard focus) ---------- */
+
+@media (hover: hover) and (min-width: 901px) {
+  .card:hover,
+  .card:focus-visible {
+    flex-grow: 1.75;
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .card:hover .top,
+  .card:focus-visible .top {
+    height: 200px;
+  }
+
+  .card:hover .logo,
+  .card:focus-visible .logo {
+    height: 84px;
+  }
+
+  .card:hover .bottom,
+  .card:focus-visible .bottom {
+    min-height: 268px;
+  }
+
+  .card:hover .cardTitle,
+  .card:focus-visible .cardTitle {
+    font-size: clamp(18px, 1.45vw, 22px);
+  }
+
+  .card:hover .desc,
+  .card:focus-visible .desc {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    font-size: 15.5px;
+  }
+
+  .card:hover .more,
+  .card:focus-visible .more {
+    max-height: 64px;
+    margin-block-start: 22px;
+    opacity: 1;
+  }
+}
+
+.card:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Touch screens without hover still get the button. */
+@media (hover: none) and (min-width: 901px) {
+  .desc {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  .more {
+    max-height: none;
+    margin-block-start: 20px;
+    opacity: 1;
+  }
+}
+
+/* ---------- Tablet: 2 x 2 grid, everything visible ---------- */
+
+@media (max-width: 900px) {
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .top {
+    height: 128px;
+  }
+
+  .logo {
+    height: 54px;
+  }
+
+  .bottom {
+    flex: 1;
+    justify-content: flex-start;
+    min-height: 0;
+  }
+
+  .desc {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  .more {
+    max-height: none;
+    margin-block-start: 20px;
+    opacity: 1;
+  }
+}
+
+/* ---------- Phone: one column ---------- */
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    height: 116px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .top,
+  .logo,
+  .bottom,
+  .more {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    transform: none;
+  }
+}

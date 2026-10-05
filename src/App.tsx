@@ -5,7 +5,9 @@ import { useAutoScroll } from './hooks/useAutoScroll';
 import { NavPill } from './sections/NavPill';
 import { Hero } from './sections/Hero';
 import { Stats } from './sections/Stats';
-import { PillarsStack } from './sections/PillarsStack';
+// PillarsStack is kept for rollback; PillarCards replaces it on the home page.
+// import { PillarsStack } from './sections/PillarsStack';
+import { PillarCards } from './sections/PillarCards';
 import { Services } from './sections/Services';
 import { Projects } from './sections/Projects';
 import { News } from './sections/News';
@@ -54,7 +56,7 @@ export const App = () => {
         <Hero />
         <Stats />
       </div>
-      <PillarsStack />
+      <PillarCards />
       <Services />
       <Projects />
       <News />
