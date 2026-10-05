@@ -7,6 +7,8 @@ type CardItem = {
   id: 'innovation' | 'academy' | 'systems' | 'sustain';
   name: string;
   logo: string;
+  /** Mark only, used for the faint watermark in the coloured panel. */
+  icon: string;
   nameKey: TranslationKey;
   descKey: TranslationKey;
 };
@@ -18,6 +20,7 @@ const CARDS: CardItem[] = [
     id: 'innovation',
     name: 'Innovation',
     logo: '/assets/brand/awj-innovation-logo-h.svg',
+    icon: '/assets/brand/awj-innovation-icon.svg',
     nameKey: 'pillar.innovation.fullName',
     descKey: 'pillar.innovation.desc',
   },
@@ -25,6 +28,7 @@ const CARDS: CardItem[] = [
     id: 'academy',
     name: 'Academy',
     logo: '/assets/brand/awj-academy-logo-h.svg',
+    icon: '/assets/brand/awj-academy-icon.svg',
     nameKey: 'pillar.academy.fullName',
     descKey: 'pillar.academy.desc',
   },
@@ -32,6 +36,7 @@ const CARDS: CardItem[] = [
     id: 'systems',
     name: 'Systems',
     logo: '/assets/brand/awj-systems-logo-h.svg',
+    icon: '/assets/brand/awj-systems-icon.svg',
     nameKey: 'pillar.systems.fullName',
     descKey: 'pillar.systems.desc',
   },
@@ -39,6 +44,7 @@ const CARDS: CardItem[] = [
     id: 'sustain',
     name: 'Sustain',
     logo: '/assets/brand/awj-sustain-logo-h.svg',
+    icon: '/assets/brand/awj-sustain-icon.svg',
     nameKey: 'pillar.sustain.fullName',
     descKey: 'pillar.sustain.desc',
   },
@@ -73,7 +79,7 @@ export const PillarCards = () => {
                   <img src={c.logo} alt={`AWJ ${c.name}`} className={styles.logo} />
                 </span>
                 <span className={styles.bottom}>
-                  <img src={c.logo} alt="" aria-hidden="true" className={styles.watermark} />
+                  <img src={c.icon} alt="" aria-hidden="true" className={styles.watermark} />
                   <strong className={styles.cardTitle}>{name}</strong>
                   <span className={styles.desc}>{body}</span>
                   <span className={styles.more}>

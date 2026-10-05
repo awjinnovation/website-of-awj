@@ -103,9 +103,9 @@
 
 .watermark {
   position: absolute;
-  inset-block-end: -18px;
-  inset-inline-start: -12px;
-  width: 125%;
+  inset-block-end: -28px;
+  inset-inline-end: -20px;
+  width: 150px;
   max-width: none;
   height: auto;
   filter: brightness(0) invert(1);
