@@ -3521,7 +3521,8 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card {
   position: relative;
-  padding: 16px 22px 16px 26px;
+  padding-block: 28px;
+  padding-inline: 36px 30px;
   background: rgba(12, 16, 22, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
@@ -3535,11 +3536,12 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pillar-impact-card::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 16px;
-  bottom: 16px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
+  inset-inline-start: 0;
+  top: 28px;
+  bottom: 28px;
+  width: 4px;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
   background: color-mix(in srgb, var(--pillar-accent) 70%, transparent);
 }
 .pillar-impact-card:hover {
@@ -3548,14 +3550,34 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card p {
   margin: 0;
-  font-size: 16px;
-  color: rgba(233, 240, 247, 0.82);
+  font-size: 19px;
+  color: rgba(244, 248, 251, 0.94);
   /* The global rule at the top of this file pins line-height to
      calc(1em + 2px) !important, which is near-solid leading. That reads fine
      for labels and headings but not for a 600-character paragraph, so this is a
      deliberate local exception: same font-size + offset formula, wider offset.
      !important is required only because the global rule uses it. */
-  line-height: calc(1em + 10px) !important;
+  line-height: calc(1em + 12px) !important;
+}
+/* Impact notes show four lines before Read more; the larger card has room. */
+.pillar-impact-card .is-clamped {
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+.pillar-impact-card .pillar-readmore {
+  margin-top: 14px;
+  font-size: 15px;
+}
+@media (max-width: 720px) {
+  .pillar-impact-card {
+    padding-block: 22px;
+    padding-inline: 28px 22px;
+  }
+  .pillar-impact-card::before {
+    top: 22px;
+    bottom: 22px;
+  }
+  .pillar-impact-card p { font-size: 17px; }
 }
 /* Collapsed state. The full text stays in the DOM; only the display is capped,
    so search and assistive tech still get the whole note. */
@@ -3600,13 +3622,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   border-radius: 3px;
 }
 .pillar-page--rtl .pillar-impact-card {
-  padding: 16px 26px 16px 22px;
-  text-align: right;
-}
-.pillar-page--rtl .pillar-impact-card::before {
-  left: auto;
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  text-align: start;
 }
 
 /* Value proposition. Only claims a full viewport where there is a backdrop to
@@ -3851,6 +3867,13 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
       > :last-child:nth-child(4n + 1)
     ) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* Impact notes are long paragraphs, so they run two across (three only when
+   there are exactly three) rather than stepping through the cascade above. */
+@media (min-width: 1100px) {
+  .pillar-page .pillar-impact-notes:not(:has(> :nth-child(3):last-child)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 /* Two columns strand every odd count, so at tablet widths an odd number of
