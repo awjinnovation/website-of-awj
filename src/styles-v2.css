@@ -3745,26 +3745,49 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   text-align: right;
 }
 .pillar-page--rtl .pillar-works-list li::before { left: auto; right: 22px; }
-/* Reference works with a cover photo: the photo spans the card top, the text
-   and its bullet sit below it. Photos are never mirrored in RTL. */
+/* Reference works with a photo: the photo fills the whole card and the text
+   sits on its lower part, over a dark gradient that fades to transparent
+   toward the top. Photos are never mirrored in RTL. */
 .pillar-works-list li.has-image {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   padding: 0;
   overflow: hidden;
+  aspect-ratio: 16 / 11;
+  isolation: isolate;
 }
 .pillar-works-list li.has-image::before { content: none; }
+.pillar-works-list li.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(6, 10, 16, 0.92) 0%,
+    rgba(6, 10, 16, 0.7) 32%,
+    rgba(6, 10, 16, 0) 68%
+  );
+  pointer-events: none;
+}
 .pillar-work-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
 }
 .pillar-work-text {
   position: relative;
-  padding-block: 18px 20px;
+  z-index: 2;
+  padding-block: 18px 22px;
   padding-inline: 52px 22px;
   text-align: start;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 .pillar-work-text::before {
   content: '';
