@@ -239,6 +239,12 @@ const en = {
   'about.adv.technology': 'Global expertise in deploying the latest technologies.',
   'about.adv.growth': 'Sustainable growth through world-class strategies and plans.',
   'about.adv.ideas': 'Transforming ideas into tangible reality.',
+  'about.adv.market.title': 'Market Insight',
+  'about.adv.advisory.title': 'Global Advisory',
+  'about.adv.solutions.title': 'Tailored Solutions',
+  'about.adv.technology.title': 'Technology Expertise',
+  'about.adv.growth.title': 'Sustainable Growth',
+  'about.adv.ideas.title': 'Ideas into Action',
   'about.values.title': 'Our Values',
   'about.value.authenticity.title': 'Authenticity',
   'about.value.authenticity.desc':
