@@ -1660,6 +1660,8 @@ button, input, select, textarea { font-family: inherit; }
 .project-tile[data-pillar="Academy"] .pt-bg-image {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
+  /* A purple touch over the photo: the tile's own purple shows through it. */
+  opacity: 0.72;
 }
 [dir="rtl"] .project-tile[data-pillar="Academy"] .pt-bg-image {
   -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
