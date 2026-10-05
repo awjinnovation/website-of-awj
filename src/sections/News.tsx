@@ -1,4 +1,4 @@
-import { NEWS, NEWS_BY_DATE, newsDate, newsDek, newsPillar, newsTitle, type NewsItem } from '../data/news';
+import { NEWS_BY_DATE, newsDate, newsDek, newsPillar, newsTitle, type NewsItem } from '../data/news';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
@@ -39,11 +39,10 @@ const FeatureCard = ({ n, variant }: { n: NewsItem; variant: 'lead' | 'small' })
 };
 
 export const News = () => {
-  const { t, lang } = useLang();
-  // Newest story leads, the next three get small cards, the rest go in the list.
+  const { t } = useLang();
+  // Newest story leads, the next three get small cards.
   const [lead, ...rest] = NEWS_BY_DATE;
   const secondary = rest.slice(0, 3);
-  const older = rest.slice(3, 7);
 
   return (
     <section className="news" id="news" data-screen-label="07 News">
@@ -76,36 +75,6 @@ export const News = () => {
           {secondary.map((n) => (
             <FeatureCard key={n.id} n={n} variant="small" />
           ))}
-        </div>
-
-        <div className="news-recent reveal">
-          <div className="news-recent-head">
-            <span className="eyebrow">{t('news.latest')}</span>
-            <a className="news-recent-link" href={withBase('/news')}>
-              {t('news.allStories')} ({NEWS.length})
-            </a>
-          </div>
-          <ul className="news-recent-list">
-            {older.map((n) => (
-              <li key={n.id} className="news-recent-item">
-                <a href={withBase(`/news#${n.id}`)}>
-                  <span className="nri-date">{newsDate(n, lang)}</span>
-                  <span className="nri-title">{newsTitle(n, lang)}</span>
-                  <span className="nri-arrow">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M7 17L17 7M17 7H8M17 7V16"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
