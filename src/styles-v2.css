@@ -3692,9 +3692,10 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   font-size: 19px;
   line-height: 1;
 }
+/* No row-reverse: under dir="rtl" a plain flex row already starts on the right,
+   so reversing it pushed the icon to the left. */
 .pillar-page--rtl .pillar-value-list li {
-  flex-direction: row-reverse;
-  text-align: right;
+  text-align: start;
 }
 
 /* Reference works */
