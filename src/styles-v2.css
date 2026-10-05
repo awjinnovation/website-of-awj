@@ -1643,8 +1643,8 @@ button, input, select, textarea { font-family: inherit; }
   position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 55%;
   object-fit: cover; object-position: right;
   opacity: 1; pointer-events: none; z-index: 1;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
 }
 /* The photo occupies the half of the card the copy does not, so `inset-inline-end`
    swaps it to the left under RTL. The pixels are never mirrored (people and
@@ -1652,8 +1652,8 @@ button, input, select, textarea { font-family: inherit; }
    photo keeps the same crop as in LTR. Only the fade turns around, so it still
    runs from the card edge toward the copy. */
 [dir="rtl"] .project-tile .pt-bg-image {
-  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
-  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
 }
 /* Tighter crops for photos whose far edge carries an artefact. `trim` is just
    enough to push a dark strip out of frame; `portrait` frames the subject head
