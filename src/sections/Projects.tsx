@@ -17,6 +17,8 @@ type Project = {
   image?: string;
   /** Crop the photo tighter: `trim` drops an artefact at its far edge, `portrait` centres on the subject's face. */
   imageZoom?: 'trim' | 'portrait';
+  /** Detail-modal heading when it differs from the tile name. */
+  modalTitle?: string;
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
@@ -27,6 +29,7 @@ type Project = {
     statLabel?: string;
     partner?: string;
     partnerCompact?: boolean;
+    modalTitle?: string;
     summary?: string;
     impact?: string;
     achievements?: { value: string; label: string }[];
@@ -82,28 +85,30 @@ const PROJECTS: Project[] = [
     size: 'p-med',
     image: '/assets/brand/abraj-project-card.jpg',
     imageZoom: 'portrait',
+    modalTitle: 'Abraj Energy Services — 2025 Sustainability Report',
     summary:
-      "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
+      'AWJ Sustain supported Abraj Energy Services in developing its 2025 Sustainability Report. The work covered stakeholder engagement, materiality assessment, ESG data collection and validation, performance analysis, and industry benchmarking.',
     impact:
-      "The report sets new standards for sustainability disclosure in Oman, reflecting commitment to global best practices in ESG reporting. It enhanced the company's reputation, investor confidence, and demonstrated concrete sustainability commitment.",
+      'The report addressed all 30 metrics in the Muscat Stock Exchange ESG Disclosure Guidelines and incorporated the GRI, SASB, and IFRS S1/S2 frameworks. Abraj Energy Services received the Platinum Award in the ESG Category at Oman Sustainability Week 2026 in recognition of its sustainability achievements.',
     achievements: [
-      { value: 'Best Award', label: '2025' },
-      { value: 'GRI Standard', label: 'Compliant' },
-      { value: 'Global', label: 'Best practices' },
+      { value: 'Platinum Award', label: 'Awarded to Abraj in the ESG Category — Oman Sustainability Week 2026' },
+      { value: '30 ESG Metrics', label: 'Covered under the MSX Disclosure Guidelines' },
+      { value: 'International Frameworks', label: 'GRI · SASB · IFRS S1/S2' },
     ],
     ar: {
       name: 'أبراج للطاقة',
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
       stat: 'جائزة أفضل\nتقرير استدامة',
       partner: 'الريادة في المسؤولية الاجتماعية للشركات',
+      modalTitle: 'تقرير الاستدامة 2025 لشركة أبراج لخدمات الطاقة',
       summary:
-        'أعدت أوج الاستدامة تقرير الاستدامة الشامل لشركة أبراج لخدمات الطاقة، ونال التقرير جائزة أفضل تقرير استدامة لعام 2025، مجسدا ممارسات عالمية المستوى في الإفصاح البيئي والاجتماعي والحوكمة والشفافية.',
+        'دعمت أوج الاستدامة شركة أبراج لخدمات الطاقة في تطوير تقرير الاستدامة لعام 2025. وشمل العمل إشراك أصحاب المصلحة، وتقييم الموضوعات الجوهرية، وجمع بيانات الاستدامة والتحقق منها، وتحليل الأداء ومقارنته بالقطاع.',
       impact:
-        'يضع التقرير معايير جديدة للإفصاح عن الاستدامة في سلطنة عمان، ويعكس الالتزام بأفضل الممارسات العالمية في تقارير الممارسات البيئية والاجتماعية والحوكمة (ESG). وقد عزز سمعة الشركة وثقة المستثمرين، وأظهر التزاما عمليا بالاستدامة.',
+        'غطّى التقرير مؤشرات الإفصاح الثلاثين الواردة في إرشادات بورصة مسقط للاستدامة، مع الاستفادة من أطر GRI وSASB وIFRS S1/S2. وحصلت أبراج لخدمات الطاقة على الجائزة البلاتينية في فئة ESG خلال أسبوع عُمان للاستدامة 2026، تقديرًا لإنجازاتها في الاستدامة.',
       achievements: [
-        { value: 'أفضل جائزة', label: '2025' },
-        { value: 'معايير المبادرة العالمية للتقارير (GRI)', label: 'متوافق' },
-        { value: 'عالمي', label: 'أفضل الممارسات' },
+        { value: 'الجائزة البلاتينية', label: 'ESG أسبوع عُمان للاستدامة ٢٠٢٦' },
+        { value: '٣٠ مؤشرًا للإفصاح', label: 'وفق إرشادات بورصة مسقط للاستدامة' },
+        { value: 'أطر تقارير دولية', label: 'GRI · SASB · IFRS S1/S2' },
       ],
     },
   },
@@ -322,7 +327,7 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner' | 'summary' | 'impact', lang: string) =>
+const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner' | 'modalTitle' | 'summary' | 'impact', lang: string) =>
   (lang === 'ar' && p.ar?.[k]) || p[k];
 
 export const Projects = () => {
@@ -423,7 +428,7 @@ export const Projects = () => {
                   />
                 </svg>
               </button>
-              <h3 className="pm-title">{pick(PROJECTS[open], 'name', lang)}</h3>
+              <h3 className="pm-title">{pick(PROJECTS[open], 'modalTitle', lang) || pick(PROJECTS[open], 'name', lang)}</h3>
             </div>
             <div className="pm-body">
               {PROJECTS[open].image && <img src={PROJECTS[open].image} className="pm-body-image" alt="" aria-hidden="true" />}

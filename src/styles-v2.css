@@ -1872,7 +1872,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 
 @media (max-width: 720px) {
-  .pm-cover { padding: 24px 24px; height: 160px; }
+  .pm-cover { padding: 24px 24px; min-height: 160px; }
   .pm-body { padding: 28px 24px 32px; }
 }
 
