@@ -3079,11 +3079,16 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 .pillar-service-body {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
-  color: rgba(233, 240, 247, 0.78);
+  color: rgba(244, 248, 251, 0.95);
+  /* Lifts the copy off the video and photo backdrops behind the cards. */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
   margin: 0;
   word-wrap: break-word;
+}
+@media (max-width: 720px) {
+  .pillar-service-body { font-size: 17px; }
 }
 .pillar-service-items {
   margin: 8px 0 0;
@@ -3383,7 +3388,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pillar-page[data-pillar="sustain"] .pillar-service-body,
 .pillar-page[data-pillar="academy"] .pillar-service-body {
   grid-area: body;
-  line-height: calc(1em + 8px) !important;
+  line-height: calc(1em + 10px) !important;
 }
 /* The Read more toggle sits under the description, on the title's left edge. */
 .pillar-page[data-pillar="systems"] .pillar-service-card > .pillar-readmore,
@@ -3392,7 +3397,8 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   grid-area: more;
   justify-self: start;
   margin-top: 0;
-  font-size: 13px;
+  font-size: 15px;
+  color: color-mix(in srgb, var(--pillar-accent) 70%, #fff);
 }
 
 /* Systems lays its groups out left to right rather than stacked. The grid gap
