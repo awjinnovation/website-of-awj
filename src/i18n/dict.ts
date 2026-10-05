@@ -30,7 +30,7 @@ const en = {
   'hero.title.line2': 'a Sustainable',
   'hero.title.line3': 'Future',
   'hero.lede':
-    'We work with government, academic, and industrial institutions to build innovation ecosystems and develop capability: 50 projects delivered and 25 strategic partners over ten years. By connecting science, technology, and innovation to practical application, we help our partners achieve sustainable growth and create long-term value.',
+    'We help government, private, and academic sectors strengthen competitive capabilities and accelerate sustainable, inclusive growth through ideas, talent, tech, and sustainability, meeting needs with proven impact across AWJ Innovation, Academy, Systems, and Sustain.',
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
@@ -51,6 +51,7 @@ const en = {
   'pillars.intro': 'Four specialized pillars working together to deliver integrated solutions that drive sustainable growth: AWJ Innovation for building the ecosystems that turn an idea into a venture with economic impact; AWJ Sustain for sustainability, business development, governance, and corporate social responsibility; AWJ Systems for designing and operating digital platforms and the systems that run programs, incubators, and hackathons; and AWJ Academy for programs that build innovation capability, future skills, and technology entrepreneurship.',
   'pillars.prev': 'Previous',
   'pillars.next': 'Next',
+  'pillars.learnMore': 'Learn More',
   'pillars.label': 'PILLAR',
   'pillars.eyebrowPlaceholder': 'eyebrow placeholder',
   // Pillar display names (used in CTAs + carousel cards)
@@ -169,7 +170,7 @@ const en = {
 
   // Footer
   'footer.brand.desc':
-    'An integrated holding group operating across\nAcademy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
+    'AWJ Group works with organizations to build competitive capabilities and accelerate sustainable, inclusive growth by developing ideas, talent, tech solutions, and sustainability strategies across AWJ Innovation, Academy, Systems, and Sustain',
   'footer.col.pillars': 'Pillars',
   'footer.col.location': 'Location',
   'footer.col.address': `Address: ${COMPANY_ADDRESS.en}`,
@@ -288,7 +289,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'hero.title.line2': 'مستقبلًا',
   'hero.title.line3': 'مستدامًا',
   'hero.lede':
-    'نعمل مع المؤسسات الحكومية والأكاديمية والصناعية على بناء منظومات الابتكار وتطوير القدرات: خمسون مشروعًا منجزًا، وخمسةٌ وعشرون شريكًا استراتيجيًّا في عشر سنوات.',
+    'عمل مع القطاعات الحكومية والخاصة والأكاديمية على تعزيز القدرات التنافسية وتسريع النمو المستدام والشامل؛ نطلق الفكرة ونصقل الكفاءة، ونبني الحل التقني ونرسم طريق الاستدامة، بما يلبي الحاجة ويثبت الأثر، عبر قطاعاتنا: أوج الابتكار، وأكاديمية أوج، وأوج الأنظمة، وأوج الاستدامة.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'القطاعات',
@@ -305,6 +306,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'pillars.intro': 'أربعة قطاعات متخصّصة تعمل معًا لتقديم حلولٍ متكاملة تحقّق نموًا مستدامًا: أوج الابتكار لبناء المنظومات التي تُحوّل الفكرة إلى مشروعٍ له أثرٌ اقتصادي، وأوج الاستدامة للاستدامة وتطوير الأعمال والحوكمة والمسؤولية الاجتماعية للشركات، وأوج الأنظمة لتصميم وتشغيل المنصات الرقمية وأنظمة إدارة البرامج والحاضنات والهاكاثونات، وأكاديمية أوج لبرامج بناء القدرات الابتكارية ومهارات المستقبل وريادة الأعمال التقنية.',
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
+  // Reuses the approved pillarPage.readMore wording.
+  'pillars.learnMore': 'اقرأ المزيد',
   'pillars.label': 'قطاع',
   'pillars.eyebrowPlaceholder': 'نص بديل',
   'pillar.academy.fullName': 'أكاديمية أوج',
@@ -416,7 +419,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'contact.sent.body': 'تم إرسال استفسارك، وسنتواصل معك قريبًا',
 
   // Footer
-  'footer.brand.desc': 'مجموعةٌ متكاملة تعمل عبر أوج الابتكار وأوج الاستدامة وأوج الأنظمة وأكاديمية أوج، تبني تقدّمًا راسخًا للقطاعات التي تخدمها.',
+  'footer.brand.desc': 'تعمل مجموعة أوج مع المؤسسات على بناء القدرات التنافسية وتسريع النمو المستدام والشامل، بتطوير الأفكار والكفاءات والحلول التقنية واستراتيجيات الاستدامة، عبر قطاعاتها: أوج الابتكار، وأكاديمية أوج، وأوج الأنظمة، وأوج الاستدامة.',
   'footer.col.pillars': 'القطاعات',
   'footer.col.location': 'الموقع',
   'footer.col.address': `العنوان: ${COMPANY_ADDRESS.ar}`,
