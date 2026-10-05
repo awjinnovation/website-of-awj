@@ -1655,6 +1655,16 @@ button, input, select, textarea { font-family: inherit; }
   -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
   mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
 }
+/* Academy: the fade is pushed toward the photo's inner edge so more of the
+   photo shows. Same size and position as every other tile. */
+.project-tile[data-pillar="Academy"] .pt-bg-image {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
+}
+[dir="rtl"] .project-tile[data-pillar="Academy"] .pt-bg-image {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.75) 14%, rgba(0,0,0,1) 34%);
+}
 /* Tighter crops for photos whose far edge carries an artefact. `trim` is just
    enough to push a dark strip out of frame; `portrait` frames the subject head
    and shoulders. 140% is the widest crop that still keeps the Abraj logo, baked
