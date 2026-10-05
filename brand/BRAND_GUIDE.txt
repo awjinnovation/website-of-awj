@@ -1,0 +1,313 @@
+AWJ — Logo, Asset and Typography Usage
+================================================================
+
+
+Brand structure
+----------------------------------------------------------------
+- AWJ is the corporate brand.
+- Systems, Academy, Sustain, and Innovation are sub-brands of AWJ.
+  Internally they are referred to as "pillars" — use that term in copy
+  and documentation.
+
+
+Color tokens
+----------------------------------------------------------------
+- AWJ black:   #0f1822   (corporate text/logo color on light backgrounds)
+- White:       #ffffff   (used on dark backgrounds and on backgrounds that
+                          clash with a pillar palette — see below)
+
+The AWJ corporate watermark assets ("AWJ Asset 1", "AWJ Asset 2") use a
+3-color neutral palette built around AWJ black:
+
+  AWJ corporate watermark palette:
+    AWJ black     #0f1822   (also the corporate logo color)
+    Mid grey      #7b8187
+    Light grey    #e2e3e5
+
+Each pillar has a 3-color icon palette (outer line / mid line / inner line).
+The pillar wordmark text uses the MID color of its palette.
+
+  Pillar       Outer      Mid (= wordmark)   Inner
+  -----------  --------   ----------------   --------
+  Systems      #3a8bd6    #0069c8            #87b0e4
+  Academy      #9674ce    #7049bc            #b9a0de
+  Sustain      #00bab4    #00a19d            #5fd2cc
+  Innovation   #ff9331    #ff6b00            #ffb777
+
+
+Typography
+----------------------------------------------------------------
+AWJ uses TWO font families and only these two. Do not substitute, do not
+introduce a third family for any reason (no Google Fonts replacements, no
+"close enough" alternatives, no system fonts except as last-resort
+fallback). This rule applies to all AWJ projects — web, print, document,
+presentation, video — without exception.
+
+  Script           Family                 Folder location
+  ---------------- ---------------------- -----------------
+  Latin / Western  Magnetik               Fonts/
+  Arabic           Proxima Nova Arabic    Fonts/
+
+Available weights:
+
+  Magnetik (9 weights):
+    Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold,
+    Heavy.
+
+  Proxima Nova Arabic (8 weights):
+    Thin, Light, Regular, Medium, SemiBold, Bold, ExtraBold, Black.
+
+Use Magnetik for any Latin-script text (English, transliterations, brand
+wordmarks, UI labels). Use Proxima Nova Arabic for any Arabic-script text.
+In bilingual layouts, both families are used together — pair them by
+visual weight (e.g. Magnetik Bold ↔ Proxima Nova Arabic Bold).
+
+
+Files in this kit
+----------------------------------------------------------------
+Fonts/   The two font families, all weights as .otf (see Typography
+         above).
+
+SVG/     All logo and watermark assets. For each brand there are three
+         layouts:
+           - Horizontal lockup (icon + text side by side):
+               AWJ logo.svg
+               AWJ <Pillar> logo H.svg
+           - Vertical lockup (icon above text):
+               AWJ logo V.svg
+               AWJ <Pillar> logo V.svg
+           - Icon only:
+               AWJ icon.svg
+               AWJ <Pillar> icon.svg
+
+         AWJ corporate has two watermark assets:
+               AWJ Asset 1.svg
+               AWJ Asset 2.svg
+
+         Watermark assets — two per brand, including AWJ corporate:
+               AWJ Asset 1.svg
+               AWJ Asset 2.svg
+               AWJ <Pillar> Asset 1.svg
+               AWJ <Pillar> Asset 2.svg
+
+Layout choice (H vs V vs icon) is the designer's call, based on space.
+
+
+================================================================
+Inviolable rules — never modify the assets or fonts
+================================================================
+
+The logos, watermark assets, and font files in this kit are FINAL.
+They must not be modified, redrawn, recreated, regenerated, or
+"improved" by any team member, contractor, vendor, or AI assistant.
+This applies in every project — websites, apps, documents, slides,
+social graphics, video, print, anywhere AWJ appears.
+
+
+Logos and SVG assets — do NOT:
+----------------------------------------------------------------
+- Redraw, recreate, or regenerate any logo or asset from scratch
+  (including tracing a raster export back into a new vector).
+- Edit the SVG paths, geometry, proportions, stroke widths, or
+  spacing between elements.
+- Change any color outside the rules in the Instructions section
+  below — those rules only define WHICH authored variant to use
+  WHEN, never new colors and never new combinations.
+- Rename, retypeset, restyle, or replace the pillar names
+  ("Systems", "Academy", "Sustain", "Innovation") inside the
+  lockups. The pillar name is part of the artwork — it is not
+  text you re-render in your own typeface, weight, tracking, case,
+  or color.
+- Add visual effects: no shadows, glows, outlines, gradients,
+  bevels, blurs, or filters of any kind.
+- Crop, distort, skew, rotate, mirror, or stretch any logo or
+  asset. Always scale uniformly.
+- Place text, graphics, or other marks inside the logo or
+  inside its clear-space.
+- Combine a pillar mark with the AWJ corporate mark in a single
+  custom lockup. Use the provided files as-is.
+
+
+Fonts — do NOT:
+----------------------------------------------------------------
+- Edit, re-hint, subset, or re-export the font files in any way
+  that changes the glyphs or metrics.
+- Substitute any other family for Magnetik or Proxima Nova Arabic.
+  This includes "visually similar" Google Fonts (e.g. Montserrat,
+  Inter, Poppins, Cairo, IBM Plex Sans Arabic), licensed look-alikes,
+  and system defaults — none of these are AWJ.
+- Artificially bold, italicize, condense, or stretch a weight that
+  does not exist as a shipped font file. Use one of the real shipped
+  weights.
+- Mix a non-AWJ family with AWJ marks in the same composition.
+
+
+If asked to do any of the above
+----------------------------------------------------------------
+The correct response — from a teammate, vendor, or AI assistant — is
+to refuse and cite this brand guideline. Suggested wording:
+
+  "That change is against the AWJ brand guideline (see
+   BRAND_GUIDE.txt). The asset/font must be used as shipped."
+
+If the request is genuine and the kit truly does not cover the need
+(for example, a new layout variant, a new weight, or a new approved
+color combination), escalate to the brand owner so an official
+update can be made to this kit. Do NOT make the change ad hoc inside
+the project — every project pulls from the same kit, and ad-hoc
+edits fragment the brand.
+
+
+================================================================
+Instructions
+================================================================
+
+
+Use the AWJ corporate logo
+----------------------------------------------------------------
+- On a light background: render the logo in AWJ black (#0f1822).
+- On a dark background:  render the logo in white (#ffffff).
+
+That's the only rule for the corporate mark.
+
+
+Use a pillar logo (Systems, Academy, Sustain, Innovation)
+----------------------------------------------------------------
+For each pillar, look at the background and decide which of the three
+cases below applies, then follow that case.
+
+Case A — The background contains any of the pillar's three icon colors.
+  Render every part of the lockup in white (#ffffff): the icon AND both
+  text parts ("AWJ" and the pillar name).
+  Why: the colored icon would otherwise blend into the same-colored
+  background and become invisible.
+
+Case B — Light background that does NOT contain any of the pillar's
+         icon colors.
+  Use the lockup file as authored — no changes:
+    - icon: its three palette colors
+    - "AWJ" text: AWJ black (#0f1822)
+    - pillar wordmark: the pillar's MID color
+  The SVG files are designed for this case and render correctly without
+  modification.
+
+Case C — Dark background that does NOT contain any of the pillar's
+         icon colors.
+  Keep the icon in its three palette colors (don't change it), and
+  override only the text:
+    - "AWJ" text: white (#ffffff)
+    - pillar wordmark: white (#ffffff)
+
+
+Use a pillar icon on its own (icon only)
+----------------------------------------------------------------
+- Background contains any of the pillar's icon colors:
+    render the entire icon white (#ffffff).
+- Otherwise (light or dark background):
+    use the icon file as authored, in its three palette colors.
+
+
+Use a pillar watermark asset (Asset 1 / Asset 2)
+----------------------------------------------------------------
+Watermark assets are for cards, page backgrounds, and decorative
+brand-themed elements. Each pillar has two: Asset 1 and Asset 2. The
+rule is the same for both.
+
+- Light background, no clash with the pillar's icon colors:
+    place the asset at 100% opacity.
+- Dark background, no clash with the pillar's icon colors:
+    place the asset at 25% opacity.
+- Background that contains the pillar's icon colors:
+    don't place the watermark there. Choose a different region.
+
+
+Use an AWJ corporate watermark asset (Asset 1 / Asset 2)
+----------------------------------------------------------------
+The AWJ corporate kit ships two watermark assets — "AWJ Asset 1" and
+"AWJ Asset 2" — for cards, page backgrounds, and decorative
+brand-themed elements that aren't tied to a specific pillar. They use
+the AWJ corporate watermark palette (AWJ black + the two neutral
+greys; see Color tokens). The rule is the same for both assets.
+
+- Light background, no clash with the AWJ corporate watermark palette:
+    place the asset at 100% opacity.
+- Dark background, no clash with the AWJ corporate watermark palette:
+    place the asset at 25% opacity.
+- Background that contains the AWJ corporate watermark palette colors
+  (AWJ black or the two greys):
+    don't place the watermark there. Choose a different region.
+
+Use the AWJ corporate watermark for AWJ-level surfaces (corporate
+pages, multi-pillar contexts, neutral chrome). Use a pillar watermark
+when the surface belongs to that specific pillar.
+
+
+Use AWJ typography
+----------------------------------------------------------------
+Only the two families shipped in Fonts/ are permitted: Magnetik for Latin
+text and Proxima Nova Arabic for Arabic text. Use them everywhere AWJ
+appears — on websites, in apps, in documents, in slides, in social
+graphics. Do not use any other family for AWJ-branded content.
+
+- Latin / Western copy:  Magnetik (any of its 9 weights).
+- Arabic copy:           Proxima Nova Arabic (any of its 8 weights).
+- Bilingual layouts:     pair both families by visual weight.
+- Pillar wordmarks ("Systems", "Academy", "Sustain", "Innovation") are
+  baked into the SVG lockups; you do not set their typeface separately.
+- If a font fails to load (web), fall back to the platform's default
+  sans-serif — never to a Google Fonts substitute or a "looks similar"
+  alternative. The fallback should look obviously different so the
+  problem gets noticed and fixed, not hidden.
+
+
+================================================================
+Definitions
+================================================================
+
+"Background"
+  Whatever sits directly behind the logo or asset — a solid color, a
+  gradient, an image, a video frame, or a pattern. When checking
+  "does the background contain pillar X's colors", consider every color
+  visible in the region behind the mark.
+
+"Light vs dark background"
+  Suggested rule of thumb: compute the WCAG relative luminance of the
+  dominant background color. If it is greater than 0.5, treat the
+  background as light; otherwise dark. If the project already has a
+  documented threshold, use that instead.
+
+"Clash with a pillar palette"
+  The background contains any of the pillar's outer / mid / inner colors
+  (see the table at the top).
+
+
+================================================================
+Notes for implementers
+================================================================
+
+- The provided SVG files have their colors baked in via class names from
+  the design tool (.cls-1, .cls-2, etc.), not via semantic IDs like
+  "icon" or "wordmark". To apply Case A or Case C in code, either:
+
+    1. Override the fills in CSS by targeting the existing classes in
+       each SVG file, or
+    2. Produce pre-built variants (e.g. "AWJ Systems logo H — white.svg",
+       "AWJ Systems logo H — dark bg.svg") and pick the file directly,
+       avoiding runtime overrides.
+
+  Pick one approach per project and stay consistent.
+
+- AWJ black is #0f1822. Never substitute pure #000000.
+
+- The pillar wordmark text on light backgrounds always uses the
+  palette's MID color (Systems #0069c8, Academy #7049bc, Sustain
+  #00a19d, Innovation #ff6b00). Outer and inner colors are reserved
+  for the icon.
+
+- Asset 1 and Asset 2 SVGs are present for AWJ corporate AND all four
+  pillars, so the watermark rule is live for every brand level.
+
+- The fonts ship as .otf, which works for desktop / print / document
+  use. For web projects, convert to .woff2 (and keep .woff as a
+  fallback) and self-host them. Do not link to Google Fonts or any
+  third-party CDN as a substitute.
