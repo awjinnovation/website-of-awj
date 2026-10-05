@@ -24,9 +24,11 @@
 }
 .news-hero .container { position: relative; }
 .news-hero-top {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: flex-start; align-items: center;
   margin-bottom: 80px;
 }
+/* Back button sits on the physical left in both languages. */
+[dir="rtl"] .news-hero-top { justify-content: flex-end; }
 .news-back {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-body); font-size: 20px;
