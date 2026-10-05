@@ -60,7 +60,6 @@ export const PillarCards = () => {
           <h2 className={styles.title}>
             {t('pillars.title.first')} {t('pillars.title.second')}
           </h2>
-          <p className={styles.intro}>{t('pillars.intro')}</p>
         </header>
 
         <div className={`${styles.row} reveal`}>
