@@ -91,7 +91,7 @@ export const NEWS: NewsItem[] = [
     category: 'Sustainability',
     title: 'AWJ Sustain Participates in Oman Climate Week and Signs a Strategic Partnership with Movesion',
     titleAr:
-      'أوج للاستدامة تشارك في أسبوع عُمان للمناخ وتوقّع شراكة استراتيجية مع موفيشن الايطالية',
+      'أوج الاستدامة تشارك في أسبوع عُمان للمناخ وتوقّع شراكة استراتيجية مع موفيشن الايطالية',
     date: '2026-09-14',
     dateLabel: 'Sep 14, 2026',
     pillar: 'AWJ Sustain',
@@ -371,6 +371,281 @@ export const NEWS: NewsItem[] = [
       'التحديات: يُعدّ التخطيط العمراني ركيزة أساسية للدول التي تواجه نموًّا سكانيًا متسارعًا حول العالم، إذ تبرز الحاجة إلى حلول مبتكرة في ظل ما تواجهه المساحات الحضرية من تحديات تتعلّق بالتنقل، وكفاءة استغلال مواقف السيارات، والتنمية المستدامة.',
       'الحلول: جاء أول هاكاثون خليجي للتخطيط العمراني استجابة لتحديات التنمية العمرانية الملحّة التي تواجهها عُمان، في حدث نوعي انبثق مباشرة من إدراك تصاعد الضغط على المساحات الحضرية.',
       'وجمع الهاكاثون ٨٠ من الشباب الموهوبين من مختلف دول مجلس التعاون الخليجي، في منصة حيوية للعصف الذهني الجماعي وابتكار الحلول وصياغة التوجّهات الاستراتيجية.',
+    ],
+  },
+  {
+    id: 'mosd-childcare-mou',
+    image: '/news-media/mosd-childcare-mou.jpg',
+    category: 'Digital Transformation',
+    title: 'Ministry of Social Development and AWJ Sign Memorandum of Cooperation to Develop Management Systems for the Childcare Centre and Youth Homes',
+    titleAr:
+      'وزارة التنمية الاجتماعية وأوج توقّعان مذكرة تعاون لتطوير أنظمة إدارة مركز رعاية الطفولة وبيوت الشباب',
+    date: '2026-07-22',
+    dateLabel: 'Jul 22, 2026',
+    pillar: 'AWJ Systems',
+    dek: 'The Ministry of Social Development and AWJ have signed a memorandum of cooperation to develop management systems for the Childcare Centre and Youth Homes, as part of a shared effort to use technology to improve services and strengthen institutional efficiency.',
+    dekAr:
+      'وقّعت وزارة التنمية الاجتماعية وشركة أوج مذكرة تعاون لتطوير أنظمة إدارة مركز رعاية الطفولة وبيوت الشباب، ضمن توجه يهدف إلى توظيف التقنية في تحسين الخدمات المقدمة ورفع كفاءة العمل المؤسسي.',
+    featured: false,
+    body: [
+      'The Ministry of Social Development and AWJ have signed a memorandum of cooperation to develop management systems for the Childcare Centre and Youth Homes, as part of a shared effort to use technology to improve services and strengthen institutional efficiency.',
+      'The agreement aims to establish an integrated digital infrastructure that supports resident follow-up, improves administrative and residential care operations, and enables more informed, data-driven decision-making.',
+      'The memorandum was signed by Ahmed bin Darwish Al Balushi, Director General of Partnership and Community Development at the Ministry of Social Development, representing the Ministry, and Dr. Yousuf bin Abdullah Al Balushi, Chief Executive Officer of AWJ.',
+      'This collaboration reflects the importance of developing digital solutions that address beneficiaries’ needs, enable institutions to manage their services more effectively, and create sustainable impact.',
+    ],
+    bodyAr: [
+      'وقّعت وزارة التنمية الاجتماعية وشركة أوج مذكرة تعاون لتطوير أنظمة إدارة مركز رعاية الطفولة وبيوت الشباب، ضمن توجه يهدف إلى توظيف التقنية في تحسين الخدمات المقدمة ورفع كفاءة العمل المؤسسي.',
+      'وتهدف المذكرة إلى بناء بنية رقمية متكاملة تدعم متابعة المقيمين، وتحسّن كفاءة العمل الإداري والإيوائي، وتساعد على اتخاذ قرارات أكثر دقة بالاعتماد على البيانات.',
+      'وقّع المذكرة الفاضل أحمد بن درويش البلوشي، مدير عام الشراكة وتنمية المجتمع بوزارة التنمية الاجتماعية، ممثلًا عن الوزارة، والدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لشركة أوج.',
+      'ويأتي هذا التعاون تأكيدًا على أهمية تطوير حلول رقمية تراعي احتياجات المستفيدين، وتمكّن المؤسسات من إدارة خدماتها بكفاءة وتحقيق أثر مستدام.',
+    ],
+  },
+  {
+    id: 'tajer-forum-jadeer',
+    image: '/news-media/tajer-forum-jadeer.jpg',
+    category: 'Training',
+    title: 'AWJ Innovation Showcases Dotnxt Jadeer at the Arab-Swiss “Tajer” Business Forum',
+    titleAr:
+      'أوج الابتكار تستعرض تجربة «دوت نكست جدير» في منتدى «تاجر» العربي السويسري للأعمال',
+    date: '2026-07-14',
+    dateLabel: 'Jul 14, 2026',
+    pillar: 'AWJ Innovation',
+    dek: 'AWJ Innovation participated as a co-sponsor in the Arab-Swiss “Tajer” Business Forum in Geneva, alongside organisations and institutions involved in skills development and the labour market.',
+    dekAr:
+      'شاركت أوج الابتكار، بصفتها راعيًا مشاركًا، في منتدى «تاجر» العربي السويسري للأعمال، الذي أُقيم في جنيف بمشاركة عدد من الجهات والمؤسسات المعنية بتنمية المهارات وسوق العمل.',
+    featured: false,
+    body: [
+      'AWJ Innovation participated as a co-sponsor in the Arab-Swiss “Tajer” Business Forum in Geneva, alongside organisations and institutions involved in skills development and the labour market.',
+      'During the forum, AWJ Innovation presented the Dotnxt Jadeer programme as a practical model connecting skills development, talent empowerment, and access to employment opportunities based on the evolving needs of the labour market.',
+      'The forum brought together representatives from the Ministry of Labour, the Union of Arab Chambers, the Arab-Swiss Chamber of Commerce and Industry (CASCI), the International Labour Organization (ILO), and the Swiss State Secretariat for Economic Affairs (SECO) to discuss the future of skills, workforce development, and employment.',
+      'AWJ Innovation’s participation highlighted the importance of international dialogue and knowledge exchange in developing future-ready workforce ecosystems and designing programmes that translate market needs into measurable impact.',
+    ],
+    bodyAr: [
+      'شاركت أوج الابتكار، بصفتها راعيًا مشاركًا، في منتدى «تاجر» العربي السويسري للأعمال، الذي أُقيم في جنيف بمشاركة عدد من الجهات والمؤسسات المعنية بتنمية المهارات وسوق العمل.',
+      'وخلال المنتدى، استعرضت أوج الابتكار تجربة برنامج «دوت نكست جدير» بوصفه نموذجًا عمليًا يربط بين تطوير المهارات، وتمكين الكفاءات، والوصول إلى فرص العمل، انطلاقًا من الاحتياجات الفعلية لسوق العمل.',
+      'وجمع المنتدى ممثلين من وزارة العمل، واتحاد الغرف العربية، والغرفة العربية السويسرية للتجارة والصناعة (CASCI)، ومنظمة العمل الدولية (ILO)، والأمانة العامة السويسرية للشؤون الاقتصادية (SECO)، لمناقشة مستقبل المهارات وتنمية القوى العاملة والتوظيف.',
+      'وتؤكد هذه المشاركة أهمية الحوار الدولي وتبادل التجارب في تطوير منظومات أكثر استعدادًا للمستقبل، وتصميم برامج تنطلق من احتياجات السوق وتترجم إلى أثر قابل للقياس.',
+    ],
+  },
+  {
+    id: 'ishrak-winners',
+    image: '/news-media/ishrak-winners.jpg',
+    category: 'Urban Development',
+    title: 'North Al Batinah Governor Honours Winners of the Ishrak Competition',
+    titleAr:
+      'محافظ شمال الباطنة يكرّم الفائزين في مسابقة «إشراك»',
+    date: '2026-07-08',
+    dateLabel: 'Jul 8, 2026',
+    pillar: 'AWJ Innovation',
+    dek: 'His Excellency Mohammed bin Sulaiman Al Kindi, Governor of North Al Batinah, honoured the winners of the Ishrak Competition, implemented by AWJ Innovation, in the presence of Dr. Yousuf bin Abdullah Al Balushi, Chief Executive Officer of AWJ.',
+    dekAr:
+      'كرّم سعادة محمد بن سليمان الكندي، محافظ شمال الباطنة، الفائزين في مسابقة «إشراك» التي نفذتها شركة أوج الابتكار، بحضور الدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لشركة أوج.',
+    featured: false,
+    body: [
+      'His Excellency Mohammed bin Sulaiman Al Kindi, Governor of North Al Batinah, honoured the winners of the Ishrak Competition, implemented by AWJ Innovation, in the presence of Dr. Yousuf bin Abdullah Al Balushi, Chief Executive Officer of AWJ.',
+      'The competition aimed to attract creative ideas from young Omani talent by inviting participants to submit design proposals for developing selected locations across the wilayats of North Al Batinah and improving the visitor experience.',
+      'The competition received strong participation, with 50 design proposals submitted. Six winning proposals were selected, representing one project from each wilayat in the governorate.',
+      'The winning concepts included projects to develop Suwaiq Market, Shinas Khor and its surrounding mangroves, Wadi Al Rahimi in Liwa, the Falaj Al Rawdha area in Saham, a tourism site in Al Khaboura, and the Craftsmen’s Market in Sohar.',
+      'At the conclusion of the ceremony, His Excellency the Governor expressed his appreciation to AWJ Innovation for implementing the initiative. He encouraged participants to continue developing their ideas and proposals, reaffirming the governorate’s commitment to supporting and empowering Omani talent and enabling its contribution to sustainable development and improved quality of life.',
+    ],
+    bodyAr: [
+      'كرّم سعادة محمد بن سليمان الكندي، محافظ شمال الباطنة، الفائزين في مسابقة «إشراك» التي نفذتها شركة أوج الابتكار، بحضور الدكتور يوسف بن عبدالله البلوشي، الرئيس التنفيذي لشركة أوج.',
+      'وهدفت المسابقة إلى استقطاب رؤى وأفكار إبداعية من الكفاءات الوطنية الشابة، من خلال تقديم مقترحات تصميمية لتطوير عدد من المواقع في ولايات محافظة شمال الباطنة وتحسين تجربة زوارها.',
+      'وشهدت المسابقة إقبالًا واسعًا، حيث قدّم المشاركون 50 مقترحًا تصميميًا، اختير منها ستة مقترحات فائزة، بواقع مشروع من كل ولاية في المحافظة.',
+      'وشملت المقترحات الفائزة مشروعات لتطوير سوق السويق، وخور شناص المحاط بأشجار القرم، ووادي الرهيمي في ولاية لوى، ومنطقة فلج الروضة في ولاية صحم، إلى جانب مشروع سياحي في ولاية الخابورة ومشروع لتطوير سوق الحرفيين في ولاية صحار.',
+      'وفي ختام حفل التكريم، أعرب سعادة محافظ شمال الباطنة عن تقديره لشركة أوج الابتكار على تنفيذ المبادرة، ودعا المشاركين إلى مواصلة تطوير أفكارهم ومقترحاتهم، مؤكدًا حرص المحافظة على احتضان الكفاءات الوطنية وتمكينها، ودعم مساهمتها في تحقيق التنمية المستدامة وتحسين جودة الحياة.',
+    ],
+  },
+  {
+    id: 'ishrak-concepts',
+    image: '/news-media/ishrak-concepts.jpg',
+    category: 'Urban Development',
+    title: 'Ishrak Brings Together Young Omani Talent to Reimagine Sites in North Al Batinah',
+    titleAr:
+      '«إشراك» تجمع المواهب العُمانية لتطوير مفاهيم تصميمية لمواقع في شمال الباطنة',
+    date: '2026-07-07',
+    dateLabel: 'Jul 7, 2026',
+    pillar: 'AWJ Innovation',
+    dek: 'Over six weeks, multidisciplinary teams of young Omani talent developed design concepts for tourism and commercial sites across six wilayats in North Al Batinah as part of the Ishrak competition.',
+    dekAr:
+      'عملت فرق متعددة التخصصات من المواهب العُمانية الشابة، ضمن مسابقة «إشراك»، على تطوير مفاهيم تصميمية لمواقع سياحية وتجارية في ست ولايات بمحافظة شمال الباطنة، على مدى ستة أسابيع.',
+    featured: false,
+    body: [
+      'Over six weeks, multidisciplinary teams of young Omani talent developed design concepts for tourism and commercial sites across six wilayats in North Al Batinah as part of the Ishrak competition.',
+      'The competition brought together architecture, design, urban planning, entrepreneurship, tourism, technology, and investment, creating a shared space for collaboration and ideas about the places where people live, visit, and connect.',
+      'The concepts were shaped by an understanding of each site’s character, needs, and future potential, going beyond visual proposals to explore opportunities for development',
+    ],
+    bodyAr: [
+      'عملت فرق متعددة التخصصات من المواهب العُمانية الشابة، ضمن مسابقة «إشراك»، على تطوير مفاهيم تصميمية لمواقع سياحية وتجارية في ست ولايات بمحافظة شمال الباطنة، على مدى ستة أسابيع.',
+      'جمعت المسابقة تخصصات العمارة والتصميم والتخطيط العمراني وريادة الأعمال والسياحة والتقنية والاستثمار، في مساحة مشتركة للحوار وتطوير الأفكار حول الأماكن التي يعيش فيها الناس ويزورونها.',
+      'واستندت المفاهيم المطوّرة إلى فهم طبيعة المواقع واحتياجاتها وإمكاناتها المستقبلية، لتقديم تصورات تتجاوز الجانب البصري إلى استكشاف فرص تطوير هذه المواقع والاستفادة منها.',
+    ],
+  },
+  {
+    id: 'oman-sustainability-week-2026',
+    image: '/news-media/sustain-hero.jpg',
+    category: 'Sustainability',
+    title: 'AWJ Sustain Participates in Oman Sustainability Week 2026',
+    titleAr:
+      'أوج الاستدامة تشارك في أسبوع عُمان للاستدامة 2026',
+    date: '2026-05-24',
+    dateLabel: 'May 24, 2026',
+    pillar: 'AWJ Sustain',
+    dek: 'AWJ Sustain participated in Oman Sustainability Week 2026, showcasing its sustainability and business excellence services. Over three days, the team met with leaders from major public and private sector organisations in the Sultanate of Oman.',
+    dekAr:
+      'شاركت أوج الاستدامة (AWJ Sustain) في أسبوع عُمان للاستدامة 2026، حيث استعرضت خدماتها في الاستدامة وتميز الأعمال، والتقت على مدى ثلاثة أيام بقادة من القطاعين الحكومي والخاص يمثلون مؤسسات كبرى في سلطنة عُمان.',
+    featured: false,
+    body: [
+      'AWJ Sustain participated in Oman Sustainability Week 2026, showcasing its sustainability and business excellence services. Over three days, the team met with leaders from major public and private sector organisations in the Sultanate of Oman.',
+      'The services presented included environmental, social, and governance (ESG), capacity building, and disclosure reporting. The event provided an opportunity to introduce these services and discuss them with visitors to the AWJ Sustain booth.',
+    ],
+    bodyAr: [
+      'شاركت أوج الاستدامة (AWJ Sustain) في أسبوع عُمان للاستدامة 2026، حيث استعرضت خدماتها في الاستدامة وتميز الأعمال، والتقت على مدى ثلاثة أيام بقادة من القطاعين الحكومي والخاص يمثلون مؤسسات كبرى في سلطنة عُمان.',
+      'وشملت الخدمات المعروضة الحوكمة البيئية والاجتماعية والمؤسسية (ESG)، وبناء القدرات، وتقارير الإفصاح. وأتاحت المشاركة التعريف بهذه الخدمات ومناقشتها مع زوار الجناح.',
+    ],
+  },
+  {
+    id: 'abraj-awareness-session',
+    image: '/news-media/abraj-awareness-session.jpg',
+    category: 'Sustainability',
+    title: 'AWJ Conducts Sustainability Awareness Session with Abraj Energy Services',
+    titleAr:
+      'أوج تنفّذ جلسة توعوية بالاستدامة بالتعاون مع أبراج لخدمات الطاقة',
+    date: '2026-01-04',
+    dateLabel: 'Jan 4, 2026',
+    pillar: 'AWJ Sustain',
+    dek: 'AWJ conducted a sustainability awareness session in collaboration with the Abraj Energy Services Sustainability Team, focusing on alignment, shared understanding, and preparation for sustainability reporting.',
+    dekAr:
+      'نفّذت أوج جلسة توعوية بالاستدامة بالتعاون مع فريق الاستدامة في أبراج لخدمات الطاقة، بهدف توحيد الفهم وتعزيز التنسيق بين الفرق، والاستعداد لإعداد تقارير الاستدامة.',
+    featured: false,
+    body: [
+      'AWJ conducted a sustainability awareness session in collaboration with the Abraj Energy Services Sustainability Team, focusing on alignment, shared understanding, and preparation for sustainability reporting.',
+      'The session brought together teams from different departments to explore how existing practices contribute to environmental, social, and governance (ESG) performance and national value creation.',
+    ],
+    bodyAr: [
+      'نفّذت أوج جلسة توعوية بالاستدامة بالتعاون مع فريق الاستدامة في أبراج لخدمات الطاقة، بهدف توحيد الفهم وتعزيز التنسيق بين الفرق، والاستعداد لإعداد تقارير الاستدامة.',
+      'وجمعت الجلسة فرقًا من مختلف الإدارات لمناقشة دور الممارسات القائمة في دعم الأداء البيئي والاجتماعي والحوكمة (ESG)، وإسهامها في خلق قيمة على المستوى الوطني.',
+    ],
+  },
+  {
+    id: 'jadeer-youth-award',
+    image: '/news-media/jadeer-youth-award.jpg',
+    category: 'Training',
+    title: 'Dot Nxt Jadeer Receives Youth Excellence Award in Entrepreneurship',
+    titleAr:
+      '«دوت نكست جدير» يُكرَّم بجائزة الإجادة الشبابية في ريادة الأعمال',
+    date: '2025-10-27',
+    dateLabel: 'Oct 27, 2025',
+    pillar: 'AWJ Innovation',
+    dek: 'Dot Nxt Jadeer received the 2025 Youth Excellence Award in Entrepreneurship and was honoured by His Highness Sayyid Theyazin bin Haitham Al Said.',
+    dekAr:
+      'حصل برنامج «دوت نكست جدير» على جائزة الإجادة الشبابية في مجال ريادة الأعمال لعام 2025، وجرى تكريمه من قبل صاحب السمو السيد ذي يزن بن هيثم آل سعيد.',
+    featured: false,
+    body: [
+      'Dot Nxt Jadeer received the 2025 Youth Excellence Award in Entrepreneurship and was honoured by His Highness Sayyid Theyazin bin Haitham Al Said.',
+      'Supported by the Ministry of Labour and managed by AWJ Innovation, the programme develops the skills of young Omanis and graduates, preparing them for current and future labour market needs, with a focus on advanced technologies and technology entrepreneurship.',
+      'Jadeer works to bridge the gap between higher education outcomes and labour market requirements through practical training, professional guidance, and connections to employment and entrepreneurship opportunities, in collaboration with public and private sector partners.',
+    ],
+    bodyAr: [
+      'حصل برنامج «دوت نكست جدير» على جائزة الإجادة الشبابية في مجال ريادة الأعمال لعام 2025، وجرى تكريمه من قبل صاحب السمو السيد ذي يزن بن هيثم آل سعيد.',
+      'ويُنفَّذ البرنامج بدعم من وزارة العمل وبإدارة أوج الابتكار، بهدف تطوير مهارات الشباب العُماني والخريجين وتأهيلهم لمتطلبات سوق العمل الحالي والمستقبلي، مع التركيز على التقنيات المتقدمة وريادة الأعمال التقنية.',
+      'ويعمل «جدير» على سد الفجوة بين مخرجات التعليم العالي ومتطلبات سوق العمل، من خلال التدريب العملي والإرشاد المهني وربط المشاركين بفرص العمل وريادة الأعمال، بالتعاون مع شركاء من القطاعين الحكومي والخاص.',
+    ],
+  },
+  {
+    id: 'investment-readiness',
+    image: '/news-media/innovation-hero.jpg',
+    category: 'Digital Economy',
+    title: 'Investment Readiness Programme Launches to Support Entrepreneurs',
+    titleAr:
+      'انطلاق برنامج الاستعداد للاستثمار لتأهيل رواد الأعمال',
+    date: '2025-10-05',
+    dateLabel: 'Oct 5, 2025',
+    pillar: 'AWJ Innovation',
+    dek: 'The Investment Readiness Programme has launched, offering a comprehensive series of sessions, workshops, and consultations to develop entrepreneurs’ skills and prepare them for investment and business growth.',
+    dekAr:
+      'انطلق برنامج الاستعداد للاستثمار، الذي يقدم رحلة متكاملة من الجلسات وورش العمل والاستشارات، بهدف تطوير مهارات رواد الأعمال وتعزيز جاهزيتهم للاستثمار ونمو شركاتهم.',
+    featured: false,
+    body: [
+      'The Investment Readiness Programme has launched, offering a comprehensive series of sessions, workshops, and consultations to develop entrepreneurs’ skills and prepare them for investment and business growth.',
+      'The programme focuses on building a sustainable investment mindset and preparing participants to explore opportunities and develop strategic relationships with investors, supporting their next steps towards expanding their businesses.',
+    ],
+    bodyAr: [
+      'انطلق برنامج الاستعداد للاستثمار، الذي يقدم رحلة متكاملة من الجلسات وورش العمل والاستشارات، بهدف تطوير مهارات رواد الأعمال وتعزيز جاهزيتهم للاستثمار ونمو شركاتهم.',
+      'ويركز البرنامج على بناء عقلية استثمارية مستدامة، وتهيئة المشاركين لاستكشاف الفرص وتطوير علاقات استراتيجية مع المستثمرين، بما يدعم خطواتهم نحو توسيع أعمالهم.',
+    ],
+  },
+  {
+    id: 'ankaa-agreement',
+    image: '/news-media/ankaa-agreement.jpg',
+    category: 'Digital Transformation',
+    title: 'AWJ Signs Technical Cooperation Agreement with Ankaa Space and Technologies',
+    titleAr:
+      'أوج توقّع اتفاقية تعاون تقني مع العنقاء للفضاء والتكنولوجيا',
+    date: '2025-09-11',
+    dateLabel: 'Sep 11, 2025',
+    pillar: 'AWJ Systems',
+    dek: 'AWJ signed a technical cooperation agreement with Ankaa Space and Technologies to advance research, development, and innovation in artificial intelligence, green and sustainable technologies, smart systems, energy solutions, and future mobility.',
+    dekAr:
+      'وقّعت أوج اتفاقية تعاون تقني مع شركة العنقاء للفضاء والتكنولوجيا، بهدف تعزيز البحث والتطوير والابتكار في مجالات الذكاء الاصطناعي، والتقنيات الخضراء والمستدامة، والأنظمة الذكية، وحلول الطاقة والتنقل المستقبلي.',
+    featured: false,
+    body: [
+      'AWJ signed a technical cooperation agreement with Ankaa Space and Technologies to advance research, development, and innovation in artificial intelligence, green and sustainable technologies, smart systems, energy solutions, and future mobility.',
+      'The agreement provides a framework for exchanging expertise and developing joint entrepreneurial projects, supporting digital transformation and development in the Sultanate of Oman.',
+    ],
+    bodyAr: [
+      'وقّعت أوج اتفاقية تعاون تقني مع شركة العنقاء للفضاء والتكنولوجيا، بهدف تعزيز البحث والتطوير والابتكار في مجالات الذكاء الاصطناعي، والتقنيات الخضراء والمستدامة، والأنظمة الذكية، وحلول الطاقة والتنقل المستقبلي.',
+      'وتتيح الاتفاقية تبادل الخبرات والعمل على بناء مشاريع ريادية مشتركة، بما يدعم التحول الرقمي والتنمية في سلطنة عُمان.',
+    ],
+  },
+  {
+    id: 'gutech-academic-incubator',
+    image: '/news-media/gutech-academic-incubator.jpg',
+    category: 'Digital Economy',
+    title: 'AWJ Supports Startup Development Through an Academic Incubator at GUtech',
+    titleAr:
+      'أوج تدعم تطوير الشركات الناشئة عبر حاضنة أكاديمية في الجامعة الألمانية للتكنولوجيا في عُمان',
+    date: '2025-08-12',
+    dateLabel: 'Aug 12, 2025',
+    pillar: 'AWJ Innovation',
+    dek: 'An academic incubator hosted at the German University of Technology in Oman (GUtech) and supported by AWJ delivered a year-long programme to develop startups and strengthen participants’ entrepreneurial skills.',
+    dekAr:
+      'قدّمت حاضنة أكاديمية استضافتها الجامعة الألمانية للتكنولوجيا في عُمان (GUtech)، بدعم من أوج، برنامجًا امتد عامًا كاملًا لتطوير المشاريع الناشئة وتعزيز مهارات المشاركين في ريادة الأعمال.',
+    featured: false,
+    body: [
+      'An academic incubator hosted at the German University of Technology in Oman (GUtech) and supported by AWJ delivered a year-long programme to develop startups and strengthen participants’ entrepreneurial skills.',
+      'The programme combined structured learning with practical application, offering expert-led courses and support tailored to participants’ needs to accelerate the development of their ventures.',
+      'The initiative forms part of AWJ’s efforts to develop the academic incubator model in Oman, connecting learning with business creation and entrepreneurial development.',
+    ],
+    bodyAr: [
+      'قدّمت حاضنة أكاديمية استضافتها الجامعة الألمانية للتكنولوجيا في عُمان (GUtech)، بدعم من أوج، برنامجًا امتد عامًا كاملًا لتطوير المشاريع الناشئة وتعزيز مهارات المشاركين في ريادة الأعمال.',
+      'وشمل البرنامج دورات يقودها خبراء ودعمًا مخصصًا لاحتياجات المشاركين، جامعًا بين التعلم المنظم والتطبيق العملي لتسريع تطوير مشاريعهم.',
+      'وتأتي هذه التجربة ضمن جهود أوج لتطوير نموذج الحاضنات الأكاديمية في سلطنة عُمان، وربط التعلم بتأسيس الشركات وإعداد رواد الأعمال.',
+    ],
+  },
+  {
+    id: 'runway-demo-day',
+    image: '/news-media/runway-demo-day.jpg',
+    category: 'Aviation',
+    title: 'The Runway Concludes First Cohort Demo Day, Operated by AWJ Innovation',
+    titleAr:
+      'اختتام يوم العروض للدفعة الأولى من «المدرج» بتشغيل أوج الابتكار',
+    date: '2025-05-29',
+    dateLabel: 'May 29, 2025',
+    pillar: 'AWJ Innovation',
+    dek: 'The Runway incubation programme, operated by AWJ Innovation, concluded its first cohort Demo Day, with participating startups presenting their aviation innovation solutions following months of mentorship, collaboration, and venture development.',
+    dekAr:
+      'اختُتم يوم العروض «Demo Day» للدفعة الأولى من برنامج الاحتضان «المدرج»، الذي تتولى أوج الابتكار تشغيله، حيث عرضت الشركات الناشئة المشاركة حلولها في مجال ابتكار الطيران، بعد أشهر من الإرشاد والتعاون وتطوير المشاريع.',
+    featured: false,
+    body: [
+      'The Runway incubation programme, operated by AWJ Innovation, concluded its first cohort Demo Day, with participating startups presenting their aviation innovation solutions following months of mentorship, collaboration, and venture development.',
+      'Seven startups took part: Drone Lens, Blimy, Cargo Link, JetBird, Oreyeon, Sust, and Kunnas.',
+      'The event marked a milestone in showcasing the cohort’s progress. A second cohort was also announced as forthcoming, continuing the programme’s support for startup growth and the innovation ecosystem in Oman and beyond.',
+    ],
+    bodyAr: [
+      'اختُتم يوم العروض «Demo Day» للدفعة الأولى من برنامج الاحتضان «المدرج»، الذي تتولى أوج الابتكار تشغيله، حيث عرضت الشركات الناشئة المشاركة حلولها في مجال ابتكار الطيران، بعد أشهر من الإرشاد والتعاون وتطوير المشاريع.',
+      'وشارك في العروض سبع شركات ناشئة: درون لينس (Drone Lens)، وبليمي (Blimy)، وكارغو لينك (Cargo Link)، وجيت بيرد (JetBird)، وأوريون (Oreyeon)، وسست (Sust)، وكُنّاس (Kunnas).',
+      'ومثّل يوم العروض محطة لعرض مخرجات الاحتضان، مع الإعلان عن دفعة ثانية مرتقبة، لمواصلة دعم نمو الشركات الناشئة وتعزيز منظومة الابتكار في سلطنة عُمان وخارجها.',
     ],
   },
 ];
