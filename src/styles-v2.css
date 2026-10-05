@@ -4402,6 +4402,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 .about-hero-quote {
   position: relative;
   margin-top: 0;
+  margin-bottom: 28px;
   padding-top: 24px;
   max-width: 547px;
   font-size: clamp(24px, 2.6vw, 34px);

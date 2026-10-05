@@ -73,8 +73,8 @@ export const AboutPage = () => {
           <div className="hero-overview-container">
             <div className="hero-content">
               <h1 className="about-title">{t('about.title')}</h1>
-              <p className="hero-lede">{t('about.lede')}</p>
               <p className="about-hero-quote">{t('about.quote')}</p>
+              <p className="hero-lede">{t('about.lede')}</p>
             </div>
             <div className="hero-graphic">
               <img
