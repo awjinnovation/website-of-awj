@@ -6,19 +6,11 @@
         "src": "/assets/partners/academy/international-science-council.jpeg"
       },
       {
-        "name": "CIDEEA, International Center for Strategic Studies in Aquaculture",
-        "src": "/assets/partners/academy/cideea.png"
-      },
-      {
-        "name": "Tomsk Polytechnic University",
-        "src": "/assets/partners/academy/tomsk-polytechnic-university.png"
-      },
-      {
         "name": "Oxford Oracle",
         "src": "/assets/partners/academy/oxford-oracle.png"
       },
       {
-        "name": "Simplilearn",
+        "name": "edX",
         "src": "/assets/partners/academy/simplilearn.jpeg"
       },
       {
@@ -72,7 +64,7 @@
         "src": "/assets/partners/innovation/oxy-zero-in.png"
       },
       {
-        "name": "Simplilearn",
+        "name": "edX",
         "src": "/assets/partners/innovation/simplilearn.jpeg"
       }
     ]

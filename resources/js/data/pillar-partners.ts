@@ -36,21 +36,12 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
         src: '/assets/partners/academy/international-science-council.jpeg',
       },
       {
-        name: 'CIDEEA, International Center for Strategic Studies in Aquaculture',
-        src: '/assets/partners/academy/cideea.png',
-      },
-      {
-        // Tomsk Polytechnic University (Russia), not the Temasek Polytechnic
-        // (Singapore) listed in this pillar's content. Different institutions.
-        name: 'Tomsk Polytechnic University',
-        src: '/assets/partners/academy/tomsk-polytechnic-university.png',
-      },
-      {
         name: 'Oxford Oracle',
         src: '/assets/partners/academy/oxford-oracle.png',
       },
       {
-        name: 'Simplilearn',
+        // Renamed from Simplilearn; upload the edX logo via the Partners editor.
+        name: 'edX',
         src: '/assets/partners/academy/simplilearn.jpeg',
       },
       {
@@ -104,7 +95,8 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
         src: '/assets/partners/innovation/oxy-zero-in.png',
       },
       {
-        name: 'Simplilearn',
+        // Renamed from Simplilearn; upload the edX logo via the Partners editor.
+        name: 'edX',
         src: '/assets/partners/innovation/simplilearn.jpeg',
       },
     ],

@@ -484,7 +484,7 @@ const NEWS_FALLBACK: NewsItem[] = [
   },
   {
     id: 'oman-sustainability-week-2026',
-    image: '/news-media/sustain-hero.jpg',
+    image: '/news-media/oman-sustainability-week-2026.jpg',
     category: 'Sustainability',
     title: 'AWJ Sustain Participates in Oman Sustainability Week 2026',
     titleAr:
@@ -555,7 +555,7 @@ const NEWS_FALLBACK: NewsItem[] = [
   },
   {
     id: 'investment-readiness',
-    image: '/news-media/innovation-hero.jpg',
+    image: '/news-media/investment-readiness.jpg',
     category: 'Digital Economy',
     title: 'Investment Readiness Programme Launches to Support Entrepreneurs',
     titleAr:

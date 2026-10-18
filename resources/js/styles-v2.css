@@ -3079,7 +3079,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 .pillar-service-body {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.7;
   color: rgba(244, 248, 251, 0.95);
   /* Lifts the copy off the video and photo backdrops behind the cards. */
@@ -3088,7 +3088,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 @media (max-width: 720px) {
-  .pillar-service-body { font-size: 17px; }
+  .pillar-service-body { font-size: 18px; }
 }
 .pillar-service-items {
   margin: 8px 0 0;
@@ -3507,7 +3507,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-num-label {
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(231, 238, 245, 0.68);
 }
 /* Impact notes sit in cards alongside the stat cards rather than as loose
@@ -3566,7 +3566,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card .pillar-readmore {
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 16px;
 }
 @media (max-width: 720px) {
   .pillar-impact-card {
@@ -3594,7 +3594,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   border: 0;
   background: none;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--pillar-accent);
   cursor: pointer;
@@ -3687,7 +3687,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 18px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-value-icon {
@@ -3730,7 +3730,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 18px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-works-list li::before {
