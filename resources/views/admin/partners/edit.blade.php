@@ -25,6 +25,9 @@
                                class="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
                         <input x-model="row.src" :name="'{{ $key }}['+i+'][src]'" placeholder="/assets/partners/…"
                                class="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+                        <button type="button" @click="openMediaPicker(u => row.src = u, 'partners')" title="Upload / choose logo" class="shrink-0 rounded-lg border border-slate-300 p-2 text-slate-500 hover:border-brand hover:text-brand">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V5m0 0L8 9m4-4l4 4M5 16v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
                         <button type="button" @click="{{ $key }}.splice(i,1)" class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-rose-50 hover:text-rose-600">
                             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>

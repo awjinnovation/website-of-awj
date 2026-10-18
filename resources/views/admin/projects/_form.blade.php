@@ -112,8 +112,16 @@
             </div>
             <div><label class="mb-1.5 block text-xs font-medium text-slate-500">Background gradient (CSS)</label><input x-model="data.bgGrad" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
             <div><label class="mb-1.5 block text-xs font-medium text-slate-500">Accent colour (CSS)</label><input x-model="data.color" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
-            <div><label class="mb-1.5 block text-xs font-medium text-slate-500">Icon path</label><input x-model="data.icon" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
-            <div><label class="mb-1.5 block text-xs font-medium text-slate-500">Image path</label><input x-model="data.image" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" placeholder="/assets/brand/…" /></div>
+            <div>
+                <label class="mb-1.5 block text-xs font-medium text-slate-500">Icon path</label>
+                <input x-model="data.icon" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+                @include('admin.components.pick-button', ['onclick' => "openMediaPicker(u => data.icon = u, 'projects')"])
+            </div>
+            <div>
+                <label class="mb-1.5 block text-xs font-medium text-slate-500">Image path</label>
+                <input x-model="data.image" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" placeholder="/assets/brand/…" />
+                @include('admin.components.pick-button', ['onclick' => "openMediaPicker(u => data.image = u, 'projects')"])
+            </div>
             <div>
                 <label class="mb-1.5 block text-xs font-medium text-slate-500">Image crop</label>
                 <select x-model="data.imageZoom" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">

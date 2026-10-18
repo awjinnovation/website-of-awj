@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PillarController;
@@ -31,6 +32,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::get('stats', [StatController::class, 'edit'])->name('stats.edit');
     Route::put('stats', [StatController::class, 'update'])->name('stats.update');
+
+    Route::get('media', [MediaController::class, 'index'])->name('media.index');
+    Route::get('media/list', [MediaController::class, 'list'])->name('media.list');
+    Route::post('media', [MediaController::class, 'store'])->name('media.store');
+    Route::delete('media/{medium}', [MediaController::class, 'destroy'])->name('media.destroy');
 
     Route::get('site-text', [TranslationController::class, 'index'])->name('translations.index');
     Route::put('site-text', [TranslationController::class, 'update'])->name('translations.update');

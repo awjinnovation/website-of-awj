@@ -53,7 +53,15 @@
             </div>
             <div class="grid gap-3 sm:grid-cols-2">
                 @foreach (['icon' => 'Icon', 'logo' => 'Logo (horizontal)', 'logoV' => 'Logo (vertical)', 'asset1' => 'Asset 1', 'asset2' => 'Asset 2'] as $k => $lbl)
-                    <div><label class="mb-1.5 block text-xs font-medium text-slate-500">{{ $lbl }}</label><input name="identity[{{ $k }}]" value="{{ $identity[$k] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" /></div>
+                    <div>
+                        <label class="mb-1.5 block text-xs font-medium text-slate-500">{{ $lbl }}</label>
+                        <div class="flex items-center gap-2">
+                            <input x-ref="id_{{ $k }}" name="identity[{{ $k }}]" value="{{ $identity[$k] ?? '' }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+                            <button type="button" title="Upload / choose" @click="openMediaPicker(u => $refs.id_{{ $k }}.value = u, 'pillars')" class="shrink-0 rounded-lg border border-slate-300 p-2 text-slate-500 hover:border-brand hover:text-brand">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V5m0 0L8 9m4-4l4 4M5 16v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>

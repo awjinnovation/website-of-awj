@@ -34,6 +34,7 @@
                     ['admin.partners.index', 'Partners', 'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4z'],
                     ['admin.team.index', 'Team', 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM3 21v-2a6 6 0 0112 0v2'],
                     ['admin.stats.edit', 'Stats', 'M4 20V10M10 20V4M16 20v-6M22 20H2'],
+                    ['admin.media.index', 'Media', 'M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6'],
                     ['admin.translations.index', 'Site text', 'M4 5h7M9 3v2c0 4-2 7-5 9m1-4c0 3 3 5 5 6m4 3l4-9 4 9m-6.5-2h5'],
                     ['admin.settings.edit', 'Settings', 'M10.3 3.3a2 2 0 013.4 0l.6 1a2 2 0 002 .9l1.1-.1a2 2 0 011.9 3.1l-.6.9a2 2 0 000 2.2l.6.9a2 2 0 01-1.9 3.1l-1.1-.1a2 2 0 00-2 .9l-.6 1a2 2 0 01-3.4 0l-.6-1a2 2 0 00-2-.9l-1.1.1a2 2 0 01-1.9-3.1l.6-.9a2 2 0 000-2.2l-.6-.9a2 2 0 011.9-3.1l1.1.1a2 2 0 002-.9zM12 12h.01'],
                 ];
@@ -101,6 +102,61 @@
         </main>
     </div>
 </div>
+{{-- Shared media picker (upload + library), opened via window.openMediaPicker(cb) --}}
+<div x-data="mediaPicker" x-cloak>
+    <div x-show="open" @keydown.escape.window="close()" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div @click="close()" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+        <div class="relative flex max-h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-white shadow-xl">
+            <div class="flex items-center justify-between border-b border-slate-100 px-5 py-3.5">
+                <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-1 text-sm">
+                    <button type="button" @click="tab='upload'" :class="tab==='upload' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-500'" class="rounded-md px-3 py-1.5 font-medium">Upload new</button>
+                    <button type="button" @click="tab='library'; loadLibrary()" :class="tab==='library' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-500'" class="rounded-md px-3 py-1.5 font-medium">Library</button>
+                </div>
+                <button type="button" @click="close()" class="rounded-lg p-2 text-slate-400 hover:bg-slate-100">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+                </button>
+            </div>
+
+            <p x-show="error" x-text="error" class="mx-5 mt-3 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700"></p>
+
+            {{-- Upload --}}
+            <div x-show="tab==='upload'" class="p-5">
+                <label class="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center transition hover:border-brand hover:bg-brand/5"
+                       @dragover.prevent @drop.prevent="upload($event.dataTransfer.files)">
+                    <template x-if="!busy">
+                        <div class="flex flex-col items-center gap-2">
+                            <svg class="h-9 w-9 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="font-medium text-slate-700">Drop an image here, or click to choose</span>
+                            <span class="text-xs text-slate-400">JPG, PNG, WEBP, GIF or SVG · up to 10 MB</span>
+                        </div>
+                    </template>
+                    <template x-if="busy">
+                        <span class="text-sm font-medium text-brand">Uploading…</span>
+                    </template>
+                    <input type="file" accept="image/*" class="hidden" @change="upload($event.target.files)" />
+                </label>
+            </div>
+
+            {{-- Library --}}
+            <div x-show="tab==='library'" class="min-h-0 flex-1 overflow-y-auto p-5">
+                <template x-if="items.length === 0">
+                    <p class="py-10 text-center text-sm text-slate-400">No uploads yet.</p>
+                </template>
+                <div class="grid grid-cols-3 gap-3 sm:grid-cols-4">
+                    <template x-for="m in items" :key="m.id">
+                        <button type="button" @click="choose(m.url)" class="group overflow-hidden rounded-lg border border-slate-200 bg-slate-50 text-left transition hover:border-brand hover:shadow">
+                            <span class="grid aspect-square place-items-center overflow-hidden bg-white">
+                                <img :src="m.url" alt="" class="h-full w-full object-contain p-1" />
+                            </span>
+                            <span class="block truncate border-t border-slate-100 px-2 py-1 text-[11px] text-slate-500" x-text="m.name || m.url"></span>
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <style>[x-cloak]{display:none!important}</style>
 </body>
 </html>

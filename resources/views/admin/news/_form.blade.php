@@ -135,11 +135,13 @@
                     <span class="text-xs text-slate-400">No image — a generated cover is used</span>
                 </template>
             </div>
-            <input type="file" name="image_file" accept="image/*"
-                   @change="const f=$event.target.files[0]; if(f) preview=URL.createObjectURL(f)"
-                   class="block w-full text-xs text-slate-500 file:mr-3 file:rounded-lg file:border-0 file:bg-slate-100 file:px-3 file:py-2 file:text-sm file:font-medium file:text-slate-700 hover:file:bg-slate-200" />
+            <button type="button" @click="openMediaPicker(u => { image = u; preview = u }, 'news')"
+                    class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-brand hover:text-brand">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V5m0 0L8 9m4-4l4 4M5 16v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Upload / choose image
+            </button>
             <div class="mt-3">
-                <label class="mb-1.5 block text-xs font-medium text-slate-500">…or path</label>
+                <label class="mb-1.5 block text-xs font-medium text-slate-500">…or paste a path</label>
                 <input name="image" x-model="image" @input="preview=image"
                        class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" placeholder="/news-media/example.jpg" />
             </div>

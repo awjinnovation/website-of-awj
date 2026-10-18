@@ -58,6 +58,7 @@
                 <template x-if="image"><img :src="image" alt="" class="h-full w-full object-cover" /></template>
             </div>
             <input name="image" x-model="image" placeholder="/team/name.jpg" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+            @include('admin.components.pick-button', ['onclick' => "openMediaPicker(u => image = u, 'team')"])
         </div>
 
         <div class="flex items-center gap-2">

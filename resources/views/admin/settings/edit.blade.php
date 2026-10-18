@@ -2,7 +2,7 @@
 @section('title', 'Settings')
 
 @section('content')
-    <form method="POST" action="{{ route('admin.settings.update') }}" class="max-w-2xl space-y-5">
+    <form method="POST" action="{{ route('admin.settings.update') }}" x-data="{}" class="max-w-2xl space-y-5">
         @csrf @method('PUT')
 
         <div class="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -31,11 +31,16 @@
                 @foreach ($brandFields as $key => $label)
                     <div class="flex items-center gap-3">
                         <div class="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-200">
-                            <img src="{{ $brand[$key] ?? '' }}" alt="" class="h-full w-full object-contain p-1.5" onerror="this.style.visibility='hidden'" />
+                            <img x-ref="prev_{{ $key }}" src="{{ $brand[$key] ?? '' }}" alt="" class="h-full w-full object-contain p-1.5" onerror="this.style.visibility='hidden'" />
                         </div>
                         <div class="min-w-0 flex-1">
                             <label class="mb-1 block text-xs font-medium text-slate-500">{{ $label }}</label>
-                            <input name="brand[{{ $key }}]" value="{{ old('brand.'.$key, $brand[$key] ?? '') }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+                            <div class="flex items-center gap-2">
+                                <input x-ref="brand_{{ $key }}" name="brand[{{ $key }}]" value="{{ old('brand.'.$key, $brand[$key] ?? '') }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+                                <button type="button" title="Upload / choose" @click="openMediaPicker(u => { $refs.brand_{{ $key }}.value = u; $refs.prev_{{ $key }}.src = u; $refs.prev_{{ $key }}.style.visibility='visible' }, 'brand')" class="shrink-0 rounded-lg border border-slate-300 p-2 text-slate-500 hover:border-brand hover:text-brand">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V5m0 0L8 9m4-4l4 4M5 16v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 @endforeach
