@@ -19,6 +19,8 @@ export type OrgLogo = {
   name: string;
   /** Absolute path under /public. */
   src: string;
+  /** Optional website; when set the logo card links to it in a new tab. */
+  url?: string;
 };
 
 export type PillarOrgs = {
@@ -36,10 +38,6 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
       {
         name: 'CIDEEA, International Center for Strategic Studies in Aquaculture',
         src: '/assets/partners/academy/cideea.png',
-      },
-      {
-        name: 'Lean Enterprise Institute',
-        src: '/assets/partners/academy/lean-enterprise-institute.jpg',
       },
       {
         // Tomsk Polytechnic University (Russia), not the Temasek Polytechnic
@@ -103,7 +101,11 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
       },
       {
         name: 'Occidental Oman',
-        src: '/assets/partners/innovation/oxy.png',
+        src: '/assets/partners/innovation/oxy-zero-in.png',
+      },
+      {
+        name: 'Simplilearn',
+        src: '/assets/partners/innovation/simplilearn.jpeg',
       },
     ],
   },
@@ -118,8 +120,26 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
       { name: 'Ministry of Social Development', src: '/assets/partners/sustain/mosd.png' },
     ],
     partners: [
-      { name: 'CSR Company International', src: '/assets/partners/sustain/csr-company.png' },
-      { name: 'Movesion', src: '/assets/partners/sustain/movesion.png' },
+      {
+        name: 'CSR Company International',
+        src: '/assets/partners/sustain/csr-company.png',
+        url: 'https://www.csr-company.com/',
+      },
+      {
+        name: 'Movesion',
+        src: '/assets/partners/sustain/movesion.png',
+        url: 'https://www.movesion.com/',
+      },
+      {
+        name: 'APMG International',
+        src: '/assets/partners/sustain/apmg.png',
+        url: 'https://apmg-international.com/',
+      },
+      {
+        name: 'Swiss Academy for Leadership and Sustainability',
+        src: '/assets/partners/sustain/sals.png',
+        url: 'https://sals.academy/',
+      },
     ],
   },
 

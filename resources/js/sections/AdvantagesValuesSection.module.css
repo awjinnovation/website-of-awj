@@ -95,16 +95,31 @@
 
 .advantage-card-icon {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 76px;
+  height: 76px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(6, 10, 16, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 18px;
+}
+
+.advantage-card-icon img {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+.advantage-card-title {
+  position: relative;
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.25;
   color: #f4f8fb;
-  margin-bottom: 24px;
 }
 
 .advantage-card-text {
@@ -161,16 +176,21 @@
 }
 
 .value-card-icon {
-  width: 58px;
-  height: 58px;
+  width: 68px;
+  height: 68px;
   flex: none;
   border-radius: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #f4f8fb;
+  background: rgba(6, 10, 16, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.value-card-icon img {
+  width: 56px;
+  height: 56px;
+  display: block;
 }
 
 .value-card-title {

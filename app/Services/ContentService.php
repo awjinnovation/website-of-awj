@@ -95,7 +95,9 @@ class ContentService
             'title' => $n->title,
             'titleAr' => $n->title_ar,
             'date' => $n->date->format('Y-m-d'),
-            'dateLabel' => $n->date->format('M d, Y'),
+            // Derived from the date (the admin edits only the date), rendered in
+            // the site's conventional non-padded English style, e.g. "Nov 3, 2026".
+            'dateLabel' => $n->date->format('M j, Y'),
             'pillar' => $n->pillar,
             'dek' => $n->dek,
             'dekAr' => $n->dek_ar,
