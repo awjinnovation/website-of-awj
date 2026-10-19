@@ -6,6 +6,8 @@ export type ServiceItem = { name: string; desc?: string };
 export type ServiceGroup = { group?: string; items: ServiceItem[] };
 /** A reference work: plain text, or text with an optional cover photo. */
 export type ReferenceWork = string | { text: string; image?: string };
+/** An impact note: plain text, or text with an optional title and photo. */
+export type ImpactNote = string | { title?: string; text: string; image?: string };
 
 export type PillarPageContent = {
   /** The external website destination, if any (visible regardless of language). */
@@ -21,7 +23,7 @@ export type PillarPageContent = {
   /** Headline numbers. */
   numbers?: { value: string; label: string }[];
   /** Narrative impact notes. */
-  impactNotes?: string[];
+  impactNotes?: ImpactNote[];
   /** Clients & partners served. */
   clients?: string[];
   contact: {
@@ -64,10 +66,19 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       referenceWorks: [
         'Developing a world-class Technology Transfer Office at the German University to turn research into market-ready solutions',
-        'Delivering Dotnxt Jadeer from 2020 to 2025 with support from Occidental Oman, with the Ministry of Labour joining the programme in 2025, to build future skills in AI and Industry 4.0 technologies.',
-        'Delivering the first 3D-printed concrete building in the Middle East with the German University in 2021 through an Omani team',
+        {
+          text: 'Delivering Dotnxt Jadeer from 2020 to 2025 with support from Occidental Oman, with the Ministry of Labour joining the programme in 2025, to build future skills in AI and Industry 4.0 technologies.',
+          image: '/assets/brand/jadeer-project-card.png',
+        },
+        {
+          text: 'Delivering the first 3D-printed concrete building in the Middle East with the German University in 2021 through an Omani team',
+          image: '/assets/brand/3d-building-card.png',
+        },
         "Organizing AeroHack 2023, Oman's first aviation hackathon, for Oman Airports",
-        'Designing and operating The Runway aviation incubator for Oman Airports during 2024–2025.',
+        {
+          text: 'Designing and operating The Runway aviation incubator for Oman Airports during 2024–2025.',
+          image: '/news-media/runway-demo-day.jpg',
+        },
         'Implementing the Geo-Economic Development Programme for North Al Batinah Governorate',
         'Designing and launching Dotnxt GIG in 2020, a digital freelancing platform supported by Occidental.',
         "Contributing to ASYAD Group's Expand Open Innovation Challenge in logistics and integrated services",
@@ -84,7 +95,11 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         { value: '20+', label: 'Startups established' },
       ],
       impactNotes: [
-        '3 out of 5 startups within the Runway incubator secured investment, and some joined accelerators; 1 out of 4 startups within the GUStartHub incubator secured investment.',
+        {
+          title: 'From Incubation to Investment',
+          text: 'Three of the five startups supported by Al Madraj Incubator secured investment, with several also joining business accelerators. In addition, one of the four startups supported by GUStartHub secured investment.',
+          image: '/news-media/runway-demo-day.jpg',
+        },
         'Since 2020, the .nxt Jadeer program has empowered more than 6,600 participants across the governorates of Oman, completing over 300,000 learning hours and 6,500 training courses, and earning more than 100,000 certificates across 136 educational tracks. It has contributed to employing over 2,700 participants, supported the development of 2,000+ entrepreneurial ideas (135 reaching the entrepreneurial bootcamp), and established 20+ startups, alongside 40+ live courses and 100 follow-up sessions, making Jadeer a national platform for talent development, entrepreneurship, and youth readiness for the labor market.',
       ],
       clients: [
@@ -137,10 +152,19 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
       ],
       referenceWorks: [
         'تطوير مكتب نقل التكنولوجيا بمعايير عالمية في الجامعة الألمانية لتحويل مخرجات البحث العلمي إلى حلول جاهزة للسوق',
-        'تنفيذ برنامج دوت نكست جدير خلال الفترة 2020–2025 بدعم من أوكسيدنتال عُمان، وانضمام وزارة العمل إلى البرنامج في عام 2025، لبناء مهارات المستقبل في الذكاء الاصطناعي وتقنيات الثورة الصناعية الرابعة.',
-        'تنفيذ أول مبنى خرساني مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط مع الجامعة الألمانية عام 2021 بفريق عُماني',
+        {
+          text: 'تنفيذ برنامج دوت نكست جدير خلال الفترة 2020–2025 بدعم من أوكسيدنتال عُمان، وانضمام وزارة العمل إلى البرنامج في عام 2025، لبناء مهارات المستقبل في الذكاء الاصطناعي وتقنيات الثورة الصناعية الرابعة.',
+          image: '/assets/brand/jadeer-project-card.png',
+        },
+        {
+          text: 'تنفيذ أول مبنى خرساني مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط مع الجامعة الألمانية عام 2021 بفريق عُماني',
+          image: '/assets/brand/3d-building-card.png',
+        },
         'تنظيم هاكاثون AeroHack 2023، أول هاكاثون في عُمان مخصص لقطاع الطيران، لصالح مطارات عُمان',
-        'تصميم وتشغيل حاضنة المدرج للطيران لصالح مطارات عُمان خلال الفترة 2024–2025.',
+        {
+          text: 'تصميم وتشغيل حاضنة المدرج للطيران لصالح مطارات عُمان خلال الفترة 2024–2025.',
+          image: '/news-media/runway-demo-day.jpg',
+        },
         'تنفيذ برنامج التنمية الجيو-اقتصادية لمحافظة شمال الباطنة',
         'تصميم وإطلاق منصة دوت نكست جيج الرقمية للعمل الحر عام 2020 بدعم من أوكسيدنتال.',
         'المساهمة في تنفيذ تحدي Expand للابتكار المفتوح لمجموعة أسياد في قطاع اللوجستيات والخدمات المتكاملة',
@@ -157,7 +181,11 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         { value: '20+', label: 'شركة ناشئة تأسست' },
       ],
       impactNotes: [
-        'نجاح شركات ناشئة في الحصول على استثمارات والانضمام إلى مسرعات أعمال، حيث حصلت 3 شركات ناشئة من أصل 5 ضمن حاضنة المدرج على استثمار وانضمت بعض الشركات إلى مسرعات أعمال، كما حصلت شركة ناشئة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
+        {
+          title: 'من الاحتضان إلى الاستثمار',
+          text: 'حققت الشركات الناشئة المحتضنة نتائج ملموسة؛ إذ حصلت 3 شركات من أصل 5 ضمن حاضنة المدرج على استثمارات، وانضمت مجموعة منها إلى مسرعات أعمال. كما حصلت شركة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
+          image: '/news-media/runway-demo-day.jpg',
+        },
         'منذ عام 2020، نجح برنامج دوت نكست جدير في تمكين أكثر من 6,600 منتسب من مختلف محافظات سلطنة عُمان، حيث أكمل المنتسبون أكثر من 300 ألف ساعة تعلم و6,500 دورة تدريبية، وحصلوا على أكثر من 100 ألف شهادة ضمن 136 مسارًا تعليميًا. كما ساهم البرنامج في توظيف أكثر من 2,700 منتسب، ودعم تطوير أكثر من 2,000 فكرة ريادية، منها 135 فكرة وصلت إلى مرحلة المعسكر الريادي وأكثر من 20 شركة ناشئة تم تأسيسها، إلى جانب تقديم أكثر من 40 دورة مباشرة و100 جلسة متابعة، ليُصبح جدير منصة وطنية تُسهم في تطوير الكفاءات، وتعزيز ريادة الأعمال، ودعم جاهزية الشباب لسوق العمل.',
       ],
       contact: {

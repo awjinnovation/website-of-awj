@@ -7,7 +7,7 @@ import { useReveal } from '../hooks/useReveal';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import { PILLARS, type PillarId } from '../data/pillars';
-import { getPillarContent } from '../data/pillar-content';
+import { getPillarContent, type ImpactNote } from '../data/pillar-content';
 import { PILLAR_ORGS, type OrgLogo } from '../data/pillar-partners';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
@@ -340,12 +340,34 @@ const ExpandableText = ({ text, className }: { text: string; className?: string 
 };
 
 /** Impact note: the copy is fixed and can run long (the Jadeer note is 615
- *  characters), so it collapses to its opening lines. */
-const ImpactCard = ({ text }: { text: string }) => (
-  <div className="pillar-impact-card">
-    <ExpandableText text={text} />
-  </div>
-);
+ *  characters), so it collapses to its opening lines. A note can also carry a
+ *  title and a photo, which sits full-bleed across the top of the card. */
+const ImpactCard = ({ note }: { note: ImpactNote }) => {
+  if (typeof note === 'string') {
+    return (
+      <div className="pillar-impact-card">
+        <ExpandableText text={note} />
+      </div>
+    );
+  }
+  return (
+    <div className={'pillar-impact-card' + (note.image ? ' has-image' : '')}>
+      {note.image && (
+        <img
+          className="pillar-impact-image"
+          src={note.image}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div className="pillar-impact-body">
+        {note.title && <h3 className="pillar-impact-title">{note.title}</h3>}
+        <ExpandableText text={note.text} />
+      </div>
+    </div>
+  );
+};
 
 /** Count-up + idle pulse number, mirroring the home Stats band behaviour. */
 const PillarStat = ({ value, index }: { value: string; index: number }) => {
@@ -521,7 +543,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               {content.impactNotes && content.impactNotes.length > 0 && (
                 <div className="pillar-impact-notes reveal-stagger">
                   {content.impactNotes.map((p, i) => (
-                    <ImpactCard key={i} text={p} />
+                    <ImpactCard key={i} note={p} />
                   ))}
                 </div>
               )}

@@ -3079,7 +3079,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 .pillar-service-body {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.7;
   color: rgba(244, 248, 251, 0.95);
   /* Lifts the copy off the video and photo backdrops behind the cards. */
@@ -3088,7 +3088,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 @media (max-width: 720px) {
-  .pillar-service-body { font-size: 17px; }
+  .pillar-service-body { font-size: 19px; }
 }
 .pillar-service-items {
   margin: 8px 0 0;
@@ -3397,7 +3397,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   grid-area: more;
   justify-self: start;
   margin-top: 0;
-  font-size: 15px;
+  font-size: 17px;
   color: color-mix(in srgb, var(--pillar-accent) 70%, #fff);
 }
 
@@ -3507,7 +3507,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-num-label {
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(231, 238, 245, 0.68);
 }
 /* Impact notes sit in cards alongside the stat cards rather than as loose
@@ -3550,7 +3550,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card p {
   margin: 0;
-  font-size: 19px;
+  font-size: 21px;
   color: rgba(244, 248, 251, 0.94);
   /* The global rule at the top of this file pins line-height to
      calc(1em + 2px) !important, which is near-solid leading. That reads fine
@@ -3566,7 +3566,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card .pillar-readmore {
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 17px;
 }
 @media (max-width: 720px) {
   .pillar-impact-card {
@@ -3577,7 +3577,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
     top: 22px;
     bottom: 22px;
   }
-  .pillar-impact-card p { font-size: 17px; }
+  .pillar-impact-card p { font-size: 19px; }
 }
 /* Collapsed state. The full text stays in the DOM; only the display is capped,
    so search and assistive tech still get the whole note. */
@@ -3594,7 +3594,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   border: 0;
   background: none;
   font: inherit;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--pillar-accent);
   cursor: pointer;
@@ -3623,6 +3623,53 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-page--rtl .pillar-impact-card {
   text-align: start;
+}
+/* Impact note with a photo: the photo runs edge to edge across the top of the
+   card, and the accent bar moves down to sit beside the title and text. */
+.pillar-impact-card.has-image {
+  padding-top: 0;
+  overflow: hidden;
+}
+.pillar-impact-card.has-image::before { content: none; }
+.pillar-impact-image {
+  display: block;
+  width: calc(100% + 66px);
+  max-width: none;
+  margin-inline: -36px -30px;
+  margin-bottom: 24px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.pillar-impact-body {
+  position: relative;
+}
+.pillar-impact-card.has-image .pillar-impact-body::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -36px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
+  background: color-mix(in srgb, var(--pillar-accent) 70%, transparent);
+}
+.pillar-impact-title {
+  margin: 0 0 10px;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 700;
+  color: #fff;
+}
+@media (max-width: 720px) {
+  .pillar-impact-card.has-image { padding-top: 0; }
+  .pillar-impact-image {
+    width: calc(100% + 50px);
+    margin-inline: -28px -22px;
+    margin-bottom: 20px;
+  }
+  .pillar-impact-card.has-image .pillar-impact-body::before {
+    inset-inline-start: -28px;
+  }
 }
 
 /* Value proposition. Only claims a full viewport where there is a backdrop to
@@ -3687,7 +3734,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-value-icon {
@@ -3730,7 +3777,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-works-list li::before {
