@@ -98,7 +98,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         {
           title: 'From Incubation to Investment',
           text: 'Three of the five startups supported by Al Madraj Incubator secured investment, with several also joining business accelerators. In addition, one of the four startups supported by GUStartHub secured investment.',
-          image: '/news-media/runway-demo-day.jpg',
         },
         'Since 2020, the .nxt Jadeer program has empowered more than 6,600 participants across the governorates of Oman, completing over 300,000 learning hours and 6,500 training courses, and earning more than 100,000 certificates across 136 educational tracks. It has contributed to employing over 2,700 participants, supported the development of 2,000+ entrepreneurial ideas (135 reaching the entrepreneurial bootcamp), and established 20+ startups, alongside 40+ live courses and 100 follow-up sessions, making Jadeer a national platform for talent development, entrepreneurship, and youth readiness for the labor market.',
       ],
@@ -184,7 +183,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         {
           title: 'من الاحتضان إلى الاستثمار',
           text: 'حققت الشركات الناشئة المحتضنة نتائج ملموسة؛ إذ حصلت 3 شركات من أصل 5 ضمن حاضنة المدرج على استثمارات، وانضمت مجموعة منها إلى مسرعات أعمال. كما حصلت شركة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
-          image: '/news-media/runway-demo-day.jpg',
         },
         'منذ عام 2020، نجح برنامج دوت نكست جدير في تمكين أكثر من 6,600 منتسب من مختلف محافظات سلطنة عُمان، حيث أكمل المنتسبون أكثر من 300 ألف ساعة تعلم و6,500 دورة تدريبية، وحصلوا على أكثر من 100 ألف شهادة ضمن 136 مسارًا تعليميًا. كما ساهم البرنامج في توظيف أكثر من 2,700 منتسب، ودعم تطوير أكثر من 2,000 فكرة ريادية، منها 135 فكرة وصلت إلى مرحلة المعسكر الريادي وأكثر من 20 شركة ناشئة تم تأسيسها، إلى جانب تقديم أكثر من 40 دورة مباشرة و100 جلسة متابعة، ليُصبح جدير منصة وطنية تُسهم في تطوير الكفاءات، وتعزيز ريادة الأعمال، ودعم جاهزية الشباب لسوق العمل.',
       ],

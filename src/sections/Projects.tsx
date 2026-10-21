@@ -265,7 +265,7 @@ const PROJECTS: Project[] = [
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #f5841e, #ee6c11)',
     icon: '/assets/brand/awj-innovation-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     image: '/assets/brand/hackathon-project-card.jpg',
     summary:
       'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
@@ -300,7 +300,7 @@ const PROJECTS: Project[] = [
     color: 'var(--sustain)',
     bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
     icon: '/assets/brand/awj-sustain-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     summary:
       'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance, transforming fragmented philanthropy into strategic corporate social responsibility.',
     impact:
@@ -322,6 +322,37 @@ const PROJECTS: Project[] = [
         { value: '50+', label: 'جهة مشاركة' },
         { value: 'قيد التطبيق', label: 'حالة الإطار' },
         { value: 'وطني', label: 'مستوى الأثر' },
+      ],
+    },
+  },
+  {
+    name: 'From Incubation to Investment',
+    stat: '3/5',
+    statLabel: 'Startups secured investment',
+    partner: 'Al Madraj Incubator',
+    pillar: 'Innovation',
+    color: 'var(--innovation)',
+    bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
+    icon: '/assets/brand/awj-innovation-icon.svg',
+    size: 'p-sm',
+    image: '/news-media/runway-demo-day.jpg',
+    summary:
+      'Three of the five startups supported by Al Madraj Incubator secured investment, with several also joining business accelerators.',
+    impact: 'In addition, one of the four startups supported by GUStartHub secured investment.',
+    achievements: [
+      { value: '3/5', label: 'Al Madraj Incubator' },
+      { value: '1/4', label: 'GUStartHub' },
+    ],
+    ar: {
+      name: 'من الاحتضان إلى الاستثمار',
+      statLabel: 'حصلت على استثمارات',
+      partner: 'حاضنة المدرج',
+      summary:
+        'حققت الشركات الناشئة المحتضنة نتائج ملموسة؛ إذ حصلت 3 شركات من أصل 5 ضمن حاضنة المدرج على استثمارات، وانضمت مجموعة منها إلى مسرعات أعمال.',
+      impact: 'كما حصلت شركة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
+      achievements: [
+        { value: '3/5', label: 'حاضنة المدرج' },
+        { value: '1/4', label: 'حاضنة GUStartHub' },
       ],
     },
   },
