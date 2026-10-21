@@ -65,7 +65,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'Achieving tangible economic and developmental impact',
       ],
       referenceWorks: [
-        'Developing a world-class Technology Transfer Office at the German University to turn research into market-ready solutions',
         {
           text: 'Delivering Dotnxt Jadeer from 2020 to 2025 with support from Occidental Oman, with the Ministry of Labour joining the programme in 2025, to build future skills in AI and Industry 4.0 technologies.',
           image: '/assets/brand/jadeer-project-card.png',
@@ -74,11 +73,12 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
           text: 'Delivering the first 3D-printed concrete building in the Middle East with the German University in 2021 through an Omani team',
           image: '/assets/brand/3d-building-card.png',
         },
-        "Organizing AeroHack 2023, Oman's first aviation hackathon, for Oman Airports",
         {
           text: 'Designing and operating The Runway aviation incubator for Oman Airports during 2024–2025.',
           image: '/news-media/runway-demo-day.jpg',
         },
+        'Developing a world-class Technology Transfer Office at the German University to turn research into market-ready solutions',
+        "Organizing AeroHack 2023, Oman's first aviation hackathon, for Oman Airports",
         'Implementing the Geo-Economic Development Programme for North Al Batinah Governorate',
         'Designing and launching Dotnxt GIG in 2020, a digital freelancing platform supported by Occidental.',
         "Contributing to ASYAD Group's Expand Open Innovation Challenge in logistics and integrated services",
@@ -150,7 +150,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
         'تحقيق أثر اقتصادي وتنموي ملموس',
       ],
       referenceWorks: [
-        'تطوير مكتب نقل التكنولوجيا بمعايير عالمية في الجامعة الألمانية لتحويل مخرجات البحث العلمي إلى حلول جاهزة للسوق',
         {
           text: 'تنفيذ برنامج دوت نكست جدير خلال الفترة 2020–2025 بدعم من أوكسيدنتال عُمان، وانضمام وزارة العمل إلى البرنامج في عام 2025، لبناء مهارات المستقبل في الذكاء الاصطناعي وتقنيات الثورة الصناعية الرابعة.',
           image: '/assets/brand/jadeer-project-card.png',
@@ -159,11 +158,12 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContentBundle> = {
           text: 'تنفيذ أول مبنى خرساني مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط مع الجامعة الألمانية عام 2021 بفريق عُماني',
           image: '/assets/brand/3d-building-card.png',
         },
-        'تنظيم هاكاثون AeroHack 2023، أول هاكاثون في عُمان مخصص لقطاع الطيران، لصالح مطارات عُمان',
         {
           text: 'تصميم وتشغيل حاضنة المدرج للطيران لصالح مطارات عُمان خلال الفترة 2024–2025.',
           image: '/news-media/runway-demo-day.jpg',
         },
+        'تطوير مكتب نقل التكنولوجيا بمعايير عالمية في الجامعة الألمانية لتحويل مخرجات البحث العلمي إلى حلول جاهزة للسوق',
+        'تنظيم هاكاثون AeroHack 2023، أول هاكاثون في عُمان مخصص لقطاع الطيران، لصالح مطارات عُمان',
         'تنفيذ برنامج التنمية الجيو-اقتصادية لمحافظة شمال الباطنة',
         'تصميم وإطلاق منصة دوت نكست جيج الرقمية للعمل الحر عام 2020 بدعم من أوكسيدنتال.',
         'المساهمة في تنفيذ تحدي Expand للابتكار المفتوح لمجموعة أسياد في قطاع اللوجستيات والخدمات المتكاملة',
