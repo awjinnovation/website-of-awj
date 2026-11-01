@@ -9,9 +9,7 @@ type Row = {
 };
 
 const STAT_ROWS: Row[] = [
-  { end: 50, suffix: '', labelKey: 'stats.projects.label' },
-  { end: 7600, suffix: '+', labelKey: 'stats.professionals.label' },
-  { end: 25, suffix: '', labelKey: 'stats.partners.label' },
+  { end: 12, suffix: '', labelKey: 'stats.partners.label' },
   { end: 6, suffix: '', labelKey: 'stats.experience.label' },
 ];
 

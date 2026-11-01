@@ -1150,7 +1150,8 @@ button, input, select, textarea { font-family: inherit; }
 
 .stats-band-row {
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 380px));
+  justify-content: center;
   align-items: stretch;
   column-gap: 16px;
   row-gap: 16px;
@@ -1227,11 +1228,11 @@ button, input, select, textarea { font-family: inherit; }
 
 @media (max-width: 980px) {
   .stats-band { padding: 56px 0 64px; }
-  .stats-band-row { grid-template-columns: repeat(2, 1fr); column-gap: 14px; row-gap: 14px; }
+  .stats-band-row { column-gap: 14px; row-gap: 14px; }
 }
 @media (max-width: 560px) {
   .stats-band { padding: 48px 0 56px; }
-  .stats-band-row { grid-template-columns: 1fr; row-gap: 12px; }
+  .stats-band-row { grid-template-columns: minmax(0, 380px); row-gap: 12px; }
   .stat-col .num { font-size: clamp(72px, 16vw, 96px); }
 }
 

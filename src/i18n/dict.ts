@@ -40,9 +40,9 @@ const en = {
   'stats.projects.desc': 'Across infrastructure, ventures, and learning mandates.',
   'stats.professionals.label': 'Professionals Trained',
   'stats.professionals.desc': 'Operators, engineers, and educators upskilled in-house.',
-  'stats.partners.label': 'Strategic Partners',
+  'stats.partners.label': 'Partners',
   'stats.partners.desc': 'Long-term partners across the GCC, Asia, and Africa.',
-  'stats.experience.label': 'Years Combined Experience',
+  'stats.experience.label': 'Years of Experience',
   'stats.experience.desc': 'Founding team operating expertise pooled at AWJ.',
 
   // Pillars stack
@@ -303,8 +303,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   // Stats (labels kept; descriptions need approved Arabic → English fallback)
   'stats.projects.label': 'مشروعًا منجزًا',
   'stats.professionals.label': 'مهنيّ دَرَّبناهم',
-  'stats.partners.label': 'شريكًا استراتيجيًّا',
-  'stats.experience.label': 'عشر سنوات خبرة مجتمعة',
+  'stats.partners.label': 'شريكًا',
+  'stats.experience.label': 'سنوات خبرة',
 
   // Pillars stack
   'pillars.title.first': 'قطاعات',
