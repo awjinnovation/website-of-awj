@@ -17,6 +17,8 @@ type Project = {
   image?: string;
   /** Crop the photo tighter: `trim` drops an artefact at its far edge, `portrait` centres on the subject's face. */
   imageZoom?: 'trim' | 'portrait';
+  /** The subject sits at the photo's left, so the crop follows it per direction instead of anchoring right. */
+  imageSubject?: 'left';
   /** Detail-modal heading when it differs from the tile name. */
   modalTitle?: string;
   summary: string;
@@ -160,6 +162,7 @@ const PROJECTS: Project[] = [
     size: 'p-sm',
     light: true,
     image: '/assets/brand/academy-leadership-card.jpg',
+    imageSubject: 'left',
     summary:
       "AWJ Academy developed a specialized leadership development program for the cultural and creative industries, equipping professionals to lead innovation and enhance competitiveness in Oman's growing creative sector.",
     impact:
@@ -400,7 +403,7 @@ export const Projects = () => {
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
-              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}`} alt="" aria-hidden="true" />}
+              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}${p.imageSubject ? ` subject-${p.imageSubject}` : ''}`} alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{pick(p, 'name', lang)}</div>

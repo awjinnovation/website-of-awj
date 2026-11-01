@@ -1665,6 +1665,12 @@ button, input, select, textarea { font-family: inherit; }
    ABRAJ wordmark still sit. That edge is opaque under RTL, so nudge the photo
    until they clip; in LTR the same pixels fall under the fade and never show. */
 [dir="rtl"] .project-tile .pt-bg-image.is-portrait { inset-inline-end: -10px; }
+/* Subject at the photo's left (the Academy presenter at source x≈30%), which
+   the default right crop cuts off. LTR shows the photo's left edge, so the
+   subject sits mid-frame clear of the fade; RTL starts the crop just before
+   the subject, so it lands on the opaque card edge. */
+.project-tile .pt-bg-image.subject-left { object-position: left; }
+[dir="rtl"] .project-tile .pt-bg-image.subject-left { object-position: 45%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
