@@ -62,6 +62,18 @@ for (const file of readdirSync(jsDir).filter((f) => f.endsWith('.js'))) {
 }
 console.log(`      patched ${patched} bundle file(s)`);
 
+// Share previews: the og/twitter tags name the live domain, so a preview link
+// would show whatever image the live server holds. Point them at this build.
+const PAGES_URL = `https://awjinnovation.github.io${BASE}`;
+const indexPath = join(DIST, 'index.html');
+writeFileSync(
+  indexPath,
+  readFileSync(indexPath, 'utf8')
+    .replaceAll('https://awj.om/og-image.png', `${PAGES_URL}og-image.png`)
+    .replace('<meta property="og:url" content="https://awj.om/" />', `<meta property="og:url" content="${PAGES_URL}" />`),
+);
+console.log('      pointed share tags at the preview URL');
+
 // Deep links: Pages serves 404.html for anything it cannot find on disk.
 copyFileSync(join(DIST, 'index.html'), join(DIST, '404.html'));
 writeFileSync(join(DIST, '.nojekyll'), '');

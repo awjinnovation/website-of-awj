@@ -1,16 +1,6 @@
 [
   {
-    "end": 50,
-    "suffix": "",
-    "labelKey": "stats.projects.label"
-  },
-  {
-    "end": 7600,
-    "suffix": "+",
-    "labelKey": "stats.professionals.label"
-  },
-  {
-    "end": 25,
+    "end": 12,
     "suffix": "",
     "labelKey": "stats.partners.label"
   },

@@ -40,9 +40,8 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
         src: '/assets/partners/academy/oxford-oracle.png',
       },
       {
-        // Renamed from Simplilearn; upload the edX logo via the Partners editor.
         name: 'edX',
-        src: '/assets/partners/academy/simplilearn.jpeg',
+        src: '/assets/partners/academy/edx.png',
       },
       {
         // The supplied file was labelled "World Science Council", but the
@@ -95,9 +94,8 @@ const PILLAR_ORGS_FALLBACK: Record<PillarId, PillarOrgs> = {
         src: '/assets/partners/innovation/oxy-zero-in.png',
       },
       {
-        // Renamed from Simplilearn; upload the edX logo via the Partners editor.
         name: 'edX',
-        src: '/assets/partners/innovation/simplilearn.jpeg',
+        src: '/assets/partners/innovation/edx.png',
       },
     ],
   },

@@ -10,7 +10,7 @@
     <title>AWJ | Sustainable Innovation and Technologies Development Company</title>
     <meta
       name="description"
-      content="AWJ bridges the gaps in Oman's innovation ecosystem — accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth."
+      content="Sustainable Innovation and Technologies Development Company (AWJ). We help government, private, and academic sectors strengthen competitive capabilities and accelerate sustainable, inclusive growth."
     />
     <link rel="canonical" href="https://awj.om/" />
 
@@ -27,15 +27,15 @@
     <meta property="og:title" content="AWJ" />
     <meta
       property="og:description"
-      content="AWJ bridges the gaps in Oman's innovation ecosystem — accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth."
+      content="Sustainable Innovation and Technologies Development Company (AWJ). We help government, private, and academic sectors strengthen competitive capabilities and accelerate sustainable, inclusive growth."
     />
     <meta property="og:url" content="https://awj.om/" />
-    <meta property="og:image" content="https://awj.om/og-image.png" />
-    <meta property="og:image:secure_url" content="https://awj.om/og-image.png" />
+    <meta property="og:image" content="https://awj.om/og-image.png?v=2" />
+    <meta property="og:image:secure_url" content="https://awj.om/og-image.png?v=2" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AWJ — Bridge, Empower, Accelerate. One group. Four pillars." />
+    <meta property="og:image:alt" content="AWJ: Creating a Sustainable Future. نبتكر مستقبلًا مستدامًا" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_OM" />
 
@@ -44,10 +44,10 @@
     <meta name="twitter:title" content="AWJ" />
     <meta
       name="twitter:description"
-      content="AWJ bridges the gaps in Oman's innovation ecosystem — accelerating sustainable technologies, empowering young Omani talent, and building the institutions that turn opportunity into national wealth."
+      content="Sustainable Innovation and Technologies Development Company (AWJ). We help government, private, and academic sectors strengthen competitive capabilities and accelerate sustainable, inclusive growth."
     />
-    <meta name="twitter:image" content="https://awj.om/og-image.png" />
-    <meta name="twitter:image:alt" content="AWJ — Bridge, Empower, Accelerate. One group. Four pillars." />
+    <meta name="twitter:image" content="https://awj.om/og-image.png?v=2" />
+    <meta name="twitter:image:alt" content="AWJ: Creating a Sustainable Future. نبتكر مستقبلًا مستدامًا" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 

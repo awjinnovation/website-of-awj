@@ -18,6 +18,8 @@ export type Project = {
   image?: string;
   /** Crop the photo tighter: `trim` drops an artefact at its far edge, `portrait` centres on the subject's face. */
   imageZoom?: 'trim' | 'portrait';
+  /** The subject sits at the photo's left, so the crop follows it per direction instead of anchoring right. */
+  imageSubject?: 'left';
   /** Detail-modal heading when it differs from the tile name. */
   modalTitle?: string;
   summary: string;
@@ -161,6 +163,7 @@ const PROJECTS_FALLBACK: Project[] = [
     size: 'p-sm',
     light: true,
     image: '/assets/brand/academy-leadership-card.jpg',
+    imageSubject: 'left',
     summary:
       "AWJ Academy developed a specialized leadership development program for the cultural and creative industries, equipping professionals to lead innovation and enhance competitiveness in Oman's growing creative sector.",
     impact:
@@ -266,7 +269,7 @@ const PROJECTS_FALLBACK: Project[] = [
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #f5841e, #ee6c11)',
     icon: '/assets/brand/awj-innovation-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     image: '/assets/brand/hackathon-project-card.jpg',
     summary:
       'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
@@ -301,7 +304,7 @@ const PROJECTS_FALLBACK: Project[] = [
     color: 'var(--sustain)',
     bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
     icon: '/assets/brand/awj-sustain-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     summary:
       'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance, transforming fragmented philanthropy into strategic corporate social responsibility.',
     impact:
@@ -323,6 +326,37 @@ const PROJECTS_FALLBACK: Project[] = [
         { value: '50+', label: 'جهة مشاركة' },
         { value: 'قيد التطبيق', label: 'حالة الإطار' },
         { value: 'وطني', label: 'مستوى الأثر' },
+      ],
+    },
+  },
+  {
+    name: 'From Incubation to Investment',
+    stat: '3/5',
+    statLabel: 'Startups secured investment',
+    partner: 'Al Madraj Incubator',
+    pillar: 'Innovation',
+    color: 'var(--innovation)',
+    bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
+    icon: '/assets/brand/awj-innovation-icon.svg',
+    size: 'p-sm',
+    image: '/news-media/runway-demo-day.jpg',
+    summary:
+      'Three of the five startups supported by Al Madraj Incubator secured investment, with several also joining business accelerators.',
+    impact: 'In addition, one of the four startups supported by GUStartHub secured investment.',
+    achievements: [
+      { value: '3/5', label: 'Al Madraj Incubator' },
+      { value: '1/4', label: 'GUStartHub' },
+    ],
+    ar: {
+      name: 'من الاحتضان إلى الاستثمار',
+      statLabel: 'حصلت على استثمارات',
+      partner: 'حاضنة المدرج',
+      summary:
+        'حققت الشركات الناشئة المحتضنة نتائج ملموسة؛ إذ حصلت 3 شركات من أصل 5 ضمن حاضنة المدرج على استثمارات، وانضمت مجموعة منها إلى مسرعات أعمال.',
+      impact: 'كما حصلت شركة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
+      achievements: [
+        { value: '3/5', label: 'حاضنة المدرج' },
+        { value: '1/4', label: 'حاضنة GUStartHub' },
       ],
     },
   },
@@ -372,7 +406,7 @@ export const Projects = () => {
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
-              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}`} alt="" aria-hidden="true" />}
+              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}${p.imageSubject ? ` subject-${p.imageSubject}` : ''}`} alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{pick(p, 'name', lang)}</div>

@@ -35,7 +35,7 @@ export const Hero = () => {
           aria-hidden="true"
           tabIndex={-1}
         >
-          <source src="/assets/video/hero.mp4" type="video/mp4" />
+          <source src="/assets/video/hero.mp4?v=3" type="video/mp4" />
         </video>
       )}
       <div className="hero-mesh"></div>
