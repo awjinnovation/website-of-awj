@@ -2,6 +2,10 @@
 # Laravel front controller + canonical host + caching + compression.
 # Point the Plesk document root at this public/ folder.
 
+# Serve index.php (Laravel) for directories, falling back to a static
+# index.html where one exists (e.g. /tools/email-signature/).
+DirectoryIndex index.php index.html
+
 <IfModule mod_rewrite.c>
   <IfModule mod_negotiation.c>
     Options -MultiViews -Indexes
@@ -72,6 +76,16 @@
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ---- Keep internal tools out of search engines ----
+# Anything under /tools/ is private; tell crawlers not to index it, in addition
+# to the noindex meta tag on the pages themselves and the robots.txt disallow.
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/tools/" NOINDEX_PRIVATE
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX_PRIVATE
 </IfModule>
 
 # ---- MIME ----
