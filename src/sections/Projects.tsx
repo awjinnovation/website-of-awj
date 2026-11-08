@@ -15,13 +15,27 @@ type Project = {
   statCompact?: boolean;
   light?: boolean;
   image?: string;
-  /** Enlarge the photo so a logo baked into its far edge falls outside the tile. */
-  imageZoom?: boolean;
+  /** Crop the photo tighter: `trim` drops an artefact at its far edge, `portrait` centres on the subject's face. */
+  imageZoom?: 'trim' | 'portrait';
+  /** The subject sits at the photo's left, so the crop follows it per direction instead of anchoring right. */
+  imageSubject?: 'left';
+  /** Detail-modal heading when it differs from the tile name. */
+  modalTitle?: string;
   summary: string;
   impact: string;
   achievements: { value: string; label: string }[];
-  /** Approved Arabic for the card face (content notes 23-29); missing fields fall back to English. */
-  ar?: { name?: string; stat?: string; statLabel?: string; partner?: string; partnerCompact?: boolean };
+  /** Approved Arabic for the card face (content notes 23-29) and the detail modal; missing fields fall back to English. */
+  ar?: {
+    name?: string;
+    stat?: string;
+    statLabel?: string;
+    partner?: string;
+    partnerCompact?: boolean;
+    modalTitle?: string;
+    summary?: string;
+    impact?: string;
+    achievements?: { value: string; label: string }[];
+  };
 };
 
 const PROJECTS: Project[] = [
@@ -46,9 +60,18 @@ const PROJECTS: Project[] = [
       { value: '20+', label: 'Startups established' },
     ],
     ar: {
-      name: 'برنامج «دوت نكست جدير»\nالوطني',
+      name: 'البرنامج الوطني\nدوت نكست جدير',
       statLabel: 'مشاركًا تم تمكينهم',
       partner: 'توظيف +2,700 منتسب',
+      summary:
+        'منذ عام 2020 مكن برنامج دوت نكست جدير أكثر من 6,600 مشارك في أنحاء سلطنة عمان عبر تدريب شامل في التقنيات الناشئة وريادة الأعمال والتطوير المهني، تهيئة لهم لفرص المستقبل.',
+      impact:
+        'أتم المشاركون أكثر من 300,000 ساعة تعلم ضمن 136 مسارا تعليميا، وحصلوا على أكثر من 100,000 شهادة. وأسهم البرنامج في توظيف أكثر من 2,700 مشارك ودعم تطوير أكثر من 2,000 فكرة ريادية.',
+      achievements: [
+        { value: '6,600+', label: 'مشارك' },
+        { value: '2,700+', label: 'موظف' },
+        { value: '20+', label: 'شركة ناشئة تأسست' },
+      ],
     },
   },
   {
@@ -63,21 +86,32 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-sustain-icon.svg',
     size: 'p-med',
     image: '/assets/brand/abraj-project-card.jpg',
-    imageZoom: true,
+    imageZoom: 'portrait',
+    modalTitle: 'Abraj Energy Services — 2025 Sustainability Report',
     summary:
-      "AWJ Sustain prepared the comprehensive Sustainability Report for Abraj Energy Services, achieving the Best Sustainability Report Award 2025 and demonstrating world-class ESG disclosure and transparency practices.",
+      'AWJ Sustain supported Abraj Energy Services in developing its 2025 Sustainability Report. The work covered stakeholder engagement, materiality assessment, ESG data collection and validation, performance analysis, and industry benchmarking.',
     impact:
-      "The report sets new standards for sustainability disclosure in Oman, reflecting commitment to global best practices in ESG reporting. It enhanced the company's reputation, investor confidence, and demonstrated concrete sustainability commitment.",
+      'The report addressed all 30 metrics in the Muscat Stock Exchange ESG Disclosure Guidelines and incorporated the GRI, SASB, and IFRS S1/S2 frameworks. Abraj Energy Services received the Platinum Award in the ESG Category at Oman Sustainability Week 2026 in recognition of its sustainability achievements.',
     achievements: [
-      { value: 'Best Award', label: '2025' },
-      { value: 'GRI Standard', label: 'Compliant' },
-      { value: 'Global', label: 'Best practices' },
+      { value: 'Platinum Award', label: 'Awarded to Abraj in the ESG Category — Oman Sustainability Week 2026' },
+      { value: '30 ESG Metrics', label: 'Covered under the MSX Disclosure Guidelines' },
+      { value: 'International Frameworks', label: 'GRI · SASB · IFRS S1/S2' },
     ],
     ar: {
       name: 'أبراج للطاقة',
       // Item 29: fuller name taken from this project's own summary; awarding body still needed.
       stat: 'جائزة أفضل\nتقرير استدامة',
       partner: 'الريادة في المسؤولية الاجتماعية للشركات',
+      modalTitle: 'تقرير الاستدامة 2025 لشركة أبراج لخدمات الطاقة',
+      summary:
+        'دعمت أوج الاستدامة شركة أبراج لخدمات الطاقة في تطوير تقرير الاستدامة لعام 2025. وشمل العمل إشراك أصحاب المصلحة، وتقييم الموضوعات الجوهرية، وجمع بيانات الاستدامة والتحقق منها، وتحليل الأداء ومقارنته بالقطاع.',
+      impact:
+        'غطّى التقرير مؤشرات الإفصاح الثلاثين الواردة في إرشادات بورصة مسقط للاستدامة، مع الاستفادة من أطر GRI وSASB وIFRS S1/S2. وحصلت أبراج لخدمات الطاقة على الجائزة البلاتينية في فئة ESG خلال أسبوع عُمان للاستدامة 2026، تقديرًا لإنجازاتها في الاستدامة.',
+      achievements: [
+        { value: 'الجائزة البلاتينية', label: 'ESG أسبوع عُمان للاستدامة ٢٠٢٦' },
+        { value: '٣٠ مؤشرًا للإفصاح', label: 'وفق إرشادات بورصة مسقط للاستدامة' },
+        { value: 'أطر تقارير دولية', label: 'GRI · SASB · IFRS S1/S2' },
+      ],
     },
   },
   {
@@ -91,6 +125,7 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-systems-icon.svg',
     size: 'p-med',
     image: '/assets/brand/ai-studio-project-card.jpeg',
+    imageZoom: 'trim',
     summary:
       'The National Artificial Intelligence Studio, operated by AWJ Systems on behalf of the Ministry of Transport, Communications and Information Technology, is a center of excellence for AI-driven innovation and digital transformation.',
     impact:
@@ -104,6 +139,15 @@ const PROJECTS: Project[] = [
       name: 'استوديو عُمان للذكاء الاصطناعي',
       statLabel: 'جهة حكومية تم خدمتها',
       partner: '+33 حلًّا للذكاء الاصطناعي',
+      summary:
+        'استوديو عمان الوطني للذكاء الاصطناعي، الذي تشغله أوج الأنظمة نيابة عن وزارة النقل والاتصالات وتقنية المعلومات، مركز تميز للابتكار القائم على الذكاء الاصطناعي والتحول الرقمي.',
+      impact:
+        'قدم الاستوديو أكثر من 33 حلا للذكاء الاصطناعي لـ18 جهة حكومية، ممكنا التحول المؤسسي واتخاذ القرار المبني على البيانات. وتضم منظومته 7 شركات ناشئة نشطة وأكثر من 20 شريكا تقنيا يدفعون تبني الذكاء الاصطناعي على مستوى الدولة.',
+      achievements: [
+        { value: '18', label: 'جهة حكومية' },
+        { value: '33', label: 'حلا للذكاء الاصطناعي' },
+        { value: '7', label: 'شركات ناشئة نشطة' },
+      ],
     },
   },
   {
@@ -117,7 +161,8 @@ const PROJECTS: Project[] = [
     icon: '/assets/brand/awj-academy-icon.svg',
     size: 'p-sm',
     light: true,
-    image: '/assets/brand/academy-project-card.png',
+    image: '/assets/brand/academy-leadership-card.jpg',
+    imageSubject: 'left',
     summary:
       "AWJ Academy developed a specialized leadership development program for the cultural and creative industries, equipping professionals to lead innovation and enhance competitiveness in Oman's growing creative sector.",
     impact:
@@ -131,6 +176,15 @@ const PROJECTS: Project[] = [
       name: 'برنامج القيادة في الصناعات الثقافية والإبداعية',
       statLabel: 'نسبة الرضا',
       partner: 'برنامج معتمد',
+      summary:
+        'طورت أكاديمية أوج برنامجا متخصصا لتطوير القيادات في الصناعات الثقافية والإبداعية، يؤهل قادة القطاع لقيادة الابتكار وتعزيز التنافسية في القطاع الإبداعي المتنامي في سلطنة عمان.',
+      impact:
+        'حقق البرنامج نسبة رضا بلغت 95%، ونجح خريجوه في تطبيق استراتيجيات إبداعية في المؤسسات الثقافية وشركات الإعلام والمنشآت الإبداعية، وأصبح كثير منهم من قادة القطاع ومرشديه.',
+      achievements: [
+        { value: '95%', label: 'الرضا' },
+        { value: '20+', label: 'برنامجا مقدما' },
+        { value: '10', label: 'شركاء استراتيجيين' },
+      ],
     },
   },
   {
@@ -154,9 +208,18 @@ const PROJECTS: Project[] = [
       { value: 'Real-time', label: 'Performance tracking' },
     ],
     ar: {
-      name: 'منصة Planning & Strategy',
+      name: 'منصة التخطيط والاستراتيجية',
       statLabel: 'مبادرة استراتيجية',
       partner: 'عميل مؤسسي',
+      summary:
+        'تمكن منصة التخطيط والاستراتيجية من أوج الأنظمة المؤسسات من إعداد خرائط طريق استراتيجية وتنفيذها عبر التخطيط المبني على البيانات وتحليل السيناريوهات واتخاذ القرار المدعوم بالذكاء الاصطناعي، بما يعين القادة على التعامل مع التحديات المعقدة بثقة.',
+      impact:
+        'دعمت المنصة التحولات الاستراتيجية في مؤسسات القطاعين الحكومي والخاص، وساعدت القادة على اتخاذ قرارات مستنيرة ومواءمة الأهداف المؤسسية ومتابعة التقدم الاستراتيجي لحظيا عبر التحليلات الذكية والتمثيل البصري للبيانات.',
+      achievements: [
+        { value: '12', label: 'مبادرة استراتيجية' },
+        { value: 'دعم اتخاذ القرار', label: 'بالذكاء الاصطناعي' },
+        { value: 'لحظي', label: 'متابعة الأداء' },
+      ],
     },
   },
   {
@@ -185,6 +248,15 @@ const PROJECTS: Project[] = [
       statLabel: 'تقليل الهدر الإنشائي',
       partner: 'مع الجامعة الألمانية للتكنولوجيا (GUtech)',
       partnerCompact: true,
+      summary:
+        'قادت أوج الاستدامة تطوير أول وأكبر مبنى مطبوع بتقنية الطباعة ثلاثية الأبعاد في الشرق الأوسط، في تطبيق عملي لممارسات البناء المستدام وتقنيات التصنيع المتقدمة التي تحد من الأثر البيئي.',
+      impact:
+        'خفض المشروع الهدر الإنشائي بنسبة 60%، وأثبت إمكانية استخدام مواد مستدامة وقابلة لإعادة التدوير، ووضع سلطنة عمان في موقع الريادة في ابتكار البناء المستدام. وبرهن هذا الإنجاز أن التصنيع المتقدم قادر على تحقيق منافع اقتصادية وبيئية معا.',
+      achievements: [
+        { value: '60%', label: 'خفض الهدر' },
+        { value: '100%', label: 'مواد قابلة لإعادة التدوير' },
+        { value: 'الأول في الشرق الأوسط', label: 'إنجاز إقليمي' },
+      ],
     },
   },
   {
@@ -196,7 +268,7 @@ const PROJECTS: Project[] = [
     color: 'var(--innovation)',
     bgGrad: 'linear-gradient(135deg, #f5841e, #ee6c11)',
     icon: '/assets/brand/awj-innovation-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     image: '/assets/brand/hackathon-project-card.jpg',
     summary:
       'AWJ Innovation partnered with the Ministry of Housing and Urban Planning to organize the first Gulf Urban Planning Hackathon, bringing together 80 participants to develop innovative solutions for urban challenges aligned with Oman Vision 2040.',
@@ -211,6 +283,15 @@ const PROJECTS: Project[] = [
       name: 'هاكاثون التخطيط العمراني الخليجي',
       statLabel: 'مشاركًا',
       partner: 'متوافق مع رؤية عُمان 2040',
+      summary:
+        'نظمت أوج الابتكار لصالح وزارة الإسكان والتخطيط العمراني أول هاكاثون خليجي للتخطيط العمراني، بمشاركة 80 مشاركا لتطوير حلول مبتكرة لتحديات المدن بما يتوافق مع رؤية عمان 2040.',
+      impact:
+        'أثمر الهاكاثون عن حلول مبتكرة في التخطيط العمراني تركز على تنمية المدن المستدامة والبنية التحتية الذكية والتصميم المتمحور حول المجتمع، ويجري دمج عدد من هذه التصورات في الاستراتيجية العمرانية لسلطنة عمان.',
+      achievements: [
+        { value: '80', label: 'مشاركا' },
+        { value: '20', label: 'حلا مطورا' },
+        { value: 'رؤية 2040', label: 'مواءمة استراتيجية' },
+      ],
     },
   },
   {
@@ -222,7 +303,7 @@ const PROJECTS: Project[] = [
     color: 'var(--sustain)',
     bgGrad: 'linear-gradient(135deg, #00736f, #00a19d)',
     icon: '/assets/brand/awj-sustain-icon.svg',
-    size: 'p-med',
+    size: 'p-sm',
     summary:
       'AWJ Sustain is collaborating with the Ministry of Social Development to develop and implement the Oman National Framework for CSR Governance, transforming fragmented philanthropy into strategic corporate social responsibility.',
     impact:
@@ -236,11 +317,51 @@ const PROJECTS: Project[] = [
       name: 'الإطار الوطني لحوكمة برامج المسؤولية الاجتماعية',
       statLabel: 'جهة مشاركة',
       partner: 'مع وزارة التنمية الاجتماعية',
+      summary:
+        'تتعاون أوج الاستدامة مع وزارة التنمية الاجتماعية في تطوير الإطار الوطني لحوكمة المسؤولية الاجتماعية للشركات في سلطنة عمان وتطبيقه، لتحويل العمل الخيري المتفرق إلى مسؤولية اجتماعية استراتيجية.',
+      impact:
+        'يرسخ هذا الإطار مكانة سلطنة عمان في ريادة حوكمة المسؤولية الاجتماعية إقليميا، عبر إرشادات واضحة للعطاء المؤسسي، وضمان الشفافية، وتعظيم الأثر الاجتماعي على المستوى الوطني.',
+      achievements: [
+        { value: '50+', label: 'جهة مشاركة' },
+        { value: 'قيد التطبيق', label: 'حالة الإطار' },
+        { value: 'وطني', label: 'مستوى الأثر' },
+      ],
+    },
+  },
+  {
+    name: 'From Incubation to Investment',
+    stat: '3/5',
+    statLabel: 'Startups secured investment',
+    partner: 'Al Madraj Incubator',
+    pillar: 'Innovation',
+    color: 'var(--innovation)',
+    bgGrad: 'linear-gradient(135deg, #a13418, #ee6c11)',
+    icon: '/assets/brand/awj-innovation-icon.svg',
+    size: 'p-sm',
+    image: '/news-media/runway-demo-day.jpg',
+    summary:
+      'Three of the five startups supported by Al Madraj Incubator secured investment, with several also joining business accelerators.',
+    impact: 'In addition, one of the four startups supported by GUStartHub secured investment.',
+    achievements: [
+      { value: '3/5', label: 'Al Madraj Incubator' },
+      { value: '1/4', label: 'GUStartHub' },
+    ],
+    ar: {
+      name: 'من الاحتضان إلى الاستثمار',
+      statLabel: 'حصلت على استثمارات',
+      partner: 'حاضنة المدرج',
+      summary:
+        'حققت الشركات الناشئة المحتضنة نتائج ملموسة؛ إذ حصلت 3 شركات من أصل 5 ضمن حاضنة المدرج على استثمارات، وانضمت مجموعة منها إلى مسرعات أعمال.',
+      impact: 'كما حصلت شركة واحدة من أصل 4 ضمن حاضنة GUStartHub على استثمار.',
+      achievements: [
+        { value: '3/5', label: 'حاضنة المدرج' },
+        { value: '1/4', label: 'حاضنة GUStartHub' },
+      ],
     },
   },
 ];
 
-const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner', lang: string) =>
+const pick = (p: Project, k: 'name' | 'stat' | 'statLabel' | 'partner' | 'modalTitle' | 'summary' | 'impact', lang: string) =>
   (lang === 'ar' && p.ar?.[k]) || p[k];
 
 export const Projects = () => {
@@ -282,7 +403,7 @@ export const Projects = () => {
               data-pillar={p.pillar}
               onClick={() => setOpen(i)}
             >
-              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ' is-zoomed' : ''}`} alt="" aria-hidden="true" />}
+              {p.image && <img src={p.image} className={`pt-bg-image${p.imageZoom ? ` is-${p.imageZoom}` : ''}${p.imageSubject ? ` subject-${p.imageSubject}` : ''}`} alt="" aria-hidden="true" />}
               <img src={p.icon} className="pt-icon" alt="" aria-hidden="true" />
               <img src={`/assets/brand/awj-${p.pillar.toLowerCase()}-logo-h.svg`} className="pt-pillar-logo" alt="" aria-hidden="true" />
               <div className="pt-name">{pick(p, 'name', lang)}</div>
@@ -341,18 +462,18 @@ export const Projects = () => {
                   />
                 </svg>
               </button>
-              <h3 className="pm-title">{pick(PROJECTS[open], 'name', lang)}</h3>
+              <h3 className="pm-title">{pick(PROJECTS[open], 'modalTitle', lang) || pick(PROJECTS[open], 'name', lang)}</h3>
             </div>
             <div className="pm-body">
               {PROJECTS[open].image && <img src={PROJECTS[open].image} className="pm-body-image" alt="" aria-hidden="true" />}
-              <p className="pm-summary">{PROJECTS[open].summary}</p>
-              <p className="pm-impact">{PROJECTS[open].impact}</p>
+              <p className="pm-summary">{pick(PROJECTS[open], 'summary', lang)}</p>
+              <p className="pm-impact">{pick(PROJECTS[open], 'impact', lang)}</p>
               <div className="pm-achievements">
                 <div className="pm-ach-head">{t('projects.modal.achievements')}</div>
                 <div className="pm-ach-grid">
-                  {PROJECTS[open].achievements.map((a) => (
+                  {((lang === 'ar' && PROJECTS[open].ar?.achievements) || PROJECTS[open].achievements).map((a) => (
                     <div key={`${a.value}-${a.label}`} className="pm-ach">
-                      <div className="pm-ach-value">{a.value}</div>
+                      <div className={`pm-ach-value${a.value.length > 14 ? ' is-long' : ''}`}>{a.value}</div>
                       <div className="pm-ach-label">{a.label}</div>
                     </div>
                   ))}

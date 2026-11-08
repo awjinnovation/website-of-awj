@@ -1,13 +1,50 @@
-import { newsCategory, newsDate, newsDek, newsPillar, newsTitle } from '../data/news';
+import { newsDate, newsDek, newsPillar, newsTitle, type NewsItem } from '../data/news';
 import { useNews } from '../data/news-api';
 import { useLang } from '../i18n/LangContext';
 import { withBase } from '../base-path';
 
-export const News = () => {
+const ReadArrow = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M5 12h14M13 5l7 7-7 7"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const FeatureCard = ({ n, variant }: { n: NewsItem; variant: 'lead' | 'small' }) => {
   const { t, lang } = useLang();
+  return (
+    <a className={`news-feature-card news-${variant}`} href={withBase(`/news#${n.id}`)}>
+      <div className="nfc-cover">
+        <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
+      </div>
+      <div className="nfc-body">
+        <div className="nfc-meta">
+          <span>{newsDate(n, lang)}</span>
+          <span className="dot">·</span>
+          <span>{newsPillar(n.pillar, lang)}</span>
+        </div>
+        <h3 className="nfc-title">{newsTitle(n, lang)}</h3>
+        <p className="nfc-dek">{newsDek(n, lang)}</p>
+        <span className="nfc-read">
+          {t(n.bodyAr ? 'news.readStory' : 'news.readStoryEnOnly')}
+          <ReadArrow />
+        </span>
+      </div>
+    </a>
+  );
+};
+
+export const News = () => {
+  const { t } = useLang();
   const { news } = useNews();
-  const featured = news.filter((n) => n.featured).slice(0, 2);
-  const recent = news.filter((n) => !n.featured).slice(0, 4);
+  // Newest story leads, the next three get small cards. Nothing renders until the CMS answers.
+  const [lead, ...rest] = news;
+  const secondary = rest.slice(0, 3);
 
   return (
     <section className="news" id="news" data-screen-label="07 News">
@@ -32,69 +69,16 @@ export const News = () => {
           </a>
         </div>
 
-        <div className="news-featured-grid reveal">
-          {featured.map((n) => (
-            <a key={n.id} className="news-feature-card" href={withBase(`/news#${n.id}`)}>
-              <div className="nfc-cover">
-                <img className="news-cover-img" src={n.image} alt="" aria-hidden="true" loading="lazy" />
-                <div className="nfc-tag">{newsCategory(n.category, lang)}</div>
-              </div>
-              <div className="nfc-body">
-                <div className="nfc-meta">
-                  <span>{newsDate(n, lang)}</span>
-                  <span className="dot">·</span>
-                  <span>{newsPillar(n.pillar, lang)}</span>
-                </div>
-                <h3 className="nfc-title">{newsTitle(n, lang)}</h3>
-                <p className="nfc-dek">{newsDek(n, lang)}</p>
-                <span className="nfc-read">
-                  {t(n.bodyAr ? 'news.readStory' : 'news.readStoryEnOnly')}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M5 12h14M13 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="news-recent reveal">
-          <div className="news-recent-head">
-            <span className="eyebrow">{t('news.latest')}</span>
-            <a className="news-recent-link" href={withBase('/news')}>
-              {t('news.allStories')} ({news.length})
-            </a>
+        {lead && (
+          <div className="news-lead-wrap reveal">
+            <FeatureCard n={lead} variant="lead" />
           </div>
-          <ul className="news-recent-list">
-            {recent.map((n) => (
-              <li key={n.id} className="news-recent-item">
-                <a href={withBase(`/news#${n.id}`)}>
-                  <span className="nri-date">{newsDate(n, lang)}</span>
-                  <span className="nri-cat" data-cat={n.category}>
-                    {newsCategory(n.category, lang)}
-                  </span>
-                  <span className="nri-title">{newsTitle(n, lang)}</span>
-                  <span className="nri-arrow">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M7 17L17 7M17 7H8M17 7V16"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+        )}
+
+        <div className="news-secondary-grid reveal">
+          {secondary.map((n) => (
+            <FeatureCard key={n.id} n={n} variant="small" />
+          ))}
         </div>
       </div>
     </section>

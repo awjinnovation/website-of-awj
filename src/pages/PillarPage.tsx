@@ -7,7 +7,7 @@ import { useReveal } from '../hooks/useReveal';
 import { NavPill } from '../sections/NavPill';
 import { Footer } from '../sections/Footer';
 import { PILLARS, type PillarId } from '../data/pillars';
-import { getPillarContent } from '../data/pillar-content';
+import { getPillarContent, type ImpactNote } from '../data/pillar-content';
 import { PILLAR_ORGS, type OrgLogo } from '../data/pillar-partners';
 import { useLang } from '../i18n/LangContext';
 import type { TranslationKey } from '../i18n/dict';
@@ -263,11 +263,24 @@ const OrgWall = ({ title, logos }: { title: string; logos: OrgLogo[] }) => (
   <div className="pillar-org-group">
     <h3 className="pillar-group-title">{title}</h3>
     <div className="pillar-org-grid reveal-stagger">
-      {logos.map((o) => (
-        <div key={o.src} className="pillar-org-card" title={o.name}>
-          <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
-        </div>
-      ))}
+      {logos.map((o) =>
+        o.url ? (
+          <a
+            key={o.src}
+            className="pillar-org-card"
+            title={o.name}
+            href={o.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
+          </a>
+        ) : (
+          <div key={o.src} className="pillar-org-card" title={o.name}>
+            <img src={o.src} alt={o.name} loading="lazy" decoding="async" />
+          </div>
+        ),
+      )}
     </div>
   </div>
 );
@@ -327,12 +340,34 @@ const ExpandableText = ({ text, className }: { text: string; className?: string 
 };
 
 /** Impact note: the copy is fixed and can run long (the Jadeer note is 615
- *  characters), so it collapses to its opening lines. */
-const ImpactCard = ({ text }: { text: string }) => (
-  <div className="pillar-impact-card">
-    <ExpandableText text={text} />
-  </div>
-);
+ *  characters), so it collapses to its opening lines. A note can also carry a
+ *  title and a photo, which sits full-bleed across the top of the card. */
+const ImpactCard = ({ note }: { note: ImpactNote }) => {
+  if (typeof note === 'string') {
+    return (
+      <div className="pillar-impact-card">
+        <ExpandableText text={note} />
+      </div>
+    );
+  }
+  return (
+    <div className={'pillar-impact-card' + (note.image ? ' has-image' : '')}>
+      {note.image && (
+        <img
+          className="pillar-impact-image"
+          src={note.image}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div className="pillar-impact-body">
+        {note.title && <h3 className="pillar-impact-title">{note.title}</h3>}
+        <ExpandableText text={note.text} />
+      </div>
+    </div>
+  );
+};
 
 /** Count-up + idle pulse number, mirroring the home Stats band behaviour. */
 const PillarStat = ({ value, index }: { value: string; index: number }) => {
@@ -508,7 +543,7 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
               {content.impactNotes && content.impactNotes.length > 0 && (
                 <div className="pillar-impact-notes reveal-stagger">
                   {content.impactNotes.map((p, i) => (
-                    <ImpactCard key={i} text={p} />
+                    <ImpactCard key={i} note={p} />
                   ))}
                 </div>
               )}
@@ -612,9 +647,22 @@ export const PillarPage = ({ pillarId }: { pillarId: PillarId }) => {
                 <h2 className="pillar-section-title">{t('pillarPage.projects')}</h2>
               </div>
               <ul className="pillar-works-list reveal-stagger">
-                {content.referenceWorks.map((w) => (
-                  <li key={w}>{w}</li>
-                ))}
+                {content.referenceWorks.map((w) => {
+                  if (typeof w === 'string') return <li key={w}>{w}</li>;
+                  if (!w.image) return <li key={w.text}>{w.text}</li>;
+                  return (
+                    <li key={w.text} className="has-image">
+                      <img
+                        className="pillar-work-image"
+                        src={w.image}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span className="pillar-work-text">{w.text}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </section>

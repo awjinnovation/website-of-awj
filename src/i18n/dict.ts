@@ -30,7 +30,7 @@ const en = {
   'hero.title.line2': 'a Sustainable',
   'hero.title.line3': 'Future',
   'hero.lede':
-    'We work with government, academic, and industrial institutions to build innovation ecosystems and develop capability: 50 projects delivered and 25 strategic partners over ten years. By connecting science, technology, and innovation to practical application, we help our partners achieve sustainable growth and create long-term value.',
+    'We help government, private, and academic sectors strengthen competitive capabilities and accelerate sustainable, inclusive growth through ideas, talent, tech, and sustainability, meeting needs with proven impact across AWJ Innovation, Academy, Systems, and Sustain.',
   'hero.cta.primary': 'Get in touch',
   'hero.cta.secondary': 'Explore the group',
   'hero.chips.label': 'Pillars',
@@ -40,9 +40,9 @@ const en = {
   'stats.projects.desc': 'Across infrastructure, ventures, and learning mandates.',
   'stats.professionals.label': 'Professionals Trained',
   'stats.professionals.desc': 'Operators, engineers, and educators upskilled in-house.',
-  'stats.partners.label': 'Strategic Partners',
+  'stats.partners.label': 'Partners',
   'stats.partners.desc': 'Long-term partners across the GCC, Asia, and Africa.',
-  'stats.experience.label': 'Years Combined Experience',
+  'stats.experience.label': 'Years of Experience',
   'stats.experience.desc': 'Founding team operating expertise pooled at AWJ.',
 
   // Pillars stack
@@ -51,6 +51,7 @@ const en = {
   'pillars.intro': 'Four specialized pillars working together to deliver integrated solutions that drive sustainable growth: AWJ Innovation for building the ecosystems that turn an idea into a venture with economic impact; AWJ Sustain for sustainability, business development, governance, and corporate social responsibility; AWJ Systems for designing and operating digital platforms and the systems that run programs, incubators, and hackathons; and AWJ Academy for programs that build innovation capability, future skills, and technology entrepreneurship.',
   'pillars.prev': 'Previous',
   'pillars.next': 'Next',
+  'pillars.learnMore': 'Learn More',
   'pillars.label': 'PILLAR',
   'pillars.eyebrowPlaceholder': 'eyebrow placeholder',
   // Pillar display names (used in CTAs + carousel cards)
@@ -91,7 +92,7 @@ const en = {
     'Operating-model design, capital strategy, and group-level transformation programs delivered with cross-pillar discipline.',
   'services.b2.title': 'Capability Building',
   'services.b2.body': 'Designing and implementing learning and professional development programs that enable individuals and institutions to lead innovation and enhance competitiveness.',
-  'services.b3.title': 'Sustainability & Governance',
+  'services.b3.title': 'Sustainability & Growth',
   'services.b3.body':
     'End-to-end sustainability strategy, ESG advisory, impact measurement, and governance frameworks enabling responsible growth and sustainable value.',
   'services.b4.title': 'Innovation Ecosystems',
@@ -169,7 +170,7 @@ const en = {
 
   // Footer
   'footer.brand.desc':
-    'An integrated holding group operating across\nAcademy, Sustain, Innovation, and Systems, building durable progress for the regions and sectors we serve.',
+    'AWJ Group works with organizations to build competitive capabilities and accelerate sustainable, inclusive growth by developing ideas, talent, tech solutions, and sustainability strategies across AWJ Innovation, Academy, Systems, and Sustain',
   'footer.col.pillars': 'Pillars',
   'footer.col.location': 'Location',
   'footer.col.address': `Address: ${COMPANY_ADDRESS.en}`,
@@ -226,6 +227,38 @@ const en = {
   'newsPage.featuredBadge': 'Featured',
   'newsPage.countOf': 'of',
 
+  // About page: hero, competitive advantages, values
+  'about.title': 'About AWJ',
+  'about.lede':
+    'We work with governments, academic, and industrial institutions to build innovation ecosystems, develop capabilities, accelerate institutional transformation, and enable sustainability. By linking science, technology, and innovation with practical application, we help our partners achieve sustainable growth and create long-term value.',
+  'about.quote': 'We believe that the future is not to be awaited, but to be created.',
+  'about.advantages.title': 'Our Competitive Advantages',
+  'about.adv.market': 'Deep understanding of local and regional market needs in innovation and tech entrepreneurship.',
+  'about.adv.advisory': 'An international advisory team.',
+  'about.adv.solutions': 'Innovative solutions and services, customized to the needs of each institution.',
+  'about.adv.technology': 'Global expertise in deploying the latest technologies.',
+  'about.adv.growth': 'Sustainable growth through world-class strategies and plans.',
+  'about.adv.ideas': 'Transforming ideas into tangible reality.',
+  'about.adv.market.title': 'Market Insight',
+  'about.adv.advisory.title': 'Global Advisory',
+  'about.adv.solutions.title': 'Tailored Solutions',
+  'about.adv.technology.title': 'Technology Expertise',
+  'about.adv.growth.title': 'Sustainable Growth',
+  'about.adv.ideas.title': 'Ideas into Action',
+  'about.values.title': 'Our Values',
+  'about.value.authenticity.title': 'Authenticity',
+  'about.value.authenticity.desc':
+    "We reflect Oman's vision by enhancing local talent capabilities according to international standards, a commitment deeply rooted in our heritage.",
+  'about.value.collaboration.title': 'Collaboration & Communication',
+  'about.value.collaboration.desc':
+    'We leverage collective expertise to create valuable opportunities and deliver impactful solutions in the consulting landscape.',
+  'about.value.innovation.title': 'Innovation & Progress',
+  'about.value.innovation.desc':
+    'We embrace emerging technologies to stay ahead and deliver cutting-edge solutions that set industry benchmarks.',
+  'about.value.leadership.title': 'Leadership',
+  'about.value.leadership.desc':
+    'We open new horizons, set industry benchmarks, and take the initiative to shape the future.',
+
   // Document metadata, applied by LangProvider
   'meta.title': 'AWJ | Sustainable Innovation and Technologies Development Company',
   'meta.description': 'AWJ is an Omani group building innovation ecosystems, developing capability, and enabling sustainability across four pillars and 50 projects delivered.',
@@ -262,7 +295,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'hero.title.line2': 'مستقبلًا',
   'hero.title.line3': 'مستدامًا',
   'hero.lede':
-    'نعمل مع المؤسسات الحكومية والأكاديمية والصناعية على بناء منظومات الابتكار وتطوير القدرات: خمسون مشروعًا منجزًا، وخمسةٌ وعشرون شريكًا استراتيجيًّا في عشر سنوات.',
+    'نعمل مع القطاعات الحكومية والخاصة والأكاديمية على تعزيز القدرات التنافسية وتسريع النمو المستدام والشامل؛ نطلق الفكرة ونصقل الكفاءة، ونبني الحل التقني ونرسم طريق الاستدامة، بما يلبي الحاجة ويثبت الأثر، عبر قطاعاتنا: أوج الابتكار، وأكاديمية أوج، وأوج الأنظمة، وأوج الاستدامة.',
   'hero.cta.primary': 'تواصل معنا',
   'hero.cta.secondary': 'استكشف المجموعة',
   'hero.chips.label': 'القطاعات',
@@ -270,8 +303,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   // Stats (labels kept; descriptions need approved Arabic → English fallback)
   'stats.projects.label': 'مشروعًا منجزًا',
   'stats.professionals.label': 'مهنيّ دَرَّبناهم',
-  'stats.partners.label': 'شريكًا استراتيجيًّا',
-  'stats.experience.label': 'عشر سنوات خبرة مجتمعة',
+  'stats.partners.label': 'شريكًا',
+  'stats.experience.label': 'سنوات خبرة',
 
   // Pillars stack
   'pillars.title.first': 'قطاعات',
@@ -279,6 +312,8 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'pillars.intro': 'أربعة قطاعات متخصّصة تعمل معًا لتقديم حلولٍ متكاملة تحقّق نموًا مستدامًا: أوج الابتكار لبناء المنظومات التي تُحوّل الفكرة إلى مشروعٍ له أثرٌ اقتصادي، وأوج الاستدامة للاستدامة وتطوير الأعمال والحوكمة والمسؤولية الاجتماعية للشركات، وأوج الأنظمة لتصميم وتشغيل المنصات الرقمية وأنظمة إدارة البرامج والحاضنات والهاكاثونات، وأكاديمية أوج لبرامج بناء القدرات الابتكارية ومهارات المستقبل وريادة الأعمال التقنية.',
   'pillars.prev': 'السابق',
   'pillars.next': 'التالي',
+  // Reuses the approved pillarPage.readMore wording.
+  'pillars.learnMore': 'اقرأ المزيد',
   'pillars.label': 'قطاع',
   'pillars.eyebrowPlaceholder': 'نص بديل',
   'pillar.academy.fullName': 'أكاديمية أوج',
@@ -317,7 +352,7 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'services.b1.body': 'تصميم نموذج التشغيل، واستراتيجية رأس المال، وبرامج التحوّل على مستوى المجموعة.',
   'services.b2.title': 'بناء القدرات',
   'services.b2.body': 'تصميم وتنفيذ برامج التعلّم والتطوير المهني التي تُمكّن الأفراد والمؤسسات من قيادة الابتكار وتعزيز التنافسية.',
-  'services.b3.title': 'الاستدامة والحوكمة',
+  'services.b3.title': 'الاستدامة والنمو',
   'services.b3.body': 'استراتيجية استدامة متكاملة، واستشارات ESG، وقياس الأثر، وأطر الحوكمة التي تُتيح نموًّا مسؤولًا وقيمة مستدامة.',
   'services.b4.title': 'منظومات الابتكار',
   'services.b4.body': 'تصميم وإدارة منظومات الابتكار والبحث والتطوير ونقل التكنولوجيا التي تُحوّل الأفكار إلى حلول ذات أثر مستدام.',
@@ -387,9 +422,10 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'contact.continue': 'متابعة',
   'contact.send': 'إرسال الاستفسار',
   'contact.thanks': 'شكراً, سنتواصل قريباً.',
+  'contact.sent.body': 'تم إرسال استفسارك، وسنتواصل معك قريبًا',
 
   // Footer
-  'footer.brand.desc': 'مجموعةٌ متكاملة تعمل عبر أوج الابتكار وأوج الاستدامة وأوج الأنظمة وأكاديمية أوج، تبني تقدّمًا راسخًا للقطاعات التي تخدمها.',
+  'footer.brand.desc': 'تعمل مجموعة أوج مع المؤسسات على بناء القدرات التنافسية وتسريع النمو المستدام والشامل، بتطوير الأفكار والكفاءات والحلول التقنية واستراتيجيات الاستدامة، عبر قطاعاتها: أوج الابتكار، وأكاديمية أوج، وأوج الأنظمة، وأوج الاستدامة.',
   'footer.col.pillars': 'القطاعات',
   'footer.col.location': 'الموقع',
   'footer.col.address': `العنوان: ${COMPANY_ADDRESS.ar}`,
@@ -446,6 +482,32 @@ const ar: Partial<Record<TranslationKey, string>> = {
   'newsPage.read': 'اقرأ',
   'newsPage.featuredBadge': 'مميّز',
   'newsPage.countOf': 'من',
+
+  // About page: hero, competitive advantages, values
+  'about.title': 'عن أوج',
+  'about.lede':
+    'نعمل مع المؤسسات الحكومية والأكاديمية والقطاع الخاص على بناء منظومات الابتكار، وتطوير القدرات، وتسريع التحول المؤسسي، وتمكين الاستدامة. ومن خلال ربط العلوم والتكنولوجيا والابتكار بالممارسة التطبيقية، نساعد شركاءنا على تحقيق نمو مستدام وصناعة قيمة طويلة الأمد.',
+  'about.quote': 'نؤمن أن المستقبل ثمرة ما نصنعه اليوم.',
+  'about.advantages.title': 'مزايانا التنافسية',
+  'about.adv.market': 'فهم عميق لاحتياجات السوق المحلي والإقليمي في مجالي الابتكار وريادة الأعمال التقنية.',
+  'about.adv.advisory': 'فريق استشاري دولي.',
+  'about.adv.solutions': 'حلول وخدمات مبتكرة مصممة وفق احتياجات كل مؤسسة.',
+  'about.adv.technology': 'خبرة عالمية في توظيف أحدث التقنيات.',
+  'about.adv.growth': 'نمو مستدام عبر استراتيجيات وخطط بمعايير عالمية.',
+  'about.adv.ideas': 'تحويل الأفكار إلى واقع ملموس.',
+  'about.values.title': 'قيمنا',
+  'about.value.authenticity.title': 'الأصالة',
+  'about.value.authenticity.desc':
+    'من إرثنا ينبع التزامنا بتمكين الكفاءات العمانية وفق المعايير الدولية، ترجمة لرؤية عمان.',
+  'about.value.collaboration.title': 'التعاون والتواصل',
+  'about.value.collaboration.desc':
+    'نوظف خبراتنا المشتركة لصناعة فرص ذات قيمة وتقديم حلول ذات أثر في مجال الاستشارات.',
+  'about.value.innovation.title': 'الابتكار والتقدم',
+  'about.value.innovation.desc':
+    'نواكب التقنيات الحديثة لنبقى في الصدارة، ونقدم حلولا مبتكرة تصبح مرجعا في مجالنا.',
+  'about.value.leadership.title': 'الريادة',
+  'about.value.leadership.desc':
+    'نفتح آفاقا جديدة، ونضع معايير يحتذى بها في القطاع، ونأخذ زمام المبادرة في رسم ملامح المستقبل.',
 
   // Document metadata
   'meta.title': 'أوج | شركة تنمية الابتكار والتقنيات المستدامة',

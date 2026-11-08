@@ -1,11 +1,5 @@
 import { DICT, type Lang, type TranslationKey } from '../i18n/dict';
 
-/**
- * Stories live in the CMS and arrive through `useNews` in ./news-api.
- * This module keeps the shared type, the cover styles and the bilingual
- * helpers.
- */
-
 export type NewsCategory =
   | 'Healthcare'
   | 'Digital Transformation'
@@ -14,7 +8,8 @@ export type NewsCategory =
   | 'Aviation'
   | 'Training'
   | 'Digital Economy'
-  | 'Urban Development';
+  | 'Urban Development'
+  | 'Sustainability';
 
 export type NewsItem = {
   id: string;
@@ -33,13 +28,6 @@ export type NewsItem = {
   /** Approved Arabic body, where one exists; paragraphs mirror `body`. */
   bodyAr?: string[];
   image: string;
-  /** Social-share crop of the cover, from the CMS. */
-  imageOg?: string;
-  imageAlt?: string;
-  imageAltAr?: string;
-  metaDescription?: string;
-  metaDescriptionAr?: string;
-  publishedAt?: string;
 };
 
 type CategoryStyle = { ink: string; a: string; b: string; accent: string };
@@ -53,6 +41,7 @@ export const CATEGORY_STYLES: Record<NewsCategory, CategoryStyle> = {
   Training: { ink: '#3a2a18', a: '#3a2a18', b: '#7a5a3a', accent: '#fac99e' },
   'Digital Economy': { ink: '#1a1a1a', a: '#1a1a1a', b: '#3a3a3a', accent: '#ee6c11' },
   'Urban Development': { ink: '#2a3a4a', a: '#2a3a4a', b: '#5a7a9a', accent: '#fde0ca' },
+  Sustainability: { ink: '#0b3b38', a: '#0b3b38', b: '#00a19d', accent: '#c9ece6' },
 };
 
 type CoverProps = { category: NewsCategory };
@@ -364,11 +353,14 @@ const CATEGORY_AR: Partial<Record<NewsCategory, string>> = {
   'Training': 'التدريب',
   'Digital Economy': 'الاقتصاد الرقمي',
   'Urban Development': 'التنمية العمرانية',
+  'Sustainability': 'الاستدامة',
 };
 
 const PILLAR_KEY: Record<string, TranslationKey> = {
   'AWJ Innovation': 'pillar.innovation.fullName',
   'AWJ Academy': 'pillar.academy.fullName',
+  'AWJ Sustain': 'pillar.sustain.fullName',
+  'AWJ Systems': 'pillar.systems.fullName',
 };
 
 const AR_MONTHS = [

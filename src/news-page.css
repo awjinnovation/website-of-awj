@@ -24,9 +24,11 @@
 }
 .news-hero .container { position: relative; }
 .news-hero-top {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: flex-start; align-items: center;
   margin-bottom: 80px;
 }
+/* Back button sits on the physical left in both languages. */
+[dir="rtl"] .news-hero-top { justify-content: flex-end; }
 .news-back {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-body); font-size: 20px;
@@ -213,7 +215,8 @@
 }
 .am-close:hover { background: var(--ink); color: var(--paper); transform: rotate(90deg); }
 
-.am-cover { position: relative; aspect-ratio: 16/8; overflow: hidden; }
+/* The news photos are 3:2, so the cover matches them and shows each one whole. */
+.am-cover { position: relative; aspect-ratio: 3/2; overflow: hidden; }
 .am-cover .news-cover-svg { width: 100%; height: 100%; display: block; }
 .am-cover-overlay {
   position: absolute; left: 0; right: 0; bottom: 0;

@@ -35,7 +35,7 @@ export const Hero = () => {
           aria-hidden="true"
           tabIndex={-1}
         >
-          <source src="/assets/video/hero.mp4" type="video/mp4" />
+          <source src="/assets/video/hero.mp4?v=3" type="video/mp4" />
         </video>
       )}
       <div className="hero-mesh"></div>
@@ -43,10 +43,6 @@ export const Hero = () => {
 
       <div className="hero-v3-inner">
         <div className="hero-v3-left">
-          <div className="hero-eyebrow reveal-up">
-            <span className="dot"></span>
-            {t('hero.eyebrow')}
-          </div>
           <h1 className="hero-headline">
             <span className="line reveal-up">{t('hero.title.line1')}</span>
             <span className="line reveal-up">{t('hero.title.line2')}</span>

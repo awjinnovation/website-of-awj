@@ -727,7 +727,7 @@ button, input, select, textarea { font-family: inherit; }
   display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center;
 }
 @media (max-width: 720px) {
-  .hero-v3-inner { grid-template-columns: 1fr; padding: 70px 22px 48px; gap: 30px; }
+  .hero-v3-inner { grid-template-columns: 1fr; padding: 96px 22px 48px; gap: 30px; }
 }
 
 /* Left side */
@@ -1150,7 +1150,8 @@ button, input, select, textarea { font-family: inherit; }
 
 .stats-band-row {
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 380px));
+  justify-content: center;
   align-items: stretch;
   column-gap: 16px;
   row-gap: 16px;
@@ -1227,11 +1228,11 @@ button, input, select, textarea { font-family: inherit; }
 
 @media (max-width: 980px) {
   .stats-band { padding: 56px 0 64px; }
-  .stats-band-row { grid-template-columns: repeat(2, 1fr); column-gap: 14px; row-gap: 14px; }
+  .stats-band-row { column-gap: 14px; row-gap: 14px; }
 }
 @media (max-width: 560px) {
   .stats-band { padding: 48px 0 56px; }
-  .stats-band-row { grid-template-columns: 1fr; row-gap: 12px; }
+  .stats-band-row { grid-template-columns: minmax(0, 380px); row-gap: 12px; }
   .stat-col .num { font-size: clamp(72px, 16vw, 96px); }
 }
 
@@ -1629,32 +1630,48 @@ button, input, select, textarea { font-family: inherit; }
   font-family: var(--font-body); font-size: 20px;
   ; opacity: 0.7;
 }
+/* `inset-inline-start`, not `left`: the watermark belongs behind the copy,
+   which sits on the right under RTL. */
 .project-tile .pt-icon {
-  position: absolute; left: -30px; top: -30px; width: 180px; opacity: 0.45;
+  position: absolute; inset-inline-start: -30px; top: -30px; width: 180px; opacity: 0.45;
   pointer-events: none;
 }
 .project-tile[data-pillar="Academy"] .pt-icon {
   opacity: 0.65;
 }
-.project-tile.p-big .pt-icon { width: 280px; left: -40px; top: -40px; }
+.project-tile.p-big .pt-icon { width: 280px; inset-inline-start: -40px; top: -40px; }
 .project-tile .pt-bg-image {
   position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 55%;
   object-fit: cover; object-position: right;
   opacity: 1; pointer-events: none; z-index: 1;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,1) 80%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
 }
 /* The photo occupies the half of the card the copy does not, so `inset-inline-end`
-   swaps it to the left under RTL. Mirroring the pixels rather than re-anchoring
-   the crop keeps each photo's composition: `object-position: left` would crop to
-   the opposite edge of the source and, on the Abraj card, showed the company
-   logo instead of the subject. The transform carries the mask with it, so the
-   fade still runs from the card edge toward the copy. */
-[dir="rtl"] .project-tile .pt-bg-image { transform: scaleX(-1); }
-/* The Abraj photo is 16:9, so in a 220px tile `cover` shows nearly all of it,
-   logo included. Taller than the tile, anchored to the top, it crops the
-   logo edge away and keeps the helmet in frame. */
-.project-tile .pt-bg-image.is-zoomed { height: 140%; }
+   swaps it to the left under RTL. The pixels are never mirrored (people and
+   lettering must read correctly), and `object-position: right` stays so each
+   photo keeps the same crop as in LTR. Only the fade turns around, so it still
+   runs from the card edge toward the copy. */
+[dir="rtl"] .project-tile .pt-bg-image {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.04) 12%, rgba(0,0,0,0.14) 24%, rgba(0,0,0,0.3) 36%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.86) 72%, rgba(0,0,0,0.96) 86%, #000 100%);
+}
+/* Tighter crops for photos whose far edge carries an artefact. `trim` is just
+   enough to push a dark strip out of frame; `portrait` frames the subject head
+   and shoulders. 140% is the widest crop that still keeps the Abraj logo, baked
+   into the photo's left edge, outside the tile; its geometric backdrop stays. */
+.project-tile .pt-bg-image.is-trim { height: 130%; }
+.project-tile .pt-bg-image.is-portrait { height: 140%; }
+/* On wide screens the crop reaches source x≈585, where the last pixels of the
+   ABRAJ wordmark still sit. That edge is opaque under RTL, so nudge the photo
+   until they clip; in LTR the same pixels fall under the fade and never show. */
+[dir="rtl"] .project-tile .pt-bg-image.is-portrait { inset-inline-end: -10px; }
+/* Subject at the photo's left (the Academy presenter at source x≈30%), which
+   the default right crop cuts off. LTR shows the photo's left edge, so the
+   subject sits mid-frame clear of the fade; RTL starts the crop just before
+   the subject, so it lands on the opaque card edge. */
+.project-tile .pt-bg-image.subject-left { object-position: left; }
+[dir="rtl"] .project-tile .pt-bg-image.subject-left { object-position: 45%; }
 
 .project-tile .pt-stat-block { z-index: 2; }
 .project-tile .pt-stat {
@@ -1684,9 +1701,10 @@ button, input, select, textarea { font-family: inherit; }
   white-space: pre-line;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-.project-tile.p-big .pt-name { font-size: clamp(44px, 4vw, 58px); line-height: 1.15; font-weight: 700; }
-/* The Arabic name breaks after the quoted programme name, so it must fit one line. */
-[dir="rtl"] .project-tile.p-big .pt-name { font-size: clamp(40px, 3.5vw, 50px); }
+/* Two lines on the copy side, so the name never runs over the photo. */
+.project-tile.p-big .pt-name { font-size: clamp(36px, 3.4vw, 50px); line-height: 1.15; font-weight: 700; }
+/* The Arabic name breaks after "الوطني"; both lines fit the copy side at this size. */
+[dir="rtl"] .project-tile.p-big .pt-name { font-size: clamp(34px, 3.2vw, 46px); }
 .project-tile.p-med .pt-name { font-size: 26px; line-height: 1.3; display: block; font-weight: 700; }
 .project-tile.p-sm .pt-name { font-size: 24px; line-height: 1.3; display: block; font-weight: 700; }
 
@@ -1802,7 +1820,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pm-pillar-logo { height: 50px; width: auto; display: block; filter: brightness(0) invert(1); margin-bottom: 16px; }
 
 .pm-close {
-  position: absolute; top: 24px; right: 24px;
+  position: absolute; top: 24px; inset-inline-end: 24px;
   width: 40px; height: 40px; border-radius: 50%;
   background: rgba(255,255,255,0.18); color: var(--paper);
   border: 1px solid rgba(255,255,255,0.3);
@@ -1814,10 +1832,17 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pm-body {
   padding: 36px 40px 40px; overflow-y: auto; position: relative;
 }
+/* `inset-inline-end`, not `right`: the photo sits on the side away from the
+   copy, so under RTL it moves to the left and its fade turns around. */
 .pm-body-image {
-  position: absolute; right: 0; top: 0; height: 100%; width: 40%;
+  position: absolute; inset-inline-end: 0; top: 0; height: 100%; width: 40%;
   object-fit: cover; object-position: right; opacity: 0.9; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
+}
+[dir="rtl"] .pm-body-image {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, transparent 80%);
 }
 .pm-title {
   font-family: var(--font-display); font-weight: 700;
@@ -1846,13 +1871,15 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   font-family: var(--font-display); font-weight: 200;
   line-height: 1; font-size: clamp(28px, 3vw, 40px);
 }
+/* A phrase rather than a figure: smaller, so it holds to one or two lines. */
+.pm-ach-value.is-long { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.25; font-weight: 400; }
 .pm-ach-label {
   font-family: var(--font-body); font-size: 20px;
   ; opacity: 0.65; margin-top: 8px;
 }
 
 @media (max-width: 720px) {
-  .pm-cover { padding: 24px 24px; height: 160px; }
+  .pm-cover { padding: 24px 24px; min-height: 160px; }
   .pm-body { padding: 28px 24px 32px; }
 }
 
@@ -1919,8 +1946,26 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .news-viewall:hover { background: var(--ink); color: var(--paper); }
 
-.news-featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 80px; }
-@media (max-width: 900px) { .news-featured-grid { grid-template-columns: 1fr; gap: 32px; } }
+/* Newest story: one wide card, photo beside the copy. */
+.news-lead-wrap { margin-bottom: 28px; }
+.news-feature-card.news-lead { display: grid; grid-template-columns: 1.15fr 1fr; }
+.news-lead .nfc-cover { aspect-ratio: auto; min-height: 400px; }
+.news-lead .nfc-body { padding: 44px 48px; justify-content: center; gap: 18px; }
+.news-lead .nfc-title { font-size: clamp(30px, 2.8vw, 46px); }
+/* The next three stories: a row of small cards. */
+.news-secondary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; }
+.news-small .nfc-body { padding: 22px 24px 28px; gap: 10px; }
+.news-small .nfc-title { font-size: 22px; }
+.news-small .nfc-dek {
+  font-size: 18px;
+  display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+@media (max-width: 900px) {
+  .news-feature-card.news-lead { grid-template-columns: 1fr; }
+  .news-lead .nfc-cover { aspect-ratio: 16/10; min-height: 0; }
+  .news-lead .nfc-body { padding: 28px 32px 36px; }
+  .news-secondary-grid { grid-template-columns: 1fr; gap: 32px; }
+}
 
 .news-feature-card {
   position: relative;
@@ -3041,11 +3086,16 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   word-wrap: break-word;
 }
 .pillar-service-body {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.7;
-  color: rgba(233, 240, 247, 0.78);
+  color: rgba(244, 248, 251, 0.95);
+  /* Lifts the copy off the video and photo backdrops behind the cards. */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
   margin: 0;
   word-wrap: break-word;
+}
+@media (max-width: 720px) {
+  .pillar-service-body { font-size: 19px; }
 }
 .pillar-service-items {
   margin: 8px 0 0;
@@ -3345,7 +3395,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pillar-page[data-pillar="sustain"] .pillar-service-body,
 .pillar-page[data-pillar="academy"] .pillar-service-body {
   grid-area: body;
-  line-height: calc(1em + 8px) !important;
+  line-height: calc(1em + 10px) !important;
 }
 /* The Read more toggle sits under the description, on the title's left edge. */
 .pillar-page[data-pillar="systems"] .pillar-service-card > .pillar-readmore,
@@ -3354,7 +3404,8 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   grid-area: more;
   justify-self: start;
   margin-top: 0;
-  font-size: 13px;
+  font-size: 17px;
+  color: color-mix(in srgb, var(--pillar-accent) 70%, #fff);
 }
 
 /* Systems lays its groups out left to right rather than stacked. The grid gap
@@ -3463,7 +3514,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-num-label {
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(231, 238, 245, 0.68);
 }
 /* Impact notes sit in cards alongside the stat cards rather than as loose
@@ -3477,7 +3528,8 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card {
   position: relative;
-  padding: 16px 22px 16px 26px;
+  padding-block: 28px;
+  padding-inline: 36px 30px;
   background: rgba(12, 16, 22, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
@@ -3491,11 +3543,12 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 .pillar-impact-card::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 16px;
-  bottom: 16px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
+  inset-inline-start: 0;
+  top: 28px;
+  bottom: 28px;
+  width: 4px;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
   background: color-mix(in srgb, var(--pillar-accent) 70%, transparent);
 }
 .pillar-impact-card:hover {
@@ -3504,14 +3557,34 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
 }
 .pillar-impact-card p {
   margin: 0;
-  font-size: 16px;
-  color: rgba(233, 240, 247, 0.82);
+  font-size: 21px;
+  color: rgba(244, 248, 251, 0.94);
   /* The global rule at the top of this file pins line-height to
      calc(1em + 2px) !important, which is near-solid leading. That reads fine
      for labels and headings but not for a 600-character paragraph, so this is a
      deliberate local exception: same font-size + offset formula, wider offset.
      !important is required only because the global rule uses it. */
-  line-height: calc(1em + 10px) !important;
+  line-height: calc(1em + 12px) !important;
+}
+/* Impact notes show four lines before Read more; the larger card has room. */
+.pillar-impact-card .is-clamped {
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+.pillar-impact-card .pillar-readmore {
+  margin-top: 14px;
+  font-size: 17px;
+}
+@media (max-width: 720px) {
+  .pillar-impact-card {
+    padding-block: 22px;
+    padding-inline: 28px 22px;
+  }
+  .pillar-impact-card::before {
+    top: 22px;
+    bottom: 22px;
+  }
+  .pillar-impact-card p { font-size: 19px; }
 }
 /* Collapsed state. The full text stays in the DOM; only the display is capped,
    so search and assistive tech still get the whole note. */
@@ -3528,7 +3601,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   border: 0;
   background: none;
   font: inherit;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--pillar-accent);
   cursor: pointer;
@@ -3556,13 +3629,54 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   border-radius: 3px;
 }
 .pillar-page--rtl .pillar-impact-card {
-  padding: 16px 26px 16px 22px;
-  text-align: right;
+  text-align: start;
 }
-.pillar-page--rtl .pillar-impact-card::before {
-  left: auto;
-  right: 0;
-  border-radius: 3px 0 0 3px;
+/* Impact note with a photo: the photo runs edge to edge across the top of the
+   card, and the accent bar moves down to sit beside the title and text. */
+.pillar-impact-card.has-image {
+  padding-top: 0;
+  overflow: hidden;
+}
+.pillar-impact-card.has-image::before { content: none; }
+.pillar-impact-image {
+  display: block;
+  width: calc(100% + 66px);
+  max-width: none;
+  margin-inline: -36px -30px;
+  margin-bottom: 24px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.pillar-impact-body {
+  position: relative;
+}
+.pillar-impact-card.has-image .pillar-impact-body::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -36px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
+  background: color-mix(in srgb, var(--pillar-accent) 70%, transparent);
+}
+.pillar-impact-title {
+  margin: 0 0 10px;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 700;
+  color: #fff;
+}
+@media (max-width: 720px) {
+  .pillar-impact-card.has-image { padding-top: 0; }
+  .pillar-impact-image {
+    width: calc(100% + 50px);
+    margin-inline: -28px -22px;
+    margin-bottom: 20px;
+  }
+  .pillar-impact-card.has-image .pillar-impact-body::before {
+    inset-inline-start: -28px;
+  }
 }
 
 /* Value proposition. Only claims a full viewport where there is a backdrop to
@@ -3627,7 +3741,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-value-icon {
@@ -3648,9 +3762,10 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   font-size: 19px;
   line-height: 1;
 }
+/* No row-reverse: under dir="rtl" a plain flex row already starts on the right,
+   so reversing it pushed the icon to the left. */
 .pillar-page--rtl .pillar-value-list li {
-  flex-direction: row-reverse;
-  text-align: right;
+  text-align: start;
 }
 
 /* Reference works */
@@ -3669,7 +3784,7 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px color-mix(in srgb, var(--pillar-accent) 13%, transparent);
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(233, 240, 247, 0.85);
 }
 .pillar-works-list li::before {
@@ -3684,6 +3799,60 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   text-align: right;
 }
 .pillar-page--rtl .pillar-works-list li::before { left: auto; right: 22px; }
+/* Reference works with a photo: the photo fills the whole card and the text
+   sits on its lower part, over a dark gradient that fades to transparent
+   toward the top. Photos are never mirrored in RTL. */
+.pillar-works-list li.has-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  isolation: isolate;
+}
+.pillar-works-list li.has-image::before { content: none; }
+.pillar-works-list li.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(6, 10, 16, 0.9) 0%,
+    rgba(6, 10, 16, 0.62) 30%,
+    rgba(6, 10, 16, 0.28) 62%,
+    rgba(6, 10, 16, 0) 100%
+  );
+  pointer-events: none;
+}
+.pillar-work-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pillar-work-text {
+  position: relative;
+  z-index: 2;
+  padding-block: 18px 22px;
+  padding-inline: 52px 22px;
+  text-align: start;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+.pillar-work-text::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 22px;
+  top: 25px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pillar-accent);
+}
+.pillar-page--rtl .pillar-works-list li.has-image { padding: 0; }
 
 /* Clients & partners */
 
@@ -3808,6 +3977,13 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+/* Impact notes are long paragraphs, so they run two across (three only when
+   there are exactly three) rather than stepping through the cascade above. */
+@media (min-width: 1100px) {
+  .pillar-page .pillar-impact-notes:not(:has(> :nth-child(3):last-child)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 /* Two columns strand every odd count, so at tablet widths an odd number of
    cards steps up to three, and a count that both strand steps up to four. */
 @media (min-width: 760px) and (max-width: 1099px) {
@@ -3836,6 +4012,29 @@ button.project-tile { border: 0; font: inherit; text-align: start; cursor: point
   }
   .pillar-org-grid:has(> :last-child:not(:only-child):nth-child(4n + 1)) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* Reference works: a count that strands one card at every column choice (13
+   items, for example) keeps three columns and centres the last card. */
+@media (min-width: 1100px) {
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(3n + 1)):has(
+      > :last-child:nth-child(4n + 1)
+    ) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(3n + 1)):has(
+      > :last-child:nth-child(4n + 1)
+    )
+    > :last-child {
+    grid-column: 2;
+  }
+}
+@media (min-width: 760px) and (max-width: 1099px) {
+  .pillar-works-list:has(> :last-child:not(:only-child):nth-child(2n + 1)):has(
+      > :last-child:nth-child(3n + 1)
+    )
+    > :last-child {
+    grid-column: 2;
   }
 }
 
@@ -4257,6 +4456,7 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
 .about-hero-quote {
   position: relative;
   margin-top: 0;
+  margin-bottom: 28px;
   padding-top: 24px;
   max-width: 547px;
   font-size: clamp(24px, 2.6vw, 34px);
@@ -4266,11 +4466,13 @@ a.pillar-contact-val:hover { color: var(--pillar-accent); }
   text-wrap: balance;
   animation: aboutQuoteIn 0.7s var(--ease-out) 0.2s both;
 }
+/* `inset-inline-start`, not `left`: the rule sits above the quote's first
+   character, which is on the right under RTL. */
 .about-hero-quote::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 48px;
   height: 3px;
   border-radius: 2px;
